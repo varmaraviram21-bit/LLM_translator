@@ -1,0 +1,359 @@
+1
+00:00:00,320 --> 00:00:08,960
+Hi everyone, in this video I'll be
+talking about LLM life cycle. So see
+
+2
+00:00:05,839 --> 00:00:12,960
+inside LLM life cycle we usually follow
+some steps. Okay. And first of all I'll
+
+3
+00:00:11,440 --> 00:00:17,279
+let you know what is LM life cycle
+exactly. Okay. We also call it as
+
+4
+00:00:15,040 --> 00:00:21,840
+pipeline. Okay. You can also call it as
+LM pipeline or let's say geni pipeline.
+
+5
+00:00:20,080 --> 00:00:24,880
+Okay. You can call everything. So what
+does it mean of life cycle and pipeline?
+
+6
+00:00:23,600 --> 00:00:31,840
+First of all, I'll try to give you the
+definition. So here just let me write lm
+
+7
+00:00:28,960 --> 00:00:31,840
+u life
+
+8
+00:00:33,559 --> 00:00:45,440
+cycle life
+cycle. See LLM life cycle is nothing but
+
+9
+00:00:42,440 --> 00:00:45,440
+LLM
+
+10
+00:00:46,440 --> 00:00:54,199
+life
+cycle is
+
+11
+00:00:50,200 --> 00:00:58,480
+a set of
+steps. Okay. Set of steps
+
+12
+00:01:01,399 --> 00:01:10,280
+followed to
+build. Okay.
+
+13
+00:01:06,920 --> 00:01:15,360
+and N to end okay N
+to and
+
+14
+00:01:12,960 --> 00:01:15,360
+uh
+
+15
+00:01:15,720 --> 00:01:24,080
+software okay end to end software that
+means here what we do we just try to u
+
+16
+00:01:21,439 --> 00:01:29,280
+break the problems into several sub
+problems okay and then try to develop uh
+
+17
+00:01:26,720 --> 00:01:34,640
+each sub problem step by step okay so
+this is called actually LLM life cycle
+
+18
+00:01:32,400 --> 00:01:40,200
+now inside LLM life cycle we have
+different different let's a component.
+
+19
+00:01:37,119 --> 00:01:44,360
+So the first thing you can consider we
+have
+
+20
+00:01:42,439 --> 00:01:50,320
+data
+acquisition. Okay, data
+
+21
+00:01:48,200 --> 00:01:55,439
+acquisition. So here we just try to
+collect the data. Now data can be
+
+22
+00:01:52,479 --> 00:01:59,280
+available. Okay, data uh you can uh
+extract from different API. You can also
+
+23
+00:01:57,280 --> 00:02:03,360
+do the web scrapping. You can also
+collect your own data by doing some
+
+24
+00:02:01,360 --> 00:02:07,920
+survey. It's up to you. That means you
+have to collect your required data for
+
+25
+00:02:05,600 --> 00:02:13,160
+the training. So once data collection is
+done, you usually do the data prep
+
+26
+00:02:10,800 --> 00:02:18,160
+prioration. Okay,
+prearation. Inside preparation, you
+
+27
+00:02:15,520 --> 00:02:22,959
+apply some cleaning technique. You apply
+some let's say uh feature engineering
+
+28
+00:02:20,879 --> 00:02:28,239
+technique. Okay. So uh with the help of
+that you just prepare the entire data.
+
+29
+00:02:24,959 --> 00:02:32,239
+Okay. Now there is another uh section uh
+we also name it as FE feature
+
+30
+00:02:30,640 --> 00:02:37,840
+engineering. Okay. Feature engineering
+individual component
+
+31
+00:02:34,840 --> 00:02:37,840
+feature
+
+32
+00:02:37,959 --> 00:02:44,000
+engineering. So in feature engineering
+what do we do? We just try to create
+
+33
+00:02:41,519 --> 00:02:48,640
+features. We try to create features. If
+any transformation is required we
+
+34
+00:02:45,599 --> 00:02:52,840
+usually do here. Then we also do the uh
+vectorization. That means we create the
+
+35
+00:02:50,720 --> 00:02:57,920
+embeddings here mostly. Okay.
+Embeddings of our text or text or any
+
+36
+00:02:55,760 --> 00:03:01,440
+kinds of data because we know that uh
+large language model can't take the raw
+
+37
+00:02:59,920 --> 00:03:05,280
+input.
+raw text or let's say video it can't
+
+38
+00:03:03,360 --> 00:03:08,800
+take so for this what you have to do you
+have to convert those data to the
+
+39
+00:03:06,800 --> 00:03:12,239
+numerical representation and everything
+can be done inside F that means feature
+
+40
+00:03:10,720 --> 00:03:17,840
+engineering okay that's why it is super
+important then once uh it is done we'll
+
+41
+00:03:14,879 --> 00:03:25,840
+be doing the modeling okay modeling so
+here we just train the model we train
+
+42
+00:03:21,560 --> 00:03:32,000
+model okay uh train the model okay so
+once model got trained what we usually
+
+43
+00:03:28,159 --> 00:03:32,000
+do we do the model evaluation
+
+44
+00:03:32,360 --> 00:03:38,400
+model
+evaluation. Okay. So here inside model
+
+45
+00:03:37,040 --> 00:03:45,200
+evaluation we have two kinds of
+evaluation. The first one is
+
+46
+00:03:42,200 --> 00:03:50,799
+intrinsive evaluation. Other is
+extrinsive evaluation. Okay.
+
+47
+00:03:47,640 --> 00:03:54,720
+Extrinsive evaluation. So in in
+intrinsive evaluation what you usually
+
+48
+00:03:52,640 --> 00:03:58,720
+do? You try to apply some evaluation
+metrics like uh and you know that uh
+
+49
+00:03:57,439 --> 00:04:02,799
+like we have different different kinds
+of evaluation metrics are available okay
+
+50
+00:04:01,040 --> 00:04:06,080
+based on the task you are doing okay
+those are the metrics you'll be applying
+
+51
+00:04:04,480 --> 00:04:10,080
+and what is extensive evaluation
+extensive evaluation means after
+
+52
+00:04:07,519 --> 00:04:14,159
+deploying the model okay after deploying
+the model uh you'll be doing this
+
+53
+00:04:11,920 --> 00:04:18,560
+extensive evaluation so here let's say
+my model is in in the production and
+
+54
+00:04:16,160 --> 00:04:23,840
+people are using my application okay and
+uh uh you are continuously uh like let's
+
+55
+00:04:21,440 --> 00:04:26,880
+say monitoring your uh let's say model
+and if user is not liking your model
+
+56
+00:04:25,680 --> 00:04:30,400
+let's say if they're giving the bad
+feedback based on the bad feedback you
+
+57
+00:04:28,880 --> 00:04:33,680
+are again let's say updating your model
+this is called extensive evaluation okay
+
+58
+00:04:32,240 --> 00:04:38,840
+so after going to the production you
+usually apply this particular extensive
+
+59
+00:04:35,600 --> 00:04:42,919
+evaluation okay I hope you cleared now
+uh after model evaluation we usually do
+
+60
+00:04:41,520 --> 00:04:50,919
+the
+deployment deployment then uh we do the
+
+61
+00:04:48,680 --> 00:04:55,960
+monitoring
+monitoring
+
+62
+00:04:53,880 --> 00:05:01,600
+and
+model update
+
+63
+00:04:58,680 --> 00:05:05,840
+operation model updating. Okay, so this
+is the entire actually LLM life cycle.
+
+64
+00:05:03,840 --> 00:05:10,720
+Okay, we usually follow whenever we just
+try to train any kinds of LM from
+
+65
+00:05:08,000 --> 00:05:15,199
+scratch. Even you also do the same thing
+whenever you do any kinds of finetuning
+
+66
+00:05:13,120 --> 00:05:18,800
+okay of any kinds of LLM because uh
+training is a costly task and for this
+
+67
+00:05:17,120 --> 00:05:23,280
+we need lots of computition for this we
+need lots of cost so that's why we
+
+68
+00:05:20,880 --> 00:05:27,120
+usually do the finetuning of the LM okay
+so there is another technique okay we
+
+69
+00:05:25,039 --> 00:05:30,960
+usually follow so instead of finetuning
+also you can uh again use your custom
+
+70
+00:05:29,039 --> 00:05:35,360
+data the concept name is rag that means
+retal augmented generation we'll be also
+
+71
+00:05:32,960 --> 00:05:41,280
+talking about this part got it so yes
+guys this is all about I think you got
+
+72
+00:05:37,280 --> 00:05:45,759
+to know what is the LM life cycle and uh
+uh yeah, this is all. Thanks for
+
+73
+00:05:43,039 --> 00:05:45,759
+watching.
+

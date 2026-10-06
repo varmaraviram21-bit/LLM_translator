@@ -1,0 +1,1669 @@
+1
+00:00:00,480 --> 00:00:06,480
+Hello everyone, welcome back. So guys,
+in this video, we'll be learning how we
+
+2
+00:00:03,840 --> 00:00:10,000
+can fine-tune one large language model
+uh with the help of parameter efficient
+
+3
+00:00:08,080 --> 00:00:14,000
+finetuning process. Okay. So in our
+previous video, I think I already showed
+
+4
+00:00:11,360 --> 00:00:18,720
+you what is finetuning and why it is
+required and how we can perform the
+
+5
+00:00:15,920 --> 00:00:22,000
+finetuning. Fine. So here we'll be fine-
+tuning one large language model called
+
+6
+00:00:20,160 --> 00:00:24,960
+meta lama 2. I think you know llama 2,
+right? Llama 2 is a large language
+
+7
+00:00:23,359 --> 00:00:28,640
+model. So if you go to the hugging face
+and if you search for meta, if you
+
+8
+00:00:27,359 --> 00:00:32,000
+search for meta, meta is having
+different different large language
+
+9
+00:00:30,480 --> 00:00:35,040
+model. If I show you, let's say if I go
+to the metal lm, see it is having
+
+10
+00:00:33,760 --> 00:00:40,320
+different different large language model
+like meta lama 3.1, llama 2 is also
+
+11
+00:00:37,840 --> 00:00:43,840
+there. If I expand all all the things,
+see this is the llama 3 family. This is
+
+12
+00:00:41,840 --> 00:00:47,680
+the llama 2 family. So the way actually
+I'm doing the let's say finetuning of
+
+13
+00:00:45,520 --> 00:00:51,920
+llama 2 family. You can also perform
+llama 3 as well. Why I'm taking llama 2?
+
+14
+00:00:50,079 --> 00:00:55,120
+Because it would be a little bit I mean
+small size model. That's why I'm taking
+
+15
+00:00:53,440 --> 00:00:58,800
+llama 2. You can also take llama 3 as
+well. Okay, the process will remain
+
+16
+00:00:56,719 --> 00:01:02,640
+same. And how to get the permission from
+the llama? I think I already showed you
+
+17
+00:01:00,399 --> 00:01:06,000
+in my open source large language model
+session. So you have to apply for the
+
+18
+00:01:04,400 --> 00:01:09,119
+permission first of all and they will
+give the permission then after that you
+
+19
+00:01:07,520 --> 00:01:12,400
+can load it. And if you're not getting
+the permission as of now what you can
+
+20
+00:01:10,560 --> 00:01:15,280
+do, I can also show you one alternative
+approach. You can also follow this one.
+
+21
+00:01:13,840 --> 00:01:18,320
+Fine. I think I already showed you one
+alternative approach like you can use
+
+22
+00:01:16,720 --> 00:01:22,600
+any other repository to load the model.
+It is also fine. Then what you can do
+
+23
+00:01:20,880 --> 00:01:27,119
+after fine-tuning this model, you can
+also push this model to the hugging face
+
+24
+00:01:25,439 --> 00:01:31,600
+hub. Let's say if I show you my hub now.
+So if I go to my profile, see I already
+
+25
+00:01:29,840 --> 00:01:36,079
+published one model, this fine tune
+llama model. After fine-tuning it, I
+
+26
+00:01:33,759 --> 00:01:39,600
+published this model in my um hugging
+face hub. Now people can use my model.
+
+27
+00:01:38,159 --> 00:01:44,720
+So they will be just copying this name
+and they can use my model. You can see
+
+28
+00:01:41,360 --> 00:01:48,960
+it is already downloaded 65 times. Okay,
+65 times this model got downloaded by
+
+29
+00:01:47,040 --> 00:01:52,240
+the audience, right? So that's how you
+can also publish your model if you want.
+
+30
+00:01:50,640 --> 00:01:56,640
+You can also publish your model to the
+hugging face sub. Got it? So that people
+
+31
+00:01:54,320 --> 00:01:59,520
+can also use your model. Got it. So now
+let me show you how we can perform the
+
+32
+00:01:58,000 --> 00:02:02,320
+finetuning. For this I have prepared one
+beautiful notebook. So in this notebook
+
+33
+00:02:01,040 --> 00:02:06,880
+actually I have written each and every
+step you need to follow. So first of all
+
+34
+00:02:04,640 --> 00:02:10,560
+make sure you selected runtime as GPU
+because you are doing the finding
+
+35
+00:02:08,560 --> 00:02:13,920
+operation and definitely read a GPU. So
+I'll be selecting T4 GPU because here
+
+36
+00:02:12,239 --> 00:02:16,879
+I'm using free Google Collab. You can
+also take the premium subscription of
+
+37
+00:02:15,280 --> 00:02:19,760
+the Google Collab. If you're taking the
+premium one, so you'll see that your
+
+38
+00:02:18,319 --> 00:02:23,160
+training would be a little bit faster
+than this free one. Fine. Now, let me
+
+39
+00:02:21,840 --> 00:02:27,040
+connect this
+notebook. So guys, as you can see my
+
+40
+00:02:25,280 --> 00:02:30,560
+notebook is connected. Now the first
+thing what you have to do, you have to
+
+41
+00:02:28,239 --> 00:02:33,200
+install some of the required package. So
+here I have listed down all the package
+
+42
+00:02:32,239 --> 00:02:36,640
+actually you need like let's say
+accelerate then PFT. PFT is the
+
+43
+00:02:35,120 --> 00:02:40,160
+parameter efficient finetuning that
+package. Accelerate you need if you're
+
+44
+00:02:38,400 --> 00:02:42,640
+using transformer library uh and if you
+want to let's say use the GPU that time
+
+45
+00:02:41,760 --> 00:02:46,080
+actually you need to install this
+accelerate as well. Fine. Then you can
+
+46
+00:02:44,400 --> 00:02:49,360
+see bits and byes is also requirement of
+the transformer. And if you want to set
+
+47
+00:02:47,840 --> 00:02:53,040
+up everything in your local machine that
+means if you're having local GPU but if
+
+48
+00:02:51,120 --> 00:02:55,920
+you don't know how to set up the GPU no
+need to worry I have created one
+
+49
+00:02:54,160 --> 00:02:59,120
+dedicated video let me show you. So if
+you search my YouTube channel DS with
+
+50
+00:02:57,519 --> 00:03:03,040
+Buppy. So here you will see that I have
+created one video in the video section
+
+51
+00:03:01,120 --> 00:03:06,800
+set up Nvidia GPU for the deep learning.
+So here I showed you how we can install
+
+52
+00:03:04,400 --> 00:03:10,640
+the CUDA and CUDA toolkit. So definitely
+first of all you have to set up your GPU
+
+53
+00:03:08,959 --> 00:03:13,760
+in a proper way then you will be able to
+set up everything that mean you will be
+
+54
+00:03:11,920 --> 00:03:18,159
+able to utilize your GPU. So make sure
+if you're doing local setup you can try
+
+55
+00:03:15,599 --> 00:03:22,080
+to watch this video. Okay. Otherwise if
+you're doing on Google collab try to do
+
+56
+00:03:20,480 --> 00:03:25,680
+the same thing the way actually I'm
+doing here. So let me install all the
+
+57
+00:03:28,840 --> 00:03:34,560
+package. So guys as you can see
+installation is completed. Now the
+
+58
+00:03:33,040 --> 00:03:37,360
+second thing you have to import all the
+necessary library. So you can see I have
+
+59
+00:03:36,000 --> 00:03:40,799
+imported all the necessary library like
+auto model for casual LA auto tokenizer.
+
+60
+00:03:39,440 --> 00:03:44,879
+Okay, I think you already know these are
+the thing uh the hugging face actually
+
+61
+00:03:42,879 --> 00:03:47,519
+uh library. Okay, why we need it? Then
+you can see I'm importing something
+
+62
+00:03:46,080 --> 00:03:51,120
+called PFT that means parameter
+efficient finetuning. So from PFT I'm
+
+63
+00:03:49,760 --> 00:03:54,959
+importing something called Loader. You
+can also use Q LOA but here I'm using
+
+64
+00:03:52,799 --> 00:03:59,280
+Loader. Okay, so both technique we can
+use it's up to you. So let me import as
+
+65
+00:03:57,519 --> 00:04:02,799
+of now. So whenever I will be using it,
+I'll tell you okay what are the package
+
+66
+00:04:00,720 --> 00:04:07,040
+actually uh you are using and for which
+task. So see guys execution is completed
+
+67
+00:04:05,120 --> 00:04:11,360
+that means everything is working fine.
+Now let me show you the data set first
+
+68
+00:04:09,120 --> 00:04:15,519
+of all. See this is the original data.
+So let me open the data. See this is the
+
+69
+00:04:13,840 --> 00:04:19,759
+original data. So the data set name is
+open assistant. So the data set name is
+
+70
+00:04:17,519 --> 00:04:24,080
+open assistant. Goano. I think this is
+the data set name. And you can see this
+
+71
+00:04:21,840 --> 00:04:28,000
+is the data. That means it is having
+some conversation between human and
+
+72
+00:04:26,160 --> 00:04:31,280
+assistant. You can see. So conversation
+between human and assistant. You can see
+
+73
+00:04:29,680 --> 00:04:36,240
+human and assistant. So this is the
+human uh let's say conversation and this
+
+74
+00:04:34,479 --> 00:04:39,600
+is the assistant conversation. Okay. So
+that's actually they have collected this
+
+75
+00:04:37,759 --> 00:04:43,080
+data and it is having actually you can
+see how many example in the training you
+
+76
+00:04:42,000 --> 00:04:48,639
+are having
+985k rows fine almost 10k example you
+
+77
+00:04:46,320 --> 00:04:51,440
+are having now see it is also using
+different different language see
+
+78
+00:04:50,320 --> 00:04:55,280
+different different language actually
+they have collected the data not only
+
+79
+00:04:53,120 --> 00:04:57,840
+English it is also they're using seed
+Chinese language also they're using
+
+80
+00:04:56,720 --> 00:05:02,560
+different different language that means
+it is a multi- language data and it is a
+
+81
+00:05:00,160 --> 00:05:07,440
+conversation data so we'll be training
+one chat model that means llama to chat
+
+82
+00:05:05,600 --> 00:05:10,000
+chat model. Okay, I think I already
+showed you what is the difference
+
+83
+00:05:08,320 --> 00:05:12,240
+between llama to chat model and finetune
+model. Let's say if you want to only
+
+84
+00:05:10,880 --> 00:05:16,240
+perform the text generation that time
+you can use pretend model. Okay, and if
+
+85
+00:05:14,479 --> 00:05:19,280
+you want to perform let's say chat
+operation chat operation and let's say
+
+86
+00:05:17,919 --> 00:05:23,199
+all kinds of task the way actually you
+perform with the chart GPT that time you
+
+87
+00:05:20,880 --> 00:05:27,680
+can use chat model. Now if you open the
+hugging face and if you go to the
+
+88
+00:05:25,280 --> 00:05:30,560
+actually llama llama model you'll see
+that it is having different different
+
+89
+00:05:28,880 --> 00:05:36,639
+model. Let me show you. So if I search
+for llama, see if I go to the uh llama 2
+
+90
+00:05:33,840 --> 00:05:40,960
+series actually llama 2 family you can
+see it is having llama 2 7 model HF
+
+91
+00:05:39,759 --> 00:05:45,039
+model and it is also having something
+called chat model you can see uh see
+
+92
+00:05:43,199 --> 00:05:47,840
+chat model chat model means you can
+perform the conversation chat operation
+
+93
+00:05:46,639 --> 00:05:51,680
+the way actually you perform with the
+chat GPT right so we'll be fine tuning
+
+94
+00:05:49,840 --> 00:05:55,199
+one chat model so that is why I'm using
+the chat data set conversation data set
+
+95
+00:05:53,759 --> 00:05:59,600
+okay instruction so these are the
+instruction u I think this one see this
+
+96
+00:05:58,080 --> 00:06:02,800
+is the instruction human is giving
+assistant is replying. So these kinds of
+
+97
+00:06:01,360 --> 00:06:06,319
+data set actually we'll be using. Now
+you can use any kinds of data. You just
+
+98
+00:06:04,720 --> 00:06:10,639
+try to prepare your data. Okay. In that
+format you can also create a CSV file.
+
+99
+00:06:08,400 --> 00:06:13,520
+So inside CSV file uh in first column
+you can write the human let's say
+
+100
+00:06:12,160 --> 00:06:17,039
+conversation. In second column you can
+write the assistant conversation. That's
+
+101
+00:06:15,280 --> 00:06:20,479
+how also you can collect the data. Okay.
+It can be any kinds of format. So as of
+
+102
+00:06:18,800 --> 00:06:24,080
+now we are using the data from the
+hugging face. You can also use your
+
+103
+00:06:22,240 --> 00:06:27,600
+custom data. And how to upload your
+custom data to the hugging face. For
+
+104
+00:06:25,759 --> 00:06:31,680
+this you can see hugging face
+documentation. they will also give you
+
+105
+00:06:28,960 --> 00:06:34,479
+the let's say entire process like how I
+can let's say publish my data to the
+
+106
+00:06:33,039 --> 00:06:38,240
+hugging face hub and from there I can
+load my data it is also possible but
+
+107
+00:06:37,039 --> 00:06:42,160
+most of the data actually you will see
+from the hugging face itself you can use
+
+108
+00:06:39,520 --> 00:06:46,639
+it from there so see this is the llama
+to uh supported data that means whenever
+
+109
+00:06:44,880 --> 00:06:50,479
+you will perform the finetuning now so
+you have to convert this data in that
+
+110
+00:06:48,160 --> 00:06:54,479
+format see this is the format so first
+of all you have to give the uh s token
+
+111
+00:06:52,800 --> 00:06:57,039
+you can see s token inside that you have
+to give the instruction and what is the
+
+112
+00:06:55,840 --> 00:07:01,360
+instruction instruction is nothing but
+it's a human convert ation whatever
+
+113
+00:06:59,440 --> 00:07:07,280
+conversation human is doing now this is
+called instruction see if I open this
+
+114
+00:07:04,319 --> 00:07:13,840
+example see this is the human see this
+is the human conversation okay see till
+
+115
+00:07:10,560 --> 00:07:17,360
+this token actually that means / nst
+that means instruction this is the human
+
+116
+00:07:15,520 --> 00:07:22,120
+conversation after that whatever text
+you can see this is the assistant
+
+117
+00:07:19,400 --> 00:07:26,000
+conversation okay this is the assistant
+conversation got it so that's actually
+
+118
+00:07:24,319 --> 00:07:29,440
+you have to prepare your data and at the
+last your s token will end again. Okay,
+
+119
+00:07:28,080 --> 00:07:32,880
+that means this is the complete system
+token right now. The complete prompt
+
+120
+00:07:31,520 --> 00:07:37,199
+that means you are creating the prompt
+here because my large language model
+
+121
+00:07:35,360 --> 00:07:40,560
+supports prompting, right? So that that
+means we are creating the prompt here.
+
+122
+00:07:38,560 --> 00:07:43,360
+So that my model can understand whenever
+we are doing the inference whenever we
+
+123
+00:07:42,160 --> 00:07:45,919
+are let's say sending any kinds of
+prompt to the large language model, it
+
+124
+00:07:44,639 --> 00:07:49,840
+can automatically understand we are
+sending the prompt. Okay. So that's why
+
+125
+00:07:48,319 --> 00:07:53,199
+I'm first of all teaching my model. This
+is instruction and after instruction
+
+126
+00:07:51,759 --> 00:07:57,680
+whatever actually message you can see
+this is the this is the your output that
+
+127
+00:07:55,680 --> 00:08:01,039
+means your response assistant response
+okay this is the format now if you open
+
+128
+00:07:59,120 --> 00:08:05,360
+any kinds of data you'll see that it is
+using the same format only okay same
+
+129
+00:08:02,960 --> 00:08:10,000
+format only so we have to convert our
+data this format to this format okay now
+
+130
+00:08:08,639 --> 00:08:13,199
+you can ask me how to convert this
+format to this format for this we can
+
+131
+00:08:11,759 --> 00:08:16,800
+use one notebook see this is the
+notebook guys even I already attached
+
+132
+00:08:14,639 --> 00:08:19,840
+this notebook link inside uh this
+original notebook let me show you see
+
+133
+00:08:18,160 --> 00:08:24,000
+this is the notebook okay So in this
+notebook actually I already return one
+
+134
+00:08:21,680 --> 00:08:26,720
+function transform conversion. So this
+one actually will take the human
+
+135
+00:08:25,440 --> 00:08:30,720
+conversation as well as the assistant
+conversation and will add the other
+
+136
+00:08:28,319 --> 00:08:35,120
+token. Okay like that the way actually I
+showed you here. Okay, I think it is
+
+137
+00:08:32,880 --> 00:08:38,880
+clear. Now you can use this function as
+it is and you can convert any kinds of
+
+138
+00:08:37,279 --> 00:08:44,880
+let's say these kinds of conversation
+data to um uh your uh like LLM format
+
+139
+00:08:42,880 --> 00:08:47,760
+that mean your llama to format. Now
+there are so many large language model
+
+140
+00:08:46,640 --> 00:08:50,640
+it takes actually different different
+kinds of format. If you go to the
+
+141
+00:08:49,279 --> 00:08:54,240
+documentation of the hugging face, you
+will see that what kinds of format they
+
+142
+00:08:51,920 --> 00:08:57,120
+supports. Based on that actually you can
+actually write the converter also you
+
+143
+00:08:55,839 --> 00:09:00,000
+can get this converter from the hugging
+face itself. Hugging face also provide
+
+144
+00:08:58,480 --> 00:09:04,240
+this kinds of converter. You can use
+this converter to convert your data to a
+
+145
+00:09:02,080 --> 00:09:07,279
+specific format. Okay. So most of the
+large language model will follow this
+
+146
+00:09:05,680 --> 00:09:10,000
+format only. Okay. You'll see that most
+of the large language model will follow
+
+147
+00:09:08,640 --> 00:09:13,519
+the same format. The format actually I'm
+using here. Fine. So that's why you can
+
+148
+00:09:11,680 --> 00:09:18,800
+use this converter as it is. Now see
+here I'm loading the data that means my
+
+149
+00:09:15,440 --> 00:09:23,519
+entire data that means this data this uh
+open assistant data you can see I'm
+
+150
+00:09:21,120 --> 00:09:27,040
+giving the name of the open assistant
+then see instead of taking all the data
+
+151
+00:09:25,360 --> 00:09:31,760
+all the let's say 10k example I'm only
+taking 1,000 okay 1k actually example
+
+152
+00:09:29,279 --> 00:09:35,120
+because here I'm using free collab and
+finetuning will take time that's why I'm
+
+153
+00:09:33,360 --> 00:09:38,880
+only taking 1,000 example to perform the
+finetuning operation and I'm doing the
+
+154
+00:09:37,200 --> 00:09:45,200
+let's say conversion operation then
+after that I'm just pushing this uh
+
+155
+00:09:40,560 --> 00:09:50,800
+let's say data here. So, so this is the
+data. Now, see the same data but here
+
+156
+00:09:48,399 --> 00:09:55,040
+actually this guy is taking actually 1k
+example and he has already converted
+
+157
+00:09:52,880 --> 00:09:58,399
+this data to the required format. Okay.
+So, this is uh so this data is already
+
+158
+00:09:56,880 --> 00:10:01,360
+available. You can see this guy has
+already converted this data to this
+
+159
+00:09:59,760 --> 00:10:04,480
+format. So directly you can use this
+data. But if you want to do it so this
+
+160
+00:10:03,120 --> 00:10:08,240
+is the notebook you can use. Okay. The
+same notebook you can use. Got it? And
+
+161
+00:10:06,560 --> 00:10:12,320
+if you want to use the entire data guys
+what you can do. So here I have already
+
+162
+00:10:10,160 --> 00:10:16,880
+given the complete reform data set link.
+You can open it up. So see it is having
+
+163
+00:10:14,640 --> 00:10:21,680
+actually 10k example only. See around uh
+9.85 kos. Now see it is already uh
+
+164
+00:10:20,320 --> 00:10:25,839
+formatted. Okay. It is already
+formatted. You can also use this data.
+
+165
+00:10:23,839 --> 00:10:28,880
+If you're using good configuration PC
+you can use this data okay for the
+
+166
+00:10:27,440 --> 00:10:33,440
+finetuning operation. But I'm going to
+use this data. Actually 1k example data.
+
+167
+00:10:31,200 --> 00:10:37,120
+Okay only 1k example I'll be taking
+here. So guys, I think now you got to
+
+168
+00:10:35,279 --> 00:10:42,560
+know how how we can reformat our data
+for the llama 2 model and see here we
+
+169
+00:10:40,320 --> 00:10:47,440
+are using free collab and free collab
+actually offers 15 GB of graphics card.
+
+170
+00:10:44,720 --> 00:10:54,320
+If you see here it will give you 15 GB
+of graphics card. See okay and here you
+
+171
+00:10:49,600 --> 00:10:58,079
+will get uh disk around uh 12 GB and RAM
+actually will get 12 GB. Okay. So this
+
+172
+00:10:55,839 --> 00:11:01,519
+is the configuration of our free collab.
+Now here you can see uh it is having
+
+173
+00:10:59,920 --> 00:11:06,480
+actually limit resources barely enough
+to store llama to 7B words. is we can
+
+174
+00:11:04,079 --> 00:11:10,959
+only use 7 7 billion lama 2 model. Okay,
+7 billion lama 2 model. If you're using
+
+175
+00:11:08,399 --> 00:11:13,360
+70 B, 30 B, 13 billion that time
+actually you will get difficulties.
+
+176
+00:11:12,079 --> 00:11:17,200
+Okay, because it is a free Google
+collab. But if you're using um a premium
+
+177
+00:11:15,839 --> 00:11:19,839
+Google Collab that time actually you can
+also use this model. Okay, it's
+
+178
+00:11:18,399 --> 00:11:22,880
+completely fine. Now here you can see
+full fine tuning is not possible here.
+
+179
+00:11:21,519 --> 00:11:26,480
+We need to perform the parameter
+efficient finetuning technique like
+
+180
+00:11:24,240 --> 00:11:30,880
+we'll be using LOA and Q L because the
+full model we can't load here. We have
+
+181
+00:11:28,880 --> 00:11:33,760
+to use quantization technique. That
+means we'll be using LOA and Q L to
+
+182
+00:11:32,560 --> 00:11:38,320
+perform the parameter efficient
+finetuning. Got it? And to drastically
+
+183
+00:11:36,399 --> 00:11:42,560
+reduce the VM, we must finetune the
+model in 4bit position, which is why
+
+184
+00:11:40,480 --> 00:11:46,560
+we'll be using um sorry, we'll be using
+LOA here, not Q load. We'll be using LOA
+
+185
+00:11:44,880 --> 00:11:49,360
+here. Fine. That means we'll be loading
+our model in the 4 bit precision. I
+
+186
+00:11:48,079 --> 00:11:53,680
+think I already explained here what is 4
+bit precision, right? So, initially your
+
+187
+00:11:51,519 --> 00:11:56,959
+weight would be in the full precision.
+Okay, 32-bit precision. This is called
+
+188
+00:11:55,279 --> 00:12:00,720
+full precision. And we'll be loading the
+model in the forward position with the
+
+189
+00:11:58,320 --> 00:12:04,880
+help of LoRa technique. Fine, I think it
+is clear now. Now let's load the model
+
+190
+00:12:03,120 --> 00:12:08,560
+guys. Now you can load the official
+llama 2 model. You can see you can also
+
+191
+00:12:06,959 --> 00:12:12,240
+load the official llama 2 model. So
+llama 2 is having also official model.
+
+192
+00:12:10,320 --> 00:12:16,000
+So this one. So see this is the official
+llama 2 model. You can load you can copy
+
+193
+00:12:14,079 --> 00:12:19,680
+and you can just paste it here. But if
+you if you didn't get the permission
+
+194
+00:12:17,440 --> 00:12:23,600
+what you can do you can also load the
+model from any other repository. So see
+
+195
+00:12:21,519 --> 00:12:28,959
+this repository has it having this model
+also this llama llama 27bd chat hf
+
+196
+00:12:27,440 --> 00:12:31,600
+model. So this repository has already
+published and here you don't need to
+
+197
+00:12:30,399 --> 00:12:34,560
+take the permission you can directly
+download the model. So if you if you
+
+198
+00:12:33,120 --> 00:12:38,079
+haven't get the permission you can use
+this model either you can use the
+
+199
+00:12:36,399 --> 00:12:45,519
+official model. Okay official model let
+me also copy here and let me mention it
+
+200
+00:12:42,120 --> 00:12:48,560
+here. Let's say I can comment here just
+for your reference. You can copy the
+
+201
+00:12:47,279 --> 00:12:53,279
+name and you can paste it here. Okay
+later on. Now this is the data set guys
+
+202
+00:12:51,760 --> 00:12:57,200
+I'll be using. I think you remember. So
+this 1k example we'll be using. So copy
+
+203
+00:12:55,279 --> 00:13:01,360
+the name and try to mention it here.
+Okay. And after finetuning what is the
+
+204
+00:13:00,320 --> 00:13:06,079
+name you want to assign? I want to
+assign this name lama to 7B chat fine
+
+205
+00:13:03,760 --> 00:13:09,440
+tune. And these are the lower parameter
+you can see and lower parameter wise
+
+206
+00:13:08,000 --> 00:13:12,959
+everything just keep it default because
+you can see I'm loading everything in a
+
+207
+00:13:10,720 --> 00:13:15,920
+4bit position. Okay 4 bit precision. So
+no need to change anything. Keep it
+
+208
+00:13:14,240 --> 00:13:19,680
+everything as default. See I won't be
+changing anything. Only the change you
+
+209
+00:13:17,200 --> 00:13:23,040
+have to do the epoch size. number of
+epoch you want to train. So I think
+
+210
+00:13:21,120 --> 00:13:26,800
+epoch I have mentioned here somewhere.
+See number of epoch training epoch. So
+
+211
+00:13:24,880 --> 00:13:29,519
+as of now I'm showing you one one let's
+say epoch training because one epoch
+
+212
+00:13:28,240 --> 00:13:32,800
+training will take time if you're using
+free collab and if you're doing the
+
+213
+00:13:31,519 --> 00:13:35,920
+actual training that time just try to
+increase the epoch size. Now everything
+
+214
+00:13:34,800 --> 00:13:39,200
+keep it default no need to change
+anything. Now let me initialize all the
+
+215
+00:13:37,360 --> 00:13:43,760
+parameter. So this is my loadup
+parameter guys for the parameter
+
+216
+00:13:40,480 --> 00:13:47,680
+efficient finetuning. Fine. Now we'll be
+loading the data set. I want to use the
+
+217
+00:13:46,399 --> 00:13:51,120
+training data set because I want to do
+the finetuning. And here I'm loading
+
+218
+00:13:49,680 --> 00:13:54,160
+everything in a 4bit position. You can
+see okay without the bits and byes
+
+219
+00:13:52,959 --> 00:13:57,440
+actually configuration we are loading
+everything in a four bit position. So
+
+220
+00:13:55,600 --> 00:14:01,839
+this is the way actually we can define
+our loader and how I got this code. If
+
+221
+00:14:00,240 --> 00:14:04,800
+you go to the hugging face documentation
+you will see that okay they have already
+
+222
+00:14:03,360 --> 00:14:07,920
+given this kinds of codes in a bit. So
+you just copy paste and try to use it as
+
+223
+00:14:06,320 --> 00:14:11,279
+it is no need to change anything fine.
+Now see here I'm loading the model in a
+
+224
+00:14:09,519 --> 00:14:14,560
+4bit position. So here you can see I'm
+loading the base model as well as the
+
+225
+00:14:12,800 --> 00:14:18,399
+tokenizer. Okay tokenizer I'm also
+loading. So guys here you can see I'm
+
+226
+00:14:16,399 --> 00:14:21,199
+setting all the LOA configuration. After
+that here is the training arguments. I
+
+227
+00:14:20,320 --> 00:14:24,639
+think you know what is training
+arguments. Uh in the hugging face you
+
+228
+00:14:22,720 --> 00:14:28,480
+have to set your directory then number
+of epoch your optimizer everything you
+
+229
+00:14:26,480 --> 00:14:32,160
+can set here. Then with the help of SFT
+trainer I'm initializing the training
+
+230
+00:14:30,160 --> 00:14:36,160
+process. You can see model train. Now
+see if I execute this code it will start
+
+231
+00:14:34,320 --> 00:14:39,360
+the training. But see training will take
+time actually around 30 minutes.
+
+232
+00:14:37,600 --> 00:14:42,639
+Actually it will take. I was training
+previously. I know that it will take
+
+233
+00:14:40,959 --> 00:14:46,720
+around 30 minutes. Okay, 30 minute you
+have to wait because here we are using
+
+234
+00:14:44,240 --> 00:14:48,959
+free Google collab. So as you can see it
+is downloading the model. After that you
+
+235
+00:14:47,920 --> 00:14:52,959
+will see that it will start the
+training. See it's downloading the
+
+236
+00:14:50,560 --> 00:14:56,720
+model. So see I won't be waiting 30
+minutes. What I'll show you uh the next
+
+237
+00:14:54,959 --> 00:14:59,839
+process actually you can follow like
+after training what you can do because
+
+238
+00:14:58,240 --> 00:15:03,680
+see I have written all the code only you
+just need to execute if you're doing it
+
+239
+00:15:01,600 --> 00:15:07,760
+because uh here I'm recording currently
+so I can't wait actually 30 minutes um
+
+240
+00:15:05,920 --> 00:15:11,600
+to train the model. Let me show you what
+you can perform here. See after training
+
+241
+00:15:09,920 --> 00:15:15,360
+the model you have to save the model.
+You can see you have to save the model
+
+242
+00:15:13,199 --> 00:15:18,399
+trainer model save pretend. Then you
+have to give the new model name. I think
+
+243
+00:15:16,800 --> 00:15:23,160
+new model name I think you remember we
+have given a new model name here
+
+244
+00:15:20,079 --> 00:15:26,240
+whenever we define the all the
+configuration. This is the new model.
+
+245
+00:15:24,959 --> 00:15:31,120
+Okay. So it will save with the help of
+this model. Fine. So it will save the
+
+246
+00:15:28,079 --> 00:15:34,199
+model in the here in this disk. Actually
+you'll see that it will create a output
+
+247
+00:15:32,480 --> 00:15:38,480
+folder inside that it will save the
+model. Then after that you can also
+
+248
+00:15:36,320 --> 00:15:42,639
+visualize the tensorboard logs. See this
+tensorboard will show you the losses
+
+249
+00:15:40,880 --> 00:15:45,680
+then the accuracy okay of your model
+everything it actually it will show you
+
+250
+00:15:43,680 --> 00:15:48,399
+that that means the complete metrics it
+will show you the training losses
+
+251
+00:15:47,040 --> 00:15:51,920
+validation losses everything it will
+show here then after that what I was
+
+252
+00:15:50,079 --> 00:15:55,360
+doing I'm I was loading the original
+model you can see I'm loading the
+
+253
+00:15:53,040 --> 00:15:58,720
+original model not the train model I
+have trained I'm loading the original of
+
+254
+00:15:56,959 --> 00:16:02,320
+the llama model and then I'm testing
+with a prompt what is large language
+
+255
+00:16:00,320 --> 00:16:05,440
+model I just wanted to see what would be
+the output from my original large
+
+256
+00:16:04,079 --> 00:16:08,320
+language model because that means I want
+to compare this result with my train
+
+257
+00:16:07,120 --> 00:16:11,360
+model the model I have trained right
+now. Okay, that's why I'm loading the
+
+258
+00:16:09,519 --> 00:16:14,959
+base model that means my uh original
+model and I'm I only want to see the
+
+259
+00:16:13,519 --> 00:16:18,240
+output. Okay, so here I've given a
+prompt what is the last language model
+
+260
+00:16:16,160 --> 00:16:22,079
+and this is the actually output I got
+okay from my model. Then after that what
+
+261
+00:16:20,160 --> 00:16:26,160
+I did actually I deleted all the model
+pipeline and everything just to uh empty
+
+262
+00:16:24,079 --> 00:16:29,680
+my VM because in RAM actually it will
+occupy lots of space. So you have to
+
+263
+00:16:28,079 --> 00:16:33,519
+execute this code after executing this
+line actually. So no need to execute
+
+264
+00:16:31,360 --> 00:16:37,040
+this line of code just try to skip as of
+now. First of all execute this line of
+
+265
+00:16:35,279 --> 00:16:40,720
+code. This line of code what it will do?
+It will try to load your base model as
+
+266
+00:16:39,120 --> 00:16:44,000
+well as your train model. Okay, that
+means new model. Then it will merge.
+
+267
+00:16:42,320 --> 00:16:46,800
+That means if you want to save the model
+right now, if you're using parameter
+
+268
+00:16:45,519 --> 00:16:50,560
+efficient fine tuning, first of all, you
+have to load your base model as well as
+
+269
+00:16:48,560 --> 00:16:53,759
+your new model. Okay, both you have to
+load. Then after that, you have to
+
+270
+00:16:52,079 --> 00:16:57,360
+merge. After merging, what you can do?
+You can also load your tokenizer. Then
+
+271
+00:16:55,920 --> 00:17:01,440
+you can push this model to the hugging
+face app. For this, just execute this
+
+272
+00:16:59,279 --> 00:17:04,880
+line of code and you have to perform the
+hugging face CLA login. Okay, hugging
+
+273
+00:17:03,279 --> 00:17:08,240
+face CLA login and it will ask for one
+authentication token. See this is the
+
+274
+00:17:06,720 --> 00:17:13,280
+token it will last. Now what you have to
+do go to the hugging face uh go to the
+
+275
+00:17:11,000 --> 00:17:17,919
+settings and you know how to generate
+the tokens. Go to the access tokens. Now
+
+276
+00:17:15,600 --> 00:17:22,319
+create a new tokens. Let's I'll give the
+token name is equal to test. And now you
+
+277
+00:17:20,880 --> 00:17:25,280
+have to give the right access because
+you want to write something. You want to
+
+278
+00:17:23,600 --> 00:17:29,360
+push something to the hing that you have
+to give the right access. Now create the
+
+279
+00:17:27,280 --> 00:17:33,039
+token. Let's create the token. Now copy
+the token and pass the token inside that
+
+280
+00:17:31,760 --> 00:17:37,760
+inside that you have to pass the token.
+then give uh y then press enter after
+
+281
+00:17:36,240 --> 00:17:41,280
+that it will automatically authenticate
+with your hugging face then it will be
+
+282
+00:17:39,840 --> 00:17:45,520
+pushing your model to the hugging face
+itself now here you have to give your
+
+283
+00:17:42,960 --> 00:17:49,600
+user username see this is my my username
+entp so make sure you are giving your
+
+284
+00:17:47,679 --> 00:17:53,360
+username here okay not my username
+otherwise it won't be working okay so if
+
+285
+00:17:51,520 --> 00:17:57,440
+you execute this line of code it will
+push your model as well as the tokenizer
+
+286
+00:17:55,280 --> 00:18:02,400
+as well now after executing this line of
+code go to the hugging face click on the
+
+287
+00:17:59,919 --> 00:18:06,160
+profile go to the let's say your profile
+now you'll see that in the model section
+
+288
+00:18:04,240 --> 00:18:09,600
+this model would be published okay and
+this is the model and this is your
+
+289
+00:18:07,520 --> 00:18:13,360
+tokenizer that means the same model you
+have to use for the tokenization as well
+
+290
+00:18:11,039 --> 00:18:16,880
+I think I already showed right now after
+that let's test this model okay whether
+
+291
+00:18:15,039 --> 00:18:20,080
+it is working or not so for this I
+created another notebook let me show you
+
+292
+00:18:18,640 --> 00:18:24,720
+so this is the notebook I created guys
+finetune model test now again just try
+
+293
+00:18:22,480 --> 00:18:27,600
+to install transformer accelerate that
+means all the required package then
+
+294
+00:18:26,000 --> 00:18:31,280
+after that just try to load your model
+right now the model actually you have
+
+295
+00:18:28,799 --> 00:18:36,480
+trained see this model just try to copy
+the name and just try to paste it here.
+
+296
+00:18:34,640 --> 00:18:39,039
+Okay. Then again I'm giving the same
+problem. What is the large language
+
+297
+00:18:37,600 --> 00:18:42,320
+model? I'm loading the tokenizer first
+of all. So inside this pipeline I'm
+
+298
+00:18:40,559 --> 00:18:46,559
+giving my model. Then after that you can
+see I'm creating the complete pipeline.
+
+299
+00:18:44,400 --> 00:18:49,360
+Then it is predicting and it is giving
+me the results. Now see this is the
+
+300
+00:18:47,919 --> 00:18:52,080
+results actually I'm getting. See
+although I have trained only one epoch
+
+301
+00:18:50,720 --> 00:18:55,600
+but if you see the results it's not
+actually bad. Somehow actually it has
+
+302
+00:18:54,000 --> 00:18:59,200
+given me the good output. Then again I
+have given another actually prompt. Now
+
+303
+00:18:57,600 --> 00:19:02,160
+see this is the results. I'm executing
+my model and this is the results
+
+304
+00:19:00,799 --> 00:19:06,559
+actually I'm getting. So the prompt is
+actually explain to me in a simple
+
+305
+00:19:04,720 --> 00:19:12,400
+simple to understand way what is the
+equation of finding the uh any triangle
+
+306
+00:19:09,840 --> 00:19:16,880
+number is is and how it can be provided
+by using the high school level math.
+
+307
+00:19:14,160 --> 00:19:20,799
+Please please give each step of the of a
+proof of using latex. See this is the
+
+308
+00:19:19,120 --> 00:19:24,720
+latex actually output I'm getting that
+means all the let's say mathematical
+
+309
+00:19:23,039 --> 00:19:28,559
+equation and everything it has given me
+as a latex. Now I can convert this latex
+
+310
+00:19:26,960 --> 00:19:31,919
+to the mathematical format and you can
+see that particular output. Okay. So
+
+311
+00:19:30,160 --> 00:19:35,600
+that's how actually we can also test our
+model and this is the entire process of
+
+312
+00:19:34,160 --> 00:19:38,799
+finetuning guys. Entire process of
+finetuning and see still training is
+
+313
+00:19:37,360 --> 00:19:42,240
+going on. You can see still training is
+going on and it has created the result
+
+314
+00:19:40,240 --> 00:19:45,280
+folder and inside result inside branch
+it will save the weights. Okay, it will
+
+315
+00:19:44,320 --> 00:19:48,799
+save the weights that means the
+artifacts. Fine. So yes guys that's how
+
+316
+00:19:47,360 --> 00:19:52,400
+actually you can perform the finetuning
+operation with the help of parameter
+
+317
+00:19:50,480 --> 00:19:56,400
+efficient finetuning. You can use either
+load either you can use q loader. Fine.
+
+318
+00:19:54,640 --> 00:19:59,919
+So now what you have to do guys just try
+to perform this finetuning and if you're
+
+319
+00:19:58,400 --> 00:20:03,440
+having any error if you are having any
+issue you can let me know in the comment
+
+320
+00:20:01,440 --> 00:20:07,120
+I'll try to help you with that okay to
+fix that particular error. Now apart
+
+321
+00:20:05,280 --> 00:20:10,000
+from that just go to the hugging face
+try to pick any other model guys. Go to
+
+322
+00:20:08,720 --> 00:20:13,919
+the hugging face and pick any other
+model. Not this llama 2 model. You can
+
+323
+00:20:11,919 --> 00:20:17,679
+also take llama 3 model. You can also
+take let's say mistral model, falcon
+
+324
+00:20:16,000 --> 00:20:21,840
+model. Any kinds of model you can take.
+Just go to the model section. Just find
+
+325
+00:20:20,160 --> 00:20:24,720
+a model and try to perform the
+finetuning process. Okay. You can use
+
+326
+00:20:23,520 --> 00:20:28,159
+the same technique to perform the
+finetuning process. Fine. So in future
+
+327
+00:20:26,640 --> 00:20:31,360
+I'll create some more video there
+actually I'll show you how we can
+
+328
+00:20:29,760 --> 00:20:34,799
+fine-tune any other model as well. Let's
+say you want to find tune the Jima model
+
+329
+00:20:33,280 --> 00:20:38,640
+how we can do it and all. Okay. We'll be
+creating some more video. But before
+
+330
+00:20:36,320 --> 00:20:41,919
+that first of all try to I mean export
+by yourself the way actually I showed
+
+331
+00:20:40,400 --> 00:20:45,520
+you the entire notebook I shared with
+you. Try to pick up any kinds of model
+
+332
+00:20:43,760 --> 00:20:48,799
+and try to follow the same okay
+technique to perform the finetuning
+
+333
+00:20:47,120 --> 00:20:54,000
+operation. So with that guys, thank you
+so much for watching this video. I hope
+
+334
+00:20:50,159 --> 00:20:54,000
+you've liked it. Uh thank you so much.
+

@@ -1,0 +1,805 @@
+1
+00:00:00,480 --> 00:00:05,920
+Hi everyone, welcome back. So guys, in
+this video we'll be learning uh how we
+
+2
+00:00:04,160 --> 00:00:09,679
+can let's say access this kinds of
+foundation model with our Python code.
+
+3
+00:00:08,240 --> 00:00:13,519
+That means we'll be setting everything
+in our local machine. We'll be writing
+
+4
+00:00:11,599 --> 00:00:18,000
+everything from our VS code. Okay. So
+what I'll do guys uh I'll open up my
+
+5
+00:00:15,440 --> 00:00:20,760
+local folder and here I have already
+created one empty folder. Let me open up
+
+6
+00:00:19,520 --> 00:00:25,199
+my VS
+code. Okay. So I'm also going to open up
+
+7
+00:00:23,199 --> 00:00:28,080
+my terminal here. And make sure you
+create one environment. So for me I
+
+8
+00:00:26,720 --> 00:00:33,600
+already created one environment. So let
+me activate. So ponda
+
+9
+00:00:29,880 --> 00:00:37,520
+activate llm app I think remember this
+uh environment we created previously. So
+
+10
+00:00:35,440 --> 00:00:42,800
+I'm using the same environment here and
+you can see the python version I'm using
+
+11
+00:00:39,280 --> 00:00:48,000
+it's 3.10. So you can use 3.9 3.8 it's
+up to you. Okay here then first thing
+
+12
+00:00:46,000 --> 00:00:51,760
+you have to set up the requirements. So
+let me create a file called
+
+13
+00:00:52,760 --> 00:00:59,960
+requirements txt. Inside that let me
+mention all the requirements actually I
+
+14
+00:00:56,800 --> 00:01:04,239
+need. So I need the
+langen then I also need streamlin
+
+15
+00:01:02,640 --> 00:01:08,920
+because I'm going to create a small
+let's say user interface here and I need
+
+16
+00:01:07,840 --> 00:01:14,640
+two more
+library boto3 and python.env python.nv I
+
+17
+00:01:13,280 --> 00:01:21,920
+think you know why we need it because we
+here we're going to create one env
+
+18
+00:01:18,520 --> 00:01:25,840
+file okayv file so inside that you have
+to mention the um I mean your secret
+
+19
+00:01:24,320 --> 00:01:29,680
+credential that means we'll be
+generating access key as access key and
+
+20
+00:01:27,680 --> 00:01:33,200
+AWS secret access key with the help of
+that we'll be authenticating with our
+
+21
+00:01:31,040 --> 00:01:36,799
+AWS account got it so we'll be uh
+keeping these are the key inside this
+
+22
+00:01:34,640 --> 00:01:40,960
+env file and to load it I need this
+pythonv and what is boto 3c with the
+
+23
+00:01:39,119 --> 00:01:44,560
+help of boto 3 python package we'll be
+making the connection with our
+
+24
+00:01:42,720 --> 00:01:48,320
+Okay. So this library will give you the
+functionality you can connect with your
+
+25
+00:01:46,079 --> 00:01:52,799
+AWS. Now let me set up everything in my
+environment. So I'll open it up and just
+
+26
+00:01:50,320 --> 00:01:52,799
+write pip
+
+27
+00:01:54,439 --> 00:01:57,439
+install
+
+28
+00:01:57,560 --> 00:02:03,840
+requirement.txt. Okay. For me it is
+already installed for you. It it will
+
+29
+00:02:01,920 --> 00:02:10,280
+take some time. Now the next thing what
+I have to do guys uh I have to create a
+
+30
+00:02:05,520 --> 00:02:10,280
+im user. So let's go to my AWS.
+
+31
+00:02:11,599 --> 00:02:19,520
+I'll go to the homepage and here you
+will see or you can also search IM okay
+
+32
+00:02:17,280 --> 00:02:23,200
+identity access management because I
+have to create a user and there actually
+
+33
+00:02:21,520 --> 00:02:28,560
+I will only give the permission related
+my bedrock now click on the
+
+34
+00:02:25,879 --> 00:02:32,680
+user now just create a user here I'll
+give let's say
+
+35
+00:02:29,879 --> 00:02:37,440
+bedrock
+test at
+
+36
+00:02:34,599 --> 00:02:41,599
+policy now search for bedrock I want to
+give the
+
+37
+00:02:38,440 --> 00:02:46,800
+bedrock Amazon bedrock full
+Now click on the next and create the
+
+38
+00:02:44,599 --> 00:02:51,360
+user. Then after that I'll click on
+bedrock test and go to the security
+
+39
+00:02:49,319 --> 00:02:55,200
+credential and here you'll get one
+option uh create access key. Just try to
+
+40
+00:02:53,120 --> 00:03:01,080
+click here. Uh select command line
+interface. I understand and click on the
+
+41
+00:02:58,360 --> 00:03:04,959
+next. Now create the access
+key. Now guys this is your access key
+
+42
+00:03:03,519 --> 00:03:08,720
+and this is your secret access key. Now
+you can also download as a CSV file. Let
+
+43
+00:03:06,720 --> 00:03:14,040
+me download. Now I have to configure it.
+So for this you have to install one tool
+
+44
+00:03:10,480 --> 00:03:19,920
+actually. So just search for AWS
+CLI. Okay. AWS CLI. This is the first
+
+45
+00:03:17,760 --> 00:03:23,280
+website you can open. So for all the
+operating system they have mentioned.
+
+46
+00:03:21,200 --> 00:03:27,360
+Okay. How we can install it. For Linux,
+Mac, Mac OS. Okay. See Linux you have to
+
+47
+00:03:25,280 --> 00:03:31,120
+execute some of the command. These are
+the command you have to execute. For Mac
+
+48
+00:03:29,440 --> 00:03:34,879
+OS also you have to execute some of the
+command. And for Windows you are having
+
+49
+00:03:32,640 --> 00:03:39,040
+one MSI file. So you can directly
+download this MSI file and you can you
+
+50
+00:03:36,959 --> 00:03:42,799
+can install. Okay. as a software that is
+the way you usually install any
+
+51
+00:03:40,799 --> 00:03:45,920
+software. Now next is next install. You
+have to do the same thing. After doing
+
+52
+00:03:44,400 --> 00:03:50,400
+it let me cancel it because I already
+have after doing it just try to open up
+
+53
+00:03:47,840 --> 00:03:54,640
+your terminal. Okay. And execute this
+command AWS
+
+54
+00:03:52,200 --> 00:03:57,280
+configure AWS configure. Now see if I
+execute it should give you this kinds of
+
+55
+00:03:56,159 --> 00:04:00,560
+window. If you're getting this kinds of
+window that means your installation is
+
+56
+00:03:58,879 --> 00:04:04,720
+fine. Now what I have to do guys I have
+to set this at the access key. Now just
+
+57
+00:04:02,720 --> 00:04:07,680
+try to copy the access key. Open the
+terminal and it is asking for the access
+
+58
+00:04:06,239 --> 00:04:11,519
+key. Just try to paste. Just right click
+it will paste and press enter. Then you
+
+59
+00:04:10,000 --> 00:04:15,280
+have to give the secret access key. Just
+try to copy. This is my secret access
+
+60
+00:04:12,879 --> 00:04:18,000
+key and I'll paste it here. And don't
+share guys this key with anyone
+
+61
+00:04:16,720 --> 00:04:21,040
+otherwise they will be also accessing
+your account. I will delete it after the
+
+62
+00:04:19,359 --> 00:04:24,880
+recording. And now it is asking for the
+reason. Now you can see which region you
+
+63
+00:04:23,120 --> 00:04:28,720
+are in. I'm inside Mumbai that means AP
+South one. So I have to give the reason.
+
+64
+00:04:26,800 --> 00:04:32,919
+So you just check which region you are
+working on. Based on that you can
+
+65
+00:04:29,919 --> 00:04:38,320
+decide. So AP
+South one. Now default output format
+
+66
+00:04:36,720 --> 00:04:42,800
+just keep it empty. Press enter. That's
+it. See my credential has been set. So
+
+67
+00:04:41,360 --> 00:04:49,919
+this was the first method. And the
+second method what you can do you can uh
+
+68
+00:04:45,919 --> 00:04:49,919
+I think you remember we created this
+
+69
+00:04:51,400 --> 00:04:58,880
+file. So here inside file also you can
+mention so let me show you. So inside
+
+70
+00:04:56,320 --> 00:05:04,320
+that you can mention AWS access key ID,
+secret key ID and region name. So let me
+
+71
+00:05:01,600 --> 00:05:07,120
+replace all of the secret key again.
+This is my access key
+
+72
+00:05:13,639 --> 00:05:18,080
+ID and this is my secret access
+
+73
+00:05:19,880 --> 00:05:28,720
+key and a south one. It's fine. Now let
+me save. Now here I'm going to create a
+
+74
+00:05:24,400 --> 00:05:32,080
+file. I'll name it as main dopy. inside
+that I'm going to do the coding. So here
+
+75
+00:05:30,880 --> 00:05:36,240
+first of all let's import some
+libraries. So these are the library I
+
+76
+00:05:33,680 --> 00:05:40,560
+need. Let me select my environment
+uh LLM app I'm using. Now here you can
+
+77
+00:05:38,880 --> 00:05:45,680
+see guys I'm importing bedrock from
+langen lang chain. Llm bedrock I'm
+
+78
+00:05:43,039 --> 00:05:51,520
+importing bedrock then lm chain then
+prompt template boto3 and streaml okay
+
+79
+00:05:49,120 --> 00:05:56,080
+then I need another package uh this uh
+one actually because I want to load this
+
+80
+00:05:54,000 --> 00:06:01,000
+at the credential and how to load guys I
+think remembered. So you have to use
+
+81
+00:05:58,080 --> 00:06:04,960
+this code snippet. So load
+envoering system with the help of
+
+82
+00:06:03,199 --> 00:06:08,319
+operating system we'll be loading these
+are the key okay from the environment
+
+83
+00:06:06,479 --> 00:06:13,199
+variable. Now here it will store
+everything. Now if I want to initialize
+
+84
+00:06:10,639 --> 00:06:16,800
+bedrock client so I have to use boto3.
+So this is the
+
+85
+00:06:14,600 --> 00:06:19,199
+syntax. If you go to the documentation
+you will see that they're using this
+
+86
+00:06:17,840 --> 00:06:23,120
+syntax bedrock client. You have to make
+a bedrock client. Now boto3 client you
+
+87
+00:06:21,840 --> 00:06:26,479
+have to mention the service name. I want
+to use bedrock. Okay. Bedrock services.
+
+88
+00:06:24,880 --> 00:06:30,319
+That's why I have given bedrock runtime.
+You have to give the region AWS access
+
+89
+00:06:28,479 --> 00:06:33,919
+key ID and secret key ID. So with the
+help of that it will authenticate with
+
+90
+00:06:31,600 --> 00:06:38,560
+your account. Okay, I hope it is clear.
+Now the next thing you have to give the
+
+91
+00:06:36,800 --> 00:06:44,639
+model ID like which model you want to
+access. I'll give the model ID is equal
+
+92
+00:06:42,199 --> 00:06:48,639
+to let's say I want to use one
+foundation model. Let's say I want to
+
+93
+00:06:47,280 --> 00:06:53,600
+use this Mistral model. I'll click on
+Mistral. Now you can see Mistl having
+
+94
+00:06:50,560 --> 00:06:57,840
+different different variants 7B 8X 7B
+then ML large. Now let's I want to use
+
+95
+00:06:56,479 --> 00:07:02,639
+seven bit instruct. So what I will do
+copy this model ID. So that's how just
+
+96
+00:07:00,720 --> 00:07:07,120
+try to open any kinds of model and copy
+the model ID and here you just need to
+
+97
+00:07:04,639 --> 00:07:11,680
+mention it. That's it. Okay. So it will
+automatically load this model. Now let's
+
+98
+00:07:08,880 --> 00:07:15,520
+create our LLM wrapper. So inside
+bedrock you have to give the model ID.
+
+99
+00:07:14,240 --> 00:07:19,840
+Okay. And here you have to give the
+bedrock
+
+100
+00:07:17,319 --> 00:07:23,039
+client. Okay. Client is equal to
+bedrock. Fine. And this is the
+
+101
+00:07:21,599 --> 00:07:26,240
+temperature parameter that means the
+creativity parameter. I think you
+
+102
+00:07:24,479 --> 00:07:30,400
+already know. Now here I'm going to
+create a
+
+103
+00:07:27,240 --> 00:07:35,039
+function. So this function will take the
+input from the user like in which
+
+104
+00:07:32,800 --> 00:07:38,319
+language they want to let's say uh get
+the output and what is the input prompt.
+
+105
+00:07:36,880 --> 00:07:42,400
+Okay. So this function will take this
+input. You can see language as well as
+
+106
+00:07:40,240 --> 00:07:44,880
+the user text. Then it is create then
+inside that I'm creating a prompt
+
+107
+00:07:43,599 --> 00:07:48,319
+template. I think you know what is
+prompt template right? So this is the
+
+108
+00:07:46,720 --> 00:07:51,919
+input variable language and user text
+and I'm creating a prompt template. you
+
+109
+00:07:49,680 --> 00:07:56,479
+are a chatbot and you are in this
+language and this user text. Now based
+
+110
+00:07:54,639 --> 00:08:00,560
+on that you have to give give me the
+response. Now here I'm creating a LLM
+
+111
+00:07:58,479 --> 00:08:05,199
+chain and I'm passing my LLM as well as
+the prompt and finally I'm passing my
+
+112
+00:08:02,800 --> 00:08:08,560
+language as well as the user input to my
+uh bedrock chain that means the chain I
+
+113
+00:08:06,879 --> 00:08:11,759
+actually have created. Okay, because
+inside that I'm having my large language
+
+114
+00:08:10,080 --> 00:08:16,759
+model as well as the prompt and whatever
+response I'm getting I'm just returning.
+
+115
+00:08:13,360 --> 00:08:23,280
+That's it. Now let me create a streaml
+title streaml let's say user interface
+
+116
+00:08:20,000 --> 00:08:27,759
+bedrock chatbot demo. Now user will also
+able to give the language. So let's say
+
+117
+00:08:26,000 --> 00:08:33,360
+here I'll take a language input from the
+user whether he want to get English
+
+118
+00:08:31,199 --> 00:08:36,320
+response Spanish response or Hindi
+response you can. So here you can also
+
+119
+00:08:34,640 --> 00:08:38,959
+pass any other language it will also
+work because I think you know these
+
+120
+00:08:37,519 --> 00:08:43,440
+kinds of large language model can also
+support multil- language. Then this is
+
+121
+00:08:40,880 --> 00:08:46,880
+my final logic. So if language is there
+so they will give the input that means
+
+122
+00:08:45,120 --> 00:08:49,839
+what kinds of question they want to ask
+then once they have let's say given the
+
+123
+00:08:48,320 --> 00:08:52,959
+prompt this particular prompt I'm
+checking first of all this uh they have
+
+124
+00:08:51,519 --> 00:08:56,480
+given the prompt or not if they have
+given I'm passing it to my my chatbot
+
+125
+00:08:54,720 --> 00:08:59,760
+you can see this function so it will
+take the language as well as the user
+
+126
+00:08:57,760 --> 00:09:02,880
+input language and user input and
+whatever response actually I'm getting
+
+127
+00:09:00,880 --> 00:09:06,399
+I'm writing in my streamlit application
+now let me execute and let me show
+
+128
+00:09:07,640 --> 00:09:16,120
+you I'll save it now simply I'll just
+open up my terminal and this is the
+
+129
+00:09:14,800 --> 00:09:20,560
+command
+streamlift run
+
+130
+00:09:20,920 --> 00:09:26,880
+main.py. So this is the interface guys.
+Now I can select the language. Let's say
+
+131
+00:09:24,480 --> 00:09:32,519
+I want to select the English. Now here I
+can ask any query. Let's say what
+
+132
+00:09:30,600 --> 00:09:36,800
+is
+Python. Now you just need to press shift
+
+133
+00:09:35,360 --> 00:09:41,120
+uh sorry you just need to press control
+and enter. So guys as you can see uh if
+
+134
+00:09:39,120 --> 00:09:44,480
+you give any kinds of prompt now here is
+the response. So here I have given what
+
+135
+00:09:42,560 --> 00:09:47,880
+is Python and here is the response I
+got. Now I can ask any kinds of query.
+
+136
+00:09:46,399 --> 00:09:53,720
+Let's say I will ask
+uh
+
+137
+00:09:50,600 --> 00:09:59,519
+uh give me a
+Python code to add two
+
+138
+00:10:01,320 --> 00:10:07,440
+numbers. See here I got the Python code
+to add the two numbers. Okay. So that's
+
+139
+00:10:05,600 --> 00:10:11,680
+how you can pass any kinds of prompt and
+you can uh get the response. It's
+
+140
+00:10:09,680 --> 00:10:16,720
+amazing guys and and here we are using
+mistral model. Okay, mistral model we
+
+141
+00:10:13,760 --> 00:10:20,240
+are using okay and it is present inside
+bedrock platform that's why this
+
+142
+00:10:18,480 --> 00:10:24,480
+inference time is very low. You will see
+that I'm getting very fast response but
+
+143
+00:10:22,480 --> 00:10:28,000
+whenever I was using mistral model I
+think you remember in hugging face okay
+
+144
+00:10:26,000 --> 00:10:32,399
+hugging face hub. So there I had to
+download this model in my system and the
+
+145
+00:10:30,079 --> 00:10:36,320
+execution time was like very slow there
+yes or no right. So that's why we have
+
+146
+00:10:34,399 --> 00:10:40,320
+to use this kinds of llm of platform if
+I'm implementing any kinds of project
+
+147
+00:10:37,920 --> 00:10:43,839
+efficient project okay in the industry.
+So yes guys now you can explore
+
+148
+00:10:42,640 --> 00:10:46,880
+different different kinds of model
+different different kinds of uh like
+
+149
+00:10:45,040 --> 00:10:50,959
+foundation model you can also explore
+quer model meta model anything you can
+
+150
+00:10:49,040 --> 00:10:55,920
+explore only just need to keep the model
+ID and everything you can access got it
+
+151
+00:10:53,519 --> 00:10:59,600
+so yes guys I hope uh it is clear now
+how we can use this bedrock platform and
+
+152
+00:10:58,000 --> 00:11:02,640
+if you want to get this kinds of content
+more so please try to support our
+
+153
+00:11:01,120 --> 00:11:06,240
+channel so please try to subscribe to
+the channel try to share this kinds of
+
+154
+00:11:04,720 --> 00:11:10,160
+content with your friends and family so
+that they can also get to know okay this
+
+155
+00:11:07,920 --> 00:11:13,360
+kinds of session is going on so Please
+try to support the channel guys. Try to
+
+156
+00:11:11,519 --> 00:11:16,320
+like the video. Try to subscribe to the
+channel. You can subscribe to the code
+
+157
+00:11:15,120 --> 00:11:19,519
+commander channel. Even you can also
+subscribe to my channel DS with Buppy.
+
+158
+00:11:18,320 --> 00:11:22,560
+Okay. Both channel actually I'm
+operating. You will see that in both
+
+159
+00:11:20,720 --> 00:11:26,480
+channels I'm creating lots of content
+related data science, machine learning,
+
+160
+00:11:24,640 --> 00:11:30,079
+geni, MLS. Okay. Entoend project
+implementation. Okay. Everything I'm
+
+161
+00:11:28,320 --> 00:11:32,880
+creating the content. So yes guys, this
+is all about I hope you liked it. So
+
+162
+00:11:31,680 --> 00:11:36,959
+thank you so much guys for watching this
+video and I will see you next time.
+

@@ -1,0 +1,241 @@
+1
+00:00:00,480 --> 00:00:06,960
+Hi guys, in this video I'll be talking
+about uh what are the skills are
+
+2
+00:00:04,480 --> 00:00:11,519
+required to become an LLM ops engineer.
+Okay, because many people has the
+
+3
+00:00:08,800 --> 00:00:18,279
+questions uh if I want to be a LM ops
+engineer, what are the skills I should
+
+4
+00:00:14,000 --> 00:00:25,039
+have? See to become LLM ops
+engineer, LLM ops engineer. LLM ops
+
+5
+00:00:25,560 --> 00:00:32,760
+engineer. So the first skill you should
+have LLM
+
+6
+00:00:31,199 --> 00:00:41,520
+uh
+fundamentals. Okay. Find the
+
+7
+00:00:37,239 --> 00:00:41,520
+mentals. Okay. And prompt
+
+8
+00:00:45,160 --> 00:00:52,640
+engineering. Prompt engineering. Okay.
+Uh because unless and until you are not
+
+9
+00:00:50,160 --> 00:00:56,559
+familiar with LLM uh fundamentals like
+what is large language model, how it
+
+10
+00:00:54,719 --> 00:01:00,559
+works, what is prompt engineering, how
+prompt works. Okay. Definitely you'll
+
+11
+00:00:58,079 --> 00:01:07,439
+have lots of confusion. Then you should
+have uh actually machine
+
+12
+00:01:03,479 --> 00:01:14,560
+learning machine learning
+uh and little bit NLP
+
+13
+00:01:11,240 --> 00:01:18,159
+concept okay NLP concepts like you
+should uh know like what is supervised
+
+14
+00:01:16,159 --> 00:01:23,280
+unsupervised learning and in NLP like
+what is let's say LSTM GRU encoder
+
+15
+00:01:20,960 --> 00:01:27,200
+decoder attention mechanism concept okay
+you should have these are the uh let's
+
+16
+00:01:25,360 --> 00:01:33,439
+say idea then transformer architecture
+overview you should know these are the
+
+17
+00:01:29,759 --> 00:01:33,439
+Then you should have knowledge
+
+18
+00:01:34,840 --> 00:01:43,759
+on then you should have knowledge on uh
+basics of
+
+19
+00:01:39,880 --> 00:01:48,079
+MLOps okay MLOps because inside MLOps
+actually we have different different
+
+20
+00:01:44,720 --> 00:01:51,840
+tools okay and it's not like that uh we
+won't be using any kinds of MLOps tools
+
+21
+00:01:49,759 --> 00:01:55,840
+here we will be using MLOps tools if I'm
+talking about it's a docker docker is
+
+22
+00:01:53,680 --> 00:01:59,799
+MLOps tools right we will be using okay
+in lm ops also then uh we have something
+
+23
+00:01:58,880 --> 00:02:05,280
+called
+MLflow we'll be also using that because
+
+24
+00:02:02,399 --> 00:02:07,920
+ML ops is a technology so there we'll be
+learning how to do the model
+
+25
+00:02:06,560 --> 00:02:10,319
+optimization whether it's a machine
+learning model whether it's a deep
+
+26
+00:02:08,959 --> 00:02:14,000
+learning model these are the thing
+you'll be learning and the same concept
+
+27
+00:02:11,920 --> 00:02:18,000
+you can apply in the LM ops okay only
+maybe some tools would be changing but
+
+28
+00:02:15,920 --> 00:02:20,959
+at the end the concept are same okay so
+MLOps knowledge is required little bit
+
+29
+00:02:19,680 --> 00:02:24,720
+of MLOps and here you'll be also
+learning some cloud platform like AWS
+
+30
+00:02:23,200 --> 00:02:29,200
+you'll be learning GCP you'll be
+learning Azure okay so cloud knowledge
+
+31
+00:02:27,040 --> 00:02:35,599
+required so cloud platform knowledge are
+required. Okay. At the end then then you
+
+32
+00:02:33,040 --> 00:02:38,239
+should then you should familiar with
+generative
+
+33
+00:02:38,360 --> 00:02:46,080
+AI. Generative AI okay generative uh
+product. So to build this kinds of
+
+34
+00:02:44,640 --> 00:02:52,560
+generative product what are the tools
+and technology we use? Let's say lang
+
+35
+00:02:47,760 --> 00:02:52,560
+chain. Okay. Lang chain then llama
+
+36
+00:02:52,760 --> 00:03:03,280
+index vector
+database rag. Okay. Fine
+
+37
+00:03:00,200 --> 00:03:06,440
+tuning. Uh then uh we also use something
+called um
+
+38
+00:03:05,440 --> 00:03:10,560
+uh
+agents. Okay. So these are the concept
+
+39
+00:03:08,879 --> 00:03:14,640
+you should familiar. Okay. If you're
+familiar with definitely uh learning
+
+40
+00:03:12,720 --> 00:03:18,319
+MLOps would be easy for you. Okay. And
+you will be become a good LM ops
+
+41
+00:03:16,400 --> 00:03:26,400
+engineer. Then once it is done you can
+start exporting LLM ops. Okay. LM ops.
+
+42
+00:03:22,959 --> 00:03:31,920
+So inside LM ops you can u uh like uh
+learn some LMOS tool. Okay. LM ops
+
+43
+00:03:29,480 --> 00:03:37,599
+tool. I already talked about the tools.
+I think you know that. Then some
+
+44
+00:03:34,440 --> 00:03:41,360
+platform platform. So platform wise I
+think you know that uh we have three
+
+45
+00:03:39,360 --> 00:03:45,440
+kinds of platform like bedrock is there,
+Vert.xi is there and as your open is
+
+46
+00:03:43,120 --> 00:03:50,319
+there. Okay you can master all of them.
+So yes guys uh these are the skills are
+
+47
+00:03:47,599 --> 00:03:55,040
+required uh if you want to be a LMOS
+engineer okay and uh we'll try to learn
+
+48
+00:03:53,519 --> 00:04:00,159
+these are the tools and these are the
+platform uh in this particular program.
+
+49
+00:03:57,040 --> 00:04:00,159
+Thanks for watching.
+

@@ -1,0 +1,737 @@
+1
+00:00:00,080 --> 00:00:06,640
+So let's try to set up this MLFlow
+server on top of our EC2 instance. So
+
+2
+00:00:04,640 --> 00:00:09,679
+make sure guys you have the AWS account.
+For me I already have. If you don't have
+
+3
+00:00:08,080 --> 00:00:13,759
+the account so please try to create one
+account. Uh you have to add your card.
+
+4
+00:00:12,160 --> 00:00:17,119
+Okay. And initially it will deduct
+actually very less amount of money at
+
+5
+00:00:15,280 --> 00:00:21,439
+least two to three rupees and you'll be
+getting $300 free credits. Okay. So once
+
+6
+00:00:19,840 --> 00:00:25,359
+account is ready then you'll be getting
+this kinds of window. Okay. After login.
+
+7
+00:00:23,359 --> 00:00:29,679
+So here what I need to do first of all
+guys uh I already mentioned here. So
+
+8
+00:00:27,359 --> 00:00:33,200
+here if you go to this uh GitHub link.
+So in the readmi file I already
+
+9
+00:00:32,000 --> 00:00:36,719
+mentioned first of all you have to log
+into the console. I already logged in.
+
+10
+00:00:35,040 --> 00:00:41,920
+Then you have to create the IM user with
+the administrator access. Okay. So let
+
+11
+00:00:39,360 --> 00:00:46,640
+us try to create the IM user. So I'll go
+inside my AWS and make sure you selected
+
+12
+00:00:44,160 --> 00:00:50,640
+your region. So I am inside US one that
+means not Virginia. So if you are in
+
+13
+00:00:48,640 --> 00:00:54,960
+other region you can select that one but
+I will suggest go with this particular
+
+14
+00:00:52,160 --> 00:01:00,680
+region. Okay. Uh US East one. So here I
+will search for
+
+15
+00:00:56,680 --> 00:01:05,760
+IM. So here uh click on the
+user. So previously I already created
+
+16
+00:01:03,199 --> 00:01:09,720
+one user. So what I can do I can uh
+delete it or let's keep it. Okay. I will
+
+17
+00:01:07,840 --> 00:01:17,840
+create a new
+user. I'll give the username. Let's
+
+18
+00:01:13,960 --> 00:01:17,840
+say MLflow
+
+19
+00:01:18,280 --> 00:01:27,360
+server. Okay. Uh click on
+next. Then you have to add the policy.
+
+20
+00:01:25,280 --> 00:01:31,520
+So uh click here attach policies
+directly. Now here you have to select
+
+21
+00:01:29,360 --> 00:01:35,200
+the administrator access. Okay. Now
+below you'll see one button. Okay. Next.
+
+22
+00:01:33,360 --> 00:01:38,320
+Uh I think you can't see because of me
+but uh just right hand side below you'll
+
+23
+00:01:36,880 --> 00:01:42,159
+see there there is a next button. Just
+try to click here. Then after that uh
+
+24
+00:01:40,799 --> 00:01:45,680
+you have to create the user. So right
+hand side again below you will see the
+
+25
+00:01:43,600 --> 00:01:48,880
+create user option. Let's try to create
+the
+
+26
+00:01:46,439 --> 00:01:52,360
+user. So guys as you can see I have
+created the user. So let's go inside
+
+27
+00:01:50,399 --> 00:01:56,320
+that. Now click on the security
+credential. And here you will see one
+
+28
+00:01:54,720 --> 00:02:00,560
+option called access keys. Okay. So
+click on the create access keys. Select
+
+29
+00:01:58,240 --> 00:02:05,360
+the command line interface CLI and I
+understand uh the above recommendation.
+
+30
+00:02:02,799 --> 00:02:08,479
+Then click on next. Okay. So here let's
+create the key right now. So this is my
+
+31
+00:02:07,119 --> 00:02:11,840
+access key and this is my secret access
+key. Okay. And you need it to
+
+32
+00:02:09,599 --> 00:02:17,200
+authenticate with your accounts. Fine.
+So I will download as a CSV file because
+
+33
+00:02:14,080 --> 00:02:20,879
+later on I also need that. Got it? Okay.
+It's completed. Now what I will do guys?
+
+34
+00:02:18,959 --> 00:02:25,040
+Uh now again I will get back. Now it is
+telling export the credential in your AW
+
+35
+00:02:23,120 --> 00:02:28,319
+CLI as configure. We'll do it later
+whenever we'll execute the code that
+
+36
+00:02:26,720 --> 00:02:32,959
+time we'll try to do. Then I have to
+create the S3 bucket. Okay, S3 bucket to
+
+37
+00:02:30,720 --> 00:02:36,560
+store my artifact. Okay, that means
+whatever artifact would be generated.
+
+38
+00:02:34,560 --> 00:02:40,319
+Let's say my model. Okay, and I think
+you saw the MLflow. MLFlow also
+
+39
+00:02:38,160 --> 00:02:44,239
+registered the model, right? With all
+the configuration and all. So everything
+
+40
+00:02:42,080 --> 00:02:47,200
+will actually track in the S3 bucket.
+Okay, everything all the artifact will
+
+41
+00:02:45,760 --> 00:02:50,680
+save in the S3 bucket. So for this we
+have to create the bucket. So let's
+
+42
+00:02:48,560 --> 00:02:54,879
+create the bucket. I will uh go to the
+AWS and here you can search for
+
+43
+00:02:59,319 --> 00:03:05,959
+S3. So this is my S3. Now let's create a
+bucket. So here give the bucket name. So
+
+44
+00:03:04,640 --> 00:03:12,800
+here I will give
+U
+
+45
+00:03:08,120 --> 00:03:12,800
+MLflow. Okay, MLflow
+
+46
+00:03:12,920 --> 00:03:20,720
+bucket and 25. Okay, you have to give a
+unique name otherwise it won't be
+
+47
+00:03:18,319 --> 00:03:24,959
+working because uh S3 is a global
+service. You have to take the unique
+
+48
+00:03:22,599 --> 00:03:28,040
+name. Then everything just keep it
+default. No need to change
+
+49
+00:03:26,519 --> 00:03:32,519
+anything.
+Uh or you can also remove this option
+
+50
+00:03:31,120 --> 00:03:37,360
+and I
+acknowledge then I will create the
+
+51
+00:03:40,680 --> 00:03:46,640
+bucket. So guys as you can see my bucket
+has also created. Okay. Now the next
+
+52
+00:03:45,280 --> 00:03:52,640
+thing what I have to do I have to create
+a EC2 machine. Okay. Then we have to set
+
+53
+00:03:49,120 --> 00:03:56,000
+up uh our um MLflow server. Okay. Inside
+that and we have to add the uh port
+
+54
+00:03:54,720 --> 00:04:01,959
+number there. We have to do the port
+mapping. So how to do it? Let's do it.
+
+55
+00:03:57,519 --> 00:04:04,959
+So I'll get back to my AWS. Search for
+EC2.
+
+56
+00:04:08,840 --> 00:04:17,199
+EC2. So here uh let's launch one
+instance. I'll click on launch
+
+57
+00:04:14,920 --> 00:04:22,079
+instance. Then let's give the name. I
+will give
+
+58
+00:04:18,199 --> 00:04:24,720
+MLflow server or MLflow machine.
+Anything you can
+
+59
+00:04:25,479 --> 00:04:34,120
+give. So let's select the
+Ubuntu and uh the LTS version I will
+
+60
+00:04:31,120 --> 00:04:40,080
+take this one 24 uh
+04 and the instance type let's take at
+
+61
+00:04:36,960 --> 00:04:43,520
+least 4 GB RAM. So I'll take T2 medium
+instance. Okay. You can select the key
+
+62
+00:04:42,160 --> 00:04:46,759
+value pair. If you don't have, you can
+create it. Okay, let's create one. So,
+
+63
+00:04:45,199 --> 00:04:51,360
+I'll give let's say
+ML4 and let's create the pair. Uh, so
+
+64
+00:04:49,840 --> 00:04:54,960
+you need this particular PM file
+whenever you want to access your machine
+
+65
+00:04:53,280 --> 00:04:58,720
+through some third party tool like puty
+and mobile extreme. But I'm not going to
+
+66
+00:04:56,400 --> 00:05:01,520
+use them. I'm going to directly open my
+terminal. Okay, in the as console
+
+67
+00:05:00,160 --> 00:05:04,800
+itself, I'll tell you, okay, how to do
+it. But it's a mandatory to select here
+
+68
+00:05:03,520 --> 00:05:09,680
+otherwise it won't be working. That's
+why we have created. Now, uh let's uh
+
+69
+00:05:07,199 --> 00:05:15,199
+allow HTTPS and HTTP traffic from the
+internet. Now configuration storage here
+
+70
+00:05:12,479 --> 00:05:19,680
+uh let's at least take 30 GB okay 30GB
+or we can also take less than that but
+
+71
+00:05:17,280 --> 00:05:22,720
+let's take 30GB. So once this is done uh
+right hand side below you'll see one
+
+72
+00:05:21,120 --> 00:05:28,000
+option called launch instance. Okay just
+try to click here. So yeah it will
+
+73
+00:05:25,600 --> 00:05:28,000
+launch the
+
+74
+00:05:28,600 --> 00:05:36,639
+instance. Okay now I'll click on view
+all instance again uh bes beside me.
+
+75
+00:05:34,960 --> 00:05:39,840
+Okay beside my video you'll see that
+view all instance. Just try to click
+
+76
+00:05:38,320 --> 00:05:44,720
+here.
+Now see your uh machine is running.
+
+77
+00:05:42,080 --> 00:05:48,000
+Okay. Now what you can do go inside the
+machine and there is a connect button.
+
+78
+00:05:46,080 --> 00:05:51,759
+Okay. Just click on the connect and
+let's connect the machine. So it will
+
+79
+00:05:49,360 --> 00:05:56,000
+open up a black terminal for you and
+inside that we have to set up all the
+
+80
+00:05:53,680 --> 00:05:59,600
+configuration one by one. So all the
+commands I have mentioned here. So we
+
+81
+00:05:57,520 --> 00:06:02,960
+can copy one by one and you can execute.
+Okay. I'll tell you how to do
+
+82
+00:06:03,000 --> 00:06:10,240
+it. So this is my terminal I got. I
+think you can see now. Let me install
+
+83
+00:06:08,880 --> 00:06:14,960
+everything one by one. First of all,
+let's update my machine. I'll copy the
+
+84
+00:06:12,000 --> 00:06:14,960
+first command and let's
+
+85
+00:06:27,319 --> 00:06:35,199
+execute. It's done. Now, let's copy the
+second one. So, we are installing Python
+
+86
+00:06:36,199 --> 00:06:41,360
+here. and I'll give the yes permission
+and press
+
+87
+00:06:44,759 --> 00:06:52,479
+enter. So it's completed. Now let's copy
+the second one. Uh sorry, third commands
+
+88
+00:06:50,000 --> 00:06:52,479
+and let's
+
+89
+00:06:52,759 --> 00:07:00,479
+execute. So I'm installing pip env. So
+again give uh y to
+
+90
+00:07:03,720 --> 00:07:12,479
+continue. Okay, it is also done. Now
+I'll copy the next one. I need virtual
+
+91
+00:07:09,520 --> 00:07:12,479
+in ENV.
+
+92
+00:07:16,440 --> 00:07:22,039
+Okay. Then let's create a directory
+called MLO.
+
+93
+00:07:24,800 --> 00:07:29,039
+Now I need to go inside that particular
+
+94
+00:07:31,639 --> 00:07:41,000
+directory and inside that I'm going to
+install the MLflow with the help of PNV.
+
+95
+00:07:37,280 --> 00:07:41,000
+Let's install the MLflow.
+
+96
+00:07:55,199 --> 00:08:03,360
+So it's completed. Now I'll install the
+AWS
+
+97
+00:07:58,680 --> 00:08:08,319
+CLI because uh I have to access my S3
+bucket. Okay. Uh because uh your MLFlow
+
+98
+00:08:06,000 --> 00:08:13,520
+will uh store all the artifacts in the
+S3. So uh it has to communicate with the
+
+99
+00:08:11,199 --> 00:08:17,759
+S3 from the EC2 instance. So to make the
+connection I need AWS CLI. There I will
+
+100
+00:08:16,080 --> 00:08:20,720
+add the credential. The credential I
+have downloaded AWS secret can access
+
+101
+00:08:19,360 --> 00:08:25,039
+key. With the help of that it will
+configure. Okay. So let's do it.
+
+102
+00:08:29,440 --> 00:08:36,279
+Okay. So it is also done. Now I will
+install something called boto3. So let
+
+103
+00:08:34,880 --> 00:08:42,159
+me install
+boto3. So boto3 helps us to actually
+
+104
+00:08:39,519 --> 00:08:46,399
+communicate with the AWS. Okay. Um
+client. So let's install boto 3 as
+
+105
+00:08:47,160 --> 00:08:54,720
+well. Okay guys. So I installed the bo
+3. Now let's uh activate my
+
+106
+00:08:55,959 --> 00:09:04,959
+shell. So MLflow has been activated. You
+can see. Okay, let me clear the
+
+107
+00:09:00,760 --> 00:09:08,880
+terminal. So yeah, now I'll do the AWS
+configure. Uh that mean I have to set my
+
+108
+00:09:07,120 --> 00:09:12,240
+access key and secret key. So let's do
+it. So it is asking for the access key.
+
+109
+00:09:10,959 --> 00:09:16,640
+So where you will get the access key
+guys remember. So we downloaded one CSV
+
+110
+00:09:14,320 --> 00:09:22,560
+file. So this is the CSV file. Let me
+open in a
+
+111
+00:09:18,640 --> 00:09:25,760
+uh editor and make sure guys uh uh you
+keep this particular secret file safe.
+
+112
+00:09:24,399 --> 00:09:29,360
+If you are sharing with anyone, they
+will be able to access your machine. So
+
+113
+00:09:27,519 --> 00:09:33,680
+here I'm showing you because after the
+recording I'll try to delete it. So
+
+114
+00:09:31,279 --> 00:09:37,920
+let's paste. So this is my access key
+ID. Now I have to give the secret access
+
+115
+00:09:36,240 --> 00:09:44,080
+key ID. So again this is my secret
+access key. I'll copy and here let's try
+
+116
+00:09:41,440 --> 00:09:48,640
+to paste. Now it is asking for the
+region. So I told you I'm inside US East
+
+117
+00:09:46,480 --> 00:09:51,959
+one that means not Virginia. Okay. So I
+have to give the same ID. So let's write
+
+118
+00:09:50,800 --> 00:09:57,640
+it should be
+US East one. You are giving the same
+
+119
+00:09:56,240 --> 00:10:02,720
+name. Okay. Otherwise it won't be
+working. Now it is asking for the output
+
+120
+00:09:59,920 --> 00:10:07,760
+format. I'll keep default. Press enter.
+So my credential has been set. Now
+
+121
+00:10:05,279 --> 00:10:11,600
+finally we can start the MLflow server.
+Okay. Finally we can start the MLflow
+
+122
+00:10:09,600 --> 00:10:15,680
+server. So to start the MLflow server,
+this is the command you have to execute.
+
+123
+00:10:13,120 --> 00:10:19,519
+Okay. But here you just need to do one
+modification. So here you have to give
+
+124
+00:10:17,440 --> 00:10:22,200
+the S3 bucket name. So I think remember
+we created a bucket. So let me show you
+
+125
+00:10:21,360 --> 00:10:26,000
+my
+bucket. Uh I'll go to the
+
+126
+00:10:27,399 --> 00:10:36,320
+S3. So this is my bucket name. Okay.
+MLflow bucket
+
+127
+00:10:32,440 --> 00:10:40,200
+25. I'll copy and here I'll try to paste
+it. Okay. Now this is the command you
+
+128
+00:10:37,839 --> 00:10:46,399
+have to execute guys. Okay. Let's
+copy and in my machine I'll execute the
+
+129
+00:10:44,000 --> 00:10:53,440
+command. So it should work. Let's see.
+But one thing uh this MLflow runs on
+
+130
+00:10:49,279 --> 00:10:56,800
+this uh port number uh 5,000. Okay. But
+we haven't set the port number 5,000. So
+
+131
+00:10:55,440 --> 00:11:00,399
+we have to do the port mapping. How to
+do it? Go to the security and here you
+
+132
+00:10:59,040 --> 00:11:03,399
+will see one option called security
+groups.
+
+133
+00:11:05,519 --> 00:11:12,560
+Then uh right hand side you can see edit
+inbound rules and let's add one rules
+
+134
+00:11:10,480 --> 00:11:17,839
+here. Then I will uh select custom TCP
+and port number 5,000. Okay. Then select
+
+135
+00:11:15,920 --> 00:11:21,519
+the 00. That means you want to access
+this machine from anywhere and right
+
+136
+00:11:19,760 --> 00:11:26,880
+hand side just uh beside me you'll see
+one option called save rules.
+
+137
+00:11:23,959 --> 00:11:31,360
+Okay. So my 5,000 port has been set.
+Okay. Now what I need to do I need to go
+
+138
+00:11:28,800 --> 00:11:35,600
+inside my instance. So this is my
+instance and here you will see one
+
+139
+00:11:32,560 --> 00:11:41,360
+option called public. Okay. uh IP v uh
+v4 okay this particular URL just try to
+
+140
+00:11:37,519 --> 00:11:46,560
+copy and here you can paste and just uh
+after that you have to give clone 5,000
+
+141
+00:11:44,000 --> 00:11:53,360
+okay now if I hit enter so it should
+open my machine but it won't be opening
+
+142
+00:11:48,920 --> 00:11:57,839
+because here it is opening https okay uh
+okay sorry it it has opened because by
+
+143
+00:11:55,360 --> 00:12:02,959
+default see if I copy the URL one thing
+I want to tell you and if I paste in a
+
+144
+00:12:00,800 --> 00:12:07,680
+different window see it is http but if
+you for you if It is coming https okay
+
+145
+00:12:05,360 --> 00:12:10,320
+that time you have to remove the s okay
+then you have to press enter then it
+
+146
+00:12:09,040 --> 00:12:13,600
+will open the mlflow server okay
+otherwise it won't be working so once
+
+147
+00:12:12,079 --> 00:12:16,720
+mlflow server is open you will be
+getting this kinds of window and if
+
+148
+00:12:15,200 --> 00:12:20,639
+you're getting this kinds of window
+congratulation you have successfully
+
+149
+00:12:18,079 --> 00:12:22,880
+installed mlflow in your easy to
+instance
+

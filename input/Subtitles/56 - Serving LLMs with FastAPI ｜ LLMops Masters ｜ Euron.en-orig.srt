@@ -1,0 +1,577 @@
+1
+00:00:00,640 --> 00:00:08,800
+Hello guys, now I will show you how we
+can uh actually uh serve and inference
+
+2
+00:00:06,480 --> 00:00:13,759
+uh the large language model uh with the
+help of this fast API. Uh I think you
+
+3
+00:00:10,960 --> 00:00:17,520
+remember previously I also showed you
+how we can serve the model with help of
+
+4
+00:00:15,440 --> 00:00:22,800
+MLflow. From there I did the inference.
+Uh now let's uh try to uh create one
+
+5
+00:00:20,080 --> 00:00:26,800
+rest API and we'll try to create some
+route and with the help of this route
+
+6
+00:00:24,320 --> 00:00:30,599
+you can access your model. Okay. So let
+me show you the entire demo how we can
+
+7
+00:00:28,400 --> 00:00:34,160
+use fast API uh for this particular
+development. Uh you have to create one
+
+8
+00:00:32,719 --> 00:00:37,360
+environment. Okay, you have to create
+one cond environment here. So for me I
+
+9
+00:00:36,239 --> 00:00:42,559
+already have the environment. Let me
+show you. So env list. Okay. So here
+
+10
+00:00:41,360 --> 00:00:46,079
+previously I already created one
+environment called llm app. But if you
+
+11
+00:00:44,399 --> 00:00:53,840
+don't have the environment for this you
+can write this command. So panda
+
+12
+00:00:49,800 --> 00:00:57,079
+create okay hyphen in
+uh then you can give the name of the
+
+13
+00:00:55,920 --> 00:01:03,039
+environment let's say
+llm app then you can also specify the
+
+14
+00:01:00,239 --> 00:01:06,159
+python version python is equal to 3.11
+okay then hyphen y so this is the
+
+15
+00:01:04,799 --> 00:01:09,520
+command guys you have to execute once
+you run the command it will create the
+
+16
+00:01:07,760 --> 00:01:15,080
+environment for you now for me I already
+have it so I'll just try to activate so
+
+17
+00:01:12,439 --> 00:01:21,280
+ponda
+activate lm
+
+18
+00:01:17,640 --> 00:01:27,520
+app. Okay. And if you see the version of
+the Python, it's 3.11. So now let me do
+
+19
+00:01:24,799 --> 00:01:31,439
+the exit operation. Okay. Fine. Now what
+I'll do guys, I'll just try to create
+
+20
+00:01:29,119 --> 00:01:37,840
+the folder structure. So the first thing
+uh you need the requirement.txt file. So
+
+21
+00:01:34,159 --> 00:01:37,840
+let's create a file called
+
+22
+00:01:39,640 --> 00:01:47,799
+requirement. Okay. TXT. Then the second
+file you need called schema.py.
+
+23
+00:01:50,600 --> 00:01:54,159
+files schema I
+
+24
+00:01:55,479 --> 00:02:01,119
+think then third file you need called
+model
+
+25
+00:02:01,960 --> 00:02:10,800
+loader
+dopy and the final file unit called
+
+26
+00:02:07,080 --> 00:02:15,120
+main.py. So these are the like uh files
+I need okay for this particular demo.
+
+27
+00:02:13,120 --> 00:02:19,840
+Now guys what I will do first of all I
+will just mention all the requirements I
+
+28
+00:02:17,040 --> 00:02:23,440
+need here for this particular demo. So
+these are the requirement I need. I'm
+
+29
+00:02:21,200 --> 00:02:28,080
+installing the first API uon to run the
+first uh first API let's say file then
+
+30
+00:02:26,080 --> 00:02:30,640
+uh transformer because I'm going to uh
+use the large language model from the
+
+31
+00:02:29,520 --> 00:02:34,800
+hugging face. For this I need the
+transformer and dependency wise you need
+
+32
+00:02:32,560 --> 00:02:38,720
+the pytorch then pyic for the schema
+management. Okay. Now let me install all
+
+33
+00:02:36,879 --> 00:02:42,400
+the package. So to install the package
+you have to run this command. So pep
+
+34
+00:02:40,319 --> 00:02:48,319
+install
+uh pep install -
+
+35
+00:02:45,080 --> 00:02:51,519
+r requirements. Okay, requirement.txt.
+So it will install everything for me. I
+
+36
+00:02:50,480 --> 00:02:54,720
+it is already installed because
+previously I already installed for you.
+
+37
+00:02:52,720 --> 00:02:59,120
+It will take some time. Okay. So once it
+is done now start writing the code. So
+
+38
+00:02:56,879 --> 00:03:03,440
+first of all I'll write the schema.py.
+So here we have to write a schema. Okay.
+
+39
+00:03:01,760 --> 00:03:08,000
+schema means let's say I'll be using a
+large language model and uh you know
+
+40
+00:03:05,360 --> 00:03:12,080
+that uh we can also provide some
+parameter to the llm like prompt maximum
+
+41
+00:03:10,480 --> 00:03:16,720
+length temperature value okay these are
+the thing so what I can do I can create
+
+42
+00:03:14,319 --> 00:03:20,239
+a template schema template and from
+there I can get that particular let's
+
+43
+00:03:18,560 --> 00:03:25,040
+say information so for this I'll be
+using pentic library so you can see
+
+44
+00:03:22,319 --> 00:03:29,040
+pyntic is a library in python and uh I'm
+importing something called base model so
+
+45
+00:03:26,640 --> 00:03:32,720
+here I'm going to create a class so the
+class name would be generate request and
+
+46
+00:03:31,200 --> 00:03:36,159
+I'm inheriting with the base model and
+inside that I have some parameter like
+
+47
+00:03:34,159 --> 00:03:39,599
+prompt, maximum length and temperature.
+So prompt I'll be taking from the user
+
+48
+00:03:37,920 --> 00:03:42,319
+maximum length it is already set and
+temperature it is also set. I think you
+
+49
+00:03:41,040 --> 00:03:46,080
+know these are the parameter right
+temperature means this is the creativity
+
+50
+00:03:44,560 --> 00:03:50,159
+like parameter of the large language
+model. Then I'm going to create another
+
+51
+00:03:47,599 --> 00:03:53,519
+class. So this will give you the
+generation response. Okay that means
+
+52
+00:03:51,840 --> 00:03:56,959
+whatever generated text your model will
+try to return it will try to return.
+
+53
+00:03:55,280 --> 00:04:01,200
+Okay with respect to this particular
+class. Now uh this schema is ready. Now
+
+54
+00:03:59,760 --> 00:04:04,799
+we'll be writing the model loader. So
+inside model loader what we'll do? We'll
+
+55
+00:04:02,879 --> 00:04:09,680
+just try to load the model. So here I'm
+going to load one model called GPT2. So
+
+56
+00:04:07,439 --> 00:04:14,439
+here if I go to the hugging face. So
+here you will see the model section. Now
+
+57
+00:04:11,680 --> 00:04:18,639
+here what you can do you can search like
+GPT2. Okay GPT2. See this is the model
+
+58
+00:04:17,040 --> 00:04:23,759
+will be loading. So how to load this
+model? So here you can load like that.
+
+59
+00:04:20,880 --> 00:04:28,400
+First of all import uh the pipeline from
+the transformer. Then you can load the
+
+60
+00:04:26,479 --> 00:04:31,520
+model like that. Okay. So here this is
+the text generation model. So here in
+
+61
+00:04:30,080 --> 00:04:35,120
+the pipeline I'm giving T generation.
+Okay. Because I want to perform the text
+
+62
+00:04:32,800 --> 00:04:38,400
+generation and GPT model I'm loading GP2
+model. I'm loading and this will give
+
+63
+00:04:36,160 --> 00:04:41,919
+you the generator object. Okay. So once
+it is done now I'm going to write the
+
+64
+00:04:39,840 --> 00:04:44,880
+main file called main.py. So here first
+of all we'll be initializing the first
+
+65
+00:04:43,440 --> 00:04:49,440
+API and we'll be importing all the
+necessary library. So you can see I'm
+
+66
+00:04:46,639 --> 00:04:52,960
+importing the first API and from the
+schema I am importing this class and
+
+67
+00:04:51,440 --> 00:04:58,240
+this class. Okay, both I'm importing you
+can see. Then from the model loader, I'm
+
+68
+00:04:55,680 --> 00:05:00,919
+loading my generator model object. Okay.
+So once it is ready, I'll be
+
+69
+00:04:59,520 --> 00:05:06,479
+initializing the first
+API. So I will give a title actually
+
+70
+00:05:03,520 --> 00:05:10,400
+like LLM inference API and you have to
+give like that. Then I'll be creating a
+
+71
+00:05:08,479 --> 00:05:14,479
+default route. So once you hit the first
+API now you execute the first API app
+
+72
+00:05:12,479 --> 00:05:18,000
+you it will launch this particular
+route. Okay. So here you will be getting
+
+73
+00:05:16,000 --> 00:05:22,240
+one message called LM inference API is
+running. Now let me show you to run this
+
+74
+00:05:20,240 --> 00:05:28,240
+open up your terminal and this is the
+command. So, Gunicon uh ev main because
+
+75
+00:05:26,560 --> 00:05:34,160
+we are running the main.py file and
+inside that we have app. Okay, our flask
+
+76
+00:05:31,440 --> 00:05:38,400
+first API we have initialized as an app.
+So, we are running app and hypnoord.
+
+77
+00:05:36,639 --> 00:05:42,479
+Now, if I execute you'll see that your
+application would be running. It is
+
+78
+00:05:40,400 --> 00:05:46,840
+running on local port number 8,000. Now,
+if I come here and search for local port
+
+79
+00:05:45,680 --> 00:05:51,240
+number
+8,000. Okay, 8,000.
+
+80
+00:05:51,280 --> 00:05:57,440
+So you'll be able to see that message
+LLM inference API is running and it will
+
+81
+00:05:55,520 --> 00:06:01,199
+download the model. Okay, for me my
+model got already downloaded the GPT2
+
+82
+00:05:59,360 --> 00:06:04,160
+model. But uh if you're doing it for the
+first time, you will see one loading
+
+83
+00:06:02,320 --> 00:06:07,759
+option. Okay, model will be downloading
+from the internet. So everything is
+
+84
+00:06:05,919 --> 00:06:11,759
+running fine. Now we'll be writing the
+uh main route. Okay, the route a user
+
+85
+00:06:09,840 --> 00:06:16,400
+will hit to get the generate response.
+So this is the route guys I have created
+
+86
+00:06:14,000 --> 00:06:20,000
+and all the code example uh you will be
+getting from the uh first API
+
+87
+00:06:18,080 --> 00:06:22,720
+documentation they have given. Okay,
+like that's how we have to create the
+
+88
+00:06:21,120 --> 00:06:26,800
+route. So this is the route guys,
+generate. So once you hit the generate
+
+89
+00:06:24,560 --> 00:06:31,120
+routes, what it will do? It will run the
+generation model and uh it will get the
+
+90
+00:06:29,360 --> 00:06:35,600
+prompt max length, temperature and
+number returns uh uh sequence. Okay. Now
+
+91
+00:06:34,160 --> 00:06:38,400
+prompt I will be getting from the user.
+Okay. There we'll be getting a input
+
+92
+00:06:36,960 --> 00:06:42,800
+box. From there we'll be give the prompt
+and prompt will come here. That's why we
+
+93
+00:06:40,240 --> 00:06:47,199
+are using the pentic class. Okay. Now
+once I got the generation response, I'll
+
+94
+00:06:44,560 --> 00:06:51,960
+also try to show in the uh first API
+console. So now let me show you how it
+
+95
+00:06:48,880 --> 00:06:59,400
+will work. So for this uh I'll come
+here uh and I will try to reload. Now
+
+96
+00:06:56,639 --> 00:07:03,759
+here you have to give
+/docs. So see this is the interface of
+
+97
+00:07:01,840 --> 00:07:07,599
+your first API. Okay. By default you'll
+be getting a web app like that. Now this
+
+98
+00:07:05,759 --> 00:07:10,720
+is the route I'll be hitting. Now here
+and this is the post request. Okay. You
+
+99
+00:07:09,199 --> 00:07:14,840
+have to get the post request. Now click
+on try it out. And here you can pass the
+
+100
+00:07:12,560 --> 00:07:19,759
+prompt. So let's say prompt twice I will
+give once upon a
+
+101
+00:07:17,400 --> 00:07:23,120
+time. So it will complete the text
+because it's a text generation model. I
+
+102
+00:07:21,680 --> 00:07:27,199
+can also change the max length and
+temperature parameter if you want. Now
+
+103
+00:07:24,880 --> 00:07:31,520
+if I click on execute so it will give me
+the response. So guys here I got the
+
+104
+00:07:29,759 --> 00:07:36,319
+response. You can see generated text. So
+once upon a time okay our university was
+
+105
+00:07:33,840 --> 00:07:40,080
+uh ruled by the by one man and blah blah
+blah. That means it is giving me the
+
+106
+00:07:38,000 --> 00:07:45,360
+complete okay completion of that
+particular sentence. Okay. So that's how
+
+107
+00:07:42,560 --> 00:07:49,599
+guys we have created our custom API and
+we can hit any kinds of route right now.
+
+108
+00:07:47,520 --> 00:07:53,520
+Okay. And uh we can easily do the
+inference with our large language model.
+
+109
+00:07:51,360 --> 00:07:56,800
+So I hope you guys you got it. So very
+easily and very quick way we can create
+
+110
+00:07:55,360 --> 00:08:00,800
+this kinds of API with the help of fast
+API. So uh we need this particular
+
+111
+00:07:59,599 --> 00:08:02,879
+concept guys because going forward
+whenever you will be creating the
+
+112
+00:08:01,840 --> 00:08:06,879
+application definitely you have to do
+the inference and with the help of fast
+
+113
+00:08:04,560 --> 00:08:11,919
+API you can easily create the uh API
+inference okay for your uh LM. So yes
+
+114
+00:08:09,840 --> 00:08:15,360
+guys, this is all uh I hope you got it.
+Uh now you can try you can try with
+
+115
+00:08:14,240 --> 00:08:20,160
+different different model and you can
+create your own API. So thanks for
+
+116
+00:08:16,879 --> 00:08:20,160
+watching guys.
+

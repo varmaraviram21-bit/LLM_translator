@@ -1,0 +1,501 @@
+1
+00:00:00,480 --> 00:00:07,759
+So guys, now we'll uh see how we can
+dockerize uh this entire let's say
+
+2
+00:00:05,520 --> 00:00:11,519
+inference. Okay, uh the inference we
+have created with help of fast API. I
+
+3
+00:00:09,679 --> 00:00:15,519
+think you remember uh whenever I showed
+you the CI/CD deployment there also I
+
+4
+00:00:13,440 --> 00:00:19,119
+use the docker and what is the advantage
+to use the docker because with the help
+
+5
+00:00:17,199 --> 00:00:23,199
+of docker we can containerize the entire
+applications. Okay so here uh what
+
+6
+00:00:21,680 --> 00:00:26,800
+happens let's say if I share you this
+code so what you have to do you have to
+
+7
+00:00:25,119 --> 00:00:30,320
+manually set up your environment then
+you have to like u install all the
+
+8
+00:00:28,640 --> 00:00:34,079
+requirements. So sometimes what happens
+if any requirement is changes so you'll
+
+9
+00:00:32,399 --> 00:00:38,160
+be getting the error okay in your
+terminal. So it's better to dockerize
+
+10
+00:00:36,079 --> 00:00:41,920
+the entire applications and try to run
+as a container because docker manage
+
+11
+00:00:40,239 --> 00:00:47,520
+everything okay all the setups and all.
+So only you just need to install docker
+
+12
+00:00:45,040 --> 00:00:51,600
+and uh you you can use my let's say
+docker image and you can execute in your
+
+13
+00:00:49,280 --> 00:00:54,559
+system um like everything will work
+automatically. Okay, this is the
+
+14
+00:00:52,960 --> 00:00:57,760
+advantage to use the docker. Now let's
+try to see how we can dockerize the
+
+15
+00:00:56,079 --> 00:01:04,799
+entire application. So for this I have
+to create a docker file. So docker file.
+
+16
+00:01:02,399 --> 00:01:07,920
+Okay. You can also write docker ignore.
+Let's say if you want to ignore any
+
+17
+00:01:06,000 --> 00:01:11,040
+kinds of file uh you can write inside
+docker ignore. But here I don't need to
+
+18
+00:01:09,600 --> 00:01:14,400
+ignore anything. So that's why I'm not
+going to create the docker ignore file.
+
+19
+00:01:12,640 --> 00:01:21,439
+Now here you have to write some docker
+related commands. Okay. So first of all
+
+20
+00:01:16,320 --> 00:01:28,600
+you have to take a base image. So from
+um here I'll be taking a python image.
+
+21
+00:01:24,560 --> 00:01:35,119
+Okay. So, Python I need
+3. Okay, that's a 3.11. I'll be taking
+
+22
+00:01:32,079 --> 00:01:39,560
+this image. Then after that, you have to
+run uh some update
+
+23
+00:01:38,040 --> 00:01:44,759
+commands.
+So, this is the commands. Okay, I think
+
+24
+00:01:42,799 --> 00:01:53,479
+there's some error. Let me
+check from
+
+25
+00:01:47,799 --> 00:01:53,479
+Python 82. I think it is fine.
+
+26
+00:01:54,240 --> 00:02:01,280
+Okay, I think it is
+fine. Uh, so you have to upgrade uh some
+
+27
+00:01:59,200 --> 00:02:05,119
+tools. Then we'll be creating the
+working
+
+28
+00:02:03,159 --> 00:02:11,800
+directory. Then in the working
+directory, we'll copy all of our source
+
+29
+00:02:08,520 --> 00:02:19,160
+code. Okay, all of our source
+code. Then after
+
+30
+00:02:14,840 --> 00:02:19,160
+that you can
+
+31
+00:02:21,200 --> 00:02:29,920
+uh install the requirements. Okay. Then
+we'll run the
+
+32
+00:02:26,280 --> 00:02:37,319
+commands. Okay. Python 3 app.py. So
+sorry here it is a main.py. So what I
+
+33
+00:02:32,720 --> 00:02:42,560
+can do? I can write it's main.py not
+app.py. Okay. Uh here you can see that.
+
+34
+00:02:40,640 --> 00:02:49,120
+And if you want you can also give the
+host and port number. Let me show
+
+35
+00:02:46,120 --> 00:02:55,920
+you. So for this you can add this line
+of code. So here uh you need this evol
+
+36
+00:02:52,480 --> 00:02:55,920
+package. Okay. So let me import
+
+37
+00:03:00,840 --> 00:03:09,519
+evolon because we have I think installed
+here. Yeah. So now uh instead of running
+
+38
+00:03:07,040 --> 00:03:14,959
+the vicon commands I can uh run like
+that. So now if you write just uh u
+
+39
+00:03:12,239 --> 00:03:20,560
+python main.py it will run your app.
+Okay. So here it's app
+
+40
+00:03:17,519 --> 00:03:25,680
+uh okay it should be main app because
+this is available in the main file. Okay
+
+41
+00:03:23,040 --> 00:03:29,360
+main.py file and the endpoint you have
+created it is app. Now it will on the
+
+42
+00:03:27,680 --> 00:03:32,720
+local host and port number here I'm
+giving 8080. Okay. Reload is equal to
+
+43
+00:03:31,040 --> 00:03:35,959
+true. So this is the command. Okay. Now
+let me save. Now this docker file will
+
+44
+00:03:35,120 --> 00:03:41,080
+work for
+you. Okay. This file will work for you.
+
+45
+00:03:39,120 --> 00:03:45,280
+But here I'm getting one
+error. Not sure what is the
+
+46
+00:03:46,360 --> 00:03:49,760
+error. Let me
+
+47
+00:04:03,879 --> 00:04:10,000
+check. Okay, I think it is fine. Let me
+try. Uh so what I will do guys? So I
+
+48
+00:04:08,560 --> 00:04:13,400
+will so make sure guys you install
+docker desktop if you're using windows.
+
+49
+00:04:12,000 --> 00:04:18,400
+So docker
+desktop for windows. Okay. So from here
+
+50
+00:04:16,320 --> 00:04:22,079
+you can download it and if you're using
+uh Linux or Mac way so they have also
+
+51
+00:04:20,639 --> 00:04:28,560
+given the guidance. Okay. How to install
+it. So for me I already have the docker
+
+52
+00:04:25,680 --> 00:04:31,199
+desktop. So let me just open it up.
+Docker
+
+53
+00:04:32,840 --> 00:04:38,800
+desktop. Even you can also set it up on
+the AWS cloud. I think I already showed
+
+54
+00:04:37,120 --> 00:04:44,000
+you. I already shared you the commands.
+You can follow the same commands. Now
+
+55
+00:04:40,639 --> 00:04:44,000
+let me open up my terminal
+
+56
+00:04:45,560 --> 00:04:52,960
+here. So this is my terminal. Okay. So
+here what I will do see this uh this
+
+57
+00:04:51,759 --> 00:04:57,160
+should be running. Okay. Engine should
+be running. And if I show you currently
+
+58
+00:04:54,960 --> 00:05:01,040
+I have one image. So let me just delete
+it. Uh container. I don't have any
+
+59
+00:04:59,520 --> 00:05:05,360
+container. Okay. So now let's create our
+image. So for this you have to execute
+
+60
+00:05:03,440 --> 00:05:10,080
+one command. So you have to execute
+docker build command. So let me show you
+
+61
+00:05:07,360 --> 00:05:14,720
+the command. So here what I will do here
+is the command. So docker build t uh
+
+62
+00:05:13,120 --> 00:05:20,960
+here you can give your username. So
+username means you have you should have
+
+63
+00:05:16,880 --> 00:05:20,960
+one docker hub at all. So
+
+64
+00:05:21,560 --> 00:05:24,560
+docker
+
+65
+00:05:24,600 --> 00:05:33,720
+hub. So I already have the account in my
+docker hub and the username is ent. So
+
+66
+00:05:30,160 --> 00:05:33,720
+let me sign in.
+
+67
+00:05:43,520 --> 00:05:47,520
+uh so docker hub you need let's say
+later on if you want to push your image
+
+68
+00:05:46,160 --> 00:05:51,199
+to the hub you can do it okay and you
+can see username is entry so that's why
+
+69
+00:05:49,680 --> 00:05:55,160
+with the help of that I'm tagging the
+name because it will give you one unique
+
+70
+00:05:52,560 --> 00:06:01,919
+name and here I can give let's say
+llm app
+
+71
+00:05:57,960 --> 00:06:07,120
+okay apps I can give uh and let us tag
+now let's copy And here I can build the
+
+72
+00:06:09,560 --> 00:06:16,560
+image. So it will uh follow all the
+commands one by one. First of all, it
+
+73
+00:06:14,000 --> 00:06:20,080
+will take the Python 3.11 image. Then it
+will upgrade uh these are the tools.
+
+74
+00:06:18,720 --> 00:06:23,120
+Then it will creating the working
+directory, copy all of the source code
+
+75
+00:06:21,600 --> 00:06:27,600
+in the working directory. Then it will
+install the requirements. Then after
+
+76
+00:06:25,199 --> 00:06:33,199
+that uh it will run the print.py. Okay,
+that means your uh image would be ready.
+
+77
+00:06:31,280 --> 00:06:36,720
+So it will take some time guys. So let's
+wait. Uh I'll pause the video once this
+
+78
+00:06:35,039 --> 00:06:41,440
+uh this is complete. I'll come back.
+Okay. One thing guys uh you have to
+
+79
+00:06:39,600 --> 00:06:44,319
+remove this line. Make sure because it
+will work because I haven't saved this
+
+80
+00:06:42,720 --> 00:06:48,639
+file. Okay. But you have to remove this
+line because this was I have added just
+
+81
+00:06:46,560 --> 00:06:51,039
+for testing purpose. Okay. Now let me
+open it
+
+82
+00:06:53,960 --> 00:07:01,280
+up. So guys as you can see my execution
+is done and my image is also built up.
+
+83
+00:06:59,120 --> 00:07:05,280
+Let me show you. So if I go to the image
+right now, you can see my LM app image
+
+84
+00:07:03,120 --> 00:07:08,880
+is uh created. Now if you want to run
+this image as a container, so what you
+
+85
+00:07:06,960 --> 00:07:13,639
+can do, you can execute another command.
+So let me show you. So this is the
+
+86
+00:07:11,759 --> 00:07:22,280
+command
+guys. So here uh it is running on 80080
+
+87
+00:07:18,400 --> 00:07:26,639
+right. So let's expose to 800 800
+only and it was
+
+88
+00:07:27,479 --> 00:07:35,919
+ln apps. Okay. Uh so we are running in
+the detach mode and we are doing the
+
+89
+00:07:33,120 --> 00:07:39,599
+port mapping. So let me run that and if
+you want to see the docker image docker
+
+90
+00:07:38,400 --> 00:07:43,840
+images. Okay so you can write this
+command. Now let's
+
+91
+00:07:41,560 --> 00:07:49,039
+execute. Now guys it is running. Now
+let's go to your browser and search for
+
+92
+00:07:46,880 --> 00:07:54,720
+localhost port number 80. You can see
+llm inference is running. Now you can
+
+93
+00:07:51,039 --> 00:07:59,360
+give uh that uh uh /docs. Okay. you can
+give the /docs and you can uh go to that
+
+94
+00:07:57,360 --> 00:08:03,680
+particular let's say route I think I
+showed you okay and then you can uh give
+
+95
+00:08:01,759 --> 00:08:07,280
+the message you'll be able to get the
+response from your lm so that's how guys
+
+96
+00:08:05,520 --> 00:08:12,240
+we can dockerize any kinds of lm
+inference and this is the recommended
+
+97
+00:08:09,440 --> 00:08:15,360
+way okay if you're following uh um
+actually the deployment or any any other
+
+98
+00:08:14,319 --> 00:08:19,160
+thing let's say you are getting the app
+and you want to share with uh anyone
+
+99
+00:08:17,199 --> 00:08:24,720
+just try to dockerize the entire uh
+applications and this is another ops uh
+
+100
+00:08:22,400 --> 00:08:27,759
+actually technique we usually follow. So
+yes guys, this is all about I hope you
+
+101
+00:08:26,160 --> 00:08:33,360
+liked it and all the resources I I'm
+going to share uh you can download and
+
+102
+00:08:30,240 --> 00:08:33,360
+you can try from your end.
+

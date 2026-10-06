@@ -1,0 +1,392 @@
+1
+00:00:00,560 --> 00:00:08,280
+Hi guys, in this video I'll show you uh
+the FS vector database. So FS is another
+
+2
+00:00:06,319 --> 00:00:13,440
+amazing vector database developed by
+Facebook. So here uh uh this vector is
+
+3
+00:00:11,759 --> 00:00:18,160
+also a local vector database. That means
+it will also store your uh vector
+
+4
+00:00:15,679 --> 00:00:21,520
+embeddings to the local storage. So uh
+this is the documentation of fires. You
+
+5
+00:00:19,840 --> 00:00:24,400
+can refer the documentation. They have
+given the entire let's installation
+
+6
+00:00:23,039 --> 00:00:27,680
+process and everything. You can refer
+it. So what I'll show you guys, I will
+
+7
+00:00:26,000 --> 00:00:31,880
+show the practical demo how we can use
+this particular fires vector database.
+
+8
+00:00:29,279 --> 00:00:38,960
+For this let's open up a Google collab
+notebook. Then here I will just give the
+
+9
+00:00:34,480 --> 00:00:41,920
+name let's say fires demo. Okay. And I
+will just try to connect the
+
+10
+00:00:42,040 --> 00:00:47,440
+notebook. So first of all you have to
+install the fires. So to install the
+
+11
+00:00:45,920 --> 00:00:53,480
+fires guys this is the command. So p
+install uh
+
+12
+00:00:49,800 --> 00:01:00,640
+fires. Okay fires
+cpu and I also need the numpy pack I
+
+13
+00:00:56,559 --> 00:01:00,640
+guess. Okay. So let me install
+
+14
+00:01:00,920 --> 00:01:09,760
+them. Then once it is done, I also need
+the open AI. So let me also install open
+
+15
+00:01:05,600 --> 00:01:14,720
+AI. So pip install uh open AI is equal
+to equal. I'm going to install one
+
+16
+00:01:11,200 --> 00:01:14,720
+specific version that's
+
+17
+00:01:22,200 --> 00:01:27,560
+0.28. So once it is done, I'm going to
+import some library. First of all, I'm
+
+18
+00:01:26,159 --> 00:01:33,159
+going to import
+uh
+
+19
+00:01:30,280 --> 00:01:36,560
+files. Then I need
+openi. I need
+
+20
+00:01:41,799 --> 00:01:48,560
+numpy. Okay. So let's import all of
+them. Then I will I'm going to
+
+21
+00:01:46,479 --> 00:01:54,720
+initialize the openi API key. So to
+install the open API key just write open
+
+22
+00:01:50,840 --> 00:01:54,720
+AI dot API
+
+23
+00:01:55,640 --> 00:02:06,799
+key API
+key and here you have to pass the API
+
+24
+00:02:02,680 --> 00:02:06,799
+key. Let me give my API
+
+25
+00:02:08,599 --> 00:02:18,480
+key. This is my API key.
+So now uh what I will
+
+26
+00:02:14,760 --> 00:02:18,480
+do I'll just try to
+
+27
+00:02:18,599 --> 00:02:26,959
+initialize. Okay. Then here uh I'm going
+to write a function. This function will
+
+28
+00:02:24,879 --> 00:02:30,000
+uh return you the embeddings. Okay. That
+means here we'll try to use the open
+
+29
+00:02:28,480 --> 00:02:34,400
+embedding model to generate the vector
+embeddings. So here this is the fter
+
+30
+00:02:34,760 --> 00:02:41,040
+function. This is the function guys. Get
+embedding. So it will take the text and
+
+31
+00:02:39,440 --> 00:02:45,120
+it will initialize the open embedding
+model. You can see text embedding adder
+
+32
+00:02:42,640 --> 00:02:50,720
+model and it will return the uh
+embeddings. Okay, we as a numpy array.
+
+33
+00:02:48,160 --> 00:02:56,000
+Now let me initialize it. Okay, so once
+it is done I'm going to also um
+
+34
+00:02:53,360 --> 00:02:59,360
+initialize one example text. So let's
+say this is our example text. Okay, you
+
+35
+00:02:57,680 --> 00:03:02,560
+can use any documents whether it's a
+PDF, whether it's a documents, anything
+
+36
+00:03:00,800 --> 00:03:05,440
+you can use. So here I have written like
+file is a library for efficient
+
+37
+00:03:03,840 --> 00:03:09,760
+simulators. Okay, is developed by
+Facebook a research and blah blah blah.
+
+38
+00:03:07,280 --> 00:03:12,800
+Okay, this thing I have written. Now, uh
+first of all, I have to get the
+
+39
+00:03:10,720 --> 00:03:18,640
+embeddings. So to get the embeddings, I
+can use this code. So here uh I'm
+
+40
+00:03:15,599 --> 00:03:21,200
+passing this text to the function. Okay.
+And this function will return the
+
+41
+00:03:19,840 --> 00:03:26,239
+embeddings. Okay. One by one. You can
+see I'm calling this uh uh function. And
+
+42
+00:03:24,319 --> 00:03:30,159
+here I'm running a full loop. So it will
+loop through one by one. It will pass
+
+43
+00:03:28,319 --> 00:03:35,200
+the text and this will return you the
+embedding. Let me show
+
+44
+00:03:32,920 --> 00:03:39,440
+you. So if I show you the embeddings
+right now. So this is the embeddings I
+
+45
+00:03:37,599 --> 00:03:42,640
+got guys. Okay. Now what you have to do?
+You have to normalize. If you want to
+
+46
+00:03:40,799 --> 00:03:46,159
+perform the cosine similarity. Okay.
+Only for cosine similarity you have to
+
+47
+00:03:44,159 --> 00:03:50,319
+do the normalize operation. And how to
+normalize? F has already one function
+
+48
+00:03:48,319 --> 00:03:54,879
+normalize L2. Okay. We are doing the L2
+normalization. Now normalization is
+
+49
+00:03:52,560 --> 00:03:58,200
+complete. Then we have to create the
+files index. For this I have to get the
+
+50
+00:03:56,400 --> 00:04:02,920
+embedding
+dimension. So how to get the embedding
+
+51
+00:04:00,319 --> 00:04:06,959
+dimension? So this is the code for
+that. So embedding.shape one. So this
+
+52
+00:04:05,760 --> 00:04:12,159
+will give you the dimension. So this is
+the dimension of the vector. Now let's
+
+53
+00:04:08,879 --> 00:04:19,040
+create the fires uh index. Okay. So here
+uh we'll try to create the
+
+54
+00:04:14,920 --> 00:04:21,880
+index f index uh plot ip. Okay. And I
+have to give the dimension. So it will
+
+55
+00:04:20,320 --> 00:04:26,800
+create the
+index. Okay. Index has created. If you
+
+56
+00:04:24,560 --> 00:04:32,320
+see the index object, see it's created
+one object. Now guys, uh see again I'm
+
+57
+00:04:30,160 --> 00:04:35,840
+told. So this is a like local vector
+database. Okay. will create the index in
+
+58
+00:04:34,320 --> 00:04:40,960
+your local storage. Okay, you can see in
+the memory. Now, uh we'll try to add the
+
+59
+00:04:38,960 --> 00:04:44,240
+embeddings to the index. So here you
+have to use the add function and
+
+60
+00:04:42,000 --> 00:04:48,919
+whatever embeddings I generated here,
+I'll just try to store
+
+61
+00:04:45,800 --> 00:04:56,000
+them. Okay, store is
+complete. Now I also need to store the
+
+62
+00:04:51,520 --> 00:04:56,000
+original uh text
+
+63
+00:04:56,360 --> 00:05:04,960
+ID. So for this this is the code. So
+here we are enumerating over the text
+
+64
+00:05:01,680 --> 00:05:08,800
+and we are adding one ID. Okay. So you
+can see this is the this is the ID.
+
+65
+00:05:07,600 --> 00:05:12,240
+Okay. That means this is the first, this
+is the second, this is the third and
+
+66
+00:05:09,840 --> 00:05:17,440
+this is the fourth. Okay. That's how now
+we part of the query operation. So let's
+
+67
+00:05:14,880 --> 00:05:17,440
+say this is our
+
+68
+00:05:17,880 --> 00:05:24,479
+query. Okay. So what is fires? So first
+of all we are getting the embeddings of
+
+69
+00:05:22,240 --> 00:05:30,160
+that text. Then we are pass we're doing
+the normalization. After that we'll do
+
+70
+00:05:26,800 --> 00:05:30,160
+the search operation.
+
+71
+00:05:30,560 --> 00:05:36,720
+You can see we are uh getting two
+similarity uh search results. Okay. So
+
+72
+00:05:35,039 --> 00:05:39,440
+here index dots search we are giving the
+query vector and we're reshaping the
+
+73
+00:05:38,240 --> 00:05:44,240
+results and we are getting the k
+parameter that is two output. Now if you
+
+74
+00:05:42,000 --> 00:05:48,400
+want to see the output you can run a for
+loop to display that
+
+75
+00:05:46,039 --> 00:05:52,000
+output. So see guys this is the first
+one and this is the second one. Okay you
+
+76
+00:05:50,560 --> 00:05:56,320
+can see based on this particular
+question these two results are uh
+
+77
+00:05:54,720 --> 00:06:01,120
+similar. Okay can see this is the score
+highest score. So yes guys that's how we
+
+78
+00:05:58,240 --> 00:06:05,199
+can use the files fs vector database and
+you got it now you can use any kinds of
+
+79
+00:06:02,800 --> 00:06:09,199
+data and you can u reuse this particular
+code and you can do the experiment. So
+
+80
+00:06:07,520 --> 00:06:12,000
+yes uh I hope you got it guys. Thanks
+for watching.
+

@@ -1,0 +1,852 @@
+1
+00:00:00,400 --> 00:00:06,879
+Hi guys, in this video I'll be talking
+about pine cone. So what is pine cone
+
+2
+00:00:05,040 --> 00:00:10,639
+exactly? Pine cone is a vector database
+for storing vector embeddings. So I
+
+3
+00:00:09,200 --> 00:00:14,799
+think you know what is vector embeddings
+and uh what is vector database. So in
+
+4
+00:00:12,639 --> 00:00:18,960
+our previous session I was uh talking
+about the vector database, how vector
+
+5
+00:00:16,480 --> 00:00:23,119
+database works, how we convert our data
+to the vector embeddings and how we
+
+6
+00:00:20,800 --> 00:00:27,039
+usually store them. Okay. And why vector
+database is required each and everything
+
+7
+00:00:24,560 --> 00:00:31,199
+I have clarified. So pine cone is one of
+them. It's a famous vector database and
+
+8
+00:00:29,039 --> 00:00:35,760
+it is hosted over the cloud. That means
+all the vector embeddings you can store
+
+9
+00:00:33,120 --> 00:00:39,520
+in the uh cloud okay cloud platform. Uh
+I mean pine cone provides one cloud
+
+10
+00:00:38,079 --> 00:00:44,000
+infrastructure. So there you can store
+your vectors. Okay. And now you can see
+
+11
+00:00:42,000 --> 00:00:47,680
+this is the website of the pine cone. So
+just visit pine cone.io. So this is the
+
+12
+00:00:46,160 --> 00:00:51,920
+official website. You can you can also
+search over the Google you'll be getting
+
+13
+00:00:49,520 --> 00:00:56,000
+this particular uh link. Now you can see
+guys uh they have their entire uh
+
+14
+00:00:54,000 --> 00:00:59,920
+website even they have already written
+their demo okay whatever service they
+
+15
+00:00:58,320 --> 00:01:03,359
+are having everything they have given so
+if you have time just go through their
+
+16
+00:01:01,280 --> 00:01:06,000
+website you'll be able to understand so
+first of all what you have to do you
+
+17
+00:01:04,640 --> 00:01:08,400
+have to create an account here if you
+don't have the account so for me I
+
+18
+00:01:07,280 --> 00:01:11,840
+already have the account so what I will
+do I'll just try to login with the
+
+19
+00:01:10,000 --> 00:01:14,720
+account so if you loging in with the
+account you will be getting something
+
+20
+00:01:13,119 --> 00:01:18,560
+called pine cone console okay so this is
+your pine console and by default you
+
+21
+00:01:16,880 --> 00:01:22,400
+will be getting this kinds of console
+now I will show you how we can uh uh
+
+22
+00:01:21,040 --> 00:01:26,159
+work with the pine cone. I will show you
+one practical demo. After that, I think
+
+23
+00:01:24,560 --> 00:01:30,119
+uh this part would be clear how you can
+store any kinds of documents or let's
+
+24
+00:01:28,080 --> 00:01:35,200
+say vector embeddings to the pine cone.
+Okay. So here the first thing what you
+
+25
+00:01:32,400 --> 00:01:38,960
+have to do guys uh you have to uh create
+one Jupyter notebook. So here I already
+
+26
+00:01:37,200 --> 00:01:42,799
+created one Jupyter notebook. So here I
+created a Jupyter notebook over the
+
+27
+00:01:40,240 --> 00:01:45,920
+collab Google collab. Okay. So here uh
+you have to install the pine cone at the
+
+28
+00:01:44,479 --> 00:01:48,560
+very first time and how to install the
+pine cone. This is the command. Pep
+
+29
+00:01:47,280 --> 00:01:52,560
+install pine cone. Even they have also
+given their tutorial. You can see the
+
+30
+00:01:50,320 --> 00:01:55,920
+quick start tutorial. So you can also
+refer the tutorial then can set up the
+
+31
+00:01:54,079 --> 00:01:58,640
+pine code environment. So let me first
+of all connect my
+
+32
+00:02:00,600 --> 00:02:06,600
+notebook and all the resources should be
+available in your resources section.
+
+33
+00:02:04,320 --> 00:02:12,959
+From there you can
+download. So once it is connected now
+
+34
+00:02:09,440 --> 00:02:12,959
+first of all install the pine cone
+
+35
+00:02:14,360 --> 00:02:21,920
+here. H. So pine cone is installed. You
+can see this is the version and now uh
+
+36
+00:02:20,080 --> 00:02:26,160
+you can see this is the code to create
+the index in the pine cone and what is
+
+37
+00:02:23,599 --> 00:02:32,560
+index uh exactly see index is nothing
+but it's a u database okay so here you
+
+38
+00:02:29,520 --> 00:02:36,080
+have to create one database in that uh I
+mean database cluster you'll be storing
+
+39
+00:02:34,319 --> 00:02:40,239
+all of your embedded okay embeddings
+vector uh and how to do it so either you
+
+40
+00:02:38,879 --> 00:02:44,080
+can create it manually so there is a
+option called create index either you
+
+41
+00:02:42,000 --> 00:02:48,000
+can create with that of python code and
+if you're using python sdk of pineon
+
+42
+00:02:46,640 --> 00:02:51,360
+with the help of this python code you
+can easily create that for this you need
+
+43
+00:02:49,280 --> 00:02:55,840
+a pine cone API key because with the
+help of API key you will be able to uh
+
+44
+00:02:53,440 --> 00:03:00,720
+let's say access your pine cone account
+and how to generate the uh API key just
+
+45
+00:02:58,319 --> 00:03:04,400
+uh click here API key so there you will
+be getting one option called create API
+
+46
+00:03:02,239 --> 00:03:08,959
+key so here you can uh click and you can
+give the name let's say I will give demo
+
+47
+00:03:06,159 --> 00:03:12,239
+okay now if I uh click here so it will
+be creating the API key for me so you
+
+48
+00:03:10,560 --> 00:03:16,640
+can also visualize the API key you can
+copy it and here you can mention it okay
+
+49
+00:03:14,800 --> 00:03:20,239
+so I already created the API key that's
+why it's visible here. Now uh what I
+
+50
+00:03:19,040 --> 00:03:23,440
+will do I'll just try to close. And if
+you want to delete any API key let's say
+
+51
+00:03:21,519 --> 00:03:28,159
+I want to delete it. Click here and try
+to click on delete. And here you have to
+
+52
+00:03:25,200 --> 00:03:32,720
+give the uh name of your API key. So
+this is the name. I'll delete the API
+
+53
+00:03:29,760 --> 00:03:37,440
+key. Okay. Now go back to my uh instance
+uh database. Database means your index.
+
+54
+00:03:35,280 --> 00:03:41,519
+Okay. So now let's create a database.
+Here we will be calling as index. Okay.
+
+55
+00:03:39,840 --> 00:03:44,120
+Now how to create a database? So you can
+see guys first of all you have to import
+
+56
+00:03:43,040 --> 00:03:48,480
+pine
+cone this pine class from the pineon
+
+57
+00:03:46,640 --> 00:03:51,920
+itself. Then you have to give the API
+key. So you can see I'm given the API
+
+58
+00:03:50,000 --> 00:03:57,040
+key. So it will initiate. Okay, it will
+initialize the pine cone and it will
+
+59
+00:03:54,000 --> 00:03:59,840
+like do the authentication. After that
+this is the index name I'm giving. Now
+
+60
+00:03:58,560 --> 00:04:02,720
+you can give any name here. Let's say
+here I have given dense index. You can
+
+61
+00:04:01,120 --> 00:04:08,159
+give any name. Let's say I'll give
+something called uh any other name. Uh
+
+62
+00:04:06,239 --> 00:04:11,519
+oh, you can give any name. Okay, as of
+now I'm not giving any name. I'm giving
+
+63
+00:04:09,680 --> 00:04:14,400
+as a dense index. Okay, you can give
+your name, my name. Okay, your project
+
+64
+00:04:13,040 --> 00:04:17,040
+name. Let's say you are creating a
+chatbot. Let's say you're creating a
+
+65
+00:04:15,680 --> 00:04:21,919
+medical chatbot. So here you can give
+medical chatbot. Okay, it it can be any
+
+66
+00:04:19,440 --> 00:04:24,800
+kinds of name. Now once index name has
+been initialized then you have to
+
+67
+00:04:23,120 --> 00:04:28,160
+execute this particular code. You can
+see first of all it will check whether
+
+68
+00:04:26,240 --> 00:04:31,680
+this index is available or not. If not
+it will create the index. Okay, you can
+
+69
+00:04:29,919 --> 00:04:35,520
+see it will create create the index. It
+will initialize the cloud
+
+70
+00:04:33,160 --> 00:04:39,840
+infrastructure. So by default it will be
+using AWS cloud and this is the reason
+
+71
+00:04:37,840 --> 00:04:44,320
+and by default it has one embedding
+model called llama text embed v2. Okay.
+
+72
+00:04:42,160 --> 00:04:48,160
+So you don't need to use uh any open
+embedding model. Okay. Previously if you
+
+73
+00:04:46,080 --> 00:04:52,000
+see the previous version of pine cone we
+have to initialize the open embedding
+
+74
+00:04:49,919 --> 00:04:55,520
+but here you don't need to do so it by
+default it has one embedding model it
+
+75
+00:04:53,759 --> 00:04:59,280
+will uh try to utilize that embedding
+model and it will convert your vector uh
+
+76
+00:04:57,120 --> 00:05:03,840
+let's say text to embeddings okay then
+you have to also initialize the field
+
+77
+00:05:00,560 --> 00:05:08,400
+map text chunks okay so once uh you have
+uh let's say written everything now if I
+
+78
+00:05:05,560 --> 00:05:12,320
+execute so you'll see that uh in your
+index it would be uh one new index would
+
+79
+00:05:10,880 --> 00:05:17,840
+be created let me show you so see
+execution is done now let's get back to
+
+80
+00:05:14,080 --> 00:05:22,240
+the console Now if I refresh here, okay,
+if I refresh here, you'll be seeing, see
+
+81
+00:05:20,080 --> 00:05:25,919
+the index has been created. The name
+actually I have given dense index. It
+
+82
+00:05:24,080 --> 00:05:28,880
+has created and you can see this green
+tick mark. That means it is running
+
+83
+00:05:27,280 --> 00:05:32,639
+right now. Okay. Now if you want to see
+that just try to click here. You can see
+
+84
+00:05:31,039 --> 00:05:38,440
+all the information like it is using
+cosine matrix. This is the vector
+
+85
+00:05:34,560 --> 00:05:44,639
+dimension 1025 24. This is the host
+URL. Uh it is using AWS cloud. This is
+
+86
+00:05:41,199 --> 00:05:49,440
+the reason uh like uh your like uh index
+type is uh dense and uh you can see
+
+87
+00:05:46,880 --> 00:05:54,080
+capacity mode and model it is using
+llama. Okay, llama model. Now uh as of
+
+88
+00:05:52,560 --> 00:05:58,400
+now we don't have any records here. You
+can see record count is equal to zero.
+
+89
+00:05:55,919 --> 00:06:02,400
+Now we'll try to store our uh vectors.
+Now she initially you'll be getting some
+
+90
+00:06:00,000 --> 00:06:07,840
+free tri access. Okay. So you can uh
+store up to 2 GB. Okay. And this is the
+
+91
+00:06:06,160 --> 00:06:11,199
+infrastructure actually you got. Apart
+from that if you want to get more
+
+92
+00:06:09,199 --> 00:06:14,960
+infrastructure you can uh upgrade now
+okay you can upgrade there let's say
+
+93
+00:06:12,880 --> 00:06:19,120
+service so if I click here see it will
+have a different different u there's a
+
+94
+00:06:16,639 --> 00:06:22,960
+planning option so uh you can upgrade
+okay as per your requirement so unless
+
+95
+00:06:20,639 --> 00:06:26,080
+and until you are not uh using it for
+the production you don't need to upgrade
+
+96
+00:06:24,639 --> 00:06:30,240
+okay if you're using for the learning
+purpose only I think tire access is fine
+
+97
+00:06:28,240 --> 00:06:33,199
+now what I will do I will initialize the
+data so you can see guys this is the
+
+98
+00:06:31,440 --> 00:06:37,360
+record I have created so here I have
+some text chunks okay about the Eiffel
+
+99
+00:06:35,039 --> 00:06:41,360
+Tower or any other let's say category
+have just mentioned I think around 50
+
+100
+00:06:38,800 --> 00:06:44,000
+example I have here okay you can see and
+even I've also mentioned the category
+
+101
+00:06:42,800 --> 00:06:47,039
+this is the physics category this is the
+geographic category this is the
+
+102
+00:06:45,600 --> 00:06:50,400
+nutrition category so different
+different categorical data we have now
+
+103
+00:06:48,800 --> 00:06:53,680
+you can load any kinds of documents from
+the PDF from the documents from the
+
+104
+00:06:51,919 --> 00:06:57,919
+image okay anything you can load now let
+me initialize the records even I have
+
+105
+00:06:55,520 --> 00:07:02,800
+also given one unique ID here now once
+it is done now what I will do guys I'll
+
+106
+00:07:00,000 --> 00:07:08,800
+try to store these are the records to
+the pine cone index okay for this first
+
+107
+00:07:05,440 --> 00:07:08,800
+of all you have to initialize the index
+
+108
+00:07:09,479 --> 00:07:16,080
+name. So here you can see I have
+initialized the index name. Index name
+
+109
+00:07:13,360 --> 00:07:20,319
+is equal to my uh dense index. Okay. So
+here I'm initializing that. Then after
+
+110
+00:07:18,000 --> 00:07:22,800
+that you have to upsert. Okay. Upsert
+the record. So if you want to store
+
+111
+00:07:21,520 --> 00:07:26,639
+anything you have to use the upsert
+function. Now here you have to give the
+
+112
+00:07:24,479 --> 00:07:29,840
+name space. Okay. Some naming convention
+you can give. So here I have given
+
+113
+00:07:28,319 --> 00:07:34,000
+example name space. You can give any
+name just to filter out your data. Now
+
+114
+00:07:32,160 --> 00:07:37,360
+here you have to give the record. So the
+record you have. So this is the entire
+
+115
+00:07:35,360 --> 00:07:42,160
+record I'm passing it here. Now if I
+execute it will restore all the data to
+
+116
+00:07:39,360 --> 00:07:46,800
+the pine cone uh index. Now if I get
+back here now if I
+
+117
+00:07:44,680 --> 00:07:50,960
+refresh you'll see that it will restore
+all the data. See okay all the 50
+
+118
+00:07:49,199 --> 00:07:54,879
+records has been updated. Now here it is
+also visible here. So sometimes it takes
+
+119
+00:07:52,880 --> 00:07:57,120
+time to get the update. Okay. Even they
+have also mentioned in that
+
+120
+00:07:55,759 --> 00:08:00,560
+documentation you have to wait for some
+times then you'll be able to see that
+
+121
+00:07:58,560 --> 00:08:05,520
+you can see ID, category and text. Now
+you can see the score. Okay. like the
+
+122
+00:08:02,319 --> 00:08:09,919
+semantic score like uh what is the score
+of this vector. Okay. Uh what is this
+
+123
+00:08:07,840 --> 00:08:13,280
+vector uh store of this vector with
+respect to all the vector you can see
+
+124
+00:08:11,840 --> 00:08:16,639
+all the score here. Now if you want to
+see the embeddings what you can do you
+
+125
+00:08:14,879 --> 00:08:20,240
+can click here and you can click on
+fetch. Now here you will see this
+
+126
+00:08:18,879 --> 00:08:23,919
+particular value and this is nothing but
+your vector embedding. Okay this thing
+
+127
+00:08:22,400 --> 00:08:27,520
+we usually pass to the large language
+model. You can also edit the records.
+
+128
+00:08:26,160 --> 00:08:30,560
+Okay. If you want you can also edit the
+records. It is also possible here. Now
+
+129
+00:08:29,280 --> 00:08:34,080
+this is one of the amazing vector
+database guys because here you can
+
+130
+00:08:32,240 --> 00:08:37,680
+visualize your vectors and all the
+things are interactive and it is hosting
+
+131
+00:08:35,760 --> 00:08:42,399
+your let's say embeddings to the cloud.
+So that's why I personally like pine
+
+132
+00:08:39,519 --> 00:08:46,560
+cone a lot. But if you want to let's say
+store your embedded to the local data uh
+
+133
+00:08:44,880 --> 00:08:50,080
+let's say local store that time you can
+use fires chromb okay or any other
+
+134
+00:08:48,320 --> 00:08:54,399
+vector database which I'll also discuss
+okay going forward. Okay. So now you can
+
+135
+00:08:52,560 --> 00:08:57,760
+also filter out with respect to the
+dense value with respect to the text.
+
+136
+00:08:55,920 --> 00:09:01,760
+Okay. You can see the name space we have
+given it is also visible here. So this
+
+137
+00:09:00,000 --> 00:09:06,240
+is the like filtering option. If if you
+want to filter your records you can also
+
+138
+00:09:03,519 --> 00:09:09,680
+filter it here. Now guys we have
+successfully stored our vector. Now
+
+139
+00:09:07,680 --> 00:09:13,360
+we'll try to see how we can do the
+semantic search operation. But before
+
+140
+00:09:11,279 --> 00:09:16,560
+that let's say you don't want to open
+the console and you you don't want to
+
+141
+00:09:15,120 --> 00:09:19,360
+see like how many records you have and
+what are the let's say metadata you
+
+142
+00:09:17,920 --> 00:09:22,399
+have. For this you can execute this
+particular code. this particular code it
+
+143
+00:09:20,880 --> 00:09:26,720
+what it will do it will see the status
+of your index now if I execute you'll
+
+144
+00:09:24,959 --> 00:09:31,519
+see that it will extract all the status
+all the metadata like how many records
+
+145
+00:09:28,880 --> 00:09:35,839
+you have u what is the type of that
+everything it will show you but before
+
+146
+00:09:34,000 --> 00:09:39,839
+that I'm giving one time because you
+have to wait for abstract okay let's say
+
+147
+00:09:37,760 --> 00:09:45,519
+you have executed this code and
+sometimes you have to wait let's say 10
+
+148
+00:09:41,920 --> 00:09:49,360
+to uh uh 12 seconds okay sorry 10 to 20
+seconds that's why we are given one
+
+149
+00:09:47,360 --> 00:09:53,279
+timer because uh it takes little bit
+time for the upgrade operation. Okay, in
+
+150
+00:09:51,360 --> 00:09:56,000
+the index. Now see guys, this is the
+dimension of the vector. This is the
+
+151
+00:09:54,480 --> 00:10:00,959
+index. Okay, that that many of record
+you have. So everything it is showing
+
+152
+00:09:57,600 --> 00:10:04,000
+you as a code. Now we'll try to do the
+similarity s operation. So this is my
+
+153
+00:10:02,560 --> 00:10:11,680
+query. Let's say famous historical
+structure and um uh this one uh moment
+
+154
+00:10:08,880 --> 00:10:16,720
+uh monu monuments. Okay, monuments. Now
+here uh you can see I'm doing the search
+
+155
+00:10:13,839 --> 00:10:20,800
+operation index dot search. This is like
+uh naming space. Okay, you can see this
+
+156
+00:10:18,399 --> 00:10:24,480
+is the name space I'm giving top K that
+means top records it will show me top
+
+157
+00:10:22,640 --> 00:10:27,680
+similarity score it will show me 10 okay
+10 records it will show me and this is
+
+158
+00:10:26,240 --> 00:10:30,880
+the query I'm passing after that
+whatever results I'm getting I'm just
+
+159
+00:10:28,959 --> 00:10:38,480
+looping through it one by one now if I
+execute now okay see guys this is the 10
+
+160
+00:10:33,600 --> 00:10:43,360
+similar results I got okay 1 2 3 4 5 6 7
+8 9 10 okay now you can see also this
+
+161
+00:10:40,880 --> 00:10:48,560
+code uh this is the ID and this is the
+uh text name okay so that's how guys we
+
+162
+00:10:46,160 --> 00:10:52,240
+can easily store our vectors to the pine
+cone and we can do the similarity search
+
+163
+00:10:50,480 --> 00:10:56,640
+operation. Okay, I hope you got it. So
+yes guys, this was the entire demo of
+
+164
+00:10:53,680 --> 00:11:01,120
+our pine cone. uh now you can try you
+can uh use your documents you can store
+
+165
+00:10:59,040 --> 00:11:04,880
+to the pine cone index and you can uh
+create some amazing application with
+
+166
+00:11:02,720 --> 00:11:09,760
+that and you can also consider this is
+one of the lm ops tool because at the
+
+167
+00:11:07,120 --> 00:11:13,839
+end you are optimizing the let's say
+application performance whenever you are
+
+168
+00:11:11,920 --> 00:11:16,800
+storing this as the vector to the vector
+database and you can uh you are
+
+169
+00:11:15,600 --> 00:11:20,000
+connecting the large language model
+there so that means you are optimizing
+
+170
+00:11:18,000 --> 00:11:23,839
+the entire application okay so yes guys
+this is all about I hope you liked it
+
+171
+00:11:21,440 --> 00:11:23,839
+thank you so
+

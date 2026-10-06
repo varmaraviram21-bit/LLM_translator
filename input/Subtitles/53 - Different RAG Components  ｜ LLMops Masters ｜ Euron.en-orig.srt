@@ -1,0 +1,2272 @@
+1
+00:00:00,160 --> 00:00:04,640
+Whenever I'm talking about rag actually
+we'll be performing these are the step
+
+2
+00:00:03,280 --> 00:00:07,839
+inside rag that means these are the
+component we are having inside rag. So
+
+3
+00:00:06,400 --> 00:00:12,000
+first thing we'll be splitting the data
+into smaller chunks then we'll be
+
+4
+00:00:10,080 --> 00:00:14,719
+transform text chunks into numerical
+representation with the help of
+
+5
+00:00:13,120 --> 00:00:19,119
+embedding model. Then we'll be loading
+this embedding model to a vector
+
+6
+00:00:16,160 --> 00:00:24,560
+database. Okay. Then we'll be loading
+the question uh sorry we'll be actually
+
+7
+00:00:22,080 --> 00:00:28,880
+creating the retr. Then with the help of
+this retrer we'll be passing the
+
+8
+00:00:27,359 --> 00:00:32,880
+retrieved answer to the large language
+model as well as the question then my
+
+9
+00:00:30,720 --> 00:00:35,840
+large language model will be able to
+give me the response. Okay with respect
+
+10
+00:00:34,239 --> 00:00:39,840
+to that. So these are the actually
+component we'll be trying to
+
+11
+00:00:37,559 --> 00:00:44,520
+understand. Okay. So first of all let's
+try to discuss about uh this one is
+
+12
+00:00:42,239 --> 00:00:48,000
+splitting. So here I have already
+written. So first of all we'll be
+
+13
+00:00:46,559 --> 00:00:51,600
+discussing about is splitting. Okay.
+This one. So what is splitting and why
+
+14
+00:00:50,320 --> 00:00:58,480
+we should perform the splitting
+operation and why it is required. So
+
+15
+00:00:54,480 --> 00:00:58,480
+first of all we'll be discussing about
+
+16
+00:01:00,760 --> 00:01:04,760
+splitting splitting
+
+17
+00:01:07,840 --> 00:01:10,720
+uh splitting or
+
+18
+00:01:12,520 --> 00:01:19,840
+splitter see what is splitter it's
+nothing
+
+19
+00:01:16,840 --> 00:01:19,840
+but
+
+20
+00:01:20,119 --> 00:01:24,360
+divide a large
+
+21
+00:01:27,479 --> 00:01:30,479
+data
+
+22
+00:01:30,600 --> 00:01:37,640
+asset in
+small
+
+23
+00:01:35,000 --> 00:01:41,400
+parts. Okay. So this is called actually
+splitting. Now let me show you one
+
+24
+00:01:39,759 --> 00:01:48,240
+example what I'm trying to
+say. So I already have one example. Just
+
+25
+00:01:44,479 --> 00:01:53,759
+let me show you. So this is the example
+guys. You can see
+
+26
+00:01:50,880 --> 00:01:57,119
+uh let's say you are having one u let's
+say a large amount of data. Let's say
+
+27
+00:01:55,600 --> 00:02:01,840
+you are having one original text. Let's
+say you have loaded this data from the
+
+28
+00:01:58,880 --> 00:02:04,719
+txt file, PDF file. Okay, JSON file or
+any kinds of file. You have load the
+
+29
+00:02:03,360 --> 00:02:09,920
+data and let's say this is my entire
+corpus. Okay, this is my entire corpus.
+
+30
+00:02:07,920 --> 00:02:13,440
+Now what I told you I can't directly
+pass this data to my large language
+
+31
+00:02:11,360 --> 00:02:17,599
+model. It's not possible because large
+language model is having some input
+
+32
+00:02:14,959 --> 00:02:21,760
+limit. Okay, that means context window,
+fixed context window. Okay, so what we
+
+33
+00:02:20,239 --> 00:02:27,599
+can perform? We can perform splitting.
+What is splitting? Splitting means you
+
+34
+00:02:23,680 --> 00:02:32,160
+will be actually I mean dividing the
+large amount of data in a smaller part.
+
+35
+00:02:29,599 --> 00:02:34,959
+So let's say this is my entire data and
+now after splitting you will see that
+
+36
+00:02:33,760 --> 00:02:38,800
+you will be getting different different
+chunks. So this is your first chunks.
+
+37
+00:02:37,440 --> 00:02:42,080
+This is the second chunks. This is the
+third chunks and this is the fourth
+
+38
+00:02:40,400 --> 00:02:45,120
+chunks. Now how it is creating the
+chunks? So there are some technique
+
+39
+00:02:43,680 --> 00:02:48,879
+we'll be following to perform this
+splitting operation. So we'll be using
+
+40
+00:02:47,040 --> 00:02:51,760
+something called recursive character
+text splitter. Then we'll be using
+
+41
+00:02:50,640 --> 00:02:55,680
+something called character text
+splitter. Okay, these two method we'll
+
+42
+00:02:53,120 --> 00:03:00,239
+be applying. Then we can divide this
+larger amount of data in a smaller part.
+
+43
+00:02:57,760 --> 00:03:04,640
+Now uh you can see inside the text
+actually you will be having new line.
+
+44
+00:03:01,920 --> 00:03:09,120
+Okay, new line. So why I'm talking about
+new line? Let me show you one example.
+
+45
+00:03:06,879 --> 00:03:12,959
+So let me open up my previous example.
+So inside data. So if I open this
+
+46
+00:03:11,440 --> 00:03:18,239
+particular file let's say bg good.txt
+txt. Now you can see after this line uh
+
+47
+00:03:16,800 --> 00:03:22,800
+there is a empty space okay there is
+empty space that means how see whenever
+
+48
+00:03:21,200 --> 00:03:27,519
+I'm talking about actually programming
+language how programmer will get to know
+
+49
+00:03:24,800 --> 00:03:30,879
+after this sentence there is a space
+okay after this sentence there is a
+
+50
+00:03:28,959 --> 00:03:35,840
+space that means it is starting from
+here because by default here it will
+
+51
+00:03:32,959 --> 00:03:39,680
+consider as a slash n slash n means new
+line okay new line that means after this
+
+52
+00:03:37,840 --> 00:03:43,760
+sentence there is no text that means you
+have to go to the new line okay so if
+
+53
+00:03:41,840 --> 00:03:47,519
+you load put any kinds of data with the
+help of Python programming or any other
+
+54
+00:03:45,280 --> 00:03:52,480
+programming you will see these kinds of
+uh actually symbol okay / n / t so these
+
+55
+00:03:50,640 --> 00:03:55,599
+are the symbol actually you'll be seeing
+so whenever you are having the slash n
+
+56
+00:03:54,239 --> 00:03:59,760
+that means it's a new line that means
+one sent one sentence is completed and
+
+57
+00:03:58,000 --> 00:04:05,280
+it is talking about the next sentence
+now if you see here this example so here
+
+58
+00:04:03,360 --> 00:04:09,360
+this is the sentence we are having now
+here we are having a slash slash means
+
+59
+00:04:07,360 --> 00:04:13,200
+this is a new line it is writing in the
+new line okay new line it is writing so
+
+60
+00:04:11,599 --> 00:04:17,600
+whenever I perform the splitting
+operation. That means this is
+
+61
+00:04:15,040 --> 00:04:21,359
+considering my first chunks. Okay. Now
+again it is splitting with respect to
+
+62
+00:04:19,040 --> 00:04:25,040
+the slash. With respect to the slash it
+is splitting. Now this sentence is
+
+63
+00:04:23,120 --> 00:04:29,040
+considering as my second second chunks.
+Okay. Now again we are having the slash
+
+64
+00:04:26,960 --> 00:04:32,880
+and again it it will split split with
+respect to that. Then we'll be getting
+
+65
+00:04:30,560 --> 00:04:36,720
+the third chunks. Then there is another
+slash and it will split. Then we'll be
+
+66
+00:04:34,960 --> 00:04:41,360
+getting the chunks four. So that's how
+actually we can get the chunks. So that
+
+67
+00:04:39,199 --> 00:04:44,960
+means we are having a bigger data that
+means use amount of data we'll be
+
+68
+00:04:43,199 --> 00:04:48,720
+applying the splitting operation and
+speed will speed the data with respect
+
+69
+00:04:46,639 --> 00:04:52,880
+to the slash and here we'll be getting
+different different kinds of chunks.
+
+70
+00:04:51,040 --> 00:04:57,120
+Okay. So this is the idea of chunking.
+Now you can ask me um how we can perform
+
+71
+00:04:55,440 --> 00:05:02,360
+the chunking inside lang actually we are
+having two kinds of method. So the first
+
+72
+00:04:59,520 --> 00:05:09,440
+method you'll be using something called
+character character text splitter.
+
+73
+00:05:07,919 --> 00:05:14,560
+Okay, character test splitter. I'll tell
+you how character text splitter will
+
+74
+00:05:10,880 --> 00:05:14,560
+work. Then there is another one called
+
+75
+00:05:15,000 --> 00:05:21,240
+recursive. Recursive uh character I
+think it's a recursive text splitter.
+
+76
+00:05:20,160 --> 00:05:27,039
+Character text
+splitter. Uh just a minute. Yeah,
+
+77
+00:05:24,479 --> 00:05:27,039
+recursive
+
+78
+00:05:28,600 --> 00:05:35,520
+character
+splitter. Okay, so these two method
+
+79
+00:05:33,520 --> 00:05:40,240
+actually we'll be learning. Now first of
+all let me show you how we can use the
+
+80
+00:05:37,520 --> 00:05:48,240
+character text splitter. So I'll open up
+my
+
+81
+00:05:42,759 --> 00:05:48,240
+uh code and here I'm going to create a
+
+82
+00:05:49,000 --> 00:05:52,000
+file
+
+83
+00:05:52,440 --> 00:05:59,520
+04. Uh I will name it as let's
+say rag
+
+84
+00:06:02,520 --> 00:06:06,520
+component components.
+
+85
+00:06:08,440 --> 00:06:12,960
+Okay. So here I'll select the
+
+86
+00:06:14,440 --> 00:06:22,400
+kernel. I'll select this kernel. Fine.
+Then after that uh first of all I'll be
+
+87
+00:06:19,440 --> 00:06:26,240
+loading the uh env file because I will
+be using the openi model. In case you
+
+88
+00:06:24,400 --> 00:06:30,319
+can use uh any other model. You can use
+gro model or any model you can use. It's
+
+89
+00:06:28,000 --> 00:06:33,880
+up to you. So let me uh load this open
+api key.
+
+90
+00:06:38,960 --> 00:06:45,280
+All
+right. Then the next thing
+
+91
+00:06:43,440 --> 00:06:49,520
+uh we'll be loading the data. So inside
+data we are having different kinds of
+
+92
+00:06:46,639 --> 00:06:54,800
+data. We are having HTML, PDF, txt. So
+let's load one txt data. So here I'll be
+
+93
+00:06:52,800 --> 00:06:58,160
+loading this data actually big good.txt.
+So you can see this data actually I'll
+
+94
+00:06:56,560 --> 00:07:03,520
+be loading and you can see this data is
+little bit uh I mean uh bigger data. You
+
+95
+00:07:02,000 --> 00:07:07,280
+can see we are having huge amount of
+text inside this file. Now I can't
+
+96
+00:07:05,599 --> 00:07:09,680
+directly pass this data to my large
+language model. For this, first of all,
+
+97
+00:07:08,560 --> 00:07:14,319
+I have to perform the splitting
+operation. That means we'll be dividing
+
+98
+00:07:11,599 --> 00:07:17,360
+the uh this bigger text to smaller
+chunks. Okay, this is the idea. Now,
+
+99
+00:07:15,840 --> 00:07:20,160
+first of all, let me load the data. So,
+this syntax will load the data. I think
+
+100
+00:07:18,720 --> 00:07:24,720
+you remember now this is the entire
+loaded data. Okay, entire loaded data.
+
+101
+00:07:23,599 --> 00:07:29,360
+Now, if you want to see the past
+content, simply you can call the past
+
+102
+00:07:26,800 --> 00:07:35,199
+content. You'll see the content of the
+uh data. Now if I want to use character
+
+103
+00:07:32,400 --> 00:07:38,800
+text splitter, this is the syntax guys.
+Okay, you can see first of all you have
+
+104
+00:07:36,960 --> 00:07:44,080
+to import character text splitter from
+the langen text.plitter. Okay, so from
+
+105
+00:07:42,560 --> 00:07:48,160
+here you have to import this particular
+character text splitter. After that you
+
+106
+00:07:46,560 --> 00:07:51,520
+have to initialize one object of the
+character text splitter and it will take
+
+107
+00:07:49,680 --> 00:07:56,720
+some of the parameter. So the first
+parameter it will take separator. Okay,
+
+108
+00:07:54,599 --> 00:08:01,440
+separator. Now you can ask me what is
+separator. So here I have given one
+
+109
+00:07:58,639 --> 00:08:05,199
+example. So I already told you whenever
+you are loading any kinds of data. So if
+
+110
+00:08:03,680 --> 00:08:08,720
+I show you with the help of lines and I
+loaded the data now you can see this
+
+111
+00:08:06,720 --> 00:08:12,720
+slashing is visible. Yes or no guys. So
+if I show you the data this slash is
+
+112
+00:08:10,240 --> 00:08:17,440
+visible. See okay slashing is visible.
+That means slash means it is referring
+
+113
+00:08:15,280 --> 00:08:20,879
+the new line. That means after this line
+okay another line will start okay which
+
+114
+00:08:19,199 --> 00:08:24,639
+is nothing but this one. So that's why
+we are having this kinds of separator.
+
+115
+00:08:22,479 --> 00:08:28,000
+So what I'm telling so wherever you are
+getting this double slashn that means if
+
+116
+00:08:26,720 --> 00:08:32,719
+you see here we are getting we are
+having the double slash double slashn
+
+117
+00:08:29,840 --> 00:08:35,680
+see double slashn okay double slash so
+wherever you are having the double slash
+
+118
+00:08:34,320 --> 00:08:40,440
+so you can see double slash we are
+having also here then if you find here
+
+119
+00:08:37,760 --> 00:08:44,480
+you are having most of the double slash
+okay double slash so wherever you are
+
+120
+00:08:42,959 --> 00:08:48,720
+getting the double slash try to separate
+the data with respect to that and chunk
+
+121
+00:08:46,640 --> 00:08:56,959
+size I'm giving 1,000 that means what
+will happen so let's say uh Here you
+
+122
+00:08:52,959 --> 00:08:56,959
+are. This is the inter corpus. So let me
+
+123
+00:09:01,320 --> 00:09:09,279
+clear let's say this is the entire
+corpus. So whenever it is creating the
+
+124
+00:09:07,120 --> 00:09:13,040
+first chunks. Okay. So let's say it will
+create from here. Then here what is the
+
+125
+00:09:11,680 --> 00:09:17,279
+parameter I have given? I have given
+chunks size is equal to 1,000. That
+
+126
+00:09:14,560 --> 00:09:20,560
+means it will count 1,000 token. So
+let's say this is first token, second
+
+127
+00:09:18,800 --> 00:09:25,680
+token, third token, fourth token, five
+token. That's how it will count how many
+
+128
+00:09:23,120 --> 00:09:29,519
+guys 1,000. Let's say in this sentence
+we are having 1,000 tokens. That means
+
+129
+00:09:27,279 --> 00:09:35,519
+it will consider as my first chunk.
+Chunk one. Okay. Chunk one. So first of
+
+130
+00:09:33,200 --> 00:09:39,040
+all it will count 1,000 token whether it
+is having or not in this particular
+
+131
+00:09:37,040 --> 00:09:42,320
+chunk. Then it will try to split that
+particular sentence. Okay. Otherwise it
+
+132
+00:09:40,480 --> 00:09:47,600
+won't be splitting. Okay. So this is the
+parameter you have to assign. Now you
+
+133
+00:09:45,600 --> 00:09:52,959
+can ask me how to define this chunk size
+based on the model context input. Let's
+
+134
+00:09:50,080 --> 00:09:57,920
+say if your model is taking 4,96 token
+as an input that time you can keep 1,000
+
+135
+00:09:55,440 --> 00:10:01,279
+chunk size. Okay. So I I have seen most
+of the people they're using 1,000 chunk
+
+136
+00:09:59,839 --> 00:10:04,880
+size and chunks overlap they're using
+200. Okay. Now you can ask me what is
+
+137
+00:10:03,120 --> 00:10:08,080
+chunks overlap. Chunks overlap means you
+are overlapping the chunks. That means
+
+138
+00:10:06,720 --> 00:10:12,720
+whenever you are creating the second
+chunks whenever you are creating the
+
+139
+00:10:09,839 --> 00:10:16,560
+second chunks. Second chunks again it
+will start from here. Yes or no? It will
+
+140
+00:10:14,959 --> 00:10:20,959
+start from here. But what you have
+given? You have given chunk overlap is
+
+141
+00:10:18,160 --> 00:10:26,160
+equal to 200. That means it will go back
+200 tokens. That means it will go back
+
+142
+00:10:23,760 --> 00:10:31,040
+200 tokens. Let's say 1 2 3 4 5. That's
+how it will go back 200 tokens. Let's
+
+143
+00:10:28,079 --> 00:10:35,200
+say 200 tokens ends here. Then it will
+start the chunks from here. Then again
+
+144
+00:10:32,399 --> 00:10:40,040
+it will count 1,000. 1 2 3 4 5 6 7 8.
+Let's say 1,000 ends here. Okay. Ends
+
+145
+00:10:37,760 --> 00:10:44,240
+here. So this is going to be your
+chunk 2. Okay. So this is called chunk
+
+146
+00:10:43,040 --> 00:10:48,279
+overlap. Now you can see there is
+overlap. Okay. There is overlap you got.
+
+147
+00:10:47,040 --> 00:10:52,560
+And with this
+overlap okay with this overlap your
+
+148
+00:10:50,480 --> 00:10:57,200
+model will try to understand after this
+sentence this sentence is coming because
+
+149
+00:10:54,480 --> 00:11:00,240
+there is overlap there is a common uh
+token is coming okay that's how your
+
+150
+00:10:58,800 --> 00:11:04,240
+model will automatically get to know
+after this particular sentence this
+
+151
+00:11:02,480 --> 00:11:08,079
+particular chunks is coming okay after
+this chunks this chunks is coming that's
+
+152
+00:11:06,000 --> 00:11:12,240
+how we have to perform for all the let's
+say data you are having okay unless and
+
+153
+00:11:10,000 --> 00:11:14,880
+until this chunks is getting over so
+you'll be keep on applying this
+
+154
+00:11:13,440 --> 00:11:18,160
+particular chunking and you don't need
+to manually perform so line chain will
+
+155
+00:11:16,560 --> 00:11:21,519
+automatically take care. So with the
+help of this character text will be
+
+156
+00:11:19,680 --> 00:11:25,200
+automatically performing this thing. But
+I showed you okay what will be happening
+
+157
+00:11:23,360 --> 00:11:28,079
+internally. So whatever code they have
+written internally they're doing like
+
+158
+00:11:26,399 --> 00:11:31,920
+that. That means they're looking for
+this kinds of double slash they're
+
+159
+00:11:30,320 --> 00:11:35,760
+separating the data. They're counting
+the chunk size. First of all if chunk
+
+160
+00:11:34,320 --> 00:11:39,600
+size is missing then they're also
+checking the chunks overlap like how
+
+161
+00:11:37,200 --> 00:11:43,440
+many chunks overlap you have to take
+care. So based on that you will be
+
+162
+00:11:40,959 --> 00:11:45,920
+taking the chunks overlap then what you
+will be doing? You will be creating the
+
+163
+00:11:44,560 --> 00:11:49,600
+next chunks. That's how you have to
+complete for all the data you are having
+
+164
+00:11:47,760 --> 00:11:54,240
+and after that you will be getting your
+chunk like how many chunk you will be
+
+165
+00:11:51,200 --> 00:11:59,600
+getting okay after splitting your entire
+corpus. So this is the idea about chunk
+
+166
+00:11:56,720 --> 00:12:03,839
+overlap as well as the chunk size. Got
+it. And length function because it it
+
+167
+00:12:02,240 --> 00:12:07,600
+should count like how many tokens it is
+having. Okay. And how it will count with
+
+168
+00:12:05,519 --> 00:12:11,440
+the help of length function. Okay. If
+separator reg x is equal to false. So
+
+169
+00:12:09,279 --> 00:12:14,079
+you don't need to give uh give it true.
+Just try to keep it as false. Let's see
+
+170
+00:12:12,720 --> 00:12:18,079
+you want to use any regular expression
+and all that that is uh I mean that
+
+171
+00:12:16,480 --> 00:12:22,320
+regular expression you can also use okay
+so this like very powerful function they
+
+172
+00:12:19,839 --> 00:12:26,079
+have created you can I mean send so many
+parameter so if you go to the
+
+173
+00:12:24,000 --> 00:12:30,240
+documentation of character text splitter
+you'll see there are so many like let's
+
+174
+00:12:28,160 --> 00:12:33,279
+say parameter it can take but we are not
+going to use all the parameter just keep
+
+175
+00:12:31,680 --> 00:12:37,040
+it everything as default only you just
+need to change this chunk size and
+
+176
+00:12:35,360 --> 00:12:40,320
+chunks overlap okay these two you have
+to change let's say you don't need chunk
+
+177
+00:12:38,320 --> 00:12:43,120
+size 1,000 you want to increase in case
+you can increase and if you want to
+
+178
+00:12:41,920 --> 00:12:47,440
+decrease increase in you can decrease.
+Okay, that's how we have to change the
+
+179
+00:12:45,200 --> 00:12:52,480
+parameter. That's it. Okay, so now let
+me execute and let me show you the
+
+180
+00:12:52,920 --> 00:13:00,800
+output. So now this is the final code.
+So you have to call this object text
+
+181
+00:12:59,519 --> 00:13:04,399
+splitter. Then there is a function
+called create documents. Inside that you
+
+182
+00:13:02,880 --> 00:13:08,959
+have to pass your documents. So the
+documents actually we got okay. So we
+
+183
+00:13:06,880 --> 00:13:13,120
+are giving the past content only. Okay,
+the text only. You can see inside that
+
+184
+00:13:11,040 --> 00:13:19,120
+I'm passing it passing the text. Now see
+if I execute. So it will have all the
+
+185
+00:13:15,920 --> 00:13:22,680
+chunk right now. See so how many chunks
+it has created. If you want to see that
+
+186
+00:13:20,959 --> 00:13:27,399
+just pass it to the length
+function. So it has created two chunks.
+
+187
+00:13:25,040 --> 00:13:34,560
+You can see first document and second
+document. All right. Now if you open
+
+188
+00:13:29,600 --> 00:13:37,800
+this txt file uh this b good txt file.
+Now you can see the
+
+189
+00:13:36,279 --> 00:13:43,120
+first
+here. So if you count okay if you count
+
+190
+00:13:40,720 --> 00:13:47,519
+all the token that empty token also you
+will see that it is uh I mean uh getting
+
+191
+00:13:45,279 --> 00:13:50,959
+1,000 okay 1,000 token because this
+empty space would be also counted okay
+
+192
+00:13:49,360 --> 00:13:54,720
+that's why you can see in the first
+chunks it is getting this one be good
+
+193
+00:13:53,120 --> 00:14:00,000
+and the second chunks it is getting this
+one okay this is the
+
+194
+00:13:56,680 --> 00:14:04,959
+idea now you can take any like uh big
+document and you can I mean try you will
+
+195
+00:14:02,320 --> 00:14:08,079
+see that it will create so many charms
+so later on whenever we'll be creating
+
+196
+00:14:06,639 --> 00:14:10,399
+the rag based application that time
+we'll be loading in the bigger
+
+197
+00:14:09,040 --> 00:14:15,680
+documents. Okay, that time I'll show
+you. It will create so many chunks for
+
+198
+00:14:12,760 --> 00:14:19,680
+you. Okay, now if you want to see them
+simply you can uh give the ID. Let's say
+
+199
+00:14:18,079 --> 00:14:24,000
+I want to see the first chunks. This is
+the first chunks. If you want to see the
+
+200
+00:14:21,600 --> 00:14:28,320
+second chunks, you can also see the
+second chunks. Okay, this is called
+
+201
+00:14:26,000 --> 00:14:32,880
+actually character text splitter.
+Character text splitter. Now the second
+
+202
+00:14:30,720 --> 00:14:39,480
+splitting we'll be learning called
+recursive
+
+203
+00:14:35,120 --> 00:14:39,480
+uh character text splitter.
+
+204
+00:14:40,480 --> 00:14:48,000
+Okay, this one and for this you have to
+import it from the langen. So this is
+
+205
+00:14:45,680 --> 00:14:53,199
+the syntax langen text splitter
+recursive character text splitter and
+
+206
+00:14:50,639 --> 00:14:53,199
+this is the
+
+207
+00:14:55,399 --> 00:15:02,160
+syntax. Okay, recursive uh character
+text splitter. Now you can ask me how
+
+208
+00:15:00,480 --> 00:15:06,480
+recursive will work. So let me first of
+all give you one text and let me show
+
+209
+00:15:04,160 --> 00:15:10,920
+you how it will work. So what I'll do,
+I'll just try to pass the text.
+
+210
+00:15:34,560 --> 00:15:41,920
+So here is the chunks I got. Now see how
+it is working. So let me open up my
+
+211
+00:15:39,839 --> 00:15:48,079
+blackboard. See whenever I'm talking
+about recursive character text
+
+212
+00:15:44,519 --> 00:15:51,600
+spitter. So it will actually uh perform
+the splitting with uh recursively. Okay.
+
+213
+00:15:50,399 --> 00:15:56,399
+What is recursive? I think you know
+recursive means repetitively. That means
+
+214
+00:15:53,759 --> 00:16:02,160
+first of all it will split the documents
+with respect to double slash. Okay.
+
+215
+00:15:58,240 --> 00:16:06,240
+Double slash sorry uh double uh double
+uh uh slash n. Okay, double slashing you
+
+216
+00:16:04,079 --> 00:16:10,560
+can see double slash. Okay, so once
+double slash is completed then it will
+
+217
+00:16:09,279 --> 00:16:14,160
+actually split with respect to the
+single slash. That means in sometimes
+
+218
+00:16:12,880 --> 00:16:20,880
+actually you will see in the text you
+will be having single slash n as well.
+
+219
+00:16:17,120 --> 00:16:25,839
+Let me show you. So here see there you
+will get double slash then you will be
+
+220
+00:16:23,519 --> 00:16:29,279
+also getting single slash. See single
+slash that means two kinds of slash and
+
+221
+00:16:28,000 --> 00:16:34,000
+you will be getting one is the double
+slash. Double slash means two new line
+
+222
+00:16:31,199 --> 00:16:37,600
+two new line and single slash means one
+new line. So first of all it will speed
+
+223
+00:16:36,160 --> 00:16:41,680
+the documents with respect to double
+slash and then it will again again it
+
+224
+00:16:40,000 --> 00:16:45,759
+will apply another loop. Okay. So let's
+say in the first loop in the first
+
+225
+00:16:46,279 --> 00:16:54,240
+loop in the first
+loop it will first of all split with
+
+226
+00:16:51,440 --> 00:16:57,920
+respect to the double slash. Okay. Then
+inside that they will be performing
+
+227
+00:16:55,759 --> 00:17:01,199
+another loop. Let's say second loop.
+then it will split the document with
+
+228
+00:16:59,279 --> 00:17:05,679
+respect to the single slashn. Okay, then
+it will perform the splitting operation.
+
+229
+00:17:03,120 --> 00:17:08,799
+So this is what actually recursive
+character takes a splitter. That's why
+
+230
+00:17:07,439 --> 00:17:12,319
+they are calling this recursive that
+that means they're performing
+
+231
+00:17:09,679 --> 00:17:16,319
+recursively. Okay, this is the idea. So
+both technique you can use. Okay, with
+
+232
+00:17:13,679 --> 00:17:19,760
+the both technique you can uh split your
+data. Either you can use character,
+
+233
+00:17:18,000 --> 00:17:25,199
+either you can use recursive. Okay, both
+will work fine in that case. Okay, so we
+
+234
+00:17:22,799 --> 00:17:29,640
+have learned the first uh technique
+which is nothing but our splitting.
+
+235
+00:17:26,880 --> 00:17:34,039
+Okay, splitting. Now, what is the second
+technique? Second technique is nothing
+
+236
+00:17:31,679 --> 00:17:38,559
+but I have to uh
+know I have to know how to do the
+
+237
+00:17:37,280 --> 00:17:43,120
+embeddings like how to generate the
+embeddings. Okay. So, let's try to see
+
+238
+00:17:40,720 --> 00:17:47,520
+how we can generate the embedding. So
+for embedding we'll be again opening
+
+239
+00:17:45,280 --> 00:17:47,520
+this
+
+240
+00:17:52,440 --> 00:17:56,400
+file and I can comment
+
+241
+00:18:00,360 --> 00:18:08,559
+it. So what is embedding here I can
+comment. So embedding is nothing but
+
+242
+00:18:05,039 --> 00:18:13,039
+here uh transform the small parts of the
+text into the number that means vector
+
+243
+00:18:10,640 --> 00:18:17,360
+that are easily stored to the uh vector
+store and search by the vector database.
+
+244
+00:18:14,640 --> 00:18:20,799
+Okay. So how we can uh like generate the
+embeddings for this? What we'll be using
+
+245
+00:18:18,799 --> 00:18:24,000
+guys? We'll be using embedding model.
+Embedding is also a large language
+
+246
+00:18:22,160 --> 00:18:26,360
+model. Okay. It's a large language
+model. With the help of that you'll be
+
+247
+00:18:25,120 --> 00:18:30,000
+generating the vector
+embedding. Show the embedding model.
+
+248
+00:18:28,400 --> 00:18:35,760
+Okay. So you can load different kinds of
+embedding model. So here I'm going to
+
+249
+00:18:32,200 --> 00:18:41,240
+load open a embedding model. So open a
+is having also embedding model. You can
+
+250
+00:18:37,120 --> 00:18:45,840
+see open a embeddings. Okay. Embedding
+models. So it is having different
+
+251
+00:18:43,200 --> 00:18:45,840
+different embedding
+
+252
+00:18:50,600 --> 00:18:56,960
+model. See text embedding three small
+text embedding three large text
+
+253
+00:18:55,200 --> 00:18:59,919
+embedding add. So that's why it is
+having different different kinds of
+
+254
+00:18:57,919 --> 00:19:04,039
+embedding model. Okay. So let's load one
+embedding model. So by default I think
+
+255
+00:19:01,360 --> 00:19:08,000
+it will load this model text
+embedding adder. Okay this model maybe
+
+256
+00:19:06,240 --> 00:19:12,720
+it will load by default. So let me load
+this embedding
+
+257
+00:19:09,640 --> 00:19:17,720
+model. Okay that means what will happen?
+So here we'll be using embedding model.
+
+258
+00:19:14,559 --> 00:19:22,919
+So let's say this is my embedding
+model. Okay. Embedding model. And he'll
+
+259
+00:19:20,640 --> 00:19:29,320
+be giving the input
+text. Input text. Okay. And this will
+
+260
+00:19:27,280 --> 00:19:32,880
+return you the
+vector vectors
+
+261
+00:19:33,400 --> 00:19:43,000
+embedding that means numerical
+data. Okay, numerical data. Okay, so
+
+262
+00:19:40,400 --> 00:19:50,120
+that you can store it to the vector
+database vector database DB. Okay, this
+
+263
+00:19:46,960 --> 00:19:55,440
+is the idea. Now let's uh let me show
+you. So let's say here I'll be taking
+
+264
+00:19:52,559 --> 00:19:58,880
+list of the sentence. Okay. So chunks of
+text we are having let's say hi there,
+
+265
+00:19:56,960 --> 00:20:03,520
+hello, what's your name? Okay, James
+Bond and so on. Now we'll try to convert
+
+266
+00:20:02,000 --> 00:20:07,039
+these are the sentence to the numerical
+representation. So for this I'll be
+
+267
+00:20:05,600 --> 00:20:11,520
+passing this list to the vector
+embedding sorry embedding model. You can
+
+268
+00:20:08,960 --> 00:20:14,360
+see embedding model embed document. So
+this document I'm passing inside the
+
+269
+00:20:12,880 --> 00:20:19,679
+embedding model and it will give me the
+embeddings. Now you can also see the
+
+270
+00:20:17,520 --> 00:20:23,280
+embeddings. Let me show you. See this is
+the embedding guys. Now you can see this
+
+271
+00:20:21,200 --> 00:20:27,919
+is the numerical representation. Okay,
+numerical representation you can see
+
+272
+00:20:24,720 --> 00:20:31,600
+it's a minus uh minus0 you are having
+you can you can also see the plus 0 as
+
+273
+00:20:29,600 --> 00:20:37,679
+well okay that means it's a coordinate
+so it has created one higher dimensional
+
+274
+00:20:34,679 --> 00:20:41,640
+coordinate coordinate space so that's
+how it has created one coordinate
+
+275
+00:20:40,039 --> 00:20:46,480
+space
+okay and these are the coordinate number
+
+276
+00:20:44,640 --> 00:20:50,080
+okay like minus coordinate plus
+coordinate I think you know that's how
+
+277
+00:20:48,080 --> 00:20:53,120
+it is storing the vector let's say this
+vector will store here another vector
+
+278
+00:20:51,760 --> 00:20:56,320
+will store Here another vector will
+store here another vector will be stored
+
+279
+00:20:54,400 --> 00:21:01,840
+here. Okay, that's how it is storing the
+vector in the
+
+280
+00:20:58,600 --> 00:21:06,080
+uh multi-dimensional space. Okay, based
+on that it will decide uh which vector
+
+281
+00:21:04,640 --> 00:21:09,760
+is closely. Let's say these are the
+vector are
+
+282
+00:21:07,320 --> 00:21:14,000
+close then these are the vector are
+close. Okay, these are the vector are
+
+283
+00:21:12,080 --> 00:21:17,440
+close. So that's how it will make a
+cluster and whenever you are doing the
+
+284
+00:21:15,679 --> 00:21:20,640
+similarity source operation or vector
+source operation that's how it will
+
+285
+00:21:19,360 --> 00:21:25,200
+identify let's say if there is any
+another vector let's say this vector is
+
+286
+00:21:22,600 --> 00:21:28,480
+there now this vector is close to this
+particular cluster that means this
+
+287
+00:21:26,400 --> 00:21:31,600
+cluster cluster it will consider so
+that's actually it is performing
+
+288
+00:21:29,600 --> 00:21:35,080
+similarity search operation I can see
+this is the vector representation entire
+
+289
+00:21:33,200 --> 00:21:39,280
+vector representation of your
+data okay now if you want to see the
+
+290
+00:21:37,679 --> 00:21:42,240
+dimension what is the dimension of the
+open a embedding so this is the
+
+291
+00:21:40,880 --> 00:21:45,320
+dimension you can simply check the
+length
+
+292
+00:21:43,679 --> 00:21:50,240
+See uh
+1,536 dimensional vector you are getting
+
+293
+00:21:47,919 --> 00:21:57,200
+that means one sentence okay one
+sentence is representing in
+
+294
+00:21:52,360 --> 00:22:01,600
+the 1536 dimensional space so as a human
+we can only visualize three dimensional
+
+295
+00:21:58,880 --> 00:22:08,440
+guys this is a three three-dimensional
+but our data is
+
+296
+00:22:03,720 --> 00:22:18,159
+storing our data is storing
+1536 536 dimension Okay, it has created
+
+297
+00:22:13,600 --> 00:22:22,840
+10 uh I mean uh five uh 1,536 dimension.
+Okay, in that space actually it has
+
+298
+00:22:20,320 --> 00:22:27,880
+stored all of my embeddings, all of the
+vector. So as a human being it's not
+
+299
+00:22:25,600 --> 00:22:32,840
+possible for us to visualize that one.
+Okay, I hope you got it. So now let me
+
+300
+00:22:30,799 --> 00:22:38,480
+open up my
+code. Now if you want to see the first
+
+301
+00:22:36,080 --> 00:22:42,000
+five numbers, you can also do the three
+uh list slicing because at then it's a
+
+302
+00:22:40,640 --> 00:22:46,320
+list. Okay, you can see the first five
+number. Okay. Yeah. And these are the
+
+303
+00:22:44,720 --> 00:22:48,880
+pretend model. Okay. The model actually
+we are using these are the pretend
+
+304
+00:22:47,440 --> 00:22:52,799
+model. So that's why these are the
+vector is pretty good if you give to the
+
+305
+00:22:50,640 --> 00:22:57,760
+model. So model can understand easily.
+Okay. This is the idea. So we have
+
+306
+00:22:55,760 --> 00:23:01,919
+learned how we can perform the splitting
+operation and we have also learned how
+
+307
+00:22:59,760 --> 00:23:04,240
+we can convert our text to the
+embeddings that means vector
+
+308
+00:23:03,200 --> 00:23:09,080
+representation with the help of
+embedding model. Now the next thing
+
+309
+00:23:05,760 --> 00:23:14,760
+we'll be learning about uh vector store.
+Okay. We'll be learning about vector
+
+310
+00:23:13,080 --> 00:23:19,200
+store.
+Vector store that means vector database.
+
+311
+00:23:17,679 --> 00:23:24,159
+So there are some vector database are
+available like chromad is there. F is
+
+312
+00:23:21,600 --> 00:23:29,760
+there. Uh pine cone is there, web is
+there. Okay. Then u progsql is there. Uh
+
+313
+00:23:28,159 --> 00:23:32,240
+nowadays actually redhat also created
+the vector database that that's how we
+
+314
+00:23:31,200 --> 00:23:35,520
+are having different different kinds of
+vector database. So let me show you some
+
+315
+00:23:33,919 --> 00:23:39,840
+of them. So what is vector database?
+Vector database is nothing but it stored
+
+316
+00:23:37,120 --> 00:23:42,960
+the embedding in a very fast searchable.
+Sorry, it stored the embeddings in a
+
+317
+00:23:41,120 --> 00:23:47,440
+very first searchable database. Okay,
+this is called actually vector database.
+
+318
+00:23:44,960 --> 00:23:52,280
+Now, uh let me show you some of the
+example of the vector database.
+
+319
+00:23:50,200 --> 00:23:58,440
+Mhm.
+H first of all, let me show you the
+
+320
+00:23:56,039 --> 00:24:03,919
+chrom chrom
+example. So, this is the chrom. You can
+
+321
+00:24:01,039 --> 00:24:06,640
+see if I want to plot the chrom guys uh
+sorry, if I want to import the chrom,
+
+322
+00:24:05,280 --> 00:24:11,760
+chromad is already available inside
+langen chroma. Now if I open the
+
+323
+00:24:08,559 --> 00:24:15,679
+requirement txt so langen chroma we
+haven't mentioned. So first of all we
+
+324
+00:24:13,039 --> 00:24:20,480
+have to install one package. So this is
+the package guys we have to install
+
+325
+00:24:16,960 --> 00:24:23,520
+called langen chroma. Okay. So try to
+open up your terminal and try to install
+
+326
+00:24:22,240 --> 00:24:27,440
+the requirements again. Then it will
+install the langen chroma. So langen
+
+327
+00:24:25,360 --> 00:24:30,159
+what they did they created separate okay
+separate library for the vector
+
+328
+00:24:29,039 --> 00:24:34,880
+database. Let's say you want to use
+langen uh uh chrom you have to install
+
+329
+00:24:32,880 --> 00:24:39,200
+langen chroma. Let's say you want to use
+uh any other vector database that tell
+
+330
+00:24:37,520 --> 00:24:43,159
+me you have to install with respect to
+that name. Okay. So that's how they have
+
+331
+00:24:41,200 --> 00:24:46,880
+created different different kinds of
+functionality. So here we are importing
+
+332
+00:24:45,200 --> 00:24:49,919
+the chroma from the langen chroma. You
+can see then we are loading the text
+
+333
+00:24:48,400 --> 00:24:54,240
+loader that means we'll be loading the
+text embedding model because first of
+
+334
+00:24:51,840 --> 00:24:58,480
+all I have to generate the embeddings
+from the text and why splitter because
+
+335
+00:24:56,799 --> 00:25:02,320
+my data would be huge. Okay. First of
+all I have to create the chunk. Okay.
+
+336
+00:25:01,120 --> 00:25:06,080
+with the help of that chunk actually
+you'll be creating the embeddings that
+
+337
+00:25:04,320 --> 00:25:09,600
+mean step of execution guys try to
+remember first of all you have to load
+
+338
+00:25:07,679 --> 00:25:12,559
+the data with the help of text loader
+then you have to perform the splitting
+
+339
+00:25:11,440 --> 00:25:15,679
+operation that means you can see I'm
+performing the splitting operation after
+
+340
+00:25:13,919 --> 00:25:19,919
+splitting we are getting the chunk so
+with the help of embedding model will be
+
+341
+00:25:18,000 --> 00:25:22,799
+uh creating the vector embedding okay
+and this particular vector embedding
+
+342
+00:25:21,360 --> 00:25:25,960
+will be storing to the vector database
+so this is the step of the execution so
+
+343
+00:25:24,559 --> 00:25:31,320
+here I've already written I think
+remember so
+
+344
+00:25:27,799 --> 00:25:35,760
+here split um numeric ical
+representation then load the embeddings
+
+345
+00:25:34,080 --> 00:25:39,440
+to the vector database okay then we'll
+be getting the retriever then we can
+
+346
+00:25:37,440 --> 00:25:42,279
+perform the rag operation that means we
+can perform the query operation on top
+
+347
+00:25:40,799 --> 00:25:46,640
+of it with the help of large language
+model so here is the example first of
+
+348
+00:25:44,880 --> 00:25:50,799
+all I'm loading the data so I'm loading
+this data actually so inside the data
+
+349
+00:25:48,480 --> 00:25:56,320
+I'm having one file called state of
+union txt so state of union txt so this
+
+350
+00:25:54,320 --> 00:26:00,720
+is the data actually I'm loading okay
+after that I'm performing the character
+
+351
+00:25:57,919 --> 00:26:04,000
+test and ch size 1,000 chunks overlap
+zero. I haven't given any kinds of
+
+352
+00:26:01,919 --> 00:26:10,080
+chunks overlap. Then I'm splitting the
+data. Okay. Now let me show you how many
+
+353
+00:26:07,279 --> 00:26:10,080
+chunks you will be
+
+354
+00:26:11,000 --> 00:26:18,080
+getting. So this is the chunks. See you
+are getting so many chunks. So let me
+
+355
+00:26:15,200 --> 00:26:18,080
+see show you the
+
+356
+00:26:19,400 --> 00:26:28,919
+length you are getting. 42 chunks here
+guys. 42 chunks you are getting. Okay.
+
+357
+00:26:25,120 --> 00:26:34,000
+Now this thing what I will be
+doing will be
+
+358
+00:26:31,520 --> 00:26:37,440
+uh generating the vector embedding okay
+and we'll be storing to the chrom and
+
+359
+00:26:35,919 --> 00:26:41,600
+chromad is nothing but it's a local
+database so it will store everything in
+
+360
+00:26:39,600 --> 00:26:45,360
+your memory in memory it will store the
+data guys okay always try to remember
+
+361
+00:26:43,279 --> 00:26:49,440
+chromad is a local vector database so
+for this you have to give the chunks
+
+362
+00:26:47,520 --> 00:26:52,240
+okay inside the chrom so there is a
+function called from document you have
+
+363
+00:26:50,640 --> 00:26:56,480
+to give the entire chunks and you have
+to give the embedding model so what it
+
+364
+00:26:53,840 --> 00:27:00,720
+will do it will take the embedding model
+that means it will perform this
+
+365
+00:26:58,120 --> 00:27:03,799
+operation. It will take the input data.
+It will take the embedding model. It
+
+366
+00:27:02,080 --> 00:27:07,360
+will give you the vector
+store. Okay, vector embedding and it
+
+367
+00:27:06,000 --> 00:27:10,880
+will store to the vector database which
+is nothing but my chromma. Okay, so this
+
+368
+00:27:09,279 --> 00:27:14,960
+is what actually we are doing in this
+line and with the help of one line
+
+369
+00:27:13,840 --> 00:27:18,720
+actually we are able to perform because
+we are using langun. Okay, if you're not
+
+370
+00:27:16,720 --> 00:27:22,000
+using langun that time you have to write
+the manual code. So that's why actually
+
+371
+00:27:20,559 --> 00:27:25,279
+we are using langun. Langen is a
+complete orchestration framework. So it
+
+372
+00:27:23,840 --> 00:27:28,799
+will give you all kinds of functionality
+so that with the help of very less line
+
+373
+00:27:27,120 --> 00:27:34,320
+of code you can perform all the jobs.
+Okay. Now let me
+
+374
+00:27:31,960 --> 00:27:38,400
+execute. See it is storing it is
+converting all of the data in the um
+
+375
+00:27:36,320 --> 00:27:43,840
+like vector representation and it will
+store in the vector
+
+376
+00:27:39,960 --> 00:27:47,200
+database. Okay. Now see it has loaded
+that means this vector DB this is my
+
+377
+00:27:45,520 --> 00:27:50,640
+object right now. This is my vector
+database object right now. You can see
+
+378
+00:27:48,480 --> 00:27:54,880
+this is object. Now I can perform
+similarity search operation. Okay, that
+
+379
+00:27:53,200 --> 00:28:00,320
+means let's say here I'll be asking one
+question. What uh did the president say
+
+380
+00:27:57,120 --> 00:28:05,039
+about the John Lewis voting rights act?
+So if you open this documents now, so it
+
+381
+00:28:02,159 --> 00:28:08,399
+is related this John le and all. So
+these are the information we are having.
+
+382
+00:28:06,799 --> 00:28:11,600
+Now here what I'm doing I'm calling the
+vector database object and I'm
+
+383
+00:28:09,679 --> 00:28:15,600
+performing similar itarch operation. So
+this question I'm giving that means what
+
+384
+00:28:13,039 --> 00:28:19,600
+will happen. So whenever you asking this
+question it will go to the knowledge
+
+385
+00:28:16,720 --> 00:28:23,120
+base that means to the vector uh
+dimension and here it will search the
+
+386
+00:28:21,279 --> 00:28:27,200
+similar results okay similar results
+from this particular vector and it will
+
+387
+00:28:24,880 --> 00:28:31,679
+give you the similarity uh response. Now
+let me show
+
+388
+00:28:29,000 --> 00:28:36,880
+you. So these are the similar results I
+got guys. Four similar results you got.
+
+389
+00:28:34,600 --> 00:28:41,520
+Okay. But I don't want this kinds of
+output. I want the exact output. So the
+
+390
+00:28:40,000 --> 00:28:45,520
+question I have asked I want exact
+output. Let's say this question if I ask
+
+391
+00:28:43,120 --> 00:28:49,919
+to the chargity. Okay. If I ask to the
+charge GPT charge GBT will give me the
+
+392
+00:28:47,039 --> 00:28:49,919
+exact answer. Yes or
+
+393
+00:28:52,279 --> 00:28:59,120
+no. See it will give you the exact
+answer. Okay. exact answer what is what
+
+394
+00:28:57,919 --> 00:29:03,720
+is the answer actually you are looking
+for but in case here I'm not getting the
+
+395
+00:29:01,840 --> 00:29:09,360
+exact answer okay I'm getting the
+similarity answer only okay so how to
+
+396
+00:29:06,799 --> 00:29:12,720
+get the exact answer for this we'll be
+connecting our large language model so
+
+397
+00:29:11,039 --> 00:29:15,840
+whenever we'll be creating the rag that
+time I'll tell you okay how to connect
+
+398
+00:29:13,919 --> 00:29:21,840
+the large language model as of now we
+are only doing the similarity s
+
+399
+00:29:17,840 --> 00:29:25,679
+operation okay this is the idea fine now
+there is another way you can uh retrieve
+
+400
+00:29:24,080 --> 00:29:28,760
+the information so this is called
+actually Retriever. Let me show you one
+
+401
+00:29:27,200 --> 00:29:34,480
+retriever
+example. Vector store as
+
+402
+00:29:32,600 --> 00:29:39,679
+retriever. That means finding the
+embedding the best answer your question.
+
+403
+00:29:38,159 --> 00:29:43,200
+So it will give you the retrieve output.
+Even it will also show you the metadata
+
+404
+00:29:41,840 --> 00:29:47,440
+that means source document like from
+where it is retrieving the data. So let
+
+405
+00:29:44,880 --> 00:29:52,320
+me show you one example. So what I will
+do now? Let me show you another vector
+
+406
+00:29:49,840 --> 00:29:58,240
+database example. So first of all let me
+load one data. So I'm loading the state
+
+407
+00:29:54,880 --> 00:30:02,399
+union txt again. Then we'll be using
+files. Okay, files is another vector
+
+408
+00:30:00,279 --> 00:30:05,520
+database. You can see files is another
+vector database. Again it's a local
+
+409
+00:30:03,760 --> 00:30:09,279
+vector database. Okay, it will store the
+data locally. Now again I'm importing
+
+410
+00:30:07,760 --> 00:30:13,039
+open embeddings and character text
+splitter. First of all loading the
+
+411
+00:30:10,600 --> 00:30:16,480
+documents doing the chunking that means
+uh creating the chunks doing the
+
+412
+00:30:14,720 --> 00:30:20,159
+splitting operation. After that
+initializing the embedding model and you
+
+413
+00:30:18,480 --> 00:30:24,000
+can see inside fires I'm giving the
+chunks as well as my embedding model.
+
+414
+00:30:21,919 --> 00:30:27,039
+That means it will convert my text to
+the vector embedding and it will store
+
+415
+00:30:25,360 --> 00:30:30,720
+to the vector database which is nothing
+but files. Okay. And it will give me the
+
+416
+00:30:28,559 --> 00:30:33,039
+vector DB object. So this is the vector
+DB
+
+417
+00:30:33,080 --> 00:30:39,440
+object. Okay. Now we'll be creating
+something called retriever. How to
+
+418
+00:30:38,320 --> 00:30:44,399
+create the retriever? That's how we can
+create the retro DB. There's a function
+
+419
+00:30:42,399 --> 00:30:47,840
+called as retriever. Okay. As retriever.
+See always try to remember whenever you
+
+420
+00:30:46,320 --> 00:30:51,520
+are creating rag based application you
+have to use this function as retriever.
+
+421
+00:30:49,840 --> 00:30:54,880
+Not the similarity source. Okay.
+Similarity search. So we won't be using
+
+422
+00:30:53,440 --> 00:30:59,240
+this method. We'll be using this method
+because this is more powerful. Why? Let
+
+423
+00:30:56,720 --> 00:31:04,399
+me show you. So let me ask one
+question. So I'll be asking this
+
+424
+00:31:01,360 --> 00:31:12,080
+question. Retriever.invoke. What did he
+said about uh Ken Ken G Brown Jackson?
+
+425
+00:31:08,880 --> 00:31:18,159
+Okay. Let's say this is my question. Now
+if I show you the response. See it will
+
+426
+00:31:15,840 --> 00:31:21,520
+give you by default four response. Okay.
+Four response. Four retrieved output.
+
+427
+00:31:20,159 --> 00:31:26,559
+Now you can see it is also giving you
+the meta sources like which document it
+
+428
+00:31:23,919 --> 00:31:31,120
+is referring from which press content it
+is giving you the information. See it is
+
+429
+00:31:28,240 --> 00:31:35,200
+giving each and everything. Okay. These
+are the most relevant answer it has
+
+430
+00:31:32,960 --> 00:31:40,120
+filtered out from the txt document. The
+documents actually you have given okay
+
+431
+00:31:38,000 --> 00:31:44,399
+see it is referring this document
+actually. Okay. So that's why it is more
+
+432
+00:31:42,640 --> 00:31:47,120
+powerful than your simulator search
+because similarity search is not giving
+
+433
+00:31:45,760 --> 00:31:52,240
+this kind particular metadata
+information. But I want to understand
+
+434
+00:31:50,080 --> 00:31:55,360
+which document it is referring which
+line it is referring. Okay. If I want to
+
+435
+00:31:54,000 --> 00:32:00,080
+understand I'll be using the retrieve at
+that time. I hope it is clear. Okay. Now
+
+436
+00:31:58,399 --> 00:32:06,240
+if you want to see the length simply you
+can also see the length. So here it has
+
+437
+00:32:02,399 --> 00:32:10,000
+given me by default four because add ret
+by default four. Okay four response. You
+
+438
+00:32:08,080 --> 00:32:13,919
+can also tweak this parameter for this.
+There is a parameter called top K. I'll
+
+439
+00:32:11,519 --> 00:32:18,880
+tell you how to change the parameter. So
+let me show you how we can change the
+
+440
+00:32:15,440 --> 00:32:23,120
+parameter. So whenever I created the ret
+so here I can mention this parameter
+
+441
+00:32:20,799 --> 00:32:23,120
+search
+
+442
+00:32:24,840 --> 00:32:34,080
+keyword here search keyword K is equal
+to. So here if I give two it will only
+
+443
+00:32:30,799 --> 00:32:34,080
+give me two answer. Let me show
+
+444
+00:32:34,200 --> 00:32:42,000
+you. See now it has given me two answer
+only. Okay retrieve output. If you give
+
+445
+00:32:39,600 --> 00:32:49,080
+three it will give you three answer. So
+this is called K parameter. Okay.
+
+446
+00:32:45,360 --> 00:32:55,640
+say three but by default they set
+four okay it will give you four if you
+
+447
+00:32:52,720 --> 00:33:01,919
+give one it will give you only
+one okay so what we have learned first
+
+448
+00:32:59,120 --> 00:33:05,039
+of all we have learned that text
+splitter that means we have learned
+
+449
+00:33:03,120 --> 00:33:08,799
+about the splitter how to create the
+chunks if you're having bigger document
+
+450
+00:33:06,480 --> 00:33:13,200
+how to convert into the smaller chunks
+after that we have learned how to do the
+
+451
+00:33:12,000 --> 00:33:16,480
+embeddings that means we'll be using
+some embedding model okay With the help
+
+452
+00:33:15,200 --> 00:33:19,679
+of that we'll be generating the vector
+embedding. After that we learned how we
+
+453
+00:33:18,320 --> 00:33:23,519
+can store these are the vector embedding
+to the vector database. Okay. I showed
+
+454
+00:33:21,440 --> 00:33:28,399
+you some example of the vector database.
+Then we have learned how to perform the
+
+455
+00:33:25,519 --> 00:33:31,760
+similarity search operation here. Okay.
+Then I told you we'll be using something
+
+456
+00:33:30,240 --> 00:33:35,840
+called retriever because retr is more
+powerful uh because retr gives me the
+
+457
+00:33:34,080 --> 00:33:39,360
+sources. Okay. Sources as an output as
+well. Okay. So this thing actually we
+
+458
+00:33:38,080 --> 00:33:43,360
+have learned. Now with the help of these
+are the components we'll be creating one
+
+459
+00:33:41,519 --> 00:33:46,000
+rag system in the next class. This is
+the agenda.
+

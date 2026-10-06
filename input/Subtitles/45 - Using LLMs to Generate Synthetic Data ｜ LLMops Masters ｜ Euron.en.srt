@@ -1,0 +1,382 @@
+1
+00:00:00,719 --> 00:00:07,919
+So guys uh so far we have seen uh how we
+can do the data acquisition. I uh
+
+2
+00:00:05,839 --> 00:00:12,400
+already showed you one practical demo of
+web scrapping. Even I also showed you
+
+3
+00:00:10,080 --> 00:00:16,240
+how we can prep-process the data. So now
+I will show you how we can generate the
+
+4
+00:00:14,559 --> 00:00:22,080
+synthetic data with the help of large
+language model. Okay. So for this uh
+
+5
+00:00:18,560 --> 00:00:22,080
+let's open up Google
+
+6
+00:00:24,439 --> 00:00:29,880
+collab. So here let's get a new
+notebook.
+
+7
+00:00:34,480 --> 00:00:38,079
+So here I'm going to name
+
+8
+00:00:46,920 --> 00:00:55,320
+uh Okay. So LLMs to generate synthetic
+data. Okay. So this is the name. Now
+
+9
+00:00:51,680 --> 00:00:55,320
+let's connect the notebook.
+
+10
+00:00:57,920 --> 00:01:04,239
+Yeah. So first of all uh here I'm going
+to install OpenAI. You can use any kinds
+
+11
+00:01:02,480 --> 00:01:08,960
+of large language model. Okay. I'm going
+to use OpenAI for that. Uh you can use
+
+12
+00:01:06,880 --> 00:01:13,720
+uh Mistral Falcon. Okay. You can use
+Germany. Okay. It's up to you. So let's
+
+13
+00:01:10,960 --> 00:01:19,960
+install the OpenI
+here. So this is the command. Let me
+
+14
+00:01:16,960 --> 00:01:19,960
+install.
+
+15
+00:01:25,360 --> 00:01:32,600
+Then after that we'll try to import the
+opening. Then I'll also import the
+
+16
+00:01:31,200 --> 00:01:36,560
+operating
+system. Then I need
+
+17
+00:01:38,759 --> 00:01:48,360
+pandas. Then I need string IO. So from
+IO
+
+18
+00:01:44,040 --> 00:01:48,360
+import string IO.
+
+19
+00:01:50,640 --> 00:01:58,600
+Okay. So now uh what I will do
+guys I'm going to set my open API key.
+
+20
+00:01:56,399 --> 00:02:05,520
+So for this just write open
+AI
+
+21
+00:02:00,600 --> 00:02:07,759
+API E is equal to. So let me pass my API
+key
+
+22
+00:02:09,319 --> 00:02:19,959
+guys. Yeah. So this is my API key you
+can see. So once my API key is set
+
+23
+00:02:16,840 --> 00:02:26,160
+uh Huh. So now we'll be writing a
+prompt. So here uh we'll be generating
+
+24
+00:02:23,360 --> 00:02:29,120
+uh one uh sentiment analysis data. You
+can generate any kinds of data. Okay,
+
+25
+00:02:27,520 --> 00:02:33,200
+you just only uh need to assign the
+prompt. So here I prepared a
+
+26
+00:02:31,080 --> 00:02:37,120
+prompt. So this is the prompt guys.
+Generate 10 rows of synthetic data for
+
+27
+00:02:35,120 --> 00:02:40,640
+sentiment classification. Each row
+should have the two columns text a
+
+28
+00:02:38,959 --> 00:02:44,640
+sentence and the label positive or
+negative sentiment. Return the data as a
+
+29
+00:02:42,800 --> 00:02:48,720
+CSV format with the headers. Okay, text
+and labels. Now here uh just for demo
+
+30
+00:02:46,959 --> 00:02:52,080
+purpose I'm generating 10 rows but
+whenever uh you are generating for your
+
+31
+00:02:50,560 --> 00:02:56,080
+actual task you can generate okay as
+much as you can. So this is our prompt
+
+32
+00:02:53,920 --> 00:03:02,879
+guys I have prepared. Now what I will do
+guys I'll try to initialize my uh uh
+
+33
+00:02:59,200 --> 00:03:02,879
+model. Okay. So let me just do it.
+
+34
+00:03:02,920 --> 00:03:05,920
+So
+
+35
+00:03:08,200 --> 00:03:19,200
+response is equal to open
+AI dot chat completion dot
+
+36
+00:03:16,599 --> 00:03:24,000
+create. Okay. So inside that first of
+all we'll try to initialize the model.
+
+37
+00:03:20,800 --> 00:03:27,000
+So here I'm going to use GPT4 model.
+GPT4.
+
+38
+00:03:28,640 --> 00:03:32,319
+Then I'm going to initialize the
+
+39
+00:03:34,599 --> 00:03:39,760
+message. So here just let me define the
+
+40
+00:03:44,599 --> 00:03:47,599
+rule
+
+41
+00:03:48,120 --> 00:03:57,400
+user. So user will pass the prompt. So
+it will be available in the
+
+42
+00:03:53,640 --> 00:04:01,120
+content which is nothing but my prompt.
+Okay. All right. So, I think it is fine.
+
+43
+00:03:59,680 --> 00:04:06,159
+Now, let me give the temperature
+parameter. This is the creativity
+
+44
+00:04:02,319 --> 00:04:06,159
+parameter. I think you already know that
+
+45
+00:04:12,200 --> 00:04:18,239
+temperature temperatures is equal to
+let's say I'll give 0.7. I want some
+
+46
+00:04:16,720 --> 00:04:26,040
+creativity because we are generating the
+data. Okay. Now,
+
+47
+00:04:21,600 --> 00:04:26,040
+uh let's initialize the model.
+
+48
+00:04:35,919 --> 00:04:44,720
+Okay. So now uh what I will do guys I'll
+try to take the data. So let's get a
+
+49
+00:04:40,560 --> 00:04:50,880
+variable CSV text is equal to from the
+response itself I'll try to extract the
+
+50
+00:04:46,960 --> 00:04:50,880
+data. So from response
+
+51
+00:04:52,280 --> 00:05:01,800
+choice I'll be taking the first
+index and
+
+52
+00:04:58,919 --> 00:05:06,960
+messages content.
+Okay. Yeah. So here you have the actual
+
+53
+00:05:04,479 --> 00:05:12,400
+response from the LLM. Now once you got
+the uh CSV text. Okay. So it is giving
+
+54
+00:05:10,479 --> 00:05:15,759
+one error because it should be choices.
+Okay. Not choice. I think it should
+
+55
+00:05:14,400 --> 00:05:18,400
+work. Yeah. Now let me show you the
+output.
+
+56
+00:05:18,639 --> 00:05:24,240
+So this is the output guys I got. So
+what we have to do? We have to convert
+
+57
+00:05:21,840 --> 00:05:29,720
+this thing to the pandas data frame. So
+let's do it. So df is equal to
+
+58
+00:05:28,120 --> 00:05:36,560
+pd
+dot
+
+59
+00:05:32,120 --> 00:05:40,720
+read csv inside that I'm going to pass
+this thing. But we'll first of all uh
+
+60
+00:05:38,880 --> 00:05:47,759
+convert to the string IO because this is
+a string I'm getting. So let's do it.
+
+61
+00:05:44,400 --> 00:05:55,919
+So string
+io inside that I'm going to pass my CSV
+
+62
+00:05:53,320 --> 00:06:00,639
+text. Okay. Now this will return your
+data frame. Now if you want to see the
+
+63
+00:05:57,520 --> 00:06:05,440
+data frame. So df let's try to print it.
+So guys I got the data. You can see left
+
+64
+00:06:02,639 --> 00:06:10,319
+hand side I have the text. Okay. Right
+hand side I have the label. Now you can
+
+65
+00:06:07,759 --> 00:06:13,600
+use this data for your training purpose.
+Okay. If you're doing fine tuning or
+
+66
+00:06:11,680 --> 00:06:19,280
+whatever you are using, you can use this
+particular data. Got it guys? So yes
+
+67
+00:06:17,520 --> 00:06:22,720
+guys, this how that's how actually we
+can generate any kinds of synthetic
+
+68
+00:06:20,639 --> 00:06:26,560
+data. Now let's say you need any other
+data. Let's say you need for the name
+
+69
+00:06:24,479 --> 00:06:29,919
+entity recognization. For this you can
+give another prompt. So let me give
+
+70
+00:06:28,080 --> 00:06:34,800
+another prompt here. See this is another
+prompt. Generate a five sentence with
+
+71
+00:06:31,759 --> 00:06:37,840
+entities in font uh format text sentence
+here entities. Okay. You can see
+
+72
+00:06:36,319 --> 00:06:41,520
+different different entities. Entities
+should be person organization local and
+
+73
+00:06:39,600 --> 00:06:44,240
+so on. Okay. So that's how if you need
+for the text summarization just give
+
+74
+00:06:42,960 --> 00:06:47,199
+text summarization. If you need for the
+language translation give language
+
+75
+00:06:45,520 --> 00:06:51,120
+translation only you just need to change
+the prompt otherwise all the code will
+
+76
+00:06:49,280 --> 00:06:54,479
+remain same. Okay. And that's how you
+can generate the data as much as you
+
+77
+00:06:52,880 --> 00:06:58,800
+can. Okay. And definitely if you're
+using openi uh it has some cost
+
+78
+00:06:56,720 --> 00:07:02,400
+involvement. You can also utilize any
+other model. Okay. It's up to you. So
+
+79
+00:07:00,479 --> 00:07:06,199
+yes guys this is all about uh I hope you
+liked it. Thank you so much.
+

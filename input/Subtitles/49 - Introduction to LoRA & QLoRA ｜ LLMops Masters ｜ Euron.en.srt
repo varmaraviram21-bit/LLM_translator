@@ -1,0 +1,707 @@
+1
+00:00:00,080 --> 00:00:03,960
+So guys inside finetuning
+
+2
+00:00:06,560 --> 00:00:15,440
+uh you will be using one pre-teen
+model okay
+
+3
+00:00:12,599 --> 00:00:18,800
+pretend large language model okay I
+think I already showed you there are so
+
+4
+00:00:16,960 --> 00:00:22,080
+many large language models are available
+as open source for this you can go to
+
+5
+00:00:20,640 --> 00:00:25,199
+the hugging phase so here you can see
+there are thousands of large language
+
+6
+00:00:23,439 --> 00:00:28,160
+models are available now you can choose
+any kinds of model as per your
+
+7
+00:00:26,640 --> 00:00:32,880
+requirement let's say want to use
+something called llama
+
+8
+00:00:29,720 --> 00:00:38,079
+Lama metal llama you can simply search
+llama here so you'll get see all the
+
+9
+00:00:35,760 --> 00:00:42,399
+llama model okay llama 2 llama 3 all
+kinds of model actually you will see
+
+10
+00:00:39,200 --> 00:00:46,160
+that see okay and this one meta now what
+you can do you can download this model
+
+11
+00:00:44,399 --> 00:00:52,800
+on top of that you can finetune your
+custom data but before finetuning u what
+
+12
+00:00:49,920 --> 00:00:55,280
+you can do see first of all let's say
+whatever let's say project you want to
+
+13
+00:00:54,320 --> 00:01:00,520
+implement let's say you want to
+implement one chatbot let's say want to
+
+14
+00:00:58,160 --> 00:01:06,799
+implement one Medical
+chatbot. Okay, medical
+
+15
+00:01:04,040 --> 00:01:10,400
+chatbot. First of all, use one pretend
+large language model and try to perform
+
+16
+00:01:08,799 --> 00:01:14,560
+the inference operation. Okay, try to
+perform the inference
+
+17
+00:01:12,520 --> 00:01:18,960
+operation. Inference on top of the
+model. If this model is able to give the
+
+18
+00:01:17,040 --> 00:01:22,479
+correct answer, okay, if it is able to
+give the correct answer, try to select
+
+19
+00:01:20,240 --> 00:01:28,240
+this model. Okay, otherwise what you can
+do just try to build one rag relable
+
+20
+00:01:25,680 --> 00:01:32,600
+augmented generation. Okay, that means
+create a external knowledge
+
+21
+00:01:30,759 --> 00:01:38,560
+base.
+External knowledge
+
+22
+00:01:35,640 --> 00:01:42,320
+base then try to connect your one
+pretend large language
+
+23
+00:01:40,119 --> 00:01:46,079
+model and try to again perform the
+inference operation. Okay. And try to
+
+24
+00:01:44,479 --> 00:01:49,280
+see the accuracy of the model. Try to
+see like whether your model is giving
+
+25
+00:01:47,759 --> 00:01:53,439
+able to give the correct response or
+not. If it is giving try to select this
+
+26
+00:01:51,119 --> 00:01:57,040
+model. Okay. Otherwise if this both
+approach is not working that time what
+
+27
+00:01:54,960 --> 00:02:00,799
+you can do you can perform the fine
+tuning
+
+28
+00:01:58,119 --> 00:02:04,079
+operation okay finetuning operation. So
+there what you can do you can take one
+
+29
+00:02:02,320 --> 00:02:07,759
+pre10 large language model from hugging
+face from any kinds of let's say
+
+30
+00:02:05,360 --> 00:02:11,520
+platform and on top of that you can
+train your custom
+
+31
+00:02:09,160 --> 00:02:16,560
+data the data set you are using let's
+say you are using one very specific
+
+32
+00:02:14,000 --> 00:02:19,920
+medical okay medical data that time you
+can use this data and you can train one
+
+33
+00:02:17,920 --> 00:02:24,720
+custom model on top of it okay this is
+called actually fine-tuning and that
+
+34
+00:02:22,400 --> 00:02:28,720
+should be my suggestion guys I mean
+directly don't do the finetuning before
+
+35
+00:02:26,480 --> 00:02:32,560
+that try to check whether pretend model
+is working or not if If preturn is not
+
+36
+00:02:30,879 --> 00:02:37,519
+working, try to build the rag based
+system. If it is not working, then try
+
+37
+00:02:34,879 --> 00:02:41,760
+to do the finetuning. Okay? Because
+finetuning is a more costly task at the
+
+38
+00:02:39,840 --> 00:02:45,040
+end because here you need like huge
+amount of data. Even you need lots of
+
+39
+00:02:43,280 --> 00:02:49,760
+computational power. You need you need
+actually higher configuration machine.
+
+40
+00:02:47,599 --> 00:02:53,519
+Okay, you should have good GPU instance
+in your system otherwise you can't do
+
+41
+00:02:51,200 --> 00:02:56,319
+the finetuning operation. But if you
+want to do the finetuning operation
+
+42
+00:02:54,879 --> 00:03:00,000
+there is some way actually we can do it
+because all kinds of large language
+
+43
+00:02:57,840 --> 00:03:04,560
+model you can see all kinds of large
+language model you can see it is having
+
+44
+00:03:02,239 --> 00:03:08,959
+actually huge parameter size you can see
+llama 2 7B that means it is having 7
+
+45
+00:03:06,560 --> 00:03:13,280
+billion parameter it is having 8 billion
+parameter that's how it is having 70
+
+46
+00:03:11,200 --> 00:03:19,120
+billion parameter just try to consider
+okay it's a huge huge size model so we
+
+47
+00:03:16,400 --> 00:03:23,599
+can't use any kinds of low configuration
+machine here to finetune these are the
+
+48
+00:03:20,879 --> 00:03:30,599
+model so for this what we can do we can
+use something called PFT
+
+49
+00:03:25,400 --> 00:03:36,959
+technique we can use something called P
+EFT okay what is the full form of PFT
+
+50
+00:03:33,959 --> 00:03:41,599
+parameter efficient finetuning okay this
+is the full form of PFT so inside this
+
+51
+00:03:39,280 --> 00:03:44,959
+PFT we are having some method we can use
+uh so the first one you can use
+
+52
+00:03:42,879 --> 00:03:49,440
+something called LOA or you can use
+something called Q
+
+53
+00:03:46,200 --> 00:03:53,280
+LOA okay so this load and Q load will
+help you to do uh to perform this
+
+54
+00:03:51,200 --> 00:03:58,360
+parameter efficient finding tuning. That
+means uh it applies something called
+
+55
+00:03:55,280 --> 00:04:04,080
+quantization technique.
+Quantization technique. Okay, that means
+
+56
+00:04:00,879 --> 00:04:08,319
+it will load your model in a lower
+memory instance. That means it will load
+
+57
+00:04:06,000 --> 00:04:12,640
+your model in a 4 bit precision, 8 bit
+precision. Okay, that's how actually it
+
+58
+00:04:10,640 --> 00:04:16,400
+will perform the parameter efficient
+finetuning process. Now you can ask me
+
+59
+00:04:14,640 --> 00:04:21,600
+what is quantization then. Okay, let me
+show you what is quantization. See
+
+60
+00:04:18,479 --> 00:04:21,600
+quantization is nothing
+
+61
+00:04:21,720 --> 00:04:30,360
+but quantization. It's just a way of
+converting
+
+62
+00:04:27,400 --> 00:04:38,400
+from
+higher format uh sorry higher memory
+
+63
+00:04:34,040 --> 00:04:42,479
+format to a lower memory format. So this
+is called actually quantization. Now I
+
+64
+00:04:40,720 --> 00:04:46,720
+think you already know about neural
+network right? Let's say this is one
+
+65
+00:04:43,840 --> 00:04:46,720
+neural network I'm
+
+66
+00:04:47,000 --> 00:04:56,560
+having. So inside neural network what
+what we have? We have lots of weights.
+
+67
+00:04:52,160 --> 00:05:00,240
+Yes or no? Right? We have W1, W2. Okay.
+And W3 and so on. So this is this is
+
+68
+00:04:59,040 --> 00:05:05,600
+what actually we are having. That means
+we are having lots of weight and biases.
+
+69
+00:05:02,160 --> 00:05:09,320
+Let's say B1, B2 and so on. Right? Now
+you can represent these are the weight
+
+70
+00:05:08,240 --> 00:05:14,080
+as a
+matrix because if you if you know about
+
+71
+00:05:12,240 --> 00:05:17,039
+artificial neural network so there I
+think you know how we can represent
+
+72
+00:05:15,680 --> 00:05:22,880
+these are the weights okay how we can
+represent our input data and all okay
+
+73
+00:05:19,039 --> 00:05:27,440
+let's say this is one 3 + 3 matrix I'm
+having and inside that we are having
+
+74
+00:05:24,639 --> 00:05:32,039
+lots of weights let's say w1 w2 w3 and
+so on okay this is the weights and this
+
+75
+00:05:29,680 --> 00:05:36,320
+weight is nothing but it's a floating
+number okay it's a floating number it's
+
+76
+00:05:34,639 --> 00:05:40,160
+the floating value if you see any kinds
+of weight it would be like that let's
+
+77
+00:05:37,520 --> 00:05:43,680
+say 7.2300 2 3 0 0 0 like that. Okay. So
+this is called actually floating value.
+
+78
+00:05:41,759 --> 00:05:49,800
+These are the floating value. And if you
+see this floating value stores in a
+
+79
+00:05:47,560 --> 00:05:56,000
+FP3 2
+bit okay 32 bits. Now what is the full
+
+80
+00:05:53,199 --> 00:05:59,320
+form of AP? A F AP means full precision.
+Okay.
+
+81
+00:05:57,560 --> 00:06:05,400
+Full
+precion. Okay. Full precision. You can
+
+82
+00:06:01,440 --> 00:06:11,840
+also call it as single
+precision. Okay. single precision. Got
+
+83
+00:06:08,759 --> 00:06:15,199
+it? So whenever we are doing the
+quantization that means what we are
+
+84
+00:06:13,280 --> 00:06:18,960
+doing we are just trying to convert this
+higher memory representation to lower
+
+85
+00:06:16,880 --> 00:06:23,680
+memory representation. That means it is
+now saving these are the weights in the
+
+86
+00:06:20,880 --> 00:06:28,600
+FP 32 bits. Now what we will be doing
+after doing the quantization we'll be
+
+87
+00:06:25,440 --> 00:06:35,039
+converting this 32 bits to let's say 8
+bits. Okay 8 bits or let's say four
+
+88
+00:06:32,360 --> 00:06:41,720
+bits. Four bits. That means what will
+happen? Let's say you are having one
+
+89
+00:06:36,400 --> 00:06:46,720
+floating number like that. Let's say 1
+7890. Now if you want to convert it to 8
+
+90
+00:06:45,039 --> 00:06:50,160
+bits, what you will be doing? You will
+just remove these are the numbers
+
+91
+00:06:48,160 --> 00:06:54,240
+actually. These are the numbers actually
+will remove and you will take this this
+
+92
+00:06:52,080 --> 00:06:58,240
+number only. So that's how actually you
+can reduce the memory size. That means
+
+93
+00:06:56,080 --> 00:07:02,720
+you can convert any kinds of higher
+higher memory higher memory actually
+
+94
+00:07:00,240 --> 00:07:08,319
+format to lower memory format. So this
+is called actually quantization. Okay. I
+
+95
+00:07:05,039 --> 00:07:12,919
+hope you it is clear and the technique
+actually we usually use let's say
+
+96
+00:07:10,680 --> 00:07:18,000
+loader and q
+loader okay q loader so this techniques
+
+97
+00:07:16,319 --> 00:07:22,639
+help us to perform this quantization
+that means it will it will load the
+
+98
+00:07:19,840 --> 00:07:28,599
+original model as a quantized model that
+means in a lowered precision okay let's
+
+99
+00:07:25,280 --> 00:07:33,840
+say I want to load this model in a 4bit
+precision 4bit precision okay so let's
+
+100
+00:07:31,360 --> 00:07:37,280
+say previously this model was in 32 bits
+precision But I want to load in 4 bit
+
+101
+00:07:35,680 --> 00:07:41,680
+precision. So how it will happen? With
+the help of Q L or LORA you can do it.
+
+102
+00:07:40,000 --> 00:07:45,599
+Sorry with the help of LOA and Q L you
+can perform it. We are having already
+
+103
+00:07:43,440 --> 00:07:50,319
+some Python libraries. Okay. So we are
+having one library called
+
+104
+00:07:47,560 --> 00:07:54,000
+PFT. Okay. This called parameter
+efficient finetuning. So with the help
+
+105
+00:07:51,599 --> 00:07:57,440
+of that you can perform loader and Q L
+technique. So with the help of that you
+
+106
+00:07:55,599 --> 00:08:02,000
+can load any kinds of actual model. So
+these are the model. Okay. In a 4 bit
+
+107
+00:08:00,160 --> 00:08:05,919
+precision in 8 bit precision. Okay, that
+means you can load as a quantized model
+
+108
+00:08:04,160 --> 00:08:09,840
+so that you can perform the finetuning
+operation because as I already told you
+
+109
+00:08:07,919 --> 00:08:14,000
+this actual model you can't load because
+it is having huge amount of size huge
+
+110
+00:08:11,680 --> 00:08:19,120
+amount of let's say weight size okay and
+it is uh storing those are the weights
+
+111
+00:08:15,680 --> 00:08:22,240
+in a 32-bit precision and uh to load
+this at the model we need a good
+
+112
+00:08:20,560 --> 00:08:26,720
+configuration machine good configuration
+GPU memory and so on but we don't have
+
+113
+00:08:25,039 --> 00:08:30,960
+that much of resources we are having
+let's say Google collab free Google
+
+114
+00:08:28,160 --> 00:08:33,599
+collab or let's say we're having a 3060
+GPU
+
+115
+00:08:31,759 --> 00:08:37,440
+that time what you can do that time you
+have to load these are the model with
+
+116
+00:08:35,919 --> 00:08:41,519
+the help of this these are the technique
+actually the technique actually I showed
+
+117
+00:08:38,880 --> 00:08:44,640
+you uh this one quantization that means
+you will be using load and Q load with
+
+118
+00:08:43,360 --> 00:08:48,640
+the help of that you'll be loading the
+model and we'll perform the finding
+
+119
+00:08:46,399 --> 00:08:51,320
+operation now you can ask me sir if I'm
+doing that one so definitely I will lose
+
+120
+00:08:50,480 --> 00:08:55,120
+some
+information definitely will lose some
+
+121
+00:08:53,360 --> 00:08:59,200
+information because you are loading the
+model in a 8 bit and 4 bit precision
+
+122
+00:08:56,959 --> 00:09:02,160
+from the 32 bits that means here you are
+getting rid of some of the numbers So
+
+123
+00:09:01,120 --> 00:09:06,320
+definitely you are losing some
+information. But again Lora and Kora
+
+124
+00:09:04,240 --> 00:09:11,120
+takes care this part actually. So they
+try to optimize your let's say model
+
+125
+00:09:08,240 --> 00:09:13,839
+weights as much they can. Okay. So you
+don't need to worry about if you're
+
+126
+00:09:12,320 --> 00:09:18,480
+using this at the library. Everything
+would be happen in a optimized way. So
+
+127
+00:09:16,800 --> 00:09:21,600
+we'll be learning as a practical also
+how we can fine-tune one large language
+
+128
+00:09:20,080 --> 00:09:26,320
+model. So in the next video we'll be
+learning how we can fine-tune one model
+
+129
+00:09:23,519 --> 00:09:29,680
+called llama 2 meta llama 2. Okay. We'll
+be finetuning this model on top of our
+
+130
+00:09:27,839 --> 00:09:34,240
+custom data. And here we'll be using
+this PFT technique. Parameter efficient
+
+131
+00:09:31,519 --> 00:09:38,080
+finetuning technique. Got it? Because uh
+I'll be using free collab here. If you
+
+132
+00:09:36,720 --> 00:09:41,360
+want to do in your local machine, if you
+are having let's say any basic GPU, you
+
+133
+00:09:39,440 --> 00:09:44,480
+can also do it. But I'll try to suggest
+try to train on Google Collab. If you if
+
+134
+00:09:43,120 --> 00:09:47,920
+you're not having any kinds of GPU,
+okay, and not having any kinds of
+
+135
+00:09:45,800 --> 00:09:51,600
+configuration machine, you can perform
+on Google Collab. Fine. So yes guys,
+
+136
+00:09:50,160 --> 00:09:54,880
+this is uh the introduction of
+finetuning and I think you got to know
+
+137
+00:09:53,519 --> 00:10:00,000
+how we can perform the finetuning
+operation and what is this PFT? Okay,
+
+138
+00:09:57,440 --> 00:10:03,279
+PFT technique exactly and what is Q Lora
+and Q L because I know that many people
+
+139
+00:10:01,600 --> 00:10:07,360
+will have this question what is Qura
+Lora and what is PFT and all. Okay. So I
+
+140
+00:10:05,839 --> 00:10:11,440
+think now everything is clear. Okay. How
+things are working here. Fine. So in the
+
+141
+00:10:09,440 --> 00:10:15,760
+next video we'll see the practical demo
+of the finetuning. So we'll be fine one
+
+142
+00:10:13,839 --> 00:10:18,000
+model large language model called metal
+lama
+

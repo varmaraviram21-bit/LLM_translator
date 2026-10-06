@@ -1,0 +1,580 @@
+1
+00:00:01,760 --> 00:00:07,919
+Hi guys, in this video we'll try to
+understand what is model inference. So I
+
+2
+00:00:06,480 --> 00:00:11,840
+think you already know what is model
+inference because previously I already
+
+3
+00:00:09,760 --> 00:00:15,160
+showed you how we can work with the
+large language model. Let's say here we
+
+4
+00:00:13,759 --> 00:00:23,519
+have a
+lm okay lm uh so first of all we just
+
+5
+00:00:20,240 --> 00:00:28,320
+try to use the lm either you can uh like
+download it from the hugging face either
+
+6
+00:00:26,000 --> 00:00:32,399
+you can use uh this lm with help of API
+request. Let's say if I'm using open AI.
+
+7
+00:00:30,480 --> 00:00:36,000
+So open a has one API key. With the help
+of that we can access this model. So
+
+8
+00:00:34,480 --> 00:00:39,480
+what is the inference? So inference
+means let's say here you are giving a uh
+
+9
+00:00:38,239 --> 00:00:44,559
+let's say
+input and here you are getting a output.
+
+10
+00:00:43,200 --> 00:00:48,960
+Okay. This is called model inference. So
+I think you remember we did one
+
+11
+00:00:45,680 --> 00:00:54,520
+finetuning uh let's say um I mean demo.
+So there I showed you how we can
+
+12
+00:00:50,480 --> 00:01:00,879
+fine-tune llama to model. Okay. So after
+fine-tuning what I did, I just uh pushed
+
+13
+00:00:58,160 --> 00:01:05,280
+this model to the hugging face hub.
+Okay, hugging face uh
+
+14
+00:01:08,280 --> 00:01:15,960
+hub up. So from the hub itself again
+I'll uh I just uh downloaded the model
+
+15
+00:01:14,240 --> 00:01:20,320
+okay in my Google
+Collab and there I did the inference
+
+16
+00:01:20,360 --> 00:01:27,840
+operation. Okay, inference operation. So
+that's how actually guys we do the model
+
+17
+00:01:25,040 --> 00:01:31,920
+inference that means here uh after
+training or let's say if any model model
+
+18
+00:01:29,600 --> 00:01:35,280
+is available you are calling the model
+you are giving the questions and you are
+
+19
+00:01:33,360 --> 00:01:40,400
+getting the response from the model okay
+this is called model inferencing now
+
+20
+00:01:37,840 --> 00:01:44,159
+here you can either use API key to
+access the model either I showed you how
+
+21
+00:01:42,560 --> 00:01:47,840
+we can get get the model from the
+hugging face hub or there is another
+
+22
+00:01:46,479 --> 00:01:52,159
+alternative way I'm going to show you
+this is the free uh one so here you
+
+23
+00:01:50,159 --> 00:01:56,079
+don't need to pay uh uh so there is a
+platform called Grock. So from there
+
+24
+00:01:54,000 --> 00:02:00,479
+also you can access the model. Okay. And
+again uh this is another uh L ops
+
+25
+00:01:58,640 --> 00:02:04,320
+platform you can talk about because it
+provides the API because the model is
+
+26
+00:02:02,719 --> 00:02:08,720
+already hosted there. Okay. You don't
+need to uh worry about the like model
+
+27
+00:02:06,880 --> 00:02:12,000
+download and all. Okay. Only you just
+need to create one API key and with the
+
+28
+00:02:10,720 --> 00:02:16,400
+help of the API key will be able to
+access the model. Now let me show you
+
+29
+00:02:13,680 --> 00:02:19,959
+how we can use this gro uh API to access
+different different model.
+
+30
+00:02:20,160 --> 00:02:28,879
+So guys, uh just search for Grog
+Playground and make sure you have to
+
+31
+00:02:26,239 --> 00:02:31,920
+create one account here. So I already
+have the account. Let me log
+
+32
+00:02:34,519 --> 00:02:41,440
+in. Okay. So I I I already uh logged in
+with my account and this is the
+
+33
+00:02:38,959 --> 00:02:47,040
+playground guys. Uh so you can see the
+interface is uh I mean uh similar kinds
+
+34
+00:02:44,319 --> 00:02:50,959
+of chat GPT. So here you can send uh
+different different masses and you can
+
+35
+00:02:49,200 --> 00:02:54,480
+also give the system prompt if you want
+and here you can select different
+
+36
+00:02:52,160 --> 00:02:59,120
+different model and all the latest model
+is also available like llama recently
+
+37
+00:02:56,720 --> 00:03:05,159
+published llama 4 model it is also
+available then you can see GMA model is
+
+38
+00:03:01,120 --> 00:03:11,519
+there then from Alibaba this uh
+QW model is also there deepse is there
+
+39
+00:03:08,560 --> 00:03:15,920
+then uh from Grock this compound beta
+okay so Grock has also published some
+
+40
+00:03:13,519 --> 00:03:24,000
+model you can also use then Mr.
+Open AI has whisper model play. Okay.
+
+41
+00:03:19,120 --> 00:03:27,519
+And uh S D A I A. Okay. So I don't know
+but uh again there is another model. So
+
+42
+00:03:25,920 --> 00:03:31,280
+recently they have update uh let's say
+updated lots of model in their platform.
+
+43
+00:03:29,920 --> 00:03:35,760
+Now we can access these are the model
+with help of API request. So here you
+
+44
+00:03:32,879 --> 00:03:40,720
+can you can uh also send the message
+from this web interface. Let's say if I
+
+45
+00:03:37,440 --> 00:03:44,640
+give hello uh I will submit. See it will
+give you the response. Even you can also
+
+46
+00:03:42,080 --> 00:03:48,959
+upload the image. Okay. If you want then
+uh let me uh show you the studio. So
+
+47
+00:03:46,959 --> 00:03:53,200
+here is the studio guys. So in studio
+what happens? Let's say
+
+48
+00:03:51,200 --> 00:03:56,720
+uh you can uh give the message like
+that. Okay, even you can create a new
+
+49
+00:03:55,280 --> 00:04:00,640
+message and right hand side you can see
+the response. Okay, even you can also
+
+50
+00:03:58,400 --> 00:04:03,519
+change the temperature parameter max
+token parameter. Okay, these are the
+
+51
+00:04:02,000 --> 00:04:07,519
+thing you can change. Now let me show
+you how we can access this uh model.
+
+52
+00:04:05,599 --> 00:04:10,640
+Okay, with that of API request for this
+you have to create API key. So there is
+
+53
+00:04:09,120 --> 00:04:15,200
+a option called API key. Just click
+here. Now here you can create a API key.
+
+54
+00:04:13,120 --> 00:04:19,199
+So previously I created some API key. So
+let me delete some of the API key here.
+
+55
+00:04:17,440 --> 00:04:24,720
+Then I'll create a new one. So here
+let's create a API key. I'll give the
+
+56
+00:04:20,959 --> 00:04:24,720
+name let's say uh
+
+57
+00:04:25,639 --> 00:04:33,440
+demo. So this is my API. I'll copy. Now
+here I already have one code snippet. So
+
+58
+00:04:31,759 --> 00:04:38,000
+first of all let me add the API key in
+the environment variable. So what I will
+
+59
+00:04:34,960 --> 00:04:42,720
+do I'll open up my env file. So here you
+can see I have my GO API. Okay. And
+
+60
+00:04:41,120 --> 00:04:45,919
+these are thing you can ignore as of now
+because I already showed you uh
+
+61
+00:04:44,320 --> 00:04:49,919
+previously how to use the lang graph and
+all. Okay. So uh I'm using that
+
+62
+00:04:47,759 --> 00:04:54,479
+particular file only. So here we'll try
+to change the gro API key only. Okay.
+
+63
+00:04:52,880 --> 00:04:57,919
+Make sure you are updating your API key
+guys. Okay. And this is was my open API
+
+64
+00:04:56,080 --> 00:05:02,880
+key. This is not required. So this is
+the alternative way guys. Uh if you want
+
+65
+00:05:00,160 --> 00:05:06,479
+to use the uh model with the help of API
+request and again all the model are
+
+66
+00:05:05,280 --> 00:05:09,440
+hosted there. You don't need to worry
+about everything. So here you will be
+
+67
+00:05:08,240 --> 00:05:13,280
+getting the quick response and if you
+are using low configuration machine also
+
+68
+00:05:11,280 --> 00:05:18,000
+it's completely fine. Now once it is
+done just try to select your environment
+
+69
+00:05:15,440 --> 00:05:23,840
+then let's execute the code. So it will
+load the uh uh in uh credential from the
+
+70
+00:05:21,039 --> 00:05:28,560
+environment. Now here you can see I'm u
+importing this uh grock from the lang
+
+71
+00:05:27,120 --> 00:05:32,080
+grock. So for this you have to install
+langen gro. So here you can see this
+
+72
+00:05:30,560 --> 00:05:35,440
+particular package you have to install.
+So I already installed pip install lang
+
+73
+00:05:33,680 --> 00:05:39,440
+gro. If you do it will install that. Now
+you can see I'm importing chat gro and
+
+74
+00:05:37,520 --> 00:05:43,680
+inside chat gro I'm passing the model.
+So here I'm using llama 3 7 70 70 70
+
+75
+00:05:41,680 --> 00:05:49,840
+billion model. So here I think this
+model is available if I go to the
+
+76
+00:05:45,199 --> 00:05:53,320
+playground llama 3 70 billion model. So
+this model I think I'm using. Okay. This
+
+77
+00:05:51,919 --> 00:05:59,720
+was the
+model. Okay. So now let me uh show you
+
+78
+00:05:56,160 --> 00:06:04,319
+how we can access. So if I
+execute
+
+79
+00:06:01,800 --> 00:06:08,160
+now again you can load another model. So
+here I'm also loading Mistl model. So
+
+80
+00:06:05,919 --> 00:06:13,199
+Mistl also has some model. Okay, you can
+load it. So let me also load the ML
+
+81
+00:06:10,720 --> 00:06:16,560
+model. Then here I have the prompt.
+Let's say I'm giving the system prompt
+
+82
+00:06:15,199 --> 00:06:21,120
+first of all because this is the chart
+completion model. You are an historian
+
+83
+00:06:18,560 --> 00:06:26,120
+expert uh in the Kennedy family. I think
+you know about Kennedy. So Kennedy is a
+
+84
+00:06:23,600 --> 00:06:31,440
+politician
+maybe. Yeah. So you can see uh Indian
+
+85
+00:06:29,840 --> 00:06:36,080
+president. Okay. So here's the
+president. So here I'm asking the
+
+86
+00:06:33,759 --> 00:06:40,400
+question regarding him. So here uh this
+is my prompt. How many members of the
+
+87
+00:06:37,600 --> 00:06:44,319
+family died tragically? So if I execute.
+So now let's say if I invoke the
+
+88
+00:06:42,120 --> 00:06:51,560
+operations. Okay, it is giving you an
+error. Uh invalid API
+
+89
+00:06:47,400 --> 00:06:56,639
+key. Okay, it is telling invalid API
+key. Let me do one thing. Let me restart
+
+90
+00:06:54,520 --> 00:07:01,400
+everything because I already just
+created the API key. So it should work
+
+91
+00:06:58,400 --> 00:07:01,400
+maybe.
+
+92
+00:07:05,759 --> 00:07:12,319
+Okay. So now uh it has done because
+previously what I did I changed the API
+
+93
+00:07:10,639 --> 00:07:15,759
+key but I didn't restart the kernel. So
+sometimes it happens if you're using the
+
+94
+00:07:14,000 --> 00:07:18,960
+Jupyter notebook. Now this is the
+response. So here I'm using llama model
+
+95
+00:07:17,440 --> 00:07:21,520
+guys. You can see I'm using llama model
+and from the llama model this is the
+
+96
+00:07:20,319 --> 00:07:24,560
+response I'm getting. So that means here
+we are doing the inference operation
+
+97
+00:07:22,800 --> 00:07:30,160
+with the model. Now let's try with the
+mist model as well. So here bad request
+
+98
+00:07:27,759 --> 00:07:34,000
+again the model MR has been okay. So
+this model is deleted from the
+
+99
+00:07:32,400 --> 00:07:39,960
+playground. So what you can do you can
+use any other model. Let's say uh let's
+
+100
+00:07:36,800 --> 00:07:47,960
+use this one dipsek
+R1 this model. So for this this is the
+
+101
+00:07:44,639 --> 00:07:52,880
+you just copy this ID. Okay. Copy this
+ID and here you just try to paste
+
+102
+00:07:54,759 --> 00:08:03,599
+it. This ID you need okay to access the
+model. Now let's say this is our
+
+103
+00:08:00,800 --> 00:08:03,599
+uh deepseek
+
+104
+00:08:12,360 --> 00:08:16,000
+model now. Let's
+
+105
+00:08:17,319 --> 00:08:23,560
+see. Okay, now it's working. Now if I
+show the response,
+
+106
+00:08:23,800 --> 00:08:34,719
+uh okay, so it doesn't have any
+content. Okay, sorry. I think I have to
+
+107
+00:08:31,759 --> 00:08:42,080
+give this response. So deep response.
+Okay, now let's copy it and let me paste
+
+108
+00:08:39,479 --> 00:08:45,839
+it. So here is the response guys I got.
+Okay. So that's how okay you can use any
+
+109
+00:08:44,560 --> 00:08:51,600
+kinds of model. Okay. Whether it's
+llama, mistral, whisper, play, kwk,
+
+110
+00:08:49,040 --> 00:08:56,959
+okay? Any model you can use. Got it. So
+guys, you can try with this uh go uh
+
+111
+00:08:54,080 --> 00:09:01,600
+this gro cloud. Okay. Uh this is uh the
+free one. But uh there would be some
+
+112
+00:08:59,040 --> 00:09:05,839
+limit actually at the end. So for this
+uh you have to upgrade uh their plan.
+
+113
+00:09:03,920 --> 00:09:09,279
+Okay. But for the let's experiment
+purpose, for the demo purpose, you can
+
+114
+00:09:07,600 --> 00:09:13,120
+use this particular platform. And again
+this is on uh amazing platform. Okay. if
+
+115
+00:09:11,600 --> 00:09:17,600
+I talk about because all the open source
+model are already hosted here. So yes
+
+116
+00:09:15,600 --> 00:09:23,120
+guys, this was the demo of the inference
+model inference. I think you got it. Uh
+
+117
+00:09:19,519 --> 00:09:23,120
+thank you guys for watching.
+

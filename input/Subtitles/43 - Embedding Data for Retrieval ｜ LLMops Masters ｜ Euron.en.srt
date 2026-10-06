@@ -1,0 +1,119 @@
+1
+00:00:00,320 --> 00:00:06,080
+Hi guys, in this video we'll try to see
+how we can generate the embeddings
+
+2
+00:00:04,000 --> 00:00:09,920
+because you know that whatever data we
+have this is a raw data and we can pass
+
+3
+00:00:08,320 --> 00:00:13,440
+directly to the LM. Okay, for this we
+have to convert it to the numbers. Okay,
+
+4
+00:00:11,280 --> 00:00:16,880
+that means to the vector and we also use
+something called vector database uh and
+
+5
+00:00:15,440 --> 00:00:20,480
+we also store these are the vector to
+the vector database. Okay, so for this
+
+6
+00:00:18,560 --> 00:00:24,240
+we have to convert uh this text to the
+embeddings. So I'll show you one demo
+
+7
+00:00:22,080 --> 00:00:28,080
+how it can be done. So here again I'll
+be using langen. So here I'm using open
+
+8
+00:00:26,240 --> 00:00:31,119
+embedding model. Okay, with the help of
+open embedding model, what I will do?
+
+9
+00:00:29,599 --> 00:00:35,040
+I'll just try to generate the vector
+embedding. So, let me import first of
+
+10
+00:00:32,960 --> 00:00:39,200
+all uh this uh open embedding from the
+lang lang openi. Now, let's say these
+
+11
+00:00:37,600 --> 00:00:43,200
+are my documents. Okay, English text.
+You can use your own documents. You can
+
+12
+00:00:40,719 --> 00:00:47,520
+load your custom let's say txt file or
+PDF file. I think I already showed you
+
+13
+00:00:44,640 --> 00:00:51,680
+okay how to load it. Now, let's define
+this particular text. Now, I will pass
+
+14
+00:00:49,600 --> 00:00:54,399
+this particular data to my embedding
+documents. Okay, that means uh to the
+
+15
+00:00:53,039 --> 00:00:57,760
+embedding model. There is a function
+called embed documents. Now if I execute
+
+16
+00:00:56,160 --> 00:01:02,079
+I'll see that your data would be
+converted to the numbers. Let me show
+
+17
+00:01:03,879 --> 00:01:07,199
+you it's
+
+18
+00:01:09,720 --> 00:01:15,840
+executing. Now if I show you see this is
+your vector embeddings. Okay. Now this
+
+19
+00:01:14,080 --> 00:01:19,479
+embeddings I can store to the vector
+database. You can see the length even
+
+20
+00:01:18,400 --> 00:01:24,240
+you can see
+the okay some of the vectors. Sorry. So
+
+21
+00:01:22,720 --> 00:01:26,799
+these embeddings actually now I can
+store to the vector database. In the
+
+22
+00:01:25,520 --> 00:01:30,240
+next video I'll show you how we can
+store to the vector database. How we can
+
+23
+00:01:28,640 --> 00:01:33,360
+create our private knowledge base okay
+with help of that. So yes guys this is
+
+24
+00:01:32,000 --> 00:01:36,799
+the demo of the embedded. I hope you
+liked it. Thank you so much.
+

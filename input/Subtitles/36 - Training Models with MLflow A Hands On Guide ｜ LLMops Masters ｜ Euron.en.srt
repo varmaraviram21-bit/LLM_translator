@@ -1,0 +1,1330 @@
+1
+00:00:00,800 --> 00:00:06,960
+So guys, we have set up our MLflow
+server on the AWS cloud and it is
+
+2
+00:00:04,960 --> 00:00:10,320
+running. Now what I will show you, I
+will show you the demo of this MLflow
+
+3
+00:00:08,559 --> 00:00:14,639
+experiment tracking how we can track
+actually experiment. So mostly you'll be
+
+4
+00:00:12,400 --> 00:00:18,720
+using this MLflow whenever you will be
+training any kinds of large language
+
+5
+00:00:16,320 --> 00:00:21,600
+model. Okay. And you will be tracking
+the experiment. Let's say you want to
+
+6
+00:00:19,920 --> 00:00:25,920
+track the parameters, you want to track
+the metrics, even you want to restart
+
+7
+00:00:23,760 --> 00:00:30,240
+the model there. Okay. So for this guys
+what I will uh show you I'll show you
+
+8
+00:00:27,760 --> 00:00:34,160
+actually uh some practical demo. I think
+after that this part would be more
+
+9
+00:00:31,760 --> 00:00:37,920
+clear. So first of all let's try to see
+this particular practical demo. So here
+
+10
+00:00:36,480 --> 00:00:41,840
+first of all let's try to install the
+mlflow on the Google collab. Okay. You
+
+11
+00:00:39,920 --> 00:00:46,640
+can also set up in your local machine.
+Okay. But I will use the Google collab
+
+12
+00:00:43,920 --> 00:00:50,879
+here. So here uh after setting it what I
+will do I will show you how we can
+
+13
+00:00:48,480 --> 00:00:52,960
+actually let's say track how we can log
+actually different different parameter
+
+14
+00:00:52,000 --> 00:00:56,559
+how we can log different different
+metrics to the ML flow. Got
+
+15
+00:00:57,399 --> 00:01:07,280
+it. So, first of all, let's uh connect
+this notebook and make sure you select
+
+16
+00:01:03,879 --> 00:01:13,360
+uh uh GPU, okay, as a runtime because
+here uh we'll also try to let's say u
+
+17
+00:01:11,280 --> 00:01:19,200
+load the model, okay, I will also try to
+let's log the model for this. uh we'll
+
+18
+00:01:15,840 --> 00:01:19,200
+try to select the GPU machine
+
+19
+00:01:19,720 --> 00:01:27,840
+here and all the resources I'm going to
+share uh you can uh download and you can
+
+20
+00:01:24,960 --> 00:01:34,360
+uh practice. So let's install the mlflow
+numpy plotly pandas okay transformers
+
+21
+00:01:30,159 --> 00:01:34,360
+these are the package one by one.
+
+22
+00:01:53,520 --> 00:01:59,759
+So guys you can see our installation is
+complete. After that you have to restart
+
+23
+00:01:57,040 --> 00:02:05,119
+the session. Okay. Now let's uh install
+B3 and AWS CLA because I have to set the
+
+24
+00:02:02,960 --> 00:02:11,360
+uh AWS credential in the Google Collab.
+Okay. If you want to authenticate. So
+
+25
+00:02:07,040 --> 00:02:11,360
+for this I need this AWS CLI and
+
+26
+00:02:12,920 --> 00:02:21,760
+3. Okay. Now how to do it? You have to
+run this command AWS configure. So this
+
+27
+00:02:18,640 --> 00:02:25,599
+will ask for the AWS access key ID. So I
+think you remember we downloaded one CSV
+
+28
+00:02:23,360 --> 00:02:31,760
+file inside that we have AWS access key
+ID. I'll copy and here let me just paste
+
+29
+00:02:28,720 --> 00:02:35,640
+it then press enter. Then it will ask
+for the secret uh access key ID. So this
+
+30
+00:02:34,080 --> 00:02:42,000
+is our secret access key
+ID. Uh I'll try to paste it here. Now
+
+31
+00:02:40,000 --> 00:02:48,720
+press enter. Now it is asking for the
+reason. So reason is US East one. Okay.
+
+32
+00:02:46,239 --> 00:02:54,239
+Based on your reason you can give here.
+Now output just press enter. Okay, now
+
+33
+00:02:52,800 --> 00:02:59,160
+everything is set. Now you have to set
+the as tracking URI. So what is the
+
+34
+00:02:56,000 --> 00:03:06,640
+tracking URI? You can see your uh
+URI. This is the AW uh this is our
+
+35
+00:03:01,760 --> 00:03:11,120
+MLflow URI. Let's copy this URI and here
+let me mention it. Uh previously I was
+
+36
+00:03:09,360 --> 00:03:14,239
+doing with my local machine that's why
+this is the local host I have
+
+37
+00:03:15,640 --> 00:03:20,080
+given. Okay. Now here this is my
+
+38
+00:03:20,120 --> 00:03:30,959
+URI. Okay. So now let's set the
+URI. Okay. So URI is set. Now guys uh
+
+39
+00:03:28,480 --> 00:03:34,480
+we'll try to create and uh manage the
+experiment right now. So first of all
+
+40
+00:03:32,959 --> 00:03:38,159
+let's create a experiment. See
+previously by default you have default
+
+41
+00:03:36,319 --> 00:03:42,959
+experiment. Now if you want to create a
+new experiment you can also do it. For
+
+42
+00:03:39,680 --> 00:03:46,159
+this uh this code you have to execute.
+Let me show
+
+43
+00:03:43,959 --> 00:03:49,040
+you. So this code you have to execute.
+So this will create the
+
+44
+00:03:49,879 --> 00:03:55,280
+experiment. Okay. Now if I come here, if
+I
+
+45
+00:03:57,000 --> 00:04:03,120
+refresh guys, your experiment has
+created. Okay. And inside experiment, it
+
+46
+00:04:00,799 --> 00:04:07,040
+has created one runs. Okay. Randomly it
+has created one runs. But if you want to
+
+47
+00:04:05,040 --> 00:04:11,040
+assign this run, okay, let's say I want
+to assign the run name. So I can also do
+
+48
+00:04:09,200 --> 00:04:15,280
+it. So this particular code you have to
+execute that time. Okay. Manually
+
+49
+00:04:13,519 --> 00:04:19,359
+creating the custom run. That's I want
+to create as a first one. Okay. So what
+
+50
+00:04:16,799 --> 00:04:25,080
+I will do I'll execute it here. Now if I
+come here and if I
+
+51
+00:04:22,360 --> 00:04:30,000
+refresh there is a refresh
+button or let's refresh
+
+52
+00:04:27,560 --> 00:04:33,919
+here. You see first run has created.
+Okay. So that's how you can either uh
+
+53
+00:04:31,919 --> 00:04:37,919
+create randomly either you can create uh
+as per your choice. So once run is
+
+54
+00:04:36,160 --> 00:04:42,639
+created now I can log any kinds of
+parameter here. To log any kinds of
+
+55
+00:04:39,520 --> 00:04:45,520
+parameter you can use mlflow log params.
+Okay. I think you know whenever we train
+
+56
+00:04:44,240 --> 00:04:49,840
+the model we have different different
+parameter like learning rate bash size
+
+57
+00:04:47,280 --> 00:04:53,680
+okay number of epoch then uh and so on
+right so these are the parameter we
+
+58
+00:04:51,280 --> 00:04:56,639
+usually log we usually use okay whenever
+we train regards of large language model
+
+59
+00:04:55,520 --> 00:05:00,479
+let's say I want to log these are the
+parameter I'll be using log params that
+
+60
+00:04:58,479 --> 00:05:05,840
+time okay now if I execute you'll see
+that parameter would be logged now if I
+
+61
+00:05:02,160 --> 00:05:10,960
+come here if I refresh so it has logged
+inside my first
+
+62
+00:05:07,960 --> 00:05:14,639
+one okay the latest one so you can see
+our parameter has been logged Okay, you
+
+63
+00:05:12,800 --> 00:05:18,639
+can see parameter section. Uh, so we
+have log three parameter here. So that's
+
+64
+00:05:16,639 --> 00:05:21,840
+how we can like log different different
+parameter. Now let's want to log any
+
+65
+00:05:20,400 --> 00:05:24,479
+kinds of matrix. So I think you know
+that after training the model, we also
+
+66
+00:05:23,360 --> 00:05:28,320
+get different different metrics like
+accuracy score, F1 score and so on.
+
+67
+00:05:26,240 --> 00:05:32,560
+Right? We can also lot it then we can
+also have uh we we can also log the loss
+
+68
+00:05:30,479 --> 00:05:36,720
+loss matrix right. So every block it
+will give you the loss and accuracy. So
+
+69
+00:05:34,400 --> 00:05:40,240
+here I created a dummy let's say
+accuracy and loss with respect to the
+
+70
+00:05:38,080 --> 00:05:44,160
+numpy. I'm generating some random number
+and I'm logging them okay into a for
+
+71
+00:05:44,280 --> 00:05:50,639
+loop. The number of epoch I have given
+10. So 10 time it will run and it will
+
+72
+00:05:48,400 --> 00:05:54,360
+save some accuracy and losses. Now if I
+come here if I again refresh. So you'll
+
+73
+00:05:53,280 --> 00:06:00,320
+see that
+uh some uh matrix has been saved. Okay.
+
+74
+00:05:57,280 --> 00:06:02,800
+You can see now uh if I want to show you
+the model
+
+75
+00:06:03,000 --> 00:06:09,600
+matrix you can see this is the like uh
+accuracy and this is the losses. Okay,
+
+76
+00:06:07,840 --> 00:06:13,440
+you can see as a graph. So this is the
+beauty of this ML flow. Okay, every
+
+77
+00:06:11,039 --> 00:06:19,759
+everything you can visualize here. Now
+uh what I will do, I will uh show you
+
+78
+00:06:17,919 --> 00:06:22,479
+uh how you can log any kinds of
+artifact. Okay, let's say you want to
+
+79
+00:06:20,960 --> 00:06:27,120
+log any artifact. Artifact means any
+kinds of data. Let's say you have a data
+
+80
+00:06:24,720 --> 00:06:30,400
+you want to log that. So what you can do
+you can use log artifact that type. So
+
+81
+00:06:28,880 --> 00:06:34,880
+what it will do it will uh take your
+data. So as of now I don't have any data
+
+82
+00:06:32,319 --> 00:06:38,560
+here. But if you want to uh if you want
+to save your data let's say uh going
+
+83
+00:06:37,280 --> 00:06:41,919
+forward I will I'll be training the
+model and I want if I want to log the
+
+84
+00:06:40,160 --> 00:06:45,440
+data so I'll be using the log artifact
+that time. Okay. So if you execute this
+
+85
+00:06:43,520 --> 00:06:49,759
+code only just need to give that like
+data locations. Okay. It will log that
+
+86
+00:06:48,000 --> 00:06:54,240
+uh data to the S3 bucket. I think you
+created one S3 bucket remember. So here
+
+87
+00:06:51,759 --> 00:06:58,880
+it will save that particular data. Okay.
+So this is like another uh way you can
+
+88
+00:06:56,240 --> 00:07:04,080
+log the artifact and not only data you
+can log any kinds of let's say image any
+
+89
+00:07:00,960 --> 00:07:08,080
+kinds of txt file. whatever let's say uh
+anything you want to log here you can
+
+90
+00:07:05,599 --> 00:07:11,360
+log it now logging the model okay how to
+log the model so to log the model you
+
+91
+00:07:09,840 --> 00:07:16,000
+can use log model function okay that
+time let's say I want to log this uh uh
+
+92
+00:07:13,599 --> 00:07:20,479
+this model actually one large language
+model from the hugging face you can see
+
+93
+00:07:18,080 --> 00:07:24,880
+this model actually I want to log so
+this is a Amazon product review model
+
+94
+00:07:23,280 --> 00:07:28,240
+it's a text classification model
+actually so you can see this is the
+
+95
+00:07:26,800 --> 00:07:33,199
+model okay now let's say I want to log
+this model so what I will do uh I'll
+
+96
+00:07:30,880 --> 00:07:37,280
+first of all load the model then I will
+use MLflow and this is a PyTorch model
+
+97
+00:07:35,440 --> 00:07:41,039
+that's why you have to use PyTorch okay
+if you want to log any TensorFlow model
+
+98
+00:07:38,800 --> 00:07:44,319
+you have to use TensorFlow then log
+model you have to give the model uh
+
+99
+00:07:42,880 --> 00:07:49,120
+object and you have to give the name
+okay so here I have given transformer
+
+100
+00:07:46,360 --> 00:07:52,319
+model okay transformer model this is the
+name you can give any kinds of name okay
+
+101
+00:07:50,720 --> 00:07:55,919
+with that name it will log the model now
+if execute so first of all it will
+
+102
+00:07:54,240 --> 00:07:58,400
+download the model then it will log it
+let me show
+
+103
+00:08:02,800 --> 00:08:05,919
+Now see guys it is getting
+
+104
+00:08:05,960 --> 00:08:12,400
+downloaded. Okay. So after downloading
+it will lock the model uh to the ML
+
+105
+00:08:15,400 --> 00:08:23,680
+flow. So guys you can see execution is
+done. Now if I go back to the ML flow.
+
+106
+00:08:20,960 --> 00:08:28,120
+Now if I refresh so see you will be able
+to see the model. So if you want to see
+
+107
+00:08:26,400 --> 00:08:32,800
+the model go to the
+artifact and here is the model guys okay
+
+108
+00:08:30,639 --> 00:08:37,360
+transformer model we have given the name
+and inside that uh you can see some
+
+109
+00:08:34,640 --> 00:08:40,399
+model configuration file and to use the
+model what are the requirement you have
+
+110
+00:08:38,640 --> 00:08:44,320
+to install everything it has also saved
+the environment you have to create it
+
+111
+00:08:42,000 --> 00:08:47,839
+has also created on the uh environment
+uh dependency it has also created okay
+
+112
+00:08:46,160 --> 00:08:52,399
+and the data folder you have the model
+model file okay so that's how guys we
+
+113
+00:08:50,240 --> 00:08:56,480
+can also log the model and this model we
+can use it later on okay for the
+
+114
+00:08:54,000 --> 00:09:00,160
+inference purpose. So guys uh I think
+you got it how we can use MLflow for the
+
+115
+00:08:58,560 --> 00:09:04,399
+experiment tracking different different
+experiment okay and see what is the
+
+116
+00:09:02,160 --> 00:09:08,000
+beauty of this MLflow let's say you uh
+you are training a model okay with a
+
+117
+00:09:06,320 --> 00:09:11,440
+different different parameter you can
+log real time and later on you can
+
+118
+00:09:09,920 --> 00:09:15,120
+compare which model is working better
+even you can also do the model uh
+
+119
+00:09:12,880 --> 00:09:18,880
+version controlling uh with uh with that
+of model registry that that that thing I
+
+120
+00:09:17,040 --> 00:09:21,680
+will show you okay after that so there
+you can compare different different
+
+121
+00:09:20,080 --> 00:09:24,800
+model with different different parameter
+with different different let's accuracy
+
+122
+00:09:22,959 --> 00:09:28,160
+or let's losses then you can select the
+best model out of it. Okay, this is the
+
+123
+00:09:26,240 --> 00:09:32,000
+beauty. Now let me show you one training
+demo. So what I will do uh so this is
+
+124
+00:09:30,000 --> 00:09:37,360
+another notebook guys I have. So first
+of all let's connect this notebook. So
+
+125
+00:09:34,240 --> 00:09:42,240
+here I will try to train one uh parm and
+I will try to log the parameter okay
+
+126
+00:09:40,000 --> 00:09:42,240
+real
+
+127
+00:09:44,760 --> 00:09:52,000
+time. So it's connected now. Uh first of
+all let's uh set up all the necessary
+
+128
+00:10:09,320 --> 00:10:16,959
+library. Then you also need to set
+up this boto 3 and a
+
+129
+00:10:18,360 --> 00:10:23,040
+cli. Then after that you have to
+
+130
+00:10:33,160 --> 00:10:38,959
+configure. So let's wait once the
+installation is complete. I'll come
+
+131
+00:10:36,720 --> 00:10:43,600
+back.
+So guys, as you can see, it's done. Now,
+
+132
+00:10:40,480 --> 00:10:43,600
+let me restart the
+
+133
+00:11:00,440 --> 00:11:07,040
+session. Okay. So, here one issue I'm
+getting.
+
+134
+00:11:04,680 --> 00:11:12,959
+Uh, okay. Let me first of all execute
+and see. Let's say I'll execute this
+
+135
+00:11:09,200 --> 00:11:12,959
+line. So it should import
+
+136
+00:11:33,160 --> 00:11:39,040
+everything. Okay. So it is giving me one
+error. So what you can
+
+137
+00:11:39,720 --> 00:11:47,600
+do?
+So one thing I can do just
+
+138
+00:11:45,680 --> 00:11:52,440
+uh let me check the previous version I
+was using here.
+
+139
+00:11:49,640 --> 00:11:57,720
+4
+3.3 this one. Let's fight and stop.
+
+140
+00:12:36,480 --> 00:12:41,120
+Now again let's restart the
+
+141
+00:12:44,680 --> 00:12:49,160
+session. Now let me
+
+142
+00:13:02,560 --> 00:13:08,240
+Okay. So now it is working. Okay. So uh
+you have to upgrade to this version then
+
+143
+00:13:06,240 --> 00:13:12,360
+it will be working. Now let me install
+the B3 and AW CLA.
+
+144
+00:13:29,519 --> 00:13:34,040
+Okay. Now let's configure the
+credential.
+
+145
+00:13:43,200 --> 00:13:47,440
+AWS access key ID, secret access key
+
+146
+00:13:48,279 --> 00:14:00,079
+ID, then region US East
+1 and press enter. Okay, done. Now let
+
+147
+00:13:58,160 --> 00:14:04,320
+me uh Okay, so I have already imported.
+Now let's uh create some parameters like
+
+148
+00:14:02,320 --> 00:14:08,079
+the model name I want to use. So here
+we'll be training one text
+
+149
+00:14:05,600 --> 00:14:12,639
+classification model. Okay. So that's
+why we'll be uh training distaste model.
+
+150
+00:14:11,199 --> 00:14:17,279
+So this model is available on the
+hugging face. So let me show you dist
+
+151
+00:14:15,519 --> 00:14:22,720
+best case model. So this is the model
+we'll be using guys. Okay. This model uh
+
+152
+00:14:20,399 --> 00:14:26,880
+yeah and learning rate I have given
+batch size number of epoch. Uh data set
+
+153
+00:14:25,120 --> 00:14:30,880
+name I'll be using ag news data set.
+Okay. It's a news classification model.
+
+154
+00:14:28,480 --> 00:14:34,959
+We'll be training. Uh so here you can
+see sequence uh uh task name I want to
+
+155
+00:14:33,199 --> 00:14:38,639
+assign as a sequence classification.
+What is the task name? Task name means
+
+156
+00:14:36,639 --> 00:14:42,639
+let's say to the ML flow it will create
+the task name. Okay. So it will uh
+
+157
+00:14:40,480 --> 00:14:47,760
+create the uh experiment name like that.
+So this name actually I have given then
+
+158
+00:14:45,279 --> 00:14:51,440
+log steps maximum sequence length and
+output directories. Okay. Where it will
+
+159
+00:14:49,199 --> 00:14:54,880
+save all the let's say logs and all. So
+here this is the output directories. So
+
+160
+00:14:53,120 --> 00:14:59,199
+I believe that guys you already trained
+uh these kinds of model paper. Okay.
+
+161
+00:14:56,320 --> 00:15:05,600
+These kinds of large model paper uh with
+the help of hugging face. Okay. So now
+
+162
+00:15:02,720 --> 00:15:10,399
+uh let me uh set the tracking URI. So
+let's copy our tracking URI. So maybe I
+
+163
+00:15:07,839 --> 00:15:13,199
+can copy from the previous notebook. So
+this is the tracking
+
+164
+00:15:16,680 --> 00:15:23,279
+URI. So yeah, we'll send the tracking
+URI and we will create the experiment
+
+165
+00:15:21,600 --> 00:15:27,920
+name. Okay, experiment name is our task
+name. Task name is this is sequence
+
+166
+00:15:25,959 --> 00:15:31,440
+classification. It's done. Now if I come
+here if I refresh so you'll see that
+
+167
+00:15:30,240 --> 00:15:36,240
+another explain would be created
+sequence classification inside that
+
+168
+00:15:32,720 --> 00:15:39,600
+there is nothing. Now uh see what we do
+usually whenever we train any kinds of
+
+169
+00:15:38,079 --> 00:15:43,040
+uh let's say model with the help of
+hugging face first of all we like to
+
+170
+00:15:41,279 --> 00:15:46,880
+load the data okay and which data we'll
+be loading data set this data a news
+
+171
+00:15:45,360 --> 00:15:50,800
+data then after that we'll be performing
+the tokenization tokenization means
+
+172
+00:15:48,560 --> 00:15:54,560
+we'll be generating the embeddings okay
+that means the vectors and that vector
+
+173
+00:15:52,639 --> 00:15:58,880
+will try to pass to the model so this is
+the function I have written so this will
+
+174
+00:15:56,079 --> 00:16:04,000
+uh create the uh embeddings okay and it
+will return you after that we'll try to
+
+175
+00:16:01,759 --> 00:16:06,639
+actually create the data sets you can
+uh we are doing the shuffling
+
+176
+00:16:05,360 --> 00:16:11,600
+operations. So we are taking some
+example after doing the tokenization
+
+177
+00:16:09,120 --> 00:16:14,639
+then we are setting the format as a
+pytor because this is a pytor model
+
+178
+00:16:13,040 --> 00:16:18,160
+that's why you have to set the format as
+a pytor and after that we have to use
+
+179
+00:16:16,480 --> 00:16:21,680
+the data loader I think you know that if
+you're using pytor you have to use data
+
+180
+00:16:19,519 --> 00:16:25,720
+loader okay to load the data then once
+it is done we are also extracting the
+
+181
+00:16:23,199 --> 00:16:30,880
+labels now let me execute the entire
+code so these steps are common okay for
+
+182
+00:16:28,399 --> 00:16:30,880
+all the training
+
+183
+00:16:36,320 --> 00:16:39,759
+So see all the tokenization is
+
+184
+00:16:55,240 --> 00:17:01,920
+happening. Okay, execution is done. Now
+if I want to show the level. So see
+
+185
+00:16:59,759 --> 00:17:05,360
+these are the levels you have in the
+data. Now guys what I will do I'll
+
+186
+00:17:03,920 --> 00:17:10,480
+initialize the model. So here you can
+see I'm initializing the BLB model and
+
+187
+00:17:08,000 --> 00:17:13,839
+uh we are setting the uh this level okay
+to the model. That means we have to
+
+188
+00:17:12,079 --> 00:17:19,439
+create the configuration file. For this
+we uh use this particular let's say code
+
+189
+00:17:16,240 --> 00:17:26,280
+snippet. Okay. Now we are also uh uh
+detecting our device whether we are
+
+190
+00:17:20,959 --> 00:17:26,280
+using GPU or CPU. So maybe let me check
+
+191
+00:17:26,919 --> 00:17:34,720
+uh run type. Okay. So here we have
+selected the CPU guys. So what you have
+
+192
+00:17:32,000 --> 00:17:39,919
+to do? You have to select the GPU. Okay.
+GPU. Then set. Then again you have to do
+
+193
+00:17:37,039 --> 00:17:45,880
+the same thing because uh I forget to
+set the GPU. Okay. That's why I'm doing
+
+194
+00:17:42,640 --> 00:17:45,880
+it again.
+
+195
+00:17:52,240 --> 00:18:00,720
+Okay, now let me reconnect the notebook
+and let's install again
+
+196
+00:17:58,440 --> 00:18:05,440
+everything. So at the very first time
+guys you have to select the GPU. Okay, I
+
+197
+00:18:02,960 --> 00:18:09,679
+forgot to do it assembly. Sorry. Now let
+me
+
+198
+00:18:06,840 --> 00:18:12,320
+install. So again I will execute all the
+line quickly.
+
+199
+00:18:22,440 --> 00:18:28,520
+Okay. Okay. Done. Now let me import all
+of the library.
+
+200
+00:18:44,240 --> 00:18:47,919
+Okay. So here it is showing me one
+
+201
+00:18:57,559 --> 00:19:05,440
+error. Okay. So guys you can see it's
+working fine now. Now let's uh execute
+
+202
+00:19:02,640 --> 00:19:10,520
+this line. We'll be say uh installing bo
+3 and as then we'll be trying to
+
+203
+00:19:07,039 --> 00:19:10,520
+configure everything.
+
+204
+00:19:33,440 --> 00:19:43,640
+reason US east is
+one
+
+205
+00:19:39,240 --> 00:19:49,520
+enter now let's uh initialize the
+parameter now
+
+206
+00:19:45,720 --> 00:19:55,200
+uh I think we have already created the
+experiment. Let me again
+
+207
+00:19:52,280 --> 00:20:00,559
+execute. Okay, this created. Now if I
+come here, refresh. Okay, it is already
+
+208
+00:19:58,240 --> 00:20:05,799
+created. Now let's execute this code.
+Okay, I think uh this will work.
+
+209
+00:20:36,000 --> 00:20:43,520
+Then these are my label. Now we'll try
+to initialize the model and we'll be uh
+
+210
+00:20:42,000 --> 00:20:47,760
+detecting the device. So here we have
+selected a GPU that's why it will take
+
+211
+00:20:45,039 --> 00:20:50,919
+the CUDA and we are loading the model in
+the GPU.
+
+212
+00:20:50,960 --> 00:20:58,880
+We're done. Now this is our model. Okay.
+Now we'll be initializing the optimizer.
+
+213
+00:20:55,679 --> 00:21:02,080
+We're using AMW optimizers. Okay. Now
+this is the evaluation function. So if
+
+214
+00:21:01,039 --> 00:21:05,440
+you go to the hugging face
+documentation, you will be able to see
+
+215
+00:21:03,360 --> 00:21:08,960
+this uh function. Okay. So what it will
+do? It will uh do the evaluation of the
+
+216
+00:21:07,360 --> 00:21:12,240
+model. Okay. It will take the test data
+and it will do the evaluation on top of
+
+217
+00:21:10,480 --> 00:21:15,640
+that. It will return you accuracy,
+precision, legal and FD score. Okay.
+
+218
+00:21:13,840 --> 00:21:19,039
+These are the
+metrics. Now this is the training loop
+
+219
+00:21:17,840 --> 00:21:22,480
+guys. Okay. You have to execute the
+training loops and to start the training
+
+220
+00:21:20,880 --> 00:21:26,159
+loops size you have to initialize the
+MLflow like that with MLflow start run.
+
+221
+00:21:24,960 --> 00:21:30,240
+Okay. And inside that you have to give
+the run name and what would be the run
+
+222
+00:21:28,159 --> 00:21:34,320
+name? Run name would be model name and
+you have you also concing the data set
+
+223
+00:21:32,400 --> 00:21:38,640
+name. Okay. This is your run name. Run
+name means here it will create up one
+
+224
+00:21:35,600 --> 00:21:41,600
+run name. Okay. So after that it will
+start logging the parameter all the
+
+225
+00:21:40,400 --> 00:21:44,799
+parameter you will log. Okay. Whatever
+parameter you have mentioned I think
+
+226
+00:21:42,960 --> 00:21:49,840
+remember here. Okay. These are the
+parameter it will log. Then after that
+
+227
+00:21:48,320 --> 00:21:54,960
+uh it will start the training. You can
+see it will load the data. It will uh uh
+
+228
+00:21:52,480 --> 00:21:58,480
+like uh calculate the opt uh losses and
+everything. It will do the back
+
+229
+00:21:56,320 --> 00:22:02,400
+propagations. After that uh all the
+steps you will be able to see that then
+
+230
+00:22:00,240 --> 00:22:06,240
+once you got the let's say accuracy
+position recall after running the
+
+231
+00:22:03,600 --> 00:22:09,600
+evaluation model function. Okay. So what
+you have to do you have to also log that
+
+232
+00:22:07,840 --> 00:22:13,679
+how to log log matrix. I think I showed
+you now to log the parameter you have to
+
+233
+00:22:11,440 --> 00:22:17,760
+use the log params and to log the matrix
+you have to use the log matrix. Okay.
+
+234
+00:22:15,440 --> 00:22:21,840
+Then you have to save the model. So once
+everything is set uh then you have to
+
+235
+00:22:19,280 --> 00:22:25,840
+also uh save all the outputs. So
+whatever outputs you got so you have to
+
+236
+00:22:23,919 --> 00:22:30,080
+uh save as a artifact. Okay. So here you
+can see I'm saving as artifact. Then I
+
+237
+00:22:28,080 --> 00:22:34,760
+also taking the model URI. Then we are
+registering the model to the ML flow.
+
+238
+00:22:31,600 --> 00:22:39,039
+Okay. Now let me execute the entire
+code. So guys you can see our training
+
+239
+00:22:37,039 --> 00:22:43,200
+has started. So this training will take
+some time guys. Uh because here we have
+
+240
+00:22:41,120 --> 00:22:46,840
+lots of data. So I'll pause the video
+once this training is complete. I will
+
+241
+00:22:44,720 --> 00:22:51,840
+come
+back. So guys, as you can see, our
+
+242
+00:22:49,280 --> 00:22:56,159
+execution is complete. Now guys, uh
+execution is complete. Now if I come to
+
+243
+00:22:53,440 --> 00:22:59,440
+the ML flow, if I refresh, now you'll be
+able to see the runs. You can see this
+
+244
+00:22:57,520 --> 00:23:03,039
+is the runs. Okay, I got it. If I go
+inside that, you can see all the
+
+245
+00:23:00,720 --> 00:23:07,760
+parameter. Okay, we have logged even the
+matrixes I also got. Now you can also
+
+246
+00:23:05,600 --> 00:23:10,960
+visualize the matrix. Okay, we just run
+only one epoch that's why it's coming
+
+247
+00:23:09,120 --> 00:23:14,720
+like that. Okay. But if you run multiple
+epoch, you will be able to see like more
+
+248
+00:23:13,280 --> 00:23:18,799
+good visualization. Okay. Now you can
+see this is the loss. That means as per
+
+249
+00:23:16,640 --> 00:23:22,400
+your epo uh epoch is increasing, loss is
+also decreasing. That means my model is
+
+250
+00:23:20,080 --> 00:23:27,280
+learning better. Okay. Now if I go to
+the artifact section, so you can see
+
+251
+00:23:24,320 --> 00:23:32,559
+guys uh models. So see uh some of the
+model parameter it has also saved. Uh
+
+252
+00:23:29,760 --> 00:23:36,320
+now guys uh if I uh show you the models
+okay
+
+253
+00:23:34,159 --> 00:23:39,760
+uh go to the model because we have also
+done the registration. So if I go to the
+
+254
+00:23:37,760 --> 00:23:43,200
+model, so model registration is also
+done. So see guys, this is the model,
+
+255
+00:23:41,679 --> 00:23:47,280
+okay, and this is the version one of our
+model. Now if you run it for the second
+
+256
+00:23:45,520 --> 00:23:50,240
+time, okay, with a different parameter,
+it will again create another model.
+
+257
+00:23:48,720 --> 00:23:54,240
+That's how you can do the model tracking
+also. This is another beauty of this ML
+
+258
+00:23:52,480 --> 00:23:57,520
+flow. Okay, now you can see guys, this
+is our
+
+259
+00:23:55,159 --> 00:24:01,039
+model. Okay, this is our model and this
+is the registration date and timing
+
+260
+00:23:58,960 --> 00:24:09,600
+everything it is showing me. Now uh from
+here also we can do the inference, okay,
+
+261
+00:24:02,960 --> 00:24:09,600
+by loading the model. Uh so let me show
+
+262
+00:24:11,720 --> 00:24:18,400
+you. So one thing I want to show you if
+you go to your S3 bucket. Okay. So let's
+
+263
+00:24:16,159 --> 00:24:23,720
+say this is our bucket. So it has also
+saved your artifact
+
+264
+00:24:21,480 --> 00:24:28,240
+there.
+See that means your model is available.
+
+265
+00:24:26,480 --> 00:24:33,039
+Okay. Here you can see this is your
+model. Now I think one local folder has
+
+266
+00:24:30,880 --> 00:24:37,120
+also created. Left hand side this is the
+model. inside that you have your dist
+
+267
+00:24:35,360 --> 00:24:41,039
+model. Okay. So that means all the
+artifact it has saved to the S3 bucket
+
+268
+00:24:38,720 --> 00:24:44,960
+also. Now everything is working fine.
+Now in the next video we'll try to see
+
+269
+00:24:43,279 --> 00:24:50,080
+how we can perform the inference
+operation with this particular model.
+
+270
+00:24:46,799 --> 00:24:50,080
+Thank you guys.
+

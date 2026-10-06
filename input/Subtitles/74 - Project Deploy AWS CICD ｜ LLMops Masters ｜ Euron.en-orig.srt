@@ -1,0 +1,2139 @@
+1
+00:00:00,240 --> 00:00:05,759
+Uh now we'll try to uh see the
+deployment part like how we can deploy
+
+2
+00:00:03,679 --> 00:00:09,440
+these kinds of projects on the cloud
+platform. If you want to learn any other
+
+3
+00:00:07,839 --> 00:00:12,880
+cloud deployment it is also fine. See
+the process will remain same only the
+
+4
+00:00:11,040 --> 00:00:17,039
+cloud functionality would be different.
+So uh I'll try to create some more video
+
+5
+00:00:15,120 --> 00:00:20,640
+on the deployment like I'll also show
+you how we can deploy this kinds of
+
+6
+00:00:18,640 --> 00:00:24,560
+project on the GCP cloud on the let's
+say the Azure cloud. But first of all
+
+7
+00:00:22,560 --> 00:00:28,480
+let's try to see how we can deploy this
+project on the AWS cloud and see this is
+
+8
+00:00:26,800 --> 00:00:32,399
+not going to be a simple deployment. So
+here we'll be doing continuous
+
+9
+00:00:30,320 --> 00:00:36,800
+integration and continuous delivery or
+deployment that means CI/CD. So I think
+
+10
+00:00:34,880 --> 00:00:41,200
+you have heard of this particular term
+called CI/CD right. So we'll be learning
+
+11
+00:00:38,800 --> 00:00:45,040
+how we can deploy uh this project as a
+CI/CD. I think you already know how to
+
+12
+00:00:43,360 --> 00:00:48,719
+deploy any machine learning project deep
+learning project as CI/CD. But we
+
+13
+00:00:47,039 --> 00:00:53,039
+haven't seen how we can deploy any kinds
+of geneti based project as a CI/CD
+
+14
+00:00:50,960 --> 00:00:56,000
+right? So that's why make sure you are
+watching this video till the end. So
+
+15
+00:00:54,719 --> 00:01:00,399
+here I'm going to show you each and
+every step you have to follow and trust
+
+16
+00:00:57,680 --> 00:01:04,799
+me if you follow this step guys you can
+use this step to deploy any kinds of
+
+17
+00:01:02,800 --> 00:01:08,400
+let's say gen project okay and this is
+going to be production grade deployment
+
+18
+00:01:06,560 --> 00:01:12,240
+okay so here I'm going to use different
+different kinds of service from the AWS
+
+19
+00:01:10,159 --> 00:01:15,760
+even I I I'll be also using docker that
+means first of all we'll be dockerizing
+
+20
+00:01:13,600 --> 00:01:19,119
+the entire source code then we'll be
+deploying this application on the cloud
+
+21
+00:01:17,280 --> 00:01:22,159
+platform okay so make sure you are
+watching this video till the end so
+
+22
+00:01:20,720 --> 00:01:25,840
+before starting the deployment guys
+first of all let me show you uh what
+
+23
+00:01:24,159 --> 00:01:29,360
+exactly we're going to perform here what
+is CI/CD exactly then I will also
+
+24
+00:01:27,920 --> 00:01:32,560
+discuss let's say what are the tools and
+technology we'll be using here what are
+
+25
+00:01:30,720 --> 00:01:36,560
+the services we'll be using here then I
+will start with the deployment and make
+
+26
+00:01:34,240 --> 00:01:39,600
+sure you have the AWS account if you
+don't have the AWS account guys so you
+
+27
+00:01:38,079 --> 00:01:42,560
+won't be able to deploy this project so
+first of all try to create one account
+
+28
+00:01:41,360 --> 00:01:46,320
+if you're creating for the first time
+you will get $300 free credit okay and
+
+29
+00:01:44,560 --> 00:01:50,079
+this is enough for you so try to create
+an account guys then you can start with
+
+30
+00:01:48,320 --> 00:01:53,600
+the deployment with me so let's open up
+our blackboard and try to see the
+
+31
+00:01:51,680 --> 00:01:57,439
+architecture overview so guys as I
+already told you here we'll be doing
+
+32
+00:01:54,960 --> 00:02:01,600
+something called CI/CD deployment right
+and I already told you what is uh CI/CD
+
+33
+00:01:59,680 --> 00:02:05,040
+full form it's continuous integration
+continuous delivery or deployment right
+
+34
+00:02:03,520 --> 00:02:09,840
+so inside continuous integration
+continuous delivery what happens let's
+
+35
+00:02:06,479 --> 00:02:13,840
+say you are the developer okay let's say
+you are the
+
+36
+00:02:10,760 --> 00:02:18,959
+developer so what is your task your task
+is to develop a project in the
+
+37
+00:02:16,599 --> 00:02:22,720
+development let's say environment so
+development environment means like your
+
+38
+00:02:21,200 --> 00:02:27,480
+local system let's say you are using
+your laptop for computer that's a local
+
+39
+00:02:25,400 --> 00:02:33,920
+computer okay
+local
+
+40
+00:02:30,440 --> 00:02:37,040
+computer fine then what we are doing I
+think remember we are committing this
+
+41
+00:02:35,599 --> 00:02:40,080
+code to the GitHub right we are doing
+the code management I think remember
+
+42
+00:02:38,400 --> 00:02:44,720
+that means that means whenever I was
+adding some new feature I was pushing
+
+43
+00:02:41,519 --> 00:02:49,440
+this code to the GitHub yes or no okay
+with the help of G client we are pushing
+
+44
+00:02:46,959 --> 00:02:52,800
+the code in the GitHub GitHub server now
+what happens actually let's say after
+
+45
+00:02:51,280 --> 00:02:58,080
+deployment so this is called actually
+development ment server or I can write
+
+46
+00:02:54,879 --> 00:02:58,080
+uh this is actually development
+
+47
+00:02:59,239 --> 00:03:06,239
+environment. Okay, development
+environment. So after implementing this
+
+48
+00:03:03,920 --> 00:03:10,560
+project what we have to do we have to
+deploy this project yes or no. Let's say
+
+49
+00:03:09,040 --> 00:03:15,760
+um somehow you have deployed this
+project on the AWS cloud. Let's say this
+
+50
+00:03:12,239 --> 00:03:18,760
+is your AWS cloud. Fine. So let's say
+you have deployed this project to the
+
+51
+00:03:17,360 --> 00:03:23,519
+AWS
+cloud manually. manually you just
+
+52
+00:03:21,200 --> 00:03:27,680
+created a let's say instance there you
+create you just took a machine there a
+
+53
+00:03:25,360 --> 00:03:34,239
+KC2 machine and you manually deployed
+this project now it will give you some
+
+54
+00:03:29,799 --> 00:03:39,440
+endpoint okay endpoint so with the help
+of this endpoint any of the
+
+55
+00:03:36,680 --> 00:03:44,720
+user okay user can access your
+application now let's say after 4 month
+
+56
+00:03:42,560 --> 00:03:48,959
+or let's say 6 month you want to add
+some more features in this let's say
+
+57
+00:03:47,200 --> 00:03:52,319
+application let's say you are deploying
+medical chatbot
+
+58
+00:03:50,480 --> 00:03:56,239
+the medical chatbot we implemented I
+think you remember right let's say you
+
+59
+00:03:54,640 --> 00:03:59,439
+want to add some more data you want to
+add some more knowledge base and you
+
+60
+00:03:57,760 --> 00:04:02,799
+want to add some more features in this
+application then what you have to do you
+
+61
+00:04:01,120 --> 00:04:06,319
+have to again develop this let's say
+features in your code then what you will
+
+62
+00:04:04,879 --> 00:04:10,400
+be doing again you'll be deploying this
+application to the as cloud now just try
+
+63
+00:04:08,560 --> 00:04:14,159
+to see whenever you are deploying the
+project for the second time let's say
+
+64
+00:04:12,720 --> 00:04:17,040
+this is the first time you have deployed
+then you are trying to deploy for the
+
+65
+00:04:15,680 --> 00:04:22,000
+second time then what you have to do
+first of all you have to stop this
+
+66
+00:04:19,519 --> 00:04:25,759
+application in the AWS okay stop this
+application then you will be uploading
+
+67
+00:04:23,600 --> 00:04:29,199
+your updated code then this code will
+reflect to the endpoint then user will
+
+68
+00:04:27,280 --> 00:04:34,400
+able to access that now let's say in
+between whenever you stop this AWS
+
+69
+00:04:31,759 --> 00:04:39,520
+server let's say your uh application
+let's say it took 3 hours it took 3
+
+70
+00:04:37,280 --> 00:04:43,759
+hours to change the entire source code
+that means uh change the entire features
+
+71
+00:04:42,080 --> 00:04:47,440
+okay of your application so what will
+happen 3 hours user won't be able to
+
+72
+00:04:45,680 --> 00:04:51,520
+access your application so they will
+come your website and they will see
+
+73
+00:04:49,120 --> 00:04:55,520
+server error okay server error actually
+they will get so if user is getting this
+
+74
+00:04:54,160 --> 00:04:59,919
+kinds of experience so definitely it
+would be a negative let's say uh effect
+
+75
+00:04:58,000 --> 00:05:03,840
+okay on your application so next time
+actually they are not going to use your
+
+76
+00:05:01,440 --> 00:05:08,080
+application yes or no let's say if charg
+is down for the uh let's say 3 hours
+
+77
+00:05:06,720 --> 00:05:12,800
+definitely people will move to the
+Google b or any other let's say uh
+
+78
+00:05:10,160 --> 00:05:17,759
+software whatever we are having okay so
+now see chart GP is also updating their
+
+79
+00:05:15,520 --> 00:05:21,919
+let's say application day by day but did
+you ever observe this server is down.
+
+80
+00:05:19,680 --> 00:05:24,880
+No, even not seeing the server is down
+but still they're able to make the
+
+81
+00:05:23,280 --> 00:05:27,280
+changes in their application. How?
+Because they are following something
+
+82
+00:05:25,840 --> 00:05:30,360
+called CI/CD approach. Continuous
+integration, continuous delivery. That
+
+83
+00:05:28,720 --> 00:05:33,919
+means this application is keep on
+running but in the back end they're
+
+84
+00:05:32,639 --> 00:05:36,720
+pushing their source code. They're
+pushing their let's say new features and
+
+85
+00:05:35,440 --> 00:05:41,120
+this feature is automatically getting
+updated. Okay. So this is collected
+
+86
+00:05:38,479 --> 00:05:43,919
+CI/CD. That means you are not going to
+deploy this application manual. Instead
+
+87
+00:05:42,800 --> 00:05:46,720
+of that what you have to do you have to
+follow the CI/CD. That means what will
+
+88
+00:05:45,199 --> 00:05:50,639
+happen? Let's say you have changed
+something in your code. you will push
+
+89
+00:05:48,400 --> 00:05:55,960
+the code to the GitHub. Okay, GitHub
+will automatically uh let's say deploy
+
+90
+00:05:52,960 --> 00:06:00,000
+your code to the AWS cloud. It will
+automatically push your code to the AWS
+
+91
+00:05:58,240 --> 00:06:04,000
+cloud and your endpoint would be
+automatically updated. Okay,
+
+92
+00:06:02,080 --> 00:06:08,319
+automatically updated so that if user is
+using your application, okay, they won't
+
+93
+00:06:06,000 --> 00:06:12,800
+be filling any kinds of let's say server
+down issue. Okay, server down issue
+
+94
+00:06:10,720 --> 00:06:16,000
+actually they won't be filling. Got it?
+So this is what actually uh we have to
+
+95
+00:06:14,880 --> 00:06:19,600
+do. That means we'll be creating the
+entire pipeline entire let's say CI/CD
+
+96
+00:06:18,080 --> 00:06:25,199
+pipeline. So we'll be just pushing the
+code in our GitHub and GitHub will
+
+97
+00:06:22,160 --> 00:06:29,520
+automatically trigger uh this uh action
+and my code will updated to the AWS
+
+98
+00:06:27,120 --> 00:06:33,600
+cloud and AWS will update the endpoint.
+Okay. Now see the automated process will
+
+99
+00:06:32,000 --> 00:06:37,039
+be doing. Now whenever we we'll let's
+say push our code to the GitHub, GitHub
+
+100
+00:06:35,440 --> 00:06:41,840
+will automatically trigger. How it will
+trigger? For this you have to use some
+
+101
+00:06:38,560 --> 00:06:44,720
+CI/CD tool. Okay. CI/CD tool. CI/CD
+automation tool. So here there are
+
+102
+00:06:43,199 --> 00:06:48,560
+different kinds of CICD tool. So the
+first tool you can use something called
+
+103
+00:06:45,840 --> 00:06:52,560
+GitHub action. Okay, GitHub action you
+can use. Then you can use something
+
+104
+00:06:49,919 --> 00:06:57,759
+called genkins. Okay, genkins then you
+can use something called
+
+105
+00:06:54,680 --> 00:07:01,440
+circleci. Circle. So these actually
+three famous tool actually we are having
+
+106
+00:06:59,520 --> 00:07:04,479
+in the market right now. So people are
+using more this GitHub action because
+
+107
+00:07:03,199 --> 00:07:07,280
+GitHub action you don't need to set up
+anything. It is already set up
+
+108
+00:07:05,840 --> 00:07:10,960
+everything in the GitHub. But if you're
+using Genkins and CircleCI you have to
+
+109
+00:07:09,039 --> 00:07:13,440
+set up this server manually. Okay. So
+here we'll be using GitHub action
+
+110
+00:07:12,240 --> 00:07:16,400
+because it is already inbuilt with the
+GitHub. We don't need to set up anything
+
+111
+00:07:14,960 --> 00:07:20,560
+going forward. I will also show you how
+we can uh let's say use gen circle CI.
+
+112
+00:07:18,800 --> 00:07:25,039
+These are the services as well. Fine. So
+yes guys, this is the complete uh highle
+
+113
+00:07:22,560 --> 00:07:27,440
+architecture of our deployment. Now now
+let's discuss what are the services
+
+114
+00:07:26,319 --> 00:07:32,440
+actually we'll be using for the
+deployment. See here the first services
+
+115
+00:07:29,199 --> 00:07:36,319
+actually I'm going to use uh called
+docker. So I think you already know
+
+116
+00:07:34,400 --> 00:07:39,680
+docker. So docker is a containerization
+service. So with the help of that you
+
+117
+00:07:38,000 --> 00:07:42,720
+can containerize your code. That means
+let's say you are having a source code.
+
+118
+00:07:41,039 --> 00:07:46,720
+You can perform the containerization.
+That means it will create a docker image
+
+119
+00:07:44,240 --> 00:07:49,759
+for you. Okay. So this image you can
+let's say keep anywhere. Let's you can
+
+120
+00:07:48,400 --> 00:07:52,960
+keep in the docker hub. You can keep
+let's say in the ECR that mean elastic
+
+121
+00:07:51,360 --> 00:07:56,560
+container registry. From there you can
+pull the image and you can execute this
+
+122
+00:07:54,400 --> 00:07:59,520
+image. Okay. So if you are using docker
+so you won't be getting any kinds of
+
+123
+00:07:57,840 --> 00:08:05,120
+setup issue. This is the main advantage
+here. Then we'll be using something
+
+124
+00:08:01,120 --> 00:08:09,120
+called ECR here. ECR. ECR means elastic
+container registry. So this is the
+
+125
+00:08:06,800 --> 00:08:12,960
+service from the AWS. Okay. AWS giving
+the service. So here you can store any
+
+126
+00:08:10,960 --> 00:08:17,199
+kinds of docker image. It is the same
+like your docker hub. Okay. But it is
+
+127
+00:08:14,639 --> 00:08:20,400
+the uh it is the service from the AWS.
+You can store the private image there.
+
+128
+00:08:18,800 --> 00:08:23,599
+But in Docker Hub actually the all the
+image would be public. This is the
+
+129
+00:08:22,080 --> 00:08:28,400
+difference only. Now we'll be using
+another service called EC2. Okay. EC2 is
+
+130
+00:08:26,479 --> 00:08:32,080
+a virtual machine service from the AWS.
+Again it is from the AWS. Okay. So this
+
+131
+00:08:30,639 --> 00:08:36,000
+will give you virtual machine. There you
+can buy let's say CPU based machine, GPU
+
+132
+00:08:34,159 --> 00:08:39,599
+based machine. Okay. So all kinds of
+configuration would be there. So here we
+
+133
+00:08:37,839 --> 00:08:42,959
+are using our local computer. So there
+we'll be getting a cloud computer. Okay,
+
+134
+00:08:41,360 --> 00:08:47,320
+this is the difference only. Then as a
+CI/CD tool, I'll be using something
+
+135
+00:08:44,560 --> 00:08:50,519
+called GitHub action as I told
+you. Okay, we'll be using GitHub action
+
+136
+00:08:49,680 --> 00:08:55,839
+for the
+CI/CD, CI/CD management. Fine. So yes
+
+137
+00:08:54,000 --> 00:08:59,680
+guys, these are the services as of now
+I'm going to use. So let me show you the
+
+138
+00:08:57,920 --> 00:09:02,959
+deployment step we'll be following for
+this what I have done guys. I do
+
+139
+00:09:01,360 --> 00:09:06,240
+remember we implemented one medical
+chatbot. This is the code and this code
+
+140
+00:09:04,480 --> 00:09:09,440
+would be also available uh in your
+resources section. Even you will also
+
+141
+00:09:07,920 --> 00:09:14,320
+get this code in my GitHub. So guys,
+this is my GitHub profile. Just search
+
+142
+00:09:12,200 --> 00:09:18,560
+entit. And here I have created one
+repository called uh end to end medical
+
+143
+00:09:16,560 --> 00:09:21,440
+chatbot. So I'm going to commit this
+code here. So you will get all the
+
+144
+00:09:19,839 --> 00:09:24,640
+source code from this repository itself.
+Okay. And even I will also add the
+
+145
+00:09:22,959 --> 00:09:27,360
+deployment step in the readmi file. So
+that is what actually I have written.
+
+146
+00:09:25,680 --> 00:09:30,720
+You can see the entire deployment step I
+have written here. Now this is the CI/CD
+
+147
+00:09:29,440 --> 00:09:35,120
+deployment will be following. So first
+of all what we have to do we have to
+
+148
+00:09:32,480 --> 00:09:39,200
+let's say create a IM user uh then we'll
+be uh creating the EC2 machine ECR okay
+
+149
+00:09:37,600 --> 00:09:42,240
+then we'll be see this is the deployment
+step as of now just try to follow the
+
+150
+00:09:40,640 --> 00:09:45,920
+step I'm going to show you first of all
+we'll be building our uh so here first
+
+151
+00:09:44,800 --> 00:09:49,040
+of all we'll be building the docker
+image of our source code that means
+
+152
+00:09:47,360 --> 00:09:51,760
+docker image we'll be implementing then
+we'll be pushing this docker image to
+
+153
+00:09:50,480 --> 00:09:55,600
+the ECR that means elastic container
+registry to store my docker image then
+
+154
+00:09:53,680 --> 00:09:59,360
+we'll be pulling this image from uh from
+ECR in the EC2 that means we'll be
+
+155
+00:09:57,440 --> 00:10:02,160
+pulling that image in the EC2 machine in
+our virtual
+
+156
+00:10:00,399 --> 00:10:05,760
+computer then we'll be launching this
+docker image in my EC2 machine and from
+
+157
+00:10:04,080 --> 00:10:08,959
+there we'll be creating an endpoint and
+that endpoint user will be able to
+
+158
+00:10:07,360 --> 00:10:12,640
+access okay and these are the policy I
+have to give whenever I'll be creating
+
+159
+00:10:10,080 --> 00:10:15,920
+the im user fine so this is the entire
+step guys I have written even I have
+
+160
+00:10:14,399 --> 00:10:19,600
+also given all the command you need to
+execute here now let's start the
+
+161
+00:10:17,839 --> 00:10:22,240
+deployment guys but before that you just
+need to prepare some of the files the
+
+162
+00:10:21,120 --> 00:10:26,000
+first file you have to prepare the
+docker file so this file will help you
+
+163
+00:10:24,399 --> 00:10:28,560
+to containerize entire your application
+that means it will perform the
+
+164
+00:10:26,880 --> 00:10:32,800
+dockerization and these are the docker
+command you have to Right. So I think
+
+165
+00:10:30,480 --> 00:10:36,720
+remember we are using Python 3.10. Okay.
+This Python version that's why I have
+
+166
+00:10:34,240 --> 00:10:39,279
+taken Python 3.10 slim buster image.
+Then working directory. It will create a
+
+167
+00:10:38,079 --> 00:10:42,160
+working directory called app. Inside
+that it will copy all the source code.
+
+168
+00:10:40,800 --> 00:10:45,760
+Then it will install the requirements.
+Okay. Whatever requirements actually we
+
+169
+00:10:43,360 --> 00:10:49,760
+are having here for it. Then it will
+execute this Python 3 app.py command. So
+
+170
+00:10:48,079 --> 00:10:54,560
+that means my endpoint would be
+executed. Okay. My application would be
+
+171
+00:10:51,440 --> 00:10:58,480
+running. And make sure before actually
+deployment you just store your index.
+
+172
+00:10:56,720 --> 00:11:01,279
+Okay. In the pine cone. So this is the
+pine cone guys. It is running and all
+
+173
+00:10:59,920 --> 00:11:06,160
+the vector is already stored here. You
+can see 7,20 uh actually record is
+
+174
+00:11:04,560 --> 00:11:09,519
+already stored here. So I already
+executed this file I think remember
+
+175
+00:11:07,600 --> 00:11:13,360
+store index. So it will create all the
+let's say vector embedding and it will
+
+176
+00:11:11,360 --> 00:11:16,480
+store in the pine cone. Okay. Pine cone
+vector database. So in this project I
+
+177
+00:11:15,040 --> 00:11:20,399
+was using pine cone I think remember.
+Okay. So this should be available here.
+
+178
+00:11:18,320 --> 00:11:23,040
+Got it? So once it is available now what
+I have to do guys then you can create
+
+179
+00:11:21,760 --> 00:11:26,160
+another file called docker ignore.
+Inside docker ignore you can mention
+
+180
+00:11:24,640 --> 00:11:31,680
+like some of the file which is not
+required. Let's say here this file is
+
+181
+00:11:28,640 --> 00:11:36,399
+not required. Let's say uh I think this
+file is not required. JVI project egg
+
+182
+00:11:34,320 --> 00:11:41,200
+info. Okay. So whenever it will perform
+the let's say containerization that
+
+183
+00:11:38,480 --> 00:11:44,320
+means dockerization. So I don't need
+this uh folder that time what you can do
+
+184
+00:11:43,120 --> 00:11:48,000
+you can mention this folder name in the
+docker uh docker ignore file. It is the
+
+185
+00:11:46,240 --> 00:11:50,640
+same thing as your g ignode. So it is
+already mentioned inside inside my g
+
+186
+00:11:49,600 --> 00:11:54,079
+ignore. That's why I haven't mentioned
+inside my docker ignore. Docker ignore
+
+187
+00:11:52,079 --> 00:11:57,839
+is completely empty. As of now I need
+all the file that's why I haven't keep
+
+188
+00:11:56,160 --> 00:12:01,040
+anything here. Now let's see if you want
+to ignore any kinds of file which is not
+
+189
+00:11:59,440 --> 00:12:05,360
+required that time you can store these
+other file inside docker ignore. Okay
+
+190
+00:12:02,800 --> 00:12:09,040
+that's the thing. Now the next things
+you have to create you have to create
+
+191
+00:12:07,279 --> 00:12:12,000
+one folder called GitHub. Okay inside
+that you have to create one folder
+
+192
+00:12:10,160 --> 00:12:15,839
+called workflows. Inside that you have
+to create one file. You can give any
+
+193
+00:12:13,839 --> 00:12:19,920
+name. Here I have given CICD. ML. Okay.
+Now see this is the complete YML file.
+
+194
+00:12:17,680 --> 00:12:24,480
+So this YML file will help me to do the
+CI/CD deployment. Okay. That means here
+
+195
+00:12:22,959 --> 00:12:28,639
+it will be using something called GitHub
+action. Okay. And GitHub action need
+
+196
+00:12:26,399 --> 00:12:32,240
+this YML file. So here all the command
+is already written. So first of all you
+
+197
+00:12:30,720 --> 00:12:34,959
+will see that it will perform continuous
+integration inside continuous
+
+198
+00:12:33,360 --> 00:12:39,279
+integration. It will authenticate with
+my AWS account. Okay. Then it will login
+
+199
+00:12:37,519 --> 00:12:42,160
+with my ECR. Then whatever let's say
+docker image actually you'll be building
+
+200
+00:12:40,480 --> 00:12:45,040
+you will push that image to the ECR.
+Okay. That means elastic container
+
+201
+00:12:43,440 --> 00:12:49,120
+study. Then your continuous deployment
+will start again. It will authenticate
+
+202
+00:12:47,040 --> 00:12:53,760
+with your AWS account. Then it will pull
+that let's say uh image from your ECR2
+
+203
+00:12:51,680 --> 00:12:57,519
+to EC2 machine. Then it will execute it
+here. And here all the environment
+
+204
+00:12:55,839 --> 00:13:01,120
+variable I have set. You can see hypen
+means this is the environment variable.
+
+205
+00:12:59,040 --> 00:13:05,040
+See AWS access key as secret key. I'll
+tell you how to generate these are the
+
+206
+00:13:02,240 --> 00:13:08,160
+key. Then a pine cone API key open a key
+everything I have set here. Okay. So
+
+207
+00:13:07,040 --> 00:13:11,440
+these are the thing we'll be reading
+from the secret. Okay. GitHub secret.
+
+208
+00:13:09,839 --> 00:13:14,480
+I'll tell you how to create the GitHub
+secret as well. So as of now just try to
+
+209
+00:13:13,200 --> 00:13:18,000
+remember this is the YML file you have
+to use for the CI/CD. And this YML file
+
+210
+00:13:16,399 --> 00:13:21,680
+you can use as it is. No need to change
+anything in your other other project as
+
+211
+00:13:19,680 --> 00:13:25,120
+well. Okay, that's the thing. Now let's
+open up our AWS account. So guys, this
+
+212
+00:13:23,440 --> 00:13:28,480
+is my as account. I already logged in
+with my AWS account. So here, so first
+
+213
+00:13:27,360 --> 00:13:33,279
+of all, what you have to do, you have to
+create a IM user. So let's create IM
+
+214
+00:13:30,079 --> 00:13:37,839
+user. So I am. So the first thing we'll
+be creating one user here. So let's go
+
+215
+00:13:35,040 --> 00:13:41,920
+create one user. I'll create a user. So
+let's say username is I'll give uh
+
+216
+00:13:43,399 --> 00:13:49,519
+medical medical bot. You can give any
+name. It's up to you. So let's click on
+
+217
+00:13:47,519 --> 00:13:53,600
+next. Now you have to give policies.
+Okay. Like what are the policy you want
+
+218
+00:13:51,279 --> 00:13:56,639
+to give in this user? I don't want to
+give my entire policy. That means all
+
+219
+00:13:55,040 --> 00:14:00,320
+the services I I don't want to give the
+access. So I'll be giving some specific
+
+220
+00:13:58,399 --> 00:14:03,519
+access. So access wise I already written
+in the readmi file. Let me show you. So
+
+221
+00:14:02,160 --> 00:14:07,519
+these are the access I'll be providing
+my EC2
+
+222
+00:14:05,279 --> 00:14:10,800
+uh container registry full access and
+EC2 full access. Okay. These are the
+
+223
+00:14:08,880 --> 00:14:14,800
+thing we'll be giving. So here just
+search it. So this is the ECR. Okay. ECR
+
+224
+00:14:13,279 --> 00:14:19,519
+elastic container registry full service
+here I'm giving. So let's select and
+
+225
+00:14:17,440 --> 00:14:23,279
+after that again I can delete it. Then
+I'll try to copy the next service. This
+
+226
+00:14:22,000 --> 00:14:27,839
+is the service. Okay. This is the EC2
+machine service. So again search here
+
+227
+00:14:25,600 --> 00:14:32,399
+and select EC2 machine and click on the
+next. Now see that I have given this two
+
+228
+00:14:30,720 --> 00:14:36,240
+service. Okay. Next thing just create
+the user. So right hand side you can see
+
+229
+00:14:34,560 --> 00:14:40,639
+one button is there create user. Just
+click on create
+
+230
+00:14:38,279 --> 00:14:43,760
+user. So guys as you can see my user has
+created. Now I'll click on the user.
+
+231
+00:14:42,560 --> 00:14:47,760
+Then here you will get one option
+security credential. Just click here.
+
+232
+00:14:45,920 --> 00:14:51,920
+Then you have to create a access key. So
+click uh click on create access key.
+
+233
+00:14:49,600 --> 00:14:55,680
+Select command line interface. And I
+understand this uh above recommendation
+
+234
+00:14:53,760 --> 00:15:00,160
+and click on the next. So there is a
+next button. Just click on the next. Now
+
+235
+00:14:58,160 --> 00:15:02,880
+create the access key here. Now see guys
+this is your access key and secret
+
+236
+00:15:01,199 --> 00:15:06,480
+access key. Try to download as a CSV
+file. So let's download. So and just
+
+237
+00:15:04,720 --> 00:15:09,680
+keep it with you. Okay. This thing I
+need later on. Okay. And no need to
+
+238
+00:15:08,320 --> 00:15:13,760
+share this key with anyone otherwise
+they will also access your uh AWS
+
+239
+00:15:12,160 --> 00:15:18,399
+account. Okay. So here I'm showing
+because after the recording I'll delete
+
+240
+00:15:15,199 --> 00:15:22,079
+everything. Got it? So my im creation is
+done. Now I'll go back to the homepage.
+
+241
+00:15:20,639 --> 00:15:25,920
+Now the next thing what I have to do
+guys I have to create a ECR repository
+
+242
+00:15:24,079 --> 00:15:30,000
+to store my docker image. So let's
+search for ECR. So just search for ECR
+
+243
+00:15:28,480 --> 00:15:35,040
+that means elastic container registry.
+Just open it up and make sure you check
+
+244
+00:15:32,880 --> 00:15:39,519
+your region in which region you are
+working. See I'm working uh in Mumbai AP
+
+245
+00:15:37,600 --> 00:15:42,639
+South one. If you're in other region
+just try to note it down. Okay, you have
+
+246
+00:15:41,279 --> 00:15:47,279
+to note it down this this syntax
+actually a south one then central one.
+
+247
+00:15:45,360 --> 00:15:51,360
+If you're let's say in north Virginia I
+have to give US east one. So just try to
+
+248
+00:15:49,440 --> 00:15:55,920
+remember these are the tag. Okay, so I'm
+inside Mumbai that means AP south one.
+
+249
+00:15:53,680 --> 00:15:59,759
+Now I'll be creating a elastic container
+registry. So let's create uh so let's
+
+250
+00:15:58,160 --> 00:16:04,360
+click there. Now you have to give the
+name. Let's say I'll give
+
+251
+00:16:02,600 --> 00:16:08,399
+medical
+chatbot. You can give any name. It's up
+
+252
+00:16:06,560 --> 00:16:12,959
+to you. Everything keep it as default.
+Now click on next. Now see my repo is
+
+253
+00:16:11,600 --> 00:16:18,079
+created. Now what you have to do just
+copy the URI and uh just try to paste it
+
+254
+00:16:16,240 --> 00:16:21,720
+as of now here because this thing I need
+later on just for reference I'm saving
+
+255
+00:16:20,079 --> 00:16:26,720
+it here.
+Okay that's it. Now what I will do I
+
+256
+00:16:24,160 --> 00:16:32,160
+will go back again. Now the next thing I
+have to do I have to create my EC2
+
+257
+00:16:28,800 --> 00:16:35,040
+machine. Then I have to set up uh these
+are the requirements. Okay that means I
+
+258
+00:16:33,360 --> 00:16:38,000
+have to set up the docker there. Then I
+will be also updating that machine. So
+
+259
+00:16:36,560 --> 00:16:44,839
+let's create my EC2 machine right now.
+So search for EC2 here. EC2 instance. So
+
+260
+00:16:40,639 --> 00:16:50,079
+this the EC2 service. Now launch the
+instance. Now select the Ubuntu
+
+261
+00:16:47,720 --> 00:16:56,160
+machine and what you have to do give the
+name of the machine. Let's say
+
+262
+00:16:51,800 --> 00:16:56,160
+medical board machine. You can give
+
+263
+00:16:56,199 --> 00:17:04,880
+anything. Then u see instance type you
+have to take at least 8 GB
+
+264
+00:17:02,120 --> 00:17:08,880
+RAM. 8 GB RAM just take 8 GB RAM. I'll
+be taking T2 large. Okay. This machine
+
+265
+00:17:07,199 --> 00:17:11,439
+and then select the key value pair. If
+you don't have the key will appear, you
+
+266
+00:17:10,000 --> 00:17:15,439
+can also create it. So let's say I'll
+give
+
+267
+00:17:12,679 --> 00:17:18,079
+medical. So it will create one RSA file.
+So guys, you can see after creating and
+
+268
+00:17:16,880 --> 00:17:21,039
+download you will it will give you one
+PM file. So this PM file you can use.
+
+269
+00:17:19,919 --> 00:17:24,240
+Let's say if you're using any third
+party tool to connect with your uh EC2
+
+270
+00:17:22,959 --> 00:17:27,839
+machine, let's say puty or mobile
+extreme that time you can use this PAM
+
+271
+00:17:25,760 --> 00:17:32,240
+file. But I'm going to launch my let's
+say machine in
+
+272
+00:17:29,000 --> 00:17:37,039
+my second tab with that of AWS only. I
+don't need this PAM file. Okay. So now
+
+273
+00:17:35,280 --> 00:17:40,400
+I'll select these two option HTTPS and
+HTTP. Keep it everything as default.
+
+274
+00:17:39,039 --> 00:17:45,600
+Configuration storage at least take
+let's say 30 GB and launch the instance
+
+275
+00:17:43,360 --> 00:17:45,600
+right
+
+276
+00:17:45,799 --> 00:17:52,160
+now. So here you can see click on view
+all instance. Then see my machine is
+
+277
+00:17:50,559 --> 00:17:55,760
+running. So if status is running now
+click on the machine ID. Now here you
+
+278
+00:17:54,640 --> 00:18:00,080
+have to connect this machine. So click
+on the connect button. Now I'll be
+
+279
+00:17:57,919 --> 00:18:04,559
+selecting the EC2 connector and let's
+connect the machine. So it will create a
+
+280
+00:18:02,240 --> 00:18:08,240
+new tab for me. So here I will get one
+terminal block terminal. So we we have
+
+281
+00:18:06,960 --> 00:18:12,240
+to use this terminal to set up
+everything here. And this is the
+
+282
+00:18:10,880 --> 00:18:15,440
+production server guys. Okay, that's how
+your production server looks like. See
+
+283
+00:18:14,080 --> 00:18:19,679
+this is the production server. Let me
+zoom now. Let me clear. See here you
+
+284
+00:18:17,919 --> 00:18:23,280
+won't be getting any kinds of UI
+interface. Okay, that means the way we
+
+285
+00:18:21,520 --> 00:18:26,080
+are using our computer it is having UI
+but in the production server you won't
+
+286
+00:18:24,559 --> 00:18:29,440
+be getting any kinds of UI. You have to
+work with the terminal always. And this
+
+287
+00:18:27,919 --> 00:18:32,480
+is the Linux terminal I got. This is the
+Linux machine guys. So that's why if you
+
+288
+00:18:30,960 --> 00:18:35,760
+know any kinds of Linux command, it will
+help you a lot. Got it? So here first of
+
+289
+00:18:34,480 --> 00:18:39,280
+all I have to update this machine. For
+this you have to execute this other
+
+290
+00:18:37,120 --> 00:18:42,160
+command one by one. So let's copy all
+the command one by
+
+291
+00:18:43,480 --> 00:18:48,799
+one. Okay. So this is done. Now I'll
+copy the next
+
+292
+00:18:49,799 --> 00:19:00,480
+command and just try to paste
+here. Now give yes permission and press
+
+293
+00:18:57,640 --> 00:19:05,760
+enter. Okay. So execution is completed.
+Now I have to set up the docker in the
+
+294
+00:19:03,919 --> 00:19:08,000
+EC2 machine. So this is the command you
+have to
+
+295
+00:19:09,240 --> 00:19:14,400
+run. Copy the next one and
+
+296
+00:19:20,200 --> 00:19:29,440
+execute. Then I will execute this one.
+Then the last command. So we have to add
+
+297
+00:19:25,440 --> 00:19:32,880
+the docker in the pseudo group. Okay.
+Now if it is running or not so what you
+
+298
+00:19:31,520 --> 00:19:36,880
+can do you can execute one command
+docker ipen version. So if it is showing
+
+299
+00:19:35,600 --> 00:19:43,039
+the version that means docker is
+installed successfully. Now uh we have
+
+300
+00:19:40,640 --> 00:19:46,799
+to set up our self-hosted runner. EC2
+has our self-hosted runner that means we
+
+301
+00:19:44,880 --> 00:19:50,000
+have to connect our GitHub. Okay you can
+see this is the GitHub. Now this is our
+
+302
+00:19:48,160 --> 00:19:54,640
+project GitHub. So this GitHub I have to
+connect with my uh AWS. That means
+
+303
+00:19:52,400 --> 00:19:58,320
+whenever user will uh sorry whenever
+let's say developer will push the code
+
+304
+00:19:56,799 --> 00:20:03,280
+in the GitHub it will automatically get
+updated to the AWS okay AWS uh cloud. So
+
+305
+00:20:01,520 --> 00:20:07,840
+for this what I have to do I have to go
+to my uh project. Make sure you uh you
+
+306
+00:20:06,000 --> 00:20:12,640
+committed your uh repository in your
+GitHub and go to the settings. Okay go
+
+307
+00:20:10,480 --> 00:20:16,520
+to the settings. Now here left hand side
+you will see one option called action.
+
+308
+00:20:14,000 --> 00:20:24,240
+Just click on the action. Click on the
+runners. Now create a new self-hosted
+
+309
+00:20:20,919 --> 00:20:27,919
+runner. Now select the Linux machine and
+you have to execute. These are the
+
+310
+00:20:25,760 --> 00:20:31,840
+commands. So let's copy this command one
+by one and let me execute here. So it
+
+311
+00:20:30,480 --> 00:20:36,880
+will automatically make the connection
+with your uh GitHub. Let me show
+
+312
+00:20:38,280 --> 00:20:42,000
+you. Then the third
+
+313
+00:20:43,159 --> 00:20:47,120
+command. Then fourth
+
+314
+00:20:53,000 --> 00:21:00,080
+command. Now you have to go to the
+configuration section and copy this
+
+315
+00:20:57,120 --> 00:21:03,520
+command and execute it here.
+Now see GitHub action it will
+
+316
+00:21:01,520 --> 00:21:06,159
+automatically connect. Now it will uh
+see it has connected to the GitHub. Now
+
+317
+00:21:04,880 --> 00:21:09,600
+it is asking for enter the name of the
+runner group. I don't want to give
+
+318
+00:21:07,760 --> 00:21:13,480
+anything. Press enter. Now it is asking
+enter the name of the runner. So here
+
+319
+00:21:11,360 --> 00:21:17,039
+you have to give
+self-enhosted. Okay self hyphen hosted.
+
+320
+00:21:15,679 --> 00:21:19,280
+This is the thing you have to give. If
+you're giving another thing it won't be
+
+321
+00:21:18,240 --> 00:21:23,600
+working. Okay. Make sure you're giving
+self-en hosted. Now let's press enter.
+
+322
+00:21:21,919 --> 00:21:26,080
+Now keep it everything default. Just
+press enter
+
+323
+00:21:27,400 --> 00:21:34,880
+again. Then again press enter. Now see
+it is done. Now the last command we have
+
+324
+00:21:32,480 --> 00:21:40,559
+to execute this one. And you can ignore
+this one. It is not required. Now see it
+
+325
+00:21:37,600 --> 00:21:40,559
+would be connected with my
+
+326
+00:21:40,600 --> 00:21:48,400
+GitHub. See connected to the GitHub
+listening for the jobs. Okay. Now if I
+
+327
+00:21:45,760 --> 00:21:52,640
+show you if I come back and now if I go
+to the runners let's say I'll go to the
+
+328
+00:21:50,400 --> 00:21:56,720
+runners. Now see starter should be idle.
+You can see it is connected. Okay. Now
+
+329
+00:21:54,640 --> 00:22:00,400
+the next thing what I have to do I have
+to set up all the GitHub secrets. Okay.
+
+330
+00:21:58,720 --> 00:22:05,720
+Now let's go back to the secret. So
+secret variable. Click on the action.
+
+331
+00:22:03,360 --> 00:22:11,120
+Now new repository
+secret. Now give the secret u ID. Okay.
+
+332
+00:22:08,960 --> 00:22:15,280
+So the first ID I have to give AWS
+access key ID. Just copy and give the
+
+333
+00:22:13,679 --> 00:22:18,720
+key name here. And where you will get
+the value? I think remember we
+
+334
+00:22:16,400 --> 00:22:24,320
+downloaded one CSV file. So let me open
+this CSV file. I will open in a
+
+335
+00:22:21,320 --> 00:22:29,120
+notepad++. And this is my AWS access key
+id copy and here let me paste
+
+336
+00:22:29,159 --> 00:22:36,400
+it. Then the next one I have to give
+secret access key ID copy and create
+
+337
+00:22:34,400 --> 00:22:42,159
+another new repository secret and give
+it here. And in the CSV file you'll get
+
+338
+00:22:39,840 --> 00:22:47,120
+the next one. See it is comma separated.
+So before the comma this is the AWS key
+
+339
+00:22:44,320 --> 00:22:52,159
+ID uh access key ID and after the comma
+is the secret access key ID. So let me
+
+340
+00:22:48,960 --> 00:22:54,559
+copy the secret access key ID and I will
+paste it
+
+341
+00:22:55,400 --> 00:23:03,280
+here. Okay. Now the next thing you have
+to give AWS default region. So region I
+
+342
+00:23:00,720 --> 00:23:08,080
+already told you I'm inside uh Mumbai
+that means AP south one. So I think
+
+343
+00:23:05,120 --> 00:23:10,840
+remember I'm inside AP south one. See AP
+south one. You have to write it. So
+
+344
+00:23:09,600 --> 00:23:17,440
+let's write
+AP
+
+345
+00:23:13,159 --> 00:23:23,640
+south. Okay. 1 AP south one. Let's try
+to check AB South one. AB South one.
+
+346
+00:23:22,000 --> 00:23:28,880
+Okay, fine. Now let me add
+it. Now the next thing I have to add my
+
+347
+00:23:26,480 --> 00:23:28,880
+ECR
+
+348
+00:23:31,240 --> 00:23:40,159
+repo. So is repo wise I think you
+remember we copied one URL. So just try
+
+349
+00:23:37,440 --> 00:23:45,400
+to get this name only. Okay. After.com
+just try to get the name and try to
+
+350
+00:23:42,080 --> 00:23:45,400
+mention here.
+
+351
+00:23:46,080 --> 00:23:56,720
+Then the next thing I have to set my
+um pine cone API key. So let's
+
+352
+00:23:52,440 --> 00:23:56,720
+copy and add it
+
+353
+00:23:57,080 --> 00:24:06,880
+here. And I think remember in my env
+file I had my pine cone API key. Let's
+
+354
+00:24:04,440 --> 00:24:10,440
+copy. And this is not available inside
+my GitHub. That's why I'm reading from
+
+355
+00:24:08,480 --> 00:24:16,080
+the GitHub secret. Okay, this is the
+idea. Now I also need to add my OpenAI
+
+356
+00:24:13,200 --> 00:24:19,559
+secret. Okay, that means open API key.
+The last one you can see open API key.
+
+357
+00:24:17,760 --> 00:24:25,159
+Let's add
+it. So let's copy the open API here. I'm
+
+358
+00:24:22,960 --> 00:24:30,400
+going to paste it. Now let's add the
+secret. Okay. Now see everything is
+
+359
+00:24:27,440 --> 00:24:33,919
+added. Now let me see anything is left.
+No, everything I have added. Now what I
+
+360
+00:24:32,480 --> 00:24:37,240
+have to do, I have to push the changes.
+Okay. But before that, let me get back
+
+361
+00:24:36,000 --> 00:24:41,840
+to my
+project. Now I'll push the changes. So
+
+362
+00:24:39,840 --> 00:24:47,520
+just try to commit. To commit just open
+up your uh g bash and try to write this
+
+363
+00:24:43,840 --> 00:24:47,520
+command g add space
+
+364
+00:24:47,559 --> 00:24:54,640
+dot then g
+commit type in n let's say
+
+365
+00:24:54,679 --> 00:24:57,679
+cd
+
+366
+00:24:58,440 --> 00:25:05,279
+addit then get
+push origin
+
+367
+00:25:05,799 --> 00:25:13,480
+main. Now if I go back to my GitHub now
+see if I refresh here. So it will start
+
+368
+00:25:11,279 --> 00:25:19,520
+running my action. Now just go to the
+action. Now see my uh action is running.
+
+369
+00:25:17,679 --> 00:25:22,799
+See first of all it is running the uh
+continuous integration. So inside
+
+370
+00:25:21,520 --> 00:25:27,039
+continuous integration first of all it
+will authenticate with my AWS ECR build
+
+371
+00:25:25,120 --> 00:25:30,000
+the docker image push it to the ACR.
+Okay. Everything will happen. See
+
+372
+00:25:28,080 --> 00:25:33,760
+automatically it's just a one time setup
+guys. Uh next time you don't need to set
+
+373
+00:25:32,080 --> 00:25:38,159
+up it. You just need to write the code
+and push it to the GitHub. automatically
+
+374
+00:25:35,279 --> 00:25:42,880
+it will uh push to the uh let's say as
+server okay now
+
+375
+00:25:39,880 --> 00:25:47,120
+see so let's wait uh once this execution
+is completed I'll come back so guys as
+
+376
+00:25:44,880 --> 00:25:50,000
+you can see my continuous integration is
+completed now it is running the
+
+377
+00:25:48,320 --> 00:25:54,080
+continuous deployment now what it will
+do it will again authenticate with my
+
+378
+00:25:51,919 --> 00:25:58,320
+AWS cloud and it will pull that image
+from the EC to EC2 machine and if you go
+
+379
+00:25:56,320 --> 00:26:01,600
+to the elastic container registry right
+now and if you refresh here you will see
+
+380
+00:25:59,679 --> 00:26:06,640
+the image okay see docker image has been
+uploaded here now see it is running the
+
+381
+00:26:04,679 --> 00:26:10,400
+deployment. Now see it is pulling the
+image. So once it is pulled then uh
+
+382
+00:26:08,480 --> 00:26:14,640
+we'll doing the port mapping. Uh we'll
+create the endpoint and uh we can access
+
+383
+00:26:12,720 --> 00:26:18,720
+our application. Let me show you. So
+guys as you can see my execution is
+
+384
+00:26:16,159 --> 00:26:21,840
+completed that means both uh integration
+and deployment is executed. If you're
+
+385
+00:26:20,799 --> 00:26:27,520
+not getting added that means
+congratulation it's done. Now I will go
+
+386
+00:26:24,400 --> 00:26:31,279
+back to my EC2 machine. Okay. Now here
+in the EC2 machine uh you will get one
+
+387
+00:26:29,600 --> 00:26:34,960
+public IP address. Just let me show you.
+So this is the public IP address. Just
+
+388
+00:26:32,559 --> 00:26:39,039
+try to copy and just try to open it.
+Okay. Now see if I open it up. So it
+
+389
+00:26:37,360 --> 00:26:42,880
+won't be opening because uh see my
+application is running on port number
+
+390
+00:26:40,640 --> 00:26:46,480
+80080 I think you remember. Okay. So by
+default port number 80080 is not set. So
+
+391
+00:26:44,960 --> 00:26:51,919
+I have to do the port mapping. So what I
+have to do I'll go back go to the
+
+392
+00:26:48,760 --> 00:26:56,559
+instance. Uh this is my instance. Then
+I'll go to the security. Okay. Now here
+
+393
+00:26:54,640 --> 00:27:02,240
+you will see one option called uh
+security group. Just click here. Now on
+
+394
+00:27:00,720 --> 00:27:06,960
+top you'll see edit andbound rules.
+Okay, just try to click. Click here. Now
+
+395
+00:27:04,159 --> 00:27:12,080
+I'll just add the rules. Custom TCP port
+number just give
+
+396
+00:27:08,919 --> 00:27:15,039
+80080. Uh just click 000. Okay. And here
+you will see save rules. Okay. Just
+
+397
+00:27:13,440 --> 00:27:19,279
+click on the save rules. That's it.
+Okay. So rules has been added. Now I'll
+
+398
+00:27:16,799 --> 00:27:23,679
+go to the instance again. I'll open it
+up. Now I'll copy the public IP address
+
+399
+00:27:21,360 --> 00:27:29,760
+again. And here let me paste. Now you
+have to give clone port number
+
+400
+00:27:27,400 --> 00:27:34,720
+8080. Now see if I hit enter my
+application should be running. See guys
+
+401
+00:27:31,600 --> 00:27:38,960
+this is my chatbot is running. Now if I
+give any message let's say uh what is
+
+402
+00:27:40,440 --> 00:27:46,880
+acne? See guys it is giving me the
+response. Now see my application is live
+
+403
+00:27:45,200 --> 00:27:50,400
+right now. So it is already deployed.
+Now user can use my application. Now
+
+404
+00:27:48,799 --> 00:27:53,679
+what you can do you can buy a domain
+okay your custom domain and you can
+
+405
+00:27:52,480 --> 00:27:57,360
+publish this application to the
+audience. Okay. Now for the second time
+
+406
+00:27:55,679 --> 00:28:00,159
+let's say you changed anything in the
+code. Let's say you added some more
+
+407
+00:27:58,559 --> 00:28:03,840
+function. What you have to do? Only just
+need to commit the changes. It will
+
+408
+00:28:01,679 --> 00:28:08,880
+automatically get updated here. Fine. So
+no need to set up anything from scratch.
+
+409
+00:28:06,399 --> 00:28:12,000
+It just a one time setup. Once setup is
+completed, just try to commit the
+
+410
+00:28:10,720 --> 00:28:15,440
+changes. It will automatically running.
+Okay. Now you can ask me if I close this
+
+411
+00:28:13,919 --> 00:28:18,320
+terminal will it work? Yes, definitely
+you can close it. Let's I will close
+
+412
+00:28:16,720 --> 00:28:22,399
+this terminal. Now if I again go to the
+chatbot if I refresh, see still my bot
+
+413
+00:28:20,320 --> 00:28:26,720
+is running. Okay. So that's how guys we
+can do the CI/CD deployment. Now let me
+
+414
+00:28:24,559 --> 00:28:29,039
+show you how we can terminate uh all the
+instance like whatever instance we
+
+415
+00:28:27,919 --> 00:28:32,080
+created if you don't want to keep it
+running otherwise it will charge you
+
+416
+00:28:30,240 --> 00:28:36,880
+right. So what I can do uh first of all
+I will stop the EC2 machine I've
+
+417
+00:28:34,960 --> 00:28:42,000
+created. So select the machine click on
+the instance state and terminate. So
+
+418
+00:28:39,440 --> 00:28:46,720
+terminate will delete it. Okay. So it
+will terminate and delete the instance.
+
+419
+00:28:44,000 --> 00:28:51,080
+Then after that I also need to uh delete
+my EC ECR. So let's go to the
+
+420
+00:28:49,320 --> 00:28:58,640
+ECR.
+So first of all delete the image inside
+
+421
+00:28:54,679 --> 00:28:58,640
+that. Just write the delete
+
+422
+00:29:00,440 --> 00:29:04,640
+command. Now try to select and
+
+423
+00:29:07,640 --> 00:29:14,279
+delete. Okay. Then uh what I have to do
+I have to delete the
+
+424
+00:29:14,760 --> 00:29:22,279
+uh then I will also delete my im I'm
+user. Okay. time user I
+
+425
+00:29:20,120 --> 00:29:28,880
+created
+user let's select and try to delete
+
+426
+00:29:26,279 --> 00:29:31,440
+it medical chatbot I have to write here
+so let's me
+
+427
+00:29:31,480 --> 00:29:35,279
+copy and let me delete
+
+428
+00:29:35,720 --> 00:29:42,640
+it see everything is deleted now nothing
+will charge you okay so guys that's how
+
+429
+00:29:40,720 --> 00:29:47,279
+we can perform the deployment and this
+is the code you can use uh this code as
+
+430
+00:29:45,200 --> 00:29:52,159
+it is okay the code actually have shared
+so yes Guys, this is all about uh and I
+
+431
+00:29:49,600 --> 00:29:52,159
+hope you like it.
+

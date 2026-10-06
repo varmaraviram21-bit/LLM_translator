@@ -1,0 +1,1414 @@
+1
+00:00:01,920 --> 00:00:10,400
+Hi guys, in this video I will show you
+how we can do LLM evaluation with the
+
+2
+00:00:07,200 --> 00:00:14,400
+help of MLflow. Uh here I'm not going to
+only use the MLflow. I will also use
+
+3
+00:00:12,880 --> 00:00:18,800
+something called tags up. So this is
+another amazing platform. So there you
+
+4
+00:00:16,640 --> 00:00:23,119
+can uh let's say uh trace all the
+experiment and you can visualize. Okay.
+
+5
+00:00:21,520 --> 00:00:28,080
+uh that means you will be getting one
+graphical user interface there of the ML
+
+6
+00:00:25,519 --> 00:00:31,359
+flow and uh you can see all the let's
+say metrics all the graphs and
+
+7
+00:00:29,760 --> 00:00:35,360
+everything even you can also compare
+with different different uh let's say
+
+8
+00:00:33,040 --> 00:00:40,239
+parameter so uh everything I'm going to
+show you guys no need to worry and this
+
+9
+00:00:37,600 --> 00:00:43,760
+is uh one of the amazing uh actually LLM
+ops tool you can talk about because
+
+10
+00:00:41,760 --> 00:00:48,239
+previously I also showed you how we can
+use this MLflow for the experiment
+
+11
+00:00:45,600 --> 00:00:52,640
+tracking and all okay now I'll show you
+how we can use the MLflow for the LM
+
+12
+00:00:50,559 --> 00:00:57,280
+evaluation purpose. So you can see ML
+and JNI made simple uh this MLflow. So
+
+13
+00:00:56,000 --> 00:01:02,800
+they are having different different
+example. So here you can see this is the
+
+14
+00:00:59,280 --> 00:01:06,159
+documentation of MLflow LLM evaluations.
+So you can go through the documentation
+
+15
+00:01:04,400 --> 00:01:09,360
+guys after watching this particular
+video uh then your understanding would
+
+16
+00:01:08,159 --> 00:01:12,640
+be more clear. Okay, if you want to deep
+dive uh into the different different
+
+17
+00:01:10,960 --> 00:01:15,760
+let's say evaluations, you can go
+through that. So the example I'm going
+
+18
+00:01:14,240 --> 00:01:20,799
+to show you guys uh this will give you
+the entire idea how we can perform the
+
+19
+00:01:18,720 --> 00:01:24,000
+model evaluation part. So guys you can
+see there are different different
+
+20
+00:01:22,080 --> 00:01:27,680
+evaluations like you can perform
+evaluation on top of the question
+
+21
+00:01:25,439 --> 00:01:32,159
+answering on the text summarization on
+the text model on the retrievers. Okay.
+
+22
+00:01:30,240 --> 00:01:35,759
+Uh so any word you can actually apply
+this particular evaluation technique and
+
+23
+00:01:34,159 --> 00:01:43,200
+for question answering we're having some
+metrics like you can see toxicity then
+
+24
+00:01:38,640 --> 00:01:46,159
+uh ar grade level then flesh uh kinade
+grade level. Okay. So these are some
+
+25
+00:01:44,799 --> 00:01:50,320
+metrics are available. Let's say if you
+want to see the toxicity just try to
+
+26
+00:01:48,320 --> 00:01:54,479
+open it up. So here they have already
+mentioned what should be the toxicity
+
+27
+00:01:51,920 --> 00:02:00,439
+score. Okay best toxicity score. So I
+think somewhere they have given even
+
+28
+00:01:56,479 --> 00:02:00,439
+they have also given the example.
+
+29
+00:02:01,360 --> 00:02:07,040
+So if you go through it so they have I
+think already given the best oxidity
+
+30
+00:02:04,719 --> 00:02:12,959
+score uh you have to achieve okay
+whenever uh you are using the LM
+
+31
+00:02:10,000 --> 00:02:16,840
+otherwise you can search here. Let's say
+I'll copy the name
+
+32
+00:02:18,000 --> 00:02:24,800
+best toxicity
+score
+
+33
+00:02:23,120 --> 00:02:29,200
+for
+LLM
+
+34
+00:02:26,480 --> 00:02:34,319
+question answering
+question and answer okay so here if I
+
+35
+00:02:31,200 --> 00:02:40,000
+search so I think uh it will give you
+the score so you can see there isn't uh
+
+36
+00:02:37,519 --> 00:02:42,879
+single best of city score for the LM
+question answer as it This depends on
+
+37
+00:02:41,440 --> 00:02:46,640
+the specific context of the goal
+application. However, generally accept
+
+38
+00:02:44,800 --> 00:02:51,519
+the range of the safe response where the
+toxicity minimal would be uh below 0.2
+
+39
+00:02:49,440 --> 00:02:54,800
+to 0.3. Okay. So that's why if you
+search for any kinds of metrics guys,
+
+40
+00:02:53,599 --> 00:02:59,519
+let me show you. If you search for any
+kinds of metrics, let's say area grade
+
+41
+00:02:56,239 --> 00:03:03,360
+level, then flesh kite level, you will
+see some specific score. Okay. And after
+
+42
+00:03:01,840 --> 00:03:06,800
+doing the evaluation, you have to check
+whether this particular score you are
+
+43
+00:03:05,120 --> 00:03:10,319
+getting it is close to that or not. So
+let's say for text summarization, you
+
+44
+00:03:08,560 --> 00:03:13,840
+can use row score again toxicity. Okay.
+and so on and that's how actually you
+
+45
+00:03:11,920 --> 00:03:19,280
+are having different different uh score.
+Okay. Now let me show you one example
+
+46
+00:03:15,519 --> 00:03:25,200
+guys how we can use this uh ML flow for
+the LM evaluations. So first of all
+
+47
+00:03:21,360 --> 00:03:28,959
+let's try to uh save the log that means
+save the evaluation logs on the local
+
+48
+00:03:27,040 --> 00:03:33,280
+system. Then I will also show you how we
+can uh save the experiment on the DAX.
+
+49
+00:03:31,040 --> 00:03:37,760
+Okay, DAX server. So let me show you
+this is the DAX guys. So, Dex Dexab is a
+
+50
+00:03:35,840 --> 00:03:42,159
+platform actually here uh you can get a
+remote server to connect with your ML
+
+51
+00:03:40,080 --> 00:03:46,080
+flow. Okay. And there you can uh like
+add all the experiment see you can track
+
+52
+00:03:44,159 --> 00:03:49,840
+the experiment here even you can uh
+curate and annotate you can manage the
+
+53
+00:03:48,000 --> 00:03:52,159
+model. Okay. So actually it has actually
+different different functionality you
+
+54
+00:03:50,799 --> 00:03:55,840
+can use it. So first of all what you
+have to do guys here you have to login
+
+55
+00:03:54,400 --> 00:03:58,560
+and make sure you have one account. So
+for me I already have the account. Let
+
+56
+00:03:57,120 --> 00:04:02,080
+me just try to login with my account
+guys.
+
+57
+00:04:00,239 --> 00:04:06,640
+So guys as you can see I already logged
+in with my tags app. Okay. And uh
+
+58
+00:04:04,400 --> 00:04:09,280
+previously uh I already did some project
+that's why it's showing like that but
+
+59
+00:04:07,760 --> 00:04:14,080
+for you it would be completely empty.
+Okay I'll show you how we can uh connect
+
+60
+00:04:11,680 --> 00:04:17,280
+with the let's say GitHub how we can uh
+uh create the MLflow server everything
+
+61
+00:04:15,519 --> 00:04:22,400
+I'll try to show you. So first of all
+guys what uh I'll show you I'll show you
+
+62
+00:04:20,239 --> 00:04:26,400
+the code example. So let's say first of
+all if you want to do it in the local
+
+63
+00:04:24,160 --> 00:04:30,639
+machine so just try to comment this two
+line because if you want to uh track in
+
+64
+00:04:28,960 --> 00:04:35,199
+the DAX then you have to activate this
+two line. Okay, but as of now I'm not
+
+65
+00:04:32,639 --> 00:04:38,400
+going to add I'm going to save
+everything in my local. That's why I
+
+66
+00:04:36,639 --> 00:04:42,240
+have commented this particular line. Now
+guys, this is one code example uh and
+
+67
+00:04:40,800 --> 00:04:45,120
+the resources would be shared in your
+resources section. From there you can
+
+68
+00:04:43,520 --> 00:04:48,720
+download and try. So first of all what
+you have to do first of all just try to
+
+69
+00:04:46,479 --> 00:04:52,880
+create a environment. So for me I
+already have the environment. So the
+
+70
+00:04:50,800 --> 00:04:57,680
+environment Python version should be
+3.11. Okay just try to create the 3.11
+
+71
+00:04:55,759 --> 00:05:01,520
+environment. I think you know the
+commands contact create n then give the
+
+72
+00:04:59,840 --> 00:05:05,040
+environment name. then specify the
+Python version. Okay. So after creating
+
+73
+00:05:03,520 --> 00:05:07,759
+creating it, you have to install all the
+requirements. So these are the
+
+74
+00:05:06,000 --> 00:05:10,720
+requirement guys you need. Okay. So just
+try to install all the requirements. So
+
+75
+00:05:09,280 --> 00:05:18,240
+to install the requirement guys, what
+you can do? Just write uh pip install.
+
+76
+00:05:15,199 --> 00:05:22,400
+Okay. Pep install
+r then requirement.txt. So once you
+
+77
+00:05:20,639 --> 00:05:24,960
+execute it, so it will install
+everything. But for me it is already
+
+78
+00:05:23,680 --> 00:05:28,800
+satisfied because I already installed
+everything. Okay. Now guys here you can
+
+79
+00:05:26,800 --> 00:05:31,759
+see this is the code example. So here
+first of all I'm importing all the
+
+80
+00:05:29,840 --> 00:05:35,360
+necessary library like mlflow openi. So
+here I'm using open ALR language model
+
+81
+00:05:33,600 --> 00:05:39,199
+you can also use grock or any other
+let's say model you can also use hugging
+
+82
+00:05:37,120 --> 00:05:42,800
+face model but again uh whenever you are
+using hugging face model u u what you
+
+83
+00:05:41,600 --> 00:05:45,840
+have to download it from the hugging
+face and you have to load in your
+
+84
+00:05:44,400 --> 00:05:49,039
+machines okay and if you're using p
+configuration machine definitely there
+
+85
+00:05:47,120 --> 00:05:52,240
+would be an issue okay so that's why for
+production level application most of the
+
+86
+00:05:50,639 --> 00:05:55,919
+time we use API based services like
+openi is there grock is there even I
+
+87
+00:05:54,240 --> 00:06:01,520
+will also show you some lm platforms
+okay like uh AWS bedrock GCP vertxi so
+
+88
+00:05:59,680 --> 00:06:04,479
+those uh platform also provides like
+foundation model and functionality you
+
+89
+00:06:03,039 --> 00:06:07,919
+can use that to create different
+different applications. Okay. Now guys
+
+90
+00:06:06,319 --> 00:06:11,600
+you can see here first of all I have
+created one evaluation data. So here I
+
+91
+00:06:10,000 --> 00:06:15,919
+just generated some data like let's say
+what is u mlflow and what is spark and
+
+92
+00:06:14,479 --> 00:06:21,039
+this is the ground root. So this is the
+mlflow definition and this is the u your
+
+93
+00:06:19,039 --> 00:06:25,840
+um spark definition. So what I will do I
+will also ask the same questions to the
+
+94
+00:06:23,520 --> 00:06:29,440
+llm and I'll try to compare the results.
+Okay whether uh it is close to or not.
+
+95
+00:06:28,400 --> 00:06:32,800
+Okay. So this is called actually
+evaluations. you are evaluating the
+
+96
+00:06:31,039 --> 00:06:37,440
+response. Okay, whether it is correct or
+not. So for this guys, here you can see
+
+97
+00:06:34,720 --> 00:06:41,520
+this is the data I have prepared. Now uh
+here if you want to start the experiment
+
+98
+00:06:39,280 --> 00:06:45,360
+with MLflow, you have to write MLflows
+set experiment. Then here I have given
+
+99
+00:06:43,280 --> 00:06:49,199
+the experiment name. Then with MLflow
+start run inside that first of all I'm
+
+100
+00:06:47,520 --> 00:06:52,720
+creating a system prompt. So here I'm
+writing answer the following questions
+
+101
+00:06:50,639 --> 00:06:56,880
+into two sentence. Okay. Now here you
+have to wrap the model okay to the
+
+102
+00:06:54,400 --> 00:07:00,160
+MLflow. So for this you can use MLflow
+OpenAI because I already showed you
+
+103
+00:06:58,639 --> 00:07:03,840
+MLflow is having different different uh
+let's say framework integrations like if
+
+104
+00:07:02,560 --> 00:07:06,240
+you're working with machine learning you
+can use scikit learn if you're working
+
+105
+00:07:05,280 --> 00:07:11,360
+with deep learning you can use
+tensorflow if you're working with jiu or
+
+106
+00:07:09,680 --> 00:07:14,400
+any other let's say framework let's say
+you are working with openi that time
+
+107
+00:07:12,880 --> 00:07:17,280
+openi if you're working with grock you
+can give gro okay so that's how it
+
+108
+00:07:16,000 --> 00:07:21,280
+supports everything you can go to the
+documentation you will be able to
+
+109
+00:07:18,560 --> 00:07:24,800
+understand now log model and here I'm
+using gpt4 model okay now you can ask me
+
+110
+00:07:23,280 --> 00:07:28,720
+how it will access the model For this
+you have to export the openi API key.
+
+111
+00:07:27,280 --> 00:07:32,319
+Okay, how to export? So here is the
+command guys. Okay, so make sure guys
+
+112
+00:07:30,400 --> 00:07:37,199
+you give your your open API key. Okay,
+not my one because I already I will
+
+113
+00:07:34,800 --> 00:07:41,280
+remove this uh API key. Okay, after the
+video just try to copy this. Make sure
+
+114
+00:07:39,759 --> 00:07:48,319
+export command you are running and open
+up your terminal and just try to export
+
+115
+00:07:43,840 --> 00:07:54,160
+the okay export the key. So I think
+uh it's not a valid identifier. Okay. So
+
+116
+00:07:50,800 --> 00:07:57,960
+what I'll do
+copy again and
+
+117
+00:07:58,479 --> 00:08:01,879
+let me execute.
+
+118
+00:08:08,479 --> 00:08:13,400
+Okay. So there is some error guys. Let
+me check.
+
+119
+00:08:17,440 --> 00:08:22,479
+Okay. And now it has executed
+successfully because previously you see
+
+120
+00:08:20,319 --> 00:08:26,080
+that uh here I have given a space. Okay.
+So you don't need to give the space. So
+
+121
+00:08:24,319 --> 00:08:29,840
+there should not be any case of space.
+Okay. Otherwise it will give you the
+
+122
+00:08:27,280 --> 00:08:34,080
+error. Now actually it is done. Okay.
+Now let me show you the further step. So
+
+123
+00:08:32,399 --> 00:08:38,880
+guys you can see here I'm logging the
+model and uh this is the path to log the
+
+124
+00:08:36,719 --> 00:08:43,599
+model like artifact path model and here
+is the system prompt as well as the uh
+
+125
+00:08:40,959 --> 00:08:46,160
+like questions. Okay. So uh this is your
+actually complete model. I think you
+
+126
+00:08:44,959 --> 00:08:50,000
+already know that how to initialize the
+open model. Now here is the evaluate
+
+127
+00:08:48,560 --> 00:08:54,480
+code. So here you can see I'm using
+mlflow evaluate functions. So inside
+
+128
+00:08:52,240 --> 00:08:58,880
+that I'm passing my model URI and my
+evaluation data. Okay, evaluation data
+
+129
+00:08:56,480 --> 00:09:03,519
+because uh your model will try to give
+the answer related to this particular
+
+130
+00:09:00,880 --> 00:09:06,480
+questions. Okay, and that answered and
+my ground truth okay ground truth
+
+131
+00:09:05,279 --> 00:09:10,160
+whatever actually I have here you can
+see ground tooth answer I'll just try to
+
+132
+00:09:08,320 --> 00:09:14,000
+compare okay on top of what on top of my
+question and answer. So this particular
+
+133
+00:09:11,920 --> 00:09:17,600
+question and answer okay uh so whatever
+questions I have given I'll try to
+
+134
+00:09:15,839 --> 00:09:20,959
+compare okay question answer because
+here we are doing the model uh here we
+
+135
+00:09:20,000 --> 00:09:26,560
+are doing the question answering
+operation because here I showed you here
+
+136
+00:09:22,800 --> 00:09:29,279
+you have different different um task
+okay here you have different different
+
+137
+00:09:27,680 --> 00:09:33,600
+task question and answering text
+summarization text models okay retriever
+
+138
+00:09:31,680 --> 00:09:36,560
+so here you can specify okay what you
+want to perform exactly so here I want
+
+139
+00:09:35,279 --> 00:09:39,680
+to perform question and answering let's
+say I'm doing text summarization I'll
+
+140
+00:09:38,000 --> 00:09:43,920
+give text summarization that time okay
+so model type you have to specify then
+
+141
+00:09:42,080 --> 00:09:47,440
+extra metrics. So you can see guys I
+already showed you there are different
+
+142
+00:09:44,800 --> 00:09:52,320
+different metrics like toxy toxicity
+then flesh uh this kinsite grade level
+
+143
+00:09:51,040 --> 00:09:56,320
+okay so these are the metrics you have
+to define okay one by one apart from
+
+144
+00:09:54,880 --> 00:10:00,560
+that you can also specify some more
+metrics like latency then answer
+
+145
+00:09:58,480 --> 00:10:05,200
+similarity if you want you can also do
+it now if you just mention this toxicity
+
+146
+00:10:02,880 --> 00:10:09,279
+you will see that it will also let's say
+log those are the metrics as well okay
+
+147
+00:10:07,279 --> 00:10:14,880
+these are the metrics as well like uh
+flesh kins say grade level everything
+
+148
+00:10:12,080 --> 00:10:18,480
+you'll try to log log. Okay. So once uh
+you can see I will get the results. I
+
+149
+00:10:17,200 --> 00:10:22,880
+will also print the results on the
+terminal. Then I will create a table.
+
+150
+00:10:21,120 --> 00:10:26,640
+Okay. Then I'll try to save the table as
+a data frame. And this is the CSV file
+
+151
+00:10:24,880 --> 00:10:30,480
+I'll try to save. Okay. In my local. Now
+let's try to see whether it will work or
+
+152
+00:10:28,399 --> 00:10:36,480
+not. So for this I will execute the
+code. So to execute the code guys just
+
+153
+00:10:32,320 --> 00:10:42,120
+write python uh demo.py.
+Okay. So if I execute it now see it is
+
+154
+00:10:39,120 --> 00:10:42,120
+running.
+
+155
+00:10:46,240 --> 00:10:52,600
+Okay. So here I got one error. Uh let me
+check the error guys.
+
+156
+00:10:52,880 --> 00:11:00,000
+So guys, now you can see execution is
+done. So the issue was there. Uh you
+
+157
+00:10:56,560 --> 00:11:03,519
+have to install this httpx
+uh with this specific version. Okay,
+
+158
+00:11:02,000 --> 00:11:06,720
+then it will work. So I've already added
+in the requirements again. Just try to
+
+159
+00:11:05,279 --> 00:11:10,720
+run the requirement.txt. It will
+install. Then just try to run uh your
+
+160
+00:11:08,640 --> 00:11:14,480
+demo.py. So once it is done guys you
+will see that one mls runs folder has
+
+161
+00:11:12,320 --> 00:11:20,800
+created. Now this evil docsb also
+created. Okay now let me open it up. So
+
+162
+00:11:16,240 --> 00:11:24,720
+in the CSV file uh so maybe I can show
+extension for the evil CSB. Do you want
+
+163
+00:11:22,880 --> 00:11:30,160
+to install recommended rain in CSV? So
+let me install and
+
+164
+00:11:27,440 --> 00:11:34,279
+um let me show you the CSV. Okay.
+Whatever we have inside that
+
+165
+00:11:36,000 --> 00:11:40,279
+extension, I think it is installed.
+
+166
+00:11:43,360 --> 00:11:51,959
+But how to
+throw it?
+
+167
+00:11:48,480 --> 00:11:51,959
+Rainbow CSV.
+
+168
+00:11:58,160 --> 00:12:04,760
+Okay. So here I'm not getting any
+preview option.
+
+169
+00:12:09,920 --> 00:12:19,279
+Okay, maybe what I can do guys, I can
+just uh open it
+
+170
+00:12:16,160 --> 00:12:25,440
+here. Okay, so let me just double click
+and uh or else uh let me see some CSV
+
+171
+00:12:23,279 --> 00:12:30,320
+viewer.
+CSV viewer because currently on my
+
+172
+00:12:28,720 --> 00:12:38,839
+system
+um this uh Excel is not there. So let me
+
+173
+00:12:34,480 --> 00:12:38,839
+just view from here only.
+
+174
+00:12:43,440 --> 00:12:50,079
+So guys here you can see uh here uh it
+has loaded the CSV and here it is
+
+175
+00:12:48,240 --> 00:12:57,600
+showing the results. You can see here I
+have uh uh you can see inputs, ground to
+
+176
+00:12:53,360 --> 00:13:02,639
+outputs. Then we have latency token uh
+counts. Okay. Then answer similarity and
+
+177
+00:13:00,399 --> 00:13:05,760
+uh justifications. Okay. Now you can do
+the big screen. Now you can see the
+
+178
+00:13:04,399 --> 00:13:09,600
+score. Okay. You can see the latency
+score. You can see the token. You can
+
+179
+00:13:07,680 --> 00:13:13,360
+see the uh similarity score. Okay. And
+just try to search over the Google what
+
+180
+00:13:11,279 --> 00:13:18,399
+is the best uh score and just try to
+compare. Okay. So in this case I think
+
+181
+00:13:15,760 --> 00:13:22,079
+our score is fine because uh the
+generated output we got. Okay. You can
+
+182
+00:13:20,079 --> 00:13:26,720
+see it is similar. Okay. So that's how
+guys we can do the comparison. um uh if
+
+183
+00:13:24,320 --> 00:13:29,519
+you're doing the evaluation.
+So that's how guys we can do the
+
+184
+00:13:28,000 --> 00:13:34,000
+comparison uh if you are doing this
+kinds of evaluation. Now let me just
+
+185
+00:13:31,040 --> 00:13:38,880
+track uh this uh entire uh let's say
+metrics over the DAX platform. Okay, for
+
+186
+00:13:36,399 --> 00:13:44,040
+this what I will do first of all you
+have to create a GitHub repo. So let me
+
+187
+00:13:40,480 --> 00:13:44,040
+open up my GitHub.
+
+188
+00:13:46,480 --> 00:13:55,480
+So here I'll create a new repository.
+Let's give it as llm
+
+189
+00:13:52,480 --> 00:13:55,480
+evaluation
+
+190
+00:13:56,560 --> 00:14:03,600
+with
+mlflow.
+
+191
+00:14:01,279 --> 00:14:08,720
+So let's keep it as public. Add uh
+readmi file.
+
+192
+00:14:06,000 --> 00:14:14,320
+Then uh you can also add g ignore. Let's
+say python. I think readmi I already
+
+193
+00:14:11,199 --> 00:14:18,320
+have. I'm not going to do it. And let's
+uh
+
+194
+00:14:15,839 --> 00:14:24,079
+create the license as well.
+Now let's create the repository.
+
+195
+00:14:21,120 --> 00:14:28,079
+So once it is done just try to copy the
+link address and here what you can do
+
+196
+00:14:26,480 --> 00:14:34,720
+you can just try to open up your
+terminal. I already have the terminal.
+
+197
+00:14:30,800 --> 00:14:39,600
+Let me just clone it. So get clone
+paste the link.
+
+198
+00:14:37,519 --> 00:14:45,120
+Okay I think it is done. Now let me go
+inside that. Let me copy all of the file
+
+199
+00:14:43,600 --> 00:14:49,760
+and let me paste it here. Now I can
+delete it.
+
+200
+00:14:46,800 --> 00:14:54,959
+Okay. Uh, okay. It is already opened in
+a
+
+201
+00:14:52,079 --> 00:15:02,440
+another program. So, I think I can close
+the terminal. Now, let me try.
+
+202
+00:14:57,920 --> 00:15:02,440
+Okay. Let me also close the VS code.
+
+203
+00:15:03,360 --> 00:15:10,920
+So, again, I'll open up my terminal
+and ponda activate
+
+204
+00:15:11,360 --> 00:15:20,560
+app. And I will export again that
+credential
+
+205
+00:15:17,760 --> 00:15:26,320
+available in my
+readmi
+
+206
+00:15:23,440 --> 00:15:32,320
+copy and let's export it.
+Okay. And after exporting because I'm
+
+207
+00:15:28,720 --> 00:15:38,160
+going to uh uh actually push this uh
+things in my uh v uh uh github. Okay.
+
+208
+00:15:36,800 --> 00:15:44,279
+That's why I'm going to remove my API
+key. Okay. Here you have to give your
+
+209
+00:15:41,279 --> 00:15:44,279
+API.
+
+210
+00:15:44,320 --> 00:15:51,360
+Okay. So let me save.
+Now I think everything is fine. So ML
+
+211
+00:15:49,920 --> 00:15:54,880
+run what you can do? You can either
+delete it. Either you can keep it. Okay.
+
+212
+00:15:52,720 --> 00:15:57,680
+It's up to you. So let me keep it or let
+me remove it. Okay. As of now because
+
+213
+00:15:56,399 --> 00:16:03,759
+I'm going to push it. Otherwise you can
+also mention in the uh get ignore. Let's
+
+214
+00:16:00,720 --> 00:16:10,480
+say ML run. I'm not going to take it. So
+ML
+
+215
+00:16:05,360 --> 00:16:10,480
+runs I'm not going to take it.
+
+216
+00:16:11,279 --> 00:16:20,440
+Now let me push this code. So get add
+space dot
+
+217
+00:16:17,440 --> 00:16:20,440
+uh
+
+218
+00:16:22,000 --> 00:16:28,920
+okay space dot
+then get uh comet
+
+219
+00:16:29,519 --> 00:16:33,000
+type in m
+
+220
+00:16:34,880 --> 00:16:40,360
+update
+and get push
+
+221
+00:16:41,040 --> 00:16:43,519
+origin
+
+222
+00:16:45,040 --> 00:16:52,399
+done. Now if I go to my GitHub
+refresh,
+
+223
+00:16:50,560 --> 00:16:56,639
+see it is available. Okay. Now I can
+connect this repo in my DAX. So how to
+
+224
+00:16:54,399 --> 00:17:02,480
+do it? So come to the DAX, click on the
+create new repository and uh connect a
+
+225
+00:17:00,320 --> 00:17:05,959
+repository
+from the GitHub.
+
+226
+00:17:06,799 --> 00:17:16,439
+So here I will add and revoke the new
+repository. So let me select my original
+
+227
+00:17:12,000 --> 00:17:16,439
+account. Let's give the password.
+
+228
+00:17:24,799 --> 00:17:32,559
+Once it is done now let's try to find
+the repository. Okay. So here selected
+
+229
+00:17:29,679 --> 00:17:38,720
+repository here the repository name is
+LLM evaluation. So let me copy
+
+230
+00:17:36,799 --> 00:17:44,160
+here you can paste it. So it will give
+you the that's how select it. And now
+
+231
+00:17:41,440 --> 00:17:50,200
+let me save it.
+Okay. Once it is done again what you
+
+232
+00:17:45,840 --> 00:17:50,200
+have to do just get back to your dag
+
+233
+00:17:53,360 --> 00:18:01,679
+because sometimes it throw this kinds of
+error. Okay. Now if you again come here.
+
+234
+00:17:57,600 --> 00:18:06,880
+So see uh ML code demo. No I think this
+is not there. I think somewhere it is
+
+235
+00:18:03,440 --> 00:18:11,559
+there. So let me connect
+connector repo GitHub
+
+236
+00:18:12,080 --> 00:18:19,080
+now I think this should be there clm
+evolution I'll select and connect the
+
+237
+00:18:16,080 --> 00:18:19,080
+repository
+
+238
+00:18:19,280 --> 00:18:27,280
+okay it is connected so here I'll give
+no thanks okay now guys uh if I want to
+
+239
+00:18:24,320 --> 00:18:32,160
+uh I mean uh uh like take the remote
+server of the mlflow click on the remote
+
+240
+00:18:30,160 --> 00:18:37,280
+and you can see the experiment okay just
+go inside that and this is nothing but
+
+241
+00:18:34,080 --> 00:18:40,640
+your uh MLflow tracking uh let's say uh
+server. So you uh if you want to like
+
+242
+00:18:39,440 --> 00:18:43,840
+track it so you have to copy this
+particular code snippet. Okay, you have
+
+243
+00:18:41,840 --> 00:18:46,720
+to uh initialize the tax app. So what
+you can do you can copy this code. I
+
+244
+00:18:45,280 --> 00:18:50,880
+already copied. So let me show you. So
+here is the code. Okay, here is the
+
+245
+00:18:49,280 --> 00:18:53,600
+code.
+So here what you have to do give you
+
+246
+00:18:52,240 --> 00:18:57,919
+have to give the owner name. So honor
+name is ent
+
+247
+00:18:55,520 --> 00:19:00,640
+uh oh no sorry this is the owner name.
+I'll copy the entire code and let me
+
+248
+00:18:59,440 --> 00:19:09,559
+just replace here. I think that should
+be fine. So this is the owner name. I'll
+
+249
+00:19:04,000 --> 00:19:09,559
+copy and this is the repo name.
+
+250
+00:19:10,640 --> 00:19:18,000
+Okay, make sure you replace it here and
+you have to give the tracking URI. So
+
+251
+00:19:15,600 --> 00:19:22,640
+where you will get the URI to get the
+URI guys? Uh
+
+252
+00:19:20,640 --> 00:19:30,480
+so here is the URI. Okay, just try to
+copy and just try to mention it here.
+
+253
+00:19:27,679 --> 00:19:33,600
+Okay, now everything you can remove. So
+this configuration you only need if you
+
+254
+00:19:32,480 --> 00:19:37,200
+want to track the experiment through the
+DAX app fine and make sure you install
+
+255
+00:19:36,160 --> 00:19:40,799
+the DAX app because it is already
+available in the requirements. Now I
+
+256
+00:19:38,960 --> 00:19:45,760
+think it will work. So here let me
+launch my MLFlow UI. So initially it
+
+257
+00:19:43,600 --> 00:19:49,039
+would be empty.
+Okay, initially it would be empty. The
+
+258
+00:19:47,520 --> 00:19:52,880
+same thing you can also do in the AWS
+cloud. I already showed you how to
+
+259
+00:19:50,240 --> 00:19:57,440
+perform uh on the AWS cloud also. Okay.
+Uh there you have to do additional setup
+
+260
+00:19:54,559 --> 00:20:05,000
+but here we're using the DAX. So now uh
+what I will do guys I will run the same
+
+261
+00:19:59,600 --> 00:20:05,000
+uh code. Now let me execute.
+
+262
+00:20:12,240 --> 00:20:16,520
+So Python file
+
+263
+00:20:19,200 --> 00:20:27,559
+let's give the accept.
+So once authentication is done now see
+
+264
+00:20:23,919 --> 00:20:27,559
+it is login everything.
+
+265
+00:20:28,159 --> 00:20:32,600
+So it will take some time guys. Let's
+wait.
+
+266
+00:20:52,480 --> 00:21:00,960
+Okay, execution is done. Now, let me get
+back to my MLFlow. Refresh.
+
+267
+00:20:59,200 --> 00:21:05,919
+So see guys you will see the first
+experiment here. Okay now you can open
+
+268
+00:21:03,039 --> 00:21:09,840
+it up and you can see all the parameter
+see all the metrics actually it has
+
+269
+00:21:07,520 --> 00:21:14,320
+locked. Okay all the metrics it's
+amazing right you can see the metrics
+
+270
+00:21:12,400 --> 00:21:18,480
+here. Now you can actually do different
+different let's say uh experiment. Let's
+
+271
+00:21:16,480 --> 00:21:23,520
+say I will again execute. Let's say you
+have changed those questions. Okay those
+
+272
+00:21:21,039 --> 00:21:26,720
+uh those prompt again you are executing
+the same thing. So it will create
+
+273
+00:21:25,520 --> 00:21:29,720
+another experiment. Then you can also
+compare.
+
+274
+00:21:43,120 --> 00:21:49,520
+So see execution is done. Now if I go
+back see another uh execution has
+
+275
+00:21:48,000 --> 00:21:53,360
+created. Okay. Now here you can see the
+matrix. Now you can do the comparison
+
+276
+00:21:51,520 --> 00:21:57,919
+operation. Let's say select all and
+compare and you can figure out the best
+
+277
+00:21:56,000 --> 00:22:03,280
+uh let's say experiment from here with
+the help of this parallel coordinate uh
+
+278
+00:22:00,240 --> 00:22:10,240
+uh okay this particular plot so you can
+plot everything here okay one by one
+
+279
+00:22:07,440 --> 00:22:14,480
+and you can u actually select the best
+uh one okay from here so this is one of
+
+280
+00:22:12,159 --> 00:22:17,919
+the amazing uh things guys uh this ML
+flow it provides not only experiment
+
+281
+00:22:16,640 --> 00:22:22,080
+tracking even you can also track the
+evaluations okay everything you can do
+
+282
+00:22:19,840 --> 00:22:26,640
+here so guys I think you got how we can
+do the evaluations. Okay. Uh so that's
+
+283
+00:22:24,640 --> 00:22:30,400
+how we can uh do the evaluations. Let's
+try to go to the documentations and uh
+
+284
+00:22:28,960 --> 00:22:33,200
+whatever evaluation you need, let's say
+for the question answering, for the text
+
+285
+00:22:31,600 --> 00:22:37,440
+summarizations, for the language
+translation, you can uh check that and
+
+286
+00:22:35,120 --> 00:22:42,159
+just try to do it. Okay? Uh similar way.
+So yes guys, I hope uh you got it. So
+
+287
+00:22:40,559 --> 00:22:44,880
+yes guys, this is all about it. Thanks
+for watching.
+

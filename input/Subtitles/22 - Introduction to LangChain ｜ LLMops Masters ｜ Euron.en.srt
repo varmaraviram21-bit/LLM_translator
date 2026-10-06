@@ -1,0 +1,649 @@
+1
+00:00:00,640 --> 00:00:08,000
+Hi guys, welcome back with another
+video. In this video, I'll be discussing
+
+2
+00:00:05,200 --> 00:00:13,840
+about what is langen exactly and why we
+use langen for the LLM apps development.
+
+3
+00:00:11,120 --> 00:00:18,560
+We also use langen for the LLM ops
+development because langen is having
+
+4
+00:00:15,679 --> 00:00:22,960
+some ecosystem. Uh we also call it as
+llm ops tool. So these are the ecosystem
+
+5
+00:00:21,039 --> 00:00:27,680
+we can also use for the llm ops
+development. So first of all let's try
+
+6
+00:00:24,960 --> 00:00:32,480
+to discuss why langen okay why we
+usually use langen for the lm apps
+
+7
+00:00:29,480 --> 00:00:36,360
+development. So I think you know guys u
+in
+
+8
+00:00:34,040 --> 00:00:41,600
+generative okay in
+generative. So here just let me write
+
+9
+00:00:38,559 --> 00:00:41,600
+down line
+
+10
+00:00:43,000 --> 00:00:48,559
+channel line channel. So in generative
+
+11
+00:00:52,199 --> 00:00:59,280
+AI we use something called large
+language model. Okay. Yes or no?
+
+12
+00:00:57,600 --> 00:01:05,519
+Definitely we we use something called
+large language model. And there are so
+
+13
+00:01:01,520 --> 00:01:08,240
+many provider. If I just write
+uh many
+
+14
+00:01:10,600 --> 00:01:15,280
+provider like I can write open
+
+15
+00:01:15,880 --> 00:01:20,479
+AI then we have something called
+
+16
+00:01:20,759 --> 00:01:24,560
+llama we have
+
+17
+00:01:25,560 --> 00:01:30,000
+mistral okay and so
+
+18
+00:01:31,320 --> 00:01:38,560
+on Okay. So these are nothing but uh
+these this
+
+19
+00:01:35,560 --> 00:01:43,759
+actually so they are providing something
+called large language
+
+20
+00:01:40,119 --> 00:01:49,520
+model. Okay. LLM. And what is the
+problem with the LLM? So let me list
+
+21
+00:01:46,720 --> 00:01:49,520
+down here
+
+22
+00:01:51,079 --> 00:01:56,240
+problem. So the first problem you'll be
+getting the
+
+23
+00:01:56,840 --> 00:02:07,360
+limited
+context
+
+24
+00:02:02,360 --> 00:02:07,360
+windows then it is having
+
+25
+00:02:09,879 --> 00:02:12,879
+outdated
+
+26
+00:02:14,280 --> 00:02:23,760
+knowledge
+base then it is having uh
+
+27
+00:02:20,520 --> 00:02:23,760
+data privacy
+
+28
+00:02:25,280 --> 00:02:35,519
+Then definitely cost involvement is also
+there. Okay. Cost involvement is also
+
+29
+00:02:31,480 --> 00:02:35,519
+there. Then no
+
+30
+00:02:37,319 --> 00:02:43,720
+connection
+with
+
+31
+00:02:41,319 --> 00:02:50,440
+third
+party
+
+32
+00:02:46,440 --> 00:02:56,560
+tools. Okay. and so
+on. So whenever we uh create any kinds
+
+33
+00:02:53,760 --> 00:02:56,560
+of genai
+
+34
+00:02:58,440 --> 00:03:04,879
+applications
+geni
+
+35
+00:03:02,680 --> 00:03:08,440
+apps so what are the functionality we
+have? So the first functionality I think
+
+36
+00:03:06,640 --> 00:03:14,080
+you know we have data input
+functionality okay data in so here uh
+
+37
+00:03:11,360 --> 00:03:20,000
+what we can do guys we can u give any
+kinds of data as an input let's say we
+
+38
+00:03:15,680 --> 00:03:27,720
+can give txt file we can give PDF file
+we can give dot CSV file we can give SQL
+
+39
+00:03:24,239 --> 00:03:34,319
+file okay then I think XLS is
+there then uh HTML is
+
+40
+00:03:31,000 --> 00:03:39,599
+there and PNG file also we can give and
+so
+
+41
+00:03:35,400 --> 00:03:43,000
+Uh okay. And our application action wise
+uh what happens
+
+42
+00:03:43,120 --> 00:03:52,239
+um we can implement rag, we can
+implement
+
+43
+00:03:48,360 --> 00:03:52,239
+agents, we can implement
+
+44
+00:03:52,840 --> 00:03:55,840
+APIs
+
+45
+00:03:56,360 --> 00:04:05,200
+format manipulate. We can also
+do then we can also perform the
+
+46
+00:04:06,519 --> 00:04:20,199
+transformation we can add the
+memory we can connect with third
+
+47
+00:04:13,560 --> 00:04:25,919
+party tool and so on. Okay. And as an
+output we get anything. Okay. It can be
+
+48
+00:04:24,160 --> 00:04:29,680
+there's a text output it can be image
+output. It can be audio output. Okay.
+
+49
+00:04:27,440 --> 00:04:34,639
+anything you can get. So this is what
+actually we usually implement whenever
+
+50
+00:04:32,479 --> 00:04:38,320
+we create any kinds of jiu uh
+applications. Okay. And these are the
+
+51
+00:04:36,000 --> 00:04:42,560
+functionality we should have. So now
+what happens let's say whenever we want
+
+52
+00:04:40,240 --> 00:04:47,280
+to create these kinds of application uh
+so definitely we'll be using some
+
+53
+00:04:44,320 --> 00:04:51,360
+provider. Okay. Let's say uh you want to
+create uh these kinds of application
+
+54
+00:04:48,960 --> 00:04:54,720
+with the help of openi. Now previously
+when we didn't have any kinds of let's
+
+55
+00:04:53,199 --> 00:04:59,680
+say orchestration framework like lang
+chain lama index okay haste how people
+
+56
+00:04:57,680 --> 00:05:04,400
+used to create so they used to learn the
+openi okay let's say openai I think you
+
+57
+00:05:02,080 --> 00:05:08,160
+know that openai is also a let's say a
+framework okay in python with the help
+
+58
+00:05:05,919 --> 00:05:11,759
+of that you can load the GPT model you
+can create the rag application okay you
+
+59
+00:05:10,000 --> 00:05:16,400
+can connect the vector database you can
+do it okay so with the help of openi
+
+60
+00:05:14,240 --> 00:05:19,759
+also you can create the application and
+uh that will have also this kinds of
+
+61
+00:05:17,840 --> 00:05:23,360
+functionality now let's say you don't
+want to use the openi now you want to
+
+62
+00:05:21,440 --> 00:05:27,039
+use the llama model that time what to do
+can you load the llama model with the
+
+63
+00:05:24,880 --> 00:05:31,440
+help of openi no it's not possible for
+this again you have to learn the llama
+
+64
+00:05:30,000 --> 00:05:35,199
+framework okay I think there is a
+framework called llama cpp okay so that
+
+65
+00:05:33,600 --> 00:05:38,720
+particular framework you have to learn
+then you'll be able to load the llama
+
+66
+00:05:37,039 --> 00:05:43,520
+model then again you have to again learn
+the uh like how we can add the let's say
+
+67
+00:05:41,280 --> 00:05:47,360
+memory how we can um load different
+different kinds of data okay how we can
+
+68
+00:05:45,440 --> 00:05:50,960
+perform all kinds of actions you have to
+learn separately now let's you don't
+
+69
+00:05:49,600 --> 00:05:54,880
+want to use the llama you want to use
+the mist model that time what to do you
+
+70
+00:05:53,120 --> 00:05:59,120
+have to learn the mstral framework that
+means what is happening okay if you're
+
+71
+00:05:57,120 --> 00:06:03,600
+using any provider any other provider
+let's say falcon jamin so you have to
+
+72
+00:06:02,080 --> 00:06:08,720
+learn those individual framework
+separately and as a developer it's not
+
+73
+00:06:06,479 --> 00:06:13,520
+possible for us to remember all the
+framework right it would be hard task
+
+74
+00:06:10,560 --> 00:06:19,600
+for us so that's why we don't use this
+kinds of okay individual framework to
+
+75
+00:06:16,880 --> 00:06:24,639
+work with the geni application for this
+Some okay for this some common framework
+
+76
+00:06:23,199 --> 00:06:27,759
+should be there some common
+orchestration framework should be there
+
+77
+00:06:26,400 --> 00:06:32,000
+so that with the help of that we can
+load all kinds of model we can perform
+
+78
+00:06:29,759 --> 00:06:36,720
+all kinds of task we can perform all we
+can load all kinds of data got it so
+
+79
+00:06:34,800 --> 00:06:41,479
+that that is where actually your langen
+comes into picture okay langen comes
+
+80
+00:06:39,440 --> 00:06:47,759
+into
+picture langen so what is langen langen
+
+81
+00:06:45,360 --> 00:06:53,160
+is nothing but it's a orchestration
+framework okay
+
+82
+00:06:49,319 --> 00:06:56,160
+or uh
+castration
+
+83
+00:06:57,080 --> 00:07:03,280
+framework orchestration framework. What
+does it mean of orchestration? That
+
+84
+00:07:01,280 --> 00:07:07,280
+means with that of lang chain you can
+perform everything. You can load the
+
+85
+00:07:04,880 --> 00:07:11,520
+data you can perform all the actions
+even you can get all kinds of output.
+
+86
+00:07:08,880 --> 00:07:17,120
+That means you can entirely orchestrate
+the application. Okay, you can uh uh
+
+87
+00:07:15,440 --> 00:07:20,960
+build the application entirely with the
+help of this particular langen and this
+
+88
+00:07:19,039 --> 00:07:25,360
+is a universal framework that means it
+can load all the large language model
+
+89
+00:07:22,880 --> 00:07:28,639
+out there. Got it? Now if I go to the
+langen
+
+90
+00:07:26,440 --> 00:07:32,360
+documentation so just search here let's
+say
+
+91
+00:07:29,560 --> 00:07:37,199
+langchen okay langchen
+documentation you'll see that they have
+
+92
+00:07:35,280 --> 00:07:42,319
+one amazing documentation you can refer
+their documentation and you can learn
+
+93
+00:07:38,880 --> 00:07:45,759
+about the langen okay uh so they have
+given some amazing let's say tutorial
+
+94
+00:07:44,160 --> 00:07:48,520
+they have given amazing some let's say
+example with the help of that you can
+
+95
+00:07:47,599 --> 00:07:52,880
+learn the
+langen got it so in this program uh I'm
+
+96
+00:07:51,440 --> 00:07:57,120
+expecting guys you are familiar with the
+langen okay
+
+97
+00:07:54,800 --> 00:08:01,199
+because here we are learning the LOPS
+and whatever things you need for the
+
+98
+00:07:59,039 --> 00:08:05,919
+LOPS from the lang itself I'll try to
+cover that part so Langchain is also
+
+99
+00:08:03,759 --> 00:08:11,120
+having one ecosystem okay in the
+ecosystem you have something called lang
+
+100
+00:08:07,840 --> 00:08:17,199
+lang graph and langar okay so let's let
+me write down here langchen is having a
+
+101
+00:08:13,560 --> 00:08:19,879
+ecosystem so it is having something
+called
+
+102
+00:08:18,120 --> 00:08:27,039
+lang a
+smmith this is a I think a smith
+
+103
+00:08:24,400 --> 00:08:27,039
+We just write
+
+104
+00:08:30,360 --> 00:08:40,519
+it
+lang. Okay. This is a llm ops tool.
+
+105
+00:08:36,880 --> 00:08:45,200
+Okay. Then we have something called lang
+ser. This is also a llm ops
+
+106
+00:08:45,720 --> 00:08:51,920
+tool. Then we have another one called
+lang
+
+107
+00:08:49,760 --> 00:08:57,839
+uh graph.
+Okay, this is a
+
+108
+00:08:54,440 --> 00:09:02,399
+agentic AI tool that means with of that
+you can create the AI agent. So for our
+
+109
+00:09:00,000 --> 00:09:07,839
+LLM ops we'll be using lang and lang
+graph. So help of lang lang we can
+
+110
+00:09:05,240 --> 00:09:13,839
+monitor monitor our geni application and
+the lang we can serve the model okay we
+
+111
+00:09:10,880 --> 00:09:18,240
+can serve the model got it so again
+langshen is uh I mean one of the great
+
+112
+00:09:16,080 --> 00:09:22,080
+framework in the field of geni it not
+only provides the entire orchestrated
+
+113
+00:09:20,240 --> 00:09:26,800
+let's say functionality even you can
+also use it for the lmops development so
+
+114
+00:09:24,640 --> 00:09:32,240
+you can see the documentation so it is
+having different different version like
+
+115
+00:09:28,160 --> 00:09:35,920
+v1 u uh v_sub_2 v3 okay in the updated
+version of lang chain. There is a
+
+116
+00:09:34,320 --> 00:09:40,640
+concept called LCL that means lchen
+expression language. Nowadays people use
+
+117
+00:09:38,240 --> 00:09:43,920
+lang chain expression language for okay
+whenever they develop any kinds of
+
+118
+00:09:42,080 --> 00:09:47,600
+projects. Okay. But still the legacy
+langen uh it is being used because some
+
+119
+00:09:46,320 --> 00:09:51,920
+of the functionality you have to use
+with the help of legacy lang. Got it. So
+
+120
+00:09:49,920 --> 00:09:56,399
+yes guys uh this is the introduction of
+the langen. Okay. Uh so it's nothing but
+
+121
+00:09:54,640 --> 00:09:59,680
+it's a framework. It's a orchestration
+framework for the GNI application
+
+122
+00:09:57,760 --> 00:10:02,800
+development because it's a universal
+framework that means it can support
+
+123
+00:10:01,040 --> 00:10:05,200
+everything. You can connect with
+different different large language
+
+124
+00:10:03,920 --> 00:10:08,240
+model. You can connect with different
+different vector database. You can
+
+125
+00:10:06,880 --> 00:10:11,920
+connect with third party tools, third
+party data sources. Okay. You can load
+
+126
+00:10:10,399 --> 00:10:16,320
+any kinds of data. Okay. Whether it's a
+PDF data, whether it's a JSON data,
+
+127
+00:10:13,920 --> 00:10:20,079
+whether uh it's a let's say data is
+available in the website, whether uh you
+
+128
+00:10:18,160 --> 00:10:23,920
+want to load the uh let's say WhatsApp
+data. Okay. Then you want to load the uh
+
+129
+00:10:22,240 --> 00:10:29,120
+Slack data. Everything is possible with
+the help of this particular langu. Got
+
+130
+00:10:26,079 --> 00:10:33,440
+it? So that's why uh lion is super
+important and uh you have to uh learn
+
+131
+00:10:31,920 --> 00:10:37,680
+the lang. You have to use the lion
+whenever you are working in the field of
+
+132
+00:10:35,200 --> 00:10:44,120
+ji. Got it guys. So yes guys this is all
+about uh I think you understood about
+
+133
+00:10:39,519 --> 00:10:44,120
+the lion. Uh thanks for watching.
+

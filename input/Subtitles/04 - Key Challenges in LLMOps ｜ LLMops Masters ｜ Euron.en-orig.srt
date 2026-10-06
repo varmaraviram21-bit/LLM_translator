@@ -1,0 +1,209 @@
+1
+00:00:00,480 --> 00:00:07,520
+Hi guys, welcome back. In this video,
+I'll be talking about some key
+
+2
+00:00:05,319 --> 00:00:09,759
+challenges. So here, let me write some
+key
+
+3
+00:00:15,400 --> 00:00:18,400
+challenges
+
+4
+00:00:24,760 --> 00:00:34,079
+challen. So the first uh key challenge
+uh we usually face are
+
+5
+00:00:31,079 --> 00:00:34,079
+model
+
+6
+00:00:34,280 --> 00:00:40,960
+deployment okay and scalability
+
+7
+00:00:41,320 --> 00:00:47,559
+scalability
+okay second uh challenge we usually get
+
+8
+00:00:46,399 --> 00:00:51,559
+called
+data privacy
+
+9
+00:00:52,320 --> 00:00:54,480
+uh
+
+10
+00:00:56,039 --> 00:00:59,440
+security. Okay.
+
+11
+00:01:00,199 --> 00:01:08,240
+And
+compliance. Okay. So what is data
+
+12
+00:01:05,439 --> 00:01:14,080
+privacy security compliance? Uh see uh
+whenever we are using any kinds of
+
+13
+00:01:10,400 --> 00:01:19,119
+custom data that means your private data
+uh so sometimes what happens if you give
+
+14
+00:01:16,880 --> 00:01:23,520
+that data to the LM so there is a
+possibility your data may get leaked.
+
+15
+00:01:21,040 --> 00:01:28,080
+Okay. So that's why data privacy uh is
+super important and what about security
+
+16
+00:01:25,680 --> 00:01:32,400
+and uh complaints. Okay. Uh see uh
+nowadays actually if you see over the uh
+
+17
+00:01:30,159 --> 00:01:37,520
+chart GPT or any other application if
+you're asking any kinds of uh harmful
+
+18
+00:01:34,880 --> 00:01:40,560
+content or let's say sexual content uh
+these are the model will not give you
+
+19
+00:01:38,960 --> 00:01:45,520
+the response. So that's why you also
+need to uh aware about the the policy
+
+20
+00:01:43,360 --> 00:01:49,200
+okay policy of your application
+otherwise people will be using these are
+
+21
+00:01:47,200 --> 00:01:52,960
+the let's say application these are the
+model uh in a bad way. Okay, they will
+
+22
+00:01:51,520 --> 00:01:57,439
+be generating the sexual content, they
+will be generating the harmful content.
+
+23
+00:01:55,040 --> 00:02:01,759
+Okay, uh for uh from that so you also
+need to take care this part and that's
+
+24
+00:01:59,280 --> 00:02:04,880
+why there is a challenge uh whenever you
+are uh building the large language
+
+25
+00:02:03,520 --> 00:02:09,280
+model, you also need to take care this
+part. Okay, I hope it is clear. Then uh
+
+26
+00:02:07,360 --> 00:02:11,759
+the third challenge people usually get
+called
+
+27
+00:02:12,840 --> 00:02:16,840
+monitoring. Monitoring
+
+28
+00:02:17,200 --> 00:02:19,520
+uh
+
+29
+00:02:20,040 --> 00:02:24,239
+evaluation okay and
+
+30
+00:02:26,440 --> 00:02:30,400
+continuous continuous
+
+31
+00:02:30,599 --> 00:02:37,920
+improvement the improvement of the
+model. So this is another challenging
+
+32
+00:02:34,640 --> 00:02:43,120
+task inside uh this llmops. Then uh we
+have another one called
+
+33
+00:02:40,120 --> 00:02:43,120
+prompt
+
+34
+00:02:44,519 --> 00:02:54,480
+engineering. Okay. And version
+management. Version
+
+35
+00:02:52,319 --> 00:02:54,480
+uh
+
+36
+00:02:54,760 --> 00:03:01,760
+management. Okay. What is version
+management? So this is another actually
+
+37
+00:02:59,680 --> 00:03:06,480
+u challenge. Okay. Key challenge inside
+LOPS. So yes guys these are the uh
+
+38
+00:03:04,560 --> 00:03:10,800
+challenges we usually face inside a
+limops and we have to overcome whenever
+
+39
+00:03:08,959 --> 00:03:13,760
+we are implementing any kinds of
+application we have to overcome these
+
+40
+00:03:12,560 --> 00:03:18,159
+are the challenge okay then we'll be
+implement a scalable product got it and
+
+41
+00:03:16,400 --> 00:03:22,879
+all the let's say challenges can be
+solved with the help of llmops with the
+
+42
+00:03:20,480 --> 00:03:26,319
+help of some lmops tools lops platform
+okay that is what actually we'll be
+
+43
+00:03:24,239 --> 00:03:30,480
+learning through the entire course okay
+so I hope you guys got it so yes guys
+
+44
+00:03:28,480 --> 00:03:34,239
+this is all about uh our key challenges
+inside lmops thanks for watching
+

@@ -1,0 +1,357 @@
+1
+00:00:01,280 --> 00:00:09,679
+Hi guys, in this video I'll be talking
+about what is finetuning exactly. Uh see
+
+2
+00:00:07,359 --> 00:00:12,960
+whenever you are working in the field of
+gbi
+
+3
+00:00:11,200 --> 00:00:17,920
+uh so I think you have heard of this
+name uh called finetuning. So uh what is
+
+4
+00:00:16,400 --> 00:00:22,720
+finetuning? First of all I will give you
+the idea and why fine-tuning is
+
+5
+00:00:20,160 --> 00:00:26,320
+required. I will also talk about that.
+See, finetuning is nothing
+
+6
+00:00:37,079 --> 00:00:40,399
+but the
+
+7
+00:00:42,840 --> 00:00:48,640
+finetuning. Okay.
+Fine-tuning. Uh it's a
+
+8
+00:00:50,600 --> 00:00:54,640
+process. Okay. process of
+
+9
+00:00:56,440 --> 00:00:59,840
+taking a
+
+10
+00:01:05,240 --> 00:01:10,799
+pretend
+model
+
+11
+00:01:10,920 --> 00:01:17,360
+like
+PPT. Okay. then
+
+12
+00:01:19,479 --> 00:01:26,920
+llama and so
+on
+
+13
+00:01:24,040 --> 00:01:31,560
+and
+adapting. Okay.
+
+14
+00:01:29,479 --> 00:01:37,360
+Adapting it to
+a specific
+
+15
+00:01:34,040 --> 00:01:37,360
+task, a
+
+16
+00:01:39,240 --> 00:01:42,560
+spe a
+
+17
+00:01:42,680 --> 00:01:45,680
+specific
+
+18
+00:01:50,360 --> 00:01:58,079
+task
+or data set.
+
+19
+00:01:55,759 --> 00:01:58,079
+I
+
+20
+00:02:01,079 --> 00:02:05,840
+continue
+the
+
+21
+00:02:06,119 --> 00:02:09,119
+training
+
+22
+00:02:09,640 --> 00:02:18,000
+process on new
+data. Okay. So that means what you are
+
+23
+00:02:15,920 --> 00:02:23,360
+doing here you are taking a pre-ten
+model. Okay. And you are training that
+
+24
+00:02:20,560 --> 00:02:28,000
+pre-ten model on a specific data set for
+a specific task. Let's say uh I have
+
+25
+00:02:26,000 --> 00:02:33,519
+taken a model called llama. Okay, let's
+say llama 2. I'm considering llama 2. So
+
+26
+00:02:30,879 --> 00:02:39,840
+now let's say I have very specific data.
+Uh this is let's say my uh private data.
+
+27
+00:02:36,879 --> 00:02:44,080
+Let's say I want to train for a
+uh what I can do. Let's say I want to
+
+28
+00:02:41,360 --> 00:02:49,040
+train for a a language translation.
+Okay. So what I will do uh I'll take
+
+29
+00:02:46,640 --> 00:02:53,840
+that data and I will take a a pretend
+model like llama 2. On top of that, I'll
+
+30
+00:02:51,440 --> 00:02:57,040
+just try to uh do the finetuning
+process. That means I will do some
+
+31
+00:02:55,200 --> 00:03:01,360
+training. Okay, I'll do some training.
+I'll just uh adjust just I will adjust
+
+32
+00:02:59,599 --> 00:03:06,159
+some weights. Okay, and this is called
+actually fine tuning. That means your
+
+33
+00:03:03,280 --> 00:03:10,720
+model already knows about lots of
+things, right? And what you are doing
+
+34
+00:03:08,080 --> 00:03:14,720
+you are uh giving some more information
+to the model, okay? By fine-tuning that
+
+35
+00:03:12,959 --> 00:03:20,159
+particular model. Okay, so this is
+called actually fine-tuning. I hope you
+
+36
+00:03:16,480 --> 00:03:24,640
+got it right. So see why uh this fine
+tune uh is required because uh what
+
+37
+00:03:22,480 --> 00:03:29,440
+happens let's say whenever I have a
+specific like private data and if I want
+
+38
+00:03:27,599 --> 00:03:35,120
+to use my LLM because if you go to the
+LLM and if you are asking anything uh to
+
+39
+00:03:32,799 --> 00:03:39,519
+anything specific to your private let's
+say information it will not able to give
+
+40
+00:03:37,519 --> 00:03:44,159
+you the answer right so definitely for
+this you have to fine-tune these are the
+
+41
+00:03:41,640 --> 00:03:47,680
+model and for finetuning these are the
+model we use different different
+
+42
+00:03:45,840 --> 00:03:54,159
+approach because at the end LLM is like
+very huge model. Okay, if you see if I'm
+
+43
+00:03:50,879 --> 00:03:57,360
+talking about llama, okay, llama, okay,
+llama is having different different
+
+44
+00:03:55,440 --> 00:04:02,239
+model. Let's say llama 2 is there, three
+is there. Okay, and if you see the
+
+45
+00:03:59,840 --> 00:04:06,720
+parameter size, you will see like llama
+uh 70 billion parameter model is also
+
+46
+00:04:04,319 --> 00:04:09,840
+available. Okay, uh that's actually
+different different kinds of models are
+
+47
+00:04:08,000 --> 00:04:13,599
+available. And if you want to load this
+model
+
+48
+00:04:11,360 --> 00:04:17,840
+uh to your machine so you should have
+good configuration machine at least uh
+
+49
+00:04:15,760 --> 00:04:22,000
+some good GPU configuration you have
+some RAM configuration you have then you
+
+50
+00:04:20,160 --> 00:04:26,639
+will you will be able to load this
+particular model in your uh system but
+
+51
+00:04:24,720 --> 00:04:30,400
+uh we don't have this kinds of system so
+in this case actually we can use some
+
+52
+00:04:28,160 --> 00:04:35,680
+cloud provider cloud provider like
+Google collab we can use okay collab we
+
+53
+00:04:33,360 --> 00:04:41,440
+can use then uh we have some other
+platform like uh paper space is there.
+
+54
+00:04:38,720 --> 00:04:46,240
+Okay. Paper space is there. Then we have
+uh data crunch is there. Okay. Data
+
+55
+00:04:44,080 --> 00:04:49,919
+crunch is there. So that's how we are
+having different different platform. You
+
+56
+00:04:48,240 --> 00:04:54,400
+can purchase a machine and you can load
+these are the model. But again if you
+
+57
+00:04:51,600 --> 00:04:58,560
+see uh uh fine-tuning these are the
+model is not an easy task because again
+
+58
+00:04:56,000 --> 00:05:03,440
+you have lots of parameter. So uh for
+this we use some parameter efficient
+
+59
+00:05:00,400 --> 00:05:09,520
+finetuning process. We also call it as P
+uh FT. Okay. P E FT. So that means
+
+60
+00:05:07,120 --> 00:05:15,520
+parameter vision finetuning. Uh so for
+this we use some technique like load
+
+61
+00:05:12,080 --> 00:05:20,720
+okay LOA or Q LOA. So these are some
+actually let's say uh library we use for
+
+62
+00:05:18,720 --> 00:05:25,160
+the parameter efficient finetuning that
+means at it performs something called
+
+63
+00:05:22,600 --> 00:05:30,000
+quantization okay
+quantizations operations that means it
+
+64
+00:05:27,840 --> 00:05:33,840
+will uh quantize your model instead of
+loading the uh very big model it will
+
+65
+00:05:32,400 --> 00:05:37,120
+perform the quantization then it will
+load the model. Okay, I will more
+
+66
+00:05:35,360 --> 00:05:40,639
+discuss about it what is like PFT, what
+is Kora and Q Lora. Even I will also
+
+67
+00:05:39,199 --> 00:05:44,160
+show you one practical demo of the
+finetuning. Okay, how it can be done.
+
+68
+00:05:42,320 --> 00:05:47,280
+We'll try to pick a LLM and there I will
+show you the entire fine tuning process
+
+69
+00:05:45,600 --> 00:05:50,800
+guys. Okay, so yes, this is the
+finetuning. I hope you got it. Okay, now
+
+70
+00:05:49,520 --> 00:05:53,919
+in the next video we'll try to
+understand what is the difference
+
+71
+00:05:52,000 --> 00:05:57,039
+between finetuning and rag because there
+is another concept called rag. Uh with
+
+72
+00:05:55,520 --> 00:06:01,199
+the help of rag also we can also connect
+our custom data to the LLM. Okay. So yes
+
+73
+00:06:00,000 --> 00:06:04,400
+uh let's try to see the difference
+between finetuning and rag.
+

@@ -1,0 +1,237 @@
+1
+00:00:00,320 --> 00:00:07,359
+Hi guys, in this video I'll be talking
+about uh some component of the large
+
+2
+00:00:05,520 --> 00:00:11,840
+language model. So if you have seen my
+previous video so there I was discussing
+
+3
+00:00:09,679 --> 00:00:15,280
+about the transformer intuition and I
+showed you like different different
+
+4
+00:00:13,120 --> 00:00:18,880
+transformer component how transformer
+works what is self uh let's say
+
+5
+00:00:17,199 --> 00:00:22,480
+attention mechanism everything I uh
+explained okay and I also told you
+
+6
+00:00:20,880 --> 00:00:27,039
+transformer is the core architecture
+behind all the large language model okay
+
+7
+00:00:24,720 --> 00:00:31,760
+nowadays we are using so the same uh
+let's say I mean component you'll be
+
+8
+00:00:30,160 --> 00:00:36,640
+also getting in the large language model
+so let me write down some of the
+
+9
+00:00:33,040 --> 00:00:39,600
+component so see in the large language
+Uh you have
+
+10
+00:00:40,200 --> 00:00:50,520
+u okay you have uh something called uh
+tokenization
+
+11
+00:00:45,879 --> 00:00:50,520
+layer token nation
+
+12
+00:00:53,160 --> 00:00:59,039
+layer. Then you also have something
+called embedding
+
+13
+00:00:59,239 --> 00:01:07,119
+layer. Okay embedding
+layer. Okay. Okay. So what happens in
+
+14
+00:01:04,960 --> 00:01:11,200
+the token to tokenization layer? Uh we
+just try to create the tokens of the
+
+15
+00:01:09,040 --> 00:01:14,159
+sentence whatever sentence we have and
+then uh with respect to the embedding
+
+16
+00:01:12,799 --> 00:01:19,200
+layer we try to generate the vector
+embedding. Okay. Then we have something
+
+17
+00:01:16,479 --> 00:01:19,200
+called transformer
+
+18
+00:01:20,920 --> 00:01:26,479
+blocks. Transformer blocks. So whatever
+things we have learned in the
+
+19
+00:01:24,960 --> 00:01:30,320
+transformers the same thing would be
+available here. Okay. That means the
+
+20
+00:01:28,479 --> 00:01:35,360
+core transformer. Okay. Whatever we have
+learned that means we have multi head
+
+21
+00:01:32,400 --> 00:01:40,000
+attention. Okay. we have u like
+normalization layer feed forwell neural
+
+22
+00:01:37,600 --> 00:01:44,960
+network okay residual connections okay
+then stacking the transformers so these
+
+23
+00:01:42,240 --> 00:01:49,399
+are the things are available inside that
+then additionally he will be also
+
+24
+00:01:46,640 --> 00:01:56,079
+getting something called
+uh some additional uh components are
+
+25
+00:01:52,399 --> 00:01:58,640
+also there inside LM like we have
+something called
+
+26
+00:01:59,320 --> 00:02:03,320
+rotary positional
+
+27
+00:02:06,600 --> 00:02:14,440
+embedding. Okay, we also call it as R O
+P
+
+28
+00:02:11,560 --> 00:02:21,680
+E. Then we have
+uh KV
+
+29
+00:02:17,400 --> 00:02:24,480
+cache. Okay. So we use usually this
+particular things
+
+30
+00:02:26,680 --> 00:02:30,800
+during okay during uh
+
+31
+00:02:32,040 --> 00:02:40,480
+inference. Okay. Then we have
+uh
+
+32
+00:02:37,480 --> 00:02:40,480
+layer
+
+33
+00:02:40,840 --> 00:02:48,239
+scale deep
+norm. Okay. Then
+
+34
+00:02:48,360 --> 00:02:54,879
+RMS non normalization. Then we have
+
+35
+00:02:55,720 --> 00:02:58,720
+LOA
+
+36
+00:02:59,160 --> 00:03:11,760
+adapter. Okay. Load adapters and PFT
+module P EFT module. So parameter
+
+37
+00:03:08,080 --> 00:03:18,040
+efficient finetuning model we call it.
+Then we
+
+38
+00:03:13,959 --> 00:03:23,760
+have mixer
+of
+
+39
+00:03:20,200 --> 00:03:29,040
+experts M O E. Okay. So these are some
+additional component you'll be getting
+
+40
+00:03:25,440 --> 00:03:32,720
+inside LLM. Um because LLM training is
+little bit different uh than our
+
+41
+00:03:30,480 --> 00:03:36,080
+previous uh let's say language model
+training. So here we use different
+
+42
+00:03:34,799 --> 00:03:40,000
+different things like supervised
+finetuning uh approach will be uh we
+
+43
+00:03:38,239 --> 00:03:43,840
+usually use here. So that's why these
+are the let's say component is also
+
+44
+00:03:41,920 --> 00:03:47,519
+important there. So yes guys these are
+the things are available inside large
+
+45
+00:03:45,360 --> 00:03:51,040
+language model. Uh so the main
+architecture uh would be your
+
+46
+00:03:49,200 --> 00:03:54,560
+transformer blocks. Okay with the help
+of that it understand all the context
+
+47
+00:03:52,879 --> 00:03:58,000
+and it gives the attention everything I
+think I already showed you in that
+
+48
+00:03:55,840 --> 00:04:02,239
+particular video. So yes uh this is all
+and I hope you understand. Thank you
+
+49
+00:03:59,680 --> 00:04:02,239
+guys.
+

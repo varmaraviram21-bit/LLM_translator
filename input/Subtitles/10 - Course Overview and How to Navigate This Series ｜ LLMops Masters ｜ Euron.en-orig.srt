@@ -1,0 +1,170 @@
+1
+00:00:00,240 --> 00:00:06,799
+Hello everyone. Uh so let's talk about
+the course overview and how you can
+
+2
+00:00:05,040 --> 00:00:11,280
+navigate uh this particular course
+series. So in this particular program
+
+3
+00:00:09,120 --> 00:00:15,280
+you will be getting u actually lots of
+module like you can see these are the
+
+4
+00:00:12,800 --> 00:00:20,320
+module you'll be getting. Okay. So see
+you have to u watch uh these are the
+
+5
+00:00:18,720 --> 00:00:24,480
+recording one by one. It's not like
+that. Let's say you have started with
+
+6
+00:00:22,000 --> 00:00:28,000
+first module then you are going to the
+uh let's say fifth module or let's say
+
+7
+00:00:25,840 --> 00:00:31,599
+sixth module. Okay not like that. If you
+want to understand the entire LLM maps
+
+8
+00:00:29,920 --> 00:00:35,200
+concept. Okay. Uh the way actually I
+have designed uh you have to go through
+
+9
+00:00:33,600 --> 00:00:38,879
+step by step. First of all try to
+complete uh let's say introduction to
+
+10
+00:00:37,040 --> 00:00:42,960
+LLMs part. Okay. So here you'll be
+getting some sub let's say topics. Okay.
+
+11
+00:00:41,040 --> 00:00:47,280
+In that actually I have let's say
+discussed so many things. Then uh just
+
+12
+00:00:45,200 --> 00:00:52,160
+try to complete the foundation of LLM
+then LM of tooling landscape then data
+
+13
+00:00:50,320 --> 00:00:56,000
+management for LMS. Then training and
+finetuning of the large language model.
+
+14
+00:00:54,239 --> 00:01:00,960
+So uh here we'll be talking about
+actually foundation of LLMs like uh
+
+15
+00:00:59,199 --> 00:01:03,920
+different different models are available
+different different let's say code
+
+16
+00:01:02,399 --> 00:01:07,280
+models are available which is using in
+the LMS different different components
+
+17
+00:01:05,760 --> 00:01:10,799
+we'll be also talking about okay of the
+large language model then I'll give you
+
+18
+00:01:09,280 --> 00:01:14,080
+the entire tools overview what are the
+tools are available a available and
+
+19
+00:01:12,240 --> 00:01:17,280
+we'll be also learning the practical
+implementation of it then data
+
+20
+00:01:15,680 --> 00:01:21,119
+management we'll be also learning then
+training and finetuning it's important
+
+21
+00:01:19,119 --> 00:01:24,479
+so here we'll be talking about LOA Q L
+quantization technique then retable
+
+22
+00:01:22,960 --> 00:01:28,720
+augmented generations super important
+concept okay because going forward you
+
+23
+00:01:26,720 --> 00:01:31,920
+are not going to train or let's say fine
+tune the LM instead of that you'll be
+
+24
+00:01:30,159 --> 00:01:37,040
+implementing the rag application most of
+the time okay because rag helps us to uh
+
+25
+00:01:35,280 --> 00:01:40,640
+uh connect with our custom documents
+okay instead of training the model fine
+
+26
+00:01:39,119 --> 00:01:44,000
+the model then we'll be learning about
+the model serving and inference then
+
+27
+00:01:42,479 --> 00:01:47,759
+we'll be also learning the evaluation
+monitoring then security privacy ethics
+
+28
+00:01:46,240 --> 00:01:51,600
+okay then LMOS platform we'll be
+learning so inside that we'll be
+
+29
+00:01:48,799 --> 00:01:55,200
+learning like uh vertx AI bedrock okay
+these are the thing we'll be learning
+
+30
+00:01:52,880 --> 00:01:59,119
+then after completing all the topic uh
+we'll be doing some projects. Okay. So
+
+31
+00:01:57,040 --> 00:02:03,200
+this is the entire actually overview and
+that's how you have to navigate the
+
+32
+00:02:00,719 --> 00:02:07,119
+entire course. Okay. Then you'll be able
+to understand each and everything I have
+
+33
+00:02:05,200 --> 00:02:11,360
+explained here. So yes guys, so now
+let's start uh with our next actually
+
+34
+00:02:09,759 --> 00:02:15,680
+let's say module which is nothing but
+foundation of large language model.
+

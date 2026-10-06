@@ -1,0 +1,465 @@
+1
+00:00:00,719 --> 00:00:08,320
+Hi guys, welcome back with another
+video. So guys, in this video uh I'll be
+
+2
+00:00:06,240 --> 00:00:13,440
+talking about some data collection
+strategy you can uh follow uh whenever
+
+3
+00:00:11,840 --> 00:00:17,119
+uh you are working with large language
+model. Let's say you want to fine-tune
+
+4
+00:00:14,799 --> 00:00:20,720
+your large language model or let's say
+you want to train any kinds of large
+
+5
+00:00:18,720 --> 00:00:24,560
+language model from the scratch, right?
+So for this definitely you need the data
+
+6
+00:00:22,640 --> 00:00:29,439
+because we know that LM is all about
+data. So here you need massive amount of
+
+7
+00:00:26,800 --> 00:00:33,520
+data. Now where we can get these are the
+data I'll try to talk about it okay so
+
+8
+00:00:32,079 --> 00:00:40,840
+there is a possibility let's say
+whenever I'm talking about uh data
+
+9
+00:00:37,079 --> 00:00:46,680
+acquisition so let me just write
+here
+
+10
+00:00:43,320 --> 00:00:51,360
+data acquisitions
+okay
+
+11
+00:00:49,239 --> 00:00:55,920
+acquisitions you can also call it as
+data collection okay it's up to you so
+
+12
+00:00:53,600 --> 00:00:59,039
+there is a possibility you have uh
+available data
+
+13
+00:00:59,359 --> 00:01:07,920
+Okay. Available data. So, available data
+means let's say uh you have some files.
+
+14
+00:01:05,439 --> 00:01:13,200
+Let's say you can uh you might have CSV
+file. Uh you might have txt file. You
+
+15
+00:01:10,799 --> 00:01:20,400
+might have docs file. Okay. You might
+have PDF file. Then you you might have
+
+16
+00:01:16,159 --> 00:01:25,200
+uh Excel SX file. Okay. And so on. So if
+you have these are the files available
+
+17
+00:01:22,479 --> 00:01:29,840
+with you. So we we can uh call it as a
+available data. So if you have the
+
+18
+00:01:27,600 --> 00:01:33,840
+available data so no need to worry just
+try to take the data and try to uh do
+
+19
+00:01:32,079 --> 00:01:38,400
+some pre-processing and use the data for
+your training purpose. Okay. And then
+
+20
+00:01:36,640 --> 00:01:43,280
+there is another possibility you might
+have uh other
+
+21
+00:01:40,759 --> 00:01:47,920
+data. Okay. What is other data? Other
+data means let's say this data is
+
+22
+00:01:45,200 --> 00:01:53,759
+available in the database or let's say
+it is available over the
+
+23
+00:01:50,200 --> 00:01:58,719
+internet. Okay. internet or let's say uh
+it is available inside an API and you
+
+24
+00:01:56,240 --> 00:02:04,960
+have to uh I mean use the API and you
+have to get the data uh and you can also
+
+25
+00:02:01,680 --> 00:02:08,560
+scrap the data okay scrap so scrap means
+let's say this data is available over a
+
+26
+00:02:06,640 --> 00:02:12,000
+website and what you can do you can
+perform some web scrapping operation and
+
+27
+00:02:10,080 --> 00:02:16,080
+you can scrap the data okay it is also
+possible so I will also show you some
+
+28
+00:02:14,160 --> 00:02:19,599
+demo okay how we can scrap the data
+whether it's a text data whether it's
+
+29
+00:02:17,520 --> 00:02:23,120
+image data I will also discuss about it
+how we can scrap this kinds of data
+
+30
+00:02:21,280 --> 00:02:27,040
+Okay. Now, uh there is another
+possibility. You have no data. Okay. No
+
+31
+00:02:25,599 --> 00:02:31,520
+data means you don't have any kinds of
+data. Then that time what to do? Okay.
+
+32
+00:02:29,599 --> 00:02:38,000
+That time what to do? That time you can
+create your own data. Create your own
+
+33
+00:02:35,200 --> 00:02:41,280
+data. So maybe you can uh survey. Okay.
+You can manually collect the data.
+
+34
+00:02:39,680 --> 00:02:45,360
+Otherwise nowadays I have seen like
+people are using large language model
+
+35
+00:02:43,120 --> 00:02:48,440
+for generating the data. LMS is
+generating the data.
+
+36
+00:02:46,920 --> 00:02:53,680
+Okay.
+Generating data. So you can also utilize
+
+37
+00:02:51,840 --> 00:02:57,840
+large language model for generating
+synthetic data. Okay, I'll also show you
+
+38
+00:02:55,599 --> 00:03:02,080
+some practical demo how it can be done.
+So yes uh guys so these are some
+
+39
+00:02:59,840 --> 00:03:05,680
+actually possibility you'll be getting
+whenever you are doing the data
+
+40
+00:03:03,280 --> 00:03:10,319
+acquisitions. So the first thing you
+might have available data okay then
+
+41
+00:03:08,159 --> 00:03:14,800
+second thing you might have other data
+like data is available over the internet
+
+42
+00:03:12,319 --> 00:03:18,480
+APIs or you have to scrap the data and
+then uh you have the no data. So that
+
+43
+00:03:17,200 --> 00:03:22,640
+time you have to create your own data.
+Either you can use the large language
+
+44
+00:03:20,000 --> 00:03:27,360
+model to generate your own data. Okay.
+Great. So uh now let's say whenever we
+
+45
+00:03:25,760 --> 00:03:31,519
+are collecting our own data. So there is
+a possibility uh your uh you will be
+
+46
+00:03:30,000 --> 00:03:35,360
+collecting very less amount of data.
+Let's say uh here we are following the
+
+47
+00:03:33,760 --> 00:03:39,760
+uh this particular approach. Okay. We
+are collecting our own data. So whenever
+
+48
+00:03:37,120 --> 00:03:44,400
+we collected our own data let's say I
+need I need actually let's say 1,000
+
+49
+00:03:42,159 --> 00:03:50,799
+data just for the demo. Let's say I need
+1,000 example and I'm able to collect
+
+50
+00:03:47,440 --> 00:03:56,879
+let's say 800. Okay, 800 example I'm
+able to collect. Now uh what about like
+
+51
+00:03:53,840 --> 00:04:00,879
+remain 200? Okay, remain 200. How I can
+get this remain 200 data? Okay, for this
+
+52
+00:03:59,280 --> 00:04:06,360
+what I can do guys? I can use something
+called data augmentation technique. So
+
+53
+00:04:03,360 --> 00:04:10,080
+there is a uh concept called data
+augmentation. Okay, augmentation
+
+54
+00:04:08,319 --> 00:04:14,640
+technique. So in data augmentation
+technique what we do? we just try to uh
+
+55
+00:04:12,560 --> 00:04:18,959
+increase the data. Okay, by referring
+our original data. So let's say here I'm
+
+56
+00:04:17,199 --> 00:04:23,759
+talking about the textual data, text
+data. Okay, text data. So text data
+
+57
+00:04:22,000 --> 00:04:27,360
+actually how I can increase. So there
+are some actually a technique you can
+
+58
+00:04:25,520 --> 00:04:30,560
+follow. Let's say the first technique
+you can follow called
+
+59
+00:04:30,919 --> 00:04:34,919
+replace with
+
+60
+00:04:35,960 --> 00:04:42,320
+uh nums. Okay. Let's say here you have
+one
+
+61
+00:04:42,919 --> 00:04:51,680
+sentence. I am a
+data
+
+62
+00:04:48,919 --> 00:05:00,479
+scientist. Okay. So this thing you can
+convert like that I am a AI
+
+63
+00:04:57,960 --> 00:05:04,080
+engineer. Okay. So here you can see I
+have changed this particular term. Okay.
+
+64
+00:05:02,320 --> 00:05:08,080
+But at the end meanings are same. Got
+it? So this is called replace with
+
+65
+00:05:05,680 --> 00:05:14,759
+synonyms. then you have something called
+bagram
+
+66
+00:05:10,199 --> 00:05:14,759
+flip. Okay, diagram
+
+67
+00:05:14,800 --> 00:05:17,440
+uh bagram
+
+68
+00:05:18,280 --> 00:05:27,560
+flip. So what we do inside flip so let's
+say here I have
+
+69
+00:05:24,120 --> 00:05:32,360
+uh uh I have a
+sentence I
+
+70
+00:05:30,039 --> 00:05:37,800
+am
+bi. Okay. So here what I can do I can do
+
+71
+00:05:36,479 --> 00:05:41,479
+the flip like
+that.
+
+72
+00:05:39,639 --> 00:05:44,800
+BP
+is my
+
+73
+00:05:45,560 --> 00:05:53,919
+name. Okay. So then meanings are same.
+Okay. Meanings are same but you can see
+
+74
+00:05:51,280 --> 00:05:57,360
+I have flipped some uh diagram. Okay. I
+flipped some words. So this is called
+
+75
+00:05:55,120 --> 00:06:00,160
+bagram flip. Okay. Then you have
+something called back
+
+76
+00:06:00,280 --> 00:06:04,600
+translation. Back translation.
+
+77
+00:06:07,120 --> 00:06:14,400
+In back translation what we do let's say
+I have a English uh English data okay
+
+78
+00:06:12,800 --> 00:06:19,360
+English language data first of all I'll
+try to convert to the any other language
+
+79
+00:06:16,800 --> 00:06:24,400
+let's say French okay then what I will
+do I'll uh take the French data okay
+
+80
+00:06:22,800 --> 00:06:28,000
+then again I'll try to convert to the
+English so here we are doing the back
+
+81
+00:06:26,400 --> 00:06:32,639
+translate okay so if you do the back
+translate you'll see that some of the
+
+82
+00:06:29,840 --> 00:06:36,880
+words will be changing okay so here uh
+you can use this particular approach as
+
+83
+00:06:34,560 --> 00:06:41,199
+well. Then uh you can also add some
+additional
+
+84
+00:06:38,199 --> 00:06:41,199
+noise
+
+85
+00:06:42,039 --> 00:06:52,039
+additional noise to your data. Okay. So
+let's say here I have one sentence
+
+86
+00:06:47,120 --> 00:07:00,319
+called I am a data
+scientist. Okay. I love
+
+87
+00:06:56,280 --> 00:07:05,599
+to work here. Okay. So here you can see
+this particular part I have added as a
+
+88
+00:07:02,160 --> 00:07:10,240
+noise to my data. Okay. Uh I have added
+to the noise to the data. So that's how
+
+89
+00:07:07,440 --> 00:07:15,520
+you can um actually do the augmentation
+and you can increase your data. Okay. I
+
+90
+00:07:13,520 --> 00:07:19,400
+hope it is clear guys. So yes these are
+the actually strategy you can follow
+
+91
+00:07:17,919 --> 00:07:24,160
+whenever you are doing the data
+acquisitions and uh let's see some demo
+
+92
+00:07:22,080 --> 00:07:27,759
+like how we can perform web scrapping
+how we can generate our centric data
+
+93
+00:07:25,520 --> 00:07:31,360
+with the help of LLM. I think then this
+part part would be more clear. So yes
+
+94
+00:07:29,759 --> 00:07:34,720
+guys this is all about I hope you got
+it. Thanks for watching.
+

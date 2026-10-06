@@ -1,0 +1,522 @@
+1
+00:00:00,560 --> 00:00:06,560
+Hi everyone, welcome back. So guys, in
+this video I'll be talking about why uh
+
+2
+00:00:04,640 --> 00:00:12,400
+this LLM ops is different from your
+traditional MLOps. So for this uh what I
+
+3
+00:00:09,280 --> 00:00:18,039
+will do, I'll just try to write down um
+each and everything here. So first of
+
+4
+00:00:14,480 --> 00:00:24,720
+all uh let's discuss about the LLM
+ops.
+
+5
+00:00:20,119 --> 00:00:28,800
+Llm ops. Okay. So see in LLM ops the
+first thing uh we
+
+6
+00:00:29,400 --> 00:00:36,239
+require requires
+uh use
+
+7
+00:00:36,600 --> 00:00:43,360
+amount. Okay. Use amount of training
+
+8
+00:00:44,120 --> 00:00:52,120
+data. Okay. Training data. Uh so here uh
+it can be any kinds of data. It can be
+
+9
+00:00:49,920 --> 00:00:57,399
+text. It can be
+image. Okay. It can be
+
+10
+00:00:55,399 --> 00:01:06,000
+audio like
+that. Then uh we need
+
+11
+00:01:01,640 --> 00:01:06,000
+high okay high uh
+
+12
+00:01:08,439 --> 00:01:16,960
+performance
+GPU and
+
+13
+00:01:13,960 --> 00:01:16,960
+cloud
+
+14
+00:01:18,520 --> 00:01:26,400
+resources. Okay. for the training
+purpose or
+
+15
+00:01:28,520 --> 00:01:36,240
+finetuning fine tuning. All right. Uh
+because what happens whenever we are
+
+16
+00:01:34,479 --> 00:01:40,640
+trying to train this kinds of large
+language model uh this large language
+
+17
+00:01:38,640 --> 00:01:44,320
+model has actually huge amount of let's
+say training parameter. I think you know
+
+18
+00:01:42,400 --> 00:01:48,560
+that it has billions of billions of
+parameter. uh that's why uh to load this
+
+19
+00:01:46,880 --> 00:01:52,720
+model definitely you need higher
+computational system uh you should have
+
+20
+00:01:50,880 --> 00:01:56,479
+good memory you should have good GPU you
+should have good good let's say
+
+21
+00:01:54,479 --> 00:02:02,880
+resources in the system then you'll be
+able to uh train and fine-tune this
+
+22
+00:01:58,479 --> 00:02:06,079
+kinds of model then it requires
+uh it
+
+23
+00:02:06,840 --> 00:02:09,840
+requires
+
+24
+00:02:10,599 --> 00:02:17,120
+scalable
+deployment scalable able deployment why
+
+25
+00:02:15,360 --> 00:02:22,319
+I'm talking about a scalable deployment
+because let's say if I'm talking about
+
+26
+00:02:18,400 --> 00:02:27,200
+chart GPT chart GPT has actually lots of
+user okay it has actually millions of
+
+27
+00:02:24,480 --> 00:02:31,040
+billions user so if they're coming um to
+the charge GPT if they're using at the
+
+28
+00:02:28,959 --> 00:02:35,120
+same time so uh this kinds of
+application should not be go down okay
+
+29
+00:02:33,200 --> 00:02:40,160
+it should not crash that's why it should
+scalable deployment and definitely it
+
+30
+00:02:37,360 --> 00:02:44,560
+should have actually faster responsing u
+let's say time let's say if I'm sending
+
+31
+00:02:42,560 --> 00:02:47,599
+any kinds of prompt it should give me
+quick response okay otherwise people
+
+32
+00:02:45,920 --> 00:02:51,519
+won't be using that particular product
+because nowadays we know that uh like
+
+33
+00:02:49,599 --> 00:02:55,280
+time is more valuable than the money
+okay so if I'm creating any software it
+
+34
+00:02:53,840 --> 00:03:00,080
+should be optimized it should be
+scalable so that people will come here
+
+35
+00:02:57,360 --> 00:03:05,159
+and they can use uh very easily got it
+and uh it should have also
+
+36
+00:03:03,480 --> 00:03:08,159
+continuous
+continuous
+
+37
+00:03:08,360 --> 00:03:14,000
+inference inference why continuous
+informance uh because I think you know
+
+38
+00:03:12,480 --> 00:03:19,200
+that these are like conversational kind
+terms of uh let's say chatbot. So here
+
+39
+00:03:17,280 --> 00:03:24,319
+people will be talking about uh the
+questions nowadays actually uh AI agents
+
+40
+00:03:22,560 --> 00:03:28,080
+is also let's say integrated with that.
+So if you're asking anything it will
+
+41
+00:03:26,080 --> 00:03:30,720
+also search over the real time okay on
+the internet and it will give you the
+
+42
+00:03:29,280 --> 00:03:37,519
+response. So that's why continuous
+inference should be there. Okay. Then uh
+
+43
+00:03:33,840 --> 00:03:42,799
+in the LLM ops uh we uh also have
+something called biases. Okay. bias
+
+44
+00:03:44,519 --> 00:03:51,920
+hall
+then
+
+45
+00:03:48,200 --> 00:03:55,440
+misleading outputs. Okay. So in LM
+actually we have these are the problem.
+
+46
+00:03:53,760 --> 00:04:01,200
+Okay. And to handle these are the
+problem actually uh we use some strategy
+
+47
+00:03:58,720 --> 00:04:06,319
+uh and we just try to utilize the LM ops
+and we usually fix that particular
+
+48
+00:04:03,760 --> 00:04:11,280
+problem. Okay. Now let's talk about the
+MLOps.
+
+49
+00:04:08,959 --> 00:04:11,280
+Okay,
+
+50
+00:04:11,319 --> 00:04:24,280
+MLOps. So, MLOps uh you can see the
+first thing um this MLOps need
+
+51
+00:04:20,079 --> 00:04:32,000
+uh MLOps also need actually uh lots of
+data lots of data but uh see if you have
+
+52
+00:04:29,360 --> 00:04:35,840
+any if you have actually less data that
+time also MLOps will work because inside
+
+53
+00:04:34,000 --> 00:04:39,199
+MLOps what we use we use something
+called machine learning machine learning
+
+54
+00:04:37,600 --> 00:04:43,440
+or deep learning okay these are the
+model and uh in LLMOs we use something a
+
+55
+00:04:42,080 --> 00:04:48,400
+large language model. So that's why for
+large language model we need huge amount
+
+56
+00:04:45,280 --> 00:04:51,840
+of training data. But in MLOps if you
+don't have huge amount of training data
+
+57
+00:04:50,240 --> 00:04:56,479
+it is also fine. Still you'll be able to
+train the model. Okay. And most of the
+
+58
+00:04:53,840 --> 00:04:59,280
+time you will see that uh this work
+weeks actually
+
+59
+00:04:59,560 --> 00:05:10,240
+structured structured tabular
+data tabular kinds of data. Okay. Then
+
+60
+00:05:07,199 --> 00:05:13,919
+uh second thing uh the difference you
+can see uh it
+
+61
+00:05:14,919 --> 00:05:19,919
+requires
+low compute
+
+62
+00:05:20,440 --> 00:05:27,440
+power lower compute power okay than your
+LM ops because here we use something
+
+63
+00:05:25,919 --> 00:05:32,800
+called machine learning model and it's a
+statistical model we also use some deep
+
+64
+00:05:29,919 --> 00:05:37,039
+learning model pretend model okay so uh
+as compared to LLM model you'll see that
+
+65
+00:05:35,440 --> 00:05:41,280
+these are the deep learning model are
+very uh lightweight and very uh it it
+
+66
+00:05:39,520 --> 00:05:44,639
+has actually less parameter that's why
+definitely uh you can use lower
+
+67
+00:05:42,880 --> 00:05:50,639
+computational power to train and fine
+tune these kinds of models here I can
+
+68
+00:05:46,000 --> 00:05:50,639
+mention so you can perform
+
+69
+00:05:51,960 --> 00:05:55,600
+training training and
+
+70
+00:05:55,639 --> 00:06:04,520
+finetuning okay fine tuning you can do
+then third thing uh you can do batch
+
+71
+00:06:02,919 --> 00:06:09,080
+processing
+okay batch processing
+
+72
+00:06:10,720 --> 00:06:17,440
+uh or periodic. Okay,
+periodic
+
+73
+00:06:18,680 --> 00:06:25,759
+inference. So what is batch processing
+and periodic inference? See what happens
+
+74
+00:06:22,960 --> 00:06:29,600
+uh in machine learning. Uh let's say uh
+you have built one house price
+
+75
+00:06:28,000 --> 00:06:32,600
+prediction. Okay, house price
+prediction.
+
+76
+00:06:33,199 --> 00:06:39,520
+Okay. And you have deployed this model
+in the production. So instead of doing
+
+77
+00:06:36,639 --> 00:06:45,039
+the continuous prediction, how you can
+predict? Let's say uh people have given
+
+78
+00:06:42,319 --> 00:06:47,919
+you some test data. Okay. From the uh
+different different house. So what you
+
+79
+00:06:46,479 --> 00:06:52,400
+can do? You can create a batch of that
+data and you can do some periodic
+
+80
+00:06:49,840 --> 00:06:55,840
+prediction. Let's say after uh after one
+day, okay, after one day you can do the
+
+81
+00:06:54,240 --> 00:07:00,639
+prediction. Let's say whole day you have
+collected the data and after evening you
+
+82
+00:06:58,560 --> 00:07:04,560
+have predicted, you have inferenced,
+okay, and you got the results. That's
+
+83
+00:07:02,080 --> 00:07:08,000
+how you can do the periodic inference
+here. Okay. With the help of this batch
+
+84
+00:07:06,080 --> 00:07:11,360
+processing instead of doing the
+continuous inferencing because
+
+85
+00:07:09,520 --> 00:07:15,919
+continuous inf inferencing it's not
+required here. Uh got it. But when
+
+86
+00:07:14,880 --> 00:07:20,720
+talking about actually powered
+application here continuous inferencing
+
+87
+00:07:17,440 --> 00:07:25,880
+is required. Okay. I hope it is clear.
+Then the fourth thing u you'll see uh
+
+88
+00:07:24,160 --> 00:07:32,080
+this uh
+bias we know that bias is also there
+
+89
+00:07:28,800 --> 00:07:35,880
+inside the machine learning. Okay. So uh
+bio handling is
+
+90
+00:07:35,919 --> 00:07:41,759
+uh bio handling actually less complex
+less
+
+91
+00:07:42,680 --> 00:07:46,080
+complex compared
+
+92
+00:07:47,960 --> 00:07:58,000
+to LLMs. Okay. LMS here. So these are
+some actually uh difference I will see
+
+93
+00:07:55,360 --> 00:08:02,160
+between this LLM ops and MLOPs. Okay.
+That means here we are doing the same
+
+94
+00:07:59,440 --> 00:08:08,240
+thing at the end but uh in updated way.
+Okay. So here we are handling large
+
+95
+00:08:04,400 --> 00:08:13,039
+language model that means uh big model.
+Okay. And for this we need huge amount
+
+96
+00:08:11,199 --> 00:08:17,759
+of data higher performance actually
+computational power scalable deployment.
+
+97
+00:08:15,440 --> 00:08:23,080
+Okay. And we also uh use some strategy
+to handle the bias as relation. But in
+
+98
+00:08:20,080 --> 00:08:27,440
+MLOps we use something called uh uh
+actually what I can say let's say not
+
+99
+00:08:25,280 --> 00:08:31,360
+massive model but it is kinds of
+actually statistical model and it's kind
+
+100
+00:08:29,280 --> 00:08:36,240
+of let's say big model uh but not the
+massive model. So here we use uh other
+
+101
+00:08:34,320 --> 00:08:39,760
+technique like we uh if we have a
+actually less amount of data also we can
+
+102
+00:08:38,080 --> 00:08:43,680
+still train the model. Uh it needs
+actually lower computational power. Uh
+
+103
+00:08:41,760 --> 00:08:49,279
+even we can also perform the best
+processing of periodic inference. Okay.
+
+104
+00:08:46,000 --> 00:08:53,600
+And handling this bias it's very less
+comp complex. Okay. Compared to the L
+
+105
+00:08:51,519 --> 00:08:58,080
+lamps. Okay. Now I think this part is
+clear. So yes uh this is all guys uh
+
+106
+00:08:56,000 --> 00:09:01,200
+about this particular topic. Uh thanks
+for watching.
+

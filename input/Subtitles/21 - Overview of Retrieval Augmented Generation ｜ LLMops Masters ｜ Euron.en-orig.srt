@@ -1,0 +1,1249 @@
+1
+00:00:00,080 --> 00:00:06,960
+So guys I think you already know inside
+genative we use something called large
+
+2
+00:00:04,319 --> 00:00:10,160
+language model that means LLMs. So LLMs
+actually have some limitation you can
+
+3
+00:00:08,480 --> 00:00:13,599
+see the first limitation it is having.
+So the first limitation you can see LLM
+
+4
+00:00:12,000 --> 00:00:17,119
+can't answer correctly to the private
+data. Let's say if you are having any
+
+5
+00:00:14,880 --> 00:00:21,279
+kinds of private data so that large
+language model won't be able to give you
+
+6
+00:00:19,039 --> 00:00:24,720
+the answer related that. So if I give
+you one example let's say you are having
+
+7
+00:00:22,560 --> 00:00:28,880
+one personal website. Let's say I have
+one website called code commander. Okay.
+
+8
+00:00:26,640 --> 00:00:32,800
+So code commander is my website. Now if
+you open up your chart GPT and if you
+
+9
+00:00:30,560 --> 00:00:36,559
+ask related code commander your chart
+GPT won't be able to give the answer
+
+10
+00:00:34,800 --> 00:00:41,920
+because chart GPT trained with older
+data that means I think chart GPT
+
+11
+00:00:38,079 --> 00:00:45,440
+trained around 2021 to 2022 data okay
+around uh this year actually they
+
+12
+00:00:43,200 --> 00:00:50,000
+trained this model after that actually I
+created this channel okay so this data
+
+13
+00:00:46,879 --> 00:00:53,199
+is not available inside my chart GPT
+knowledge base that means that time
+
+14
+00:00:51,280 --> 00:00:56,879
+actually this data was not available in
+the internet okay so you can consider
+
+15
+00:00:55,039 --> 00:01:00,559
+it's a private data or you can consider
+any kinds of private data your private
+
+16
+00:00:58,640 --> 00:01:04,159
+uh let's say website data private let's
+say your company data anything so if you
+
+17
+00:01:02,640 --> 00:01:08,000
+ask any question related to the private
+data your model won't be giving you any
+
+18
+00:01:06,080 --> 00:01:11,439
+kinds of response to that right then you
+can see the second limitation LLM can't
+
+19
+00:01:09,760 --> 00:01:15,439
+provide the most current information
+let's say if you're asking any question
+
+20
+00:01:13,760 --> 00:01:19,200
+which is like more current okay more
+current let's say information your model
+
+21
+00:01:17,680 --> 00:01:24,000
+won't be giving you the answer let's say
+if you ask the question related this
+
+22
+00:01:21,119 --> 00:01:27,759
+Olympic okay the current Olympic it
+won't be able to give the answer because
+
+23
+00:01:26,080 --> 00:01:30,720
+it hasn't trained with the kind
+information. Okay. So these are the
+
+24
+00:01:29,439 --> 00:01:34,720
+actually limitation we are having with
+the LLMs. But I want to create a
+
+25
+00:01:32,960 --> 00:01:38,560
+application that application will be
+also able to give the answer related to
+
+26
+00:01:36,479 --> 00:01:42,640
+the private data as well as the current
+information. So how it can be performed?
+
+27
+00:01:40,880 --> 00:01:46,479
+Okay, we can do it with the help of rag
+concept that means retrieval augmented
+
+28
+00:01:44,159 --> 00:01:50,560
+generation. Now let's see how rag works.
+So guys here you can see rag allows to
+
+29
+00:01:48,720 --> 00:01:53,119
+use external sources for the better
+response. That means let's say if you're
+
+30
+00:01:51,680 --> 00:01:57,119
+having any private data that's any
+external documents. So what you can do
+
+31
+00:01:55,360 --> 00:02:01,360
+you can give the documents to the large
+language model. How? For this you just
+
+32
+00:01:59,759 --> 00:02:04,320
+need to use one embedding model. You
+just need to use one embedding model.
+
+33
+00:02:03,040 --> 00:02:07,759
+With the help of this embedding model
+you'll just try to generate the vector
+
+34
+00:02:05,920 --> 00:02:10,720
+embedding of the data. The data actually
+you will be giving. And this vector
+
+35
+00:02:09,440 --> 00:02:13,920
+embedding you will be storing to the
+knowledge base. That means to the vector
+
+36
+00:02:12,080 --> 00:02:16,640
+database. Okay. I think we have already
+learned this thing previously.
+
+37
+00:02:15,200 --> 00:02:19,760
+Previously we have already implemented
+this kinds of application but I think
+
+38
+00:02:18,319 --> 00:02:23,760
+you didn't know. Okay. This is a rag
+application. I just given some highle
+
+39
+00:02:21,920 --> 00:02:26,720
+overview like uh how we can let's say
+use our external documents. I think we
+
+40
+00:02:25,360 --> 00:02:30,760
+already created some of the project
+right. So yes this is called actually
+
+41
+00:02:28,800 --> 00:02:34,640
+rag that means we are using our external
+documents we are creating our knowledge
+
+42
+00:02:32,879 --> 00:02:38,480
+base and to the knowledge base actually
+we are integrating our large language
+
+43
+00:02:36,480 --> 00:02:41,920
+model. Okay. Now whenever user is asking
+any kinds of question okay whenever user
+
+44
+00:02:40,560 --> 00:02:45,200
+is asking any kind of question to the
+private data what it will do? It will go
+
+45
+00:02:43,760 --> 00:02:48,640
+to the knowledge base. Okay. It will go
+to the knowledge base. Knowledge base
+
+46
+00:02:46,800 --> 00:02:51,760
+will give the response. Okay. the
+question you are asking the relevant
+
+47
+00:02:49,920 --> 00:02:54,959
+question you are asking and your LLM
+will process that answer as well as the
+
+48
+00:02:53,440 --> 00:02:59,120
+query and it will give you the correct
+response okay so this is the complete
+
+49
+00:02:57,200 --> 00:03:02,080
+architecture of rag that means retable
+augmented generation okay so with the
+
+50
+00:03:00,720 --> 00:03:06,480
+help of this concept actually we can
+easily use our private data sources or
+
+51
+00:03:04,319 --> 00:03:10,959
+let's say external documents to get the
+information okay I hope it is clear that
+
+52
+00:03:08,959 --> 00:03:15,040
+means if you're using rag concept it
+would be more accurate answer on the
+
+53
+00:03:12,720 --> 00:03:18,400
+private data stay updated with the new
+information let's say if you're having
+
+54
+00:03:16,239 --> 00:03:22,239
+new new information new data What you
+can do again you can give that data to
+
+55
+00:03:20,640 --> 00:03:25,360
+the knowledge base that means you can
+use embedding model you can convert uh
+
+56
+00:03:24,400 --> 00:03:28,080
+those data to the embedding
+representation you can store to the
+
+57
+00:03:26,800 --> 00:03:31,120
+knowledge base and you can connect your
+large language model there and if you're
+
+58
+00:03:29,680 --> 00:03:34,319
+asking any question related that
+information it will give you the answer
+
+59
+00:03:32,879 --> 00:03:38,480
+okay your model will give you the answer
+so this is the concept of retrieable
+
+60
+00:03:36,080 --> 00:03:43,120
+augmented generation or rag so guys now
+let's try to see how rag works so as I
+
+61
+00:03:41,040 --> 00:03:46,000
+already told you whenever you are using
+rag that means you are connecting your
+
+62
+00:03:44,480 --> 00:03:48,959
+external data that means your private
+data let's say you You have connected
+
+63
+00:03:47,760 --> 00:03:52,000
+your private data. Let's say you have
+connected your website. Okay, you have
+
+64
+00:03:50,640 --> 00:03:55,519
+connected your website. That means from
+the website itself, it will extract all
+
+65
+00:03:54,000 --> 00:03:59,599
+the information. Let's say you are
+running one e-commerce site. So user has
+
+66
+00:03:58,080 --> 00:04:03,760
+asked one question what are your
+business hours. Okay. Now how it will
+
+67
+00:04:01,920 --> 00:04:06,640
+give the response uh by using your
+information. So first of all, what it
+
+68
+00:04:05,439 --> 00:04:10,080
+will do? It will try to use something
+called retriever. So with the help of
+
+69
+00:04:08,239 --> 00:04:13,680
+retriever, it will try to fetch all the
+information from your website. Okay. All
+
+70
+00:04:12,080 --> 00:04:17,199
+the information it will fetch from the
+website itself. Then it will perform
+
+71
+00:04:15,599 --> 00:04:20,479
+something called augmentation. So what
+augmentation will do it will just try to
+
+72
+00:04:18,880 --> 00:04:23,919
+augment the query that means whatever
+question user has asked okay and the
+
+73
+00:04:22,639 --> 00:04:27,600
+data actually you are getting after
+retriever so it would be actually
+
+74
+00:04:25,360 --> 00:04:31,600
+augmented that means it will add them
+together okay let's say the query as
+
+75
+00:04:29,520 --> 00:04:35,040
+well as the data then it will pass to
+the generation that means to the large
+
+76
+00:04:33,040 --> 00:04:38,720
+language model large language model will
+try to understand the entire data as
+
+77
+00:04:37,040 --> 00:04:41,680
+well as the query user has asked okay
+and based on that actually it will
+
+78
+00:04:40,000 --> 00:04:47,360
+provide the answer so the answer is
+Monday to Friday from 9:30 a.m. to 6:30
+
+79
+00:04:45,199 --> 00:04:50,720
+p.m. Okay. So that's actually rag works
+that means it will use actually three
+
+80
+00:04:49,199 --> 00:04:53,840
+component. One is like retrieval,
+another is like augmentation and is like
+
+81
+00:04:52,560 --> 00:04:57,759
+generation. Okay. That is why it is
+called retrieable augmented generation.
+
+82
+00:04:55,840 --> 00:05:02,080
+Okay. I hope it is clear now. So guys
+this was the introduction of the rag and
+
+83
+00:05:00,240 --> 00:05:07,039
+I think you got it how rag works and all
+and why rag is important. Now let's try
+
+84
+00:05:04,400 --> 00:05:11,440
+to see one practical example of rag. So
+guys here you can see I already prepared
+
+85
+00:05:08,639 --> 00:05:15,360
+one code example uh of the rag demo. So
+first of all we'll try to understand
+
+86
+00:05:12,800 --> 00:05:19,120
+this uh Jupyter notebook file. Then I
+will also show you how we can create a
+
+87
+00:05:17,199 --> 00:05:22,560
+user application that means app let's
+say streamlit app how we can create it.
+
+88
+00:05:20,880 --> 00:05:25,280
+Okay. So for this what you have to do
+guys first of all you have to install
+
+89
+00:05:23,759 --> 00:05:28,560
+these are the requirements and this code
+would be shared guys in the resources
+
+90
+00:05:26,560 --> 00:05:31,759
+section from there you can download and
+I already told you how to create a
+
+91
+00:05:30,160 --> 00:05:34,840
+virtual environment. So code to create
+the virtual environment you have to
+
+92
+00:05:32,880 --> 00:05:39,120
+execute this command. So
+create type n you have to give the name.
+
+93
+00:05:37,600 --> 00:05:43,520
+Let's say here I have given open AI
+demo. You can give any kinds of name.
+
+94
+00:05:40,720 --> 00:05:48,400
+Let's say I will give test then python
+is equal to 3.10. Okay. 3.10 then hyphen
+
+95
+00:05:46,960 --> 00:05:51,919
+y. So this is the command you have to
+execute and make sure you are using
+
+96
+00:05:49,600 --> 00:05:54,560
+python 3.10. Okay. So for me I already
+created. I'm not going to create again.
+
+97
+00:05:53,280 --> 00:05:58,160
+Then after that you have to activate it.
+That means con activate your environment
+
+98
+00:05:56,160 --> 00:06:04,080
+name. Okay. Then you have to install
+this requirements. Just write pep
+
+99
+00:05:59,800 --> 00:06:07,440
+install. Okay. R requirement.xt. Fine.
+Now if I see press enter it will install
+
+100
+00:06:06,080 --> 00:06:11,039
+all the requirements I'm having in the
+requirements file. You can see inside
+
+101
+00:06:09,440 --> 00:06:14,960
+recommends file I'm installing langen
+langen community lang openi python.mb
+
+102
+00:06:13,440 --> 00:06:18,319
+stream lead. Okay. So these are the
+actually dependency package you have to
+
+103
+00:06:16,319 --> 00:06:21,199
+install one by one. So for me I already
+installed each and everything you can
+
+104
+00:06:19,680 --> 00:06:25,039
+see. Then after that just open this
+notebook rag demo notebook and try to
+
+105
+00:06:23,440 --> 00:06:28,639
+select the environment. So let's say I
+have created this environment open ai
+
+106
+00:06:26,560 --> 00:06:31,759
+demo. I'll select it. Now see now if I
+execute the first line see it is working
+
+107
+00:06:30,160 --> 00:06:36,479
+fine. There is no error. Okay that means
+it is working fine. So guys in this
+
+108
+00:06:33,680 --> 00:06:40,880
+experiment I'm going to use one website.
+Okay, that means uh as a private data as
+
+109
+00:06:39,280 --> 00:06:44,080
+a let's say external data we'll be using
+website. So from the website itself
+
+110
+00:06:42,720 --> 00:06:48,080
+we'll be collecting that data on top of
+that actually we'll be implementing this
+
+111
+00:06:46,240 --> 00:06:53,680
+rag application. So you can see this is
+the website URL. Now let me open this
+
+112
+00:06:50,840 --> 00:06:56,560
+URL. So this is the URL of the website.
+So this is the entire website guys you
+
+113
+00:06:55,360 --> 00:07:00,560
+can see. So they have given different
+different information. So now I just
+
+114
+00:06:58,479 --> 00:07:06,160
+collected some of the more page. Let me
+show you. So this is another page. This
+
+115
+00:07:02,240 --> 00:07:10,400
+is the index page and this is the
+contact page. Okay. Now let me open
+
+116
+00:07:08,120 --> 00:07:15,840
+them. See this is the index page. This
+is the contact page. So you can see guys
+
+117
+00:07:12,960 --> 00:07:19,280
+this is the index one and this is the
+contact one. Okay. So that's how
+
+118
+00:07:17,680 --> 00:07:23,280
+actually you can use any kinds of
+website. I'm using this website for you.
+
+119
+00:07:21,280 --> 00:07:26,240
+You can use your let's say uh personal
+website. You can use your let's say
+
+120
+00:07:24,639 --> 00:07:29,199
+private website, your official website.
+Anything you can use even I will also
+
+121
+00:07:27,919 --> 00:07:32,240
+show you how we can use any other
+format. Let's say how we can use PDF
+
+122
+00:07:31,120 --> 00:07:36,160
+documents. Okay. These are the things
+I'll also tell you. So this is the
+
+123
+00:07:33,759 --> 00:07:39,759
+website data actually I'll be using. Now
+to load this website I'll be using
+
+124
+00:07:37,759 --> 00:07:43,199
+something called unstructured URL loader
+and this is available inside langen.
+
+125
+00:07:41,440 --> 00:07:47,759
+Okay you can see I'm importing this un
+unstructured URL loader. Now this is the
+
+126
+00:07:45,840 --> 00:07:51,599
+URL list. So if you're having multiple
+URL you can create a list and this list
+
+127
+00:07:49,520 --> 00:07:54,800
+you can pass to this uh function and
+this function will give you one loader
+
+128
+00:07:52,960 --> 00:07:58,080
+object. Now you can call load
+loader.load and it will extract the
+
+129
+00:07:56,560 --> 00:08:01,759
+data. Let me show you. So if I execute
+this
+
+130
+00:07:59,240 --> 00:08:05,440
+line now see it is extracting all the
+information from the website itself. So
+
+131
+00:08:03,919 --> 00:08:08,960
+extraction is done. Now if I show you
+the data now you can see it has
+
+132
+00:08:06,800 --> 00:08:12,560
+extracted all the information. Now why
+three documents is coming? Because here
+
+133
+00:08:10,800 --> 00:08:16,800
+I was using three URL. Okay. Three
+different uh actually page. Okay that's
+
+134
+00:08:14,960 --> 00:08:19,280
+why it is coming three documents. Okay.
+Now what I have to do guys I think
+
+135
+00:08:18,080 --> 00:08:22,960
+remember we have to perform something
+called chunking operation. So for this
+
+136
+00:08:21,199 --> 00:08:25,840
+we can use recursive character text
+splitter. Either we can use character
+
+137
+00:08:24,400 --> 00:08:30,160
+text splitter. Either you can also use
+token text splitter. Okay. So, here I'm
+
+138
+00:08:28,160 --> 00:08:34,000
+using recursive character text splitter.
+So, here chunk size is equal to I have
+
+139
+00:08:31,759 --> 00:08:37,440
+given 1,000. That means 1,000 word would
+be considered as my one chunks. So, let
+
+140
+00:08:35,919 --> 00:08:42,560
+me create the chunks and let me show you
+the uh chunk size. Okay. You can see 11
+
+141
+00:08:40,560 --> 00:08:46,080
+chunks it has created. Okay. Now, if you
+want to see the first one. So, you can
+
+142
+00:08:44,320 --> 00:08:50,560
+see this is the first chunks and this is
+the URL it is referring. Now I think you
+
+143
+00:08:48,240 --> 00:08:54,080
+remember after extracting your data that
+means documents you have to use one
+
+144
+00:08:51,920 --> 00:08:57,279
+embedding model and you have to generate
+vector embedding and that vector
+
+145
+00:08:55,360 --> 00:09:00,800
+embedding will be stored into the vector
+database. Okay, any kinds of vector
+
+146
+00:08:58,640 --> 00:09:04,720
+database you can use. So I have already
+showed you like multiple vector database
+
+147
+00:09:02,880 --> 00:09:07,839
+like we can use chromob, pine cone,
+web8. Okay, files you can use any of the
+
+148
+00:09:06,560 --> 00:09:11,200
+vector database. So here I'm going to
+use something called chromad vector
+
+149
+00:09:09,200 --> 00:09:14,480
+database. Okay, chromad is here. So
+chromad is a local vector database.
+
+150
+00:09:12,880 --> 00:09:18,240
+Fine. So guys you can see I'm importing
+chroma from the langen itself because
+
+151
+00:09:16,240 --> 00:09:22,720
+inside lang this chrom is available.
+Then I'm importing one embedding model.
+
+152
+00:09:20,080 --> 00:09:25,200
+So here I'm using openi embedding model.
+Okay, open a embedding model. You can
+
+153
+00:09:23,920 --> 00:09:28,800
+also use any open source embedding
+model. I'll also tell you okay how we
+
+154
+00:09:26,480 --> 00:09:31,279
+can do it. Then I'm importing open AI
+that means I'm going to use open AI
+
+155
+00:09:29,920 --> 00:09:35,200
+large language model. So let me import
+all of the package. And now if I want to
+
+156
+00:09:33,760 --> 00:09:38,800
+use open AI what I have to do I have to
+set my environment. Okay environment
+
+157
+00:09:36,880 --> 00:09:42,640
+variable. So open API key you have to
+pass your API key. So just try to create
+
+158
+00:09:40,480 --> 00:09:46,080
+one API and try to pass here. Then let's
+load this API key with the help of load
+
+159
+00:09:44,080 --> 00:09:49,360
+ENB package. Then after that I'm going
+to initialize my chroma DB vector
+
+160
+00:09:47,680 --> 00:09:52,959
+database. Okay. So you can see I'm going
+to pass my documents here. The documents
+
+161
+00:09:51,120 --> 00:09:56,160
+I'm getting even I'm also passing my
+embedding model. So it will give me the
+
+162
+00:09:54,640 --> 00:09:58,720
+vector store. enter vector that means
+this is going to be my knowledge base.
+
+163
+00:09:57,360 --> 00:10:02,240
+Okay, see this is my knowledge base
+right now. Now here you can perform
+
+164
+00:10:01,040 --> 00:10:04,720
+something called semantic search
+operation. Okay, similarity search
+
+165
+00:10:03,600 --> 00:10:08,880
+operation. So let me show you one
+example. So vector store as retriever I
+
+166
+00:10:07,680 --> 00:10:12,880
+want to perform similarity search
+operation search keywords that means uh
+
+167
+00:10:11,279 --> 00:10:16,240
+how many let's say result it will
+return. So here I've given three that
+
+168
+00:10:14,640 --> 00:10:19,440
+means after searching it will give me
+three relevant answer. Okay, let me show
+
+169
+00:10:17,760 --> 00:10:22,800
+you. So let me create the retriever
+object. Now here I'm asking one question
+
+170
+00:10:21,200 --> 00:10:26,079
+what kinds of service they provide.
+Okay, this website let's say I'm asking
+
+171
+00:10:24,399 --> 00:10:30,560
+one question. Now if I perform the
+invoke operation, see it will give you
+
+172
+00:10:28,000 --> 00:10:35,360
+three results. Okay, three results
+actually it will give
+
+173
+00:10:32,040 --> 00:10:39,519
+you. So let me show you. See it has
+given you three relevant information and
+
+174
+00:10:38,079 --> 00:10:43,519
+from where it is referring it has also
+given the URL and you can see the three
+
+175
+00:10:41,360 --> 00:10:47,200
+relevant information. But what I need I
+need the actual response. Okay this
+
+176
+00:10:45,200 --> 00:10:50,240
+question I have asked what what kinds of
+service they provide. I need the actual
+
+177
+00:10:48,959 --> 00:10:52,880
+response. I don't need this kinds of
+response. Okay, for this what I have to
+
+178
+00:10:51,519 --> 00:10:56,240
+do, I have to connect my large language
+model. I think remember. So here I have
+
+179
+00:10:54,880 --> 00:10:59,760
+to connect my large language model.
+Okay, then user will ask the query. So
+
+180
+00:10:58,160 --> 00:11:03,040
+it will process the query as well as the
+relevant let's say answer you will be
+
+181
+00:11:01,200 --> 00:11:06,000
+getting from the vector database. Then
+your will give the actual response.
+
+182
+00:11:04,560 --> 00:11:09,519
+Okay. So now let's try to see how we can
+perform it. Now if you want to see the
+
+183
+00:11:07,600 --> 00:11:12,079
+page content, okay, the let's say uh
+result you are giving getting if you
+
+184
+00:11:10,959 --> 00:11:16,240
+want to see the content. So what you can
+do? You can call this one page content.
+
+185
+00:11:13,920 --> 00:11:19,360
+Okay, I want to see the first let's say
+answer page content. So this is the
+
+186
+00:11:17,440 --> 00:11:22,160
+entire page content you can see. Fine.
+Now here I'm initializing my large
+
+187
+00:11:20,720 --> 00:11:26,079
+language model. ID you know what is
+temperature parameter, what is max token
+
+188
+00:11:23,800 --> 00:11:29,440
+parameter. Now here you can see I have
+created one chain. Okay, create retable
+
+189
+00:11:28,160 --> 00:11:32,320
+chain. So this will give me the chain
+object. That means I can connect my
+
+190
+00:11:31,040 --> 00:11:35,600
+large language model as well as the
+vector database. Okay, then I'm also
+
+191
+00:11:34,000 --> 00:11:39,120
+going to pass one prompt. Okay, system
+prompt and for this I'm going to use
+
+192
+00:11:37,680 --> 00:11:41,680
+prompt template. Okay, I think remember
+we we can also create the prompt
+
+193
+00:11:40,320 --> 00:11:44,079
+template. So this is the prompt I have
+created guys. You can see you are an
+
+194
+00:11:42,880 --> 00:11:48,399
+assistant for the question answering
+task. Uh use the following piece of uh
+
+195
+00:11:46,399 --> 00:11:52,880
+uh retrieved concepts to answer the
+question. And if you don't know uh the
+
+196
+00:11:50,160 --> 00:11:57,120
+answer say uh that you don't know use
+three sentence maximum to keep the
+
+197
+00:11:54,880 --> 00:12:00,160
+answer concise. You can also change the
+prompt. It's up to you. But I will use
+
+198
+00:11:58,880 --> 00:12:02,880
+this prompt. Okay. It will take the
+context and it will give you the answer.
+
+199
+00:12:01,760 --> 00:12:05,360
+Now for this I'm going to create a
+prompt template first of all. So here I
+
+200
+00:12:04,240 --> 00:12:08,959
+have created the prompt template. This
+is going to be my system prompt and user
+
+201
+00:12:07,440 --> 00:12:11,839
+will give the input. Okay. Whatever
+input actually user will ask. Let's say
+
+202
+00:12:10,480 --> 00:12:14,720
+this is the input user will ask. Okay.
+This input actually it will come here.
+
+203
+00:12:13,519 --> 00:12:18,720
+Okay. And it will create the complete
+prompt that time. Now let me initialize
+
+204
+00:12:16,639 --> 00:12:22,800
+the prompt. Now here I'm going to create
+the chain. So I'm using create stop
+
+205
+00:12:20,880 --> 00:12:25,200
+document chain. So this is the function
+actually I'm using because I already
+
+206
+00:12:24,000 --> 00:12:28,320
+told you inside lang chain actually we
+are having different different chains.
+
+207
+00:12:26,240 --> 00:12:31,200
+Right. Now here I'm passing my llm as
+well as the prompt. Then again what you
+
+208
+00:12:29,920 --> 00:12:34,480
+have to do you have to call another
+function create retable chain. Okay. So
+
+209
+00:12:32,959 --> 00:12:37,279
+inside that you have to give your vector
+database. Okay. The vector database you
+
+210
+00:12:36,000 --> 00:12:40,880
+have created that means your knowledge
+base and you have to give the this
+
+211
+00:12:38,959 --> 00:12:44,000
+object your question answer chain. Okay.
+This object actually you have to give.
+
+212
+00:12:42,320 --> 00:12:47,600
+Now it will give you the entire rag
+chain. Now here you can ask any kinds of
+
+213
+00:12:46,079 --> 00:12:51,279
+questions. So here I'm calling this rag
+genen invoke and this is the input what
+
+214
+00:12:49,519 --> 00:12:54,360
+kinds of service they provide and I'm
+only extracting the answer. Now see if I
+
+215
+00:12:52,880 --> 00:12:58,639
+show you the answer right
+now. See this should be the concise
+
+216
+00:12:57,200 --> 00:13:03,600
+answer that means the accurate answer
+actually it will try to provide. Now see
+
+217
+00:13:00,560 --> 00:13:08,880
+Victoria on move provides a efficient
+and careful relocation services for the
+
+218
+00:13:06,000 --> 00:13:12,160
+apartment village householders. Okay see
+blah blah blah that means it is giving
+
+219
+00:13:10,560 --> 00:13:16,240
+me the correct information right now.
+Okay. So this is called actually rag
+
+220
+00:13:14,160 --> 00:13:20,399
+system. Now it is referring my private
+data my external data on top of that
+
+221
+00:13:18,079 --> 00:13:24,160
+actually it is giving me the answer and
+if you ask this question to the charg
+
+222
+00:13:22,720 --> 00:13:27,600
+chart GPT won't be able to give the
+answer because charg hasn't trended with
+
+223
+00:13:25,760 --> 00:13:31,920
+this data okay I think you are getting
+my point now let's try to see how we can
+
+224
+00:13:29,839 --> 00:13:35,120
+create a user app okay so what I've done
+I've created another file called app.py
+
+225
+00:13:33,360 --> 00:13:38,560
+by and whatever code I have written okay
+cell by cell I just copy pasted and I
+
+226
+00:13:36,880 --> 00:13:41,920
+just created like that in this
+particular dot file you can see I've
+
+227
+00:13:39,920 --> 00:13:46,959
+imported all the library I'm loading my
+let's say secret uh keys that means open
+
+228
+00:13:44,320 --> 00:13:50,880
+API keys then I'm giving the URL I'm
+extracting the data I'm creating that
+
+229
+00:13:48,720 --> 00:13:54,959
+that means chunks okay then I'm creating
+the vector store I'm initializing my
+
+230
+00:13:52,800 --> 00:13:58,720
+last language model then I'm using
+streaml you can see str then I'm
+
+231
+00:13:56,880 --> 00:14:02,000
+initializing my prompt so you can see
+this is the prompt and now if user is
+
+232
+00:14:00,480 --> 00:14:04,399
+asking any query this query actually I'm
+passing here and it is giving give me
+
+233
+00:14:03,199 --> 00:14:07,440
+the response that response actually I'm
+showing on the streamlit application.
+
+234
+00:14:05,760 --> 00:14:13,079
+Okay. Now let me execute and let me show
+you how this app will look like. So for
+
+235
+00:14:09,440 --> 00:14:18,800
+this you can execute one command called
+streamlit run app.py. Okay. Now see if I
+
+236
+00:14:17,040 --> 00:14:22,320
+execute the command. So it will open up
+my
+
+237
+00:14:19,959 --> 00:14:26,440
+application. Now see this is the title.
+I think you saw that st.title we have
+
+238
+00:14:24,639 --> 00:14:31,680
+written uh
+here. Um see black demo and this title
+
+239
+00:14:29,920 --> 00:14:35,120
+will show in the search bar. You can see
+this is the search bar because here I'm
+
+240
+00:14:33,040 --> 00:14:38,000
+taking chat input. Now, so you can see
+this is the chat mode. Here it will show
+
+241
+00:14:36,639 --> 00:14:43,680
+the message. Now you can change the
+message as per your requirement. Now let
+
+242
+00:14:39,839 --> 00:14:43,680
+me ask one query. So I'll ask the same
+
+243
+00:14:44,360 --> 00:14:53,920
+query. So I'll copy this
+query. And here I can ask you can go to
+
+244
+00:14:51,600 --> 00:14:57,519
+the website and you can ask any kinds of
+query. It's up to you. So guys as you
+
+245
+00:14:56,240 --> 00:15:00,880
+can see it has given me the response.
+Victoria on provides range of services
+
+246
+00:14:59,360 --> 00:15:04,800
+including apartment moving, villa
+moving, okay and so on that means it is
+
+247
+00:15:03,120 --> 00:15:08,000
+working fine right now. You can ask any
+kinds of question guys. Any kinds of
+
+248
+00:15:06,240 --> 00:15:11,279
+question you can ask uh whatever
+actually information you are having in
+
+249
+00:15:09,279 --> 00:15:14,639
+this website. Fine. So yes guys this is
+the rag demo and that's how we can
+
+250
+00:15:13,120 --> 00:15:17,920
+create a rag. So thanks for watching
+guys and I will see you next
+

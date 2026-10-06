@@ -1,0 +1,1473 @@
+1
+00:00:01,360 --> 00:00:07,759
+Hi everyone, in this video I'll be
+discussing about the transformer
+
+2
+00:00:05,480 --> 00:00:12,480
+architecture. So I think you know that
+uh transformer is the core architecture
+
+3
+00:00:10,160 --> 00:00:16,160
+behind all the large language model. So
+if you want to understand the large
+
+4
+00:00:13,840 --> 00:00:21,119
+language model how it works actually how
+it takes the uh entire input from the
+
+5
+00:00:18,960 --> 00:00:25,080
+user how it let's say remember the
+previous context. So first of all you
+
+6
+00:00:23,359 --> 00:00:29,039
+have to understand this particular
+architecture because in this
+
+7
+00:00:26,800 --> 00:00:33,440
+architecture there are some very uh
+amazing concept actually um has been
+
+8
+00:00:31,199 --> 00:00:38,160
+used uh so with the with respect to that
+particular concept this architecture uh
+
+9
+00:00:36,399 --> 00:00:42,879
+can work with actually very complex
+kinds of data okay and it will give you
+
+10
+00:00:40,399 --> 00:00:46,879
+like good performance. So uh if you
+search over Google the transformer
+
+11
+00:00:45,200 --> 00:00:50,879
+architecture so you'll get this
+particular paper link called attention
+
+12
+00:00:48,879 --> 00:00:54,640
+is all you need. So this is the official
+paper from the Google site. So Google
+
+13
+00:00:52,960 --> 00:00:58,399
+has published this particular
+architecture. So Google has published
+
+14
+00:00:56,480 --> 00:01:01,840
+this particular paper and you can see
+the author name. Okay. So these are the
+
+15
+00:01:00,320 --> 00:01:05,680
+author actually they're from Google
+brain uh brain team actually they
+
+16
+00:01:03,920 --> 00:01:08,880
+developed this particular architecture.
+So if you have time you can go through
+
+17
+00:01:07,119 --> 00:01:12,320
+the entire paper guys. You can see this
+is the paper introduction background.
+
+18
+00:01:10,400 --> 00:01:16,400
+Okay. And this is the architecture of
+the transformer. Now at the very first
+
+19
+00:01:14,960 --> 00:01:20,640
+time if you're seeing this particular
+architecture I know that it would be a
+
+20
+00:01:17,840 --> 00:01:26,159
+little bit um hard to understand okay
+whatever let's say uh things they have
+
+21
+00:01:23,600 --> 00:01:29,200
+mentioned here so I'll try to break down
+the architecture then I'll try to
+
+22
+00:01:27,520 --> 00:01:33,040
+discuss I think then after that this
+part will be more clear okay so guys uh
+
+23
+00:01:31,520 --> 00:01:38,240
+what I'm going to do I'm going to break
+this architecture okay um and I will try
+
+24
+00:01:36,000 --> 00:01:43,360
+to discuss each and everything for this
+uh I'm going to refer one amazing blog
+
+25
+00:01:40,079 --> 00:01:47,520
+from JL so if you search like JL uh
+actually transformer architecture. So
+
+26
+00:01:45,600 --> 00:01:51,840
+you'll get this particular blog. Okay.
+The first website this is the blog. So
+
+27
+00:01:50,159 --> 00:01:56,640
+uh he has actually created this
+particular blog in an amazing way. He
+
+28
+00:01:53,920 --> 00:02:00,320
+has used actually lots of visualization
+to explain the transformer architecture.
+
+29
+00:01:58,719 --> 00:02:04,880
+So the entire video I want to dedicate
+to Jammer because u because of him
+
+30
+00:02:02,560 --> 00:02:11,280
+actually I was also able to understand
+uh this particular transformer mechanism
+
+31
+00:02:07,280 --> 00:02:16,400
+plotted. So guys you can see uh uh this
+is the blog. So first of all uh he has
+
+32
+00:02:13,840 --> 00:02:20,080
+shown like the highle overlook of the
+transformer. Let's say initially you can
+
+33
+00:02:18,319 --> 00:02:23,599
+consider transformer is the black box.
+Okay this is the transformer. So here
+
+34
+00:02:21,920 --> 00:02:27,360
+let's see you are giving one input and
+you are getting a output. So the example
+
+35
+00:02:25,520 --> 00:02:31,440
+he has shown with respect to the
+language translation. So he's passing
+
+36
+00:02:29,680 --> 00:02:37,519
+actually French language and he's
+getting a uh English uh output. Okay as
+
+37
+00:02:34,239 --> 00:02:42,080
+an uh uh so here he's passing actually
+French uh input and he's getting uh
+
+38
+00:02:40,160 --> 00:02:45,599
+English output. Got it? So initially
+let's say this is the transformer. So if
+
+39
+00:02:43,599 --> 00:02:52,160
+you give an input so it will return you
+some kinds of output. Now if I show you
+
+40
+00:02:48,560 --> 00:02:56,480
+inside the transformer what we have okay
+inside the transformer what we have you
+
+41
+00:02:54,239 --> 00:03:00,720
+can see inside the transformer we have
+two kinds of layer. One is the encoder
+
+42
+00:02:58,720 --> 00:03:04,319
+layer and other is the decoder layer. So
+have those who have already studied
+
+43
+00:03:02,080 --> 00:03:10,879
+about like basics of NLP I think you
+know that inside NLP inside RNN actually
+
+44
+00:03:08,080 --> 00:03:14,720
+we have some networks like LSTM GRU okay
+encoder decoder so these are the
+
+45
+00:03:12,480 --> 00:03:17,760
+architecture where available so this is
+the same encoder and decoder
+
+46
+00:03:16,000 --> 00:03:21,920
+architecture
+uh now uh what we'll do we'll just try
+
+47
+00:03:19,440 --> 00:03:26,239
+to see what we have inside encoder and
+what we have inside decoder so guys you
+
+48
+00:03:24,319 --> 00:03:30,959
+can see we usually pass the input to the
+encoder layer and decoder layer gives us
+
+49
+00:03:28,720 --> 00:03:35,200
+the output so Here we are passing the
+friends input to the encoder layer and
+
+50
+00:03:33,120 --> 00:03:39,120
+it is going to the decoder layer. Okay,
+after doing some pre-processing and
+
+51
+00:03:36,560 --> 00:03:42,799
+decoder layer is uh translating this
+particular friends to English and it is
+
+52
+00:03:41,040 --> 00:03:46,560
+giving you the output. Okay, that means
+inside encoder and decoder some
+
+53
+00:03:44,480 --> 00:03:49,200
+mechanisms are happening. We'll try to
+see what are the mechanisms are
+
+54
+00:03:47,840 --> 00:03:54,480
+happening. Okay, everything we'll try to
+discuss. Now uh see guys uh I will uh
+
+55
+00:03:52,080 --> 00:03:58,799
+suggest you after this particular video
+just uh go through this particular blog
+
+56
+00:03:56,799 --> 00:04:02,319
+and just try to read these are the let's
+say text. Okay, whatever he has written,
+
+57
+00:04:00,799 --> 00:04:05,680
+see whatever things I'm going to explain
+through the entire video. So the same
+
+58
+00:04:04,239 --> 00:04:10,480
+thing you will be getting, okay, with
+respect to the text. Got it? So first of
+
+59
+00:04:08,080 --> 00:04:14,640
+all, try to watch this particular video,
+then go through this particular blog and
+
+60
+00:04:12,959 --> 00:04:18,079
+try to read everything whatever he has
+written. Then your understanding would
+
+61
+00:04:16,000 --> 00:04:23,280
+be more clear. Got it? Now you can see
+guys in the encoder layer. Okay, in the
+
+62
+00:04:20,079 --> 00:04:26,960
+encoder layer we have, okay, we have
+eight encoder layer. We have eight
+
+63
+00:04:25,680 --> 00:04:32,320
+encoder layer. It's not like that
+they're only using one encoder layer.
+
+64
+00:04:28,400 --> 00:04:39,280
+No, we they are using okay eight encoder
+layer. You can see 1 2 3 4 5 6 1 2 3 4 5
+
+65
+00:04:37,120 --> 00:04:43,440
+6 sorry six encoder layer. Okay, not
+eight. Uh this was my mistake. Six
+
+66
+00:04:41,040 --> 00:04:50,720
+encoder layer actually they're using in
+one encoder. Okay, layer. Now inside
+
+67
+00:04:46,479 --> 00:04:54,400
+decoder again you have 1 2 3 4 5 6
+decoder layer. Got it? That means
+
+68
+00:04:52,720 --> 00:04:58,320
+whatever input you are passing it will
+go through six encoder layer. Then some
+
+69
+00:04:56,960 --> 00:05:00,800
+uh pre-processing would be happening.
+Some processing would be happening. Then
+
+70
+00:04:59,440 --> 00:05:06,320
+it will return the output to the
+decoder. Then again the output will go
+
+71
+00:05:03,360 --> 00:05:13,440
+through the six decoder layer and you'll
+be getting the output. Okay, I hope it
+
+72
+00:05:10,560 --> 00:05:17,600
+is clear. Now you can see guys uh in the
+encoder layer we have two kinds of
+
+73
+00:05:15,600 --> 00:05:20,720
+layer. One is the self attention and the
+feed forward network. Okay, I'll be
+
+74
+00:05:19,440 --> 00:05:24,080
+talking about the self attention. What
+is self attention exactly? And I think
+
+75
+00:05:22,160 --> 00:05:27,600
+you already know what is feed forward
+forward neural network. Okay, fit
+
+76
+00:05:26,160 --> 00:05:32,400
+forward neural network is nothing but
+it's a artificial neural network dense
+
+77
+00:05:29,520 --> 00:05:36,160
+layer. Okay, uh uh I think you know that
+all the architecture has this particular
+
+78
+00:05:33,919 --> 00:05:41,360
+feed neural network. Okay, at the last
+layer. So that's why they're also using
+
+79
+00:05:37,680 --> 00:05:44,960
+that particular network here. Now uh you
+can see this is the overview. So in the
+
+80
+00:05:43,360 --> 00:05:48,880
+encoder layer we have self attention and
+feed forward and in the decoder we have
+
+81
+00:05:46,880 --> 00:05:52,759
+self attention encoder decoder attention
+and feed forward. Okay. Now what is
+
+82
+00:05:51,039 --> 00:05:57,840
+encoder and decoder attentions? That
+means uh after explaining this
+
+83
+00:05:55,199 --> 00:06:01,360
+particular self attention okay uh I'll
+talk about this part but you can
+
+84
+00:05:59,600 --> 00:06:05,199
+consider they're combining encoder and
+decoder attention layer together and
+
+85
+00:06:03,199 --> 00:06:10,240
+they're using inside the decoder okay
+this is uh another layer actually
+
+86
+00:06:07,280 --> 00:06:14,800
+they're using inside decoder that's it
+now let's try to see one example so
+
+87
+00:06:12,160 --> 00:06:18,039
+let's say this is our input x1 x2 and x3
+so here we are passing a friend sentence
+
+88
+00:06:16,639 --> 00:06:22,479
+you can see so this is the friend
+sentence and uh here is my architecture
+
+89
+00:06:21,120 --> 00:06:26,400
+so this is the friend sentence actually
+I'm passing first of all it will go
+
+90
+00:06:24,160 --> 00:06:30,720
+through the encoder layer and encoder
+layer has how many encoder layer I know
+
+91
+00:06:28,560 --> 00:06:36,319
+that eight encoder layer sorry six
+encoder layer and in one encoder layer
+
+92
+00:06:33,520 --> 00:06:39,600
+what we have okay we have two kinds of
+layers self attention and feed forward
+
+93
+00:06:37,840 --> 00:06:43,840
+so first of all it will go to the self
+attention and self attention will return
+
+94
+00:06:41,199 --> 00:06:47,520
+some output like zed 1 zed 2 and zed3
+okay then it will go to the uh feed
+
+95
+00:06:46,000 --> 00:06:52,080
+forward and feed forward will give you
+some output now how this zed 1 and zed
+
+96
+00:06:50,400 --> 00:06:59,520
+zed 33 we are getting we'll Try to
+understand. Now you can see guys here is
+
+97
+00:06:54,880 --> 00:07:02,960
+the uh let's say demo. So Zar what he
+did actually instead of taking three
+
+98
+00:07:01,120 --> 00:07:07,039
+let's say word he has taken two words
+just to explain the things easily. So
+
+99
+00:07:05,120 --> 00:07:10,080
+now let's say this is our words thinking
+and machines we are passing to the self
+
+100
+00:07:08,880 --> 00:07:13,680
+attention and self attention is
+returning one output zed 1 and zed 2 and
+
+101
+00:07:12,160 --> 00:07:17,280
+we are passing it to the feed forward.
+Fit forward is giving me one output
+
+102
+00:07:15,199 --> 00:07:20,080
+let's say R1 and R2 and this particular
+output we are passing to the another
+
+103
+00:07:18,639 --> 00:07:23,520
+encoder layer. That means we have six
+encoder layer right? So it will go
+
+104
+00:07:21,680 --> 00:07:28,400
+through the six encodal layer like that.
+Okay. Dot dot dot like that. So now you
+
+105
+00:07:25,919 --> 00:07:32,160
+can see self attention at a high level
+how it works. So let's say this is one
+
+106
+00:07:29,919 --> 00:07:36,400
+sentence I have. The animal didn't cross
+the street because it was too tight.
+
+107
+00:07:34,160 --> 00:07:41,120
+Okay. It was too tight. Now here you can
+see it. It was too tight. Now what this
+
+108
+00:07:39,280 --> 00:07:45,120
+it represents? So as in human I think
+you understand it represents the animal.
+
+109
+00:07:43,199 --> 00:07:49,599
+Yes or no? But what about machine? How
+machine will identify this? It is is the
+
+110
+00:07:47,440 --> 00:07:53,199
+same thing as the animal. Okay. For this
+we have to apply the self attention.
+
+111
+00:07:51,280 --> 00:07:58,080
+Okay. Now you can see this is the like
+your entire sentence. The animal didn't
+
+112
+00:07:55,759 --> 00:08:02,240
+cross the street. It was too tired. Now
+to represent it actually it is giving uh
+
+113
+00:08:00,720 --> 00:08:05,759
+the attention to this particular word.
+You can see the animal didn't. Okay. Uh
+
+114
+00:08:04,400 --> 00:08:10,400
+so these are the word actually it is
+getting attention. Okay. To represent
+
+115
+00:08:08,080 --> 00:08:14,400
+the it. Now how it is getting the
+attention. Okay. We'll try to understand
+
+116
+00:08:12,240 --> 00:08:18,960
+how it is giving giving this particular
+word as an attention. Okay. So we'll try
+
+117
+00:08:17,039 --> 00:08:22,000
+to understand this particular thing. Now
+you can see uh some of the word is
+
+118
+00:08:20,479 --> 00:08:26,400
+getting very less attention. You can see
+because of this line is like very um
+
+119
+00:08:24,319 --> 00:08:31,520
+what I can say uh it's not visible
+properly. Okay. Now uh you can see self
+
+120
+00:08:29,440 --> 00:08:37,200
+attention is detail. So how this self
+attention happens uh we have actually so
+
+121
+00:08:34,560 --> 00:08:40,719
+many words but uh uh how it will give
+the more attention to the specific word
+
+122
+00:08:39,279 --> 00:08:44,240
+we'll try to understand from this
+particular example. So let's say this is
+
+123
+00:08:42,479 --> 00:08:47,360
+our word thinking and machine. So first
+of all what we have to do guys I think
+
+124
+00:08:45,760 --> 00:08:51,440
+remember first of all we usually
+generate the embeddings like we convert
+
+125
+00:08:49,120 --> 00:08:54,959
+this text to the embedding model okay
+sorry embedding representation okay
+
+126
+00:08:53,200 --> 00:09:00,080
+embedding numbers that means the vector
+numbers then what we do guys we
+
+127
+00:08:57,920 --> 00:09:03,760
+initialize some weights I think you know
+that in neural network we initialize the
+
+128
+00:09:02,000 --> 00:09:08,720
+weights right so in this case actually
+we initialize three kinds of weights wq
+
+129
+00:09:06,800 --> 00:09:14,000
+wk and wv let's say this is our weights
+okay now to represent this uh key
+
+130
+00:09:11,600 --> 00:09:21,440
+queries keys and values what needs to be
+done. So you will be multiplying this x1
+
+131
+00:09:16,880 --> 00:09:26,800
+with w1. Okay, x1 with uh sorry x1 with
+wq. Okay, x1 with wq then you'll be
+
+132
+00:09:23,680 --> 00:09:31,680
+getting q1. Okay, then if you multiply
+x2 with wq, you'll be getting q2. So
+
+133
+00:09:29,360 --> 00:09:36,640
+similar wise, if you multiply x1 with
+wk, you'll be getting k1 x2. So here see
+
+134
+00:09:35,200 --> 00:09:43,120
+the calculation is happening like that.
+So let me take the pen. So x1 is getting
+
+135
+00:09:39,760 --> 00:09:48,399
+multiplied with wq and you are getting
+q1. Okay. Then x2 is getting multiplied
+
+136
+00:09:45,760 --> 00:09:55,120
+with wq and you are getting q2. Then
+again x1 is getting multiplied with wk
+
+137
+00:09:51,680 --> 00:10:01,360
+so you are getting k1 and x2 is getting
+multiplied with wk you are getting k2.
+
+138
+00:09:57,680 --> 00:10:06,959
+Then x1 will multiply with wv you will
+be getting uh v_sub_1 and x2 will
+
+139
+00:10:04,640 --> 00:10:11,120
+multiply with wv you will be getting v2.
+Okay. Okay. So that's how you are
+
+140
+00:10:08,000 --> 00:10:14,640
+getting query keys and value. Okay.
+These three particular vector you will
+
+141
+00:10:13,040 --> 00:10:21,760
+be getting and we'll be naming as query
+keys and values. Okay. I hope you got
+
+142
+00:10:17,120 --> 00:10:27,040
+it. Now let me just clear everything. H
+now you can see guys uh we are uh the
+
+143
+00:10:24,640 --> 00:10:31,200
+query is and values okay vector. Now
+here you can see this is the another
+
+144
+00:10:29,120 --> 00:10:35,079
+example. So let's say this is our word.
+We uh did the embedding generation then
+
+145
+00:10:33,200 --> 00:10:40,160
+we got uh
+K1 k1 and v1 that is p keys and values
+
+146
+00:10:38,480 --> 00:10:44,160
+okay and how I think I already showed
+you now you have to like get this code
+
+147
+00:10:42,800 --> 00:10:49,360
+okay how to get this code you have to
+multiply this q1 with k1 okay q1 with k1
+
+148
+00:10:47,680 --> 00:10:53,360
+so if you multiply you'll be getting
+this particular number then again for
+
+149
+00:10:51,920 --> 00:10:58,880
+the machines what you have to do you
+have to multiply q1 with uh k2 and
+
+150
+00:10:57,200 --> 00:11:03,920
+you'll be getting the number now you can
+see uh I Which word is having more
+
+151
+00:11:02,079 --> 00:11:10,399
+number? So definitely thinking is having
+more number here. Okay. 112. So thinking
+
+152
+00:11:08,079 --> 00:11:16,399
+is having more number than the machines.
+Machine is having uh
+
+153
+00:11:11,959 --> 00:11:21,680
+96 and thinking is having 112. Okay. Now
+here we'll be like generating some let's
+
+154
+00:11:19,040 --> 00:11:25,040
+say I mean percentage number. For this
+some more calculation needs to be done.
+
+155
+00:11:23,279 --> 00:11:29,760
+You can see again the same thing is
+happening. We are getting the score. Now
+
+156
+00:11:27,440 --> 00:11:32,720
+we have to divide this particular score
+by eight. Okay. Then after that you'll
+
+157
+00:11:31,519 --> 00:11:36,160
+be getting the number. Then you have to
+apply the soft max activation function.
+
+158
+00:11:34,720 --> 00:11:39,920
+I think you know what is soft max
+activation function. It will give you
+
+159
+00:11:37,360 --> 00:11:44,000
+the probability number. Okay. So in this
+case we are getting 88% probability of
+
+160
+00:11:42,320 --> 00:11:49,279
+the thinking and machines we are getting
+only 12% probability. Now that means
+
+161
+00:11:47,279 --> 00:11:53,200
+your model is giving more attention to
+the thinking words. Okay. Your model is
+
+162
+00:11:51,279 --> 00:11:57,240
+giving more attention to the thinking
+words. That means thinking words is
+
+163
+00:11:55,120 --> 00:12:01,279
+important. Okay. in this particular
+sentence. Okay. So that's how actually
+
+164
+00:11:59,519 --> 00:12:04,720
+this particular self attention works. It
+it will give you the attention like
+
+165
+00:12:02,880 --> 00:12:08,240
+that. So these are the calculation you
+will be doing and it will give the
+
+166
+00:12:06,240 --> 00:12:12,160
+calculation like that. Okay. Now I think
+you are getting now one thing uh so
+
+167
+00:12:10,560 --> 00:12:15,760
+after doing the sort max you have to
+multiply with the value. So this
+
+168
+00:12:13,680 --> 00:12:20,399
+particular value uh you have to multiply
+then we'll be getting the zed 1 and zed
+
+169
+00:12:18,079 --> 00:12:23,600
+2. Now I think you understood so why we
+are getting the zed 1 zed2 here. Okay.
+
+170
+00:12:22,399 --> 00:12:28,240
+So after going through the sale
+potential zed 1 zed 2 and so on. Okay.
+
+171
+00:12:25,760 --> 00:12:32,720
+So now I think this particular I think
+part is clear. Okay. What is zed 1, zed2
+
+172
+00:12:30,240 --> 00:12:37,040
+and so on. So yes so the same
+calculation I showed you. So he has also
+
+173
+00:12:34,639 --> 00:12:40,399
+shown with respect to the graph with
+respect to the matrix. So first of all
+
+174
+00:12:39,200 --> 00:12:44,880
+you have the input then you are
+generating the uh keys and queries and
+
+175
+00:12:42,639 --> 00:12:49,200
+uh these particular values. Okay. By
+multiplying with wq, wk and wpv. Then
+
+176
+00:12:47,680 --> 00:12:54,560
+after that you are applying the softmax
+activation function. Okay. Then you are
+
+177
+00:12:51,360 --> 00:12:58,000
+getting the z1 sorry zed number. Then uh
+see this is for the single head
+
+178
+00:12:56,240 --> 00:13:02,560
+attention. Okay, only single head
+attention. And what is the problem with
+
+179
+00:12:59,200 --> 00:13:08,000
+single end attention? See some of the
+word is getting ignored here. Okay, you
+
+180
+00:13:04,800 --> 00:13:12,000
+can see this uh line is not visible to
+represent it. Actually these are the
+
+181
+00:13:09,519 --> 00:13:15,600
+word is also required. Now to prevent
+this particular issue, they have
+
+182
+00:13:13,600 --> 00:13:19,040
+introduced something called multi head
+attention. Okay, multi head attention.
+
+183
+00:13:17,760 --> 00:13:23,600
+So instead of using single head
+attention see the calculation we have
+
+184
+00:13:20,560 --> 00:13:27,360
+done it is only happening with a single
+head attention. Now what is the main
+
+185
+00:13:25,440 --> 00:13:30,720
+benefit in the multi head attention
+they're using more attention layer. Okay
+
+186
+00:13:29,440 --> 00:13:34,160
+they're using more attention layer. How
+many attention layer they're using?
+
+187
+00:13:32,399 --> 00:13:37,279
+They're using eight attention layer.
+Okay you can see calculating attention
+
+188
+00:13:35,600 --> 00:13:41,360
+separately in eight different attention
+heads. That means the same attention
+
+189
+00:13:39,600 --> 00:13:46,160
+whatever calculation I showed you so far
+they're using the same attention
+
+190
+00:13:43,040 --> 00:13:49,920
+mechanism but they're doing in eight uh
+eight attention layer. Okay, eight multi
+
+191
+00:13:48,320 --> 00:13:53,519
+head attention layer. Okay, that's why
+they're calling as a multi heads. Okay,
+
+192
+00:13:52,000 --> 00:13:56,800
+multi head attention. The same
+calculation you can see the same
+
+193
+00:13:54,880 --> 00:14:00,880
+calculation and after that we are
+getting zed 1, zed 2, zed, zed 3 and so
+
+194
+00:13:58,880 --> 00:14:04,160
+on. Then we are doing the summation
+operation. Okay, then we are only
+
+195
+00:14:02,399 --> 00:14:09,199
+getting one zed. So see this is the
+entire calculation. Okay, with the multi
+
+196
+00:14:06,639 --> 00:14:13,440
+attention. Now after doing the multi
+attention, this is the results guys.
+
+197
+00:14:10,480 --> 00:14:17,199
+Okay, you can see now those word is uh
+word actually was getting ignored. Now
+
+198
+00:14:15,279 --> 00:14:20,639
+it is also trying to capture. Okay. Now
+you can see amazingly it is trying to
+
+199
+00:14:18,800 --> 00:14:24,480
+capture. So this is the main benefit to
+use the multi head attention. Okay. Now
+
+200
+00:14:22,399 --> 00:14:27,600
+transformer whatever let's say large
+language model you will be using all the
+
+201
+00:14:26,160 --> 00:14:31,279
+large language model use the multi head
+attention mechanism in the back end. So
+
+202
+00:14:29,519 --> 00:14:36,079
+these are some more visualization you
+can see. Uh so this is the
+
+203
+00:14:33,560 --> 00:14:41,040
+visualization. Now now we'll try to
+understand the positional encoding
+
+204
+00:14:38,560 --> 00:14:45,600
+concept like how this positional
+encoding works. So what is positional
+
+205
+00:14:43,040 --> 00:14:49,040
+encoding exactly? So see um here you
+initialize one vector okay this
+
+206
+00:14:47,360 --> 00:14:53,680
+particular vector you initialize like t1
+t2 and t3 so what happens actually this
+
+207
+00:14:51,440 --> 00:14:57,440
+positional encoding uh see it will try
+to capture the semantic uh meaning okay
+
+208
+00:14:55,760 --> 00:15:03,920
+of your sentence let's say you have
+passed one sentence z uh uh switch okay
+
+209
+00:15:00,959 --> 00:15:07,360
+edit so after z switch is coming okay
+after switch edit is coming how your
+
+210
+00:15:05,839 --> 00:15:10,639
+model is trying to understand this thing
+because of the positional encoding
+
+211
+00:15:08,720 --> 00:15:14,560
+because this is the vector this is
+another vector this is another vector
+
+212
+00:15:12,240 --> 00:15:18,240
+now what you uh you have to Let's see if
+you substract this vector with respect
+
+213
+00:15:16,639 --> 00:15:21,680
+to this particular vector and this
+vector with respect to this particular
+
+214
+00:15:19,600 --> 00:15:25,600
+vector which will have very less let's
+say distance definitely this will have
+
+215
+00:15:23,440 --> 00:15:30,880
+the less distance okay that time I can
+consider this switch is nearest to the J
+
+216
+00:15:28,160 --> 00:15:34,079
+okay then this audent okay so that's
+actually they getting the semantic
+
+217
+00:15:32,560 --> 00:15:38,320
+information semantic meaning okay after
+this J switch is coming after switch uh
+
+218
+00:15:36,320 --> 00:15:41,519
+switch this particular edit is coming
+okay that's why they're trying to
+
+219
+00:15:39,600 --> 00:15:44,959
+capture the semantic information with
+respect to the positional encoding So
+
+220
+00:15:43,360 --> 00:15:49,120
+that's why it is also super important
+because you will be passing actually
+
+221
+00:15:46,800 --> 00:15:53,399
+very big prompt here big let's say input
+and to capture the semantic information
+
+222
+00:15:51,199 --> 00:15:58,560
+this is the way actually they're
+using got it now let's try to see the
+
+223
+00:15:56,160 --> 00:16:02,560
+next thing uh so see guys this is the
+positional encoding concept it's a
+
+224
+00:16:00,480 --> 00:16:06,160
+vector only at the end and if you uh
+just uh do the cadist calculation with
+
+225
+00:16:04,639 --> 00:16:10,160
+respect to all the vector you'll see
+that u this particular word will come
+
+226
+00:16:08,240 --> 00:16:13,920
+nearest to this particular vector now
+these are some actually visualization
+
+227
+00:16:11,680 --> 00:16:17,440
+graph uh he has shown Now there is
+another concept inside uh this transform
+
+228
+00:16:15,680 --> 00:16:21,040
+architecture called residual block.
+Okay. So those who have started computer
+
+229
+00:16:19,279 --> 00:16:25,120
+vision like CNN architecture I think you
+know that there is architecture called
+
+230
+00:16:22,480 --> 00:16:29,199
+ResNet 50. Okay. So Reset 50 has also
+this residual uh networks. What is
+
+231
+00:16:27,279 --> 00:16:32,720
+residual networks? Actually so it has
+actually one skip layer. So why we use
+
+232
+00:16:31,360 --> 00:16:37,680
+the skip layer? Because sometimes let's
+see if you have very uh less complex
+
+233
+00:16:35,040 --> 00:16:41,040
+data. So by going through some some
+actually layer you'll be able to get the
+
+234
+00:16:39,759 --> 00:16:43,920
+higher accuracy that time you don't need
+to go through all the layer that that
+
+235
+00:16:42,639 --> 00:16:47,839
+time actually what it will do it will
+skip the let's say layer let's say this
+
+236
+00:16:45,680 --> 00:16:50,720
+self attention is not required directly
+it will pass to the normalization I
+
+237
+00:16:49,440 --> 00:16:54,320
+think you know what is normalization it
+will normalize the data okay then after
+
+238
+00:16:52,720 --> 00:16:57,360
+normalization let's say it will again
+jump to the another normalization
+
+239
+00:16:55,759 --> 00:17:00,959
+instead of feed forward neural network
+okay so that's how it will skip
+
+240
+00:16:59,040 --> 00:17:03,759
+automatically based on the performance
+of the let's say loss function or
+
+241
+00:17:02,800 --> 00:17:08,240
+whatever actually you are using
+internally so the same
+
+242
+00:17:06,480 --> 00:17:12,959
+Whatever you have learned in the uh
+resonate architecture the same concept
+
+243
+00:17:10,319 --> 00:17:16,559
+also using uh here. Okay. If you are not
+understanding if you're not sure about
+
+244
+00:17:14,640 --> 00:17:20,319
+the let's say resonate architecture you
+can go through and you can see that okay
+
+245
+00:17:18,000 --> 00:17:24,400
+how reset architecture works. Now uh
+here you can see guys this is the entire
+
+246
+00:17:21,839 --> 00:17:28,319
+architecture overview. Now this is the
+final one. So we are passing the words
+
+247
+00:17:26,559 --> 00:17:32,320
+and it is going to the encoder. Encoder
+inside encoder we have self attention
+
+248
+00:17:30,640 --> 00:17:35,520
+some normalization layer they have also
+added and feed forward again some
+
+249
+00:17:33,919 --> 00:17:40,400
+normalization they have added okay then
+again it will go to the next one okay
+
+250
+00:17:37,600 --> 00:17:44,559
+next one will pass to the decoder okay
+that means six encoder it will be
+
+251
+00:17:42,720 --> 00:17:47,280
+passing then it will go to the decoder
+layer and say decoder actually again you
+
+252
+00:17:46,160 --> 00:17:50,640
+can see I have self attention
+normalization and encoder and decoder
+
+253
+00:17:48,799 --> 00:17:53,919
+attention that means encoder and decoder
+they have combined and they have created
+
+254
+00:17:52,000 --> 00:17:58,799
+one architecture and they using inside
+this particular decoder
+
+255
+00:17:55,720 --> 00:18:03,280
+okay and
+And this particular output will go to
+
+256
+00:18:00,480 --> 00:18:06,720
+the decoder. Okay. Decoder second second
+layer of decoder. Then after that
+
+257
+00:18:05,039 --> 00:18:10,400
+they're applying the linear. Okay. Then
+they're applying the softmax and we are
+
+258
+00:18:08,640 --> 00:18:13,720
+getting the output. Okay. Now you can
+see guys uh these are some
+
+259
+00:18:11,840 --> 00:18:21,760
+visualization. You are passing the
+input. It will go to the decoder. Okay.
+
+260
+00:18:18,080 --> 00:18:21,760
+And uh some processing is
+
+261
+00:18:22,440 --> 00:18:29,520
+happening. Okay. And you are getting the
+output.
+
+262
+00:18:26,320 --> 00:18:34,160
+I got it. Now let me show you the entire
+visualization how these things working.
+
+263
+00:18:31,840 --> 00:18:34,160
+You can
+
+264
+00:18:37,880 --> 00:18:45,120
+see. So if you have time just try to
+open the like uh this um blog and you
+
+265
+00:18:43,840 --> 00:18:49,200
+will be able to understand okay how
+things are working. See it will uh
+
+266
+00:18:47,360 --> 00:18:53,679
+coming here and again the output we are
+getting here it is going as an input to
+
+267
+00:18:51,440 --> 00:18:58,559
+the decoder. Okay and it is predicting
+this one. See, so this is the French and
+
+268
+00:18:56,720 --> 00:19:01,520
+this is the English translation of that.
+And whenever you're getting end of the
+
+269
+00:19:00,240 --> 00:19:05,840
+sentence, that means your sentence is
+done. Okay, your execution would be uh
+
+270
+00:19:03,919 --> 00:19:10,640
+terminated that time. Okay, that's how
+the entire architecture works. Okay, now
+
+271
+00:19:08,799 --> 00:19:13,840
+guys uh see these are the things are not
+required. Yeah. So this is the actually
+
+272
+00:19:12,240 --> 00:19:17,280
+mechanism of our transformer
+architecture. That's how actually self
+
+273
+00:19:15,520 --> 00:19:21,679
+adoption works. Now going forward
+whatever LM you'll be learning. Okay,
+
+274
+00:19:18,880 --> 00:19:24,559
+all the LLM are using this particular
+transform architecture in the back end.
+
+275
+00:19:23,200 --> 00:19:29,039
+Now if I open this particular
+architecture now if I show you you will
+
+276
+00:19:26,880 --> 00:19:33,120
+see here and now I think you will be
+able to understand what is input
+
+277
+00:19:30,960 --> 00:19:36,720
+embeddings what is positional encoding
+okay what is multi head attention what
+
+278
+00:19:35,120 --> 00:19:40,720
+is normalization what is feed forward
+again what is normalization and this is
+
+279
+00:19:38,720 --> 00:19:44,080
+called actually our encoder layer okay
+then we are passing the output to the
+
+280
+00:19:42,160 --> 00:19:48,240
+decoder layer okay that means in the
+decoder we have mask multi head
+
+281
+00:19:46,240 --> 00:19:52,640
+attention that means encoder and decoder
+okay both uh I mean uh combined
+
+282
+00:19:50,640 --> 00:19:56,000
+architecture then normalization then
+Again a multi head attention the
+
+283
+00:19:54,160 --> 00:19:58,640
+normalization feed forward normalization
+linear and softmax and we're getting the
+
+284
+00:19:57,600 --> 00:20:02,240
+output that means this is the inter
+decoder layer and again we're using
+
+285
+00:20:00,160 --> 00:20:06,960
+positional encoding okay just to get the
+semantic information okay now this
+
+286
+00:20:04,400 --> 00:20:10,320
+particular architecture this uh jm
+actually break down okay in this
+
+287
+00:20:08,799 --> 00:20:13,520
+particular blog and he has explained
+each and everything with respect to the
+
+288
+00:20:11,760 --> 00:20:16,880
+visualization okay so this is one of the
+amazing blog guys again I'll try to
+
+289
+00:20:15,520 --> 00:20:19,760
+suggest you just go through this blog
+and try to read everything whatever
+
+290
+00:20:18,480 --> 00:20:23,760
+things I have explained so far
+everything he has written okay with
+
+291
+00:20:21,600 --> 00:20:26,640
+respect to the Now you can also go
+through the paper also. In the paper
+
+292
+00:20:25,200 --> 00:20:29,919
+they have also let's say mentioned the
+mathematical equation and all. If you're
+
+293
+00:20:28,480 --> 00:20:33,200
+interested you can also go through this
+particular paper. So yes guys this is
+
+294
+00:20:31,679 --> 00:20:37,200
+all from this particular video. So here
+we have explained about the transformer
+
+295
+00:20:35,360 --> 00:20:40,080
+intuition. I hope you have liked it.
+Thank you so much.
+

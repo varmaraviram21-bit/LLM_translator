@@ -1,0 +1,1155 @@
+1
+00:00:00,480 --> 00:00:07,359
+Hi everyone. In this video, we'll be
+starting with our very first LLM ops
+
+2
+00:00:04,560 --> 00:00:12,080
+platform called Vert.exi and I think I
+already told you Vert.xi is the platform
+
+3
+00:00:09,840 --> 00:00:15,920
+from the Google. So it is available in
+the Google cloud. So Google has
+
+4
+00:00:13,599 --> 00:00:19,359
+developed this platform. So here we'll
+be doing this complete on the Google
+
+5
+00:00:17,840 --> 00:00:23,359
+cloud. We'll be learning how we can use
+different kinds of foundation model even
+
+6
+00:00:21,600 --> 00:00:26,800
+with that how we can uh create different
+different kinds of LM powered
+
+7
+00:00:24,960 --> 00:00:30,480
+application. So guys here you can see
+this is the complete revolution at the
+
+8
+00:00:28,800 --> 00:00:34,480
+Google uh inside artificial
+intelligence. I think you remember in
+
+9
+00:00:32,480 --> 00:00:38,640
+2017 uh they bring actually one
+architecture called transformer. So
+
+10
+00:00:36,399 --> 00:00:43,440
+whenever this transformer architecture
+came in the market uh after actually so
+
+11
+00:00:41,040 --> 00:00:46,640
+many revolution happened in the field of
+language model in the field of large
+
+12
+00:00:44,960 --> 00:00:50,399
+language model that means whatever
+architecture you can see nowadays all
+
+13
+00:00:48,480 --> 00:00:54,320
+the architecture are using this
+transformer architecture in the back
+
+14
+00:00:51,840 --> 00:00:57,920
+end. Even I already uh created one video
+right I already took one session on the
+
+15
+00:00:56,000 --> 00:01:01,120
+transformer architecture like what was
+the main component inside transformer
+
+16
+00:00:59,520 --> 00:01:05,519
+architecture and why it is so powerful
+right so then after that actually in
+
+17
+00:01:03,359 --> 00:01:10,080
+2018 actually they came up with another
+model called BERT so this is one of the
+
+18
+00:01:08,400 --> 00:01:14,240
+actually language model they brought
+then they brought actually T5 model then
+
+19
+00:01:12,320 --> 00:01:18,720
+slightly actually in 2020 actually they
+brought one large language model called
+
+20
+00:01:15,920 --> 00:01:23,280
+lambda so lambda was amazing model in
+the field of large language model then
+
+21
+00:01:20,240 --> 00:01:28,799
+2021 they uh actually published alpha
+fold model then 22 palm model and in
+
+22
+00:01:26,479 --> 00:01:34,000
+2023 they introduced something called B
+model okay B A R D B I think we used to
+
+23
+00:01:32,000 --> 00:01:38,320
+use uh Google B right Google B that
+means uh it is the chat GPT kinds of
+
+24
+00:01:36,240 --> 00:01:43,280
+interface I think remember nowadays this
+B has been let's say replaced with the
+
+25
+00:01:40,560 --> 00:01:46,479
+Germany so we now actually we search for
+Germany but previously we used to search
+
+26
+00:01:44,640 --> 00:01:49,759
+for B right so this was the first
+application from the Google actually
+
+27
+00:01:48,000 --> 00:01:52,799
+they published and you can see the model
+summary like what are the task This
+
+28
+00:01:51,520 --> 00:01:56,320
+model can perform this. So as you can
+see T5 can perform textto text
+
+29
+00:01:54,399 --> 00:01:59,680
+generation. It's a transfer learning
+model. Uh it is having actually 10
+
+30
+00:01:58,079 --> 00:02:03,920
+billion parameter and it's open source
+model. Then Google lambda model. Then
+
+31
+00:02:01,759 --> 00:02:09,920
+you can see the lambda model train to
+converse. Then alpha predict structure
+
+32
+00:02:06,479 --> 00:02:12,959
+for uh for all known proteins. Then palm
+actually this is the industry leading
+
+33
+00:02:11,280 --> 00:02:16,000
+actually large language model. They they
+introduce something called
+
+34
+00:02:13,760 --> 00:02:20,239
+conversational AI the service powered by
+lambda. Okay. Then in 2024 I think you
+
+35
+00:02:18,640 --> 00:02:25,120
+can see from the Google research we are
+having gemini then uh imagen to okay
+
+36
+00:02:23,360 --> 00:02:28,400
+this is uh this can actually generate
+image okay with respect to the text
+
+37
+00:02:26,720 --> 00:02:31,440
+prompt then we're having also something
+called jimma okay jimma is one of the
+
+38
+00:02:29,920 --> 00:02:35,760
+large language model then there is
+another model called chart this is the
+
+39
+00:02:33,440 --> 00:02:40,640
+model it can generate speech to text so
+that's actually revolution happened that
+
+40
+00:02:37,879 --> 00:02:45,040
+means it took actually lots of time to
+came up in this position and Google
+
+41
+00:02:42,879 --> 00:02:48,480
+introduced actually so many research so
+many model okay so many technology
+
+42
+00:02:46,480 --> 00:02:52,400
+technology and nowadays actually we are
+using this kinds of technology okay in
+
+43
+00:02:50,080 --> 00:02:56,720
+the field of GTVI and guys here you can
+see these are some actually first party
+
+44
+00:02:54,080 --> 00:03:00,400
+foundation model like palm for text you
+can customize language task then palm
+
+45
+00:02:58,879 --> 00:03:04,480
+for actually chat so here you can
+perform conversation okay then you can
+
+46
+00:03:02,319 --> 00:03:07,920
+uh do the image and okay uh for the text
+to image that means if you give any
+
+47
+00:03:06,080 --> 00:03:11,599
+let's say prompt it will generate the
+image okay then we also had something
+
+48
+00:03:09,760 --> 00:03:14,480
+called embeddings model that means
+embedding API let's say you want to
+
+49
+00:03:13,120 --> 00:03:18,560
+generate any kinds of embedding for the
+text or image you can use this kind of
+
+50
+00:03:15,920 --> 00:03:22,080
+embedding model. Okay. Then chart model,
+speech to text, then code generation
+
+51
+00:03:20,319 --> 00:03:26,000
+model was also available. So this was
+the first party foundation model in the
+
+52
+00:03:24,080 --> 00:03:29,440
+Google research. Okay. Then they
+introduced something called model
+
+53
+00:03:27,200 --> 00:03:32,720
+garden. Okay. So what is model garden?
+So here you can access, customize and
+
+54
+00:03:31,120 --> 00:03:37,920
+experiment with different foundation
+models and its API. Okay. That means
+
+55
+00:03:35,040 --> 00:03:41,760
+what Google did actually they introduced
+one platform called Vert.xi. So Vert.xi
+
+56
+00:03:39,599 --> 00:03:45,920
+Vert.xi was the platform in the Google
+and it's been actually long this
+
+57
+00:03:43,440 --> 00:03:50,480
+platform is available in the Google
+cloud but only we used to perform MLOps
+
+58
+00:03:48,959 --> 00:03:55,040
+operation with the help of vert.xi AI.
+But whenever actually this genative AI
+
+59
+00:03:52,640 --> 00:03:59,280
+came, so they updated this Vert.x AI and
+they introduced something called model
+
+60
+00:03:56,720 --> 00:04:02,159
+garden. That means inside Vert.x AI you
+have one model garden. Inside model
+
+61
+00:04:00,799 --> 00:04:05,680
+garden, you are having all kinds of
+Google model. Whatever model actually
+
+62
+00:04:03,920 --> 00:04:08,720
+Google has published. Now all the model
+you will get all the foundation model
+
+63
+00:04:07,040 --> 00:04:11,680
+you will get in the model garden. Apart
+from that you will also get something
+
+64
+00:04:10,000 --> 00:04:15,040
+called open source model. Like whatever
+opensource model I think I showed you
+
+65
+00:04:13,280 --> 00:04:18,959
+now from the hugging face from different
+different let's say organization like
+
+66
+00:04:16,880 --> 00:04:21,680
+llama, mistral, falcon, right? different
+different kinds of open source model I
+
+67
+00:04:20,560 --> 00:04:24,800
+think I already introduced in the
+hugging face. So what they did actually
+
+68
+00:04:23,280 --> 00:04:27,759
+they also hosted this kinds of open
+source model in the model garden that
+
+69
+00:04:26,400 --> 00:04:31,280
+means you can use all kinds of open
+source model from the model guardian
+
+70
+00:04:28,960 --> 00:04:35,120
+itself. Okay from the vertxi then it is
+also having some partner partners model.
+
+71
+00:04:33,360 --> 00:04:37,759
+So what is partners model exactly? So
+they collaborated with different
+
+72
+00:04:36,320 --> 00:04:41,280
+different kinds of organization. They
+collaborated with the different
+
+73
+00:04:38,800 --> 00:04:46,160
+different kinds of company. Let's say
+cloud is a company then we are having
+
+74
+00:04:43,759 --> 00:04:49,280
+meta. Meta is a company. Okay, that's
+how we are having different different
+
+75
+00:04:47,280 --> 00:04:53,280
+kinds of company. So this company has
+also introduced so many large language
+
+76
+00:04:51,280 --> 00:04:56,479
+model. Okay, so what they did actually
+they collaborated with the company,
+
+77
+00:04:54,720 --> 00:04:59,520
+collaborated with the organization and
+all kinds of actually model they
+
+78
+00:04:57,759 --> 00:05:02,880
+introduce in the model garden. So this
+is called actually partner models. Now
+
+79
+00:05:01,199 --> 00:05:06,560
+let me show you the vert.xi platform
+right now how it looks like. You can see
+
+80
+00:05:04,400 --> 00:05:10,560
+guys this is the previous Vert.xi
+platform. Okay, that means here we used
+
+81
+00:05:08,639 --> 00:05:13,600
+to only perform the ML operation that
+means machine learning operation. That
+
+82
+00:05:11,759 --> 00:05:17,199
+means you can perform the experiment,
+train and deploy. Okay, for the data
+
+83
+00:05:15,199 --> 00:05:20,800
+science workbench now what they
+introduce actually on top of this
+
+84
+00:05:18,560 --> 00:05:24,160
+platform they introduce geneti you can
+see they introduce something called
+
+85
+00:05:21,840 --> 00:05:27,840
+geneti platform that means here you can
+perform the prom designing finetuning
+
+86
+00:05:26,000 --> 00:05:32,479
+genative studio okay foundation model
+open source model okay then you can also
+
+87
+00:05:30,479 --> 00:05:36,240
+perform actually LM ops everything you
+can perform in this platform right now
+
+88
+00:05:34,240 --> 00:05:40,400
+that means instead of replacing uh the
+previous actually let's say vertxi
+
+89
+00:05:38,560 --> 00:05:44,160
+services on top of that they created one
+additional layer and this is called
+
+90
+00:05:41,919 --> 00:05:49,039
+actually LLM ops platform now it is on
+vertx. Okay, now I think it is clear.
+
+91
+00:05:46,960 --> 00:05:52,400
+Now as I already told you uh they
+introduced so many actually partners
+
+92
+00:05:50,960 --> 00:05:55,600
+model. Okay, I already told you they
+introduced so many partners model in the
+
+93
+00:05:53,759 --> 00:05:58,960
+model garden. So these are the partners.
+Okay, these are the partners actually
+
+94
+00:05:56,800 --> 00:06:04,000
+with Google. I think nowadays they also
+collaborated with so many organization.
+
+95
+00:06:00,720 --> 00:06:06,880
+If you open the Google uh cloud vertx
+we'll see different kinds of actually
+
+96
+00:06:05,280 --> 00:06:10,960
+partner models are available. So here
+you can see AI21 labs these are another
+
+97
+00:06:09,680 --> 00:06:18,400
+organizations that they collaborated
+with the Google then anthropic coer then
+
+98
+00:06:14,360 --> 00:06:23,800
+contextual AI okay mid journey then OSMO
+then resistant meta okay runway and so
+
+99
+00:06:22,080 --> 00:06:28,000
+on so these are the actually
+partners model actually you will you'll
+
+100
+00:06:26,160 --> 00:06:33,840
+be getting in the model garden now let
+me show you this GCP okay GCP vertxi so
+
+101
+00:06:31,919 --> 00:06:36,479
+let's open up our account and let's open
+up the vertexi there and try to see
+
+102
+00:06:35,360 --> 00:06:40,560
+whether these are the things are
+available or not. So for this guys, what
+
+103
+00:06:38,160 --> 00:06:44,880
+you can do just search for GCP, okay,
+GCP console in your Google and make sure
+
+104
+00:06:43,360 --> 00:06:48,800
+you have one GCP account. Okay, if you
+don't have the GCP account guys, so you
+
+105
+00:06:46,720 --> 00:06:51,440
+won't be able to use the vert.x. So make
+sure you if you don't have the account,
+
+106
+00:06:50,160 --> 00:06:56,400
+just try to create one account.
+Initially, it will give you $300 credit.
+
+107
+00:06:53,520 --> 00:07:00,720
+Okay, so let me login with my console.
+So guys, as you can see, this is my GCP
+
+108
+00:06:58,160 --> 00:07:05,680
+console. So here, what you have to do in
+the search button, just search for
+
+109
+00:07:01,919 --> 00:07:10,160
+Vertex AI. Okay, Vert.Ex AI. So you'll
+see this is the platform this is the lm
+
+110
+00:07:08,160 --> 00:07:13,360
+of platform you will get see this is the
+complete vertx AI now left hand side you
+
+111
+00:07:12,240 --> 00:07:16,319
+will see different different kinds of
+services so here I already told you it
+
+112
+00:07:14,960 --> 00:07:20,960
+is having model garden so let me click
+on the model garden so here you will see
+
+113
+00:07:19,039 --> 00:07:24,479
+all kinds of model so guys as you can
+see whatever model I showed you all
+
+114
+00:07:22,479 --> 00:07:28,960
+kinds of model are available apart from
+that uh they have also actually brought
+
+115
+00:07:26,800 --> 00:07:32,599
+new new model here you can see uh so
+foundation model okay then partners
+
+116
+00:07:31,039 --> 00:07:36,960
+model C all kinds of models are
+available okay as you can see meta model
+
+117
+00:07:35,120 --> 00:07:42,560
+is available that means llama 2, llama
+3. Okay. Then palm model. Uh you can
+
+118
+00:07:40,240 --> 00:07:46,240
+also show all the model here. Show see
+here I can click on the show all model.
+
+119
+00:07:44,639 --> 00:07:51,520
+See all kinds of model are available.
+See mistral also also is there. Then
+
+120
+00:07:48,639 --> 00:07:55,919
+jamba model. Then you can see cloudy.
+Okay. Apart from that you will see
+
+121
+00:07:53,680 --> 00:08:00,080
+different kinds of uh actually
+foundation model you will get. Okay. And
+
+122
+00:07:58,319 --> 00:08:03,520
+these are the actually partner. Okay.
+Partner company. Apart from that you can
+
+123
+00:08:02,000 --> 00:08:07,520
+also filter out. Let's say you need
+language model. So here you are having
+
+124
+00:08:05,440 --> 00:08:10,560
+63 language model. You can filter out
+all the language model. Let's say you
+
+125
+00:08:09,039 --> 00:08:13,680
+need vision model. You are having 11
+vision model. You can also filter out
+
+126
+00:08:12,000 --> 00:08:15,800
+all the vision model. Okay. Now let's
+say you want to use this model. Just
+
+127
+00:08:15,039 --> 00:08:20,240
+click
+here and you will get all the guideline
+
+128
+00:08:18,479 --> 00:08:24,160
+how to use this model and all. Okay.
+They have already given the source code
+
+129
+00:08:21,599 --> 00:08:28,960
+everything they have given. Okay. How to
+use the Python SDK for uh let's say
+
+130
+00:08:27,039 --> 00:08:32,080
+using this model and all. All the let's
+say guideline they have already given.
+
+131
+00:08:30,639 --> 00:08:35,440
+Okay. I'll tell you how we can use these
+are the models one by one. Okay. Now
+
+132
+00:08:33,839 --> 00:08:38,640
+let's say you want to also play this
+model in the model garden. Okay, it is
+
+133
+00:08:36,959 --> 00:08:42,159
+also possible. Let me show you. So let's
+say this is my model garden. Let's say I
+
+134
+00:08:40,000 --> 00:08:46,959
+want to let's say play with this model
+Jin 1.5 Pro. Uh so I'll just click
+
+135
+00:08:47,080 --> 00:08:54,480
+here. Now you can see open in a Vert.x
+AI studio. So here you can open this
+
+136
+00:08:52,480 --> 00:08:58,399
+model in the AI studio. So they also
+having one AI studio. Let me show you.
+
+137
+00:08:56,640 --> 00:09:02,320
+Even you can also open with the collab
+notebook and there also you can also
+
+138
+00:08:59,920 --> 00:09:06,000
+play with this model. Now let's click on
+the I agree and continue. Now here you
+
+139
+00:09:04,560 --> 00:09:11,519
+can pass any kinds of prompt. Let's say
+I will give hello and I will send this
+
+140
+00:09:09,240 --> 00:09:13,920
+prompt and this is the response actually
+I'm getting. Okay. So that's how
+
+141
+00:09:12,959 --> 00:09:17,120
+actually you can play with different
+different kinds of model before using it
+
+142
+00:09:15,519 --> 00:09:20,240
+like how this model is working and all
+what is the performance of the model
+
+143
+00:09:18,720 --> 00:09:23,360
+everything you can perform here. Okay.
+Then you can also search by the model
+
+144
+00:09:22,080 --> 00:09:26,480
+name. Let's say you need Jimma model,
+llama model anything you can search here
+
+145
+00:09:24,800 --> 00:09:31,200
+you will also get these are the model.
+Got it? And guys these are the model is
+
+146
+00:09:29,600 --> 00:09:33,920
+already hosted in the Google cloud. So
+you don't need to manually download
+
+147
+00:09:32,320 --> 00:09:38,320
+these other the model in your system.
+You can use these are the model with the
+
+148
+00:09:35,519 --> 00:09:43,600
+help of API request as I already told
+you that's how so that is why we call it
+
+149
+00:09:40,959 --> 00:09:46,720
+as a lm of platform. Okay. So they gives
+the API kinds of functionality with the
+
+150
+00:09:45,040 --> 00:09:50,000
+help of API request. We can use this at
+the model in our uh let's say project
+
+151
+00:09:48,640 --> 00:09:52,480
+implementation. And don't you worry I'll
+tell you how we can access different
+
+152
+00:09:51,120 --> 00:09:56,720
+different kinds of model. We'll be also
+implementing some kinds of application.
+
+153
+00:09:54,959 --> 00:09:59,600
+Now apart from that vertex I also
+provides so many services. You can see
+
+154
+00:09:58,000 --> 00:10:03,120
+it provides the pipeline services. This
+is the pipeline for the MLOps. Let's say
+
+155
+00:10:01,440 --> 00:10:07,279
+you want to perform any end toend
+pipeline data indition data validation
+
+156
+00:10:05,279 --> 00:10:10,320
+model training model evaluation. You can
+use the pipeline services. Apart from
+
+157
+00:10:08,959 --> 00:10:14,240
+that it also provides the notebook
+services. That means let's say you want
+
+158
+00:10:11,880 --> 00:10:17,440
+to let's say use one large language
+model uh you want to fine-tune one large
+
+159
+00:10:16,079 --> 00:10:21,040
+language model you can use their collab
+enterprise. That means you you can take
+
+160
+00:10:19,440 --> 00:10:24,240
+the machine okay good configuration
+machine good configuration collab
+
+161
+00:10:22,720 --> 00:10:27,200
+notebook in their Google cloud service.
+Okay. Then you can also take the
+
+162
+00:10:25,680 --> 00:10:30,079
+workbench as well. Then you can see
+different different studio is there. You
+
+163
+00:10:28,640 --> 00:10:34,079
+can perform different different kinds of
+let's say I mean task task demo. Let's
+
+164
+00:10:32,720 --> 00:10:37,200
+say you can perform chat demo, vision
+demo, translation, speech. Okay. You can
+
+165
+00:10:35,920 --> 00:10:40,720
+play with these are the functionality.
+As of now I'm not showing. Then you can
+
+166
+00:10:38,880 --> 00:10:44,000
+also download different different kinds
+of extension for the gen from the
+
+167
+00:10:42,320 --> 00:10:47,519
+extension market. Here you will also get
+something called feature store data set.
+
+168
+00:10:45,440 --> 00:10:50,480
+Okay. Leveling task then training
+experiment. Okay. So some of the
+
+169
+00:10:49,200 --> 00:10:53,839
+services you will see these are the ML
+of services not the genb services. Apart
+
+170
+00:10:52,720 --> 00:10:56,959
+from that you will also get something
+called vector search here. This is
+
+171
+00:10:54,959 --> 00:11:00,880
+another super important service from the
+vert.x. Let's say you don't want to use
+
+172
+00:10:59,120 --> 00:11:05,040
+any other vector database. What you can
+do? You can use this vert.xi vector
+
+173
+00:11:03,360 --> 00:11:09,040
+search. This is another vector database.
+Okay. And this is hosted in the Google
+
+174
+00:11:07,120 --> 00:11:12,959
+cloud that means in the vert.xi. So
+going forward I will also show you how
+
+175
+00:11:10,800 --> 00:11:16,240
+we can use this vector search. Okay.
+Vector search functionality from the
+
+176
+00:11:14,079 --> 00:11:20,000
+vert.xi itself. So yes guys these are
+the services actually vert.xi provides.
+
+177
+00:11:18,160 --> 00:11:23,440
+So unless and not exploring all the
+functionality okay you won't be getting.
+
+178
+00:11:21,360 --> 00:11:26,640
+So try to open this account guys and try
+to explore all kinds of functionality.
+
+179
+00:11:24,959 --> 00:11:29,200
+Okay. Now there I told you we can
+perform different different kinds of
+
+180
+00:11:28,000 --> 00:11:31,839
+operation. Okay different different
+kinds of this operation. It will give
+
+181
+00:11:30,399 --> 00:11:35,600
+you all kinds of functionality. Okay.
+And I showed you the model garden and
+
+182
+00:11:33,279 --> 00:11:38,320
+all. Uh so then I already told you we
+can also perform something called fine
+
+183
+00:11:36,800 --> 00:11:41,760
+tuning. So it's not like that you can
+only use these are the foundation model
+
+184
+00:11:40,399 --> 00:11:44,959
+for the inference. No, you can also
+perform the finetuning operation. That
+
+185
+00:11:43,440 --> 00:11:48,480
+means this vert.x will give you the
+functionality. You can also improve uh
+
+186
+00:11:46,959 --> 00:11:51,519
+the model performance with the help of
+finetuning. Okay. on on top of your
+
+187
+00:11:50,000 --> 00:11:54,880
+custom data you can also perform
+something called human feedback to
+
+188
+00:11:53,040 --> 00:11:59,680
+increase your model usefulness like I
+think previously you saw uh in the chart
+
+189
+00:11:57,040 --> 00:12:03,360
+GPT uh it used to give one feedback box
+right let's say how use is your
+
+190
+00:12:01,440 --> 00:12:06,480
+experience so that you can uh give your
+experience rating so that kinds of
+
+191
+00:12:04,959 --> 00:12:10,160
+rating also you can pass if you're using
+this kinds of vertx AI then here you can
+
+192
+00:12:08,320 --> 00:12:14,000
+also generate customized images for your
+business then here you can also improve
+
+193
+00:12:11,839 --> 00:12:17,680
+Google's predictive AI with your own
+custom data okay everything is possible
+
+194
+00:12:15,760 --> 00:12:21,040
+here now you can ask me what kinds of
+task actually I can perform Here you can
+
+195
+00:12:19,360 --> 00:12:25,760
+perform all kinds of task. So you can
+perform language, image, video, okay,
+
+196
+00:12:23,440 --> 00:12:29,760
+documents, speech, tabert. So here all
+kinds of task you can perform with the
+
+197
+00:12:27,120 --> 00:12:32,959
+help of vert.xai. Okay. And what vertexi
+actually provides as I already told you
+
+198
+00:12:31,519 --> 00:12:36,720
+it will give you state of the art
+foundation model. Even you will also get
+
+199
+00:12:34,880 --> 00:12:40,880
+end to end governance. That means you
+can do the pro prompting tuning. Okay.
+
+200
+00:12:38,959 --> 00:12:45,200
+You can also perform MLOps operation on
+the vert.x. Even here you will get the
+
+201
+00:12:43,360 --> 00:12:48,079
+data privacy. So whenever let's say you
+are uploading your custom data to the
+
+202
+00:12:46,480 --> 00:12:51,680
+vert.x, XI it's not like that your data
+would be leaked uh it would be secure
+
+203
+00:12:50,000 --> 00:12:55,519
+okay so this kinds of actually ensured
+you will get if you're using vertxi
+
+204
+00:12:54,079 --> 00:12:58,560
+platform that means you will have the
+complete data security so no need to
+
+205
+00:12:57,200 --> 00:13:02,320
+worry about your data if you're having
+any custom data all the data would be
+
+206
+00:13:00,480 --> 00:13:07,600
+secured here so now I think you got the
+difference between MLOPS and LLM ops so
+
+207
+00:13:04,399 --> 00:13:11,279
+in the vertxi we have the MLOps um like
+services already on top of that they
+
+208
+00:13:09,120 --> 00:13:15,760
+created the llm ops okay so here we
+don't need to throw out your existing
+
+209
+00:13:13,440 --> 00:13:19,120
+mlops investment okay so here what you
+need to do you just need to understand
+
+210
+00:13:16,959 --> 00:13:21,920
+the unique MLOps need for the geni that
+means whatever additional let's say
+
+211
+00:13:20,720 --> 00:13:25,760
+functionality they have given just try
+to understand and try to use uh let's
+
+212
+00:13:23,839 --> 00:13:29,440
+say those are the service in the geni
+field okay that means uh you can see in
+
+213
+00:13:27,440 --> 00:13:33,360
+the vertxi you will see multitask model
+prompting okay then model garden
+
+214
+00:13:31,320 --> 00:13:36,240
+customization managing new artifacts
+evaluation monitoring okay connecting
+
+215
+00:13:34,720 --> 00:13:38,880
+with the enterprise data let's say you
+want to connect with different different
+
+216
+00:13:37,440 --> 00:13:43,839
+kinds of data sources it is also
+possible in the vertxi so now as a high
+
+217
+00:13:41,760 --> 00:13:47,680
+level you can see the complete mlops on
+the vertex this is the so this was
+
+218
+00:13:45,920 --> 00:13:50,720
+actually our traditional vert.x vertx A
+that means here you can perform
+
+219
+00:13:48,639 --> 00:13:54,959
+experiment training and deploy uh and
+predict okay for the machine learning
+
+220
+00:13:52,480 --> 00:13:58,399
+operation and now in the vertx A you can
+also perform something called uh prompt
+
+221
+00:13:57,040 --> 00:14:00,880
+predict okay then you can also use
+something called foundation model that
+
+222
+00:13:59,519 --> 00:14:04,320
+means all kinds of gen based
+functionality you will get here then I
+
+223
+00:14:03,040 --> 00:14:07,760
+already told you you can also connect
+with different different enterprise data
+
+224
+00:14:06,399 --> 00:14:12,079
+let's say you want to connect any
+external sources any API any website you
+
+225
+00:14:10,320 --> 00:14:16,320
+can also connect okay with the help of
+vertxi so guys all kinds of flexibility
+
+226
+00:14:14,320 --> 00:14:20,399
+you will get here if you're using vertxi
+lm platform. So no need to worry about
+
+227
+00:14:18,560 --> 00:14:25,040
+anything. So yes guys, this is the
+complete uh introduction of our Vert.xi
+
+228
+00:14:22,560 --> 00:14:28,000
+the complete genative AI on the GCP
+cloud. In the next video we'll try to
+
+229
+00:14:26,560 --> 00:14:32,480
+see how we can build different kinds of
+transformative LM powered application
+
+230
+00:14:30,399 --> 00:14:35,360
+okay with the help of this Vert.xi
+platform. With that guys thank you so
+
+231
+00:14:33,600 --> 00:14:38,480
+much for watching this video and I will
+see you next time.
+

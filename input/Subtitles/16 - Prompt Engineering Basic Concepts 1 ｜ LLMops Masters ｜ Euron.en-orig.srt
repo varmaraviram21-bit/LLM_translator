@@ -1,0 +1,1668 @@
+1
+00:00:00,880 --> 00:00:05,600
+So guys uh as you can see what is prompt
+engineering? Prompt engineering is
+
+2
+00:00:04,080 --> 00:00:10,160
+nothing but so prompt engineering is
+nothing but prompt engineering is the
+
+3
+00:00:07,200 --> 00:00:15,120
+process of structuring uh an instruction
+that can be interpreted and understood
+
+4
+00:00:12,639 --> 00:00:19,119
+by by a generative AI model. That means
+I already told you now inside generative
+
+5
+00:00:16,960 --> 00:00:22,320
+AI prompt is everything and whatever
+prompt actually you are giving to the
+
+6
+00:00:20,400 --> 00:00:25,920
+generative AI model or your large
+language model. Okay, this should be
+
+7
+00:00:24,320 --> 00:00:29,359
+well structured. Okay, this should be
+well structured and well organized.
+
+8
+00:00:27,680 --> 00:00:33,280
+Okay, otherwise what will happen? your
+model will give random kinds of output.
+
+9
+00:00:31,679 --> 00:00:36,239
+Okay, that is why here I have written
+the definition what is prompt
+
+10
+00:00:34,399 --> 00:00:40,000
+engineering exactly. Okay, I hope it is
+clear now. Now as a generative engineer
+
+11
+00:00:38,559 --> 00:00:42,960
+you should have some responsibility
+whenever you will be working with the
+
+12
+00:00:41,520 --> 00:00:46,640
+large language model whenever you will
+be preparing the prompt and all. See
+
+13
+00:00:44,640 --> 00:00:52,160
+here I've listed down some of the points
+write uh refine and optimize prompts
+
+14
+00:00:50,160 --> 00:00:56,719
+perfect the interaction between humans
+and AI that means you always need to
+
+15
+00:00:54,239 --> 00:01:01,359
+make sure whether your prompt is perfect
+or not. Okay to communicate between
+
+16
+00:00:59,199 --> 00:01:04,640
+human and AI that means you will be
+communicating with your AI assistant
+
+17
+00:01:03,199 --> 00:01:08,320
+let's say whatever let's say application
+you are having with the help of large
+
+18
+00:01:06,240 --> 00:01:11,360
+language model okay there is a a good
+interaction or not okay the prompt
+
+19
+00:01:10,400 --> 00:01:14,720
+actually you have given you have to
+always make sure continuously monitor
+
+20
+00:01:13,360 --> 00:01:18,479
+those prompt you have to continuously
+monitor those prompt whether this pro
+
+21
+00:01:16,560 --> 00:01:22,400
+prompt is perfect or not and is there
+any change in the model or not then
+
+22
+00:01:20,320 --> 00:01:26,159
+maintain and up to date the prompt that
+means if let's say model model got
+
+23
+00:01:24,240 --> 00:01:30,080
+updated let's say they again did the
+finetune that particular ular model and
+
+24
+00:01:28,000 --> 00:01:33,759
+if let's say previous prompt is not
+working better in that case what you can
+
+25
+00:01:31,520 --> 00:01:36,640
+do you can maintain and up update that
+particular prompt for that large
+
+26
+00:01:35,119 --> 00:01:40,400
+language model. So these are the key
+responsibility you should have as a
+
+27
+00:01:38,400 --> 00:01:44,240
+generative engineer. Now let's try to
+understand why prompt engineering. Okay.
+
+28
+00:01:42,640 --> 00:01:47,439
+So for this I'm going to show you one
+demo. I think this demo will give you
+
+29
+00:01:45,680 --> 00:01:51,759
+the clearcut idea why prompt engineering
+is super important if you want to work
+
+30
+00:01:49,040 --> 00:01:54,880
+with the genbi. So here you can see I
+have written a prompt. Uh you can see
+
+31
+00:01:53,840 --> 00:01:59,360
+this is the prompt I have written.
+Correct my paragraph. Today was the
+
+32
+00:01:56,640 --> 00:02:04,079
+great day in the world for me. I went
+Disneyland with my mom. It could have
+
+33
+00:02:01,680 --> 00:02:06,880
+been better if it wasn't raining. You
+can see some of the spelling mistake is
+
+34
+00:02:05,520 --> 00:02:11,760
+there. That means grammatical mistakes
+are there in this paragraph I have
+
+35
+00:02:09,520 --> 00:02:15,440
+written. So what I'll do? I'll give this
+prompt to my let's say large language
+
+36
+00:02:13,599 --> 00:02:19,360
+model. So large language model wise here
+I'm going to use chart GPT. Okay, you
+
+37
+00:02:17,280 --> 00:02:22,239
+can also use Google B or any other
+actually let's say model. It's
+
+38
+00:02:20,640 --> 00:02:25,760
+completely fine. But just to show you
+the demo actually I'm going to use the
+
+39
+00:02:23,440 --> 00:02:28,000
+charge GPT platform. later on whenever
+let's say we'll be implementing
+
+40
+00:02:27,040 --> 00:02:30,959
+different different let's say
+application with the help of large
+
+41
+00:02:29,200 --> 00:02:34,319
+language model that time actually we'll
+be using this prompt with the help of
+
+42
+00:02:32,319 --> 00:02:38,800
+Python code okay as of now just to show
+you the demo I'm going to use the chart
+
+43
+00:02:36,640 --> 00:02:43,280
+GPT application so guys as you can see
+I'm inside my chart GPT now let's say if
+
+44
+00:02:40,720 --> 00:02:48,000
+I give this prompt uh to my chart GPT
+now let's say if I send it here see what
+
+45
+00:02:45,680 --> 00:02:52,480
+will happen see it has given me
+straightforward results without let's
+
+46
+00:02:50,000 --> 00:02:56,000
+say explaining this like paragraph I
+have given without let's say asking me
+
+47
+00:02:54,560 --> 00:03:00,879
+any kinds of question it has given me
+straightforward answer. So here is my uh
+
+48
+00:02:58,879 --> 00:03:05,200
+paragraph and here is the correct okay
+correct of my paragraph correct version
+
+49
+00:03:02,480 --> 00:03:09,120
+of my paragraph. Today was uh today was
+a great day for me. I went to Disneyland
+
+50
+00:03:07,360 --> 00:03:13,599
+with my mom and it could have been
+better uh if it wasn't raining okay you
+
+51
+00:03:11,760 --> 00:03:17,599
+can see so here you can see this uh
+grammatical mistake I did it is resolved
+
+52
+00:03:15,680 --> 00:03:20,400
+okay by my large language model. Now
+let's say you are learning about English
+
+53
+00:03:19,200 --> 00:03:23,519
+language, you are learning about
+grammar, you are learning about let's
+
+54
+00:03:21,840 --> 00:03:27,760
+say spelling and everything like that
+means the complete let's say English
+
+55
+00:03:25,440 --> 00:03:31,200
+guidance you want okay from your mentor
+but as a mentor wise what you want to
+
+56
+00:03:29,519 --> 00:03:34,560
+use you want to use the chart GPT let's
+say your large language model that time
+
+57
+00:03:33,120 --> 00:03:37,920
+instead of giving this kinds of prompt
+to the large language model what you can
+
+58
+00:03:36,080 --> 00:03:41,840
+give so instead of giving the prompt
+like that you can design your own prompt
+
+59
+00:03:40,159 --> 00:03:45,680
+in a effective way so let me show you
+another example so guys as you can see
+
+60
+00:03:43,519 --> 00:03:50,480
+this is the next prompt I have designed
+so here is the prompt is I want you to
+
+61
+00:03:47,920 --> 00:03:54,400
+act as a spoken English teacher. I will
+speak to you in English and you will
+
+62
+00:03:52,319 --> 00:03:59,680
+also reply to me in English to practice
+my spoken English. I want you to keep
+
+63
+00:03:56,959 --> 00:04:04,799
+your reply need uh limiting the reply to
+100 words. I want you to strictly
+
+64
+00:04:02,560 --> 00:04:10,080
+correct my grammar mistakes and and
+typos. I want you to ask me questions in
+
+65
+00:04:07,680 --> 00:04:14,319
+your reply. Now let's start practicing.
+You could ask me a question first.
+
+66
+00:04:11,760 --> 00:04:18,959
+remembered I want you to strictly
+correct my grammar and mistakes uh typos
+
+67
+00:04:16,560 --> 00:04:22,079
+and uh factual errors. Okay. So this is
+the prompt I have designed. Okay. See
+
+68
+00:04:20,720 --> 00:04:25,759
+previously the prompt I have given it
+was like very straightforward prompt I
+
+69
+00:04:23,600 --> 00:04:29,919
+had given right. But now what I did I
+just designed one very powerful prompt
+
+70
+00:04:27,960 --> 00:04:32,639
+here. Now see what should be the
+response from my large language model
+
+71
+00:04:31,280 --> 00:04:35,280
+right? Now so let me give this prompt to
+my large language model. This is the
+
+72
+00:04:34,000 --> 00:04:38,080
+prompt guys. The same prompt I have
+given. Now let me
+
+73
+00:04:39,639 --> 00:04:47,280
+send now see it is giving me great let's
+start with a question what is the most
+
+74
+00:04:44,960 --> 00:04:52,800
+interesting place you have ever visited
+and why did you uh did you find it uh so
+
+75
+00:04:50,800 --> 00:05:00,440
+fascinating okay now let me give the
+answer let's say the most interesting
+
+76
+00:04:56,600 --> 00:05:05,560
+place I visited India
+cuz I
+
+77
+00:05:03,000 --> 00:05:13,280
+loved
+Indian okay Indian
+
+78
+00:05:10,120 --> 00:05:17,759
+food Indian food okay now you can also
+do some grammatical mistake let's say
+
+79
+00:05:15,520 --> 00:05:21,680
+here I'll just write like that okay now
+let's say this is my response I have
+
+80
+00:05:19,120 --> 00:05:26,320
+given to my uh model right now see my
+model will try to correct first of all
+
+81
+00:05:24,240 --> 00:05:30,880
+you can see here is the correct version
+the most interesting place I have
+
+82
+00:05:28,240 --> 00:05:35,600
+visited in India because I loved the
+Indian food now see the reply you have
+
+83
+00:05:33,039 --> 00:05:38,160
+given So there actually lots of spelling
+mistakes were there. There are lots of
+
+84
+00:05:36,880 --> 00:05:41,680
+actually grammatical mistakes were
+there. Now it has corrected everything.
+
+85
+00:05:40,080 --> 00:05:43,960
+Now as I learned that you can easily get
+to know okay so that's how actually you
+
+86
+00:05:43,199 --> 00:05:48,560
+have
+to write this particular sentence. Okay.
+
+87
+00:05:46,720 --> 00:05:52,080
+Now you don't need any kinds of actual
+actually English teacher. Okay with the
+
+88
+00:05:50,720 --> 00:05:57,440
+help of this kinds of large language
+model you can easily learn this kinds of
+
+89
+00:05:54,479 --> 00:06:00,800
+syntax. Yes or no? Fine. Now again it is
+you can see it is asking me one
+
+90
+00:05:59,360 --> 00:06:05,039
+question. Can you tell me more about
+your favorite Indian dish? That means
+
+91
+00:06:03,280 --> 00:06:08,880
+now this conversation is like more
+interactive. It's not like
+
+92
+00:06:06,560 --> 00:06:12,560
+straightforward answer it is giving me.
+It is like more interactive the way
+
+93
+00:06:10,960 --> 00:06:17,960
+actually human communicate with each
+other. Yes or no? Now yes I can give
+
+94
+00:06:14,720 --> 00:06:22,080
+another response. So here I can give
+um I loved
+
+95
+00:06:22,520 --> 00:06:29,800
+chole. Okay. Now let's see the output.
+So here is the correct version. I love
+
+96
+00:06:26,800 --> 00:06:35,840
+chole. What do you like most about
+chole? Okay. So here I can
+
+97
+00:06:32,680 --> 00:06:40,720
+write the puri. Now see this is the
+correct version. I like the puri. Uh
+
+98
+00:06:38,080 --> 00:06:45,120
+what do you enjoy about the puri? Okay.
+Now see this conversation is more
+
+99
+00:06:42,319 --> 00:06:49,120
+interactive. Now you can um just keep on
+replying uh to the question actually
+
+100
+00:06:47,759 --> 00:06:52,160
+this model is asking. That's actually
+you'll be learning about the correct
+
+101
+00:06:50,880 --> 00:06:57,240
+let's say grammar correct let's say
+spelling and all yes or no. Now see with
+
+102
+00:06:54,800 --> 00:07:01,520
+the help of just only one simple prompt
+design I got like very interactive
+
+103
+00:06:59,919 --> 00:07:04,639
+output from my large language model.
+Okay this is called actually prompt
+
+104
+00:07:02,800 --> 00:07:07,919
+engineering and that's why it's useful.
+Okay, that's why it is important because
+
+105
+00:07:06,479 --> 00:07:12,720
+sometimes whenever you'll be creating
+any kinds of application, any kinds of
+
+106
+00:07:10,479 --> 00:07:17,120
+LLM provide application that time you
+have to design the prompt in such a way
+
+107
+00:07:14,639 --> 00:07:20,720
+so that it can give the correct answer
+to the audience even it can it can be
+
+108
+00:07:18,800 --> 00:07:24,000
+more interactive to the audience that
+means those who are using your
+
+109
+00:07:22,000 --> 00:07:27,120
+application so they should enjoy your
+application yes or no. So guys that is
+
+110
+00:07:25,759 --> 00:07:31,759
+why it's like very interesting concept
+and it's like very important concept
+
+111
+00:07:29,120 --> 00:07:35,280
+inside Ji you have to master now see to
+master the prompt engineering the first
+
+112
+00:07:33,680 --> 00:07:39,599
+thing you should know about the
+linguistics okay what is linguistics
+
+113
+00:07:37,680 --> 00:07:43,759
+linguistics is nothing but it's a study
+of language that means whenever let's
+
+114
+00:07:41,759 --> 00:07:46,400
+say you are studying any kinds of
+language let's say English language
+
+115
+00:07:44,960 --> 00:07:50,560
+inside English language you are having
+some kinds of uh let's say linguistics
+
+116
+00:07:49,039 --> 00:07:56,240
+okay what kinds of linguistics you can
+see phonetics is there so phonetics
+
+117
+00:07:53,039 --> 00:08:01,440
+means the study of how speech Sounds are
+produced and perceived. Okay. Then there
+
+118
+00:07:59,120 --> 00:08:06,000
+is another one called phology. The study
+of sounds pattern and changes. That
+
+119
+00:08:03,440 --> 00:08:10,639
+means whenever we are speaking any kinds
+of let's say language like how these
+
+120
+00:08:08,400 --> 00:08:13,599
+sounds look like. Okay. How the sounds
+look like how you are pronouncing this
+
+121
+00:08:12,080 --> 00:08:17,759
+particular word and all. This is called
+actually phonetics and
+
+122
+00:08:15,400 --> 00:08:21,520
+phology. Got it? Then there is another
+one called morphology. The study of word
+
+123
+00:08:20,080 --> 00:08:24,879
+structure. Then there is there is
+another one called syntax. That means
+
+124
+00:08:22,960 --> 00:08:27,919
+the study of the sentence structure that
+means whatever grammar you usually learn
+
+125
+00:08:26,319 --> 00:08:30,960
+inside English. Then you have also
+having the semantics that means the
+
+126
+00:08:29,280 --> 00:08:34,640
+study of the linguistic meaning. Then
+the next one is pragmatics the study of
+
+127
+00:08:32,880 --> 00:08:39,919
+how language is used in the context.
+Then historical the study of language
+
+128
+00:08:36,719 --> 00:08:43,599
+change then so on. Okay you can see
+these are the actually linguistics are
+
+129
+00:08:41,440 --> 00:08:46,880
+available to study about the language.
+Okay. And if you have good knowledge, if
+
+130
+00:08:45,680 --> 00:08:51,120
+you have good knowledge on these kinds
+of let's say linguistics, definitely you
+
+131
+00:08:49,040 --> 00:08:54,880
+can design a very good prompt for the
+large language model. So that's why I
+
+132
+00:08:52,959 --> 00:08:58,240
+have written here linguistics are the
+key to the prompt engineering. That
+
+133
+00:08:57,040 --> 00:09:02,399
+means if you are having good knowledge
+about linguistic definitely you can
+
+134
+00:09:00,160 --> 00:09:06,399
+design a good prompt for the large
+language model. Now we have already
+
+135
+00:09:04,399 --> 00:09:09,680
+studied about like large language model
+or our generative AI model. Right? So
+
+136
+00:09:08,399 --> 00:09:15,360
+there are different kinds of generative
+AI models are available like GPT, Bart,
+
+137
+00:09:12,240 --> 00:09:20,160
+then Lambda, Palm, Bloom, Llama, Cloudy.
+Okay. Then uh Nemo, LLM, okay, generate.
+
+138
+00:09:18,880 --> 00:09:22,720
+So these are the actually apart from
+that like there are so many large
+
+139
+00:09:21,440 --> 00:09:26,080
+language models are available. I think I
+showed you one GitHub, right? I think
+
+140
+00:09:24,080 --> 00:09:28,959
+remember open LLM, GitHub there. I think
+you saw thousands of large language
+
+141
+00:09:27,279 --> 00:09:32,320
+models were there and these are the
+provider and vendor. Okay, like those
+
+142
+00:09:31,040 --> 00:09:35,680
+who are created this these are the
+actually large language model. See all
+
+143
+00:09:34,000 --> 00:09:40,240
+kinds of large language model over the
+internet. All the large language model
+
+144
+00:09:38,480 --> 00:09:43,120
+accept this prompt. Okay, that means you
+have to give the prompt there if you
+
+145
+00:09:41,680 --> 00:09:46,480
+want to use this kinds of large language
+model. Okay, because this large language
+
+146
+00:09:44,880 --> 00:09:51,839
+model is already trained with huge
+amount of data, huge amount of
+
+147
+00:09:49,440 --> 00:09:54,959
+unstructured data. Even they also did
+something called supervised finetuning.
+
+148
+00:09:53,600 --> 00:09:59,360
+They also applied something called
+reinforcement learning technique to
+
+149
+00:09:56,720 --> 00:10:02,640
+improve the quality of the model. That
+means this model is also trained with
+
+150
+00:10:01,360 --> 00:10:06,800
+the instruction. Lots of instruction
+that means they did the chat operation
+
+151
+00:10:04,399 --> 00:10:10,959
+with this model. I think I showed you
+one uh in one video one of my video I
+
+152
+00:10:08,720 --> 00:10:14,560
+already explained how chart GPY trend
+okay so that's why whenever they trend
+
+153
+00:10:13,040 --> 00:10:17,920
+with this kind of instruction data that
+means they are passing the prompt and
+
+154
+00:10:16,399 --> 00:10:22,399
+whenever you want to use this particular
+model you also need to provide the
+
+155
+00:10:19,519 --> 00:10:25,040
+prompt I think now it is clear why this
+prompt engineering is super important
+
+156
+00:10:23,680 --> 00:10:28,720
+and whenever you want to use any kinds
+of large language model why you have to
+
+157
+00:10:26,959 --> 00:10:31,600
+use the prompt engineering technique
+that means why you have to give the
+
+158
+00:10:30,160 --> 00:10:35,760
+correct prompt always to the large
+language model now let's learn about
+
+159
+00:10:33,760 --> 00:10:40,079
+some best practices to design a prompt
+See if you want to design some best
+
+160
+00:10:37,839 --> 00:10:43,920
+prompt for the large language model you
+have to keep some of the point in your
+
+161
+00:10:41,920 --> 00:10:46,880
+mind. Let's say the first thing clear
+instruction definitely you have to give
+
+162
+00:10:45,519 --> 00:10:51,839
+the clear instruction to the large
+language model. Then adopt a persona
+
+163
+00:10:49,839 --> 00:10:54,800
+then specify the format avoid leading
+the answer and limit the scope. Okay. So
+
+164
+00:10:53,600 --> 00:10:58,640
+these are the thing actually you have to
+always remember. Now let's open our
+
+165
+00:10:56,560 --> 00:11:01,519
+chart JPT and let's try to see some of
+the best practices. Okay, we can perform
+
+166
+00:11:00,320 --> 00:11:05,040
+whenever we are giving any kinds of
+prompt to the large case model. So guys
+
+167
+00:11:03,279 --> 00:11:09,600
+let's say if I give a prompt here. Let's
+say I'll give when is
+
+168
+00:11:10,519 --> 00:11:13,519
+the
+
+169
+00:11:13,640 --> 00:11:19,600
+election. Okay, when is the election?
+Let's say this is my prompt. Okay, now
+
+170
+00:11:17,760 --> 00:11:23,519
+see if I pass this prompt to my large
+language model. Let's see the output. It
+
+171
+00:11:22,000 --> 00:11:28,640
+depends on which election you are
+referring. See, election can be vary by
+
+172
+00:11:26,640 --> 00:11:33,120
+the country definitely because it's the
+correct one. Now, you are asking what is
+
+173
+00:11:30,480 --> 00:11:36,480
+the election but you are not clarifying.
+Okay, you are not clarifying in which
+
+174
+00:11:34,560 --> 00:11:40,000
+country you are referring. Okay, that
+means you have to always pass a clear
+
+175
+00:11:38,079 --> 00:11:46,440
+prompt. Okay, clear instruction to the
+large language model. Now see, I can
+
+176
+00:11:42,240 --> 00:11:49,440
+give this prompt like that. When is the
+next
+
+177
+00:11:50,040 --> 00:11:58,480
+president
+election in USA? Okay, now see this
+
+178
+00:11:55,760 --> 00:12:02,880
+prompt is clear and it is like well
+organized for my large language model.
+
+179
+00:12:00,320 --> 00:12:02,880
+Now see if I
+
+180
+00:12:03,000 --> 00:12:11,000
+pass. Now see this is the answer. The
+next US president election election is
+
+181
+00:12:07,600 --> 00:12:15,760
+scheduled for the November uh 5th uh
+2024. Okay. Now I'm getting the correct
+
+182
+00:12:13,760 --> 00:12:19,279
+answer from my last language model. But
+whenever you are not giving any kinds of
+
+183
+00:12:17,360 --> 00:12:22,880
+clear let's say clear let's instruction
+to the model it will give you
+
+184
+00:12:20,720 --> 00:12:26,880
+unnecessary output. And again it's a
+chargeable because whenever you are
+
+185
+00:12:24,560 --> 00:12:30,079
+using charge GPT or let's say uh any
+kinds of let's say commercial large
+
+186
+00:12:28,639 --> 00:12:33,279
+language model it is charging based on
+the token input and output token I
+
+187
+00:12:31,839 --> 00:12:36,399
+already showed you okay how it will
+count the token and how it will charge.
+
+188
+00:12:35,040 --> 00:12:39,680
+So whenever you are getting this kinds
+of unnecessary output that means
+
+189
+00:12:37,760 --> 00:12:42,880
+unnecessary you are spending your money
+yes or no. Okay. So that's why whenever
+
+190
+00:12:41,600 --> 00:12:47,680
+you are using these kinds of commercial
+large language model make sure you have
+
+191
+00:12:44,880 --> 00:12:51,120
+the proper prompt so that in just one
+prompt you will get the actual output
+
+192
+00:12:49,760 --> 00:12:53,680
+you are looking for. Okay. This is what
+actually you have to always remember.
+
+193
+00:12:52,320 --> 00:13:00,560
+Now let me give you another example.
+I'll just write write a
+
+194
+00:12:57,240 --> 00:13:00,560
+code to
+
+195
+00:13:01,079 --> 00:13:10,680
+filter
+out the ages from data. So let's say
+
+196
+00:13:06,880 --> 00:13:16,079
+this is my prompt I have given now
+see my LLM model has given me this this
+
+197
+00:13:14,160 --> 00:13:19,600
+is the output but let's say you are
+looking for Java code. So you are
+
+198
+00:13:18,240 --> 00:13:25,279
+looking for Java code but it has giving
+you the Python code. Again what you have
+
+199
+00:13:21,760 --> 00:13:28,800
+given you have given actually uncleared
+instruction to the model. Yes or no?
+
+200
+00:13:27,120 --> 00:13:33,120
+Right? So you have to give the clear
+instruction always. Now you can write
+
+201
+00:13:30,399 --> 00:13:33,120
+this prompt like
+
+202
+00:13:33,240 --> 00:13:42,240
+that. Uh write
+a Java code okay to filter out edges
+
+203
+00:13:39,600 --> 00:13:46,079
+from the data. Now see now it is the
+clear instruction to my large language
+
+204
+00:13:43,680 --> 00:13:49,760
+model. Now I will get the Java code. Now
+let's see the next one like the ad of
+
+205
+00:13:47,839 --> 00:13:53,200
+the persona. Okay, like uh what is the
+persona exactly? Whenever you are giving
+
+206
+00:13:51,680 --> 00:13:56,720
+any kinds of let's instruction to the
+model uh what kinds of persona you have
+
+207
+00:13:55,200 --> 00:14:00,720
+to adopt there. Let's say this is one
+prompt I'm giving to my large language
+
+208
+00:13:58,240 --> 00:14:05,440
+model. Write a poem for a sister's high
+school uh graduation that will be read
+
+209
+00:14:03,519 --> 00:14:07,920
+out to the uh two family and close
+friends. Okay, let's say this is my
+
+210
+00:14:06,639 --> 00:14:13,680
+instruction I have given to my large
+language model. Now see uh here is the
+
+211
+00:14:10,399 --> 00:14:17,760
+response I will get.
+So here is the response I got. That
+
+212
+00:14:15,600 --> 00:14:22,639
+means this is my poem. Now if you read
+this poem actually this is not actually
+
+213
+00:14:20,160 --> 00:14:27,440
+much interesting the poem actually I was
+looking for. Now what you can do you can
+
+214
+00:14:25,120 --> 00:14:30,480
+actually uh give the persona. Okay you
+can give the persona whenever you are
+
+215
+00:14:28,800 --> 00:14:34,160
+giving the prompt. So now let me show
+you another prompt I have designed for
+
+216
+00:14:31,920 --> 00:14:40,320
+this. So this is the prompt guys. Now
+here I'm writing write a poem as Helena.
+
+217
+00:14:38,079 --> 00:14:48,079
+Helena is a 25 years old and amazing
+writer. her writing style similar to the
+
+218
+00:14:43,199 --> 00:14:53,519
+famous uh 21st century poet uh Rupy. So
+I think you know about Rupy Cor. You can
+
+219
+00:14:49,920 --> 00:14:57,040
+also search about Rupy Core. See she's
+actually a Canadian poet and
+
+220
+00:14:55,440 --> 00:15:02,880
+illustrator. Okay, you can read about
+her. Now see uh write as a Helena.
+
+221
+00:14:59,680 --> 00:15:07,519
+Writing as a Helena write a poem for her
+uh 18 years old sister to celebrate her
+
+222
+00:15:05,760 --> 00:15:12,160
+sister's high school graduation. This
+will be read out to the friends and
+
+223
+00:15:09,199 --> 00:15:15,600
+family at the uh gathering. Okay. Now
+see this is the prompt actually I have
+
+224
+00:15:13,279 --> 00:15:19,199
+given. Now see if I send it uh if I send
+this prompt right now. Now see the
+
+225
+00:15:17,440 --> 00:15:23,040
+response actually I got here. Now if you
+read this poem actually it is too good.
+
+226
+00:15:21,040 --> 00:15:27,360
+It is too good than my previous response
+I got. Okay. So that's how actually you
+
+227
+00:15:25,040 --> 00:15:30,880
+have to adapt the person always. You
+have to adapt the persona. What kinds of
+
+228
+00:15:29,279 --> 00:15:35,760
+things you are looking for. Now see this
+large language model is already know
+
+229
+00:15:33,000 --> 00:15:40,800
+about uh rupic. Okay. Because it is
+already trained. it is already turned uh
+
+230
+00:15:37,440 --> 00:15:44,720
+let's say around 2022 data okay till
+2022 data it has already trained and in
+
+231
+00:15:43,040 --> 00:15:50,320
+that data actually rupee core poem was
+there okay that's why you that's why so
+
+232
+00:15:48,079 --> 00:15:57,759
+that's why this model is already known
+about rup and it is trying to get the
+
+233
+00:15:54,560 --> 00:16:03,199
+similar kinds of let's say poetry okay
+whatever let's say poem actually rupic
+
+234
+00:16:00,480 --> 00:16:07,120
+used to write okay the same actually
+syntax context actually is trying to
+
+235
+00:16:05,199 --> 00:16:10,959
+let's say Okay. Now the next thing you
+can also specify the format. Let's say
+
+236
+00:16:09,040 --> 00:16:14,720
+what kinds of format you want as a
+output. Let's say what I will go I will
+
+237
+00:16:13,279 --> 00:16:18,880
+give you one example for the
+summarization. Let's copy one English
+
+238
+00:16:17,279 --> 00:16:23,120
+story here. So let's say this is one
+English story. I'll just try to copy the
+
+239
+00:16:20,800 --> 00:16:23,120
+entire
+
+240
+00:16:23,480 --> 00:16:32,160
+story. And here I'll go to my chart GPT
+and I'll just write uh please
+
+241
+00:16:33,240 --> 00:16:40,279
+summarize this story. Okay, summarize
+this story. Now I can pass the entire
+
+242
+00:16:39,120 --> 00:16:46,160
+story
+here. Now see I can send it. Now see it
+
+243
+00:16:44,240 --> 00:16:50,160
+is giving me the summary but see this
+summary again it's a paragraph. Okay,
+
+244
+00:16:47,839 --> 00:16:54,240
+it's a paragraph. Now I can also specify
+the format. Let's say I'll give I
+
+245
+00:16:55,000 --> 00:16:59,360
+want I think I can copy the same
+
+246
+00:17:03,880 --> 00:17:10,280
+instruction. Now here just try to
+modify. Please summarize this
+
+247
+00:17:08,679 --> 00:17:14,079
+story
+in bullet point.
+
+248
+00:17:14,439 --> 00:17:21,039
+Okay, bullet point. Now see I'm
+specifying the format. Now see if I pass
+
+249
+00:17:18,799 --> 00:17:24,240
+this. Now see it will give me inside the
+bullet point. Okay. Now see it's like
+
+250
+00:17:22,480 --> 00:17:29,120
+more readable now it's more readable. It
+is giving me uh some actually important
+
+251
+00:17:27,679 --> 00:17:33,200
+important actually summary of this
+entire story. It is trying to return me.
+
+252
+00:17:31,200 --> 00:17:37,520
+Okay. So that's how you can provide any
+kinds of format you need. Let's say you
+
+253
+00:17:34,559 --> 00:17:41,919
+need a data and you need a JSON format
+data. You can also provide I need a JSON
+
+254
+00:17:40,080 --> 00:17:44,720
+format data. Okay. You can pass the
+prompt and it will give you that. So
+
+255
+00:17:43,440 --> 00:17:48,160
+that's how actually whenever you are
+designing your prompt you have to always
+
+256
+00:17:46,559 --> 00:17:52,160
+keep this at the point in your mind.
+Okay. the point actually I listed down
+
+257
+00:17:49,520 --> 00:17:57,280
+in my presentation. I think you saw that
+right now there are some types of prompt
+
+258
+00:17:55,039 --> 00:18:00,960
+are available. Uh so the first type you
+can consider zero short prompting and
+
+259
+00:17:58,960 --> 00:18:05,200
+the second type actually few short
+prompting. Apart from that actually
+
+260
+00:18:02,720 --> 00:18:08,400
+there are like some types of prompts are
+available like emotional prompting and
+
+261
+00:18:06,720 --> 00:18:11,679
+all right but this is not actually
+required but if you want to create any
+
+262
+00:18:09,840 --> 00:18:15,679
+large language powered application so
+this two prompt actually very famous. So
+
+263
+00:18:14,240 --> 00:18:20,000
+I have seen like people are using this
+to prompt a lot like fshot prompting and
+
+264
+00:18:18,160 --> 00:18:24,080
+zero shot prompting. So let's explore
+this zero shot and fshot prompting uh in
+
+265
+00:18:22,320 --> 00:18:27,520
+the example. So again I will go to my
+chart GBT. Now first of all let's write
+
+266
+00:18:26,320 --> 00:18:31,679
+the zero shot prompting. Zero shot
+prompting means you are only asking the
+
+267
+00:18:29,600 --> 00:18:35,840
+instruction because the see this chart
+GP is already trained with huge amount
+
+268
+00:18:33,200 --> 00:18:39,520
+of data. So this chart DPT has already
+like lots of knowledge about let's say
+
+269
+00:18:37,440 --> 00:18:47,400
+the data over the whatever data they
+have trained. Now let's say I will ask
+
+270
+00:18:41,280 --> 00:18:51,480
+one question. When is the Christmas in
+America? Now see Christmas United States
+
+271
+00:18:49,840 --> 00:18:56,559
+celebrated on
+December 25th each each year. Okay. Now
+
+272
+00:18:54,559 --> 00:18:58,960
+it is giving me the answer. So this is
+called actually zero shot prompting.
+
+273
+00:18:57,760 --> 00:19:01,919
+That means you have only give one
+prompt. Okay. One prompt that means the
+
+274
+00:19:00,720 --> 00:19:08,799
+instruction you have given the question
+you have given. Okay. But let's say if I
+
+275
+00:19:05,679 --> 00:19:12,120
+ask this kinds of question.
+Now let's say if I ask this kind of
+
+276
+00:19:10,320 --> 00:19:19,039
+question what
+is
+
+277
+00:19:14,360 --> 00:19:19,039
+B's favorite types
+
+278
+00:19:19,480 --> 00:19:26,880
+of food okay let's say this is the
+question I have given now say it will
+
+279
+00:19:24,799 --> 00:19:30,320
+give you I don't have the information
+about BP favorite types of food could
+
+280
+00:19:28,640 --> 00:19:35,520
+you please provide more details clarify
+to who is BP okay now see here actually
+
+281
+00:19:33,919 --> 00:19:39,919
+uh zero short prompting is not working
+so here you have to pass the few short
+
+282
+00:19:37,520 --> 00:19:44,919
+prompting that Okay. Now see here I'll
+give a prompt. Now I'll just write
+
+283
+00:19:41,640 --> 00:19:54,720
+buppies. Buppy is
+a data scientist and his favorite types
+
+284
+00:19:51,240 --> 00:20:03,400
+of food are or you can write uh food
+includes let's say burgers, burgers,
+
+285
+00:19:59,400 --> 00:20:08,000
+pizza okay and
+chicken. Now I can pass this prompt to
+
+286
+00:20:06,240 --> 00:20:11,520
+my learn language model. Now it will
+learn about me. Okay, because I have
+
+287
+00:20:09,520 --> 00:20:16,240
+given a few short prompt here. Okay, now
+see got it puppy sw types of foods are
+
+288
+00:20:14,080 --> 00:20:19,520
+bargain pizza chicken and if you need
+any more details or have a questions
+
+289
+00:20:17,760 --> 00:20:23,280
+just let me know. Now here I can give
+another prompt. What is the or I can
+
+290
+00:20:21,440 --> 00:20:28,000
+write what restaurant? Now let's say
+this is the prompt I have given. What
+
+291
+00:20:24,880 --> 00:20:32,799
+restaurant should I take BPI uh to in
+Dubai this weekend? Okay, now see if I
+
+292
+00:20:30,360 --> 00:20:38,080
+pass now see it will suggest me some
+restaurant. Dubai has fantastic range of
+
+293
+00:20:34,960 --> 00:20:41,120
+restaurant that cers a variety of taste
+since bi like burgers, pizzas and
+
+294
+00:20:39,760 --> 00:20:44,320
+chicken. Here is the few
+recommendations. So here is the
+
+295
+00:20:42,880 --> 00:20:47,520
+restaurant. Now see this is called
+actually few short prompting. That means
+
+296
+00:20:45,600 --> 00:20:51,919
+you are also giving some few short
+prompt that means some some let's say
+
+297
+00:20:49,960 --> 00:20:55,600
+information about the question you are
+asking. Okay, this is called actually
+
+298
+00:20:53,919 --> 00:20:59,919
+future prompting. So these are the thing
+guys you have to master. So uh see this
+
+299
+00:20:58,320 --> 00:21:03,120
+prompt engineering will come
+automatically whenever you will be
+
+300
+00:21:01,600 --> 00:21:06,159
+writing these kinds of prompt. So unless
+and until you are not writing you are
+
+301
+00:21:04,559 --> 00:21:09,600
+not experimenting you won't be able to
+understand okay which prompt will give
+
+302
+00:21:07,520 --> 00:21:12,559
+you what kinds of output. So try to
+practice a lot. Okay. You have the chart
+
+303
+00:21:11,440 --> 00:21:15,840
+GPT. You can give different different
+prompts and you can get the response
+
+304
+00:21:14,240 --> 00:21:19,039
+from the chart GPT. And the prompt
+actually you are giving to the chart
+
+305
+00:21:16,799 --> 00:21:22,559
+GPT. The same prompt you can use uh to
+any kinds of large language model. Okay.
+
+306
+00:21:20,640 --> 00:21:26,000
+In future you'll be using whether it's a
+let's say Germany, whether it's a let's
+
+307
+00:21:23,840 --> 00:21:30,559
+say mistral, falcon, whatever let's say
+model you're using, you can use it as it
+
+308
+00:21:28,320 --> 00:21:35,039
+is fine. Now there is another concept
+inside actually generative model called
+
+309
+00:21:33,039 --> 00:21:39,760
+AI hall selection. Now what is an AI
+hall? See AI hallucation is when a large
+
+310
+00:21:37,760 --> 00:21:42,799
+language model generates false
+information. That means let's say you
+
+311
+00:21:41,200 --> 00:21:46,400
+are giving a prompt and that model is
+giving you the false
+
+312
+00:21:44,039 --> 00:21:49,600
+information. Okay. So this is called
+actually AI hello solution. That means
+
+313
+00:21:48,320 --> 00:21:52,000
+the prompt you are asking the
+information you're asking this
+
+314
+00:21:50,640 --> 00:21:55,840
+information is not available to the
+large language model. Okay. So that time
+
+315
+00:21:54,559 --> 00:21:58,880
+what we have to do if we are getting
+this kind of value hello solution. So
+
+316
+00:21:57,280 --> 00:22:01,919
+that time we can use something called
+rag concept that means retrieable
+
+317
+00:22:00,320 --> 00:22:05,600
+augmented generation. That means we can
+connect our external data source to my
+
+318
+00:22:03,520 --> 00:22:09,280
+large language model. Okay. And from
+that data sources my model can learn
+
+319
+00:22:07,360 --> 00:22:13,039
+okay this is the information uh you are
+looking for and if rag is not working
+
+320
+00:22:11,600 --> 00:22:15,600
+that time what we can perform we can
+perform something called finetuning of a
+
+321
+00:22:14,400 --> 00:22:20,159
+large language model I think I showed
+you now we can perform fine tuning with
+
+322
+00:22:18,080 --> 00:22:23,440
+of hugging face okay so I'll also show
+you how we can fine-tune different kinds
+
+323
+00:22:21,919 --> 00:22:27,280
+of large language model on top of a
+custom data we can also perform fine
+
+324
+00:22:25,200 --> 00:22:32,000
+tune operation but finetune is a costly
+task because here you need a good system
+
+325
+00:22:29,679 --> 00:22:35,360
+like lots of lots of data okay so again
+it's like very costly task but rag
+
+326
+00:22:33,840 --> 00:22:38,240
+application is a very easy kinds of
+task. See here you don't need lots of
+
+327
+00:22:37,039 --> 00:22:42,960
+cost. Here you don't need lots of
+computational power. Okay. So both we'll
+
+328
+00:22:40,320 --> 00:22:45,919
+be exploring one by one like what is rag
+concept and what is let's say finetuning
+
+329
+00:22:44,480 --> 00:22:50,159
+concept. Everything will be exploring.
+Okay. So yes guys this is all about our
+
+330
+00:22:47,760 --> 00:22:53,200
+prompt engineering. Now I think you got
+it why prompt engineering is super
+
+331
+00:22:51,520 --> 00:22:57,120
+important and how you can master this
+kinds of prompt engineering technique.
+
+332
+00:22:54,640 --> 00:22:59,840
+Okay. It's nothing but it just a way of
+let's say communicating with your large
+
+333
+00:22:58,480 --> 00:23:02,640
+language model. The input you are giving
+to the large language model this is
+
+334
+00:23:01,039 --> 00:23:04,640
+called actually prompt. Okay. And the
+way you are designing this particular
+
+335
+00:23:03,760 --> 00:23:07,120
+prompt, this is called prompt
+engineering.
+

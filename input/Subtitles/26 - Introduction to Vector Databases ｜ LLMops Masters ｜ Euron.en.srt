@@ -1,0 +1,1732 @@
+1
+00:00:01,040 --> 00:00:08,000
+Hi guys, in this video I'll be talking
+about vector database. So here I'm going
+
+2
+00:00:06,080 --> 00:00:13,200
+to explain what exactly the vector
+database is, how vector database works
+
+3
+00:00:10,800 --> 00:00:17,600
+and why you need vector database for the
+large language model. So first of all
+
+4
+00:00:15,360 --> 00:00:21,680
+let's try to understand what is vector
+database is. So you can see a vector
+
+5
+00:00:19,600 --> 00:00:26,080
+database is a database used for storing
+highdimensional vectors such as words
+
+6
+00:00:24,240 --> 00:00:29,800
+embedding or image embeddings. I think
+you know that over the internet we have
+
+7
+00:00:28,240 --> 00:00:35,200
+different different unstructured data
+right like we have images PDFs okay
+
+8
+00:00:32,960 --> 00:00:39,760
+documents then we have uh something
+called audios so if you want to store
+
+9
+00:00:38,160 --> 00:00:44,160
+these are the data you have to use
+vector database for that right so what
+
+10
+00:00:41,680 --> 00:00:47,600
+we do guys we just try to convert these
+kinds of higher dimensional data to
+
+11
+00:00:45,680 --> 00:00:51,280
+higher dimensional vectors with the help
+of some embedding model okay and these
+
+12
+00:00:49,760 --> 00:00:55,039
+are the vector we usually store in the
+vector database now you can ask me why
+
+13
+00:00:53,440 --> 00:00:59,440
+we can't store these are the vector to
+the uh traditional like database like we
+
+14
+00:00:57,120 --> 00:01:04,080
+have MongoDB, MySQL right I'll be
+explaining that part too u uh after uh
+
+15
+00:01:02,239 --> 00:01:10,720
+like understanding that that concept I
+think your uh concept would be clear
+
+16
+00:01:06,280 --> 00:01:14,720
+right so you can see guys over 80 to 85%
+data out there is unstructured data like
+
+17
+00:01:12,640 --> 00:01:19,280
+if I'm talking about image videos text
+okay and audios and we can't easily
+
+18
+00:01:17,520 --> 00:01:24,560
+store them into a relational or
+traditional database like mysql then
+
+19
+00:01:21,920 --> 00:01:28,560
+postgress SQL okay then SQLite or any
+other Let's say whatever database you
+
+20
+00:01:26,320 --> 00:01:32,320
+are having. Why? Uh let's try to
+understand okay why we can't store these
+
+21
+00:01:30,560 --> 00:01:36,240
+other are the data to the traditional
+vector uh sorry traditional database and
+
+22
+00:01:34,880 --> 00:01:40,079
+why we need the vector database.
+Exactly. We'll try to understand each
+
+23
+00:01:38,000 --> 00:01:44,320
+and everything. So guys to give you one
+example let's take one image data as an
+
+24
+00:01:42,159 --> 00:01:48,240
+example. So let's say I want to store uh
+these kinds of dog images to our
+
+25
+00:01:46,000 --> 00:01:51,840
+relational or our traditional database.
+So if I want to store it I can't
+
+26
+00:01:49,920 --> 00:01:55,200
+directly store these other data to our
+uh relational database. Okay. So if I
+
+27
+00:01:53,759 --> 00:01:59,280
+want to store it, so what I need to do,
+I need to create some of the schema.
+
+28
+00:01:57,280 --> 00:02:05,759
+Let's say I have some schema here. I
+have some table. So in this table, let's
+
+29
+00:02:02,399 --> 00:02:10,160
+say I have one column called animal.
+Okay.
+
+30
+00:02:07,720 --> 00:02:14,480
+Animal. Then I have another column
+called
+
+31
+00:02:11,800 --> 00:02:18,239
+color. Okay. Then I have another column
+called
+
+32
+00:02:15,800 --> 00:02:22,560
+tags. So basically you need to manually
+label them uh to store these are the
+
+33
+00:02:20,319 --> 00:02:26,080
+images. Okay. If you want to identify
+similar kinds of images, if you want to
+
+34
+00:02:24,400 --> 00:02:30,080
+apply the query on top of that, then you
+need to create this kinds of a schema
+
+35
+00:02:28,000 --> 00:02:34,280
+manually. Now here uh you just need to
+set those parameter manually. Let's say
+
+36
+00:02:32,480 --> 00:02:40,080
+animal wise it's a
+dog. Okay, it's a dog. Then color-wise,
+
+37
+00:02:37,280 --> 00:02:43,840
+let's say it's black or let's say I can
+and color-wise you can give any color.
+
+38
+00:02:41,760 --> 00:02:49,519
+Let's say golden. Okay, this is the
+golden uh dog. Golden dog. Then we have
+
+39
+00:02:47,440 --> 00:02:53,280
+let's say black dog as well. Okay, black
+dog. You can give anything uh based on
+
+40
+00:02:51,840 --> 00:02:59,040
+your image actually you are trying to
+store. Then you also need to assign some
+
+41
+00:02:55,360 --> 00:02:59,040
+of the tags. Let's say this is very
+
+42
+00:02:59,319 --> 00:03:08,239
+cute. U let's say this dog has black
+eyes. Okay black
+
+43
+00:03:06,040 --> 00:03:12,239
+eyes. So these are the tags actually
+you'll be assigning uh manually. So what
+
+44
+00:03:10,560 --> 00:03:16,720
+happens actually? So whenever you assign
+these kinds of schema manually. So what
+
+45
+00:03:14,159 --> 00:03:20,080
+happens? Let's say you want to query uh
+the similar images okay from the
+
+46
+00:03:18,239 --> 00:03:23,840
+database. So you just give these are the
+parameters. So it will return these are
+
+47
+00:03:21,599 --> 00:03:27,120
+the image for you. Okay. Based on the
+tags actually you have written based on
+
+48
+00:03:25,360 --> 00:03:31,200
+the schema you have prepared. Right? But
+again it's a manual thing. Okay. It's
+
+49
+00:03:29,040 --> 00:03:36,159
+not efficient way to uh store our data
+and it's not efficient way to like query
+
+50
+00:03:33,760 --> 00:03:39,760
+out our data because uh let's say I want
+similar kinds of image. So I need to
+
+51
+00:03:37,760 --> 00:03:44,000
+assign these are the labels manually and
+it's like very uh hard task for us
+
+52
+00:03:41,680 --> 00:03:47,680
+right. So that's why actually we can't
+use our traditional or let's say
+
+53
+00:03:45,680 --> 00:03:51,200
+relational database for these kinds of
+unstructured data. We can easily use
+
+54
+00:03:49,519 --> 00:03:55,519
+these kinds of relational database for
+the structured data. Let's say we have
+
+55
+00:03:52,720 --> 00:03:58,879
+CSV data, we have Excel data. But for
+these kinds of unstructured data, it's
+
+56
+00:03:57,200 --> 00:04:02,879
+like very much difficult to store these
+kinds of data, right? You can store them
+
+57
+00:04:01,280 --> 00:04:07,040
+uh there is no issue. But uh the thing
+is like whenever you will be quering out
+
+58
+00:04:05,519 --> 00:04:10,560
+from your database let's say you want
+similar kinds of dog images at the time
+
+59
+00:04:09,040 --> 00:04:16,560
+it would be very much difficult because
+if I let's say convert this image to B
+
+60
+00:04:13,360 --> 00:04:20,880
+64 string so using B 64 string I can
+easily store the data to the relational
+
+61
+00:04:18,959 --> 00:04:23,840
+database. But I'm talking about whenever
+let's say you are applying query on top
+
+62
+00:04:22,479 --> 00:04:27,040
+of that. Let's say you want similar
+kinds of dog images from this database.
+
+63
+00:04:25,759 --> 00:04:30,639
+At that time it would be very much
+difficult for you to query out because
+
+64
+00:04:28,960 --> 00:04:34,240
+because it doesn't know like whether
+this best 64 string is a dog image or
+
+65
+00:04:32,960 --> 00:04:38,080
+let's say it's a cat image or let's say
+it's a horse image. Okay, it doesn't
+
+66
+00:04:35,919 --> 00:04:41,759
+know. So there is only one option to
+filter out these kinds of images. The
+
+67
+00:04:40,320 --> 00:04:45,360
+thing is like you need to create one
+manual schema like these kinds of tags
+
+68
+00:04:43,680 --> 00:04:48,880
+you need to generate. You need to label
+out these are the images using that
+
+69
+00:04:47,440 --> 00:04:52,400
+actually you can filter out these kinds
+of data. But again it would be very hard
+
+70
+00:04:50,880 --> 00:04:56,080
+approach uh as I already told you
+because you need to apply manual
+
+71
+00:04:53,919 --> 00:04:59,199
+observation here. Now guys, I think you
+already got the idea like why it is
+
+72
+00:04:57,759 --> 00:05:03,040
+difficult to store these kinds of
+unstructured data to the uh relational
+
+73
+00:05:01,199 --> 00:05:06,880
+database because as you can see image is
+nothing but it's a pixel and your
+
+74
+00:05:04,880 --> 00:05:11,360
+relational database uh doesn't ever know
+like how to query out similar kinds of
+
+75
+00:05:09,199 --> 00:05:15,759
+images using these kinds of pixel right
+so guys this is the one major problem
+
+76
+00:05:13,680 --> 00:05:19,280
+with this kinds of relational database
+uh whenever we are using unstructured
+
+77
+00:05:17,440 --> 00:05:22,960
+kinds of data so guys whenever I'm
+talking about unstructured data it is
+
+78
+00:05:20,960 --> 00:05:26,479
+not only image data so it can be video
+data it can be text data and it can be
+
+79
+00:05:24,479 --> 00:05:29,600
+audio your data as well. So guys to
+overcome this issue uh there is a
+
+80
+00:05:28,160 --> 00:05:32,560
+concept introduced called vector
+embedding. So let's say we have
+
+81
+00:05:31,039 --> 00:05:36,800
+unstructured data. Let's say we have
+image, we have text and we have audios
+
+82
+00:05:34,880 --> 00:05:40,320
+and it can be also videos. So first of
+all what we need to do we need to apply
+
+83
+00:05:38,639 --> 00:05:43,520
+something called embedding model. Okay.
+So embedding model is nothing but it's a
+
+84
+00:05:41,759 --> 00:05:46,720
+neural network based model. It's a deep
+learning model. So using this embedding
+
+85
+00:05:45,440 --> 00:05:49,680
+model first of all you will be
+generating some of the embeddings or
+
+86
+00:05:48,240 --> 00:05:53,840
+let's say vectors. Okay. Let's say this
+is my image. We have applied embedding
+
+87
+00:05:51,919 --> 00:05:56,639
+model. Embedding model will give you
+vectors. Okay, like this is the
+
+88
+00:05:55,280 --> 00:06:00,720
+representation of the image. Okay, this
+is the numerical representation of this
+
+89
+00:05:58,400 --> 00:06:04,720
+image. It can be also applied to the
+text data. So see here I'm giving the
+
+90
+00:06:02,639 --> 00:06:09,759
+text data uh and this is my embedding
+model and it is returning this kinds of
+
+91
+00:06:06,560 --> 00:06:13,520
+vector. Again uh you can also put audio
+data. So it will convert to the
+
+92
+00:06:11,919 --> 00:06:17,280
+numerical representation and this is the
+representation of the audio. So here if
+
+93
+00:06:15,600 --> 00:06:20,319
+you see embedding model is nothing but
+it's a neural network based model. Here
+
+94
+00:06:18,880 --> 00:06:23,280
+you can use any kinds of embedding
+model. Let's say we have what to make
+
+95
+00:06:21,840 --> 00:06:25,919
+then we have transformer based embedding
+model as well. Right. So these are the
+
+96
+00:06:24,800 --> 00:06:28,639
+things actually you can use. So if
+you're already familiar with NLP that
+
+97
+00:06:27,360 --> 00:06:32,000
+means natural language processing. I
+think you have heard of like what to
+
+98
+00:06:30,319 --> 00:06:36,400
+make then you have heard of like
+transformer embeddings. Okay. And uh
+
+99
+00:06:33,919 --> 00:06:41,520
+nowadays actually we have large language
+model based embeddings like we have open
+
+100
+00:06:38,319 --> 00:06:45,199
+embeddings. We have uh lots of uh open
+source LLM based embeddings as well. We
+
+101
+00:06:43,440 --> 00:06:47,919
+have hugging face embeddings as well. So
+using these kinds of embedding model we
+
+102
+00:06:46,720 --> 00:06:51,280
+can easily generate these kinds of
+vectors and we can store them in a
+
+103
+00:06:49,840 --> 00:06:54,880
+vector database. So guys, this is the
+entire idea uh on top of this
+
+104
+00:06:52,960 --> 00:06:58,479
+unstructured data like how we can store
+these kinds of unstructured data to the
+
+105
+00:06:56,560 --> 00:07:01,840
+vector database. So first of all uh what
+we are doing we are just trying to
+
+106
+00:06:59,680 --> 00:07:05,599
+convert these are the unstructured data
+uh to the vectors vector representation
+
+107
+00:07:04,080 --> 00:07:09,759
+then we are storing these are the
+vectors okay to the vector database. So
+
+108
+00:07:08,000 --> 00:07:13,360
+guys here is an example you can see so
+let's say we have text unstructured data
+
+109
+00:07:12,000 --> 00:07:17,199
+and here you can use any kinds of
+embedding model. So in this case
+
+110
+00:07:14,800 --> 00:07:20,720
+actually I have referred this uh open a
+embedding model. So it is already
+
+111
+00:07:18,479 --> 00:07:24,880
+trained on GPT model. Okay, GPT3 and
+four model and if you put this kinds of
+
+112
+00:07:23,120 --> 00:07:27,759
+unstructured data to the uh embedding
+model, it will give you this kinds of
+
+113
+00:07:26,240 --> 00:07:31,520
+vector. Okay, this kinds of vector
+representation of all the text actually
+
+114
+00:07:29,440 --> 00:07:35,520
+you have in the documents. Then uh once
+you got this vector actually this vector
+
+115
+00:07:33,199 --> 00:07:39,919
+embedding then you will be using some u
+uh vector database it can be anything
+
+116
+00:07:37,680 --> 00:07:43,599
+any database you can use. So here you
+can store one by one these are the data.
+
+117
+00:07:41,840 --> 00:07:47,599
+Okay. So this is the complete idea of
+this vector database like uh instead of
+
+118
+00:07:45,599 --> 00:07:51,120
+directly storing our text data to the
+database. First of all what we are doing
+
+119
+00:07:49,520 --> 00:07:54,160
+we are taking help from the embedding
+model uh and using the embedding model
+
+120
+00:07:52,960 --> 00:07:57,199
+we are trying to generating these kinds
+of vector embeddings then we are storing
+
+121
+00:07:55,840 --> 00:08:00,720
+these kinds of vector embeddings to the
+vector database. And guys this kinds of
+
+122
+00:07:59,039 --> 00:08:03,759
+vector database has one beautiful
+function called similarity search. So
+
+123
+00:08:02,560 --> 00:08:07,759
+using this similarity search
+functionality it can return you similar
+
+124
+00:08:05,759 --> 00:08:10,960
+kinds of vector represented in the
+vector database. Okay, I will show you
+
+125
+00:08:09,120 --> 00:08:14,720
+this similarity search as an example
+like how it is doing actually similarity
+
+126
+00:08:12,960 --> 00:08:18,479
+search. Now guys, you got to know like
+what is embedding and but you don't know
+
+127
+00:08:16,879 --> 00:08:21,919
+like how these embeddings are generated.
+So to give you one example, I will open
+
+128
+00:08:20,160 --> 00:08:25,840
+my whiteboard and there I will try to
+make you understand. So guys, I'm inside
+
+129
+00:08:23,840 --> 00:08:32,440
+my whiteboard and here first of all what
+I will do u I will take one pen and here
+
+130
+00:08:29,680 --> 00:08:35,440
+I'll be using u unstructured
+data
+
+131
+00:08:36,120 --> 00:08:45,839
+unstructured unstructured data as uh
+text data here I'll be using text data
+
+132
+00:08:42,560 --> 00:08:51,120
+to give you the example. So so first of
+all what I will do uh let's create one
+
+133
+00:08:48,240 --> 00:08:55,680
+table here. So let me create one table.
+Uh so guys let's say I have taken one
+
+134
+00:08:52,880 --> 00:09:00,000
+table here. So here uh we are using one
+embedding model. So let's say we are
+
+135
+00:08:57,839 --> 00:09:00,000
+using
+
+136
+00:09:01,080 --> 00:09:08,240
+one embedding
+model to convert our uh text to numbers.
+
+137
+00:09:06,880 --> 00:09:12,160
+So here you can use any kinds of
+embedding model. You can use openai
+
+138
+00:09:09,920 --> 00:09:16,560
+based, you can use uh what to fake, you
+can use like uh large language model
+
+139
+00:09:14,560 --> 00:09:21,440
+based. You can use anything here. Okay.
+Now whenever uh let's say I have some
+
+140
+00:09:19,920 --> 00:09:26,120
+words here. So let's say I have
+something called
+
+141
+00:09:22,920 --> 00:09:32,600
+king. Then I have something called
+queen. Then I have something called
+
+142
+00:09:29,080 --> 00:09:38,880
+man. And I have something called
+woman. Then I have some uh let's say
+
+143
+00:09:35,720 --> 00:09:43,040
+monkey. So let's say I have five words
+here. Now what this uh embedding model
+
+144
+00:09:41,040 --> 00:09:47,240
+will do, it will try to uh generate some
+of the features on top of the words.
+
+145
+00:09:44,560 --> 00:09:52,320
+Okay. Let's say this is my feature
+column. Features column. Okay. So what
+
+146
+00:09:50,160 --> 00:09:57,760
+kinds of features actually uh it will
+generate? Let's say it can generate u it
+
+147
+00:09:56,399 --> 00:10:00,080
+can generate anything. Let's say it can
+generate
+
+148
+00:10:00,120 --> 00:10:04,000
+gender, it can generate
+
+149
+00:10:04,519 --> 00:10:10,560
+wealth, it can generate
+power. Because this is a neural network
+
+150
+00:10:09,120 --> 00:10:14,560
+based model, we can't say like what are
+the features actually uh it will
+
+151
+00:10:11,839 --> 00:10:17,920
+generate because u it it will generate
+these are the features based on the back
+
+152
+00:10:16,320 --> 00:10:22,079
+propagation. So it will calculate the
+loss and all based on that actually it
+
+153
+00:10:19,519 --> 00:10:25,760
+will try to find out the best possible
+features okay for these kinds of work.
+
+154
+00:10:24,160 --> 00:10:29,279
+So here I'm just giving one example
+that's why I'm taking these are the
+
+155
+00:10:27,040 --> 00:10:32,240
+features okay but it might not like
+generate these are the features but to
+
+156
+00:10:30,959 --> 00:10:37,000
+give you one example I will be using
+these are the features. Now let's say it
+
+157
+00:10:34,000 --> 00:10:42,320
+will uh generate
+weight and it can also generate
+
+158
+00:10:39,600 --> 00:10:45,519
+something called speak. Okay. Now what
+happens actually based on the features
+
+159
+00:10:43,760 --> 00:10:50,800
+actually it will assign some of the
+value. Let's say let's say here my first
+
+160
+00:10:48,079 --> 00:10:55,600
+word is king. Okay. Now king has gender
+or not. Yeah king has gender and the
+
+161
+00:10:52,800 --> 00:11:00,240
+gender is like male. So it would be one
+and for queen uh yeah queen has also
+
+162
+00:10:58,160 --> 00:11:06,240
+gender so it would be zero because queen
+is a female. So similar wise man man has
+
+163
+00:11:02,880 --> 00:11:10,320
+a gender so it will have one. And women
+also has gender so it would be zero
+
+164
+00:11:08,160 --> 00:11:15,440
+because it's a female and monkey uh
+let's say it's a male monkey. So I'll
+
+165
+00:11:12,160 --> 00:11:19,440
+assign it one. Okay. Now it will come to
+the next features called wealth. Okay.
+
+166
+00:11:17,040 --> 00:11:22,959
+Now here and here you can see king has
+wealth right because he's the king and
+
+167
+00:11:21,360 --> 00:11:28,160
+he has lots of wealth. So it would be
+let's say one. I'll assign it as one. Uh
+
+168
+00:11:25,839 --> 00:11:32,480
+queen will also have wealth because
+queen is also part of king. And uh man
+
+169
+00:11:30,720 --> 00:11:38,240
+will also have wealth but it would be
+less than king and queen. So let's uh
+
+170
+00:11:34,880 --> 00:11:42,720
+assign as 0.5. And women will have also
+wealth but less than man. So here I can
+
+171
+00:11:40,240 --> 00:11:47,600
+give 0.3. Monkey doesn't have any
+wealth. So I'll give as zero. Okay. Now,
+
+172
+00:11:44,959 --> 00:11:52,480
+king has power, so I'll give one. Queen
+has also power but less than king. So,
+
+173
+00:11:49,440 --> 00:11:57,920
+I'll give 0.7. Man has also power. Let's
+say uh man has power but it's less than
+
+174
+00:11:55,200 --> 00:12:02,399
+king. So, I'll give as 0.5. Women has
+also power but it's less than man. So,
+
+175
+00:11:59,519 --> 00:12:07,040
+it would be 0.2. And monkey doesn't have
+any power. So, I'll give as zero. Now,
+
+176
+00:12:04,720 --> 00:12:13,440
+weight. Yeah, king has also weight. So,
+I'll give 0.8. And let's say king is
+
+177
+00:12:10,160 --> 00:12:20,079
+little bit obese. Queen has also wet. So
+I'll give as 0.5 because let's say queen
+
+178
+00:12:16,399 --> 00:12:26,639
+is slim and all. Man has also weight. So
+I'll give it as
+
+179
+00:12:21,800 --> 00:12:32,000
+0.7. Women has also I'll give 0 um uh
+0.5. Weight is fine. I think monkey also
+
+180
+00:12:29,360 --> 00:12:37,040
+has weight. Let's say 0.3. Now king can
+speak so I'll give one. Queen can also
+
+181
+00:12:34,399 --> 00:12:43,440
+keep uh speak. I'll give one. Man can
+also speak. I will give one. Women can
+
+182
+00:12:40,000 --> 00:12:47,920
+also uh speak I'll give one. and monkey
+doesn't uh speak okay so I'll give as
+
+183
+00:12:45,279 --> 00:12:53,000
+zero okay now see guys beautifully it
+has generated these are the vectors okay
+
+184
+00:12:50,000 --> 00:12:58,560
+u by generating these are the features
+now let's say if I want to represent
+
+185
+00:12:55,440 --> 00:13:03,600
+king okay if I want to represent king so
+what would be my king vector so here
+
+186
+00:13:02,000 --> 00:13:08,880
+this is your king vector so king vector
+is nothing but one
+
+187
+00:13:05,880 --> 00:13:14,160
+1 08
+uh one so this is the king vector now if
+
+188
+00:13:11,519 --> 00:13:14,160
+I want to represent
+
+189
+00:13:14,760 --> 00:13:23,160
+queen. So this is my queen
+vector. So queen vector would be zero 1
+
+190
+00:13:22,160 --> 00:13:27,680
+uh then
+0.7
+
+191
+00:13:24,680 --> 00:13:33,959
+0.5 and 1. Okay. Now if I want to
+represent
+
+192
+00:13:28,760 --> 00:13:41,399
+man so this is the man vector. So 1
+0.5 0.7 and 1. Okay. Now let's say if I
+
+193
+00:13:38,959 --> 00:13:45,440
+want to represent
+women okay I think you are getting it
+
+194
+00:13:43,600 --> 00:13:54,160
+like how uh we have generated these are
+the vector now this is the vector of the
+
+195
+00:13:47,519 --> 00:13:59,360
+women so 0 uh 0.3 0 0.3 and 0.2 to 0.5
+and 1. Okay. Now let's take one 2D
+
+196
+00:13:57,519 --> 00:14:02,560
+dimension okay and plot these at the
+vector and try to understand like what
+
+197
+00:14:00,880 --> 00:14:09,279
+will happen. So let's say here I will
+take one um two dimensional uh space. So
+
+198
+00:14:06,560 --> 00:14:09,279
+let's say this is
+
+199
+00:14:10,279 --> 00:14:17,480
+my two dimensional space. Okay. So this
+is my
+
+200
+00:14:14,279 --> 00:14:22,240
+x and this is my
+y. So if you plot all the vector here.
+
+201
+00:14:20,480 --> 00:14:29,120
+Okay. If you plot all the vector you
+will see
+
+202
+00:14:24,760 --> 00:14:34,720
+king and uh queen king king and queen
+will appear
+
+203
+00:14:31,360 --> 00:14:39,839
+uh to the similar. So here let's say
+this is my
+
+204
+00:14:36,120 --> 00:14:42,800
+king and this is my queen. Okay. So what
+will happen uh whenever you will plot
+
+205
+00:14:41,600 --> 00:14:45,920
+these are the vector to the two
+dimensional space or let's say three
+
+206
+00:14:44,160 --> 00:14:50,160
+dimensional or any dimension. Okay. You
+will see king and queen will appear like
+
+207
+00:14:48,399 --> 00:14:54,560
+very close together because if you see
+here okay if you see here as per the
+
+208
+00:14:52,399 --> 00:14:58,000
+features if you calculate the number if
+you calculate a distance between these
+
+209
+00:14:55,920 --> 00:15:01,279
+are the vector you will see this uh
+distance would be like very less okay
+
+210
+00:14:59,839 --> 00:15:08,399
+that's why king and queen would be
+appearing very closely together and here
+
+211
+00:15:05,120 --> 00:15:14,320
+man and woman let's say this is my man
+man vector and this is my woman okay
+
+212
+00:15:11,680 --> 00:15:19,279
+this is my woman so these two vector
+would be uh appearing closely and here
+
+213
+00:15:16,880 --> 00:15:24,079
+if you see here uh there is another
+vector called monkey okay monkey will
+
+214
+00:15:22,160 --> 00:15:27,279
+appear
+uh
+
+215
+00:15:24,839 --> 00:15:30,399
+completely different from these are the
+vector because monkey is a different
+
+216
+00:15:28,639 --> 00:15:36,320
+different entity here so let's say this
+is my monkey okay now if I show you see
+
+217
+00:15:33,839 --> 00:15:42,320
+so it has built one cluster so this this
+is one cluster this is another cluster
+
+218
+00:15:40,000 --> 00:15:46,440
+and this is another cluster okay now if
+you see here uh using this uh concept
+
+219
+00:15:45,120 --> 00:15:51,040
+called vector
+embeddings we are easily getting these
+
+220
+00:15:48,639 --> 00:15:55,600
+are the similarity score okay similarity
+vector so now if I want to extract any
+
+221
+00:15:54,000 --> 00:15:59,600
+kinds of vector okay let's say I want
+queen okay I want queen so it will go to
+
+222
+00:15:57,519 --> 00:16:03,199
+the this cluster and will return this
+vector and let's say not only queen
+
+223
+00:16:01,040 --> 00:16:06,800
+let's say it would be let's say I want
+something called princess okay I want
+
+224
+00:16:04,720 --> 00:16:11,440
+something called princess vector so what
+what will happen it will come in this
+
+225
+00:16:08,720 --> 00:16:14,800
+cluster because if you calculate the
+vectors okay of the princess you will
+
+226
+00:16:13,120 --> 00:16:17,920
+see it will have these are the features
+Okay, it will have these are the
+
+227
+00:16:15,839 --> 00:16:22,160
+features related to the king and queen.
+Okay, so now this princess will appear
+
+228
+00:16:20,160 --> 00:16:25,759
+here. So that's how actually this
+embedding model works actually. So it
+
+229
+00:16:24,079 --> 00:16:29,199
+will first of all assign some of the
+features based on that it will generate
+
+230
+00:16:27,360 --> 00:16:32,639
+these are the vectors and it will plot
+these are the vectors to the h
+
+231
+00:16:31,120 --> 00:16:37,040
+dimensional space. So here in this case
+I have taken two dimensional space but
+
+232
+00:16:34,399 --> 00:16:40,240
+it might be 3 4 5 and so on. Okay based
+on your dimension of the data. So
+
+233
+00:16:38,480 --> 00:16:45,279
+whenever I'm using unstructured data
+whenever I'm using real world data so
+
+234
+00:16:43,040 --> 00:16:48,079
+dimension might be vary okay it might be
+millions dimension it might be thousand
+
+235
+00:16:46,800 --> 00:16:52,560
+dimension we can't say like what are the
+dimension it will have but as a
+
+236
+00:16:49,759 --> 00:16:55,920
+visualization we can only show 2D space
+here okay so this is the complete idea
+
+237
+00:16:54,480 --> 00:17:00,480
+guys I think you got it like how this
+embeddings model model are working okay
+
+238
+00:16:57,759 --> 00:17:03,920
+and how it is generating this kinds of
+vector okay now here in this case
+
+239
+00:17:02,160 --> 00:17:09,280
+actually you have lots of embedding
+models so we have open AI open AI
+
+240
+00:17:06,880 --> 00:17:09,280
+embedding
+
+241
+00:17:09,640 --> 00:17:18,559
+model and this model is trained on GPT.
+Okay, GPT model. I think you have heard
+
+242
+00:17:16,400 --> 00:17:21,199
+of GPT model. Then we have something
+called hugging
+
+243
+00:17:21,799 --> 00:17:26,000
+face hugging face embedding as
+
+244
+00:17:26,360 --> 00:17:34,120
+well. Okay, hanging face embedding. So
+uh it is already trained on let's say
+
+245
+00:17:32,000 --> 00:17:39,600
+lots of open
+source opensource LLM. Okay, that means
+
+246
+00:17:36,880 --> 00:17:43,840
+large language model. Then uh we also
+have uh something called uh uh
+
+247
+00:17:44,200 --> 00:17:48,000
+lama. Okay, lama 2
+
+248
+00:17:48,600 --> 00:17:54,720
+embedding. I'll be discussing like what
+is lama 2 and all. Okay, uh as a open
+
+249
+00:17:53,200 --> 00:17:58,840
+source model then we have something
+called Google
+
+250
+00:17:56,960 --> 00:18:03,440
+uh Google
+palm
+
+251
+00:18:01,320 --> 00:18:06,600
+embedding. So these are the open source
+embedding you can directly use. So this
+
+252
+00:18:05,280 --> 00:18:10,600
+is from
+Facebook Facebook research. Okay. And
+
+253
+00:18:09,120 --> 00:18:15,600
+this is from Google
+research. Okay. And this one is paid
+
+254
+00:18:13,120 --> 00:18:20,400
+because if you are using OpenAI
+embedding and OpenAI model so you need
+
+255
+00:18:17,520 --> 00:18:24,000
+to pay. This is completely paid and uh
+these are the things are uh free. Okay.
+
+256
+00:18:22,480 --> 00:18:29,280
+These are the things are open source and
+free. But to get the lama to access
+
+257
+00:18:26,240 --> 00:18:32,400
+actually you need to uh like uh uh send
+some information then they will give you
+
+258
+00:18:30,880 --> 00:18:35,200
+the access. I'll tell you like how to
+take this lama to access and all. Okay.
+
+259
+00:18:34,000 --> 00:18:38,000
+everything I'll be discussing about.
+Don't worry about like just try to stay
+
+260
+00:18:36,799 --> 00:18:42,240
+with the video. I'll be discussing each
+and everything. So guys, I hope you got
+
+261
+00:18:39,919 --> 00:18:45,760
+the entire idea like how this embeddings
+models works. Okay? And how it generate
+
+262
+00:18:44,080 --> 00:18:49,679
+these kinds of embeddings as a vector,
+right? So guys, here I kept another
+
+263
+00:18:48,000 --> 00:18:54,559
+example. Uh if you just see this
+example, your concept would be very much
+
+264
+00:18:52,000 --> 00:18:58,559
+clear. See here I have these kinds of
+words. Okay? And we are using these
+
+265
+00:18:56,480 --> 00:19:02,480
+kinds of embedding model and we are
+generating these kinds of vectors. And
+
+266
+00:19:00,400 --> 00:19:06,000
+if we plot these are the vectors to the
+uh 2D dimension. So it will look like
+
+267
+00:19:04,400 --> 00:19:08,720
+that. So let's say we have this three
+word, we have this three word and we
+
+268
+00:19:07,200 --> 00:19:11,919
+have this three word and we are getting
+different different vector and this is
+
+269
+00:19:10,320 --> 00:19:16,080
+the cluster. Okay, this is the cluster
+of each of the words. If you see here
+
+270
+00:19:13,679 --> 00:19:21,120
+king, man, uh women is appearing in the
+same cluster. Then apple, banana, orange
+
+271
+00:19:18,480 --> 00:19:25,600
+is appearing uh to the another cluster
+and football, golf and tennis is
+
+272
+00:19:23,440 --> 00:19:31,039
+appearing uh in the another cluster
+because uh this is related uh to person
+
+273
+00:19:29,039 --> 00:19:33,919
+okay person and this is related to
+fruits and this is related to sports.
+
+274
+00:19:32,720 --> 00:19:37,840
+Okay, that's why this cluster is
+different. Now I think you got it the uh
+
+275
+00:19:36,000 --> 00:19:40,880
+vector embeddings like how this vector
+embeddings looks like and how it is
+
+276
+00:19:39,120 --> 00:19:45,120
+generating. Okay, I have given you the
+entire idea. But uh one issue actually
+
+277
+00:19:43,360 --> 00:19:49,280
+with this vector embeddings which is
+nothing but whenever you are like
+
+278
+00:19:47,679 --> 00:19:52,559
+getting any similar kinds of vector it
+is applying something called distance
+
+279
+00:19:50,799 --> 00:19:55,919
+formula. I think you have heard of like
+distance formula we have ukarian
+
+280
+00:19:54,640 --> 00:20:00,720
+distance. Okay, we have Manhattan
+distance or let's say we have something
+
+281
+00:19:58,200 --> 00:20:04,640
+called cosine similarity score as well.
+Okay. So using these are the equation
+
+282
+00:20:02,880 --> 00:20:07,679
+actually uh it try to calculate the
+similar kinds of vector but again if you
+
+283
+00:20:06,160 --> 00:20:11,919
+see here it would be very much time
+taking because uh it will calculate with
+
+284
+00:20:10,240 --> 00:20:16,559
+respect to one by one all the vector
+then it will give you uh the similar
+
+285
+00:20:13,440 --> 00:20:21,280
+kinds of vector. So the main problem is
+like the time if you're using uh this
+
+286
+00:20:18,799 --> 00:20:24,400
+thing directly so it will take lots of
+time to give you the similar kinds of
+
+287
+00:20:22,640 --> 00:20:28,000
+vector. So to overcome this issue
+actually they proposed something called
+
+288
+00:20:26,240 --> 00:20:31,840
+indexes in the vector database. Okay
+like we call it as vector indexes. So
+
+289
+00:20:30,159 --> 00:20:34,400
+what is vector indexes? So let's say
+whenever we are having this kind of
+
+290
+00:20:33,039 --> 00:20:37,039
+unstructured data, we are applying this
+kinds of embedding model and it is
+
+291
+00:20:35,840 --> 00:20:41,840
+generating these kinds of embedding.
+Okay. So on top of this embedding where
+
+292
+00:20:39,840 --> 00:20:45,600
+uh what is trying to do? It is trying to
+add some kinds of indexes. Okay. So this
+
+293
+00:20:44,080 --> 00:20:48,640
+indexes is nothing but it's a data
+structure. It's one kinds of data
+
+294
+00:20:47,039 --> 00:20:52,080
+structure actually. So what it will do?
+It will find out similar kinds of vector
+
+295
+00:20:50,480 --> 00:20:54,960
+and it will assign some of the indexes.
+Okay. And it will make some cluster
+
+296
+00:20:53,360 --> 00:20:58,400
+kinds of thing. So whenever let's say
+you have any new data, first of all it
+
+297
+00:20:56,480 --> 00:21:03,440
+will see like which indexes actually it
+lies this data. So in that index only it
+
+298
+00:21:01,360 --> 00:21:07,760
+will search that uh query. So to
+understand this let's say this is my
+
+299
+00:21:05,440 --> 00:21:11,840
+example. So first of all let's say it
+has assigned this kinds of indexes. Now
+
+300
+00:21:09,360 --> 00:21:15,760
+you have one new data. Now first of all
+it will see like which cluster actually
+
+301
+00:21:13,840 --> 00:21:19,039
+this this is lies. Okay. So it will go
+to that cluster then it will return the
+
+302
+00:21:17,440 --> 00:21:22,640
+similar kinds of vector with respect to
+the new data you are giving. Okay.
+
+303
+00:21:20,880 --> 00:21:26,799
+Instead of searching to all of the
+cluster. So this is the idea of this
+
+304
+00:21:24,159 --> 00:21:30,960
+indexes uh in this vector database. Now
+uh using uh this indexes uh to our
+
+305
+00:21:29,120 --> 00:21:35,360
+vector database uh it's like very fast.
+Now whenever you are asking any kinds of
+
+306
+00:21:32,720 --> 00:21:39,039
+query uh to the vector database and it
+is returning any kinds of vector so this
+
+307
+00:21:37,440 --> 00:21:43,200
+process time would be very fast. Now
+guys I hope you got the entire idea like
+
+308
+00:21:40,880 --> 00:21:46,400
+what is vector database and all about
+and what is embeddings and all about.
+
+309
+00:21:44,880 --> 00:21:50,480
+Now you can tell a vector database
+indexes and store vector embeddings for
+
+310
+00:21:48,400 --> 00:21:54,640
+faster retrieval and similarity search.
+Uh so we used to use our traditional
+
+311
+00:21:52,559 --> 00:21:58,480
+database to directly store our data. But
+uh in the vector database first of all
+
+312
+00:21:56,000 --> 00:22:02,799
+we try to convert as vector then we try
+to store them to the vector database.
+
+313
+00:22:00,159 --> 00:22:08,320
+Okay this is the complete idea. Now guys
+let's uh discuss some use cases like why
+
+314
+00:22:06,080 --> 00:22:12,480
+this vector database is useful like what
+are the use cases are there. So as you
+
+315
+00:22:10,240 --> 00:22:16,400
+can see uh it will help you the longterm
+memory for the large language model
+
+316
+00:22:14,080 --> 00:22:19,440
+because it is uh storing all of the data
+of vector to the vector database. So
+
+317
+00:22:18,159 --> 00:22:24,159
+whenever you are connecting this kinds
+of large language model to the vector
+
+318
+00:22:20,880 --> 00:22:28,400
+database so it can be used as a memory
+okay memory of your large language model
+
+319
+00:22:25,760 --> 00:22:31,200
+like long long-term memory and it can
+also perform something called semantic
+
+320
+00:22:29,679 --> 00:22:35,280
+search I already told you how to perform
+the semantic search using the formula
+
+321
+00:22:33,120 --> 00:22:38,320
+and using the indexes and all so search
+based on the meaning of the context
+
+322
+00:22:36,799 --> 00:22:42,880
+let's say if you're giving something
+called let's say king and queen so it
+
+323
+00:22:40,799 --> 00:22:46,400
+will not only consider the text you are
+giving it will also consider the context
+
+324
+00:22:44,480 --> 00:22:49,679
+like what is king what are the features
+of king what is the features of going
+
+325
+00:22:47,840 --> 00:22:53,280
+based on that it will give you the
+sement uh similar kinds of vector okay
+
+326
+00:22:51,360 --> 00:22:56,400
+as a output then it can also perform
+something called similarity search as I
+
+327
+00:22:54,559 --> 00:23:00,400
+already told you like on the text data
+image data video data or let's say audio
+
+328
+00:22:58,559 --> 00:23:04,000
+data let's say I have one image let's
+say dog image I will tell hey just give
+
+329
+00:23:02,240 --> 00:23:08,240
+me some dog images okay similar kinds of
+dog images so it will first of all try
+
+330
+00:23:06,240 --> 00:23:12,480
+to see the like vector okay similar
+kinds of vector and it will return uh
+
+331
+00:23:10,320 --> 00:23:16,480
+the similar kinds of like representation
+of the dog to you okay so we call it as
+
+332
+00:23:14,400 --> 00:23:20,240
+similar uh similarity then it can be
+also used uh in field of recommendation
+
+333
+00:23:18,240 --> 00:23:24,480
+system uh because as you as you already
+saw like uh if you if you're having this
+
+334
+00:23:22,000 --> 00:23:27,039
+kinds of uh uh vector together and it
+can perform similarity search let's say
+
+335
+00:23:26,000 --> 00:23:29,559
+I want to build something called
+recommendation system so let's say I'm
+
+336
+00:23:28,720 --> 00:23:34,480
+asking
+for like food related content so it will
+
+337
+00:23:32,720 --> 00:23:38,080
+suggest me food related content only
+okay using these kinds of similarities
+
+338
+00:23:36,240 --> 00:23:42,960
+and all so guys this is the entire idea
+of this vector database and these are
+
+339
+00:23:40,559 --> 00:23:46,799
+the use cases actually you can consider
+okay inside this vector database so guys
+
+340
+00:23:45,280 --> 00:23:52,000
+here you can see some weirdly used
+vector database like we have chromad,
+
+341
+00:23:48,880 --> 00:23:56,320
+web, neo4j, then we have fs, we have f
+pine cone okay apart from that uh there
+
+342
+00:23:54,640 --> 00:24:00,000
+are some more like vector database are
+available but these are some uh weirdly
+
+343
+00:23:58,400 --> 00:24:04,320
+used vector database okay you'll be
+getting so in our program also we'll try
+
+344
+00:24:02,720 --> 00:24:09,039
+to utilize some of the vector database
+for implementing uh these kinds of lm
+
+345
+00:24:06,559 --> 00:24:12,640
+powered application okay um then I think
+your understanding would be more clear
+
+346
+00:24:10,720 --> 00:24:17,120
+so yes guys uh this is all about our
+vector database concept I think uh you
+
+347
+00:24:15,120 --> 00:24:21,360
+got the entire concept okay Y vector
+database is required. So with that guys
+
+348
+00:24:19,520 --> 00:24:25,320
+uh this is all from this particular
+video and thanks for watching.
+

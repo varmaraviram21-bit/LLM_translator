@@ -1,0 +1,1067 @@
+1
+00:00:00,000 --> 00:00:04,400
+Hi everyone, my name is Akshay and in
+this video, I'm going to be explaining
+
+2
+00:00:03,040 --> 00:00:07,960
+model routing.
+So, imagine you have built an AI
+
+3
+00:00:05,880 --> 00:00:12,280
+application and every single request
+goes to most powerful model you have,
+
+4
+00:00:10,160 --> 00:00:16,080
+right? That sounds simple.
+But, there's also a problem. You are
+
+5
+00:00:14,240 --> 00:00:20,440
+using an expensive slow model to answer
+questions that a much smaller model
+
+6
+00:00:18,240 --> 00:00:25,480
+could handle perfectly well. A simple
+question does not need the same model
+
+7
+00:00:22,600 --> 00:00:30,000
+like a complex coding problem. A huge
+document might need a model with a much
+
+8
+00:00:27,800 --> 00:00:34,960
+larger context window. So, instead of
+asking what LLM I should use, a better
+
+9
+00:00:33,120 --> 00:00:39,040
+question is
+what LLM should handle this particular
+
+10
+00:00:36,960 --> 00:00:43,960
+request well? And that's the problem
+model routing solves.
+
+11
+00:00:41,320 --> 00:00:43,960
+So,
+
+12
+00:00:44,520 --> 00:00:50,680
+imagine we have a user,
+right? We have a user
+
+13
+00:00:51,720 --> 00:01:01,080
+and this and a LLM.
+This The most simple architecture is
+
+14
+00:00:56,400 --> 00:01:01,080
+just like this. We have a request
+
+15
+00:01:02,160 --> 00:01:08,680
+and it goes to the same model, same
+model
+
+16
+00:01:06,200 --> 00:01:08,680
+A.
+
+17
+00:01:08,880 --> 00:01:15,880
+So, let's have three requests, right?
+Like, what is 2 + 2? Uh summarize this
+
+18
+00:01:13,640 --> 00:01:20,080
+document. Design a distributed AI
+system.
+
+19
+00:01:18,160 --> 00:01:22,560
+So, we have three models. So, the same
+model
+
+20
+00:01:22,640 --> 00:01:29,720
+will have
+an
+
+21
+00:01:26,840 --> 00:01:33,040
+easy request,
+a medium request,
+
+22
+00:01:33,880 --> 00:01:40,880
+and a hard request.
+Okay. The problem is these three
+
+23
+00:01:38,760 --> 00:01:46,600
+requests are not the same. If the first
+request is the first request, what is 2
+
+24
+00:01:42,920 --> 00:01:50,960
++ 2? It needs almost no reasoning. And
+the third request, like what is a
+
+25
+00:01:48,480 --> 00:01:55,160
+distributed AI system? It requires a
+much more reasoning. So, different tasks
+
+26
+00:01:53,480 --> 00:02:02,320
+require different requirements, which
+require different models.
+
+27
+00:01:57,760 --> 00:02:02,320
+So, we have a user here.
+
+28
+00:02:02,840 --> 00:02:06,440
+We have a request.
+
+29
+00:02:14,240 --> 00:02:19,560
+This is the
+router.
+
+30
+00:02:21,400 --> 00:02:26,040
+And then the router will go to model
+
+31
+00:02:28,000 --> 00:02:30,880
+model A,
+
+32
+00:02:34,720 --> 00:02:40,959
+model B,
+and a model
+
+33
+00:02:38,680 --> 00:02:45,160
+C, right? So, this is the basic idea
+behind model leasing. Instead of sending
+
+34
+00:02:42,959 --> 00:02:49,320
+every request to one model, we put a
+router in between. So, the router
+
+35
+00:02:47,680 --> 00:02:54,000
+basically looks at the request and
+decides which model is appropriate. So,
+
+36
+00:02:52,120 --> 00:02:58,560
+if it's easy, then it will go to a model
+that is cheap and fast. If it's a normal
+
+37
+00:02:57,280 --> 00:03:01,640
+question, then it will go to model
+that's balanced. And if it's a hard
+
+38
+00:03:00,320 --> 00:03:05,400
+question, it will go to a much more
+powerful model.
+
+39
+00:03:03,400 --> 00:03:09,239
+And the router doesn't necessarily need
+to understand to answer the question. It
+
+40
+00:03:07,519 --> 00:03:11,560
+needs to understand what kind of request
+it is.
+
+41
+00:03:10,680 --> 00:03:16,120
+Right?
+So, there are few
+
+42
+00:03:13,680 --> 00:03:21,959
+Now, you may ask that what does a router
+really look at? So,
+
+43
+00:03:18,120 --> 00:03:21,959
+the router's router signals are
+
+44
+00:03:22,160 --> 00:03:27,720
+Sorry.
+Now, we're going to talk about router
+
+45
+00:03:28,239 --> 00:03:30,880
+signals.
+
+46
+00:03:31,239 --> 00:03:38,040
+They're few.
+Like task,
+
+47
+00:03:35,280 --> 00:03:38,040
+cost,
+
+48
+00:03:38,480 --> 00:03:41,480
+latency,
+
+49
+00:03:43,519 --> 00:03:48,959
+quality,
+context,
+
+50
+00:03:50,880 --> 00:03:57,840
+confidence,
+and
+
+51
+00:03:55,080 --> 00:03:57,840
+output format.
+
+52
+00:04:02,080 --> 00:04:06,959
+Now, let's first look at
+task.
+
+53
+00:04:05,920 --> 00:04:11,480
+So,
+a coding task might require a different
+
+54
+00:04:09,080 --> 00:04:16,680
+model than a simple classification task.
+So, task can be either it's the asking
+
+55
+00:04:14,400 --> 00:04:20,680
+for a coding, either it's asking for
+summarization, classification, or
+
+56
+00:04:18,680 --> 00:04:25,840
+reasoning.
+And now we'll talk about cost. So, cost
+
+57
+00:04:23,320 --> 00:04:31,160
+means that a cheaper model can handle
+requests that it that's uh that will
+
+58
+00:04:29,080 --> 00:04:35,840
+little reasoning might spend more,
+right?
+
+59
+00:04:33,000 --> 00:04:39,640
+Next, we'll talk about latency. If a
+application needs a response in a few
+
+60
+00:04:37,480 --> 00:04:43,600
+hundred milliseconds, a slower model
+might not be appropriate. We need a much
+
+61
+00:04:41,800 --> 00:04:48,120
+smaller model for that.
+And then talk about quality.
+
+62
+00:04:45,640 --> 00:04:53,480
+Quality is basically some task require a
+much more stronger reasoning or better
+
+63
+00:04:50,440 --> 00:04:57,720
+output quality. So, a harder or more
+difficult task might require a much more
+
+64
+00:04:56,440 --> 00:05:03,120
+stronger
+uh model, while uh
+
+65
+00:04:59,919 --> 00:05:08,480
+easier task might require less.
+Now, we'll talk about context, right?
+
+66
+00:05:05,080 --> 00:05:13,680
+Context is basically a small input might
+require
+
+67
+00:05:10,480 --> 00:05:13,680
+say model A.
+
+68
+00:05:13,919 --> 00:05:18,000
+And a
+huge input
+
+69
+00:05:21,440 --> 00:05:28,000
+might go to model B.
+So, if you're passing a mod a massive
+
+70
+00:05:25,880 --> 00:05:32,360
+document, the context size becomes a
+much more important
+
+71
+00:05:29,600 --> 00:05:35,680
+criteria, right?
+And similarly with confidence, a larger
+
+72
+00:05:33,800 --> 00:05:39,760
+confidence a bigger model might require
+better confidence, and a smaller model
+
+73
+00:05:38,120 --> 00:05:43,280
+might require less one.
+And for output format,
+
+74
+00:05:42,320 --> 00:05:48,240
+uh
+basically, sometimes the requirement is
+
+75
+00:05:45,560 --> 00:05:52,920
+just not what the model says. It can
+It's whether the It can reliably produce
+
+76
+00:05:51,040 --> 00:05:57,240
+the format your application wants it to
+be.
+
+77
+00:05:54,520 --> 00:06:03,040
+Right? Now, let's make this example more
+concrete. So, we have three models. We
+
+78
+00:05:59,320 --> 00:06:03,040
+have uh model A.
+
+79
+00:06:04,280 --> 00:06:07,840
+It is basically fast.
+
+80
+00:06:07,920 --> 00:06:15,200
+It is cheap.
+And it can perform
+
+81
+00:06:12,320 --> 00:06:18,480
+simple task.
+Right?
+
+82
+00:06:16,320 --> 00:06:21,400
+Then we have
+model B.
+
+83
+00:06:21,640 --> 00:06:25,080
+This one's balanced.
+
+84
+00:06:25,800 --> 00:06:30,000
+It has a moderate cost.
+
+85
+00:06:32,160 --> 00:06:37,080
+And can perform general task.
+
+86
+00:06:40,800 --> 00:06:46,880
+Now, we also have another model, say
+model
+
+87
+00:06:45,400 --> 00:06:50,040
+C, right?
+And this one is powerful.
+
+88
+00:06:51,040 --> 00:06:55,000
+This one is expensive.
+
+89
+00:06:55,520 --> 00:07:00,640
+And can perform
+complex problems.
+
+90
+00:07:02,480 --> 00:07:08,320
+Like three models.
+Now, router, we have the router we
+
+91
+00:07:06,760 --> 00:07:12,960
+discussed.
+What will do? It will
+
+92
+00:07:10,720 --> 00:07:17,400
+decide that which model to choose. If
+it's an easy problem,
+
+93
+00:07:15,400 --> 00:07:22,680
+it will go to
+A, model A.
+
+94
+00:07:19,160 --> 00:07:25,680
+On the other hand, if it's a normal or a
+balanced problem,
+
+95
+00:07:26,680 --> 00:07:33,200
+it will go to model B.
+And if it's a complex problem,
+
+96
+00:07:34,640 --> 00:07:41,840
+it will go to model C, right? So, let's
+imagine our application has these three
+
+97
+00:07:38,800 --> 00:07:45,600
+models. They don't have to be completely
+three different companies or APIs. So,
+
+98
+00:07:43,960 --> 00:07:51,000
+I'm using these three models to make the
+architecture more easier to understand.
+
+99
+00:07:47,880 --> 00:07:57,080
+Like I said, model A is cheap, model B
+is model A is cheap and used for simple
+
+100
+00:07:54,040 --> 00:08:01,360
+task. Model B will be used for a general
+purpose model, and model C is much more
+
+101
+00:07:59,200 --> 00:08:04,960
+powerful and expensive. So, we
+reserve it for requests that we actually
+
+102
+00:08:03,360 --> 00:08:09,240
+need that for
+extra capability.
+
+103
+00:08:07,480 --> 00:08:14,280
+Now, let's build our simple model of
+this. So, I'm going to open my VS Code
+
+104
+00:08:11,960 --> 00:08:20,240
+folder, and I already created an IP 1B
+file called model routing. So, let's
+
+105
+00:08:18,080 --> 00:08:24,280
+understand what is about. So, this is
+obviously a very simple basic router. We
+
+106
+00:08:22,680 --> 00:08:29,200
+just using keywords here, so we can see
+the architecture without
+
+107
+00:08:26,440 --> 00:08:33,880
+adding any unnecessary complexity. Okay?
+So, this is a function I created called
+
+108
+00:08:31,120 --> 00:08:39,120
+route request. What it will take the
+turn the request into lower case, and if
+
+109
+00:08:36,320 --> 00:08:44,839
+it asks about summarizing, then it if
+the summarize is in the request, it will
+
+110
+00:08:41,960 --> 00:08:49,400
+take to model B. If any keyword like
+architecture, debug, or designing kind
+
+111
+00:08:46,880 --> 00:08:53,760
+of complex problems are there, then it
+will route to model C. Or if it's none
+
+112
+00:08:51,640 --> 00:08:58,000
+of those, and it's a simple one,
+I it will route to model A.
+
+113
+00:08:56,120 --> 00:09:01,280
+So, I'm going to run this.
+Next, what is this? We have created
+
+114
+00:08:59,400 --> 00:09:05,960
+three requests, like I said before. What
+is 2 + 2? Summarize the document, and
+
+115
+00:09:03,440 --> 00:09:08,160
+design an architecture for an AI system.
+So, what I'm going to do, I'm going to
+
+116
+00:09:07,040 --> 00:09:12,680
+run this.
+I see the first one, what is 2 + 2? It
+
+117
+00:09:10,560 --> 00:09:18,120
+is a very simple problem, right? So, it
+does not require
+
+118
+00:09:14,160 --> 00:09:22,600
+much a large context or stronger model.
+So, that's why it will go to model A.
+
+119
+00:09:20,839 --> 00:09:27,200
+The second one, summarize the document,
+has it talks about summarizing, and we
+
+120
+00:09:25,360 --> 00:09:32,520
+already mentioned that summarize
+will route to model B. So, hence it goes
+
+121
+00:09:30,000 --> 00:09:37,720
+to model B. On the third hand, design an
+architecture for an AI system is a much
+
+122
+00:09:33,960 --> 00:09:41,920
+more complex problem, which requires
+uh more stronger reasoning and it's much
+
+123
+00:09:39,880 --> 00:09:47,520
+more expensive to perform. So, that's
+why it will go to model C.
+
+124
+00:09:44,960 --> 00:09:51,560
+And that is already model routing.
+Now, what we're going to talk about that
+
+125
+00:09:49,360 --> 00:09:57,640
+real routing, on the other hand, is much
+more sophisticated. So, imagine we have
+
+126
+00:09:54,680 --> 00:09:57,640
+a real router.
+
+127
+00:10:01,240 --> 00:10:09,000
+Right? So, it will go to first of all do
+it will have a request.
+
+128
+00:10:07,080 --> 00:10:15,520
+Then which we'll keep. Then it will go
+to the router, right?
+
+129
+00:10:12,360 --> 00:10:19,680
+The router will go to the three all the
+uh criterias we decided like
+
+130
+00:10:18,120 --> 00:10:24,960
+task
+cost
+
+131
+00:10:22,240 --> 00:10:29,400
+latency, etc.
+And then what we'll do, it will go to
+
+132
+00:10:26,880 --> 00:10:32,880
+the model.
+Obviously, production routing is much
+
+133
+00:10:31,120 --> 00:10:37,640
+more sophisticated than checking whether
+word architecture is in the sentence.
+
+134
+00:10:35,760 --> 00:10:41,960
+You might have a dedicated classifier or
+another LLM acting as a router,
+
+135
+00:10:39,800 --> 00:10:45,000
+deterministic rules, or a combination of
+these.
+
+136
+00:10:43,640 --> 00:10:50,280
+So,
+so basically in um
+
+137
+00:10:47,200 --> 00:10:53,480
+production routing, it's basically rules
+plus models.
+
+138
+00:10:59,440 --> 00:11:06,680
+For example, you can have hard rules for
+things like context size or compliance
+
+139
+00:11:04,560 --> 00:11:10,400
+requirements and use a model to classify
+the task itself.
+
+140
+00:11:09,200 --> 00:11:14,760
+And now we're going to talk about
+something important and much more easy
+
+141
+00:11:12,520 --> 00:11:19,680
+to explain. Like that is fallback
+models. So, we have a router, right?
+
+142
+00:11:20,880 --> 00:11:24,800
+And say we have a model.
+
+143
+00:11:25,040 --> 00:11:31,360
+Right?
+And imagine if this model fails.
+
+144
+00:11:29,200 --> 00:11:37,120
+What to do? That is where a fallback
+model comes into place. If this model A
+
+145
+00:11:33,640 --> 00:11:42,280
+fails, this will route to model
+B.
+
+146
+00:11:38,200 --> 00:11:42,280
+And it may be a success.
+
+147
+00:11:44,680 --> 00:11:54,040
+So, things how but you may ask yourself
+how will a model fail? So, there can be
+
+148
+00:11:49,520 --> 00:11:57,800
+things like say timeout
+or rate limit
+
+149
+00:11:58,680 --> 00:12:06,960
+or a balance is unavailable
+So, these are
+
+150
+00:12:04,480 --> 00:12:12,160
+criterias can come into picture. And a
+production router should not naturally
+
+151
+00:12:08,560 --> 00:12:16,240
+return an error to user. That's why we
+created fallback models.
+
+152
+00:12:14,920 --> 00:12:21,480
+So,
+this basically gives the application
+
+153
+00:12:18,920 --> 00:12:24,760
+reliance resilience, I mean. So, now
+we're going to talk about something
+
+154
+00:12:23,080 --> 00:12:27,640
+called as
+confidence
+
+155
+00:12:28,520 --> 00:12:33,520
+based
+routing.
+
+156
+00:12:34,160 --> 00:12:40,160
+Right.
+So, we have a router A
+
+157
+00:12:38,160 --> 00:12:44,640
+router and it
+routes to say model A.
+
+158
+00:12:42,600 --> 00:12:47,480
+And then
+confidence.
+
+159
+00:12:49,040 --> 00:12:55,880
+So, basically
+uh suppose a model
+
+160
+00:12:54,000 --> 00:13:01,560
+the cheap model attempts a task but we
+are not confident about its result. So,
+
+161
+00:12:59,080 --> 00:13:05,560
+what it will do is that a cheap model
+basically cheap or
+
+162
+00:13:03,960 --> 00:13:08,480
+uh
+slow model
+
+163
+00:13:07,080 --> 00:13:11,360
+will give
+low confidence.
+
+164
+00:13:13,360 --> 00:13:17,240
+Obviously, will give low confidence.
+
+165
+00:13:17,600 --> 00:13:24,160
+Then a stronger model.
+Right. So, instead of automatically
+
+166
+00:13:22,360 --> 00:13:29,440
+paying the strongest model for every
+single time, we can start with a cheap
+
+167
+00:13:26,480 --> 00:13:33,920
+and a more a slow model and escalate
+when necessary. So, what is the first
+
+168
+00:13:31,360 --> 00:13:41,320
+step is that first step is to
+take the cheap model, cheap first.
+
+169
+00:13:37,880 --> 00:13:41,320
+Then, it will check.
+
+170
+00:13:41,600 --> 00:13:47,480
+And then, it will
+escalate
+
+171
+00:13:47,960 --> 00:13:52,160
+if
+needed, right?
+
+172
+00:13:52,240 --> 00:13:59,280
+So, again, conference is just another
+not a perfect measure of correctness. It
+
+173
+00:13:57,280 --> 00:14:03,720
+is very good, but it's not the only one.
+So, in a real system, this could be
+
+174
+00:14:01,360 --> 00:14:07,960
+combined with validation, uh structure
+output checks, uh tool results, or other
+
+175
+00:14:05,880 --> 00:14:12,560
+signals.
+Right? Uh now, we will talk about model
+
+176
+00:14:11,440 --> 00:14:16,840
+gateway.
+This is basically our introduction to
+
+177
+00:14:14,720 --> 00:14:19,760
+production architecture, right? So, we
+have an application.
+
+178
+00:14:23,240 --> 00:14:27,480
+And we have a model gateway.
+
+179
+00:14:30,839 --> 00:14:36,640
+Right?
+At large scale, you're you often don't
+
+180
+00:14:34,720 --> 00:14:40,800
+want your application to contain routing
+logic for every model provider. So,
+
+181
+00:14:38,800 --> 00:14:45,160
+instead, you can put a model gateway
+between your model between application
+
+182
+00:14:42,640 --> 00:14:53,760
+and your models. So,
+this model gateway will have
+
+183
+00:14:48,760 --> 00:14:53,760
+three. So, one is say provider A.
+
+184
+00:14:56,040 --> 00:14:59,440
+Another one is
+
+185
+00:14:59,520 --> 00:15:08,000
+provider B.
+And another one is
+
+186
+00:15:05,520 --> 00:15:17,360
+provider C.
+Provider A will go to model one.
+
+187
+00:15:13,080 --> 00:15:22,400
+Provider B will go to model
+two. And provider C
+
+188
+00:15:20,400 --> 00:15:26,560
+will go to model
+three, right?
+
+189
+00:15:24,560 --> 00:15:30,320
+So now this application now the
+application talks to the gateway and the
+
+190
+00:15:28,400 --> 00:15:35,160
+gateway handles things like routing,
+fallbacks, rate limits, cost tracking,
+
+191
+00:15:32,800 --> 00:15:38,720
+etc.
+And on the final way we are going to
+
+192
+00:15:36,560 --> 00:15:43,480
+talk about cost example.
+So say we have
+
+193
+00:15:40,400 --> 00:15:47,960
+something like
+a thousand
+
+194
+00:15:45,160 --> 00:15:52,800
+requests, right?
+And this is where model routing becomes
+
+195
+00:15:49,560 --> 00:15:57,120
+especially interesting at scale.
+If every request goes to the most
+
+196
+00:15:54,560 --> 00:16:01,680
+expensive model, you're paying for
+maximum capability every single time.
+
+197
+00:15:59,720 --> 00:16:06,200
+But if the requests are simple, you
+might route to much more cheaper models
+
+198
+00:16:03,840 --> 00:16:11,640
+that are reserved the expensive model
+for cases that actually need it. For
+
+199
+00:16:07,840 --> 00:16:15,440
+example, we have a router,
+right?
+
+200
+00:16:13,760 --> 00:16:21,280
+And if the
+requests are like 70%, it will go to
+
+201
+00:16:18,960 --> 00:16:26,400
+cheap.
+If it's 20%, it will go to the medium
+
+202
+00:16:24,960 --> 00:16:33,080
+one.
+And if it's 10%,
+
+203
+00:16:29,280 --> 00:16:33,080
+it will go to the most expensive one.
+
+204
+00:16:35,560 --> 00:16:40,400
+Right?
+The point is isn't always to choose the
+
+205
+00:16:38,720 --> 00:16:45,520
+cheapest model.
+You should choose the right model for
+
+206
+00:16:42,360 --> 00:16:51,280
+the right task for the right tradeoff.
+And so if we have to summarize
+
+207
+00:16:48,440 --> 00:16:56,920
+everything we have done
+in this video is basically we have
+
+208
+00:16:53,120 --> 00:17:02,040
+talked about taking a request
+to the router.
+
+209
+00:16:58,960 --> 00:17:09,040
+And the router basically will choose
+which is model to take, either the fast
+
+210
+00:17:04,640 --> 00:17:09,040
+fast model, the balanced model,
+
+211
+00:17:09,160 --> 00:17:17,439
+or the most expensive model.
+Or I should say
+
+212
+00:17:14,160 --> 00:17:17,439
+the most powerful model.
+
+213
+00:17:17,920 --> 00:17:21,120
+And these all three
+
+214
+00:17:32,520 --> 00:17:38,600
+will handle
+give us the
+
+215
+00:17:35,800 --> 00:17:38,600
+response.
+
+216
+00:17:39,200 --> 00:17:45,160
+The goal is not to find one model that's
+best at everything. It is to build a
+
+217
+00:17:42,800 --> 00:17:48,960
+system that knows which model to use it,
+when to use it, and what to do when it
+
+218
+00:17:47,160 --> 00:17:52,880
+fails.
+And that was video, guys. So, if you
+
+219
+00:17:50,800 --> 00:17:58,000
+found the video helpful, please like,
+share, and subscribe, and I'll see you
+
+220
+00:17:54,520 --> 00:17:58,000
+in the next one. Thank you.
+

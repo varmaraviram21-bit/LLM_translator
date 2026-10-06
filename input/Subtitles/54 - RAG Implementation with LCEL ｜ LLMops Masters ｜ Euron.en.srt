@@ -1,0 +1,1294 @@
+1
+00:00:00,320 --> 00:00:07,279
+So inside rag component you are having
+uh these are the
+
+2
+00:00:05,160 --> 00:00:10,719
+component. So first of all you have to
+split the data then you have to uh
+
+3
+00:00:09,360 --> 00:00:14,480
+generate the embeddings with the help of
+embedding model. Then you'll be storing
+
+4
+00:00:12,960 --> 00:00:18,240
+that embedding to the vector store that
+means vector database. Then you'll be
+
+5
+00:00:16,320 --> 00:00:22,480
+creating the retriever and if you want
+you can also set the top k parameter.
+
+6
+00:00:20,640 --> 00:00:26,560
+Then uh what you can do you can perform
+the retrieve operation either you can
+
+7
+00:00:23,920 --> 00:00:29,279
+perform similarity search operation. But
+uh whenever actually I was per
+
+8
+00:00:28,080 --> 00:00:33,280
+performing the retriever operation
+similarity search operation so it was
+
+9
+00:00:31,199 --> 00:00:36,719
+only returning the similar kinds of
+response. Okay like the best results
+
+10
+00:00:35,200 --> 00:00:41,360
+actually it was returning around four to
+five response it was returning but that
+
+11
+00:00:38,800 --> 00:00:45,600
+is the answer I'm not looking for. I'm
+looking for one accurate response. So if
+
+12
+00:00:43,840 --> 00:00:48,879
+I want to get the accurest response guys
+what I have to do I have to connect my
+
+13
+00:00:46,800 --> 00:00:51,840
+large language model. Okay, after
+connecting the large language model,
+
+14
+00:00:50,160 --> 00:00:56,160
+we'll be able to get the correct
+response from the uh let's say custom
+
+15
+00:00:54,320 --> 00:01:00,239
+documents whatever I'm asking. So this
+thing I'm going to show you how we can u
+
+16
+00:00:58,320 --> 00:01:04,720
+like connect our large language model
+with our custom data. Okay. So first of
+
+17
+00:01:02,960 --> 00:01:08,560
+all I will draw the architecture what we
+are going to perform then I will start
+
+18
+00:01:06,320 --> 00:01:11,280
+with the coding. So here we'll be
+implementing one
+
+19
+00:01:11,799 --> 00:01:18,000
+basic
+rack. Okay. And whenever I'm talking
+
+20
+00:01:16,479 --> 00:01:22,320
+about rag that means I'm talking about
+my custom data. So it can be any kinds
+
+21
+00:01:19,840 --> 00:01:28,080
+of document. So let's say here I can
+consider
+
+22
+00:01:24,600 --> 00:01:33,439
+custom. Okay custom data. So it can be
+any kinds of data format. It can be PDF.
+
+23
+00:01:30,400 --> 00:01:37,920
+It can be txt. It can be Excel, XML just
+on anything you can consider. Okay. So
+
+24
+00:01:35,840 --> 00:01:43,119
+I'm just calling as a custom data as of
+now. So first of all what I have to do
+
+25
+00:01:39,680 --> 00:01:47,280
+guys this custom data anyone remember if
+I want to perform the drag operation. So
+
+26
+00:01:45,280 --> 00:01:50,880
+I can't directly pass this data to my
+LLM. Okay. So for this first of all what
+
+27
+00:01:49,280 --> 00:01:56,320
+I have to do I have to perform the
+splitting operation. So we'll be
+
+28
+00:01:53,360 --> 00:01:56,320
+performing the splitting
+
+29
+00:01:56,920 --> 00:02:01,840
+operation. Okay. Splitting or you can
+also call it a
+
+30
+00:02:06,840 --> 00:02:13,280
+chunking.
+Chunking. So after getting these chunks
+
+31
+00:02:11,680 --> 00:02:16,239
+what we'll do? We'll be using one
+embedding model.
+
+32
+00:02:19,920 --> 00:02:26,000
+Okay, embedding model. So in case you
+can use open a embedding model, you can
+
+33
+00:02:24,640 --> 00:02:33,160
+also use some open source embedding
+model. You can use graph API. It's up to
+
+34
+00:02:27,840 --> 00:02:33,160
+you. Then after that we'll be creating
+
+35
+00:02:34,200 --> 00:02:37,200
+uh
+
+36
+00:02:37,800 --> 00:02:46,360
+vector embedding.
+Okay, we'll be generating the vector
+
+37
+00:02:43,800 --> 00:02:50,879
+embeddings. Then we'll be storing this
+vector embedding to the vector
+
+38
+00:02:51,000 --> 00:02:59,519
+database. Vector store or you can also
+call it as vector
+
+39
+00:02:57,000 --> 00:03:01,920
+database. So this will become my
+knowledge
+
+40
+00:03:04,680 --> 00:03:12,080
+base. This will become my knowledge
+base. Okay.
+
+41
+00:03:09,040 --> 00:03:17,680
+uh then uh what will happen
+uh user
+
+42
+00:03:13,879 --> 00:03:17,680
+will let's say this is the
+
+43
+00:03:17,800 --> 00:03:22,239
+user user will ask uh some
+
+44
+00:03:27,959 --> 00:03:35,319
+query and your vector store uh that
+means you'll be creating a retriever
+
+45
+00:03:33,040 --> 00:03:42,239
+here
+retriever okay retriever here so it will
+
+46
+00:03:38,159 --> 00:03:42,239
+give you some rank
+
+47
+00:03:45,239 --> 00:03:55,799
+results. Rank
+result. Okay, based on the K
+
+48
+00:03:53,000 --> 00:04:01,040
+parameter. So here I can
+write top K. Okay, based on the top K
+
+49
+00:03:59,120 --> 00:04:04,319
+parameter. So let's say it has given you
+three response. Okay, three response.
+
+50
+00:04:02,560 --> 00:04:08,239
+Let's say K is equal to three. It will
+give you three response. Now I don't
+
+51
+00:04:06,319 --> 00:04:12,239
+need the three response. I need accurate
+response. Okay, let's say here I'm
+
+52
+00:04:09,840 --> 00:04:17,120
+asking uh let's say here I'm asking
+let's
+
+53
+00:04:13,000 --> 00:04:22,360
+say I mean what I can ask let's say but
+what is the capital of India so as a
+
+54
+00:04:20,320 --> 00:04:27,520
+return guys what I what should I
+get okay as a return what should I get
+
+55
+00:04:25,360 --> 00:04:32,080
+definitely Delhi right so it should give
+me the Delhi but here it is giving me
+
+56
+00:04:29,600 --> 00:04:37,440
+some rank results so let's say it is
+giving some like uh I mean content
+
+57
+00:04:35,040 --> 00:04:40,800
+related Delhi and apart from which is
+let's say relevant to delete is also
+
+58
+00:04:39,040 --> 00:04:44,479
+giving me that one but I don't need I
+need the accurate response. So for this
+
+59
+00:04:42,560 --> 00:04:50,759
+what I will do I will use my large
+language model. So here we'll be
+
+60
+00:04:47,639 --> 00:04:55,759
+using large language model
+LLM. Okay. So in case actually we'll be
+
+61
+00:04:53,120 --> 00:04:59,919
+using like charg model but you can use
+also any other model you can use grock
+
+62
+00:04:57,520 --> 00:05:03,520
+API it's up to you. So here what we'll
+be doing so the rank results actually we
+
+63
+00:05:02,080 --> 00:05:09,600
+are getting so we'll be passing this
+rank results to my LLM. Okay, we'll be
+
+64
+00:05:07,440 --> 00:05:14,000
+passing this rank res to my LLM and
+whatever question user is asking. Okay,
+
+65
+00:05:11,680 --> 00:05:18,400
+the question also I'll be passing to the
+large language model. And now what will
+
+66
+00:05:16,080 --> 00:05:22,800
+happen? Large language model got the
+context. So this is called
+
+67
+00:05:20,280 --> 00:05:27,160
+context. This is called context. Okay.
+And this is called
+
+68
+00:05:24,840 --> 00:05:33,360
+query. Just call query. I think you
+remember I showed you one example. So
+
+69
+00:05:29,919 --> 00:05:38,880
+here let me show you. Uh so here I think
+data loader rag demo
+
+70
+00:05:36,639 --> 00:05:41,680
+uh Wikipedia loader I think whenever I
+was talking about
+
+71
+00:05:42,280 --> 00:05:48,720
+Wikipedia huh so here can you see uh
+here what I was doing I was searching
+
+72
+00:05:46,960 --> 00:05:52,880
+about Tesla and whatever data actually I
+was getting I was passing as a context
+
+73
+00:05:51,039 --> 00:05:56,880
+okay to my large language model then I
+was also giving the question like tell
+
+74
+00:05:54,639 --> 00:06:01,199
+me about the Tesla the same thing but
+now what we are doing we are doing some
+
+75
+00:05:59,120 --> 00:06:04,919
+more step because my data size is huge
+so first First of all, I have to split
+
+76
+00:06:02,639 --> 00:06:09,199
+the data. Then we have to create the
+embeddings. That embeddings will be
+
+77
+00:06:06,800 --> 00:06:13,440
+storing to the vector database. Then
+what we'll be doing? User will give some
+
+78
+00:06:11,360 --> 00:06:16,639
+query and this query actually will go to
+the knowledge base. Knowledge base will
+
+79
+00:06:14,720 --> 00:06:19,840
+return some rank results and this rank
+results I'll pass to the my large
+
+80
+00:06:17,840 --> 00:06:26,800
+language model as a context as well as
+the query. Now LM will process. Okay,
+
+81
+00:06:22,000 --> 00:06:32,840
+LLM will process and it will generate a
+accurate response.
+
+82
+00:06:29,600 --> 00:06:41,280
+Okay. Accurate response for
+you. Response for you. So to the
+
+83
+00:06:37,639 --> 00:06:46,319
+user. Okay. To the user it will give me
+the response. Okay. So this is the
+
+84
+00:06:43,360 --> 00:06:49,600
+entire rag architecture. Okay. I hope it
+is
+
+85
+00:06:47,080 --> 00:06:53,039
+clear. So as of now we have created till
+retie. Okay. We haven't connected our
+
+86
+00:06:51,280 --> 00:06:57,360
+large language model. Now we'll be
+learning how we can connect the large
+
+87
+00:06:54,639 --> 00:07:02,919
+language model. Okay. So now let's try
+to uh implement this architecture
+
+88
+00:06:59,520 --> 00:07:09,360
+through our code. So let me open up
+my VS code and here I'm going to create
+
+89
+00:07:05,360 --> 00:07:13,520
+a file. So let me name it as 05
+uh
+
+90
+00:07:10,120 --> 00:07:13,520
+rag basic
+
+91
+00:07:19,400 --> 00:07:27,840
+rag implemented.
+So the first thing what we usually do
+
+92
+00:07:24,720 --> 00:07:32,240
+guys first of all we'll be loading the
+uh openi API key from my environment
+
+93
+00:07:30,319 --> 00:07:36,960
+because here I'm going to use the charg
+model. You can also use gro model. Okay
+
+94
+00:07:34,720 --> 00:07:39,199
+gro you can also use grock API to load
+the
+
+95
+00:07:39,960 --> 00:07:46,639
+model. Now the next thing rag component
+and there I showed you the retriever how
+
+96
+00:07:45,199 --> 00:07:50,720
+to create the retriever. So first of all
+we load the data then we perform the uh
+
+97
+00:07:49,280 --> 00:07:54,400
+like chunking operation that means
+splitting operation then we use
+
+98
+00:07:52,319 --> 00:07:58,160
+embedding model we create a vector store
+with the help of vector database then we
+
+99
+00:07:56,400 --> 00:08:01,759
+create the retriever and whenever you
+are asking something into the retriever
+
+100
+00:08:00,240 --> 00:08:05,440
+it will retrieve some relevant
+information okay with the help of
+
+101
+00:08:03,120 --> 00:08:08,479
+metadata as well okay so till here we
+have done now we'll be learning how we
+
+102
+00:08:07,199 --> 00:08:12,639
+can connect the large language model
+that means the information I'm getting
+
+103
+00:08:10,240 --> 00:08:16,160
+from my retriever I'll pass to the lm as
+well as I'll also pass the query okay
+
+104
+00:08:14,479 --> 00:08:19,840
+whatever query user is asking based that
+llm will try to process and it will give
+
+105
+00:08:17,919 --> 00:08:22,479
+you the accurate response. So for this
+you can see this code is already
+
+106
+00:08:21,120 --> 00:08:26,479
+familiar with you. So I'm importing the
+fi f is a vector database. Then open a
+
+107
+00:08:25,039 --> 00:08:30,319
+embedding because I need embedding model
+to generate the vector embedding. Then
+
+108
+00:08:27,919 --> 00:08:34,399
+character test splitter I need for uh
+creating the chunking. Okay. So let me
+
+109
+00:08:32,320 --> 00:08:38,880
+import all of them. So first of all I
+will load the data. So let me load one
+
+110
+00:08:39,479 --> 00:08:47,480
+data. U but before loading the data I
+need to import this library as well. So
+
+111
+00:08:45,360 --> 00:08:53,720
+text loader. So I'll be loading one txt
+documents. So this txt document will be
+
+112
+00:08:50,080 --> 00:08:57,440
+loading a state uh of union
+txt. So let me load
+
+113
+00:08:59,800 --> 00:09:10,160
+it. So this is my data. Now you can also
+see see this the entire data we have
+
+114
+00:09:07,160 --> 00:09:16,640
+loaded. Okay. Now the same uh uh next
+thing we'll be creating the chunking.
+
+115
+00:09:14,160 --> 00:09:19,839
+we'll be doing the splitting operation.
+So this is the code snippet. So here you
+
+116
+00:09:18,480 --> 00:09:24,240
+can see I'm given chunk size equal to
+1,00 chunk overlap zero and whatever
+
+117
+00:09:22,720 --> 00:09:26,839
+document I have loaded I'm passing to
+the split document. Now it will give me
+
+118
+00:09:25,920 --> 00:09:30,959
+the
+chunk. So you can see the complete
+
+119
+00:09:29,040 --> 00:09:36,680
+chunk. See that many of chunk it has
+given me. If you want to see the
+
+120
+00:09:33,320 --> 00:09:42,000
+length, you can also check the
+length. So 42 chunks it has given me.
+
+121
+00:09:39,680 --> 00:09:47,720
+Okay. Then what we'll be doing guys,
+we'll be u loading the embedding model
+
+122
+00:09:45,120 --> 00:09:53,279
+and we'll be creating the vector
+embedding and we'll be storing in the
+
+123
+00:09:49,760 --> 00:09:55,440
+fires vector database. Okay, so let me
+do
+
+124
+00:09:56,360 --> 00:10:03,839
+it. So it has created one vector
+database and it is storing in your disk.
+
+125
+00:10:01,279 --> 00:10:07,839
+Okay, local disk. And now we'll be
+creating the
+
+126
+00:10:05,399 --> 00:10:11,279
+retriever. So this is my retriever guys.
+Okay. And by default how many uh
+
+127
+00:10:10,000 --> 00:10:15,279
+retrieve parameter actually it will
+have. I think you know by default it
+
+128
+00:10:12,959 --> 00:10:18,839
+will have four retrieve parameter. Okay.
+Four retrie parameter. You can also
+
+129
+00:10:17,279 --> 00:10:27,200
+test. So let me show
+you. So I'll be asking one question. So
+
+130
+00:10:22,680 --> 00:10:32,480
+ret.inbook what did he say about uh uh
+Ketan Brown Jackson? So if you open this
+
+131
+00:10:30,160 --> 00:10:38,600
+documents so you'll see the information
+related Kan G. Brown Jackson. Now if I
+
+132
+00:10:35,920 --> 00:10:43,079
+ask it so it will give me some
+response. See it has given me four
+
+133
+00:10:40,880 --> 00:10:48,320
+response four relevant
+response. Okay. Now I can also play with
+
+134
+00:10:45,920 --> 00:10:54,079
+this parameter. So I think you know
+there is a top k parameter you can set s
+
+135
+00:10:50,880 --> 00:10:57,440
+uh kwx is equal to k is equal to 1. That
+means it will give you only one
+
+136
+00:10:55,279 --> 00:11:04,720
+information. Okay. So let's say I I want
+to take three. Okay information.
+
+137
+00:11:01,040 --> 00:11:04,720
+Now if you ask the question
+
+138
+00:11:05,079 --> 00:11:13,200
+again. Now see guys your response would
+be
+
+139
+00:11:09,800 --> 00:11:17,720
+three. Okay. You can see you got three
+information. Okay. Now you can play with
+
+140
+00:11:14,880 --> 00:11:24,959
+this parameter. It's up to
+you fine. Now we'll be
+
+141
+00:11:22,360 --> 00:11:30,680
+creating the rag. That mean we'll be
+connecting our large language model
+
+142
+00:11:26,240 --> 00:11:30,680
+right now. And here we'll be using
+
+143
+00:11:33,079 --> 00:11:42,079
+uh lang chain expression
+language simply use with lang expression
+
+144
+00:11:40,399 --> 00:11:45,600
+language. Okay. And today I'm not going
+to discuss uh like this lang chain
+
+145
+00:11:44,000 --> 00:11:49,600
+expression language. For this I'll be
+keeping one dedicated session. Okay. So
+
+146
+00:11:47,920 --> 00:11:54,079
+now let's create the chain. So before
+that first of all I need to import some
+
+147
+00:11:51,480 --> 00:11:57,600
+library. So here is the library guys. So
+first of all I'm importing chat open.
+
+148
+00:11:56,000 --> 00:12:01,760
+because we'll be using chat GPT model
+that means three uh GPT 3.5 turbo model
+
+149
+00:12:00,000 --> 00:12:06,720
+and I'll be using chat completion model
+not the completion model and chat prompt
+
+150
+00:12:03,920 --> 00:12:11,279
+template why why chat prompt template I
+think you know whenever I want to give
+
+151
+00:12:08,240 --> 00:12:15,279
+any let's say input to my large language
+model that means if it is a chat chat
+
+152
+00:12:13,200 --> 00:12:19,839
+like completion model that time I also
+need to pass the system prompt okay
+
+153
+00:12:16,959 --> 00:12:22,320
+system prompt as well as the user prompt
+so for this we'll be using the chat
+
+154
+00:12:21,120 --> 00:12:25,920
+prompt template we'll be creating the
+prompt template okay then we'll be
+
+155
+00:12:23,600 --> 00:12:29,839
+passing the prompt then this This is the
+new thing guys. Lang chain has proposed
+
+156
+00:12:28,240 --> 00:12:34,000
+uh it is available in the second
+generation langu second generation lang
+
+157
+00:12:31,680 --> 00:12:38,240
+chain which is called lang expression
+language and to perform it you need
+
+158
+00:12:35,519 --> 00:12:41,920
+these are the library str output parser
+and runnable pass through okay there are
+
+159
+00:12:40,480 --> 00:12:45,120
+some more let's say functionality they
+have created I will discuss each and
+
+160
+00:12:43,200 --> 00:12:49,200
+everything as of now just try to get it
+as a high level so if you want to use
+
+161
+00:12:47,279 --> 00:12:52,720
+this langen expression language you need
+these are the functionality from the
+
+162
+00:12:50,639 --> 00:12:56,880
+langen okay langen code output person
+output str output person and runnable is
+
+163
+00:12:55,360 --> 00:13:01,519
+equal to runnable will pass through.
+Okay. Now let me import all of them. Now
+
+164
+00:12:59,680 --> 00:13:05,360
+first of all I'll be creating the
+template. So this is my prompt template.
+
+165
+00:13:04,079 --> 00:13:07,920
+So first of all I'll be creating the
+prompt. Then we'll be creating the
+
+166
+00:13:06,320 --> 00:13:11,040
+prompt template. So this is the prompt.
+Answer the question based on the only
+
+167
+00:13:09,519 --> 00:13:14,959
+the following context. That means user
+will give the context. Context means the
+
+168
+00:13:13,200 --> 00:13:18,560
+retriever. Okay. The vector database.
+Okay. This context as well as the
+
+169
+00:13:16,720 --> 00:13:22,800
+question. Okay. So here I have already
+written the diagram. So it will first of
+
+170
+00:13:21,200 --> 00:13:26,880
+all give the context to the LM as well
+as the question. whatever question user
+
+171
+00:13:24,240 --> 00:13:30,760
+is asking. Okay. Now, if I want to
+create the prompt template, I'll be
+
+172
+00:13:28,160 --> 00:13:34,320
+using this chat prompt template
+function. So, see guys, chat prompt
+
+173
+00:13:32,800 --> 00:13:38,880
+template form template and here I have
+to give the template and this will give
+
+174
+00:13:35,920 --> 00:13:43,600
+me the prompt. Okay. Now, I'll be
+initializing my open AI model. So, here
+
+175
+00:13:42,000 --> 00:13:48,120
+we'll be using chat open AAI that means
+we'll be using GPT 3.5 turbo model.
+
+176
+00:13:45,839 --> 00:13:53,839
+Okay,
+great. So, let me execute.
+
+177
+00:13:51,760 --> 00:13:57,360
+Now here I'll be getting one function.
+I'll tell you why we are getting the
+
+178
+00:13:55,120 --> 00:14:02,279
+function as of now. Just try to remember
+this function will format the output.
+
+179
+00:13:59,600 --> 00:14:07,760
+Okay. So now this is
+the this is the
+
+180
+00:14:04,440 --> 00:14:12,000
+chain and you can see the syntax is
+written with the help of LC that means
+
+181
+00:14:10,320 --> 00:14:17,199
+lang chain expression language. See
+chain is equal to I have given a bracket
+
+182
+00:14:14,000 --> 00:14:21,360
+again I have given a bracket. Now here
+I'm writing the context is equal to ret
+
+183
+00:14:19,360 --> 00:14:24,720
+because you remember what is context.
+Context is nothing but my rank results.
+
+184
+00:14:22,959 --> 00:14:28,480
+Okay, the retr. So this thing I have to
+pass to the lm. So you can see this is
+
+185
+00:14:26,639 --> 00:14:31,760
+the ret I'm passing and format
+documents. This function object I'm
+
+186
+00:14:30,000 --> 00:14:35,680
+giving. Okay, format documents and
+question is equal to unable pass
+
+187
+00:14:33,199 --> 00:14:39,760
+through. Okay, now you will have some
+doubt. I know that initially if you're
+
+188
+00:14:37,279 --> 00:14:44,240
+starting with this uh lang expression
+language, this would be confus
+
+189
+00:14:41,760 --> 00:14:49,120
+confusible for you. No need to worry. In
+the next session, I'll try to discuss
+
+190
+00:14:46,000 --> 00:14:53,040
+each and everything about this u langen
+expression language. As of now, just try
+
+191
+00:14:50,639 --> 00:14:56,480
+to remember whatever input user will
+provide. Okay, this input will come here
+
+192
+00:14:54,639 --> 00:15:01,120
+as it is and it will save inside the
+question. Okay, question actually
+
+193
+00:14:58,800 --> 00:15:04,720
+parameter then the prompt. The prompt we
+have prepared. See, this is the prompt
+
+194
+00:15:02,720 --> 00:15:08,000
+we have prepared. Then the model, then
+the output parser. That means what is
+
+195
+00:15:06,240 --> 00:15:12,360
+happening? Let me show you. So, I'll
+open up
+
+196
+00:15:08,839 --> 00:15:16,399
+my annotator
+pen. Let me select the
+
+197
+00:15:21,480 --> 00:15:32,600
+color. See first of all your uh see you
+have given the bracket. So this bracket
+
+198
+00:15:27,279 --> 00:15:32,600
+is called parallel. Okay. Parallel
+
+199
+00:15:33,279 --> 00:15:39,519
+uh
+runnable. I'll tell you what is parallel
+
+200
+00:15:37,440 --> 00:15:42,560
+runnable. It will run everything as
+parallelly. You can see I have given two
+
+201
+00:15:41,120 --> 00:15:47,680
+many statements. So this is the first
+statement retriever. This is the second
+
+202
+00:15:44,880 --> 00:15:51,040
+statement that means the function object
+and this is the third statement which is
+
+203
+00:15:49,600 --> 00:15:56,519
+nothing but the input. Now you can see
+here is a pipe symbol and what is pipe
+
+204
+00:15:53,279 --> 00:16:02,320
+symbol? This is the LCL symbol
+LC uh langu expression
+
+205
+00:15:59,959 --> 00:16:07,279
+language. Okay. So with the help of this
+pipe symbol we create this uh actually
+
+206
+00:16:04,639 --> 00:16:12,959
+chain. Okay. Now I'm giving the prompt
+model as an S str output parser. So what
+
+207
+00:16:10,480 --> 00:16:17,279
+will happen first of all you are
+executing this this one actually okay
+
+208
+00:16:15,279 --> 00:16:22,279
+that means your context and input will
+come so let's say user has given what
+
+209
+00:16:20,680 --> 00:16:27,440
+is
+Tesla okay what is Tesla this is the
+
+210
+00:16:25,519 --> 00:16:30,560
+question so this question where it will
+go it will go to the prompt template and
+
+211
+00:16:29,279 --> 00:16:33,600
+it will create the prompt template as
+you remember so how to create the prompt
+
+212
+00:16:32,480 --> 00:16:36,880
+template that's how it will create the
+prompt template so answer the question
+
+213
+00:16:35,519 --> 00:16:41,279
+based on the following context so
+context week that is retr will come in
+
+214
+00:16:39,600 --> 00:16:44,639
+the context and question. Whatever
+question that let's say body is test
+
+215
+00:16:42,240 --> 00:16:50,320
+latesta will come inside that question.
+Okay. Now this question where we have to
+
+216
+00:16:47,199 --> 00:16:53,199
+pass we have to pass to the model. You
+can see we have to pass to the model
+
+217
+00:16:51,519 --> 00:16:57,199
+that means this question will go to the
+model that means my large language model
+
+218
+00:16:55,519 --> 00:17:01,360
+and model will give me what it will give
+me response yes or no. Okay. And I think
+
+219
+00:16:59,600 --> 00:17:06,880
+you know whenever we are getting the
+response from the llm so what format it
+
+220
+00:17:04,319 --> 00:17:10,880
+will return? It will return as a AI uh
+AI message format. Okay. But I only need
+
+221
+00:17:08,959 --> 00:17:13,919
+the content of it. And if you only need
+the content, you have to use this str
+
+222
+00:17:12,559 --> 00:17:19,120
+output parser. I think we have already
+learned output parser. Remember inside
+
+223
+00:17:16,480 --> 00:17:24,319
+uh I think data loader, not data loader,
+I think inside this one talk with llm
+
+224
+00:17:21,760 --> 00:17:28,640
+part two, we have learned about output
+parser. So output parser, we can format
+
+225
+00:17:26,880 --> 00:17:32,320
+our output. That means if I want to get
+a JSON output, if I want to get a txt
+
+226
+00:17:30,559 --> 00:17:35,919
+output, everything you can customize
+here. So this output parser will by
+
+227
+00:17:34,240 --> 00:17:40,640
+default will return as a string output
+str. Okay. St. Okay. So this is what
+
+228
+00:17:39,440 --> 00:17:45,520
+actually we are using. That means first
+of all we are giving the uh context.
+
+229
+00:17:43,679 --> 00:17:50,080
+Then we are taking the input from the
+user. We we we are saving into into the
+
+230
+00:17:47,919 --> 00:17:53,679
+question variable. Okay. Then format
+documents. What format documents will
+
+231
+00:17:51,760 --> 00:17:58,080
+do? Whatever response actually it will
+give you. Let's say see what happens
+
+232
+00:17:56,880 --> 00:18:04,400
+actually whenever we perform the
+retrieve operation. Let me show
+
+233
+00:17:59,880 --> 00:18:08,000
+you. So here is the retrieve operation.
+See whenever we perform the retrieve
+
+234
+00:18:05,919 --> 00:18:11,360
+operations what happens it will give you
+these are the retrieve output okay these
+
+235
+00:18:09,760 --> 00:18:14,880
+are the retive output but here what I
+need I only need the past content I
+
+236
+00:18:13,440 --> 00:18:17,840
+don't need I don't need the metadata
+information it's not required I only
+
+237
+00:18:16,320 --> 00:18:22,080
+need the paste content so what will
+happen this function this function will
+
+238
+00:18:19,840 --> 00:18:26,880
+automatically filter out only p content
+okay I don't need the metadata I only
+
+239
+00:18:24,320 --> 00:18:31,200
+need the p content so this will extract
+the p content and it will return okay
+
+240
+00:18:28,720 --> 00:18:34,559
+here okay and this input will go to the
+model okay first of all it will create
+
+241
+00:18:32,880 --> 00:18:37,400
+the prompt then it will go to the model
+and it will give you the output. Now let
+
+242
+00:18:36,559 --> 00:18:41,520
+me show
+you. So here I'll be asking one
+
+243
+00:18:39,679 --> 00:18:48,160
+question. So the same question will be
+asking chain.inug what did uh he say
+
+244
+00:18:44,640 --> 00:18:52,400
+about uh Ketanj Brown Jackson. Okay now
+let me execute and let me show you the
+
+245
+00:18:54,200 --> 00:19:00,880
+response. See guys this is the response
+and if you see the type it will be
+
+246
+00:18:58,880 --> 00:19:06,000
+string.
+Okay, it says TR because of that output
+
+247
+00:19:03,039 --> 00:19:10,080
+parser. Okay, so this is what our basic
+LCAL that means langen expression
+
+248
+00:19:07,919 --> 00:19:15,280
+language. Okay, but previously I think
+you remember those who have already
+
+249
+00:19:11,600 --> 00:19:18,880
+worked with actually this one older
+version of the langen we used to use
+
+250
+00:19:17,520 --> 00:19:24,240
+chain functionality. I think remember
+chain functionality we used to input uh
+
+251
+00:19:21,440 --> 00:19:28,720
+I think chain okay instead of using the
+like default chain from the lang chain
+
+252
+00:19:26,240 --> 00:19:34,080
+we have created the lang expression
+language and see always try to remember
+
+253
+00:19:30,559 --> 00:19:39,200
+it's not like that this like I mean uh
+inbuilt chain has been deprecated no
+
+254
+00:19:36,400 --> 00:19:45,360
+still lang suggest to use that chain as
+well chain functionality as well because
+
+255
+00:19:41,200 --> 00:19:49,520
+still ch is under development okay still
+the ch under development that's why lang
+
+256
+00:19:48,080 --> 00:19:53,600
+is also suggesting you have to use the
+older okay older technique if you want
+
+257
+00:19:51,520 --> 00:19:59,120
+to create any kinds of project I'm
+getting the correct response right now
+
+258
+00:19:55,280 --> 00:20:04,320
+okay from my uh application previously
+it was only giving me the um related
+
+259
+00:20:02,000 --> 00:20:07,760
+information now I connected my LLM okay
+now if you ask any kind of query it will
+
+260
+00:20:06,400 --> 00:20:12,880
+give you the accurate response the
+architecture we have drawn see accurate
+
+261
+00:20:10,080 --> 00:20:12,880
+response it will give
+

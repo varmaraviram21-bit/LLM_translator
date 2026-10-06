@@ -1,0 +1,279 @@
+1
+00:00:00,240 --> 00:00:06,080
+Hi everyone, welcome back. So guys, in
+this video we'll try to understand what
+
+2
+00:00:03,679 --> 00:00:10,320
+is the difference between rag versus
+fine tuning because many people has this
+
+3
+00:00:08,240 --> 00:00:13,519
+question when we have to perform the rag
+when we have to perform the finetuning
+
+4
+00:00:12,320 --> 00:00:18,160
+operation and what is the difference
+between them. So see both technique
+
+5
+00:00:16,080 --> 00:00:23,039
+actually we use to extend the abilities
+of the large language model. Okay, see
+
+6
+00:00:21,119 --> 00:00:26,000
+when you have to use the finetune
+approach when you have to use the rag
+
+7
+00:00:24,480 --> 00:00:30,560
+approach let's say you are working in a
+very specific domain with some specific
+
+8
+00:00:28,000 --> 00:00:33,280
+data okay and with some specific task
+that time actually you can use something
+
+9
+00:00:31,920 --> 00:00:37,520
+called fine tune approach because
+whatever pretend large language model
+
+10
+00:00:35,120 --> 00:00:40,559
+you will be using it won't be having
+like these are the information let's say
+
+11
+00:00:38,879 --> 00:00:44,160
+you are working in the field of medical
+okay medical domain and there actually
+
+12
+00:00:42,480 --> 00:00:47,520
+you are creating one bot okay you are
+creating one medical let's say
+
+13
+00:00:45,600 --> 00:00:51,200
+information bot so this will give you
+let's say medical related information
+
+14
+00:00:49,520 --> 00:00:54,559
+and here you are using very specific
+data. Okay, so this data actually was
+
+15
+00:00:52,879 --> 00:00:58,320
+not used during training of this large
+language model. So that time what you
+
+16
+00:00:56,320 --> 00:01:02,160
+can do at the very first time you can do
+the finetune operation that means you
+
+17
+00:01:00,079 --> 00:01:05,680
+can fine-tune one pre-teen model and you
+can create this uh application. So let's
+
+18
+00:01:04,239 --> 00:01:09,439
+say this is the application we created
+now user has given one question what are
+
+19
+00:01:07,680 --> 00:01:13,680
+the latest treatment for the type two
+diabetics. So whenever you train this
+
+20
+00:01:11,439 --> 00:01:16,960
+model so you provided actually these are
+the information. So the latest treatment
+
+21
+00:01:15,439 --> 00:01:22,720
+for the type 2 diabetes include
+meditation like like metforming then
+
+22
+00:01:19,600 --> 00:01:26,960
+lifestyle changes such as diet, exercise
+and in some cases actually insulin
+
+23
+00:01:25,439 --> 00:01:30,240
+therapy. So these are the information
+actually you have given during finetune
+
+24
+00:01:28,720 --> 00:01:33,920
+these are the model. Now let's say there
+is a new treatment came. Now if you are
+
+25
+00:01:32,000 --> 00:01:38,400
+asking the same question again to your
+let's say uh system it will give you the
+
+26
+00:01:36,560 --> 00:01:42,799
+same answer again and again because it
+is already trained with your older data
+
+27
+00:01:40,159 --> 00:01:47,119
+yes or no. So that new information
+actually it doesn't have. So it won't be
+
+28
+00:01:44,799 --> 00:01:50,960
+able to give the new new actually let's
+say technique for the let's say
+
+29
+00:01:48,560 --> 00:01:54,159
+treatment of diabetics too. Now in case
+what you can do you can use this new
+
+30
+00:01:52,560 --> 00:01:57,840
+information and you can create a rag
+based application. So what you have to
+
+31
+00:01:55,920 --> 00:02:01,600
+do you have to use the same LLM model
+only. Same LLM model only but you will
+
+32
+00:02:00,000 --> 00:02:04,799
+be creating one additional knowledge
+base. I think I showed you how to create
+
+33
+00:02:02,880 --> 00:02:07,680
+the rag. So with the help of this data
+you'll be creating one additional
+
+34
+00:02:06,399 --> 00:02:11,520
+knowledge base and with that knowledge
+base you'll be connecting your medical
+
+35
+00:02:09,039 --> 00:02:14,400
+bot. then your medical bot will be able
+to give the response okay from the
+
+36
+00:02:12,959 --> 00:02:18,160
+latest let's say technique from the
+latest information yes or no okay now I
+
+37
+00:02:16,720 --> 00:02:22,000
+think you got it when we have to use the
+rag technique when we have to use the
+
+38
+00:02:19,920 --> 00:02:25,280
+finetuning technique now see here we are
+using rag technique now if you're asking
+
+39
+00:02:23,520 --> 00:02:28,080
+the same question now here you will see
+that it will give you the recent
+
+40
+00:02:26,480 --> 00:02:31,920
+treatment okay for the type two
+diabetics okay the recent treatment
+
+41
+00:02:29,599 --> 00:02:35,440
+whatever actually let's say came in the
+market okay now I think this is clear
+
+42
+00:02:34,080 --> 00:02:38,400
+when we have to use the finetuning
+technique when we have to use the
+
+43
+00:02:36,480 --> 00:02:42,480
+ragbased technique and again finetuning
+is like more costly Okay. So for this
+
+44
+00:02:40,239 --> 00:02:46,080
+you have you need huge amount of data.
+You need a good computational machine.
+
+45
+00:02:44,160 --> 00:02:49,519
+That means you you should have GPU good
+configuration GPU good configuration
+
+46
+00:02:47,760 --> 00:02:53,280
+RAM. Okay. If you're not having this
+kinds of GPU so you can't do the
+
+47
+00:02:51,200 --> 00:02:58,239
+finetuning operation. That means uh in
+finetuning you are retraining that model
+
+48
+00:02:56,160 --> 00:03:01,519
+you are updating the weights right which
+is not involved inside rag. So inside
+
+49
+00:03:00,239 --> 00:03:04,319
+rag actually we are not training any
+kind of model. Instead of that we are
+
+50
+00:03:02,800 --> 00:03:06,879
+creating a additional knowledge base and
+with the knowledge base actually we are
+
+51
+00:03:05,440 --> 00:03:10,640
+connecting our large language model.
+Okay this is the difference only. Fine.
+
+52
+00:03:08,800 --> 00:03:14,000
+Now I think guys you've got the clearcut
+idea what is the difference between rack
+
+53
+00:03:12,560 --> 00:03:17,519
+versus finetuning and when we have to
+use it. So even I will also show you how
+
+54
+00:03:15,840 --> 00:03:20,640
+we can perform the finetuning operation.
+Okay, let's say if I want to create any
+
+55
+00:03:19,200 --> 00:03:24,319
+specific task, how we can perform the
+fine tuning operation on top of our
+
+56
+00:03:21,920 --> 00:03:24,319
+custom data.
+

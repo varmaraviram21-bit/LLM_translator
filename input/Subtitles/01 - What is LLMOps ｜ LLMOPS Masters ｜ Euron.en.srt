@@ -1,0 +1,1446 @@
+1
+00:00:00,800 --> 00:00:08,000
+Hi guys, welcome to the course of LLMOPS
+masters. My name is Btier Ahmed BPI and
+
+2
+00:00:06,560 --> 00:00:11,440
+I'm having more than five years of
+working experience in the field of
+
+3
+00:00:09,360 --> 00:00:15,679
+Python, machine learning, deep learning,
+MLOps, geni and robotic system. So
+
+4
+00:00:14,240 --> 00:00:19,359
+throughout the entire course, I'll be
+your instructor. These are my social
+
+5
+00:00:17,680 --> 00:00:23,519
+media. If you're interested, you can
+connect with me. So guys, in this video,
+
+6
+00:00:21,680 --> 00:00:26,880
+I'll be talking about what exactly the
+LLM ops. So first of all, I will write
+
+7
+00:00:25,439 --> 00:00:30,320
+down the video agenda. What are the
+things we're going to cover? Then I will
+
+8
+00:00:28,320 --> 00:00:34,079
+start with the discussion. So guys uh
+the agenda of this
+
+9
+00:00:37,719 --> 00:00:48,760
+video. So first of all we'll try to
+see what
+
+10
+00:00:44,200 --> 00:00:48,760
+is LLM ops.
+
+11
+00:00:50,960 --> 00:00:59,440
+Then we'll be talking about
+why
+
+12
+00:00:55,800 --> 00:00:59,440
+LLM ops
+
+13
+00:01:01,879 --> 00:01:10,640
+important. Then third I'll be talking
+about
+
+14
+00:01:06,360 --> 00:01:13,040
+how LLM ops
+uh
+
+15
+00:01:13,960 --> 00:01:16,960
+differ
+
+16
+00:01:17,320 --> 00:01:25,280
+from MLOps. So I think you already know
+that we have uh another domain called
+
+17
+00:01:22,560 --> 00:01:30,159
+MLOps. We usually use this MLOps for the
+machine learning and deep learning model
+
+18
+00:01:27,759 --> 00:01:33,840
+development. So there we just try to
+optimize the machine learning and deep
+
+19
+00:01:31,680 --> 00:01:38,720
+learning model. Okay. So that's why I'm
+going to discuss how this LLM ops is
+
+20
+00:01:36,079 --> 00:01:43,840
+different okay from your MLOps.
+Otherwise people will have the confusion
+
+21
+00:01:40,400 --> 00:01:47,759
+s whether this MLOps and LLM ops is same
+or not or it has some difference. So
+
+22
+00:01:46,399 --> 00:01:52,680
+that's why I'm going to explain this
+part. Then uh once it is done I'll be
+
+23
+00:01:50,560 --> 00:01:56,920
+talking about uh
+how
+
+24
+00:01:54,759 --> 00:02:02,680
+LLM ops
+work okay works.
+
+25
+00:02:00,479 --> 00:02:08,880
+Then at the last I'll be talking about
+some
+
+26
+00:02:04,920 --> 00:02:08,880
+popular okay
+
+27
+00:02:09,000 --> 00:02:12,560
+tools and
+
+28
+00:02:13,319 --> 00:02:22,879
+platform okay for LM
+ops which we usually use nowadays okay
+
+29
+00:02:20,959 --> 00:02:27,040
+uh whenever we develop any kinds of LM
+powered application so this is the video
+
+30
+00:02:25,040 --> 00:02:35,480
+agenda so first of all let's try to
+discuss uh what is LLM ops. Exactly.
+
+31
+00:02:31,080 --> 00:02:35,480
+Okay. Okay. So,
+
+32
+00:02:36,959 --> 00:02:44,840
+uh the first topic what
+is
+
+33
+00:02:42,360 --> 00:02:50,680
+LLM
+ops? See LLM ops is nothing
+
+34
+00:02:48,200 --> 00:02:58,239
+but
+LLM
+
+35
+00:02:52,280 --> 00:02:58,239
+ops. Uh that means large language. Okay.
+
+36
+00:02:58,519 --> 00:03:05,599
+large
+language
+
+37
+00:03:03,000 --> 00:03:11,120
+model operation. Okay, we call it as a
+large language model
+
+38
+00:03:08,840 --> 00:03:15,280
+operations. And what is the full form of
+MLOps machine learning uh model
+
+39
+00:03:13,680 --> 00:03:19,319
+operations? Okay, so this is the
+difference is
+
+40
+00:03:16,920 --> 00:03:25,680
+a set
+of
+
+41
+00:03:22,120 --> 00:03:29,480
+practices. Okay. Practices
+uh then tools
+
+42
+00:03:30,640 --> 00:03:33,200
+um and
+
+43
+00:03:35,239 --> 00:03:40,159
+frameworks. Okay.
+Frameworks
+
+44
+00:03:43,959 --> 00:03:47,760
+design design
+
+45
+00:03:50,760 --> 00:03:54,480
+efficiently. Manage
+
+46
+00:03:58,280 --> 00:04:05,840
+deploy. Okay.
+Deploy
+
+47
+00:04:02,840 --> 00:04:05,840
+and
+
+48
+00:04:06,599 --> 00:04:10,319
+maintain large language
+
+49
+00:04:13,000 --> 00:04:20,400
+model
+language models. Okay. Now I think you
+
+50
+00:04:18,320 --> 00:04:27,479
+already know that we have various kinds
+of large language model like we have
+
+51
+00:04:24,840 --> 00:04:35,240
+GPT, we have
+Germany. Okay. Then we have
+
+52
+00:04:32,120 --> 00:04:42,199
+Cloudy, we have
+Mistral, we have
+
+53
+00:04:38,440 --> 00:04:47,759
+Llama. Okay. And so
+on. Got it? So what is the definition of
+
+54
+00:04:45,199 --> 00:04:52,080
+LLMs? LLM ops that means large language
+model operation is a set of practice
+
+55
+00:04:50,400 --> 00:04:57,199
+tools and framework designed to
+efficiently manage deploy and maintain
+
+56
+00:04:55,360 --> 00:05:02,000
+large language model. Okay, nothing
+else. The same thing we used to also do
+
+57
+00:04:59,840 --> 00:05:05,919
+inside our machine learning and deep
+learning. Okay, I think uh those who are
+
+58
+00:05:04,400 --> 00:05:12,080
+from machine learning and deep learning
+and if you know about MLOps. So what we
+
+59
+00:05:08,800 --> 00:05:16,320
+do inside MLOps, we just try to we just
+try to do the same thing, right? we just
+
+60
+00:05:13,520 --> 00:05:20,720
+try to do the optimization of the
+machine learning or deep learning model
+
+61
+00:05:18,400 --> 00:05:23,840
+yes or no okay that means whenever we
+try just try to train any kinds of
+
+62
+00:05:22,400 --> 00:05:28,320
+machine learning and deep learning model
+okay we'll be using some set of MLOps
+
+63
+00:05:26,479 --> 00:05:31,919
+practices whenever we'll be deploying
+and maintaining that particular model in
+
+64
+00:05:30,080 --> 00:05:36,880
+the production that time we'll be also
+using some tools and platform okay so
+
+65
+00:05:34,479 --> 00:05:42,039
+this is what your LLM ops I think now
+you got it so that
+
+66
+00:05:39,479 --> 00:05:46,639
+means in machine learning
+Okay. Okay. Uh sorry in
+
+67
+00:05:46,840 --> 00:05:56,560
+MLOps what we do we just try to optimize
+the ML
+
+68
+00:05:51,639 --> 00:05:56,560
+model. Okay. And in LLM
+
+69
+00:05:57,800 --> 00:06:07,360
+ops we just try to optimize the large
+language model that's LLM. Okay. So this
+
+70
+00:06:04,960 --> 00:06:13,960
+is the difference only. Now let's try to
+discuss the second thing why LLM ops is
+
+71
+00:06:11,160 --> 00:06:22,160
+important. Okay, why LLM ops is
+important? So here let me just write
+
+72
+00:06:19,240 --> 00:06:28,120
+second why
+uh
+
+73
+00:06:23,560 --> 00:06:28,120
+LLM ops important.
+
+74
+00:06:33,039 --> 00:06:42,759
+See uh I think you know that uh
+LLM okay LLM become
+
+75
+00:06:42,880 --> 00:06:45,440
+um
+
+76
+00:06:46,280 --> 00:06:55,039
+Whley okayly
+integrated
+
+77
+00:06:52,520 --> 00:06:58,880
+integrated with various kinds of task
+like we have
+
+78
+00:06:59,400 --> 00:07:03,680
+business okay application
+
+79
+00:07:05,199 --> 00:07:09,840
+Then we have um customer support
+
+80
+00:07:10,840 --> 00:07:21,680
+application. Okay. Customer support
+apps. Then we have also um content
+
+81
+00:07:23,000 --> 00:07:32,039
+generation. Okay. Content generation.
+Then we have autonomous system
+
+82
+00:07:29,039 --> 00:07:32,039
+automation.
+
+83
+00:07:32,880 --> 00:07:39,759
+uh
+system and so
+
+84
+00:07:37,000 --> 00:07:44,240
+on. Okay. So we have various kinds of
+application nowadays and all the
+
+85
+00:07:41,440 --> 00:07:48,680
+applications okay all the applications
+need to
+
+86
+00:07:46,360 --> 00:07:51,680
+be need to
+be
+
+87
+00:07:51,800 --> 00:07:58,080
+continuously okay
+newly
+
+88
+00:07:59,319 --> 00:08:03,879
+monitored and optimize.
+
+89
+00:08:04,319 --> 00:08:11,199
+Okay,
+optimize what uh I mean by monitor and
+
+90
+00:08:09,280 --> 00:08:16,319
+optimize. So if I'm talking about chart
+GPT let's say. So what happens in the
+
+91
+00:08:13,919 --> 00:08:21,240
+chat GPT whenever we are sending any
+kinds of prompt let's say I'm writing a
+
+92
+00:08:18,479 --> 00:08:28,080
+prompt let's say tell me
+about okay tell me about let's say
+
+93
+00:08:25,240 --> 00:08:31,360
+Python okay let's say this is my prompt
+I'm passing to the
+
+94
+00:08:31,560 --> 00:08:38,760
+charg what charge GPT is doing it is
+giving me one response yes or no guys
+
+95
+00:08:37,440 --> 00:08:45,040
+okay
+response so as a as a user what is our
+
+96
+00:08:42,800 --> 00:08:50,399
+expectation from this chart GPT? So
+definitely the question I'm asking to
+
+97
+00:08:46,800 --> 00:08:56,399
+the chart GPT I should have get the
+correct answer in a very fastest way yes
+
+98
+00:08:52,959 --> 00:09:00,880
+or no. Okay. So if my charge GPT is
+giving me slower response I'm not going
+
+99
+00:08:58,640 --> 00:09:05,760
+to use that application because nowadays
+time is more valuable than the money.
+
+100
+00:09:03,839 --> 00:09:10,399
+Okay. So people doesn't have that much
+of time for let's say whenever they are
+
+101
+00:09:08,399 --> 00:09:13,839
+using any kinds of software. If this
+software is giving slower response
+
+102
+00:09:12,000 --> 00:09:18,160
+people are not going to use that. So
+that's why your application should be
+
+103
+00:09:16,160 --> 00:09:22,560
+always optimized. Okay. It should be
+always optimized. The first thing and
+
+104
+00:09:20,560 --> 00:09:27,120
+you have to continuously monitor that
+application. Okay. Let's say sometimes I
+
+105
+00:09:25,279 --> 00:09:32,000
+think those who have uh used the charge
+GPT before let's say whenever charge GPT
+
+106
+00:09:29,920 --> 00:09:38,000
+came in the market so that time chart
+GPT used to uh give a input feedback
+
+107
+00:09:34,800 --> 00:09:43,120
+form so there it was asking like uh uh
+how was your experience whether you want
+
+108
+00:09:40,480 --> 00:09:48,160
+to put any let's say feedback or not. So
+these kinds of let's say uh input form
+
+109
+00:09:45,839 --> 00:09:52,000
+they used to give to the user and user
+used to pass some feedback or let's say
+
+110
+00:09:50,000 --> 00:09:55,760
+if they're not enjoying if uh they're
+not liking the product they used to give
+
+111
+00:09:53,600 --> 00:10:01,360
+the lower ratings like like that's how
+so why they're giving you these kinds of
+
+112
+00:09:58,480 --> 00:10:04,959
+let's say form because they want to
+monitor okay they want to monitor their
+
+113
+00:10:03,360 --> 00:10:09,360
+application whether it is working fine
+in the production or not okay if it is
+
+114
+00:10:07,360 --> 00:10:13,279
+not working then they used to take the
+feedback from the user they used to get
+
+115
+00:10:11,040 --> 00:10:18,000
+the data from the user again they used
+to retrain the entire model. Okay. And
+
+116
+00:10:15,760 --> 00:10:22,160
+they used to uh let's say again deploy
+that particular model in the production
+
+117
+00:10:19,519 --> 00:10:25,760
+server. So that's why monitoring is also
+important. So it's not like that you
+
+118
+00:10:24,160 --> 00:10:29,920
+have built your product and you are
+running in the let's say production
+
+119
+00:10:27,440 --> 00:10:33,360
+server and people are using that. You
+also need to monitor whether your
+
+120
+00:10:31,519 --> 00:10:36,640
+product is working fine or not in the
+production whether people are enjoying
+
+121
+00:10:34,720 --> 00:10:41,120
+or not. Otherwise you will definitely
+lose your user. So that's why LLM ops is
+
+122
+00:10:39,519 --> 00:10:46,959
+super important. with the help of LLM
+ops we just try to do the same thing we
+
+123
+00:10:44,079 --> 00:10:52,800
+we just uh try to monitor we just try to
+optimize the entire LLM ops system okay
+
+124
+00:10:50,240 --> 00:10:56,000
+so here for this we will be using some
+framework we will be using some platform
+
+125
+00:10:54,640 --> 00:10:58,720
+nowadays there are different different
+platform there are different different
+
+126
+00:10:57,040 --> 00:11:02,720
+frameworks are available I'll be also
+talking about that one okay now I think
+
+127
+00:11:00,640 --> 00:11:06,839
+you got to know why LM ops is important
+got it okay now let's try to understand
+
+128
+00:11:05,279 --> 00:11:13,680
+uh the next
+things this one how llm ops is different
+
+129
+00:11:10,399 --> 00:11:19,560
+from MLOps. Okay. So for this uh let me
+just compare these two
+
+130
+00:11:16,920 --> 00:11:22,560
+things. So this side I can
+compare
+
+131
+00:11:23,000 --> 00:11:30,920
+LLM
+ops and this side I can compare MLOps.
+
+132
+00:11:41,240 --> 00:11:46,160
+Okay. So see LM ops
+
+133
+00:11:47,160 --> 00:11:54,560
+required. Okay.
+Required
+
+134
+00:11:51,560 --> 00:11:54,560
+best
+
+135
+00:11:55,000 --> 00:11:59,680
+amount
+of
+
+136
+00:12:00,120 --> 00:12:07,760
+diverse
+okay takes data. Nowadays we also have
+
+137
+00:12:05,519 --> 00:12:12,800
+something called multimodel. So uh you
+can also consider uh it would be kinds
+
+138
+00:12:09,600 --> 00:12:17,040
+of image data, audio data and so on. And
+uh on the other hand, MLOps
+
+139
+00:12:17,160 --> 00:12:20,560
+typically okay
+
+140
+00:12:20,839 --> 00:12:28,079
+typically
+works with
+
+141
+00:12:25,920 --> 00:12:28,079
+uh
+
+142
+00:12:28,760 --> 00:12:38,120
+structured okay structured
+uh
+
+143
+00:12:33,959 --> 00:12:43,920
+tabular data. Okay. And if you have a
+very less amount of data, it will also
+
+144
+00:12:41,279 --> 00:12:47,440
+work. But on the other hand, your ML lm
+okay needs more data. Okay. It needs
+
+145
+00:12:45,680 --> 00:12:53,000
+actually huge amount of data. Otherwise,
+uh you can't train actually large model
+
+146
+00:12:49,839 --> 00:12:57,639
+in a good way. then it needs
+high okay high performance
+
+147
+00:12:59,120 --> 00:13:08,480
+uh
+GPU and
+
+148
+00:13:04,360 --> 00:13:13,680
+cloud resources to train the model okay
+to train and finetuning and all on the
+
+149
+00:13:10,880 --> 00:13:17,639
+other hand uh this uh LLM ops uh sorry
+MLOps generally
+
+150
+00:13:20,000 --> 00:13:22,399
+uh require
+
+151
+00:13:24,000 --> 00:13:28,320
+lower computation. Okay, lower compute
+
+152
+00:13:28,360 --> 00:13:35,240
+power that means you can also train on
+the CPU machine. Okay, it will also
+
+153
+00:13:33,240 --> 00:13:41,360
+work. Then
+uh here you need
+
+154
+00:13:38,560 --> 00:13:41,360
+um
+
+155
+00:13:42,440 --> 00:13:49,320
+scalable
+scalable deployment
+
+156
+00:13:50,360 --> 00:13:57,880
+for continuous
+inference. Okay,
+
+157
+00:13:55,639 --> 00:14:05,920
+continuous
+inference. Okay, and here you need uh
+
+158
+00:14:01,279 --> 00:14:08,639
+and here you can utilize often batch
+uh
+
+159
+00:14:10,440 --> 00:14:15,959
+processing or periodic inference.
+
+160
+00:14:18,480 --> 00:14:24,959
+Okay. So what does it have mean? Let's
+say uh let's say you have some uh
+
+161
+00:14:23,120 --> 00:14:29,920
+machine learning data. Okay. Tabular
+data. So instead of uh doing continuous
+
+162
+00:14:27,760 --> 00:14:33,920
+uh let's say prediction, you can collect
+some batch. Let's say uh you can give a
+
+163
+00:14:32,000 --> 00:14:38,240
+duration. Let's say one day you will be
+collecting all the data and next day you
+
+164
+00:14:36,880 --> 00:14:41,199
+will be getting all the prediction
+because in machine learning we don't
+
+165
+00:14:39,680 --> 00:14:44,399
+need real time actually let's say
+prediction. That's why we can also do
+
+166
+00:14:42,880 --> 00:14:49,360
+something called uh this batch
+processing of of the periodic inference.
+
+167
+00:14:47,199 --> 00:14:53,120
+Okay. But LLM ops actually you have to
+do continuous informance uh inference
+
+168
+00:14:51,199 --> 00:14:57,720
+because here people will be asking the
+question continuously and you have to
+
+169
+00:14:54,720 --> 00:15:04,600
+get the uh response real time.
+Okay. Then here you have
+
+170
+00:15:01,320 --> 00:15:09,560
+biases. Okay. Okay. Hello
+solution
+
+171
+00:15:07,399 --> 00:15:12,560
+seems
+and
+
+172
+00:15:13,480 --> 00:15:22,320
+misleading
+outputs. Okay. And here you have
+
+173
+00:15:19,320 --> 00:15:22,320
+bias
+
+174
+00:15:23,160 --> 00:15:26,639
+monitoring is
+
+175
+00:15:27,320 --> 00:15:36,560
+important
+but less
+
+176
+00:15:32,120 --> 00:15:36,560
+complex. Okay. Compared
+
+177
+00:15:37,560 --> 00:15:45,680
+to LLM. Okay. So in LLM actually I think
+you know that we have something called
+
+178
+00:15:43,760 --> 00:15:51,199
+biases allocation and misleading outputs
+problem. So uh this thing uh whenever
+
+179
+00:15:48,560 --> 00:15:55,360
+you want to monitor uh you have to apply
+some complex strategy but on the other
+
+180
+00:15:53,120 --> 00:15:59,199
+hand in the MLOps okay this is not that
+much of complex okay you can easily
+
+181
+00:15:56,880 --> 00:16:03,920
+handle these kinds of situations okay so
+these are some actually key difference
+
+182
+00:16:01,040 --> 00:16:10,600
+uh I can say uh between the LLM ops and
+MLOps now I think you got it all right
+
+183
+00:16:06,160 --> 00:16:18,160
+now let's try to understand uh this
+thing how LLM ops works okay so I think
+
+184
+00:16:14,160 --> 00:16:22,800
+you know that uh in LLM ops pipeline uh
+what are the things we usually do? So
+
+185
+00:16:20,079 --> 00:16:22,800
+let me just write
+
+186
+00:16:23,079 --> 00:16:28,120
+here how how LLM ops works.
+
+187
+00:16:33,720 --> 00:16:38,079
+How LLM
+
+188
+00:16:41,880 --> 00:16:45,680
+ops see LLM
+
+189
+00:16:46,519 --> 00:16:49,519
+ops
+
+190
+00:16:49,560 --> 00:16:56,800
+follows a structure. Okay,
+structured
+
+191
+00:16:57,399 --> 00:17:03,880
+workflow. Okay. Workflow to ensure
+
+192
+00:17:04,160 --> 00:17:07,439
+uh ensure the
+
+193
+00:17:09,559 --> 00:17:12,559
+efficient
+
+194
+00:17:13,400 --> 00:17:22,760
+management okay of LLM.
+So in LLM uh training what we usually do
+
+195
+00:17:20,640 --> 00:17:27,640
+first of all we do the data
+collection okay
+
+196
+00:17:25,400 --> 00:17:32,240
+data
+collection after that we do some
+
+197
+00:17:35,799 --> 00:17:43,440
+pre-processing okay we uh it requires
+some pre-processing then uh we usually
+
+198
+00:17:40,720 --> 00:17:43,440
+do the model
+
+199
+00:17:44,039 --> 00:17:52,080
+training model training Okay. Uh model
+training. So sometimes actually instead
+
+200
+00:17:49,600 --> 00:17:56,919
+of training the model, you also uh do
+something called fine-tuning. So here I
+
+201
+00:17:55,120 --> 00:17:59,919
+can
+mention
+
+202
+00:18:01,000 --> 00:18:07,120
+fine-tuning. Okay, finetuning. So I
+think you know what is finetuning even I
+
+203
+00:18:05,360 --> 00:18:13,120
+will also discuss about uh this thing
+okay going forward. Then once uh we
+
+204
+00:18:09,840 --> 00:18:17,720
+fine-tune the model okay then what we do
+we uh deploy this model we usually
+
+205
+00:18:15,600 --> 00:18:23,120
+perform the
+deployment deployment
+
+206
+00:18:20,039 --> 00:18:25,600
+okay and after deployment we do the
+inference
+
+207
+00:18:25,799 --> 00:18:34,160
+operation inference
+uh operation so here actually your llm
+
+208
+00:18:31,200 --> 00:18:37,600
+ops comes so let's say whenever you um
+do the deployment of this particular
+
+209
+00:18:36,320 --> 00:18:41,520
+model or let's say whenever you are
+training this model or let's say
+
+210
+00:18:39,280 --> 00:18:46,400
+fine-tuning the model that time actually
+you'll be facing some challenges I think
+
+211
+00:18:43,440 --> 00:18:51,840
+you know that LLM okay LLM is a huge
+model okay large language model usually
+
+212
+00:18:48,880 --> 00:18:56,400
+it's a huge model it has actually a very
+large amount of parameter okay millions
+
+213
+00:18:53,840 --> 00:19:01,919
+of billions of parameter so now let's
+say you are having one uh let's say
+
+214
+00:18:58,799 --> 00:19:06,000
+system with core i7 processor with 8 GB
+RAM now tell me how you'll be training
+
+215
+00:19:04,400 --> 00:19:10,400
+or how you will be fine- tuning that
+model okay definitely you'll be creating
+
+216
+00:19:08,240 --> 00:19:15,360
+the issue and it requires actually lots
+of time to train. It requires actually
+
+217
+00:19:12,000 --> 00:19:20,320
+lots of data. Okay. So for this we'll be
+utilizing the ops technology here. So
+
+218
+00:19:18,000 --> 00:19:26,600
+there there are some tools like uh Lora
+is there. Okay. Q Lora is
+
+219
+00:19:23,720 --> 00:19:32,400
+there. Then uh hugging face platform is
+there. Okay. Hugging face platform is
+
+220
+00:19:29,200 --> 00:19:36,400
+there. Okay. Then uh we have some llm
+platform is there. Let's say bedrock is
+
+221
+00:19:34,640 --> 00:19:41,440
+there.
+We have Vert.ex AI is there. Okay,
+
+222
+00:19:38,960 --> 00:19:46,840
+Vert.Ex AI is there. This is from AWS
+and this is from GCP. Okay, GCP. So with
+
+223
+00:19:45,039 --> 00:19:52,400
+with the help of these are the tools and
+framework we usually do the training. We
+
+224
+00:19:49,600 --> 00:19:56,640
+usually do the finetuning. Okay, so Lora
+Q usually do the quantization technique.
+
+225
+00:19:54,799 --> 00:20:02,400
+It will load your model in a quantized
+format. Okay, and easily it can train
+
+226
+00:20:00,000 --> 00:20:06,480
+your model on the lower configuration
+instance as well. Okay, this is the main
+
+227
+00:20:04,320 --> 00:20:11,120
+advantage here. And whenever I'm talking
+about deployment, you also need to
+
+228
+00:20:08,320 --> 00:20:14,880
+deploy this model as an endpoint. Okay,
+you also need to deploy this project as
+
+229
+00:20:12,799 --> 00:20:19,520
+an endpoint. How it can be done? So
+there are some platform like bedrock and
+
+230
+00:20:16,600 --> 00:20:23,360
+vertxi. It is already having the model
+hosted. Okay, in their platform so that
+
+231
+00:20:21,679 --> 00:20:28,080
+easily you can access the model through
+the API request or let's say through the
+
+232
+00:20:25,600 --> 00:20:32,320
+uh some other actually MCP protocol and
+you can access the model okay and you
+
+233
+00:20:30,640 --> 00:20:36,559
+can easily do the inference operation
+there. So that's how actually you are
+
+234
+00:20:34,240 --> 00:20:40,080
+optimizing the entire pipeline. You are
+optimizing the entire let's say
+
+235
+00:20:38,320 --> 00:20:43,760
+inference pipeline. Whenever user is
+coming to the application they are not
+
+236
+00:20:42,080 --> 00:20:47,200
+getting any kinds of slow. Okay. They're
+not getting any kinds of let's say
+
+237
+00:20:45,039 --> 00:20:51,679
+problem with that. Okay. So that's why
+LMPS comes into picture. Otherwise uh
+
+238
+00:20:49,679 --> 00:20:55,679
+whenever you are creating these kinds of
+application definitely we'll face the
+
+239
+00:20:53,039 --> 00:20:59,120
+issue. I hope it is clear. So always
+optimization is important and you have
+
+240
+00:20:57,679 --> 00:21:01,840
+to continuously monitor your
+application. That's why we'll be
+
+241
+00:21:00,559 --> 00:21:05,600
+utilizing these are the tools and
+technology and we'll be learning these
+
+242
+00:21:03,679 --> 00:21:10,080
+are the platform also. So nowadays
+popular platform uh you'll be getting in
+
+243
+00:21:07,760 --> 00:21:14,159
+the market like Amazon bedrock is there
+GCB vert.xi is there then uh as your
+
+244
+00:21:12,720 --> 00:21:18,080
+openi is there. So these are the
+platform nowadays people are using okay
+
+245
+00:21:16,159 --> 00:21:22,000
+for their product development and all
+even open you can also use because
+
+246
+00:21:19,679 --> 00:21:24,960
+openai has also their API with the help
+of API request you can access the model
+
+247
+00:21:23,600 --> 00:21:28,080
+instead of using the open source large
+language model. Okay, because open
+
+248
+00:21:26,720 --> 00:21:34,159
+source large language model at the end
+you have to download you have to
+
+249
+00:21:30,679 --> 00:21:38,720
+download in your system then you'll be
+using but whenever I'm talking about
+
+250
+00:21:35,760 --> 00:21:42,320
+open AI model you have one open API key
+so with the help of API key you can
+
+251
+00:21:40,080 --> 00:21:47,039
+access the model in their platform okay
+similar if you're using bedrock vertx a
+
+252
+00:21:44,320 --> 00:21:50,880
+they also have one API or other MCP
+protocol with the help of that you can
+
+253
+00:21:48,880 --> 00:21:55,440
+uh hit the model and you can access it
+okay I hope it is clear now let's try to
+
+254
+00:21:53,679 --> 00:22:00,000
+understand uh sorry let's try to see
+some popular
+
+255
+00:21:57,520 --> 00:22:05,600
+uh here popular tools and platform for
+the LMA ops. See I already uh talked
+
+256
+00:22:02,559 --> 00:22:09,360
+about that uh tools and platform like uh
+if I'm talking about the tools we have
+
+257
+00:22:07,360 --> 00:22:12,039
+various kinds of tools like we have
+hugging
+
+258
+00:22:10,440 --> 00:22:16,480
+face
+okay hugging face is there hugging face
+
+259
+00:22:14,799 --> 00:22:19,679
+is a platform and tool both you can
+consider so it is having actually lots
+
+260
+00:22:18,480 --> 00:22:23,520
+of functionality with the help of that
+you can also utilize the mouse uh
+
+261
+00:22:21,440 --> 00:22:30,080
+technology like we'll be using something
+called loa q loa technique okay loa and
+
+262
+00:22:27,840 --> 00:22:33,240
+qa technique for the model training and
+finetuning process
+
+263
+00:22:31,440 --> 00:22:38,159
+Then we also have something
+called
+
+264
+00:22:34,919 --> 00:22:42,000
+MLflow. Okay, MLflow. Nowadays MLflow
+has also collaborated with the
+
+265
+00:22:39,679 --> 00:22:46,080
+generative AI. So whenever you are let's
+say fine-tuning your model, you can also
+
+266
+00:22:44,480 --> 00:22:54,480
+track the experiment here. You can also
+monitor your LLM. Okay. So I can just
+
+267
+00:22:48,799 --> 00:23:01,559
+write track experiment okay of LLM.
+Then uh we have uh some platform like uh
+
+268
+00:22:58,000 --> 00:23:07,840
+Amazon uh bedrock
+AWS AWS
+
+269
+00:23:05,320 --> 00:23:12,000
+bedrock okay it's a genative platform
+complete geneti platform that means here
+
+270
+00:23:09,840 --> 00:23:16,000
+you can do everything and it has all the
+foundation model hosted okay in their
+
+271
+00:23:13,760 --> 00:23:22,000
+platform like we have llama we have
+mistral we have cloudy okay all kinds of
+
+272
+00:23:19,200 --> 00:23:25,880
+like uh uh powerful models are available
+there then from GCP side GC GCP that
+
+273
+00:23:24,480 --> 00:23:31,320
+means Google
+cloud
+
+274
+00:23:28,280 --> 00:23:37,760
+GCP we have something called Vertx
+AI okay Vertexi was the first MLOps
+
+275
+00:23:35,600 --> 00:23:42,559
+platform but now they have also upgraded
+with the LLM ops so here also you can
+
+276
+00:23:40,320 --> 00:23:46,480
+perform all kinds of LM ops operation
+that means it also has some foundation
+
+277
+00:23:44,159 --> 00:23:50,799
+model like Jiny okay whatever Google
+model you can see everything are posted
+
+278
+00:23:48,480 --> 00:23:54,159
+there it uh it can be multimodel it can
+be embedding model it can be uh image
+
+279
+00:23:52,400 --> 00:23:58,280
+model it can be language model all the
+models are available over the GCP. Apart
+
+280
+00:23:56,559 --> 00:24:04,559
+from that we have another one called
+Azure OpenAI. Okay, Azure
+
+281
+00:24:01,799 --> 00:24:08,960
+OpenAI. Uh but the problem with Azure
+OpenI is the account creation. So here
+
+282
+00:24:06,159 --> 00:24:12,400
+you need the organization mail. Uh I was
+trying to create the account but it was
+
+283
+00:24:10,480 --> 00:24:16,400
+giving me some issue. So that's why in
+this program I'll try to more focus on
+
+284
+00:24:14,000 --> 00:24:20,880
+the WS bedrock and GCP vertx because
+this is got more popularity nowadays.
+
+285
+00:24:18,559 --> 00:24:24,320
+Okay. And we'll be also learning hugging
+face and we'll be also learning how we
+
+286
+00:24:22,640 --> 00:24:28,480
+can utilize the ML flow and all these
+are the thing we'll also try to learn.
+
+287
+00:24:26,000 --> 00:24:35,120
+Okay. So guys I think now you got it
+like uh uh what is exactly the MLOps.
+
+288
+00:24:31,960 --> 00:24:38,960
+Okay. And uh uh why it is super
+important and uh what are the tools and
+
+289
+00:24:37,440 --> 00:24:43,360
+we uh what are the tools actually we
+have inside LM ops and how it is
+
+290
+00:24:41,279 --> 00:24:47,760
+different from the LM MLOps. Okay. So
+this was the complete let's say overview
+
+291
+00:24:45,520 --> 00:24:52,080
+about the LM ops. Now going forward
+we'll be learning uh actually some more
+
+292
+00:24:50,080 --> 00:24:55,600
+topic inside LMOPS. We'll try to deep
+dive into the concept and we'll try to
+
+293
+00:24:54,000 --> 00:25:00,240
+also learn the practical implementation
+of it. Definitely your understanding
+
+294
+00:24:57,360 --> 00:25:04,080
+would be more clear. Okay. And whatever
+resources I'm going to show you
+
+295
+00:25:02,480 --> 00:25:07,840
+definitely all the resources will be
+available you can also get the
+
+296
+00:25:05,440 --> 00:25:12,640
+resources. So that guys uh I think you
+understood about the LOPS. So yes uh
+
+297
+00:25:10,720 --> 00:25:16,480
+this was uh all about from this
+particular video. Thank you.
+

@@ -1,0 +1,255 @@
+1
+00:00:00,320 --> 00:00:07,040
+Hi guys, in this video we'll be talking
+about open-source LLMs and proprietary
+
+2
+00:00:05,520 --> 00:00:12,080
+LLMs. Okay, what is the difference
+between them? So here you can see
+
+3
+00:00:08,800 --> 00:00:16,800
+opensource LLM is nothing but uh so just
+let me show you. So open source LLM is
+
+4
+00:00:14,559 --> 00:00:21,920
+nothing but uh the models are publicly
+released okay with access to the weights
+
+5
+00:00:18,960 --> 00:00:26,640
+codes and training detail enabling users
+to inspect modify and fine-tune and
+
+6
+00:00:24,240 --> 00:00:30,320
+deploy locally or or any other
+infrastructure. That means uh if there
+
+7
+00:00:28,560 --> 00:00:33,680
+is any model which is publicly available
+that means the weights codes okay and
+
+8
+00:00:31,840 --> 00:00:36,719
+everything all the model details that
+time you can call it as a open source
+
+9
+00:00:35,280 --> 00:00:41,040
+model. So I think you know that some
+popular open source model are available
+
+10
+00:00:38,079 --> 00:00:45,840
+like llama 2 three mistral falcon bloom
+okay five then queen okay and so on. So
+
+11
+00:00:43,760 --> 00:00:48,719
+these are the models are open source and
+you can see the creator. So who has
+
+12
+00:00:47,360 --> 00:00:52,640
+created the model even you can see the
+context length of the model and what is
+
+13
+00:00:50,640 --> 00:00:56,199
+the pros and cons of this model. So you
+can see the pros pro part. So this model
+
+14
+00:00:55,520 --> 00:01:00,320
+are
+transparent architecture and weights so
+
+15
+00:00:58,719 --> 00:01:04,720
+customizable you can fine-tune and
+quantize whatever you want you can do
+
+16
+00:01:02,160 --> 00:01:08,720
+then you can run on locally okay no
+vendors locked in and great for research
+
+17
+00:01:07,200 --> 00:01:12,880
+and innovation let's say if you are
+interested in research and innovation
+
+18
+00:01:10,159 --> 00:01:17,119
+you can use this are the model and what
+are the cons are available so it
+
+19
+00:01:15,040 --> 00:01:22,640
+requires actually infrastructure and uh
+engineering expertise okay then often
+
+20
+00:01:20,000 --> 00:01:26,640
+smaller scale or less optimized than the
+proprietary okay lms that means Here you
+
+21
+00:01:25,200 --> 00:01:31,200
+have you have to use actually larger
+scale infrastructure to run this model
+
+22
+00:01:28,960 --> 00:01:34,640
+and uh security and performance tuning
+is your responsibility. So here you have
+
+23
+00:01:33,119 --> 00:01:38,159
+to take care your security and
+performance uh tuning. Okay, these are
+
+24
+00:01:36,720 --> 00:01:42,479
+the part then there is another one
+called proprietary LLMs. Okay, so you
+
+25
+00:01:40,720 --> 00:01:46,720
+can see closed uh source models
+developed by companies where only the
+
+26
+00:01:44,159 --> 00:01:51,439
+API or hosted access is provided. the
+models weight training data and the
+
+27
+00:01:48,640 --> 00:01:54,960
+internet's uh uh internals okay are not
+public that means only you have the API
+
+28
+00:01:53,680 --> 00:01:58,320
+through the API request you can access
+the model I think you know that GPT
+
+29
+00:01:56,720 --> 00:02:01,840
+model that means openi whatever model
+they are having so those are model
+
+30
+00:02:00,159 --> 00:02:06,079
+actually proprietary lms okay because
+you can only access those model with the
+
+31
+00:02:03,280 --> 00:02:10,000
+help of API request then cloudy jin okay
+command then jurassic so these are the
+
+32
+00:02:08,080 --> 00:02:13,599
+companies you can see provided and this
+is the context and what is the pros and
+
+33
+00:02:11,920 --> 00:02:17,760
+cons you can see state-of-the-art
+performance scalable uh realable APIs
+
+34
+00:02:16,080 --> 00:02:22,800
+Fully managed infrastructure accessible
+to a massive context window. Then idea
+
+35
+00:02:20,560 --> 00:02:26,720
+for the enterprise use cases. Okay. And
+speed to deploy. And what are the cons?
+
+36
+00:02:24,720 --> 00:02:31,360
+So no access to the weights and um or
+the data expensive because at the end
+
+37
+00:02:28,879 --> 00:02:35,599
+you have to pay risk of the vendor
+locked in limited customization. Okay.
+
+38
+00:02:34,000 --> 00:02:39,040
+And potential privacy compliance
+concerns data leaves your
+
+39
+00:02:37,280 --> 00:02:42,879
+infrastructure. Okay. So these are the
+pros and cons are available if you're
+
+40
+00:02:40,640 --> 00:02:46,080
+using this proprietary LLM. So yes guys
+in the market these two kinds of large
+
+41
+00:02:44,239 --> 00:02:50,879
+language models are available. Uh so
+whenever we'll be creating any kinds of
+
+42
+00:02:47,920 --> 00:02:55,280
+uh production ready software most of the
+time uh we'll be using proprietary limbs
+
+43
+00:02:52,879 --> 00:02:59,840
+because uh uh you can see the pro pros
+and cons. Okay. So it is more easy to
+
+44
+00:02:57,599 --> 00:03:03,200
+let's say manage and uh let's say uh
+scalable to make it scalable and
+
+45
+00:03:01,840 --> 00:03:06,480
+whenever I'm talking about open source
+here you have to take care everything.
+
+46
+00:03:04,720 --> 00:03:08,959
+Okay. So at then it's like more costly
+because at then you have to take the
+
+47
+00:03:07,680 --> 00:03:12,080
+good infrastructure you have to deploy
+the project you have to so you have to
+
+48
+00:03:10,400 --> 00:03:14,879
+take care everything here but let's say
+if you're doing research or any other
+
+49
+00:03:13,599 --> 00:03:17,840
+innovation that time you can go with
+open source large language model okay
+
+50
+00:03:16,319 --> 00:03:21,599
+it's up to you so yes guys this is the
+difference between our open source and
+
+51
+00:03:19,200 --> 00:03:24,159
+proprietary LMS now I think you got it
+thanks for watching
+

@@ -1,0 +1,696 @@
+1
+00:00:00,400 --> 00:00:06,120
+uh and open up your GitHub account. Make
+sure you have the GitHub account
+
+2
+00:00:08,240 --> 00:00:15,040
+and here click on new repository.
+You can give the name. So here I'll give
+
+3
+00:00:12,800 --> 00:00:22,160
+the name as personal productivity
+assistant. Uh I'll keep it as public
+
+4
+00:00:17,359 --> 00:00:28,720
+repo. Okay. And uh add readmi file.
+Get ignore wise I'll be taking python.
+
+5
+00:00:25,840 --> 00:00:34,239
+License wise let's take the mat license.
+Um I think everything is fine. Uh let's
+
+6
+00:00:30,720 --> 00:00:38,000
+create the repo right now.
+Okay. So once it is done, let's click on
+
+7
+00:00:36,239 --> 00:00:42,559
+the code, copy the link address, open up
+your local folder. So this is my local
+
+8
+00:00:39,680 --> 00:00:45,559
+folder. So here I'm going to open up my
+terminal.
+
+9
+00:00:46,000 --> 00:00:53,680
+Now let's clone the repo. So get clone.
+Let's paste the link.
+
+10
+00:00:51,520 --> 00:00:58,800
+So it will clone the repo. Now I I need
+to go inside it. So cd personal
+
+11
+00:00:57,199 --> 00:01:03,520
+productivity assistant. Okay, now I'm
+inside this folder. Now here I'm going
+
+12
+00:01:00,719 --> 00:01:09,360
+to open up my Visual Code Studio.
+You can also use PyCharm Sublime Text.
+
+13
+00:01:06,320 --> 00:01:13,200
+It's up to you. H. So the first thing
+guys, what we have to do, we have to do
+
+14
+00:01:11,040 --> 00:01:19,840
+the environment setup and requirement
+installation. For this, uh let's write
+
+15
+00:01:15,600 --> 00:01:22,880
+the command in the readme file. So
+uh I already prepared the command. Uh
+
+16
+00:01:21,840 --> 00:01:26,520
+what are the command you have to
+execute? Um
+
+17
+00:01:29,520 --> 00:01:37,920
+yeah so let me just mention it here
+uh so you can see first of all uh you
+
+18
+00:01:36,320 --> 00:01:41,840
+have to clone my repository then after
+that you have to create the environment
+
+19
+00:01:39,280 --> 00:01:47,280
+this is the command contact create m uh
+hyphen n uh agent app python is equal to
+
+20
+00:01:44,640 --> 00:01:50,720
+3.12 y so here we'll be using 3.12
+python version then after that you have
+
+21
+00:01:49,040 --> 00:01:53,200
+to activate the environment then you
+have to install the requirements okay
+
+22
+00:01:52,240 --> 00:01:56,000
+now you can ask me what is the
+requirement file. I'll try to create the
+
+23
+00:01:54,560 --> 00:02:00,000
+requirement file. No need to worry. Then
+once it is done, all the setup is done.
+
+24
+00:01:58,079 --> 00:02:02,640
+Then uh uh you have to execute the
+endpoint which is nothing but your
+
+25
+00:02:01,119 --> 00:02:05,920
+app.py. But as of now, we haven't
+created the app.py. You can ignore this
+
+26
+00:02:04,320 --> 00:02:08,800
+part. So these are the command guys you
+have to execute. So for me, I already
+
+27
+00:02:07,360 --> 00:02:11,520
+created the environment. So I'm not
+going to execute this command. But for
+
+28
+00:02:10,000 --> 00:02:16,319
+you, you have to execute the command. So
+let me activate my environment. So I'll
+
+29
+00:02:14,000 --> 00:02:20,480
+open up my terminal. And if I just write
+activate agent app, you can see agent
+
+30
+00:02:17,840 --> 00:02:24,319
+has been activated. Now let's create all
+the folder structure one by one. So
+
+31
+00:02:22,160 --> 00:02:29,200
+first of all, so here I'll create a file
+called template.py.
+
+32
+00:02:27,520 --> 00:02:33,120
+So with the help of this template.py,
+we'll try to create the folder structure
+
+33
+00:02:30,800 --> 00:02:37,840
+auto uh in automated way. So for this, I
+have written a python script. Let me
+
+34
+00:02:34,800 --> 00:02:41,920
+show you. So this is my python script.
+So here I only need to modify uh these
+
+35
+00:02:40,160 --> 00:02:45,760
+are the folders and file. Uh I think
+those who have seen my implementation, I
+
+36
+00:02:43,519 --> 00:02:50,080
+follow the same template.py. I follow
+the same uh logic to create my folder
+
+37
+00:02:47,840 --> 00:02:54,560
+structure. Okay. All right. So now let's
+do some modification in the file. So I
+
+38
+00:02:52,319 --> 00:02:59,280
+don't need the project name. This thing
+I don't need. So instead of that what
+
+39
+00:02:57,040 --> 00:03:03,120
+we'll do uh we'll try to update the
+folders and file in the list of the
+
+40
+00:03:01,440 --> 00:03:08,159
+files. That means inside this particular
+list. Okay. So first of all I need a
+
+41
+00:03:05,280 --> 00:03:15,480
+backend folder. So here what I will do
+um
+
+42
+00:03:10,800 --> 00:03:15,480
+here I'll just write a backend folder.
+
+43
+00:03:18,000 --> 00:03:21,239
+back end
+
+44
+00:03:22,159 --> 00:03:29,800
+back end folder okay and inside back end
+I'll create two file one is the inest
+
+45
+00:03:26,159 --> 00:03:29,800
+data dopy
+
+46
+00:03:33,040 --> 00:03:37,640
+so let me delete all the file
+
+47
+00:03:38,400 --> 00:03:44,799
+params I don't need main I also don't
+need
+
+48
+00:03:42,640 --> 00:03:47,840
+and uh
+the string is not required I can also
+
+49
+00:03:46,640 --> 00:03:53,519
+remove it
+requirement I need setup.py Py I don't
+
+50
+00:03:50,560 --> 00:03:58,239
+need resource I also don't need
+templates I need okay yeah and GitHub I
+
+51
+00:03:56,319 --> 00:04:02,319
+need uh because we'll be doing the CI/CD
+deployment for this we need this
+
+52
+00:03:59,439 --> 00:04:06,080
+particular file okay uh yeah so first of
+all I'll be creating a inest data ppy
+
+53
+00:04:04,159 --> 00:04:10,720
+file in the backend folder and I'm also
+going to create another file called
+
+54
+00:04:07,599 --> 00:04:15,840
+modelpy okay then after that we'll try
+to create a static folder here so let me
+
+55
+00:04:14,319 --> 00:04:20,400
+just
+write here I'll name it as static
+
+56
+00:04:26,479 --> 00:04:32,840
+Okay. Inside static, I'll create a
+app.js file.
+
+57
+00:04:34,320 --> 00:04:41,080
+Then uh we'll create another file called
+style dot CSS.
+
+58
+00:04:41,919 --> 00:04:48,280
+Style
+dot CSS. Okay.
+
+59
+00:04:49,440 --> 00:04:56,800
+Then uh what we'll do uh
+a template I think I already created
+
+60
+00:04:54,160 --> 00:04:59,440
+index html because if you're using flask
+I think you know that you have to create
+
+61
+00:04:58,000 --> 00:05:03,040
+the templates file inside that you have
+to create the index html okay that is
+
+62
+00:05:01,120 --> 00:05:07,080
+what we are doing then we'll be creating
+av file herev
+
+63
+00:05:10,720 --> 00:05:14,800
+then apart from that I need a docker
+file
+
+64
+00:05:17,280 --> 00:05:23,680
+docker file
+then requirement.txt txt and uh
+
+65
+00:05:21,840 --> 00:05:26,880
+template. Okay. Yeah. So yes, these are
+the files and folder I need. If you need
+
+66
+00:05:25,280 --> 00:05:29,919
+anything later on, I'll try to create.
+Now try to save and this is the logic.
+
+67
+00:05:28,560 --> 00:05:34,720
+So first of all, I'm looping through the
+list. Then uh I'm uh actually converting
+
+68
+00:05:32,880 --> 00:05:38,000
+to the path because here we are using
+Windows machine and Windows use backward
+
+69
+00:05:36,560 --> 00:05:41,120
+slash and if you want to convert to the
+backward slash, you have to use the path
+
+70
+00:05:39,360 --> 00:05:44,880
+library. Okay, it will automatically
+detect your operating system based on
+
+71
+00:05:42,320 --> 00:05:47,919
+that it will convert that part. Then I'm
+separating out my folder uh file
+
+72
+00:05:46,479 --> 00:05:50,800
+directory and file name. So you can see
+this is the file directory and this is
+
+73
+00:05:49,280 --> 00:05:54,240
+the file name and with the help of
+path.plit actually we are doing that. So
+
+74
+00:05:52,720 --> 00:05:58,160
+folder directory will be stored in the
+file directory and file name will store
+
+75
+00:05:56,400 --> 00:06:00,880
+in the file name. Then after that first
+of all I'm creating the file directory.
+
+76
+00:05:59,680 --> 00:06:04,160
+Okay with the help of west dome
+directories. Okay this is the code. Then
+
+77
+00:06:02,880 --> 00:06:07,520
+after that we are creating the files.
+You can see I'm opening the files and we
+
+78
+00:06:05,759 --> 00:06:11,360
+are creating that empty file. And then
+if anything is exist I'm u logging the
+
+79
+00:06:10,000 --> 00:06:15,520
+information this file is already exist.
+Okay. And for this we are using login
+
+80
+00:06:12,960 --> 00:06:22,560
+module. So now let's execute the uh
+file. So what I will do I will uh
+
+81
+00:06:19,440 --> 00:06:27,199
+execute my template.py. Now see there is
+nothing right now. And if I execute this
+
+82
+00:06:24,240 --> 00:06:32,039
+file okay this template.py automatically
+the folder structure would be created.
+
+83
+00:06:28,720 --> 00:06:32,039
+So template.py.
+
+84
+00:06:32,160 --> 00:06:36,560
+Now guys see left hand side
+automatically the folder structure has
+
+85
+00:06:34,960 --> 00:06:39,039
+been created. Okay. So that's why I use
+this particular approach. Now let's say
+
+86
+00:06:37,840 --> 00:06:43,280
+in future you want to create another
+file. Let's say you want to create
+
+87
+00:06:41,039 --> 00:06:48,080
+test.py.
+Simply just try to add and execute it.
+
+88
+00:06:46,560 --> 00:06:51,440
+See automatically this would be created.
+Okay, you don't need to manually create
+
+89
+00:06:49,840 --> 00:06:54,479
+it. Otherwise, what we have to do? We
+have to use this icon and we have to
+
+90
+00:06:53,039 --> 00:06:56,720
+create it manually. First of all, this
+folder we have to create. Then inside
+
+91
+00:06:55,600 --> 00:07:00,720
+that we have to create these are the
+files. Okay, so it's a like hard uh hard
+
+92
+00:06:59,120 --> 00:07:03,680
+to create. Okay, it will take lots of
+time. So, we are not going to follow
+
+93
+00:07:01,840 --> 00:07:07,360
+that approach. Okay, so that's why we
+have followed the template.py approach.
+
+94
+00:07:05,759 --> 00:07:11,120
+Now this is created. Now what I will do?
+I'll try to commit this code to my
+
+95
+00:07:09,199 --> 00:07:18,720
+GitHub. So for this, let's clear my
+terminal. Now I'll just write uh g add
+
+96
+00:07:16,080 --> 00:07:23,599
+Now get
+commit.
+
+97
+00:07:21,360 --> 00:07:29,440
+So we have to write a commit message.
+Type a name. So I'll just write folder
+
+98
+00:07:27,039 --> 00:07:35,240
+structure
+addit
+
+99
+00:07:31,599 --> 00:07:35,240
+then get push
+
+100
+00:07:35,520 --> 00:07:41,199
+origin
+main. Okay. Because this is the main
+
+101
+00:07:38,960 --> 00:07:45,120
+branch. You can check here uh the
+repository we have created it is under
+
+102
+00:07:42,720 --> 00:07:51,039
+main branch. Now let's see uh I'll try
+to commit the code sorry push the code.
+
+103
+00:07:48,560 --> 00:07:55,360
+Now see push is done. Now if I come here
+and if I refresh
+
+104
+00:07:53,280 --> 00:07:58,960
+uh now see all the folders and file has
+been committed to my GitHub. Okay. And I
+
+105
+00:07:57,280 --> 00:08:02,240
+also arbitrated readmi file. So use
+anyone can come here and they can copy
+
+106
+00:08:00,479 --> 00:08:05,599
+paste the command and they can execute
+my application. Okay. Now the next thing
+
+107
+00:08:04,160 --> 00:08:07,680
+we'll try to set up the requirements.
+Okay. Now how to set up the
+
+108
+00:08:06,639 --> 00:08:11,039
+requirements? Let's open up the
+requirement.txt and inside that I'll
+
+109
+00:08:09,680 --> 00:08:14,800
+mention all of the requirements you need
+for this particular project. So the
+
+110
+00:08:12,479 --> 00:08:19,160
+first requirement you need the flask
+then you need the flask quartz
+
+111
+00:08:20,240 --> 00:08:23,800
+then you need langen
+
+112
+00:08:26,080 --> 00:08:34,640
+is equal to 0.1.20
+okay this is the specific version we'll
+
+113
+00:08:31,840 --> 00:08:41,039
+be using then we need open AI okay open
+a is equal is equal to I need 0.28 28 uh
+
+114
+00:08:39,360 --> 00:08:47,200
+0. Okay, this version we'll be using.
+Then I need chromadv. So chroma
+
+115
+00:08:44,240 --> 00:08:52,880
+uh sorry chroma
+chroma db
+
+116
+00:08:49,360 --> 00:08:57,760
+is equal to I'll be using 0.4
+uh uh.24. So now you can ask me why we
+
+117
+00:08:56,240 --> 00:09:01,440
+are using this version because I have
+implemented the project with this
+
+118
+00:08:59,279 --> 00:09:05,120
+particular version and I'm mentioning
+the specific version because after 1
+
+119
+00:09:03,920 --> 00:09:09,040
+month there is a possibility this
+package will get updated and you will
+
+120
+00:09:07,040 --> 00:09:12,320
+face the like uh dependency issue.
+That's why we're using the same version
+
+121
+00:09:10,640 --> 00:09:16,000
+the version I used to implement the
+project. Okay it's a it's a good
+
+122
+00:09:14,080 --> 00:09:20,080
+practice always try to mention the
+version the package you are using
+
+123
+00:09:17,760 --> 00:09:23,600
+because uh JNI is the frequent update
+industry. So every day they are doing
+
+124
+00:09:21,920 --> 00:09:26,720
+new new changes in the package. So the
+project you are running today there is a
+
+125
+00:09:25,120 --> 00:09:31,440
+possibility this project might not run
+tomorrow. So that's why it's super
+
+126
+00:09:28,080 --> 00:09:37,120
+important. Then I need python. MV
+then I need gown.
+
+127
+00:09:34,560 --> 00:09:39,279
+Gown for the Google drive. Okay. If I
+want to download anything from the
+
+128
+00:09:38,160 --> 00:09:44,000
+Google drive, I need these are the
+package. Okay. Now how to install? So
+
+129
+00:09:41,360 --> 00:09:48,839
+this is the command I mentioned.
+Now let's open up your uh terminal.
+
+130
+00:09:48,959 --> 00:09:55,200
+Let's clear it and I'll install the
+requirements. So for me it is already
+
+131
+00:09:53,760 --> 00:09:58,720
+satisfied because previously I already
+installed but for you it will take some
+
+132
+00:09:56,800 --> 00:10:01,519
+time. See it's completed. Okay. Now
+let's again commit. So if you want to
+
+133
+00:10:00,080 --> 00:10:06,880
+commit you can also commit from the VS
+code. So you can give the message here.
+
+134
+00:10:03,519 --> 00:10:12,680
+Let's say requirements added
+requirements.
+
+135
+00:10:09,519 --> 00:10:12,680
+Add it.
+
+136
+00:10:14,640 --> 00:10:19,839
+Just a minute. Add it. Then click on
+commit. And if you're doing for the
+
+137
+00:10:18,880 --> 00:10:25,320
+first time it will ask for the
+authentication with your GitHub. Just
+
+138
+00:10:21,200 --> 00:10:25,320
+try to authenticate and try to commit.
+
+139
+00:10:25,760 --> 00:10:31,440
+It's done. Okay. Now, if I get back to
+my GitHub, refresh. Now, see, this is my
+
+140
+00:10:30,000 --> 00:10:35,279
+second commitment. Okay. Requirements
+added. All right, guys. So, everything
+
+141
+00:10:33,760 --> 00:10:38,800
+is ready. Now, we can start the
+development right now. Okay.
+

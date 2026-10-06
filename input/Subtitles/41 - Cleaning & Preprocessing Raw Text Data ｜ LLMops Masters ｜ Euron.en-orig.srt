@@ -1,0 +1,1809 @@
+1
+00:00:00,080 --> 00:00:06,240
+So guys, as you can see, this is the
+notebook I already prepared. So here you
+
+2
+00:00:04,080 --> 00:00:12,080
+can see I'm using one data set from
+Kaggle. So let me open the
+
+3
+00:00:08,440 --> 00:00:17,279
+link. This is the link. So the data set
+name is IMDb uh data set and it is
+
+4
+00:00:14,880 --> 00:00:20,800
+having actually 50K uh movie reviews.
+Okay, 50K actually movie reviews. If you
+
+5
+00:00:19,680 --> 00:00:23,680
+are already from let's say machine
+learning, deep learning background, I
+
+6
+00:00:22,080 --> 00:00:27,599
+think you know about this data set,
+right? It's like very common data set.
+
+7
+00:00:25,840 --> 00:00:31,760
+And why I took this particular data set?
+Because in this data set you will see uh
+
+8
+00:00:29,439 --> 00:00:35,440
+there are so many actually unnecessary
+text okay because it's a movie review.
+
+9
+00:00:33,680 --> 00:00:39,040
+So what they did actually they extracted
+they they scraed this data from the IMDb
+
+10
+00:00:37,600 --> 00:00:44,559
+website. If you don't know this is the
+IMDb website IMDb. So in this website
+
+11
+00:00:42,000 --> 00:00:48,719
+you will see all the movies reviews and
+rating and what they did actually they
+
+12
+00:00:46,960 --> 00:00:52,559
+published this data set in the Kaggle
+website so that if anyone is working in
+
+13
+00:00:50,480 --> 00:00:57,199
+the field of let's say geni or natural
+language processing they can use the
+
+14
+00:00:54,559 --> 00:01:01,600
+data set. Now here what you just need to
+do, you just need to download this data.
+
+15
+00:00:58,800 --> 00:01:04,960
+Okay. It's around uh I think 27 MB. Just
+click on download button. It will
+
+16
+00:01:02,879 --> 00:01:08,080
+download. Okay. So I already downloaded
+this data set. Uh so it is available
+
+17
+00:01:06,560 --> 00:01:12,080
+inside my download folder. So I'm going
+to upload in my collab notebook. So here
+
+18
+00:01:10,799 --> 00:01:14,720
+first of all what you have to do? You
+have to connect this particular
+
+19
+00:01:13,119 --> 00:01:18,159
+notebook. So there is a connect button.
+Just try to connect and no need to
+
+20
+00:01:16,240 --> 00:01:22,240
+worry. I will also share this notebook
+link in the resources section. From
+
+21
+00:01:19,520 --> 00:01:26,240
+there you can open it up. So my notebook
+is connected. So first of all let's
+
+22
+00:01:24,479 --> 00:01:29,840
+import uh some of the library. First of
+all I need something called pandas
+
+23
+00:01:27,600 --> 00:01:34,000
+because if you see the data uh it's a
+CSV data. Okay it's a CSV data. So let
+
+24
+00:01:32,000 --> 00:01:36,640
+me upload and let me show you. So if you
+want to upload anything in the Google
+
+25
+00:01:35,200 --> 00:01:41,560
+drive just try to right click and there
+is upload button. Click on upload and
+
+26
+00:01:38,720 --> 00:01:46,720
+try to upload this data
+here. Now see it's a CSV file. Okay. And
+
+27
+00:01:44,479 --> 00:01:51,280
+if I want to load any kinds of CSV file,
+JSON file or let's Excel file whatever
+
+28
+00:01:49,280 --> 00:01:56,240
+file you can use the pandas package for
+that. So you can see my data set is
+
+29
+00:01:53,520 --> 00:01:59,680
+uploaded. Now if I want to load the data
+set what I have to do I have to assign
+
+30
+00:01:57,520 --> 00:02:03,280
+the path and see you don't need to
+execute these are the code because uh
+
+31
+00:02:01,680 --> 00:02:06,479
+this code I have added let's say if your
+data set is available in your Google
+
+32
+00:02:04,799 --> 00:02:09,360
+drive that time what you have to do you
+have to mount your Google drive first of
+
+33
+00:02:07,840 --> 00:02:13,440
+all mount means you will be connecting
+with your Google drive then you'll be
+
+34
+00:02:11,120 --> 00:02:16,959
+relocating the folder okay like inside
+which folder you kept your data okay
+
+35
+00:02:15,360 --> 00:02:20,560
+with the help of CD command CD means
+change directory okay then after that
+
+36
+00:02:19,120 --> 00:02:24,160
+what you will do you will assign the
+data path but here I haven't kept my
+
+37
+00:02:22,560 --> 00:02:29,040
+data inside my Google drive I kept
+inside my collab actually you can see
+
+38
+00:02:26,400 --> 00:02:34,160
+drive this the collab d I'm using here
+you will get around uh 74 GB of space so
+
+39
+00:02:31,680 --> 00:02:38,640
+here you also you can keep your data so
+I don't need to execute this code what I
+
+40
+00:02:36,160 --> 00:02:42,959
+will do I'll just go below and if I
+check my current working directory that
+
+41
+00:02:40,239 --> 00:02:46,800
+means pwd you'll see I'm inside content
+content means this is the directory
+
+42
+00:02:44,239 --> 00:02:52,640
+right now now here I'll just simply
+define my data path so I'll copy the
+
+43
+00:02:48,480 --> 00:02:58,800
+path copy and let me paste it here okay
+that's it Now let me
+
+44
+00:02:55,319 --> 00:03:04,080
+execute H. Now see if I now load the
+data. PD. CSV I'm doing. So now see it
+
+45
+00:03:01,599 --> 00:03:08,319
+will load the data. See it has loaded
+the data. If you want to see the shape
+
+46
+00:03:05,280 --> 00:03:12,480
+of the data, this is the shape. Okay.
+You have around 50 uh 50k actually
+
+47
+00:03:10,959 --> 00:03:16,480
+movies, movies, reviews in this
+particular CSV file and two columns. Two
+
+48
+00:03:14,879 --> 00:03:20,000
+columns means one is the reviews column
+another is like the sentiment column.
+
+49
+00:03:18,400 --> 00:03:23,840
+Okay. Sentiment means whether it's a
+positive sentiment, whether it's a
+
+50
+00:03:21,200 --> 00:03:28,239
+negative sentiment. this kinds of
+sentiment you will get here. I hope it
+
+51
+00:03:25,760 --> 00:03:31,760
+is clear. Now see here I'm having 50k
+movie reviews but here I'm not going to
+
+52
+00:03:30,000 --> 00:03:34,720
+use all the reviews. Here I'm going to
+show you the demo like how we can
+
+53
+00:03:33,120 --> 00:03:39,120
+perform the text pre-processing and if
+I'm taking all the 50k reviews so it
+
+54
+00:03:36,400 --> 00:03:42,319
+will take like lots of time to process
+those are the text. So what I will do
+
+55
+00:03:40,480 --> 00:03:46,239
+I'll only take the 100 example. Okay the
+first 100 example I I'll be taking and
+
+56
+00:03:44,879 --> 00:03:50,239
+on top of that I will perform all the
+text processing task. Right? So this is
+
+57
+00:03:48,640 --> 00:03:55,360
+the code you can execute. So it will
+load 100 example. Now if I show you the
+
+58
+00:03:52,360 --> 00:04:00,000
+shape, see now we are having 100 example
+and only two columns. Fine. Now if I
+
+59
+00:03:58,560 --> 00:04:02,720
+want to show you the data, see this is
+the data. So first thing we'll be
+
+60
+00:04:01,439 --> 00:04:06,080
+learning how we can perform the lower
+case operation. And why lower case
+
+61
+00:04:04,319 --> 00:04:09,599
+important? I already explained here. I
+think remember let's say let's say if
+
+62
+00:04:07,760 --> 00:04:13,040
+one of the name is containing upper case
+character, it will consider these are
+
+63
+00:04:11,360 --> 00:04:15,920
+actually separate name. Okay, these are
+actually separate entity. That is the
+
+64
+00:04:14,560 --> 00:04:19,519
+idea. So that's how we have to bring
+everything in a lower case character. So
+
+65
+00:04:17,680 --> 00:04:22,720
+that's how you have to apply this lower
+operation. And how to perform lower
+
+66
+00:04:21,280 --> 00:04:25,759
+operation? I think you already know in
+Python we are having one function called
+
+67
+00:04:24,240 --> 00:04:29,120
+lower. With the help of lower also we
+can do it right now. See here let me
+
+68
+00:04:27,759 --> 00:04:33,759
+show you one example. Let's say I'm
+taking the reviews three. So here I'm
+
+69
+00:04:30,960 --> 00:04:37,759
+taking the three three number rows. This
+is the three number rows. Now you can
+
+70
+00:04:35,040 --> 00:04:41,120
+see some of the uh character is
+uppercase character here. So this is
+
+71
+00:04:39,360 --> 00:04:43,360
+upper case. This is upper case. Okay. So
+that's actually you will see different
+
+72
+00:04:42,160 --> 00:04:46,320
+different uppercase character would be
+there. Now if I want to make them lower
+
+73
+00:04:45,120 --> 00:04:49,040
+case what I have to do first of all I
+have to select my column like in which
+
+74
+00:04:48,000 --> 00:04:52,960
+column you have to apply the Lord
+function. I have to apply on top of my
+
+75
+00:04:50,720 --> 00:04:56,240
+review column. Now, first of all, I'm
+converting everything to the string.
+
+76
+00:04:54,320 --> 00:04:59,759
+Okay, string data type. Then I'm
+applying the lower because lower is a
+
+77
+00:04:58,080 --> 00:05:02,639
+string method. Okay, lower is a string
+method. I think you already know that.
+
+78
+00:05:01,280 --> 00:05:07,120
+Then whatever changes actually I'm
+doing, I'm saving inside my column. That
+
+79
+00:05:05,120 --> 00:05:10,400
+means I'm just doing the permanent
+change. Okay, inside my column. So
+
+80
+00:05:08,400 --> 00:05:14,560
+that's why I have given review again.
+That is the idea. Now if I
+
+81
+00:05:12,039 --> 00:05:18,080
+execute now, see if I show you the data.
+Now see guys, all the character has
+
+82
+00:05:16,000 --> 00:05:23,440
+become lower case. Right? Now, now if I
+want to show you the Now if I again
+
+83
+00:05:20,800 --> 00:05:27,680
+execute that review three, you'll see
+that all the character has converted to
+
+84
+00:05:26,000 --> 00:05:31,280
+the lower case character. Okay, that is
+the idea. Now the next thing we'll be
+
+85
+00:05:29,360 --> 00:05:34,639
+learning how we can handle the HTML
+tags. That means how we can remove the
+
+86
+00:05:32,639 --> 00:05:38,160
+HTML tags. For this here I have written
+a function. Here I'm using something
+
+87
+00:05:36,080 --> 00:05:41,120
+called regular expression. Reg. Okay. So
+inside reg X you can give a pattern
+
+88
+00:05:39,759 --> 00:05:43,919
+that's let's say here you are giving a
+pattern. If you are getting this kinds
+
+89
+00:05:42,479 --> 00:05:48,080
+of symbol, okay, if you are getting this
+kinds of symbol, it's a like HTML tag.
+
+90
+00:05:46,320 --> 00:05:51,280
+You have to remove those HTML tags and
+you have to replace with empty. Okay,
+
+91
+00:05:49,759 --> 00:05:55,680
+empty string. That is the idea. Now this
+is the function we can use. Now if I
+
+92
+00:05:53,160 --> 00:05:59,520
+execute, now let's say this is a one
+text I have prepared. You can see in
+
+93
+00:05:57,680 --> 00:06:03,440
+this text actually we are having lots of
+HTML tags. Now if I pass this particular
+
+94
+00:06:02,000 --> 00:06:07,280
+text to my function, see it will
+automatically remove all the tags. Now
+
+95
+00:06:05,199 --> 00:06:11,280
+see I'm only getting the text. Okay,
+relevant text. That is the idea. So this
+
+96
+00:06:09,280 --> 00:06:14,560
+notebook I prepared in a such a way so
+that you can use it as a template. Let's
+
+97
+00:06:12,960 --> 00:06:17,600
+say whenever you need anything any kinds
+of functionality you can come here you
+
+98
+00:06:15,840 --> 00:06:20,880
+can copy those function. So please try
+to keep this particular notebook with
+
+99
+00:06:19,039 --> 00:06:24,000
+you because this is going to help you a
+lot. Okay whenever you'll be developing
+
+100
+00:06:22,400 --> 00:06:27,919
+the projects this is going to help you a
+lot. Now if you want to apply on top of
+
+101
+00:06:25,840 --> 00:06:31,280
+the entire data set again just call this
+column name let's say review column.
+
+102
+00:06:29,680 --> 00:06:35,840
+Okay and there is a function called
+apply and inside that just try to pass
+
+103
+00:06:33,520 --> 00:06:40,160
+this function. Okay apply function takes
+actually uh one function object. Now
+
+104
+00:06:38,400 --> 00:06:43,360
+here I'm giving the function object. So
+what it will do, it will try to apply
+
+105
+00:06:41,759 --> 00:06:47,440
+this particular function on top of the
+entire uh rows you are having in your
+
+106
+00:06:45,600 --> 00:06:51,199
+data set. Okay. Now see if I execute and
+and the changes actually I'm doing I'm
+
+107
+00:06:49,039 --> 00:06:55,759
+saving everything permanent. Okay. Now
+let me execute. Now if I show you any
+
+108
+00:06:54,319 --> 00:06:59,400
+kinds of random let's say rows. Now
+you'll see all the uh now let's say if I
+
+109
+00:06:58,160 --> 00:07:05,039
+also show you
+um seven okay seven number rows. Now
+
+110
+00:07:02,560 --> 00:07:09,360
+just try to see there's no HTML tags in
+this particular text. You can pick up
+
+111
+00:07:07,360 --> 00:07:14,000
+any kinds of let's say index. So let's
+say if I show you the
+
+112
+00:07:11,080 --> 00:07:17,759
+10 nowhere you will see the HTML tags
+here. Now we'll be learning how we can
+
+113
+00:07:15,840 --> 00:07:21,599
+remove actually URL. Let's say if you
+are having some URL in the text how we
+
+114
+00:07:19,680 --> 00:07:24,960
+can remove it. For this again I'm using
+regular expression and there is a
+
+115
+00:07:23,520 --> 00:07:31,360
+pattern I have given. If you are getting
+this kinds of let's say a word http then
+
+116
+00:07:27,599 --> 00:07:34,160
+/ then ww that means it is a URL and you
+have to remove the URL with the empty
+
+117
+00:07:32,800 --> 00:07:37,680
+string. Okay, this is the function. Now
+let me execute. Now here I have just
+
+118
+00:07:36,080 --> 00:07:42,000
+mentioned some of the URL. So this is my
+YouTube channel URL. This is my LinkedIn
+
+119
+00:07:39,280 --> 00:07:45,759
+URL and google.com and kegaggle.com.
+Okay. Now these are the text I have
+
+120
+00:07:43,360 --> 00:07:49,440
+prepared one by one. Now let's say if
+I'm passing any kinds of text inside my
+
+121
+00:07:47,759 --> 00:07:53,840
+remove URL function, it will remove that
+URL. Let me show you. See I'm giving the
+
+122
+00:07:52,080 --> 00:07:58,000
+text to that means my LinkedIn URL. Now
+you can see check out my LinkedIn. I
+
+123
+00:07:56,240 --> 00:08:02,319
+hope it is clear. See again I'm telling
+you it's not a mandatory things. Let's
+
+124
+00:07:59,680 --> 00:08:06,639
+say you need URL in your data at that
+time you can keep it. Let's say you need
+
+125
+00:08:03,919 --> 00:08:10,240
+HTML tags, you can keep it. But if you
+don't need it, you can remove it because
+
+126
+00:08:08,160 --> 00:08:14,800
+I already told you uh nowadays actually
+we are having advanced geni application.
+
+127
+00:08:12,720 --> 00:08:18,639
+It also supports all kinds of text like
+emojis, HTML, okay? Everything it
+
+128
+00:08:17,199 --> 00:08:22,319
+supports. So if you're creating this
+kinds of advanced let's say I mean
+
+129
+00:08:20,960 --> 00:08:26,240
+application that time you need these
+other data. You don't need to remove it.
+
+130
+00:08:24,160 --> 00:08:29,599
+Okay. But sometimes actually you also
+need to remove this data set. So that's
+
+131
+00:08:27,919 --> 00:08:32,719
+why I'm showing you how you can remove
+it. And if you want to keep it, you can
+
+132
+00:08:30,720 --> 00:08:35,560
+also keep it. It's up to you. Okay? You
+have to decide based on your project
+
+133
+00:08:34,080 --> 00:08:39,919
+architecture at that time. This is the
+idea. Now we'll be learning how we can
+
+134
+00:08:37,839 --> 00:08:42,880
+handle the punctuation. So if you want
+to see the punctuation, so there is a
+
+135
+00:08:41,279 --> 00:08:46,320
+string package you can use. Now if you
+just write a string dot punctuation, you
+
+136
+00:08:44,720 --> 00:08:49,839
+will see all kinds of punctuations are
+available. Now what I have done, I just
+
+137
+00:08:48,240 --> 00:08:53,519
+stored these are the function in a
+variable called exclude. Now here I have
+
+138
+00:08:52,080 --> 00:08:56,959
+written a function. Okay, here I've
+written a function called remove
+
+139
+00:08:54,560 --> 00:09:00,640
+punctuation. And here I've written a for
+loop. So I'm just looping through this
+
+140
+00:08:58,720 --> 00:09:04,320
+punctuation one by one. and user is
+giving the text and I'm just checking
+
+141
+00:09:02,240 --> 00:09:08,240
+whether if there is any punctuation.
+Okay, I'm just replacing with the empty
+
+142
+00:09:06,720 --> 00:09:12,320
+string. Now let me show you how it will
+work. Now let's say this is one text
+
+143
+00:09:10,560 --> 00:09:16,320
+string with punctuation. You can see
+there are so many punctuation I have
+
+144
+00:09:14,160 --> 00:09:20,720
+assigned. Now if I pass this particular
+text to my punctuation functions, it
+
+145
+00:09:18,320 --> 00:09:24,240
+will remove the punctuation. Now see
+there is no punctuation right now. Even
+
+146
+00:09:22,480 --> 00:09:27,839
+I'm also calculating the time like how
+much time it is taking to remove the
+
+147
+00:09:25,519 --> 00:09:29,920
+punctuation because there is another way
+you can follow to remove the
+
+148
+00:09:28,720 --> 00:09:33,600
+punctuation. And I'll tell you how you
+can do it. See this is the function
+
+149
+00:09:31,680 --> 00:09:37,279
+guys. Uh so here you can use something
+called text.t translate. Inside that
+
+150
+00:09:35,839 --> 00:09:40,480
+just try to use this particular
+function. Okay make translate and inside
+
+151
+00:09:39,200 --> 00:09:44,240
+that just try to mention the
+punctuation. So what it will do it will
+
+152
+00:09:42,800 --> 00:09:46,959
+take your text and it will remove all
+the punctuation. So this is another
+
+153
+00:09:45,440 --> 00:09:50,080
+approach. Now see if I calculate the
+time of this function you will see that
+
+154
+00:09:48,880 --> 00:09:53,600
+this is the time that means this
+function is taking less time than your
+
+155
+00:09:51,680 --> 00:09:57,360
+this function because here you are using
+one for loop and for loop has the linear
+
+156
+00:09:55,920 --> 00:10:00,080
+time complexity. I think you know that
+if you are familiar with DSA concept, I
+
+157
+00:09:58,959 --> 00:10:04,160
+think you know that it is having linear
+time time complexity. Okay. So this
+
+158
+00:10:02,480 --> 00:10:08,560
+particular approach is good. So let's
+say if you are applying this particular
+
+159
+00:10:06,080 --> 00:10:12,399
+logic on top of 50k data set just try to
+think how much time it will take this
+
+160
+00:10:10,080 --> 00:10:15,200
+for loop. And in other hand if you are
+using this particular method, it will
+
+161
+00:10:13,680 --> 00:10:17,920
+take very less time to perform the
+operation. Now if you want to see the
+
+162
+00:10:16,720 --> 00:10:24,480
+time difference, you can also see the
+time difference. Now if I show you my
+
+163
+00:10:22,160 --> 00:10:28,640
+uh text now see inside this text
+actually I'm having lots of punctuation.
+
+164
+00:10:26,880 --> 00:10:31,440
+Now what I will do I will use my uh
+remove function one that means this
+
+165
+00:10:29,920 --> 00:10:35,839
+particular function and inside that I'm
+going to pass my entire review. Now see
+
+166
+00:10:33,440 --> 00:10:40,240
+it will remove the punctuation. Okay see
+all the function has been removed. Now
+
+167
+00:10:37,600 --> 00:10:44,079
+you can also pass the entire data like
+that you can also pass the entire data.
+
+168
+00:10:42,640 --> 00:10:47,440
+It will remove all the punctuation
+inside your entire data. Now we'll be
+
+169
+00:10:45,920 --> 00:10:52,000
+learning how we can handle the chat
+conversation. See sometimes whenever we
+
+170
+00:10:49,279 --> 00:10:56,959
+perform the chatting operation we give
+uh like lots of shortcut let's say if I
+
+171
+00:10:54,480 --> 00:11:02,720
+want to write as far as I know what you
+will give you will give af i k then
+
+172
+00:10:59,760 --> 00:11:07,600
+let's say away from keyboard afk then as
+soon as possible as up that's how we use
+
+173
+00:11:05,200 --> 00:11:11,279
+lots of chat keyword okay we use lots of
+chat shortcut keyword okay here I have
+
+174
+00:11:09,360 --> 00:11:15,200
+listed down some of them you can see for
+your information fyi so that's how I
+
+175
+00:11:13,600 --> 00:11:18,880
+have listed all the chat conversation
+short uh word now let's say you are
+
+176
+00:11:17,120 --> 00:11:22,079
+working with actually social media data
+set in the social media data set you
+
+177
+00:11:20,480 --> 00:11:25,920
+will see this kinds of data a lot people
+will be using short form okay short form
+
+178
+00:11:24,399 --> 00:11:29,600
+so how we can handle this particular
+short form for this first of all try to
+
+179
+00:11:27,920 --> 00:11:33,440
+create a dictionary like that the entire
+dictionary you have to create then after
+
+180
+00:11:31,120 --> 00:11:36,880
+that here I've written a function so
+this is the function chat conversation
+
+181
+00:11:34,959 --> 00:11:40,160
+handle so inside that I'm just taking
+the text okay I'm just taking the text
+
+182
+00:11:38,560 --> 00:11:43,600
+and I'm checking and inside that with
+the help of this for loop I'm checking
+
+183
+00:11:41,680 --> 00:11:46,480
+if we are having this kinds of word okay
+if you're having these kinds of word
+
+184
+00:11:45,200 --> 00:11:50,880
+what are we doing we're just mapping
+with the value that means let's say if
+
+185
+00:11:48,959 --> 00:11:55,360
+anyone having actually this particular
+let's say shortcut word let's say fyi
+
+186
+00:11:53,680 --> 00:11:59,360
+what I will do instead of fyi I will
+just return for your information because
+
+187
+00:11:57,519 --> 00:12:03,200
+this is a dictionary if I if I want to
+get the value I want to call the key
+
+188
+00:12:00,959 --> 00:12:07,839
+okay that's how we are mapping now see
+if I execute the program now let's say
+
+189
+00:12:05,519 --> 00:12:12,160
+here we are giving a short message uh do
+this work as up now see it will return
+
+190
+00:12:09,600 --> 00:12:15,920
+me do this work as soon as possible okay
+because here it is coming here and it is
+
+191
+00:12:14,240 --> 00:12:20,320
+mapping and it is giving me this value
+okay this is the idea Now let me see how
+
+192
+00:12:17,760 --> 00:12:24,800
+we can handle the incorrect text. Let's
+say sometimes what happens whenever you
+
+193
+00:12:22,399 --> 00:12:29,200
+are using realtime data there would be
+lots of spelling mistake right let's say
+
+194
+00:12:27,360 --> 00:12:32,399
+this is one example certain so certain
+spelling is not correct then condition
+
+195
+00:12:30,800 --> 00:12:35,519
+spelling is not correct that's how so
+that's how you'll see different
+
+196
+00:12:33,440 --> 00:12:39,200
+different word is having the spelling
+mistake so how to handle this spelling
+
+197
+00:12:37,279 --> 00:12:42,279
+mistake for this you have to use one
+package called text blob so let me
+
+198
+00:12:41,040 --> 00:12:47,360
+import this text
+blob and now see here I'm having my
+
+199
+00:12:45,360 --> 00:12:50,480
+incorrect text now if I pass this
+incorrect text to my text block and if I
+
+200
+00:12:49,279 --> 00:12:54,880
+call this particular ular function
+called correct. Now see it will uh
+
+201
+00:12:52,880 --> 00:12:58,639
+handle everything. Now see certain
+conditions during several see all the
+
+202
+00:12:57,040 --> 00:13:02,240
+word has been corrected. So this is one
+amazing package you can use if you want
+
+203
+00:13:00,079 --> 00:13:06,079
+to uh handle the spelling. Okay spelling
+of any word. Now the next thing we'll be
+
+204
+00:13:04,800 --> 00:13:09,680
+learning how we can handle the stop
+words. So inside English language, not
+
+205
+00:13:08,079 --> 00:13:12,880
+only English language inside all kinds
+of language we're having some stop
+
+206
+00:13:11,040 --> 00:13:16,320
+words. Okay. Now here we're working with
+the English language. So let me show you
+
+207
+00:13:14,320 --> 00:13:20,959
+some English related stop words. For
+this I will be importing stop words from
+
+208
+00:13:18,399 --> 00:13:24,079
+the NLTK. NLTK is a so NLTK is nothing
+but it's a natural language toolkit
+
+209
+00:13:22,399 --> 00:13:27,600
+library. So with the help of NLP also
+you can perform lots of NLP related
+
+210
+00:13:25,760 --> 00:13:31,279
+task. So here you can see I'm importing
+the stop word. So here I'm performing
+
+211
+00:13:29,360 --> 00:13:35,680
+NLTK.d download it will download all the
+stop words from the internet. Now see
+
+212
+00:13:33,279 --> 00:13:40,720
+now see if I uh click this cell it will
+download the stop words. Now if you want
+
+213
+00:13:39,279 --> 00:13:44,800
+to list down all the stop words you can
+just write stop words do words and here
+
+214
+00:13:42,880 --> 00:13:48,320
+you can specify the language. So here I
+working with the So here I'm working
+
+215
+00:13:46,880 --> 00:13:51,560
+with the English language. So here I
+have given the English. Let's say you
+
+216
+00:13:49,279 --> 00:13:56,320
+are working with Hindi, Bengali. You can
+give that language also. It will give
+
+217
+00:13:53,760 --> 00:13:59,920
+you the stop word related that language.
+So you can see the documentation of
+
+218
+00:13:58,160 --> 00:14:04,720
+NLDK. We'll see that how we can pass the
+parameter here. Now see these are the
+
+219
+00:14:02,480 --> 00:14:08,079
+words we are having inside English. So
+this is called stop words. So this word
+
+220
+00:14:06,720 --> 00:14:13,120
+doesn't have any kinds of meaning. Okay.
+In a sentence, okay, we use it uh to
+
+221
+00:14:10,800 --> 00:14:16,560
+represent one sentence but there is no
+meaning. So let me show you why I'm
+
+222
+00:14:14,880 --> 00:14:20,000
+telling there is no meaning. Let's if
+you want to perform uh sentiment
+
+223
+00:14:18,160 --> 00:14:24,760
+analysis. So let's say there is one uh
+review we are having. So let me just
+
+224
+00:14:22,079 --> 00:14:28,160
+write this
+movie is
+
+225
+00:14:29,560 --> 00:14:38,399
+awesome. I loved
+it. Now just try to see here you are
+
+226
+00:14:36,320 --> 00:14:42,639
+having some stop word right like is is
+there this is there I is there it is
+
+227
+00:14:40,560 --> 00:14:48,320
+there right? But if I want to get the
+sentiment of this particular let's say
+
+228
+00:14:44,399 --> 00:14:52,560
+reviews, I can see movies is required,
+awesome is required, loved is required.
+
+229
+00:14:50,880 --> 00:14:56,560
+Now if I'm getting this kinds of word
+actually this kinds of positive word
+
+230
+00:14:54,399 --> 00:15:00,959
+that means it's a positive sentiment.
+Okay, it's a positive sentiment. Yes or
+
+231
+00:14:58,480 --> 00:15:05,120
+no, right? So here actually I don't need
+these are the stop word. Okay, I don't
+
+232
+00:15:03,440 --> 00:15:08,560
+need this as the stop word to understand
+whether this particular reviews is a
+
+233
+00:15:06,880 --> 00:15:11,279
+positive or negative. And if you're
+using this or this stop word in the
+
+234
+00:15:09,920 --> 00:15:15,279
+sentence, what will happen? Whenever you
+will perform the text vectorzation, it
+
+235
+00:15:13,120 --> 00:15:18,639
+will make actually extra dimension.
+Okay, it will make the extra dimension
+
+236
+00:15:16,720 --> 00:15:23,120
+in the data. And whenever it is making
+the extra dimension, that means if
+
+237
+00:15:20,639 --> 00:15:26,639
+dimension is increasing that time your
+model might get uh difficulties, right?
+
+238
+00:15:25,279 --> 00:15:30,560
+Because we know that there is a concept
+of cards of dimensionality. So we always
+
+239
+00:15:28,959 --> 00:15:33,040
+need to reduce the dimensionality
+somehow. I think you have learned in
+
+240
+00:15:31,839 --> 00:15:37,360
+your machine learning okay machine
+learning let's say topic. So that is why
+
+241
+00:15:35,600 --> 00:15:40,160
+we don't need these are the stop words.
+So we have to remove this particular
+
+242
+00:15:38,480 --> 00:15:43,680
+stop word sometimes and sometimes
+actually we have to also keep it. So
+
+243
+00:15:41,760 --> 00:15:50,240
+these are the stop word guys you saw.
+Now let me show you the length. So
+
+244
+00:15:46,560 --> 00:15:54,000
+around we are having 179 stop words
+present inside English. Now here I've
+
+245
+00:15:52,160 --> 00:15:57,600
+written a function. So this function
+will remove the stop words from a text.
+
+246
+00:15:55,839 --> 00:16:00,720
+Now let me show you. Let's say this is a
+text I have given. So inside that you
+
+247
+00:15:59,680 --> 00:16:05,600
+can see different different stop words
+are there. Now if I pass to my function.
+
+248
+00:16:03,519 --> 00:16:08,560
+So see now see there is no stop word in
+this particular text right now. Okay
+
+249
+00:16:07,279 --> 00:16:12,720
+that's how you can use this particular
+function. Now again this is my data and
+
+250
+00:16:11,120 --> 00:16:16,560
+if I want to apply on top of my entire
+reviews I can do it. I can use the apply
+
+251
+00:16:14,320 --> 00:16:21,440
+function and I can pass my uh function
+object remove stop
+
+252
+00:16:18,759 --> 00:16:26,800
+words. And if you want to uh store
+permanently what you can do you can
+
+253
+00:16:22,720 --> 00:16:30,880
+write this code okay re uh df reviews is
+equal to df reviews apply stop words.
+
+254
+00:16:28,800 --> 00:16:33,920
+Okay, it will save everything permanent.
+But I don't want to save it permanent as
+
+255
+00:16:32,399 --> 00:16:37,519
+of now because I'm showing you as a
+demo. If you want to do the permanent,
+
+256
+00:16:35,360 --> 00:16:41,120
+you can do it. So now guys, I think it
+is clear how we can uh remove this
+
+257
+00:16:39,680 --> 00:16:45,519
+words. Now the next thing we'll be
+learning how to handle the emoji. Okay,
+
+258
+00:16:43,360 --> 00:16:49,079
+see emoji is nothing but it's a uni code
+actually uh character. Okay, if I show
+
+259
+00:16:47,360 --> 00:16:53,040
+you, if you just write
+emoji uni
+
+260
+00:16:50,920 --> 00:16:59,600
+code, you will see different different
+uni codes of different different emojis.
+
+261
+00:16:55,759 --> 00:17:02,480
+So let me open it up. See uh here we are
+having different different emojis based
+
+262
+00:17:00,880 --> 00:17:07,039
+on that we are having the uni code okay
+uni code character okay uni code
+
+263
+00:17:04,559 --> 00:17:12,919
+character so that's why I just collected
+some of the uni code character uh like
+
+264
+00:17:09,039 --> 00:17:17,439
+for the emotions emojis symbols then
+picture then we're having transport map
+
+265
+00:17:15,439 --> 00:17:21,839
+symbol flag okay so these are the emojis
+related uni code I collected here and I
+
+266
+00:17:19,439 --> 00:17:25,439
+just written a function okay and again
+I'm using the regular expression so here
+
+267
+00:17:24,079 --> 00:17:28,240
+I'm telling if you're getting this kind
+of uni code in a sentence that means the
+
+268
+00:17:27,120 --> 00:17:31,679
+emoji Okay. So what you have to do you
+have to remove this emoji with the empty
+
+269
+00:17:30,320 --> 00:17:36,799
+space. Okay. Now let me show you. So
+let's say this is one text I'm giving
+
+270
+00:17:33,679 --> 00:17:40,720
+love the the movie it was flying keys.
+Okay. Now see if I pass this particular
+
+271
+00:17:38,880 --> 00:17:45,919
+text. Now see it will remove the emojis
+automatically. Now this is the next one.
+
+272
+00:17:43,520 --> 00:17:49,760
+Now see only lammo is coming. Now
+sometimes actually I told you emojis are
+
+273
+00:17:47,760 --> 00:17:53,679
+required because let's say I told you
+the chart GPT example. So if you pass
+
+274
+00:17:51,520 --> 00:17:56,480
+any kinds of emoji to the chart GPT it
+will also able to understand okay what
+
+275
+00:17:55,120 --> 00:18:00,760
+you are trying to say. Let's say if I
+pass any kinds of emoji here. Let's say
+
+276
+00:17:57,919 --> 00:18:04,960
+I'll give this
+emoji. Hey there, what's on your mind
+
+277
+00:18:03,280 --> 00:18:08,799
+today? See, it is trying to understand
+my feelings. Right now, if I want to
+
+278
+00:18:07,360 --> 00:18:12,480
+handle this kinds of situations, what I
+have to do, I have to keep the emoji.
+
+279
+00:18:09,919 --> 00:18:16,080
+That time what I can do? I can uh
+extract the meaning of the emoji. So,
+
+280
+00:18:14,160 --> 00:18:19,720
+for this, I can use one library called
+uh emoji. Okay. Now, let me show you.
+
+281
+00:18:18,000 --> 00:18:24,240
+First of all, you have to install
+it. Now, just import the emoji. And
+
+282
+00:18:22,400 --> 00:18:28,640
+inside emoji you are having one method
+called demoize. Okay. Now inside that
+
+283
+00:18:26,960 --> 00:18:32,320
+just try to pass the text python is
+fire. I'm giving the fire emoji. Now see
+
+284
+00:18:30,960 --> 00:18:36,559
+it will automatically convert to the
+word python is fire. Okay. That means it
+
+285
+00:18:34,799 --> 00:18:40,559
+is trying to extract the meaning of that
+particular emoji. Right? Now I hope you
+
+286
+00:18:38,880 --> 00:18:44,080
+cleared. So that's how whenever you are
+passing any kind of emoji as input to
+
+287
+00:18:42,080 --> 00:18:47,200
+the charg it is trying to convert this
+emoji to the word and is trying to
+
+288
+00:18:45,840 --> 00:18:50,720
+understand what you are trying to say.
+Now there is another example I have
+
+289
+00:18:48,720 --> 00:18:54,960
+given. I love this movie. It was flying
+case. See, see love this movie. It was
+
+290
+00:18:53,039 --> 00:18:57,440
+face blowing a kiss. Now we'll be
+understanding the tokenization. I told
+
+291
+00:18:56,400 --> 00:18:59,840
+you we are having two kinds of
+tokenization. Sentence level
+
+292
+00:18:58,720 --> 00:19:04,240
+tokenization and word level
+tokenization. So let's try to see see if
+
+293
+00:19:02,480 --> 00:19:07,919
+you want to perform the tokenization uh
+directly you can use the split function
+
+294
+00:19:05,840 --> 00:19:12,080
+because split also will give you the
+individual word in a list. See if I have
+
+295
+00:19:10,320 --> 00:19:15,360
+one sentence now if I perform the split
+operation. See I'm giving I'm getting
+
+296
+00:19:13,760 --> 00:19:18,640
+actually individual word. So with the
+help of split also you can perform the
+
+297
+00:19:16,720 --> 00:19:22,240
+tokenization. So similar wise you can
+also do the sentence level tokenization.
+
+298
+00:19:20,400 --> 00:19:26,000
+This is the word level tokenization. Now
+for this you have to mention this
+
+299
+00:19:23,840 --> 00:19:30,559
+particular fully stop sign. So whenever
+it is getting the fully stop that means
+
+300
+00:19:27,760 --> 00:19:35,120
+this is one sentence. Okay. Now see if I
+execute. So here I'm having three
+
+301
+00:19:32,720 --> 00:19:39,760
+sentence. So I am going to DI. I will
+stay there for 3 days. Let's uh hope the
+
+302
+00:19:37,679 --> 00:19:42,880
+trip to be great. Okay. See three
+sentence I'm getting. So this called
+
+303
+00:19:40,960 --> 00:19:47,520
+sentence level tokenization. So again
+some of the example with the split
+
+304
+00:19:44,960 --> 00:19:51,679
+function.
+Now with the help of regular expression
+
+305
+00:19:48,960 --> 00:19:54,880
+you can also do the um tokenizations. So
+this is one example I kept with the
+
+306
+00:19:53,360 --> 00:19:58,080
+regular expression. So here is my
+sentence and it will give you the
+
+307
+00:19:56,160 --> 00:20:01,360
+individual word. This is the sentence
+level tokenization. Okay. And this is
+
+308
+00:20:00,000 --> 00:20:04,559
+the pattern for the word level. This is
+the pattern for the sentence level.
+
+309
+00:20:02,799 --> 00:20:08,799
+Okay. This is the idea. Now you can also
+use something called NLTK. Okay that
+
+310
+00:20:07,200 --> 00:20:12,480
+means natural language toolkit library
+for this tokenization as well. Inside
+
+311
+00:20:10,720 --> 00:20:16,559
+that we are having two fun two actually
+function model level tokenizer and
+
+312
+00:20:13,919 --> 00:20:19,440
+senders level tokenizer. Now let me and
+if you want to perform the tokenization
+
+313
+00:20:18,320 --> 00:20:23,200
+you have to download this particular
+thing called P U N KT okay this
+
+314
+00:20:21,840 --> 00:20:27,520
+particular thing you have to download
+okay now see here is my sentence and I
+
+315
+00:20:25,919 --> 00:20:31,520
+want to perform word level tokenization
+I will pass this so it will give me the
+
+316
+00:20:29,600 --> 00:20:34,000
+word level tokenization so automatically
+this function will handle now if you
+
+317
+00:20:32,960 --> 00:20:38,480
+want to perform sentence level
+tokenization you can use send tokenizer
+
+318
+00:20:36,320 --> 00:20:43,840
+okay from here and you are getting the
+sentence level tokenization okay so
+
+319
+00:20:41,280 --> 00:20:47,760
+again some of the example you can try I
+have given and I created this notebook
+
+320
+00:20:45,919 --> 00:20:51,039
+in a such a way you can use it as a
+template I already told you I have
+
+321
+00:20:49,280 --> 00:20:55,440
+written like like the function wise
+right if you need any kinds of let's say
+
+322
+00:20:53,360 --> 00:20:58,640
+um I mean cleanup technique you can copy
+from here and you can use it in your
+
+323
+00:20:56,720 --> 00:21:02,320
+code that's that's the idea now there is
+another package you can use called spacy
+
+324
+00:21:00,720 --> 00:21:07,120
+with the help of spacy also you can
+perform the tokenization fine so we can
+
+325
+00:21:04,799 --> 00:21:11,120
+explore this part now let me go to the
+steamer okay I already told you what is
+
+326
+00:21:09,120 --> 00:21:15,679
+steamer steamer means you are trying to
+bring the different different word in a
+
+327
+00:21:13,760 --> 00:21:19,679
+root form that That means uh let's say
+you are having play playing played. So
+
+328
+00:21:17,600 --> 00:21:23,600
+what you will do you will apply steamer
+and you will just try to convert it is
+
+329
+00:21:21,520 --> 00:21:26,960
+to the and you'll just try to convert to
+the root word that means play right
+
+330
+00:21:25,039 --> 00:21:31,919
+because it is meaning the same okay in
+the sentence. So now let me show you. So
+
+331
+00:21:29,760 --> 00:21:36,000
+inside NLTK we are having this steamer
+poster portter streamer now we are
+
+332
+00:21:34,480 --> 00:21:38,799
+importing port steamer and here we have
+created the function steam word. So
+
+333
+00:21:37,520 --> 00:21:42,799
+whenever you will give any kinds of
+let's say uh sentence it will perform
+
+334
+00:21:41,440 --> 00:21:47,200
+the streaming operation. And now see
+here I'm giving work walk works walking
+
+335
+00:21:45,280 --> 00:21:51,760
+work. Now if I give this particular
+sentence it will give me the root form
+
+336
+00:21:49,360 --> 00:21:55,360
+that means walk work walk and all. Okay.
+Now see here I kept one sentence. So
+
+337
+00:21:53,840 --> 00:21:58,799
+this is the entire sentence. You can see
+now I want to perform steaming operation
+
+338
+00:21:56,960 --> 00:22:03,919
+on top of the sentence. So I'm using my
+function inside that I'm passing the
+
+339
+00:22:00,280 --> 00:22:09,280
+sentence. Now see uh it will give me the
+um steaming word right now. Now see uh
+
+340
+00:22:06,720 --> 00:22:12,880
+probably it has been uh probable. Okay
+probable. That's why I told you steaming
+
+341
+00:22:11,120 --> 00:22:16,720
+is not readable. Sometimes you will get
+some kinds of word. It's not readable.
+
+342
+00:22:14,559 --> 00:22:20,240
+But your model will try to understand.
+Okay. But as a human it's not readable.
+
+343
+00:22:18,799 --> 00:22:24,240
+See favorite has been converted to
+favorite right now. Okay. So in case
+
+344
+00:22:22,960 --> 00:22:27,360
+actually what you can you can use
+something called lamatization. Okay.
+
+345
+00:22:25,840 --> 00:22:30,000
+Lamatization will handle this kinds of
+situation. It will give you a readable
+
+346
+00:22:28,559 --> 00:22:34,880
+word actually. Now see this is the
+lamatization code. So it is available
+
+347
+00:22:32,640 --> 00:22:37,120
+inside NLTK. I'm importing the
+lamatization initializing the
+
+348
+00:22:36,000 --> 00:22:42,320
+lamatization. And if you want to use
+lamatization, you have to download these
+
+349
+00:22:38,640 --> 00:22:47,760
+are the things word and om. And now if I
+execute this code, you will see that it
+
+350
+00:22:44,720 --> 00:22:51,440
+will give you the lamatization for all
+the words. See, so this is the word.
+
+351
+00:22:50,240 --> 00:22:54,799
+This is the lamatization. This is the
+word. This is the lamatization. Now see,
+
+352
+00:22:52,720 --> 00:22:59,360
+it's readable. Okay, it's readable. Then
+your steaming one. I hope it is clear.
+
+353
+00:22:57,200 --> 00:23:03,600
+Fine. So that's why I just written
+steaming and lamatization are same to
+
+354
+00:23:01,440 --> 00:23:08,320
+retrieve root words but lamatization is
+what would lamatization is slow and
+
+355
+00:23:06,240 --> 00:23:10,880
+streaming is fast because lamatization
+will give you the readable output that's
+
+356
+00:23:09,679 --> 00:23:14,720
+why it's little bit slow than your
+streaming okay I hope it is clear so yes
+
+357
+00:23:13,120 --> 00:23:18,880
+these are the technique you can follow
+for the text prep-processing if you're
+
+358
+00:23:16,400 --> 00:23:21,919
+having any kinds of text you can perform
+text prep-processing with the help of
+
+359
+00:23:20,320 --> 00:23:25,280
+these are the technique you can clean up
+your text okay and again I'm tell
+
+360
+00:23:23,760 --> 00:23:29,600
+telling you it's not required to perform
+all the text cleaning uh let's say uh I
+
+361
+00:23:27,679 --> 00:23:34,080
+mean technique sometimes if you need
+anything just try to keep it as it is.
+
+362
+00:23:31,360 --> 00:23:34,080
+That is the idea.
+

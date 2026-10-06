@@ -1,0 +1,633 @@
+1
+00:00:00,640 --> 00:00:06,720
+So here uh what will happen let's say
+day by day actually whatever activity
+
+2
+00:00:04,960 --> 00:00:11,599
+you are doing let's say you are doing
+any meetings then you areuling any kinds
+
+3
+00:00:09,440 --> 00:00:15,440
+of let's say plan so whatever let's say
+you are doing uh you can collect some
+
+4
+00:00:13,519 --> 00:00:20,320
+data okay you can get some data let's
+say you have some meeting data you have
+
+5
+00:00:18,000 --> 00:00:25,920
+your reminder whatever daily task you
+usually do you have some documents
+
+6
+00:00:22,439 --> 00:00:31,359
+here okay you have some custom documents
+so what you can do uh you can build a
+
+7
+00:00:28,640 --> 00:00:35,520
+rag on top of that let's say you don't
+remember what is your let's say reminder
+
+8
+00:00:33,680 --> 00:00:39,680
+today or let's say what is your task for
+tomorrow. So what you can do you can ask
+
+9
+00:00:38,079 --> 00:00:43,440
+uh to your personal productivity
+assistant and this assistant will try to
+
+10
+00:00:41,760 --> 00:00:46,879
+suggest you let's say tomorrow what are
+the schedule you have what are the plan
+
+11
+00:00:45,280 --> 00:00:50,320
+you have everything it will try to give
+you the answer or let's say you have
+
+12
+00:00:48,559 --> 00:00:54,079
+done one meetings in the meeting so many
+discussion what happened okay but you
+
+13
+00:00:52,719 --> 00:00:58,160
+don't remember all of them what you can
+do you can collect the meeting
+
+14
+00:00:55,520 --> 00:01:02,559
+transcript and you can get the data okay
+and you can also integrate the rag with
+
+15
+00:01:00,879 --> 00:01:05,600
+that so what is the architecture so
+first of all let's say we have the
+
+16
+00:01:03,600 --> 00:01:09,600
+custom documents so first of all what
+we'll We'll try to create a
+
+17
+00:01:07,560 --> 00:01:14,799
+chunks. Okay, we'll try to create a
+chunks because you know that LLM has
+
+18
+00:01:12,080 --> 00:01:18,240
+some input limitation. So that's why we
+have to create the chunks. We can't pass
+
+19
+00:01:16,560 --> 00:01:21,520
+the entire data to the large language
+models. Chunks will give you different
+
+20
+00:01:19,680 --> 00:01:25,840
+different uh small kinds of chunks and
+these chunks will try to um convert it
+
+21
+00:01:24,000 --> 00:01:28,880
+to the vector embedding. So here we'll
+be using one embedding
+
+22
+00:01:30,119 --> 00:01:37,119
+model.
+Embedding model. So in case you can use
+
+23
+00:01:35,280 --> 00:01:40,400
+any embedding model uh you can use open
+embedding model you can also use some
+
+24
+00:01:38,479 --> 00:01:44,079
+hugging face embedding model no issue
+with that. So here I'm using I'll be
+
+25
+00:01:42,240 --> 00:01:48,840
+using open embedding model. So after
+getting the embedding model what we'll
+
+26
+00:01:45,439 --> 00:01:53,840
+do guys we'll try to generate the vector
+embedding
+
+27
+00:01:50,840 --> 00:01:53,840
+vector
+
+28
+00:01:54,920 --> 00:02:00,399
+embedding and this vector embedding we
+have to store somewhere to perform the
+
+29
+00:01:58,799 --> 00:02:04,200
+retriever operation. So we'll be using
+vector database here.
+
+30
+00:02:05,119 --> 00:02:10,479
+vector
+database and in case we'll be using
+
+31
+00:02:12,120 --> 00:02:20,000
+chromb you can also use files uh then
+you can also use web pine con no issue
+
+32
+00:02:17,520 --> 00:02:25,360
+with that and this is going to be my
+knowledge base okay knowledge
+
+33
+00:02:22,920 --> 00:02:29,360
+base fine that means uh first of all we
+have the documents then we'll be
+
+34
+00:02:27,040 --> 00:02:34,319
+creating the chunks and this particular
+chunks uh what we'll do we'll try to uh
+
+35
+00:02:32,560 --> 00:02:37,440
+generate uh we you'll be using the
+embedding model then we'll be creating
+
+36
+00:02:35,440 --> 00:02:40,800
+the vector embedding we'll store in the
+knowledge base okay that means in the
+
+37
+00:02:38,640 --> 00:02:47,760
+vector database now if anyone is asking
+any kinds of query let's say this is the
+
+38
+00:02:43,959 --> 00:02:52,160
+user let's say user is asking one query
+and this retriever will give you some
+
+39
+00:02:50,080 --> 00:02:56,840
+retrieve output okay retrieve output
+that means some rank
+
+40
+00:02:54,040 --> 00:03:02,400
+results
+ranked results okay so here you have one
+
+41
+00:03:00,879 --> 00:03:07,280
+parameter called K let's say K is equal
+to 3. It will give you three relevant
+
+42
+00:03:04,959 --> 00:03:10,760
+answer. But this answer is not readable.
+What we have to do? We have to use LLM
+
+43
+00:03:09,440 --> 00:03:14,480
+large language
+model. And we'll pass the response to
+
+44
+00:03:13,120 --> 00:03:17,120
+the large language model. Also this
+query will pass to the large language
+
+45
+00:03:15,760 --> 00:03:21,319
+model and large language model will give
+you the actual
+
+46
+00:03:19,080 --> 00:03:26,720
+response
+actual response okay by referring uh
+
+47
+00:03:25,280 --> 00:03:30,000
+your knowledge base that means the
+retrieve output. Okay. whatever you are
+
+48
+00:03:28,480 --> 00:03:35,640
+giving that means what we are doing
+let's say this is your
+
+49
+00:03:31,640 --> 00:03:41,760
+LLM so here you are passing the
+context okay also you're passing the
+
+50
+00:03:38,840 --> 00:03:45,159
+query so LM will try to refer the
+context okay let's say the context is
+
+51
+00:03:43,680 --> 00:03:48,959
+about
+Python okay and you have let's say asked
+
+52
+00:03:47,519 --> 00:03:53,360
+one question let's say what is Python
+first of all it will refer the context
+
+53
+00:03:51,200 --> 00:03:56,720
+then it will give you the query okay uh
+so just you you can consider let's say
+
+54
+00:03:54,959 --> 00:04:00,000
+if I'm giving you 10 different CAD books
+and if I tell you what is cat? So first
+
+55
+00:03:58,720 --> 00:04:02,879
+of all you will be reading about the
+cat. You have enough amount of context
+
+56
+00:04:01,439 --> 00:04:06,879
+right now regarding the cat. Then you'll
+be able to give me the response. Okay.
+
+57
+00:04:05,439 --> 00:04:10,000
+So this is what actually we are doing.
+So we are creating the knowledge base.
+
+58
+00:04:08,319 --> 00:04:13,680
+This knowledge base we are passing as a
+context to the lm and whatever question
+
+59
+00:04:12,080 --> 00:04:16,880
+user is asking okay it will try to
+return. Apart from the question if you
+
+60
+00:04:15,439 --> 00:04:21,120
+are also asking anything let's say hi
+how are you and all this will also give
+
+61
+00:04:18,959 --> 00:04:25,120
+you the response with respect to that.
+So this is the entire uh system guys
+
+62
+00:04:23,199 --> 00:04:28,800
+we'll try to develop. Now to implement
+the system uh what are the technology we
+
+63
+00:04:27,440 --> 00:04:34,600
+going to use? First of all let me write
+here see for the uh front end part front
+
+64
+00:04:32,320 --> 00:04:39,120
+end of our
+application we'll be using flask. So
+
+65
+00:04:37,600 --> 00:04:45,479
+we'll be creating a web application with
+the help of flask. Okay. For the back
+
+66
+00:04:42,840 --> 00:04:49,800
+end we'll be using
+Python and Langen.
+
+67
+00:04:50,479 --> 00:04:57,600
+uh for uh database wise that mean vector
+database we'll be using
+
+68
+00:04:58,440 --> 00:05:08,639
+prom then llm wise we'll be using
+GPT okay GPT 4 we'll be using you can
+
+69
+00:05:06,240 --> 00:05:16,280
+also use GPT 3.5 and all and for this
+we'll be using open AI and uh uh for uh
+
+70
+00:05:13,919 --> 00:05:21,680
+uh environment credential we'll be using
+pythonv
+
+71
+00:05:18,440 --> 00:05:21,680
+python dot
+
+72
+00:05:22,680 --> 00:05:28,800
+env okay with the help of that we'll try
+to load the openi secret or let's say
+
+73
+00:05:27,600 --> 00:05:33,600
+any other secret you are mentioning
+we'll try to load it and uh whenever
+
+74
+00:05:31,840 --> 00:05:38,039
+we'll try to deploy the project we also
+need to download the uh env file for
+
+75
+00:05:35,840 --> 00:05:42,400
+this we'll be using gd
+down gd down okay so with the help of
+
+76
+00:05:40,880 --> 00:05:46,720
+gdown you can download anything from the
+google drive that means we'll be keeping
+
+77
+00:05:44,400 --> 00:05:51,120
+this env file in the google drive and
+from there we'll try to download because
+
+78
+00:05:48,639 --> 00:05:57,840
+you know that we can't directly okay we
+can't directly uh upload u uh any kinds
+
+79
+00:05:54,639 --> 00:06:01,840
+of uh env file in the GitHub okay github
+will uh give you the issue so for this
+
+80
+00:05:59,280 --> 00:06:05,039
+we'll be getting the env file from from
+the Google drive itself okay this is the
+
+81
+00:06:03,440 --> 00:06:09,120
+idea I'll tell you okay whatever things
+I'm talking about I'll tell you in
+
+82
+00:06:06,880 --> 00:06:16,160
+practical definitely uh you'll be able
+to understand okay great and uh uh to
+
+83
+00:06:13,919 --> 00:06:20,720
+deploy this project we'll be using CI/CD
+approach deployment
+
+84
+00:06:19,039 --> 00:06:24,000
+we'll be using CI/CD approach. So here
+we'll be using CI/CD that means
+
+85
+00:06:22,639 --> 00:06:29,120
+continuous integration continuous
+delivery. So here what will happen if uh
+
+86
+00:06:26,639 --> 00:06:35,120
+you are uploading your code if you are
+uploading your code to the
+
+87
+00:06:32,520 --> 00:06:41,680
+GitHub okay GitHub will automatically
+trigger the uh CI/CD pipeline okay CI
+
+88
+00:06:39,000 --> 00:06:46,160
+pipeline CI/CD pipeline and this
+application will deploy over the AWS
+
+89
+00:06:43,759 --> 00:06:49,280
+cloud okay AWS cloud this is the entire
+pipeline we'll be implementing and for
+
+90
+00:06:47,919 --> 00:06:55,199
+this we'll be using some service like
+we'll be using AWS we'll be using
+
+91
+00:06:52,680 --> 00:07:00,360
+ECR elastic container registry we'll be
+using
+
+92
+00:06:57,000 --> 00:07:04,400
+docker okay docker for uh
+containerization okay uh we'll be
+
+93
+00:07:02,240 --> 00:07:09,800
+creating the docker image then we'll be
+using IM service for the uh um this one
+
+94
+00:07:08,160 --> 00:07:15,680
+um access
+management and uh here we'll be using
+
+95
+00:07:13,319 --> 00:07:21,440
+GitHub okay to perform the code
+management and we'll be using
+
+96
+00:07:17,240 --> 00:07:25,280
+GitHub action for the CI/CD tool so
+these are the service guys we'll be
+
+97
+00:07:22,960 --> 00:07:29,360
+using Okay, one by one. And what will be
+the project folder structure? So folder
+
+98
+00:07:27,199 --> 00:07:34,720
+structure wise here we'll be creating a
+back end
+
+99
+00:07:31,720 --> 00:07:41,240
+folder. Backend folder inside back end
+we'll keep some backend file like we'll
+
+100
+00:07:36,319 --> 00:07:46,880
+be uh keeping the uh data in this one
+inest data. So this will uh create the
+
+101
+00:07:45,199 --> 00:07:51,840
+uh this one uh it will load the
+documents it will uh create uh the
+
+102
+00:07:49,759 --> 00:07:55,280
+vector embedding and it will save as a
+uh uh this one database file. So this
+
+103
+00:07:53,759 --> 00:07:59,120
+particular file we'll try to create in
+this data.py. Then we'll be creating
+
+104
+00:07:57,120 --> 00:08:03,680
+another file called model.py. So this
+will load the model as well as the uh
+
+105
+00:08:01,199 --> 00:08:08,879
+this vector store object and it will
+return you the ret. Okay. Then apart
+
+106
+00:08:07,039 --> 00:08:15,120
+from that we'll be also creating a file
+called static. So inside static we'll
+
+107
+00:08:12,000 --> 00:08:22,479
+keep the uh flask related code. So it
+will have the style dot
+
+108
+00:08:18,199 --> 00:08:28,160
+css style dot css. So here we'll uh
+create a basics uh eyi user interface.
+
+109
+00:08:25,360 --> 00:08:34,800
+So for this we need uh CSS code and we
+also need a app dot js file. Okay
+
+110
+00:08:31,840 --> 00:08:38,719
+JavaScript file because uh if you're
+using CSS and HTML so you also need this
+
+111
+00:08:37,279 --> 00:08:43,279
+JS file. And if you are not familiar
+with this kinds of HTML, CSS, no need to
+
+112
+00:08:41,279 --> 00:08:47,040
+worry. Okay. Uh you can get this kinds
+of code over the internet. There are so
+
+113
+00:08:45,040 --> 00:08:51,680
+many uh provider template provider. You
+can already download from there. Okay.
+
+114
+00:08:50,240 --> 00:08:55,680
+Then we'll be creating another folder
+called
+
+115
+00:08:53,240 --> 00:09:01,200
+template. So inside template we'll try
+to keep a file called
+
+116
+00:08:58,360 --> 00:09:05,040
+index.html. Okay. So this index html
+will contain the uh user interface
+
+117
+00:09:03,440 --> 00:09:10,519
+structure like how you are going to
+create the front end part. So that HTML
+
+118
+00:09:07,600 --> 00:09:16,080
+code we'll try to write here. Then
+uh uh I think I can write it here. We'll
+
+119
+00:09:13,839 --> 00:09:20,720
+create a env file. Inside that we'll
+keep the credential. Then we'll try to
+
+120
+00:09:18,240 --> 00:09:25,680
+create our endpoint called app.py. Then
+we'll create a docker file
+
+121
+00:09:22,440 --> 00:09:28,720
+here because we'll try to create the
+docker image containerize our
+
+122
+00:09:27,120 --> 00:09:32,560
+application. That's why we need it. Then
+we need a requirement.xt
+
+123
+00:09:33,320 --> 00:09:41,839
+requirements t uh txt.
+Okay, txt file and apart from that uh
+
+124
+00:09:40,000 --> 00:09:45,279
+for the deployment we need dot GitHub
+folder. Okay, I'll uh show you whenever
+
+125
+00:09:44,000 --> 00:09:48,000
+we'll try to do the deployment that time
+I'll show you what are the folders and
+
+126
+00:09:46,399 --> 00:09:52,240
+files you need. As of now, this is the
+folder structure we'll try to create
+
+127
+00:09:49,680 --> 00:09:55,760
+guys. Okay. And uh before that let's uh
+let me create a GitHub repository.
+

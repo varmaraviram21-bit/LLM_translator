@@ -1,0 +1,786 @@
+1
+00:00:00,480 --> 00:00:07,279
+Hi everyone, welcome back. So guys, in
+this video we'll try to see how we can
+
+2
+00:00:04,880 --> 00:00:11,040
+uh use this Vert.ex AI from our local
+machine. That means we'll be uh doing
+
+3
+00:00:09,200 --> 00:00:14,320
+the setup everything in our local. So
+previously I showed you how we can use
+
+4
+00:00:12,400 --> 00:00:19,359
+collab enterprise that means everything
+I was performing in the G-Cloud. But uh
+
+5
+00:00:16,960 --> 00:00:22,720
+in this video I'll try to use my VS code
+and to access this Vert.xi what are the
+
+6
+00:00:21,359 --> 00:00:25,680
+configuration we have to perform we'll
+be learning each and everything because
+
+7
+00:00:24,240 --> 00:00:29,279
+see going forward whenever you will be
+implementing projects right end to end
+
+8
+00:00:27,199 --> 00:00:32,719
+projects. So you have to implement
+through the VS code, right? And if you
+
+9
+00:00:31,279 --> 00:00:37,440
+want to implement through the VS code,
+you have to know how to configure this
+
+10
+00:00:34,680 --> 00:00:41,040
+Vert.xi in your local machine. Okay. So
+that's why it's super important to know
+
+11
+00:00:39,200 --> 00:00:45,440
+how we can set up everything in our
+local machine itself. So for this guys,
+
+12
+00:00:43,600 --> 00:00:50,640
+uh you need one tool actually. So the
+tool name is GCP
+
+13
+00:00:48,399 --> 00:00:54,879
+uh CLA. Okay, GCP CLA install. Just
+search GCP CLA install on the Google. So
+
+14
+00:00:52,879 --> 00:00:59,680
+after searching this GCP CLA installed,
+if you just go below, you'll see this
+
+15
+00:00:56,239 --> 00:01:04,960
+link actually install the G-Cloud CLI.
+So just try to open it
+
+16
+00:01:02,039 --> 00:01:08,080
+up. Mhm. Now here you will get the
+installer. See download the installer.
+
+17
+00:01:06,560 --> 00:01:12,000
+So I'll click on the link. So it will
+automatically start downloading this CLI
+
+18
+00:01:10,000 --> 00:01:16,960
+for me. You see it has downloaded. Okay.
+And if you're using any other operating
+
+19
+00:01:13,439 --> 00:01:21,520
+system like Linux, then Debian, Red Hat,
+CentOS, Mac OS. Okay. All the command is
+
+20
+00:01:19,119 --> 00:01:25,840
+already written here. You can follow the
+command and you can install this G-Cloud
+
+21
+00:01:24,240 --> 00:01:29,360
+CLA in your system because see with the
+help of this G-Cloud CLA we'll be doing
+
+22
+00:01:27,840 --> 00:01:32,799
+the authentication with our account.
+Okay, that is the thing. Now I have
+
+23
+00:01:31,360 --> 00:01:36,240
+already downloaded it. Now what you have
+to do just double click and try to
+
+24
+00:01:34,320 --> 00:01:38,960
+install. So the way actually install any
+kinds of normal software you have to
+
+25
+00:01:37,520 --> 00:01:42,240
+follow the same step. Okay, there is
+nothing new. So for me I already
+
+26
+00:01:40,560 --> 00:01:45,680
+installed. See after installing just
+search for
+
+27
+00:01:43,320 --> 00:01:49,600
+Google. So you'll see this Google uh
+cloud SDK shell. Just try to open it up.
+
+28
+00:01:48,000 --> 00:01:52,240
+So you'll see this kinds of window.
+Okay. If you are getting this kind of
+
+29
+00:01:50,720 --> 00:01:56,479
+window that means you have installed
+successfully. Okay. Now let me close it.
+
+30
+00:01:54,560 --> 00:02:01,880
+Now what I will do guys I will open up
+my local folder and here I'm going to
+
+31
+00:01:58,560 --> 00:02:06,159
+open up my um
+terminal. You can open up your any kinds
+
+32
+00:02:04,240 --> 00:02:11,120
+of terminal whether your anagon terminal
+gb terminal anything. Now let's also
+
+33
+00:02:08,239 --> 00:02:14,319
+open up my VS code here. All right. So
+here the first thing what you have to do
+
+34
+00:02:12,560 --> 00:02:17,440
+guys you have to create one virtual
+environment. After that you have to
+
+35
+00:02:15,440 --> 00:02:20,959
+install all the required package. Okay.
+Then after that we'll be writing uh our
+
+36
+00:02:19,680 --> 00:02:25,280
+actually code okay with the help of
+vertxi. So to create the environment you
+
+37
+00:02:22,879 --> 00:02:33,599
+can execute this command. So create
+hyphen in let's say u
+
+38
+00:02:30,120 --> 00:02:40,160
+vertxi vortxi demo python is equal to
+let's say I'll take
+
+39
+00:02:35,879 --> 00:02:40,160
+3.10 y. Now let's create the
+
+40
+00:02:41,319 --> 00:02:46,640
+environment. Okay it's done. Now let's
+clear. Uh before clearing I have to
+
+41
+00:02:45,200 --> 00:02:52,640
+activate the environment. So this is the
+command. Let's try to copy and try to
+
+42
+00:02:49,519 --> 00:02:56,080
+execute it here. H. Now let's create a
+file called
+
+43
+00:02:54,120 --> 00:03:01,360
+requirement.txt. So I'll just create
+this file
+
+44
+00:02:58,360 --> 00:03:04,480
+requirements. TXT. Inside that I will
+mention all the requirements I need. So
+
+45
+00:03:03,040 --> 00:03:07,680
+these are the requirements guys I need.
+I think you remember. So I think
+
+46
+00:03:06,000 --> 00:03:10,959
+remember to use the vert.xi we have to
+install this package Google cloud AI
+
+47
+00:03:09,440 --> 00:03:14,480
+platform. I think in the collab
+enterprise also we did the same thing.
+
+48
+00:03:12,560 --> 00:03:18,319
+Then stream lead I want to use because I
+want to create a simple user interface.
+
+49
+00:03:16,720 --> 00:03:22,640
+Uh there actually you can give a prompt
+and you can get the response and
+
+50
+00:03:19,599 --> 00:03:29,360
+python.v because I'm going to manage my
+GCP credential. Okay, that's why. Now
+
+51
+00:03:24,560 --> 00:03:29,360
+here let me create this file as well. So
+
+52
+00:03:29,480 --> 00:03:38,080
+environ you need actually your project
+ID. Okay. Then you need region. I'll
+
+53
+00:03:36,319 --> 00:03:42,400
+tell you how to collect this project ID
+and region. But before that let's do the
+
+54
+00:03:39,599 --> 00:03:47,239
+configuration. Okay. with our G-Cloud.
+So first of all, let's me install all
+
+55
+00:03:43,920 --> 00:03:52,319
+the requirements. So I'll just write p
+install r
+
+56
+00:03:49,319 --> 00:03:52,319
+requirement
+
+57
+00:03:59,000 --> 00:04:05,920
+txt. All right. So installation is
+completed. Now let's do the
+
+58
+00:04:02,959 --> 00:04:09,400
+configuration uh with our G-Cloud. So
+for this uh you have to execute this
+
+59
+00:04:07,920 --> 00:04:14,560
+command called
+g-cloud in it. Okay just try to execute
+
+60
+00:04:12,400 --> 00:04:17,600
+this command guys. So if I execute this
+command you will see that see if you're
+
+61
+00:04:16,160 --> 00:04:21,040
+doing it for the first time you will get
+this kinds of window. You must login to
+
+62
+00:04:19,440 --> 00:04:23,280
+continue. Would you like to login? I'll
+give
+
+63
+00:04:23,320 --> 00:04:28,880
+yes. So guys now here you have to select
+the account. The account actually you
+
+64
+00:04:27,199 --> 00:04:31,840
+are using for your G-Cloud account. So
+this is my account. I'll
+
+65
+00:04:32,120 --> 00:04:39,680
+select. Now you have to provide the
+password. So this is my password and I
+
+66
+00:04:36,400 --> 00:04:44,080
+try to do the next operation. Okay. Then
+click on the
+
+67
+00:04:40,759 --> 00:04:44,080
+continue and
+
+68
+00:04:46,120 --> 00:04:55,040
+allow. Okay. Now you can see uh I'm done
+with the authentication. Now if I come
+
+69
+00:04:51,600 --> 00:05:00,000
+back uh see now actually I'm getting my
+project ID. You can see I'm getting my
+
+70
+00:04:56,639 --> 00:05:04,639
+project ID. Got it? So let me show you
+if I go to my dashboard. Now if I click
+
+71
+00:05:01,840 --> 00:05:10,320
+here this is my project ID. uh studios
+uh loader
+
+72
+00:05:06,520 --> 00:05:15,360
+4361 I think you can see that uh studio
+loader 43 61 N2 okay so this is my
+
+73
+00:05:13,360 --> 00:05:18,639
+project ID yeah now if you already have
+one existing project you can select it
+
+74
+00:05:17,120 --> 00:05:22,880
+either you can create a new project so
+for me I already have the projects I'll
+
+75
+00:05:20,080 --> 00:05:26,560
+just select the one I'll select the one
+that means my uh existing
+
+76
+00:05:26,759 --> 00:05:32,520
+project now it is asking for do you want
+to configure a default compute region
+
+77
+00:05:30,720 --> 00:05:36,400
+and zone I'll give
+Yes. Now it is telling which region you
+
+78
+00:05:34,880 --> 00:05:41,600
+actually want to take. So what I will
+do? I'll take this region actually. So
+
+79
+00:05:39,039 --> 00:05:46,880
+central US. So let's say I will take
+this one. US central 1 C. So I'll give
+
+80
+00:05:44,560 --> 00:05:46,880
+seven
+
+81
+00:05:48,759 --> 00:05:56,479
+here. Okay. Now I think it is done. Now
+let me clear my terminal. Okay. So
+
+82
+00:05:54,080 --> 00:06:01,120
+everything is set. Now let's uh create
+one file here
+
+83
+00:05:58,120 --> 00:06:04,720
+called main.py.
+inside that I'm going to write all of
+
+84
+00:06:03,280 --> 00:06:09,520
+the code. Okay, that means we'll be
+trying to access one that means here
+
+85
+00:06:07,039 --> 00:06:13,680
+we'll be trying to access one um model
+from the model garden. But before that
+
+86
+00:06:11,440 --> 00:06:17,199
+you have to set this env. So you have to
+give the project ID. So here is the
+
+87
+00:06:15,840 --> 00:06:21,199
+project ID guys. I think I showed you
+how to get the project ID. This is the
+
+88
+00:06:18,560 --> 00:06:26,080
+project ID. Just try to copy and here
+try to pipe it. Then you have to give
+
+89
+00:06:23,919 --> 00:06:30,240
+the region. So I think region I already
+showed you. So here you can check the
+
+90
+00:06:27,680 --> 00:06:37,720
+region. Click on the collab enterprise
+left hand side you can see USP central
+
+91
+00:06:32,720 --> 00:06:45,680
+one just try to select it US-PEN
+central one okay now just try to verify
+
+92
+00:06:41,120 --> 00:06:45,680
+it US central uh one
+
+93
+00:06:45,880 --> 00:06:53,639
+okay huh so it's fine now let me save
+now let's create the mainpy so first of
+
+94
+00:06:51,039 --> 00:06:57,440
+all let's import all the necessary
+library yeah so these are the library I
+
+95
+00:06:56,000 --> 00:07:01,840
+need guys I think remember I was also
+importing them in my collab enterprise.
+
+96
+00:06:59,520 --> 00:07:05,440
+So vert.xi then streaml I need for the
+user interface. Then I'm also importing
+
+97
+00:07:03,680 --> 00:07:08,720
+some of the necessary uh let's say
+function from the vert.xi preview
+
+98
+00:07:06,800 --> 00:07:11,919
+generative models. Okay. So I need
+genative generation config and
+
+99
+00:07:10,000 --> 00:07:15,680
+generative model and env I need because
+I want to load this env file. Now let's
+
+100
+00:07:13,919 --> 00:07:19,599
+select my current environment. So this
+is my environment. Okay. Now this error
+
+101
+00:07:17,759 --> 00:07:23,440
+will be disappeared. Now the first thing
+I'll load my project ID as as well as
+
+102
+00:07:22,000 --> 00:07:27,039
+the region from my environment. Okay.
+For this this repeat you have to run.
+
+103
+00:07:25,120 --> 00:07:29,919
+Got it.
+Then I'll be
+
+104
+00:07:28,199 --> 00:07:33,400
+initializing uh then I'll be
+authenticating with my Vert.xi. So this
+
+105
+00:07:31,759 --> 00:07:36,479
+is the authentication code guys.
+Vert.xi.init. You have to give the
+
+106
+00:07:35,039 --> 00:07:41,039
+project ID as well as the project
+location. That's it. Now let's load the
+
+107
+00:07:38,639 --> 00:07:46,080
+model. So here I'm going to load one
+model from the model garden called Jiny
+
+108
+00:07:43,280 --> 00:07:49,599
+1.0 Pro. So let me show you if I go to
+the model
+
+109
+00:07:47,240 --> 00:07:53,599
+garden. So this is the model guys I'm
+trying to load. Just click here and you
+
+110
+00:07:51,599 --> 00:07:58,319
+will see the model ID. So just try to
+copy the model ID and you can use it. So
+
+111
+00:07:56,240 --> 00:08:03,759
+this is the model ID guys here. Just try
+to copy and mention it here. Okay,
+
+112
+00:08:00,800 --> 00:08:08,720
+that's it. Then I have created a simple
+function. Let me show you. So this is
+
+113
+00:08:06,560 --> 00:08:13,280
+the function I created. Inside that what
+I'm doing, I'm just first of all
+
+114
+00:08:10,080 --> 00:08:17,759
+creating my uh streaml title. First of
+all, I'm u first of all I'm setting my
+
+115
+00:08:15,440 --> 00:08:21,280
+page configuration like vert.x demo. So
+it will give you one name. Then I'm uh
+
+116
+00:08:19,759 --> 00:08:24,479
+setting the header. That means that
+means what will happen? It will give you
+
+117
+00:08:22,800 --> 00:08:30,560
+one title. So here you can give any
+name. So here I've given little geminy
+
+118
+00:08:26,240 --> 00:08:36,000
+on vertx AI or you can give vertx AI
+uh vertx
+
+119
+00:08:32,200 --> 00:08:40,320
+AI local demo because everything we're
+doing in the local machine. Okay. Then
+
+120
+00:08:38,399 --> 00:08:43,440
+uh user will give one question. So
+that's why I've taken a uh text input
+
+121
+00:08:42,159 --> 00:08:48,080
+box and this question actually I'm
+passing to my model. You can see okay if
+
+122
+00:08:45,360 --> 00:08:52,000
+question if there is a question it will
+execute this uh model otherwise it won't
+
+123
+00:08:50,640 --> 00:08:55,839
+be executing. Okay. After that actually
+I'm going through the response and I'm
+
+124
+00:08:53,760 --> 00:09:00,240
+printing in my console. Okay, that means
+in my stream console. That's it. Now if
+
+125
+00:08:58,160 --> 00:09:05,279
+I want to execute I have to call the
+function as well. So let's call the
+
+126
+00:09:02,600 --> 00:09:09,160
+function. That's it. Now let's try to
+execute and try to see whether it's
+
+127
+00:09:06,560 --> 00:09:18,240
+working or not. So I'll write
+streaml run app.py sorry main.py
+
+128
+00:09:14,200 --> 00:09:18,240
+needs. Now let's give the
+
+129
+00:09:18,600 --> 00:09:24,959
+permission. So this is the interface
+guys. Now here you can ask anything.
+
+130
+00:09:22,080 --> 00:09:24,959
+Let's say I'll give a
+
+131
+00:09:25,320 --> 00:09:32,240
+hello. Let's see. You can also see the
+terminal to get the log. Okay. You can
+
+132
+00:09:30,720 --> 00:09:35,920
+see it is giving me one error. It is
+telling uh Google authentication default
+
+133
+00:09:34,240 --> 00:09:39,040
+credential. Your default credential are
+not found. To set the default
+
+134
+00:09:37,519 --> 00:09:42,959
+configuration, you can visit this link.
+So let's open this
+
+135
+00:09:40,360 --> 00:09:47,080
+link. And I think it will suggest me
+some command
+
+136
+00:09:44,120 --> 00:09:55,839
+there. Huh. So let's copy this
+command. And now I'll execute from my
+
+137
+00:09:49,680 --> 00:09:55,839
+terminal. Let's I'll stop it. Now let's
+
+138
+00:09:56,360 --> 00:10:04,480
+execute. I'll select my account. The
+account actually I'm using for my
+
+139
+00:10:01,320 --> 00:10:07,839
+G-Cloud. So I'll give my password. Next.
+So if you're doing for the first time,
+
+140
+00:10:06,000 --> 00:10:12,880
+so you might get this kinds of issues.
+So once this setup is done, uh you can
+
+141
+00:10:10,000 --> 00:10:17,800
+use it as it is. Okay. Now I think it is
+done. Now let's execute the application
+
+142
+00:10:14,800 --> 00:10:17,800
+again.
+
+143
+00:10:19,279 --> 00:10:22,079
+Now let's give
+
+144
+00:10:25,560 --> 00:10:30,959
+hello. Okay guys, now see I got the
+output. There is no issue. That means
+
+145
+00:10:29,120 --> 00:10:35,200
+what you have to do? We have to set the
+credential as a default default
+
+146
+00:10:32,959 --> 00:10:40,000
+actually. Okay, credential. So that's
+why we uh we actually executed this
+
+147
+00:10:37,200 --> 00:10:43,600
+command uh G-Cloud O application default
+login. Got it. Now see I'm getting the
+
+148
+00:10:41,760 --> 00:10:50,800
+output. Now here you can pass any kinds
+of prompt. So here I can give let's say
+
+149
+00:10:46,519 --> 00:10:50,800
+uh tell me
+
+150
+00:10:51,560 --> 00:10:54,560
+about
+
+151
+00:10:55,640 --> 00:11:03,040
+Python. Okay, see I'm getting the entire
+response. Okay, got it. So you can now
+
+152
+00:11:01,600 --> 00:11:06,720
+ask any kinds of question that means
+from our local machine itself now we are
+
+153
+00:11:04,800 --> 00:11:11,040
+able to access the model garden that
+means by Vert.x a services. All right.
+
+154
+00:11:09,200 --> 00:11:14,240
+Okay, great. So yes guys, this is all
+about from this video. Now we'll be
+
+155
+00:11:12,880 --> 00:11:18,399
+using this technique going forward
+whenever we'll be implementing any kinds
+
+156
+00:11:15,760 --> 00:11:22,320
+of project. Okay. So in the next video
+we'll try to see how we can uh implement
+
+157
+00:11:20,320 --> 00:11:26,720
+a rag based application. Okay. With the
+help of actually uh Vert.xi platform and
+
+158
+00:11:25,120 --> 00:11:30,000
+we'll be using some vert.x services
+there. All right. So that guys thank you
+
+159
+00:11:28,399 --> 00:11:34,079
+so much for watching this video and
+let's connect in the next video. Thank
+
+160
+00:11:31,519 --> 00:11:34,079
+you guys.
+

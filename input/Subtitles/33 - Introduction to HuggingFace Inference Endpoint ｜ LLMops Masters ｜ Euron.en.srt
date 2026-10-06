@@ -1,0 +1,473 @@
+1
+00:00:00,560 --> 00:00:07,919
+Hi guys, in this video I'll be
+discussing about hugging face inference
+
+2
+00:00:05,640 --> 00:00:13,599
+endpoints. So this is one platform from
+the hugging face. If you search like
+
+3
+00:00:09,519 --> 00:00:18,480
+hugging face uh co/inference endpoints/
+dedicated you will be able to get this
+
+4
+00:00:15,839 --> 00:00:23,039
+particular platform. So here what you
+can do you can um turn your AI model
+
+5
+00:00:21,119 --> 00:00:28,000
+into APIs that means here you can host
+here uh any kinds of like class language
+
+6
+00:00:25,279 --> 00:00:32,800
+model okay as an API and this is the
+fully managed actually let's say uh
+
+7
+00:00:30,160 --> 00:00:35,760
+platform by the hugging face so here you
+don't need to worry about the load
+
+8
+00:00:34,239 --> 00:00:39,680
+balancing you don't need to worry about
+the autoscaling okay everything they'll
+
+9
+00:00:37,680 --> 00:00:44,879
+be doing so only you just need to do
+some few clicks and with the few clicks
+
+10
+00:00:41,680 --> 00:00:44,879
+you will be able to deploy your
+
+11
+00:00:44,920 --> 00:00:52,079
+model so with the few clicks you will be
+able to deploy your model okay over the
+
+12
+00:00:50,079 --> 00:00:57,039
+hugging face inference endpoints okay as
+an as an inference API you'll be getting
+
+13
+00:00:54,800 --> 00:01:03,199
+so here you can see deploy any AI model
+on dedicated fully managed CPU GPUs TPUs
+
+14
+00:00:59,920 --> 00:01:08,720
+and AWS uh inferentia to keep your cost
+low with autoscaling and scale to zero
+
+15
+00:01:06,520 --> 00:01:12,080
+okay because what happens if you are
+deploying your model over any other
+
+16
+00:01:10,240 --> 00:01:16,240
+platform let's say with the help of deep
+learning container you are deploying
+
+17
+00:01:14,080 --> 00:01:22,000
+over the SageMaker platform so if you
+see the SageMaker cost is like very high
+
+18
+00:01:18,720 --> 00:01:26,400
+there you also need to do like manual
+auto lab autoscaling load balancing
+
+19
+00:01:24,240 --> 00:01:31,119
+everything you have to do manually and
+to manage the LM actually it's like very
+
+20
+00:01:29,280 --> 00:01:34,159
+difficult there but here actually it's
+not that much of difficult because
+
+21
+00:01:32,640 --> 00:01:37,840
+everything is managed by the hugging
+face platform so they have given one
+
+22
+00:01:36,000 --> 00:01:42,320
+beautiful documentation so you can refer
+the documentation guys so see they have
+
+23
+00:01:40,560 --> 00:01:46,960
+given everything they have also given
+the like pricing and all like what are
+
+24
+00:01:44,640 --> 00:01:50,960
+the price uh they are taking okay per
+everything they have given and this is
+
+25
+00:01:49,040 --> 00:01:56,560
+the like architecture. So let's say this
+is the user and first of all he needs to
+
+26
+00:01:53,439 --> 00:02:00,479
+create one uh user uh endpoint okay uh
+like model endpoint uh then he can take
+
+27
+00:01:59,200 --> 00:02:04,880
+the model from the hugging face
+repository either he can take the model
+
+28
+00:02:03,200 --> 00:02:09,360
+from his repository okay let's say he
+has trained one custom model that custom
+
+29
+00:02:06,960 --> 00:02:13,440
+model also he can take then uh he can
+initialize the compute like the cloud
+
+30
+00:02:11,200 --> 00:02:16,560
+platform then he can deploy the model as
+an endpoint then this particular
+
+31
+00:02:14,560 --> 00:02:20,480
+endpoint can access different kinds of
+user okay this is the entire like
+
+32
+00:02:18,640 --> 00:02:25,360
+architecture so now let Let me show you
+how uh you can deploy your model over
+
+33
+00:02:22,879 --> 00:02:30,000
+the inference uh API. So here you can
+see guys
+
+34
+00:02:26,440 --> 00:02:33,760
+uh production uh inference made easy. So
+here you can deploy model with just a
+
+35
+00:02:31,840 --> 00:02:37,120
+few click keep your production cost down
+and enterprise level security you'll be
+
+36
+00:02:35,519 --> 00:02:39,920
+getting. So here first of all you have
+to select the model. Okay here you'll be
+
+37
+00:02:38,800 --> 00:02:43,280
+getting this kinds of option. You have
+to select the model. First of all select
+
+38
+00:02:41,120 --> 00:02:47,200
+the repository then select the endpoint
+of your model. So you can see select the
+
+39
+00:02:45,440 --> 00:02:51,760
+model you want to deploy. You can deploy
+custom models or any six uh 60,000s plus
+
+40
+00:02:50,480 --> 00:02:56,080
+transformer division or setless
+transformer models are available on the
+
+41
+00:02:53,519 --> 00:02:59,840
+hub for NLP computer vision or is task
+that means you can either select your
+
+42
+00:02:57,760 --> 00:03:03,760
+custom model either you can select uh
+60,000 plus model okay from the hugging
+
+43
+00:03:02,159 --> 00:03:08,080
+face hub okay any kinds of model you can
+select and you can deploy as an endpoint
+
+44
+00:03:05,280 --> 00:03:12,080
+got it so you can see guys after that
+you have to choose the provider whether
+
+45
+00:03:09,599 --> 00:03:15,360
+you want to host over the AWS whether
+you you want to host over the let's say
+
+46
+00:03:13,840 --> 00:03:19,680
+Azure whether you want to host over the
+GCP cloud Then you can also select the
+
+47
+00:03:17,680 --> 00:03:23,360
+region. Okay, you can see uh pick your
+cloud and select the region to choose
+
+48
+00:03:21,280 --> 00:03:27,680
+your data in compliance with your
+requirements. Okay, now once it is done
+
+49
+00:03:25,840 --> 00:03:31,280
+you you can select the security level.
+So here you have three kinds of security
+
+50
+00:03:29,360 --> 00:03:34,080
+protected, public and private. So you
+can see protected endpoints are
+
+51
+00:03:32,640 --> 00:03:36,959
+accessible from the internet and
+requires valid authentication. That
+
+52
+00:03:35,440 --> 00:03:40,000
+means it needs the valid authentication.
+Then you'll be able to access the
+
+53
+00:03:38,560 --> 00:03:43,680
+endpoints. Then we have public
+endpoints. So public endpoints are
+
+54
+00:03:41,760 --> 00:03:47,360
+accessible from the internet and do not
+requires any authentication. In that
+
+55
+00:03:45,120 --> 00:03:51,599
+case you can um easily access those
+other the endpoint. Okay. Then private
+
+56
+00:03:48,640 --> 00:03:56,959
+endpoints are only available through an
+uh intra region security AWS or Azure
+
+57
+00:03:54,400 --> 00:04:00,319
+private link direct connections to VPC
+and are not accessible from the
+
+58
+00:03:58,239 --> 00:04:04,319
+internet. Okay. Now once you have
+selected the security level then you can
+
+59
+00:04:02,239 --> 00:04:06,560
+create the uh endpoints. So once it is
+created then you can manage your
+
+60
+00:04:05,360 --> 00:04:10,480
+endpoints. Okay. So you'll be getting
+one endpoints URL like that. So if you
+
+61
+00:04:08,640 --> 00:04:14,920
+hit that particular endpoints URL you'll
+be able to like access the model and
+
+62
+00:04:12,879 --> 00:04:21,120
+you'll be able to get the response. Got
+it. So I will also discuss like uh how
+
+63
+00:04:18,079 --> 00:04:24,960
+we can uh create our own API. Okay. With
+the help of fast API. So with the help
+
+64
+00:04:22,720 --> 00:04:28,880
+of fast API also you can create the API.
+Okay. API. So there also you can uh hit
+
+65
+00:04:27,280 --> 00:04:32,080
+the route and you can get the response
+from your large language model. So I'll
+
+66
+00:04:30,479 --> 00:04:36,320
+also show you how we can use fast API
+for the LLM inference. So this is like
+
+67
+00:04:34,479 --> 00:04:38,960
+uh the hosted platform guys over the
+hugging face. So there you will be
+
+68
+00:04:37,840 --> 00:04:42,479
+getting different different machines
+okay with the help of CPU GPU everything
+
+69
+00:04:40,880 --> 00:04:45,600
+you'll be getting. Now you can see this
+is the entire like documentation and
+
+70
+00:04:44,400 --> 00:04:49,680
+they have also given their official
+tutorial you can also refer that. Now
+
+71
+00:04:47,680 --> 00:04:52,320
+now guys this is not a free actually for
+this you have to pay. So let me show
+
+72
+00:04:50,880 --> 00:04:55,520
+you. So if I let's say want to deploy
+any kinds of model I'll click on the
+
+73
+00:04:54,160 --> 00:04:57,919
+button. Now here you can see here you
+have different different model. You can
+
+74
+00:04:56,560 --> 00:05:01,440
+also select the model from the hugging
+face. Okay. Now let's say I want to
+
+75
+00:04:59,360 --> 00:05:07,360
+deploy this particular model. So here
+per hour it will charge you $0.8 and it
+
+76
+00:05:04,160 --> 00:05:11,280
+is using GPU 1x Nvidia L4 GPU. Okay. And
+this is the model. Now if I click here
+
+77
+00:05:09,520 --> 00:05:14,479
+you'll be able to see that uh it is
+coming different different option like
+
+78
+00:05:12,639 --> 00:05:18,000
+endpoint name then you can also select
+more options like common revision task
+
+79
+00:05:16,240 --> 00:05:21,199
+okay you can everything uh you can you
+can provide everything now you can also
+
+80
+00:05:19,600 --> 00:05:24,880
+give the hardware configuration like
+what is the GPU you want based on the
+
+81
+00:05:23,039 --> 00:05:28,320
+price you can select your GPU okay now
+you can also select the security level
+
+82
+00:05:26,479 --> 00:05:31,840
+then autoscaling if you want to do so
+everything is available okay so once it
+
+83
+00:05:30,080 --> 00:05:34,160
+is done you have to add your card you
+can see there is option for add your
+
+84
+00:05:33,120 --> 00:05:37,280
+card so first of all you have to create
+one hugging face account once you have
+
+85
+00:05:36,080 --> 00:05:41,039
+created the hanging face account then
+you'll be able to add your payment card.
+
+86
+00:05:38,800 --> 00:05:44,400
+So once it's done, you can click uh
+click here create endpoints then you
+
+87
+00:05:42,560 --> 00:05:47,680
+will be able to see the endpoint URL and
+with respect to the URL you will be able
+
+88
+00:05:45,840 --> 00:05:50,479
+to access the model and everything is
+mentioned in the documentation guys.
+
+89
+00:05:49,039 --> 00:05:55,120
+Okay, they have given one beautiful
+documentation that you can check it out.
+
+90
+00:05:52,160 --> 00:05:58,240
+So again guys uh it's a paid one. So as
+per your requirement you can select the
+
+91
+00:05:56,560 --> 00:06:01,520
+model and you can use this particular
+hugging face inference hub. So I think
+
+92
+00:05:59,919 --> 00:06:05,280
+guys you got to know what is hingface
+inference hub because this is another LM
+
+93
+00:06:03,600 --> 00:06:08,639
+ops platform I can talk about because
+here you can host your large language
+
+94
+00:06:06,960 --> 00:06:13,919
+model if you want. So that guys thank
+you so much for watching this video and
+
+95
+00:06:10,080 --> 00:06:13,919
+I will see you next time.
+

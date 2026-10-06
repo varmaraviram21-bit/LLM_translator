@@ -1,0 +1,1151 @@
+1
+00:00:00,960 --> 00:00:08,880
+Hi guys, in this video we'll try to
+understand uh tokenization and
+
+2
+00:00:05,879 --> 00:00:12,880
+embeddings. So first of all uh let me
+discuss
+
+3
+00:00:09,880 --> 00:00:12,880
+about
+
+4
+00:00:14,599 --> 00:00:21,359
+tokenization. Tokenization. Okay. So
+we'll also try to do this thing as a
+
+5
+00:00:19,840 --> 00:00:24,880
+practical so that your understanding
+would be more clear. So what is
+
+6
+00:00:22,960 --> 00:00:30,840
+tokenization exactly? So let's say here
+I have a sentence. Let's say
+
+7
+00:00:27,800 --> 00:00:37,040
+my name
+is Baky. Okay. So this is my let's say
+
+8
+00:00:34,320 --> 00:00:41,520
+sentence. Now if I perform tokenization
+see tokenization is two types. One is
+
+9
+00:00:41,559 --> 00:00:45,120
+uh word label
+
+10
+00:00:50,920 --> 00:00:56,719
+tokenization. Okay. Other one is
+sentence level
+
+11
+00:01:02,600 --> 00:01:08,640
+tokenization tokenization. Okay. So
+first of all let's try to see word level
+
+12
+00:01:07,119 --> 00:01:12,720
+tokenization. Then I will also show you
+sentence level tokenization. See one
+
+13
+00:01:11,119 --> 00:01:18,040
+word level tokenization. What happens?
+Let's
+
+14
+00:01:13,799 --> 00:01:18,040
+say word token.
+
+15
+00:01:20,159 --> 00:01:27,920
+It will create a list and let's say this
+is our sentence. So it will create a
+
+16
+00:01:24,880 --> 00:01:33,000
+token like that. First of all my will
+come. So my is a individual word. Then
+
+17
+00:01:31,360 --> 00:01:41,240
+name will
+come. Okay. Then comma is will
+
+18
+00:01:36,840 --> 00:01:46,720
+come. Okay. Then comma puppy will
+come. Now how many token we got? 1 2 3
+
+19
+00:01:44,720 --> 00:01:51,200
+four. Four tokens we got. Okay. Now
+let's say here another sentence you
+
+20
+00:01:48,479 --> 00:01:51,200
+have.
+
+21
+00:01:51,360 --> 00:01:55,439
+I am a good
+
+22
+00:01:56,840 --> 00:02:05,200
+boy. Okay, good boy. So let's say this
+is another sentence. Now if you apply
+
+23
+00:02:03,520 --> 00:02:11,039
+word label tokenization, what will
+happen? Okay, it will create another
+
+24
+00:02:07,959 --> 00:02:17,640
+list and inside that it will add
+everything. Let's say I
+
+25
+00:02:15,080 --> 00:02:24,640
+um M.
+Okay. Then uh
+
+26
+00:02:21,640 --> 00:02:24,640
+a
+
+27
+00:02:24,920 --> 00:02:31,120
+good
+boy. Okay. So this is what what your
+
+28
+00:02:29,440 --> 00:02:34,400
+word level tokenization. Now let's try
+to see the sentence level
+
+29
+00:02:43,319 --> 00:02:52,080
+tokenization. So sentence token
+Okay, how sentence token works? See, it
+
+30
+00:02:50,400 --> 00:02:56,840
+will be tokenizing with respect to
+sentence. So, first of all, first
+
+31
+00:02:53,360 --> 00:02:59,840
+sentence will come
+my
+
+32
+00:03:01,239 --> 00:03:10,080
+name. Okay,
+name is By. So, this is going to be one
+
+33
+00:03:08,080 --> 00:03:14,599
+token. Then, comma. Then second
+sentence, I am a good boy.
+
+34
+00:03:18,360 --> 00:03:25,200
+Goodbye. Okay, then bracket would be
+close. So this is called sentence level
+
+35
+00:03:22,879 --> 00:03:29,280
+tokenization. Okay. Now there are some
+more tokenization concept are available
+
+36
+00:03:26,959 --> 00:03:34,840
+like bite pair tokenizations. Okay. Uh
+these are the things also can be used.
+
+37
+00:03:31,840 --> 00:03:39,120
+Now uh uh let's try to see the
+tokenization in a practical way. How
+
+38
+00:03:37,120 --> 00:03:43,440
+this tokenization can be done. Then I'll
+be discussing about the embeddings.
+
+39
+00:03:41,040 --> 00:03:46,879
+Okay. like embeddings means how we can
+convert this text to the numerical
+
+40
+00:03:44,879 --> 00:03:50,640
+representation because we know that our
+model can't take the raw text input. So
+
+41
+00:03:49,280 --> 00:03:53,519
+we have to convert to the vectors
+convert to the numbers and for this
+
+42
+00:03:52,239 --> 00:03:58,000
+there are various kinds of techniques
+are available. Okay. So I'll show you
+
+43
+00:03:55,760 --> 00:04:00,799
+some let's say easy technique uh because
+uh whenever you are working with the
+
+44
+00:03:59,519 --> 00:04:03,840
+large language model you will be using
+some advanced technique like transformer
+
+45
+00:04:02,720 --> 00:04:06,480
+based embedding technique you will be
+using. So there are some embedding
+
+46
+00:04:04,879 --> 00:04:09,360
+models are available with the help of
+that we'll be creating the embeddings.
+
+47
+00:04:08,080 --> 00:04:13,200
+Okay. So whenever I'll try to show you
+the project implementation that time
+
+48
+00:04:10,640 --> 00:04:16,799
+I'll tell you but as of now just just to
+show you demo how we can convert this
+
+49
+00:04:14,879 --> 00:04:21,519
+text to numbers I'll be talking about
+some let's say very common uh embedding
+
+50
+00:04:19,280 --> 00:04:24,639
+technique okay we can use so for this
+I'm going to open up my Google
+
+51
+00:04:25,720 --> 00:04:30,320
+collab so here let's create a new
+notebook
+
+52
+00:04:38,080 --> 00:04:42,160
+Okay. So here I'm going to name it as
+
+53
+00:04:44,199 --> 00:04:48,000
+tokenization and
+
+54
+00:04:50,919 --> 00:04:56,680
+embeddings. So here what I will do I'll
+connect a notebook.
+
+55
+00:04:57,440 --> 00:05:02,080
+So first of all I'm going to show you
+the
+
+56
+00:05:06,840 --> 00:05:14,800
+tokenization. So for this uh we need the
+NLTK library. So first of all we have to
+
+57
+00:05:12,400 --> 00:05:14,800
+import the
+
+58
+00:05:16,680 --> 00:05:26,400
+NLTK. So
+from NLTK
+
+59
+00:05:23,720 --> 00:05:31,120
+NLTK dot
+Uh first of all we'll try to import the
+
+60
+00:05:27,919 --> 00:05:31,120
+NLTK. Okay. So
+
+61
+00:05:35,080 --> 00:05:44,080
+import
+NLTK. Okay. Then uh I need the
+
+62
+00:05:42,639 --> 00:05:54,039
+tokenization functionality from the
+NLTK. For this we have to import uh from
+
+63
+00:05:49,479 --> 00:05:59,479
+NLTK dot token nice. Okay, I think
+tokenize import. I'll import two kinds
+
+64
+00:05:57,120 --> 00:06:03,639
+of tokenization. One is word level
+tokenization and sentence level
+
+65
+00:06:01,680 --> 00:06:09,600
+tokenization both we'll try to show you.
+Okay. And now let's import it. H it's
+
+66
+00:06:07,360 --> 00:06:14,080
+working. Now let's say first of all I
+will mention some sentence. Let's say
+
+67
+00:06:11,600 --> 00:06:14,080
+this is my
+
+68
+00:06:15,400 --> 00:06:23,520
+sentence. So here I'm going to write
+let's say my name is
+
+69
+00:06:20,680 --> 00:06:27,759
+puppy. Okay. So first of all I will try
+to apply the uh word label tokenization.
+
+70
+00:06:26,000 --> 00:06:33,240
+To apply the word label tokenization you
+have to use this function from the
+
+71
+00:06:29,560 --> 00:06:36,680
+NLDK word tokenizer. Okay. Now inside
+that now inside that you have to pass
+
+72
+00:06:35,600 --> 00:06:42,039
+the
+sentence and this will give you
+
+73
+00:06:39,479 --> 00:06:49,039
+your
+word
+
+74
+00:06:44,520 --> 00:06:55,280
+token. Now I'm going to print that word
+token. Now if I execute it is giving me
+
+75
+00:06:52,400 --> 00:06:59,919
+one error. It is telling uh resources
+spunk tab not found. Please use the NLTK
+
+76
+00:06:58,560 --> 00:07:03,680
+downloaded to obtain the resources.
+Okay. See if you are using analytical
+
+77
+00:07:01,520 --> 00:07:06,400
+library. So you have to use some
+resources. Okay. You have to download
+
+78
+00:07:04,800 --> 00:07:13,759
+some resources. So for this this is the
+code. I'll try to copy and what I will
+
+79
+00:07:09,560 --> 00:07:13,759
+do here. Just let me mention
+
+80
+00:07:15,000 --> 00:07:22,240
+it. Now this pong tab would be
+downloaded. Now let's execute it again.
+
+81
+00:07:20,160 --> 00:07:27,039
+Now see guys, it is working fine. Now
+this is what your word label
+
+82
+00:07:24,199 --> 00:07:32,000
+tokenization. Okay, I hope you got it.
+Okay, so that's how individual word will
+
+83
+00:07:29,520 --> 00:07:36,319
+come inside a token. Now we'll try to
+see the sentence level tokenization.
+
+84
+00:07:33,919 --> 00:07:39,599
+Okay, so what I will do maybe I can copy
+the same
+
+85
+00:07:37,240 --> 00:07:42,240
+sentence and I will add some more text
+here. Let's
+
+86
+00:07:42,680 --> 00:07:51,759
+say here I will
+add I am a good
+
+87
+00:07:52,360 --> 00:07:58,240
+boy. Now this thing I will pass to the
+sentence level
+
+88
+00:07:58,680 --> 00:08:04,560
+tokenization. Okay. So let's pass to the
+sentence label
+
+89
+00:08:04,840 --> 00:08:11,360
+tokenization and this will give my
+send
+
+90
+00:08:11,720 --> 00:08:21,440
+token going to print it in the console.
+Now guys you can see uh my name is Biki
+
+91
+00:08:18,879 --> 00:08:26,879
+and I'm a good boy. Okay I hope it is
+clear. So see why we have to use the
+
+92
+00:08:24,560 --> 00:08:30,800
+tokenization because if I want to
+generate the embeddings that means the
+
+93
+00:08:28,400 --> 00:08:35,039
+vector embeddings first of all I have to
+convert my inter sensions to individual
+
+94
+00:08:33,440 --> 00:08:38,479
+tokens and this particular individual
+tokens should be converted to the
+
+95
+00:08:36,240 --> 00:08:41,440
+embeddings this is the process okay to
+convert to embedding that's why at the
+
+96
+00:08:40,240 --> 00:08:45,519
+very first time we have to do the
+tokenization got it that's why it's
+
+97
+00:08:43,039 --> 00:08:48,640
+super important now I'll show you how we
+can do the embedding generations okay I
+
+98
+00:08:47,600 --> 00:08:52,880
+think you know what is embedding
+generation embedding means we have to
+
+99
+00:08:50,560 --> 00:08:56,160
+convert we have to convert this text
+okay somehow to the numerical
+
+100
+00:08:54,720 --> 00:08:59,440
+representation somehow to the vector
+representations okay this is what we'll
+
+101
+00:08:57,760 --> 00:09:04,080
+be learning now there are some embedding
+techniques open also has some embedding
+
+102
+00:09:01,279 --> 00:09:09,040
+technique let me show you open AI
+embeddings model so with the help of the
+
+103
+00:09:07,680 --> 00:09:13,839
+these are the model you can generate the
+vector embeddings even some open source
+
+104
+00:09:11,200 --> 00:09:18,080
+embedding models are also available so
+embedding model you can see so they're
+
+105
+00:09:16,160 --> 00:09:22,080
+using text embedding three small model
+and uh they are giving the input text
+
+106
+00:09:20,480 --> 00:09:25,040
+and this is the vector embedding they
+are getting. Okay. So that's how we have
+
+107
+00:09:24,080 --> 00:09:28,399
+different different models are
+available. Then some hugging face
+
+108
+00:09:27,040 --> 00:09:31,640
+embedding models are also available.
+Hugging
+
+109
+00:09:29,399 --> 00:09:35,600
+face embedding
+models. Different different models are
+
+110
+00:09:35,880 --> 00:09:42,560
+available. See these are the models you
+can use for the embedding generation.
+
+111
+00:09:40,320 --> 00:09:46,959
+Got it? Now I'll show you some uh let's
+say common uh embedding generation model
+
+112
+00:09:44,640 --> 00:09:53,120
+like uh uh technique like we'll be using
+some uh now I'll uh show you uh some
+
+113
+00:09:50,640 --> 00:09:58,080
+very common uh let's say embedding
+generation technique like uh bag of word
+
+114
+00:09:55,519 --> 00:10:03,040
+is there TF is there okay so these are
+the thing you can also use uh but see in
+
+115
+00:10:00,800 --> 00:10:05,920
+a exact implementation in the large
+language model we are not going to use
+
+116
+00:10:04,320 --> 00:10:10,920
+it but just to show you okay how things
+are working I'll show this part as a
+
+117
+00:10:08,240 --> 00:10:15,600
+practical so for this what I will do
+Um first of all let me uh show you the
+
+118
+00:10:13,920 --> 00:10:17,760
+bag of art technique. So here let me
+just
+
+119
+00:10:22,440 --> 00:10:25,440
+comment
+
+120
+00:10:27,480 --> 00:10:33,160
+embeddings. So I'll show you the back of
+it.
+
+121
+00:10:43,279 --> 00:10:48,160
+So let's create a data first of all. So
+import
+
+122
+00:10:48,279 --> 00:10:57,880
+pandas as
+pd. Okay. Then I also need numpy. So
+
+123
+00:10:55,720 --> 00:11:04,320
+import
+numpy as
+
+124
+00:11:00,839 --> 00:11:09,360
+np. Then I will create a data. So here I
+already prepared a data. So let's say
+
+125
+00:11:06,880 --> 00:11:13,519
+this is our data. I'm converting to the
+data frame. So this side you have the
+
+126
+00:11:11,600 --> 00:11:19,440
+text like people watch this with By this
+with By watch this with BP. Okay. So
+
+127
+00:11:16,399 --> 00:11:23,440
+that's how I have some let's say uh
+comments. Okay. Now with respect to the
+
+128
+00:11:21,279 --> 00:11:26,720
+comments I have some output as of now
+you can consider as a label. Okay. But I
+
+129
+00:11:25,440 --> 00:11:29,360
+don't need the label. I only need the
+text because I want to show you how we
+
+130
+00:11:28,160 --> 00:11:32,800
+can convert these are the text to the
+vector representation. Okay. just to
+
+131
+00:11:31,120 --> 00:11:38,320
+create the data I just mention some of
+the output uh let's say output category
+
+132
+00:11:35,360 --> 00:11:45,880
+dummy output category okay now to apply
+the uh bag of word from the skarn we
+
+133
+00:11:41,600 --> 00:11:51,040
+have to import one function so from
+skarn dot feature
+
+134
+00:11:49,000 --> 00:11:55,240
+extraction okay it is available in the
+feature extraction dot text
+
+135
+00:11:55,440 --> 00:12:01,440
+uh I have to
+import counter vectorzer
+
+136
+00:12:02,320 --> 00:12:09,200
+which are extractions. So yeah. So
+counter vectorzer I
+
+137
+00:12:12,040 --> 00:12:20,040
+think which are extraction counter
+vectorizer. So let me import. Okay. So
+
+138
+00:12:17,360 --> 00:12:24,320
+it is telling no model
+names. What is the issue guys? Let me
+
+139
+00:12:26,279 --> 00:12:33,440
+check. Okay. It should be text not text.
+Okay, text. I have written text. So it's
+
+140
+00:12:31,040 --> 00:12:36,959
+not working. Now let me see it's
+working. Now let's create an object of
+
+141
+00:12:35,120 --> 00:12:41,839
+counter vectorizer. I'm going to name it
+as CV is equal to counter vectorzer. Now
+
+142
+00:12:39,760 --> 00:12:45,920
+inside that I have to give the data.
+Okay. Inside that I have to give the
+
+143
+00:12:50,279 --> 00:12:59,240
+data. So here how we'll be passing the
+data. So here I'll just write uh
+
+144
+00:12:57,480 --> 00:13:02,560
+cv
+dot print
+
+145
+00:13:03,399 --> 00:13:13,040
+transform and here I'm only going to
+pass my okay text data okay and uh the
+
+146
+00:13:10,480 --> 00:13:15,839
+beauty of this counter vector is is it
+will automatically perform the
+
+147
+00:13:14,240 --> 00:13:19,959
+tokenization you don't need to manually
+do it okay it will automatically perform
+
+148
+00:13:17,760 --> 00:13:24,320
+the tokenization okay word level
+tokenization and it will apply the
+
+149
+00:13:22,720 --> 00:13:30,800
+spectral ization technique. Now let me
+show you if I execute. So here you got
+
+150
+00:13:27,800 --> 00:13:34,560
+the number. So if you have to see the
+number you have to write B to array.
+
+151
+00:13:33,120 --> 00:13:38,399
+Okay. So it will give you the
+representation of the vector. That means
+
+152
+00:13:36,320 --> 00:13:42,399
+these are the uh uh text has been
+converted to these are the vector right
+
+153
+00:13:40,639 --> 00:13:46,480
+now. Okay. Now I can pass this vector to
+the model. This is the technique. Now
+
+154
+00:13:44,800 --> 00:13:49,279
+there is another technique uh you will
+be getting called
+
+155
+00:13:50,360 --> 00:13:59,440
+uh TF. This is another frequently used
+in the machine learning. So let me show
+
+156
+00:13:56,480 --> 00:13:59,440
+you TF
+
+157
+00:14:00,920 --> 00:14:08,839
+demo. So the full form is trans uh term
+frequency inverse document frequency.
+
+158
+00:14:06,240 --> 00:14:14,240
+Again I'm going to create the same
+data. Now we'll be initializing the TF
+
+159
+00:14:12,480 --> 00:14:20,240
+from the SQL. So it is available in the
+SQL TF vectorzer. Okay. Now again you
+
+160
+00:14:18,800 --> 00:14:23,120
+have to do the same thing. So we have to
+fit transform the
+
+161
+00:14:24,199 --> 00:14:31,600
+data. So here
+uh fit transform we are giving the text
+
+162
+00:14:29,760 --> 00:14:34,560
+again it will perform the tokenization
+at the very first time mod label
+
+163
+00:14:32,880 --> 00:14:41,360
+tokenization then it will perform the
+embedding generation. Okay. Now if I
+
+164
+00:14:37,360 --> 00:14:41,360
+show you my array dot to
+
+165
+00:14:41,880 --> 00:14:47,680
+array. Now these are the vector
+representation. And the beauty of this
+
+166
+00:14:45,839 --> 00:14:53,519
+one see previously you were getting
+zeros. Okay. And I think uh we know that
+
+167
+00:14:50,240 --> 00:14:58,639
+zero is like unnecessary data. It will
+increase the computation. Uh it's a
+
+168
+00:14:55,839 --> 00:15:04,560
+dense vector actually we got uh but here
+you can see it's a floating number.
+
+169
+00:15:02,320 --> 00:15:08,720
+Okay. So that is the like main advantage
+to use the TF IDF vectorzer. There's
+
+170
+00:15:06,959 --> 00:15:13,920
+some more technique like what to make is
+there and now in nowadays we inside LM
+
+171
+00:15:11,360 --> 00:15:17,519
+we will be using um transformer based
+embedding model like I showed you. These
+
+172
+00:15:15,199 --> 00:15:21,240
+are the embedding model. Okay. So this
+is like very powerful model. Even open a
+
+173
+00:15:19,760 --> 00:15:26,240
+also have some embedding
+model. So guys now I will also show you
+
+174
+00:15:23,920 --> 00:15:30,399
+some advanced uh let's say embedding uh
+generation technique with the help of
+
+175
+00:15:27,600 --> 00:15:33,880
+transformer model. So here just let me
+write down
+
+176
+00:15:52,839 --> 00:15:56,160
+technique with
+
+177
+00:15:59,000 --> 00:16:06,959
+transformers. Okay, transformers. So for
+this uh we'll be using hugging face uh
+
+178
+00:16:04,639 --> 00:16:11,519
+actually platform because I told you
+hugging face has lots of or actually
+
+179
+00:16:09,199 --> 00:16:16,000
+embedding model. Okay, you can use it
+for the embedding generation. So let me
+
+180
+00:16:13,680 --> 00:16:20,000
+show you some demo. Uh so here uh first
+of all we'll be installing the hugging
+
+181
+00:16:18,560 --> 00:16:25,160
+face. Okay. And to install the hugging
+face uh this is the command you have to
+
+182
+00:16:22,560 --> 00:16:29,560
+execute. Tip install
+transformer and make sure you have
+
+183
+00:16:27,120 --> 00:16:36,800
+selected your runtime to
+GPU. I'll be selecting the free GPU T4
+
+184
+00:16:32,320 --> 00:16:36,800
+GPU. Now let's install
+
+185
+00:16:37,160 --> 00:16:44,959
+it because here we are using the
+transformers uh let's say model and it
+
+186
+00:16:42,480 --> 00:16:49,600
+needs actually higher computational
+system. So for this we have selected the
+
+187
+00:16:47,360 --> 00:16:56,320
+GPU. Okay, you can also do it on CPU but
+it will take lots of time that's why.
+
+188
+00:16:51,839 --> 00:16:56,320
+Then after that we'll try to import the
+
+189
+00:16:58,680 --> 00:17:02,240
+transformer. Import
+
+190
+00:17:15,400 --> 00:17:21,280
+transformers. Okay, it's working fine.
+Now from transformers, we'll be
+
+191
+00:17:20,000 --> 00:17:25,120
+importing something called auto
+tokenizer. Okay, so see if you're using
+
+192
+00:17:23,520 --> 00:17:28,240
+transformer model, you have to use this
+library called auto tokenizer. if you
+
+193
+00:17:27,039 --> 00:17:32,720
+want to generate the embeddings. Okay,
+auto tokenizer. Now inside that you have
+
+194
+00:17:30,799 --> 00:17:36,600
+to specify the pre-tend model. The model
+you want to use for the embedding
+
+195
+00:17:34,280 --> 00:17:42,080
+generation. So
+here this is the code. So here you can
+
+196
+00:17:39,280 --> 00:17:47,400
+see guys uh autotokenizer from pretend.
+So here I'll be using birdbased model.
+
+197
+00:17:44,559 --> 00:17:51,679
+Okay. And this will be my tokenizer
+object. Now let's say here I have a
+
+198
+00:17:52,520 --> 00:17:58,080
+sentence called I was so not happy with
+the Barbie movie. Let's say this
+
+199
+00:17:56,720 --> 00:18:01,039
+particular sentence I want to generate
+the
+
+200
+00:17:58,760 --> 00:18:06,720
+embeddings then what is the beauty of
+this uh like uh transformers uh let's
+
+201
+00:18:04,320 --> 00:18:10,720
+say embedding or let's say tokenizer it
+will also perform the tokenization at
+
+202
+00:18:08,480 --> 00:18:15,200
+the same time let me show you so first
+of all you have to apply the
+
+203
+00:18:12,919 --> 00:18:19,280
+tokenization so how to tok perform the
+tokenization like that tokenizer do
+
+204
+00:18:17,120 --> 00:18:23,280
+tokenize then you have to pass the text
+now if I print it you will see that this
+
+205
+00:18:21,280 --> 00:18:26,480
+is the token and what is the token guys
+it has applied word label tokenization I
+
+206
+00:18:25,120 --> 00:18:30,240
+think I already explained this part
+right word label tokenization your
+
+207
+00:18:28,160 --> 00:18:35,840
+transformer model will apply now I have
+the individual word okay so now we'll
+
+208
+00:18:32,400 --> 00:18:42,080
+try to uh convert this uh tokens to the
+uh vector embeddings so for this
+
+209
+00:18:39,520 --> 00:18:45,280
+uh this is the code you can see so you
+can directly pass this text to the
+
+210
+00:18:43,520 --> 00:18:49,600
+tokenizer the tokenizer we have created
+this tokenizer object okay tokenizer I'm
+
+211
+00:18:47,120 --> 00:18:52,799
+passing the text and this will return me
+the inputed output that means the
+
+212
+00:18:50,720 --> 00:18:56,039
+embeddings now let me show you so this
+is the output guys so you can see this
+
+213
+00:18:54,880 --> 00:19:00,320
+is my
+vectors. Okay, this is the vectors and
+
+214
+00:18:58,720 --> 00:19:04,160
+you'll be also getting some token type
+ids and attention mask. Why attention
+
+215
+00:19:02,480 --> 00:19:08,880
+mask? Because I already told you about
+the attention mechanism there. Uh it was
+
+216
+00:19:06,799 --> 00:19:12,160
+giving the attention to the word here.
+So one one means it is giving the
+
+217
+00:19:10,400 --> 00:19:16,080
+attention to all the words. Okay. All
+the words of this particular sentence.
+
+218
+00:19:14,240 --> 00:19:18,799
+Okay. And how attention mechanism works?
+I think you already know because these
+
+219
+00:19:17,200 --> 00:19:22,480
+are the transformer based model. Okay.
+Internally they're using that's it. So
+
+220
+00:19:20,960 --> 00:19:26,640
+this is the input I have to pass to the
+model. Now if you want to decode, if you
+
+221
+00:19:24,559 --> 00:19:30,960
+want to decode that means convert this
+vector to the text representation again
+
+222
+00:19:28,960 --> 00:19:36,640
+you can also decode it. So this is the
+code for that. Okay decode. So to uh do
+
+223
+00:19:34,320 --> 00:19:40,480
+the decode operation uh you have to
+generate the input id. So how to
+
+224
+00:19:38,080 --> 00:19:46,160
+generate the input ids? So like that you
+can generate the input ids. Let me show
+
+225
+00:19:43,000 --> 00:19:48,520
+you. So tokenizer convert tokens to ids.
+You have to give the token this
+
+226
+00:19:47,200 --> 00:19:53,840
+particular
+token. So it should have the uh this ID
+
+227
+00:19:52,400 --> 00:19:58,799
+reference. then you it will be able to
+convert to the text again. Now this
+
+228
+00:19:56,160 --> 00:20:04,000
+input id you have to pass here. Now it
+will give you the decoded output. That
+
+229
+00:20:01,280 --> 00:20:09,280
+means the same sentence I was not uh so
+uh happy with the barb. Got it? So
+
+230
+00:20:07,280 --> 00:20:13,360
+that's how guys we use transformer model
+to perform the embedding operation. I
+
+231
+00:20:11,840 --> 00:20:16,400
+hope it is clear. So yes guys this is
+all about our tokenization and
+
+232
+00:20:14,480 --> 00:20:20,960
+embedding. I think you got to know and
+that's how before passing uh any data to
+
+233
+00:20:19,120 --> 00:20:24,320
+the model we perform these are the step
+then we do the finetuning or training
+
+234
+00:20:22,480 --> 00:20:28,679
+whatever you can say. So yes guys this
+is all from my side. Thank you so much.
+

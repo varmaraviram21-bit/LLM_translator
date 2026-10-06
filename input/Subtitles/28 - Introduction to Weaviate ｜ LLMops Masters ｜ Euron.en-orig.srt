@@ -1,0 +1,1020 @@
+1
+00:00:00,320 --> 00:00:07,040
+Hi guys, welcome back with another
+video. So guys, in this video we'll be
+
+2
+00:00:04,960 --> 00:00:13,440
+uh talking about another vector database
+called web. So web is also a cloud uh
+
+3
+00:00:10,880 --> 00:00:17,920
+actually based vector database. So here
+also you can store your vector
+
+4
+00:00:15,120 --> 00:00:21,279
+embeddings to the cloud and it is also
+like premium vector database. Here you
+
+5
+00:00:19,920 --> 00:00:25,279
+have to also take the subscription but
+if you're using for the first time they
+
+6
+00:00:23,119 --> 00:00:28,160
+will give you some free credits. So here
+guys first of all what you have to do
+
+7
+00:00:26,720 --> 00:00:31,599
+you have to create one account. Just
+click on the try now button and it uh
+
+8
+00:00:30,320 --> 00:00:34,559
+there you will be getting one option
+called sign up oper uh okay sign up
+
+9
+00:00:33,200 --> 00:00:38,239
+button just try to click on the sign up
+and try to create one account with the
+
+10
+00:00:35,920 --> 00:00:42,320
+help of your email address. Okay and
+once you have created the account now
+
+11
+00:00:39,920 --> 00:00:47,280
+I'll show you uh the demo okay practical
+demo how we can store our let's say
+
+12
+00:00:44,480 --> 00:00:50,399
+embeddings to the web platform. So all
+the practical demo I'm going to show you
+
+13
+00:00:48,879 --> 00:00:54,480
+and all the resources guys I'm going to
+share you can check the resources and
+
+14
+00:00:52,000 --> 00:00:58,320
+you can uh try it okay from yourself. So
+now guys let's see how we can use the
+
+15
+00:00:56,239 --> 00:01:01,760
+wave yet. Okay to store our vector
+embeddings. So here first of all you
+
+16
+00:01:00,160 --> 00:01:05,519
+need to install some of the libraries.
+Uh so these are the libraries are
+
+17
+00:01:03,600 --> 00:01:09,600
+common. So here so guys here now I'm
+using something called web. So this is
+
+18
+00:01:07,280 --> 00:01:13,760
+the like python package like web client.
+So you need to install this package to
+
+19
+00:01:10,880 --> 00:01:18,640
+connect with your web. Okay web cloud uh
+data database. Now let me just quickly
+
+20
+00:01:16,240 --> 00:01:18,640
+set up
+
+21
+00:01:22,280 --> 00:01:28,240
+them. Uh now guys what to do? Uh you
+need to collect some of the credential.
+
+22
+00:01:26,880 --> 00:01:32,799
+So these are the credential are
+required. So first of all I need my
+
+23
+00:01:29,520 --> 00:01:36,640
+openi API key. Then I need my wave API
+key and wave at cluster. Okay cluster
+
+24
+00:01:34,880 --> 00:01:41,119
+URL. So this uh three thing actually I
+need. So I think we already created my
+
+25
+00:01:38,640 --> 00:01:47,079
+openi API key. Just try to copy from my
+previous notebook. So here is my API
+
+26
+00:01:44,320 --> 00:01:54,159
+key. So I'll just
+copy and here I will just try to paste
+
+27
+00:01:51,240 --> 00:01:59,200
+it. Okay. Now let's see like how we can
+collect this web API key. So for this
+
+28
+00:01:56,079 --> 00:02:03,759
+just uh visit your um So for this just
+visit your u web uh dashboard and here
+
+29
+00:02:02,000 --> 00:02:06,560
+just try to create one cluster just
+click on create
+
+30
+00:02:06,759 --> 00:02:13,599
+cluster okay you need to give the
+cluster name so let's give any name so
+
+31
+00:02:10,640 --> 00:02:18,879
+I'll give test okay so you can give any
+name so everything will remain uh same
+
+32
+00:02:16,720 --> 00:02:23,440
+because this is a free free one and it
+will expire in 21 days because this is
+
+33
+00:02:21,760 --> 00:02:26,879
+the free version free tire I'm using
+okay but if you want to use for your
+
+34
+00:02:25,360 --> 00:02:32,480
+production grade applications. So at the
+time you can take the subscription.
+
+35
+00:02:28,239 --> 00:02:32,480
+Okay. Now just try to create the
+
+36
+00:02:35,239 --> 00:02:40,360
+cluster. So it will take some time once
+it is ready. So it will give you the
+
+37
+00:02:39,120 --> 00:02:44,400
+status
+message. And guys if you see web also
+
+38
+00:02:43,120 --> 00:02:49,599
+support these kinds of client like
+Python client, Java client, CLI, trans
+
+39
+00:02:46,879 --> 00:02:53,680
+uh typescript then go. So it has
+actually multiple client support. So
+
+40
+00:02:52,160 --> 00:02:58,720
+like those who are working in Java and
+all. So you can also use it. Now guys
+
+41
+00:02:56,080 --> 00:03:04,800
+see my web cluster is ready. Now if I
+click on detail. Now here it should give
+
+42
+00:03:01,840 --> 00:03:10,560
+me that uh detail of my cluster. Now
+here first of all I need to uh copy this
+
+43
+00:03:08,000 --> 00:03:15,920
+uh uh cluster URL. Okay. Just copy this
+cluster URL here. From here you can also
+
+44
+00:03:12,640 --> 00:03:18,879
+copy. Now let's go back to my web. And
+here you need to paste
+
+45
+00:03:21,640 --> 00:03:30,799
+it. Oh sorry. Uh this is my API. So I
+need to paste it here. This is my
+
+46
+00:03:27,280 --> 00:03:36,400
+cluster URL. Okay. Now I also need to
+copy the API. So here is the API option.
+
+47
+00:03:33,760 --> 00:03:40,159
+Just click here. And this is the API
+key. Just try to copy and don't share.
+
+48
+00:03:38,239 --> 00:03:46,080
+Uh I'll delete it after this recording.
+So that's why I'm sharing. And I'll just
+
+49
+00:03:42,840 --> 00:03:50,760
+uh paste it here. Okay. Now I got my
+three credential. Now let me execute
+
+50
+00:03:47,760 --> 00:03:50,760
+them.
+
+51
+00:03:52,560 --> 00:03:57,920
+Okay. So, first of all, I need to read
+my data. So, let me read the
+
+52
+00:04:00,040 --> 00:04:08,480
+data. So, here first of all uh so here
+first of all I will create one directory
+
+53
+00:04:05,680 --> 00:04:08,480
+called uh
+
+54
+00:04:08,519 --> 00:04:11,519
+mks
+
+55
+00:04:18,040 --> 00:04:24,479
+data. Okay. Now data folder has been
+created. Now inside that I will upload
+
+56
+00:04:22,320 --> 00:04:29,840
+one uh so inside that I will upload one
+PDF file I have here. So this is the
+
+57
+00:04:26,479 --> 00:04:33,520
+yellow paper actually yellow related
+content. So you can download any kinds
+
+58
+00:04:31,520 --> 00:04:38,800
+of PDF and you can upload here. No issue
+with that. You can either use text data
+
+59
+00:04:35,520 --> 00:04:38,800
+okay doc data it's up to
+
+60
+00:04:41,000 --> 00:04:49,280
+you. Uh so guys as you can see uh my PDF
+has been uploaded here. Now what I will
+
+61
+00:04:46,479 --> 00:04:54,320
+do uh I'll just try to load this PDF.
+Okay. And uh I'll just extract that text
+
+62
+00:04:51,840 --> 00:04:59,040
+from it. So let me show you like how
+this PDF will look like. So guys see
+
+63
+00:04:56,639 --> 00:05:04,080
+this is the yellow uh like presentation.
+Okay. So I have downloaded as PDF. I'll
+
+64
+00:05:01,600 --> 00:05:07,600
+just uh execute this particular code. So
+here I'm giving that data directory and
+
+65
+00:05:05,840 --> 00:05:11,320
+I'm telling just load the PDF file.
+Okay. Then I'm loading the data. Now let
+
+66
+00:05:09,360 --> 00:05:16,000
+me
+load. So it is giving one error. It's
+
+67
+00:05:13,919 --> 00:05:19,840
+telling unstructured package not found.
+Please install it with pip install
+
+68
+00:05:17,759 --> 00:05:24,639
+unstructured. Okay. So what is happening
+actually? So if you see here I have
+
+69
+00:05:21,759 --> 00:05:28,160
+downloaded this uh Google like you can
+say slide. Okay. Google slide as PDF.
+
+70
+00:05:27,039 --> 00:05:32,880
+That's why it is considering as
+unstructured PDF. Okay. So that that's
+
+71
+00:05:30,080 --> 00:05:37,520
+why we need to install uh one package
+called unstructured unstructured PDF. So
+
+72
+00:05:35,199 --> 00:05:43,280
+let me install it. So this is the
+command to install. But if you're having
+
+73
+00:05:39,360 --> 00:05:46,960
+like uh PDF like very uh simple PDF so
+you don't need to install it. Okay. So
+
+74
+00:05:45,199 --> 00:05:50,960
+this is for like unstructured PDF. So if
+you have any complex PDF so you need to
+
+75
+00:05:48,560 --> 00:05:50,960
+install this
+
+76
+00:05:52,039 --> 00:06:00,160
+package. So previously I was using like
+uh paper and all. Okay. That's why it
+
+77
+00:05:56,479 --> 00:06:04,600
+was uh uh simple uh PDF but now I'm
+using like Google slide PDF that's why
+
+78
+00:06:02,400 --> 00:06:08,080
+it's giving this
+ad. And it's pretty good like it will
+
+79
+00:06:06,960 --> 00:06:11,720
+tell you like what are the package you
+need to install and all. So it will give
+
+80
+00:06:09,360 --> 00:06:15,840
+you the message as
+well. So guys it's done now it's telling
+
+81
+00:06:14,240 --> 00:06:18,400
+just restart the runtime. So let's
+restart our
+
+82
+00:06:21,960 --> 00:06:30,160
+runtime. Okay. Now let me uh execute
+this
+
+83
+00:06:27,479 --> 00:06:33,560
+code. Now it is extracting all the text
+from this PDF.
+
+84
+00:06:34,560 --> 00:06:39,759
+You can also upload multiple PDF here.
+Uh it's up to you. But I have already
+
+85
+00:06:38,160 --> 00:06:45,600
+added one PDF. I just want to show you
+the quick demo. Done. Now let me show
+
+86
+00:06:42,960 --> 00:06:45,600
+you the
+
+87
+00:06:49,639 --> 00:06:56,639
+data. So guys, this is the entire data I
+got from my PDF. Okay. Now I need to
+
+88
+00:06:54,800 --> 00:07:01,280
+apply something called text splitting. I
+think you remember I need to convert it
+
+89
+00:06:58,639 --> 00:07:04,160
+to chunks.
+So let's convert
+
+90
+00:07:04,440 --> 00:07:10,800
+it. So recursive character text
+splitter. Okay, I'm importing from lang.
+
+91
+00:07:09,440 --> 00:07:15,160
+And this is the chunk size and chunks
+overlap. You can give any number here.
+
+92
+00:07:12,319 --> 00:07:19,360
+So let me just do do it
+quickly. Now I got my
+
+93
+00:07:19,560 --> 00:07:25,440
+chunks. Okay, see this is my chunks and
+also let me see the
+
+94
+00:07:25,960 --> 00:07:32,160
+length. See all the things are common
+only. We are just changing the data. uh
+
+95
+00:07:30,160 --> 00:07:37,039
+database client okay like I'm using
+chromab pine code and web yet so just
+
+96
+00:07:34,720 --> 00:07:40,560
+client is changing but steps are same I
+think you are
+
+97
+00:07:38,120 --> 00:07:48,520
+getting now I need to convert to
+embeddings so let me just comment it
+
+98
+00:07:44,199 --> 00:07:52,560
+out so here I'm going to use open ai
+embedding open embedding and here you
+
+99
+00:07:50,800 --> 00:07:56,400
+need to pass the open api key uh if
+you're not passing it's fine you need to
+
+100
+00:07:54,400 --> 00:08:00,080
+add inside the environment variable so
+previously we added if you see here
+
+101
+00:07:58,319 --> 00:08:03,120
+environment variable but Here I'm not
+adding environment variable. If you're
+
+102
+00:08:01,680 --> 00:08:06,960
+not adding inside environment variable,
+you can directly pass them. Okay, that
+
+103
+00:08:04,479 --> 00:08:06,960
+will also
+
+104
+00:08:08,280 --> 00:08:14,639
+work. Okay, it's giving error. Open a is
+not defined because we have restarted
+
+105
+00:08:12,240 --> 00:08:16,960
+the runtime. So I need to execute this
+cell
+
+106
+00:08:18,520 --> 00:08:23,400
+again. Now I think it should work.
+
+107
+00:08:25,039 --> 00:08:33,919
+Now here I'll be uh initializing my
+wave vector database. So if you visit
+
+108
+00:08:31,759 --> 00:08:37,519
+wave documentation
+uh there is the documentation and here
+
+109
+00:08:36,320 --> 00:08:42,560
+they have given the installation
+guideline then configuration then what
+
+110
+00:08:40,080 --> 00:08:47,120
+is the schema libraries everything they
+have explained okay so you can visit the
+
+111
+00:08:44,720 --> 00:08:51,839
+documentation and uh you can get all the
+information but here I already gone
+
+112
+00:08:49,920 --> 00:08:55,440
+through the documentation and I uh
+prepared this notebook. So this is the
+
+113
+00:08:53,839 --> 00:08:59,839
+code actually you need to write to
+initialize your web yet actually uh
+
+114
+00:08:58,240 --> 00:09:04,480
+that's actually I like pine cone one
+because pine cone looks easy uh okay um
+
+115
+00:09:02,640 --> 00:09:08,720
+to me because what I feel like pine cone
+is like more easy and it's like more uh
+
+116
+00:09:06,720 --> 00:09:12,640
+easy to understand and uh like more
+clear but if you're using web so you
+
+117
+00:09:10,800 --> 00:09:15,760
+need to write some extra code it okay uh
+but it's completely fine okay no issue
+
+118
+00:09:14,560 --> 00:09:19,360
+you can use it I I will share my
+notebook you can use this notebook as it
+
+119
+00:09:17,360 --> 00:09:24,080
+is so here I'm just first of all
+importing web from langen you can also
+
+120
+00:09:21,839 --> 00:09:27,360
+import directly it is also fine. Now
+here you just uh so first of all you
+
+121
+00:09:25,920 --> 00:09:29,839
+just need to connect with your web
+cluster. Okay, this cluster we have
+
+122
+00:09:28,640 --> 00:09:33,440
+created here. I think you remember this
+is the cluster. So to connect with the
+
+123
+00:09:31,680 --> 00:09:38,560
+cluster you need to give the API key web
+API key and I think you know we already
+
+124
+00:09:35,200 --> 00:09:43,040
+collected the web API key here and I
+stored in the variable. Okay, then I
+
+125
+00:09:40,640 --> 00:09:46,399
+also need collected the cluster URL.
+Okay, both I have collected. Now cluster
+
+126
+00:09:44,800 --> 00:09:49,680
+URL you also need to give. Then you need
+to initialize the client and inside that
+
+127
+00:09:47,839 --> 00:09:54,640
+you need to give the cluster URL and as
+well as the uh open API key also because
+
+128
+00:09:52,560 --> 00:09:58,720
+uh using the open API key it will use
+the open embedding okay whenever it will
+
+129
+00:09:56,320 --> 00:10:03,839
+convert your data to vector embedding so
+it will use that open embedding okay so
+
+130
+00:10:01,839 --> 00:10:07,600
+that's why you need to give the open API
+key here now you also need to give
+
+131
+00:10:06,000 --> 00:10:10,080
+something called authentication
+configuration so this is the
+
+132
+00:10:08,720 --> 00:10:13,600
+authentication configuration which is
+nothing but my API key wave API key and
+
+133
+00:10:12,240 --> 00:10:17,399
+this is the startup period these are
+some default parameter you need to give
+
+134
+00:10:15,200 --> 00:10:21,519
+and Let's
+execute. Okay. Now if you want to check
+
+135
+00:10:19,680 --> 00:10:25,120
+it whether this client is ready or not.
+So this is the code for it. So is ready.
+
+136
+00:10:23,519 --> 00:10:30,399
+So now it is true. That means my client
+is ready. Now it is connected with my
+
+137
+00:10:26,880 --> 00:10:35,519
+web client. Now web is telling you need
+to prepare something called schema.
+
+138
+00:10:32,240 --> 00:10:39,680
+Okay. Here uh they have given uh one
+client schema. So if you visit this
+
+139
+00:10:37,839 --> 00:10:43,600
+client libraries. Okay. So here if you
+see example client schema. So you al
+
+140
+00:10:41,519 --> 00:10:48,320
+also need to define some schema here.
+ESKM is nothing but it just uh it kinds
+
+141
+00:10:46,560 --> 00:10:52,079
+of configuration it will take okay as
+input like you can uh change the
+
+142
+00:10:50,160 --> 00:10:55,440
+configuration with the help of code. So
+that's why these are the things they are
+
+143
+00:10:53,360 --> 00:10:59,279
+giving but if you're not able to get it
+okay it's completely fine. So you just
+
+144
+00:10:57,680 --> 00:11:04,320
+need to give this schema and it will
+common for every u expernt you'll be
+
+145
+00:11:02,640 --> 00:11:08,399
+doing. So this is the complete schema
+guys. Okay. So client schema detail
+
+146
+00:11:06,320 --> 00:11:12,880
+first of all if it has any schema it
+will delete then it will add this
+
+147
+00:11:10,160 --> 00:11:17,680
+schema. So here uh you can give any
+name. Okay. So I have given chatbot
+
+148
+00:11:14,560 --> 00:11:22,640
+here. Then u here you can give any
+description. Then uh what are the vector
+
+149
+00:11:20,800 --> 00:11:26,560
+actually model you are using? You can
+give the name here. So in open actually
+
+150
+00:11:24,720 --> 00:11:30,279
+you have add model. Okay. So here I'm
+using adder model. I think you remember
+
+151
+00:11:28,320 --> 00:11:33,880
+if I print my
+embedding. So here I was using something
+
+152
+00:11:32,560 --> 00:11:37,920
+called adder
+model. Okay. As you can see here I was
+
+153
+00:11:36,240 --> 00:11:41,200
+using something called text add
+embedding adder model. So that's why you
+
+154
+00:11:39,600 --> 00:11:44,399
+can also give the name and these are
+some description you can give and after
+
+155
+00:11:42,560 --> 00:11:48,160
+that you can create the schema and you
+can uh create your client. Okay. Now
+
+156
+00:11:46,000 --> 00:11:51,519
+this is the code so you can execute and
+this thing is not required in pine cone.
+
+157
+00:11:50,000 --> 00:11:55,600
+So pine cone can handle these other
+thing automatically but in web you need
+
+158
+00:11:53,600 --> 00:12:00,800
+to uh provide that's why I personally
+like like pine cone. Okay. Now once it
+
+159
+00:11:57,839 --> 00:12:04,480
+is done you need to initialize the
+uh vector store. Okay. Now this code
+
+160
+00:12:02,880 --> 00:12:07,040
+will initialize the vector. So what it
+will do basically it will take your
+
+161
+00:12:05,920 --> 00:12:12,880
+documents. Okay. Okay, I think you
+remember we have um we have uh created a
+
+162
+00:12:11,040 --> 00:12:16,560
+documents. Okay, uh we have created a
+cluster and from this cluster uh with
+
+163
+00:12:15,200 --> 00:12:20,240
+the help of this embedding we are just
+trying to generating the vector and
+
+164
+00:12:18,240 --> 00:12:26,240
+storing inside our wave yet. Okay, now
+let me uh execute and show
+
+165
+00:12:23,399 --> 00:12:31,200
+you. Now see guys, now if I go to my web
+yet and
+
+166
+00:12:28,360 --> 00:12:34,720
+refresh, now it hasn't updated yet. So
+after some times you will see it will
+
+167
+00:12:32,800 --> 00:12:40,160
+update like how many embeddings had
+generated. Okay. Then uh how many times
+
+168
+00:12:37,360 --> 00:12:44,240
+you have uh you can say did the request
+everything it will show you here. Okay.
+
+169
+00:12:42,560 --> 00:12:47,680
+So all the information actually it will
+give you and these are the and guys
+
+170
+00:12:46,399 --> 00:12:50,880
+these are the embedding model are
+available by default with this web. So
+
+171
+00:12:49,279 --> 00:12:56,160
+you can use any of them it's completely
+fine but we are using this add a model
+
+172
+00:12:53,760 --> 00:13:01,040
+uh open a generative model. Okay. So
+yeah. So guys usually it takes some time
+
+173
+00:12:58,480 --> 00:13:05,040
+around uh like uh 5 to 6 minutes. After
+that you will able to see all the update
+
+174
+00:13:02,480 --> 00:13:09,600
+here. So in between what I can do I can
+show you the other step. Now we have
+
+175
+00:13:07,120 --> 00:13:12,399
+successfully stored our embeddings. Now
+let me just do the similarity
+
+176
+00:13:11,200 --> 00:13:15,399
+measurement that means similarity
+charts.
+
+177
+00:13:17,839 --> 00:13:24,959
+So here first of all I will ask one
+query called what is yellow because this
+
+178
+00:13:22,880 --> 00:13:30,480
+is the yellow related content and here
+I'm initializing this similarity s okay
+
+179
+00:13:28,160 --> 00:13:34,160
+because vector store is it is this is my
+object and on top of that I'm just
+
+180
+00:13:32,079 --> 00:13:38,480
+writing similarity s here I'm giving the
+query and top k that means how many
+
+181
+00:13:36,560 --> 00:13:43,440
+output you want to get so here I'm given
+20 you can give any number now it will
+
+182
+00:13:40,720 --> 00:13:51,040
+return like 20 results okay 20 similar
+kinds of uh
+
+183
+00:13:46,279 --> 00:13:56,839
+results C okay but um I can't actually
+take the answer so what I can give I can
+
+184
+00:13:53,680 --> 00:14:00,880
+give one chain with the help of lang
+chain so here uh there is another
+
+185
+00:13:59,279 --> 00:14:05,440
+parameter for question answering okay
+load Q chain you can also use this chain
+
+186
+00:14:02,880 --> 00:14:10,360
+otherwise you can also use retrieve uh
+keyword chain okay that that is also
+
+187
+00:14:07,040 --> 00:14:15,920
+fine now here I'm going to use open
+lm now I'll define my
+
+188
+00:14:13,160 --> 00:14:19,360
+chain and here I need to pass my open
+API
+
+189
+00:14:17,279 --> 00:14:23,600
+And uh this is the gen type and
+temperature means like uh if temperature
+
+190
+00:14:21,360 --> 00:14:28,480
+is zero so your model would be like more
+uh you can
+
+191
+00:14:24,920 --> 00:14:32,320
+say stick to the u answer like it won't
+be giving any randomness and if you're
+
+192
+00:14:30,639 --> 00:14:37,120
+changing the temperature to close to one
+so it will uh give some random output as
+
+193
+00:14:34,800 --> 00:14:39,360
+well okay so this parameter you can
+change I think if you have learned like
+
+194
+00:14:38,160 --> 00:14:43,279
+LLM so I think you'll know this
+parameter and all okay so these are like
+
+195
+00:14:41,279 --> 00:14:47,560
+basics thing okay in LLM now let me
+define my
+
+196
+00:14:44,360 --> 00:14:52,560
+chain now Here I will ask this
+query. So chain run input documents. So
+
+197
+00:14:50,720 --> 00:14:57,279
+this is my documents. This is my entire
+documents I'm giving. Okay, the
+
+198
+00:14:53,839 --> 00:15:00,959
+documents I have and uh see this is the
+documents. That means I got all the
+
+199
+00:14:59,040 --> 00:15:04,000
+answer right. Uh 20 answer and from this
+20 answer I want my query that means the
+
+200
+00:15:02,880 --> 00:15:08,959
+query I'm asking which is nothing but
+what is yellow? So now with the help of
+
+201
+00:15:06,160 --> 00:15:13,680
+u my llm I will get my authentic answer.
+See C is an algorithm for object
+
+202
+00:15:11,279 --> 00:15:18,399
+detection that is uh uh that is uh
+unified real time and has high accuracy.
+
+203
+00:15:16,079 --> 00:15:22,240
+It is presented by Shivang and this is
+the date of the publication. Okay. So
+
+204
+00:15:20,160 --> 00:15:25,040
+yes, I'm getting my output and all. So
+now you can ask any kinds of question
+
+205
+00:15:23,600 --> 00:15:27,920
+about yellow and all. Okay. I think you
+got it like I already showed you
+
+206
+00:15:26,240 --> 00:15:31,360
+multiple time. You can either create one
+while loop and you can ask many question
+

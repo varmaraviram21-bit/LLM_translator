@@ -1,0 +1,259 @@
+1
+00:00:00,560 --> 00:00:08,000
+Hi everyone. In this video, I'll be
+talking about uh some core components of
+
+2
+00:00:05,279 --> 00:00:12,920
+an LLM ops pipeline. Okay. So, let me
+just write down here
+
+3
+00:00:11,240 --> 00:00:15,920
+um
+core
+
+4
+00:00:19,160 --> 00:00:26,160
+component of
+LLM of
+
+5
+00:00:27,000 --> 00:00:36,880
+pipeline.
+See the first core component is data
+
+6
+00:00:33,960 --> 00:00:41,440
+pipeline. Okay, data pipeline. So
+definitely make sure whenever you are
+
+7
+00:00:38,719 --> 00:00:45,520
+training any kinds of LM from a scratch
+uh you have to take care the data
+
+8
+00:00:42,640 --> 00:00:50,559
+pipeline. Okay, so data source can be
+anywhere uh whether uh you are let's say
+
+9
+00:00:48,480 --> 00:00:54,399
+collecting the data from the API, you
+are scrapping, okay, you are using some
+
+10
+00:00:52,640 --> 00:00:58,239
+internal data sets. So you should have
+the proper pipeline. Okay. So then uh
+
+11
+00:00:56,879 --> 00:01:02,399
+after that you also need to do some
+pre-processing steps okay like you have
+
+12
+00:01:00,000 --> 00:01:07,760
+to do some tokenization then formatting
+okay cleaning then we'll be using the
+
+13
+00:01:04,320 --> 00:01:14,880
+data I hope it is clear then the second
+uh pipeline I can talk about model
+
+14
+00:01:11,320 --> 00:01:20,240
+management model
+uh management I already talked about uh
+
+15
+00:01:18,159 --> 00:01:24,720
+why model management is important let's
+say I'm talking about let's say chart
+
+16
+00:01:21,759 --> 00:01:29,680
+GPT so uh if uh I'm creating the chart
+GPT and if it is slow. Okay, it is
+
+17
+00:01:26,880 --> 00:01:33,200
+running slow. So if user is coming to my
+uh application app, if they're getting
+
+18
+00:01:31,439 --> 00:01:36,560
+some delay, definitely they're not going
+to use my application. That's why model
+
+19
+00:01:35,040 --> 00:01:41,360
+management is super important. Okay,
+whenever you are managing the model,
+
+20
+00:01:38,960 --> 00:01:46,159
+make sure you are storing the model in a
+good storage. Okay, and it should have
+
+21
+00:01:43,799 --> 00:01:49,680
+the tracking functionality. It should
+have the good infrastructure. Okay, and
+
+22
+00:01:48,240 --> 00:01:53,040
+most of the model you have to run on the
+GPU based machine because other
+
+23
+00:01:51,840 --> 00:01:57,200
+otherwise actually you won't be getting
+the faster inference. Okay. So that's
+
+24
+00:01:54,960 --> 00:02:00,719
+why you have to keep the model in the uh
+uh uh a good infrastructure. Okay. GPU
+
+25
+00:01:59,360 --> 00:02:08,319
+based machine most of the time you have
+to u take it. Then uh the next thing you
+
+26
+00:02:04,960 --> 00:02:13,879
+have something called
+uh
+
+27
+00:02:10,520 --> 00:02:19,920
+prompt and template
+management. Template
+
+28
+00:02:17,360 --> 00:02:23,440
+uh management. So this is another super
+important concept prompt and templates
+
+29
+00:02:21,440 --> 00:02:27,680
+management because LLM is all about
+prompting. So whenever you are using
+
+30
+00:02:25,520 --> 00:02:31,040
+let's say lang chain or let's say nama
+index or any other orchestration
+
+31
+00:02:29,520 --> 00:02:34,640
+framework definitely you have to create
+the prompt template okay that's a user
+
+32
+00:02:32,879 --> 00:02:37,680
+can give any kinds of prompt and
+internally you have to build the
+
+33
+00:02:35,760 --> 00:02:41,840
+template uh so that it can match with
+the uh task they want to perform so
+
+34
+00:02:39,599 --> 00:02:46,120
+that's why it is super important then I
+can talk about
+
+35
+00:02:44,120 --> 00:02:50,239
+u
+model
+
+36
+00:02:47,959 --> 00:02:54,560
+training another uh let's say super
+important uh pipeline I can talk about
+
+37
+00:02:52,800 --> 00:02:58,239
+because in the model training uh there
+we'll be using uh some technique like
+
+38
+00:02:56,480 --> 00:03:05,640
+quantization technique we'll be applying
+LOA Q L okay so it's also part of LM
+
+39
+00:03:01,440 --> 00:03:10,720
+pipeline LMO ops pipeline then model
+evaluation
+
+40
+00:03:07,720 --> 00:03:14,159
+model evaluation so this is another
+component component so here you have to
+
+41
+00:03:12,400 --> 00:03:20,959
+evaluate the model okay whether your
+model is good or bad you have to
+
+42
+00:03:15,440 --> 00:03:20,959
+evaluate then the last thing
+
+43
+00:03:21,560 --> 00:03:28,720
+continuous Okay, continuous
+um learning
+
+44
+00:03:28,760 --> 00:03:37,200
+loop. Learning loop that means if user
+is giving bad feedback, okay, it should
+
+45
+00:03:34,239 --> 00:03:42,239
+learn the um new things. Uh so nowadays
+we can also let's say uh so solve this
+
+46
+00:03:40,879 --> 00:03:46,799
+particular problem with the help of AI
+agents. Now our application can search
+
+47
+00:03:44,959 --> 00:03:50,000
+over the internet real time and it can
+get the response. Okay, this is called
+
+48
+00:03:48,319 --> 00:03:53,599
+agents. Okay, we can also build the
+agents. Nowadays all the apps are using
+
+49
+00:03:52,000 --> 00:03:57,040
+the same thing. If you go to the chat GP
+and if you're asking let's say what is
+
+50
+00:03:54,720 --> 00:04:01,040
+the latest news of 2025 this will give
+you the response. Okay. So that's why uh
+
+51
+00:03:59,280 --> 00:04:04,799
+this is also quite important. So yes
+guys this is these are actually that's a
+
+52
+00:04:02,720 --> 00:04:08,080
+core component of the LMO of pipeline.
+Okay. Thanks for watching.
+

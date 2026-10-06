@@ -1,0 +1,259 @@
+1
+00:00:01,760 --> 00:00:10,240
+Hi guys, in this video I'll be talking
+about retrieval augmented generation
+
+2
+00:00:06,799 --> 00:00:13,840
+which we also call it as rag. So uh see
+guys uh in generative mostly we will be
+
+3
+00:00:12,400 --> 00:00:18,720
+working with the rag based system
+because here fine-tuning large language
+
+4
+00:00:16,400 --> 00:00:24,320
+model is a little bit difficult even we
+have already saw that okay how we can do
+
+5
+00:00:21,840 --> 00:00:28,720
+the finetuning operations. uh I already
+showed you how one fine-tuning example
+
+6
+00:00:26,560 --> 00:00:31,840
+right so as you go ahead uh you'll be
+taking uh different different large
+
+7
+00:00:30,000 --> 00:00:35,440
+language model uh and those model
+parameter would be very huge and
+
+8
+00:00:33,680 --> 00:00:39,520
+whenever you are fine- tuning these are
+the model definitely will face the
+
+9
+00:00:36,880 --> 00:00:44,399
+difficulty okay so uh instead of that
+there is another concept we use for rag
+
+10
+00:00:42,640 --> 00:00:49,680
+concept so with the help of rag concept
+also we just try to uh connect our large
+
+11
+00:00:47,360 --> 00:00:53,520
+language model with our custom data so
+uh first of all let's try to understand
+
+12
+00:00:51,200 --> 00:00:57,840
+what is rag so you can see guys uh
+inside LM we have some limitations like
+
+13
+00:00:56,000 --> 00:01:01,520
+LLM can't answer correctly to the p
+private data let's say you have some
+
+14
+00:00:59,120 --> 00:01:05,760
+private document and your LM won't be
+able to give the uh response on top of
+
+15
+00:01:03,600 --> 00:01:09,360
+that and LM can't provide the most
+current information that means if you
+
+16
+00:01:07,280 --> 00:01:13,520
+are having some current documents okay
+so uh it doesn't have the information
+
+17
+00:01:11,119 --> 00:01:20,960
+because it has one uh like knowledge cut
+off let's say you have uh used one LLM
+
+18
+00:01:17,360 --> 00:01:26,240
+that is only trend till 2021
+um year okay so that That means after
+
+19
+00:01:23,600 --> 00:01:30,159
+2021 whatever things has happened it it
+doesn't know that. Okay. So this is the
+
+20
+00:01:27,680 --> 00:01:33,600
+problem. So you can see guys to prevent
+this issue we use something called
+
+21
+00:01:31,280 --> 00:01:38,960
+itable augmented generation. So here we
+use rag for uh allowing llm to use the
+
+22
+00:01:37,280 --> 00:01:42,479
+external sources for better response.
+That means here let's say we have some
+
+23
+00:01:40,520 --> 00:01:44,960
+documents. First of all we'll be using
+one embedding model with the pump
+
+24
+00:01:43,680 --> 00:01:48,000
+embedding model. We'll try to get the
+vector embeddings. Okay. And these
+
+25
+00:01:46,479 --> 00:01:50,960
+vector embeddings we'll try to store
+through the vector database. I think I
+
+26
+00:01:49,520 --> 00:01:54,000
+already showed you the vector database
+concepts and I also showed you how we
+
+27
+00:01:52,960 --> 00:01:57,600
+can generate the embeddings and all
+everything I already discussed. Now
+
+28
+00:01:56,159 --> 00:02:00,880
+we'll try to connect the large language
+model uh to the vector database and this
+
+29
+00:01:59,520 --> 00:02:04,719
+will become our knowledge base. That
+means whatever question user will ask.
+
+30
+00:02:02,560 --> 00:02:07,840
+Okay, first of all it will go to the uh
+knowledge base. Okay, knowledge base
+
+31
+00:02:05,920 --> 00:02:11,520
+will return some relevant response. Then
+it will also pass to the LLM and the
+
+32
+00:02:09,759 --> 00:02:15,440
+question will also pass to the LM. LM
+will try to get the context and it will
+
+33
+00:02:13,840 --> 00:02:18,959
+have the questions and it will refine
+the answer and it will send it to you.
+
+34
+00:02:17,200 --> 00:02:22,560
+So this is the entire uh entire actually
+idea of the rag. That means here you are
+
+35
+00:02:20,720 --> 00:02:25,840
+giving this knowledge base as a context.
+This particular vector database as a
+
+36
+00:02:23,840 --> 00:02:30,319
+context to the LLM. Okay. This is the
+idea. Now you can see table augmentation
+
+37
+00:02:27,760 --> 00:02:34,319
+generation rag allows to external
+sources for the better response. More
+
+38
+00:02:32,080 --> 00:02:38,160
+accurate answer no answers on private
+data stay updated with the new
+
+39
+00:02:36,160 --> 00:02:42,640
+information. Okay. Now here you can see
+guys why we call it as a retable augment
+
+40
+00:02:40,640 --> 00:02:47,200
+augmentations. Okay. So here you can see
+whenever user is asking one questions
+
+41
+00:02:44,400 --> 00:02:50,720
+let's say what are your business hour
+first of all it will go to the retriever
+
+42
+00:02:48,640 --> 00:02:55,440
+retriever will try to retrieve uh let's
+say the information uh from the uh
+
+43
+00:02:53,280 --> 00:02:59,599
+documents and it will augment the query
+that means this uh query as as well as
+
+44
+00:02:57,760 --> 00:03:03,120
+the retrieve output it will try to
+augment it then it will try to generate
+
+45
+00:03:01,360 --> 00:03:07,280
+that mean it will pass to the llm lm
+will try to understand the question and
+
+46
+00:03:04,800 --> 00:03:11,280
+it will refer that particular context
+okay then it will try to generate
+
+47
+00:03:09,440 --> 00:03:16,000
+something let's say in this case Monday
+to Friday from 9:30 a.m. to 6:30 p.m.
+
+48
+00:03:14,480 --> 00:03:20,560
+Okay. So this is the response we are
+getting. So yes guys, this was the rag
+
+49
+00:03:18,080 --> 00:03:25,599
+concept. Now we'll try to see some rag
+components. Okay. After that we'll also
+
+50
+00:03:22,319 --> 00:03:28,879
+try to implement uh actually rag in in a
+practical way. We'll try to implement
+
+51
+00:03:27,120 --> 00:03:34,319
+the entire rag applications. Okay. Then
+I think after that your understanding
+
+52
+00:03:30,159 --> 00:03:34,319
+would be cleared. So thank you so much.
+

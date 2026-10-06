@@ -1,0 +1,1048 @@
+1
+00:00:00,560 --> 00:00:07,040
+Hi guys, welcome back with another
+video. So in this video I'll be talking
+
+2
+00:00:04,400 --> 00:00:12,719
+about the evaluation from MLOps to LLM
+ops. So I think you already know that uh
+
+3
+00:00:10,639 --> 00:00:16,800
+uh previously when we didn't have the
+large language model uh people used to
+
+4
+00:00:15,200 --> 00:00:20,800
+use something called a machine learning
+model or deep learning model for various
+
+5
+00:00:18,640 --> 00:00:24,840
+kinds of task. So if I'm talking about
+the machine learning okay machine
+
+6
+00:00:23,039 --> 00:00:30,160
+learning let's say
+ML. So inside ML we have uh different uh
+
+7
+00:00:28,640 --> 00:00:34,200
+kinds of learning. That means first of
+all we have something called supervised
+
+8
+00:00:32,120 --> 00:00:40,879
+learning.
+Supervised
+
+9
+00:00:36,280 --> 00:00:40,879
+learning. Then we have unsupervised
+
+10
+00:00:43,559 --> 00:00:50,239
+learning.
+Unsupervised
+
+11
+00:00:47,239 --> 00:00:55,760
+learning. Uh so in supervised learning
+um we give the label data. I think you
+
+12
+00:00:52,000 --> 00:00:58,320
+know that let's say this is my model in
+supervised
+
+13
+00:01:00,920 --> 00:01:09,760
+learning let's say this is my
+model here we give the x data as well as
+
+14
+00:01:06,960 --> 00:01:13,680
+the y data and we get the prediction
+okay and in unsupervised
+
+15
+00:01:16,119 --> 00:01:24,320
+learning
+insupervised learning here we only pass
+
+16
+00:01:21,040 --> 00:01:30,159
+the uh input data which is nothing but x
+okay and here we get the y that mean we
+
+17
+00:01:28,159 --> 00:01:33,920
+don't pass the label here and how it
+works based on the clustering technique
+
+18
+00:01:32,240 --> 00:01:37,840
+okay so we have various kinds of model
+in supervised learning that that means
+
+19
+00:01:35,520 --> 00:01:41,360
+we have uh uh linear regression logistic
+regression random for decision trees
+
+20
+00:01:39,600 --> 00:01:45,520
+okay and in unsupervised learning we
+also some we have some let's say
+
+21
+00:01:43,119 --> 00:01:51,119
+clustering model like uh cins clustering
+DB scan okay so these are the model
+
+22
+00:01:47,920 --> 00:01:55,200
+actually we usually use here and um your
+machine learning most of the time it
+
+23
+00:01:52,399 --> 00:01:59,759
+will be working uh based on the table
+data let's say whenever you have the
+
+24
+00:01:56,640 --> 00:02:04,000
+table data okay table data that time
+actually it will work better table wise
+
+25
+00:02:01,920 --> 00:02:12,400
+data okay because here you have some
+fixed column and rows so here you have
+
+26
+00:02:06,880 --> 00:02:18,959
+let's say 1 2 3 4 5 that means column is
+equal to five and 1 2 3 4 and 5 and row
+
+27
+00:02:17,520 --> 00:02:23,920
+also is equal to five that means you
+have the fixed size. So here let's say
+
+28
+00:02:21,599 --> 00:02:30,879
+this many of columns is your x data and
+this one is your y data. That means four
+
+29
+00:02:26,959 --> 00:02:36,080
+column you have for the input. Okay. And
+uh uh this is your label data. Got it?
+
+30
+00:02:33,840 --> 00:02:39,239
+And you have some specific row size. But
+what about actually other data? Let's
+
+31
+00:02:37,840 --> 00:02:43,480
+say image
+data. Let's say whenever you have
+
+32
+00:02:41,440 --> 00:02:51,239
+something called image kinds of
+data, image data, audio data
+
+33
+00:02:47,760 --> 00:02:56,560
+uh then what uh I mean or let's say text
+data text data then what to do can we
+
+34
+00:02:54,560 --> 00:03:01,200
+use machine learning model here can we
+use machine learning model here you can
+
+35
+00:02:58,640 --> 00:03:06,159
+use machine learning model but uh it
+won't be working better here why because
+
+36
+00:03:04,159 --> 00:03:09,280
+uh some of the datas datas are actually
+unstructured here what would be the
+
+37
+00:03:07,599 --> 00:03:12,440
+problem that's whenever talking about
+image
+
+38
+00:03:10,159 --> 00:03:17,599
+I think you know that image has some
+dimension. Okay, it has some dimension
+
+39
+00:03:15,680 --> 00:03:21,200
+and inside of image actually we have
+some pixel value. Okay, so this is
+
+40
+00:03:19,440 --> 00:03:24,959
+called actually pixel value and this is
+the dimension. This is the height of the
+
+41
+00:03:22,720 --> 00:03:30,440
+image. This is the width of the image.
+Yes or no? So let me show you if I go to
+
+42
+00:03:27,120 --> 00:03:30,440
+the website.
+
+43
+00:03:31,280 --> 00:03:39,480
+Let's say here if you search like
+image
+
+44
+00:03:36,760 --> 00:03:43,000
+pixel
+amnest so see some of the example I can
+
+45
+00:03:42,159 --> 00:03:47,000
+show
+you let's say this image so if I zoom
+
+46
+00:03:46,319 --> 00:03:53,920
+this
+image see you can see there are some
+
+47
+00:03:50,799 --> 00:03:59,040
+pixel value okay and the pixel value uh
+uh range is 0 to 255 so whenever it is
+
+48
+00:03:56,400 --> 00:04:02,239
+having some number so you can see there
+is a color but whenever it doesn't have
+
+49
+00:04:00,640 --> 00:04:07,120
+any number that means zero it is a white
+background so that's why image has some
+
+50
+00:04:04,239 --> 00:04:11,280
+pixel pixel value and this pixel value
+we have to give it to the model but what
+
+51
+00:04:09,280 --> 00:04:14,959
+the problem if you are using machine
+learning model machine learning model
+
+52
+00:04:12,560 --> 00:04:18,320
+can't understand okay can't extract the
+features let's say there three has been
+
+53
+00:04:16,560 --> 00:04:21,519
+written so this thing actually can't
+extract the machine learning model so
+
+54
+00:04:19,759 --> 00:04:29,080
+for this we use something called deep
+learning model okay we use deep learning
+
+55
+00:04:26,040 --> 00:04:33,440
+model deep
+learning deep learning And in deep
+
+56
+00:04:31,680 --> 00:04:37,960
+learning we have uh three kinds of
+neural network. We have something called
+
+57
+00:04:35,440 --> 00:04:42,360
+ANN that means artificial neural
+network.
+
+58
+00:04:40,520 --> 00:04:48,720
+Artificial
+neural
+
+59
+00:04:44,759 --> 00:04:52,759
+network. Then we have CNN that means
+convolutional neural network.
+
+60
+00:04:53,560 --> 00:05:02,680
+on
+evolutional
+
+61
+00:04:59,160 --> 00:05:06,800
+neural network then we have
+RNN that means
+
+62
+00:05:06,840 --> 00:05:14,479
+recurrent
+neural
+
+63
+00:05:10,759 --> 00:05:18,560
+network okay so this is the foundation
+of neural network so here we just try to
+
+64
+00:05:16,479 --> 00:05:22,320
+understand how to build a neural network
+so most of the time we will be using the
+
+65
+00:05:20,160 --> 00:05:26,880
+tabular kinds of data here You can also
+use the image data but the measure
+
+66
+00:05:24,479 --> 00:05:30,400
+measure actually image data you will be
+using in the CNN that means
+
+67
+00:05:28,160 --> 00:05:34,400
+convolutional neural network. Okay. So
+here you have something called con okay
+
+68
+00:05:32,639 --> 00:05:38,320
+convolution operation with the help of
+that you can extract the feature from
+
+69
+00:05:36,400 --> 00:05:41,919
+the image. So I think you know these are
+the basics I'm expecting guys because
+
+70
+00:05:40,000 --> 00:05:45,919
+this is the prerequisite you should have
+familiar with these kinds of CNN RNN
+
+71
+00:05:44,240 --> 00:05:50,800
+okay then you'll be able to understand
+the latest LLM architecture. Got it? So
+
+72
+00:05:48,800 --> 00:05:55,199
+it can extract actually features from
+the image and after that we just try to
+
+73
+00:05:52,720 --> 00:05:58,160
+pass the features to the neural network
+okay to the neural network and our
+
+74
+00:05:56,639 --> 00:06:01,840
+neural network will be working fine. So
+let me show you one CNN architecture. So
+
+75
+00:06:00,240 --> 00:06:06,280
+let's say uh there are different
+different CNN architecture. I will show
+
+76
+00:06:03,280 --> 00:06:11,440
+you let's say VG16. So VG16 one CNN
+architecture. So it has actually two
+
+77
+00:06:08,479 --> 00:06:15,039
+kinds of layer. Uh see here uh this is
+the architecture. So it has the
+
+78
+00:06:12,720 --> 00:06:18,160
+convolutional layer you can see. Okay.
+It has the convolution layer. So
+
+79
+00:06:16,400 --> 00:06:21,600
+whenever uh whenever you are passing a
+image with the help of convolutional
+
+80
+00:06:19,919 --> 00:06:25,120
+layer it is extracting the features.
+Okay. And with the convolutional layer
+
+81
+00:06:23,440 --> 00:06:29,360
+it also use something called max pooling
+and railway activation function. Then
+
+82
+00:06:27,120 --> 00:06:32,960
+once a feature extraction is done see it
+it's not like that it will only have the
+
+83
+00:06:30,960 --> 00:06:37,120
+one uh let's say layer it will have the
+multiple com layer. Okay. From the
+
+84
+00:06:35,039 --> 00:06:40,400
+multiple com layer uh it will be going
+uh your image will be going and it will
+
+85
+00:06:38,479 --> 00:06:44,560
+be extracting all the features. Okay.
+part by part and this particular
+
+86
+00:06:42,000 --> 00:06:48,160
+features uh would be is stored in the
+feature is stored and this feature is
+
+87
+00:06:46,080 --> 00:06:51,840
+stored would be passed to the actually
+dense layer that means your uh
+
+88
+00:06:50,000 --> 00:06:55,120
+artificial neural network and artificial
+neural network will try to understand
+
+89
+00:06:53,759 --> 00:06:58,800
+the features and it will give you the
+prediction at the end okay this this is
+
+90
+00:06:56,800 --> 00:07:04,160
+the entire CNN architecture I hope you
+cleared so all the CNN uh image data all
+
+91
+00:07:02,720 --> 00:07:08,960
+the video data will be passing to the
+CNN architecture now what about the RNN
+
+92
+00:07:06,720 --> 00:07:13,199
+okay RNN is the required neural network
+so here most of the time will working on
+
+93
+00:07:10,639 --> 00:07:16,319
+the text data. Okay, text data because
+text is unstructured data. Let's say
+
+94
+00:07:14,880 --> 00:07:22,800
+whenever I'm writing a sentence, let's
+say I
+
+95
+00:07:18,599 --> 00:07:26,360
+am okay, I am puppy. So this is the my
+first sentence and let's say I'm writing
+
+96
+00:07:25,280 --> 00:07:29,360
+another
+sentence.
+
+97
+00:07:29,560 --> 00:07:36,000
+Um,
+Python is a
+
+98
+00:07:36,360 --> 00:07:47,039
+programming language.
+So at the first sentence you can see we
+
+99
+00:07:43,759 --> 00:07:53,440
+have how many words? 1 2 3 and the
+second sentence we have 1 2 3 4 5. Okay.
+
+100
+00:07:51,039 --> 00:07:57,440
+Now you can see input uh dimension is
+not same. So whenever we are creating
+
+101
+00:07:55,280 --> 00:08:01,520
+any kinds of neural network let's say
+okay neural
+
+102
+00:07:59,319 --> 00:08:06,720
+network I think you know we create the
+neural network like
+
+103
+00:08:03,160 --> 00:08:11,599
+that. Okay neural network like that. So
+as per our first input okay what how
+
+104
+00:08:09,520 --> 00:08:16,960
+many uh actually layer we should have in
+the first first layer we should have
+
+105
+00:08:14,319 --> 00:08:22,400
+three three layer okay so I can remove
+one layer
+
+106
+00:08:18,759 --> 00:08:26,960
+here one neuron here okay so that means
+three input you can pass here like that
+
+107
+00:08:25,120 --> 00:08:32,320
+now when it it will come to the second
+sentence it needs actually 1 2 3 4 5
+
+108
+00:08:30,639 --> 00:08:37,200
+okay five neurons but you don't have the
+five neurons now have you seen any kinds
+
+109
+00:08:34,399 --> 00:08:41,360
+of network uh that will automatically
+create the neurons okay during uh the
+
+110
+00:08:39,200 --> 00:08:44,959
+runtime. No, you have to previously
+build that particular network. Then you
+
+111
+00:08:42,800 --> 00:08:48,720
+can pass the data. So that's why uh this
+kinds of uh text is unstructured data.
+
+112
+00:08:46,959 --> 00:08:52,080
+Okay, it doesn't have any structure. So
+we can't use this kinds of network here.
+
+113
+00:08:50,880 --> 00:08:57,519
+Okay, for this we'll be using something
+called RNN recurrent neural network RNN.
+
+114
+00:08:55,120 --> 00:09:04,560
+Okay, now let me show you one RNN uh
+network how it will look like. So
+
+115
+00:09:00,760 --> 00:09:09,360
+RNN architecture. Okay. So here is the
+RNN architecture guys. So it will be
+
+116
+00:09:06,720 --> 00:09:13,680
+working based on the time stamp. So I
+think those who have studied about the
+
+117
+00:09:11,360 --> 00:09:18,399
+RNN okay you know that inside RNN we
+have various kinds of architecture like
+
+118
+00:09:15,279 --> 00:09:22,080
+uh GRU is there LSTM is there. Okay.
+Then encoder decoder. Uh then we also
+
+119
+00:09:21,120 --> 00:09:26,160
+have something called attention
+mechanism. So uh uh because see
+
+120
+00:09:24,480 --> 00:09:29,920
+attention mechanism is the very
+important things based on that
+
+121
+00:09:27,519 --> 00:09:33,680
+transformer architecture is created and
+transformer is the core architecture
+
+122
+00:09:31,680 --> 00:09:38,000
+behind all the large language model okay
+whatever we are using nowadays so see
+
+123
+00:09:35,519 --> 00:09:43,200
+all the text has one time stamp so let's
+say when I'm talking about I am by okay
+
+124
+00:09:40,640 --> 00:09:47,279
+so I has been written at the t1 has been
+written at the t2 and uh buppy has been
+
+125
+00:09:45,279 --> 00:09:51,200
+written at the t3 so it has actually one
+time stamp okay so that's why we also
+
+126
+00:09:49,680 --> 00:09:55,120
+call it as time series data that's why
+we have to use this particular
+
+127
+00:09:52,320 --> 00:10:00,080
+architecture so that it can unroll okay
+it can unroll that time stamp okay at
+
+128
+00:09:58,080 --> 00:10:05,519
+the same time okay so this is the
+actually mechanism of RNN architecture
+
+129
+00:10:02,080 --> 00:10:10,959
+now I think you got it so here whenever
+actually we used to use this at the
+
+130
+00:10:07,040 --> 00:10:16,560
+let's say model okay so there was a uh
+uh I mean domain was proposed called
+
+131
+00:10:13,480 --> 00:10:20,560
+MLOps okay MLOps MLOps was proposed
+because I we already know that if I want
+
+132
+00:10:18,720 --> 00:10:24,079
+to create any uh end to end application
+production application then we have to
+
+133
+00:10:22,240 --> 00:10:27,920
+opt optimize that application. Okay. And
+for optimization what we need? We need
+
+134
+00:10:26,000 --> 00:10:31,839
+some certain uh structured actually
+guidelines through certain certain some
+
+135
+00:10:29,920 --> 00:10:35,200
+actually tools and framework so that we
+can automate most of the task. Got it.
+
+136
+00:10:33,760 --> 00:10:39,519
+In MLOps also we do the same thing.
+Let's say whenever we um train any kinds
+
+137
+00:10:37,440 --> 00:10:42,760
+of model what we do we usually do the
+data collection. Okay. Data collection
+
+138
+00:10:41,600 --> 00:10:48,760
+we
+do data collection we do. Okay. Then we
+
+139
+00:10:46,079 --> 00:10:55,560
+do something called uh uh
+EDA. Okay. Then we do feature
+
+140
+00:10:52,680 --> 00:11:01,120
+engineering. Okay. Then we do model
+training. Then we do model
+
+141
+00:10:58,440 --> 00:11:03,360
+evaluation. Okay. Then after that we do
+the
+
+142
+00:11:03,560 --> 00:11:11,800
+deployment. Okay. Then after that we do
+the
+
+143
+00:11:09,000 --> 00:11:15,120
+inference. Then after that what we
+do? We
+
+144
+00:11:16,200 --> 00:11:23,200
+monitor monitor the app. Okay. And to
+build this entire pipeline, okay, to
+
+145
+00:11:20,480 --> 00:11:26,880
+build this entire pipeline, we need some
+uh certain MLOps tool. And I think we
+
+146
+00:11:25,279 --> 00:11:32,240
+know that inside MLOps tool, we have
+different different tools like we have
+
+147
+00:11:28,480 --> 00:11:40,600
+uh MLflow. Okay, MLflow is there, we
+have DVC is there, okay, uh then we have
+
+148
+00:11:35,519 --> 00:11:44,720
+uh Docker is there, we have cube flow is
+there, cube flow is there, okay and so
+
+149
+00:11:43,440 --> 00:11:48,720
+on. So with the help of these are the
+MLOPS tool, we build the entire
+
+150
+00:11:46,240 --> 00:11:52,640
+pipeline. Okay. So from the data ination
+itself uh from the uh till the
+
+151
+00:11:50,800 --> 00:11:58,480
+deployment till the monitoring we try to
+add some MLOps tools so that we can
+
+152
+00:11:54,800 --> 00:12:02,839
+automate most of the task. Got it? Now
+when LM was introduced okay that means
+
+153
+00:12:01,200 --> 00:12:07,519
+large language model
+LLM. Okay. So people started using the
+
+154
+00:12:06,000 --> 00:12:11,360
+large language model that time because
+we know that so let's say whenever we
+
+155
+00:12:09,760 --> 00:12:15,839
+didn't have this kinds of large language
+model how people used to uh do the NLP
+
+156
+00:12:14,160 --> 00:12:19,920
+kinds of task. And you know that in NLP
+we have various kinds of task. We have
+
+157
+00:12:17,680 --> 00:12:24,079
+text classification, we have language
+translation. Okay. Then we have
+
+158
+00:12:22,160 --> 00:12:28,560
+sentiment analysis. That means whatever
+task we uh do nowadays. Okay. Over the
+
+159
+00:12:26,880 --> 00:12:32,880
+chat GPT or over the large language
+model all kinds of task we used to also
+
+160
+00:12:30,720 --> 00:12:36,160
+perform. Okay. But for this we used to
+use something called individual model.
+
+161
+00:12:34,880 --> 00:12:41,120
+So if you go to the hugging face
+platform. So there is a platform called
+
+162
+00:12:38,320 --> 00:12:44,800
+hugging face. Okay. Hugging face
+platform. So it has actually all kinds
+
+163
+00:12:43,360 --> 00:12:48,480
+of models. Okay. Let's see if I go to
+the model section. Let's say you only
+
+164
+00:12:46,880 --> 00:12:51,680
+want to do text classification. You can
+filter out. So these are the models are
+
+165
+00:12:50,160 --> 00:12:55,600
+available for the text classification.
+And see you can see we have fine B, we
+
+166
+00:12:53,839 --> 00:12:59,360
+have distilled B. Okay. So these are the
+model we used to use. So those who have
+
+167
+00:12:57,680 --> 00:13:03,680
+already worked with the traditional NLP
+I think you know that yes or no got it.
+
+168
+00:13:01,920 --> 00:13:07,120
+So these are this is called actually LM
+model that means language model only.
+
+169
+00:13:05,440 --> 00:13:10,880
+But later on actually researcher
+introduced something called large
+
+170
+00:13:08,639 --> 00:13:15,040
+language model and multimodel that means
+the GPT then mal whatever model actually
+
+171
+00:13:13,360 --> 00:13:20,240
+we usually use nowadays let's say if I'm
+talking about llama this model is also
+
+172
+00:13:16,880 --> 00:13:24,079
+available over the hingface platform and
+what is the main advantage to use the
+
+173
+00:13:21,920 --> 00:13:28,160
+model it can perform multitask that mean
+whatever task we usually do inside NLP
+
+174
+00:13:26,480 --> 00:13:33,760
+all the task you can perform with a
+single model okay and it will uh work
+
+175
+00:13:31,600 --> 00:13:38,000
+like a human okay that is the main
+advantage here because it is
+
+176
+00:13:35,760 --> 00:13:43,920
+um actually I mean huge amount of
+parameter size all right so that's why
+
+177
+00:13:41,360 --> 00:13:48,880
+this model got big okay model got big
+model complexity actually increases so
+
+178
+00:13:46,480 --> 00:13:53,680
+that's why MLOps fails here most of the
+time okay MLOPS fails here that means
+
+179
+00:13:51,279 --> 00:13:58,160
+whatever traditional MLOps pipeline we
+used to use okay in the machine learning
+
+180
+00:13:55,519 --> 00:14:01,639
+or deep learning so that will not work
+with respect to the large language model
+
+181
+00:13:59,760 --> 00:14:06,320
+for this we have to use something called
+LAOPS okay LAPS large language model
+
+182
+00:14:04,320 --> 00:14:12,440
+operation That's why this concept has
+been came. So here we use some certain
+
+183
+00:14:09,199 --> 00:14:17,760
+frameworks and tools like we have
+langen okay for the orchestration we
+
+184
+00:14:14,800 --> 00:14:21,279
+have lama index okay for the
+orchestration. So see you can't
+
+185
+00:14:19,519 --> 00:14:24,800
+implement the LLM application with the
+help of TensorFlow and PyTorch. For this
+
+186
+00:14:23,440 --> 00:14:29,680
+you have to use the line and lama
+matrix. You also need to use some vector
+
+187
+00:14:27,560 --> 00:14:34,079
+database. Okay. You can't use the
+traditional database. Then you have to
+
+188
+00:14:32,160 --> 00:14:38,760
+use uh nowadays hugging phase also has
+some functionality like uh you can also
+
+189
+00:14:36,639 --> 00:14:45,360
+perform the quantization with that of
+loader q loader. Okay these are the
+
+190
+00:14:42,720 --> 00:14:51,480
+thing. Then um there are some platform
+are also available like AWS
+
+191
+00:14:48,680 --> 00:14:59,519
+bedrock. Okay,
+bedrock. So let me write down AWS
+
+192
+00:14:55,480 --> 00:15:06,279
+bedrock. It's a LMOS platform. Uh that
+means complete uh generating task you
+
+193
+00:15:01,760 --> 00:15:14,079
+can perform. Then we have GCP vertex
+AI. Vertex AI. Okay. Then we have
+
+194
+00:15:10,519 --> 00:15:19,480
+Azure Open AI. Okay, these are the LM
+ops platform. LM
+
+195
+00:15:17,320 --> 00:15:24,160
+ops
+platform. Okay,
+
+196
+00:15:21,480 --> 00:15:28,240
+platform. So that's why LLM apps came in
+the market. Okay. So when we didn't have
+
+197
+00:15:26,480 --> 00:15:31,839
+the LLM large language model, people
+used to use machine learning. But
+
+198
+00:15:30,240 --> 00:15:35,600
+whenever you are working with the JA
+that mean large language model, you have
+
+199
+00:15:33,120 --> 00:15:39,440
+to use LLM apps here. Okay. And in this
+program, we'll be learning uh some uh
+
+200
+00:15:37,519 --> 00:15:42,639
+tools of the LMO ops and we'll be also
+focusing on the Limops platform and
+
+201
+00:15:41,360 --> 00:15:47,760
+we'll be building some amazing
+application. Okay. So yes guys, this is
+
+202
+00:15:44,800 --> 00:15:53,519
+the entire evaluation of the uh your
+MLOps to LOPS. Okay. Now I think you
+
+203
+00:15:50,720 --> 00:15:58,880
+understood. So here in the LM ops we
+more focus on the optimization of the
+
+204
+00:15:55,800 --> 00:16:02,800
+application and how we can build it
+scalable. Okay, we just try to take care
+
+205
+00:16:01,040 --> 00:16:07,199
+these are the part because at the end uh
+large language models are big and if you
+
+206
+00:16:04,959 --> 00:16:10,639
+have actually low configuration system
+you can't download uh that in your
+
+207
+00:16:09,199 --> 00:16:14,639
+system and you can't do the finetuning
+and you can't actually optimize your
+
+208
+00:16:12,639 --> 00:16:18,560
+application for this definitely you have
+to utilize these are the LM ops tools
+
+209
+00:16:16,480 --> 00:16:22,000
+okay that's why it is required so yes
+guys this is all about I hope you liked
+
+210
+00:16:20,160 --> 00:16:24,160
+it uh so thank you so much guys for
+watching
+

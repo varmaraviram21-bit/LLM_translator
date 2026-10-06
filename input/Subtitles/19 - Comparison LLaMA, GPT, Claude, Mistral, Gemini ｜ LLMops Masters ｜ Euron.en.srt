@@ -1,0 +1,249 @@
+1
+00:00:00,400 --> 00:00:06,960
+Hi guys, in this video we'll see some
+comparison between some large language
+
+2
+00:00:04,720 --> 00:00:11,360
+model. So you can see I have listed down
+some name. So Llama is there, GPT is
+
+3
+00:00:09,840 --> 00:00:15,280
+there, cloud is there, Mistral is there
+and Germany is there. Okay. So you can
+
+4
+00:00:13,440 --> 00:00:20,640
+see some comparison. So the latest
+version of Y is Llama is having I think
+
+5
+00:00:18,080 --> 00:00:26,320
+Llama recently updated one uh one more
+version Llama 4. So you can consider
+
+6
+00:00:22,720 --> 00:00:32,000
+Llama 4. Then GPT 4 is there, Cloud is
+there, Mistral you can see. Okay. and
+
+7
+00:00:28,560 --> 00:00:36,239
+the Germany 1.5 Pro flash. Then the
+model type you can see uh it's a decoder
+
+8
+00:00:34,480 --> 00:00:40,879
+only transformer model. It is also
+decoder only transformer model. And the
+
+9
+00:00:38,239 --> 00:00:46,239
+cloud you can see it's a constitutional
+AI plus transformer. They're using the
+
+10
+00:00:43,360 --> 00:00:51,440
+architecture. The mistral mixer of
+experts okay and dense okay dense layer
+
+11
+00:00:48,960 --> 00:00:56,239
+they are connected with and the Germany
+multimodel transformer text image audio
+
+12
+00:00:53,520 --> 00:01:01,359
+and quote open source wise uh yes llama
+is open source. Uh this GPT is not open
+
+13
+00:00:59,039 --> 00:01:06,240
+source. Uh cloud is also not open
+source. Mistral is open source. Germany
+
+14
+00:01:03,520 --> 00:01:11,840
+is also not open source. Okay. Then size
+you can see this is the size size of the
+
+15
+00:01:08,640 --> 00:01:19,840
+model. Uh you can see sizes available.
+It is having 8 billion 70 billion GPT
+
+16
+00:01:15,799 --> 00:01:26,080
+3.54 then uh small and large then uh 7
+billion and uh 12.9 billion and not
+
+17
+00:01:23,280 --> 00:01:34,799
+disclosed. Okay. Uh then context window
+wise it is having u 8k to 33 uh 3 uh 2k
+
+18
+00:01:30,159 --> 00:01:40,240
+actually context limit then 4k to 128k
+then 200k okay then this is the context
+
+19
+00:01:37,520 --> 00:01:44,880
+and up to 1 million tokens okay then
+finetuning wise supported um uh if you
+
+20
+00:01:43,439 --> 00:01:49,200
+want to there's a fine tune with the
+help of parameter efficient fine tuning
+
+21
+00:01:46,399 --> 00:01:53,439
+like loa you can do it uh proprietary
+finetuning only that means you can only
+
+22
+00:01:50,880 --> 00:01:58,159
+fine tune in their platform only not yet
+you can't fine-tune the cloud Cloudy uh
+
+23
+00:01:55,680 --> 00:02:03,520
+then uh yeah you can also do it uh and
+Germany you can also do uh then uh
+
+24
+00:02:00,880 --> 00:02:07,200
+tooling wise hugging face platform you
+can use to access the model and you can
+
+25
+00:02:05,600 --> 00:02:10,959
+use openi API to access this model
+cloudy API you have to use this model is
+
+26
+00:02:09,679 --> 00:02:15,599
+also available over the hugging face
+transformer giny API okay you have to
+
+27
+00:02:13,120 --> 00:02:20,640
+use then local inference wise yes you
+can do the local inference of llama GPT
+
+28
+00:02:18,080 --> 00:02:25,840
+you can't do cloudy you also can't do
+mist you can't do and gy you can't do do
+
+29
+00:02:23,280 --> 00:02:29,360
+that then multi Model it is a text only
+model. Uh this is actually vision
+
+30
+00:02:27,760 --> 00:02:34,720
+supports. Then it is also having
+multimodel. Uh this is al also text only
+
+31
+00:02:32,080 --> 00:02:38,400
+model and image audio code text model.
+Okay. That means multimodel. Then unique
+
+32
+00:02:36,640 --> 00:02:43,440
+strength you can see best OS for the
+finetuning industryleading performance
+
+33
+00:02:40,080 --> 00:02:49,519
+tools. Best uh long reasoning. Okay.
+Then you can see first OS MO models and
+
+34
+00:02:47,120 --> 00:02:54,160
+unmatched context plus multiodality.
+Then pricing wise it is free. It is
+
+35
+00:02:51,519 --> 00:02:57,920
+paid. Again it is paid. It is free again
+it is paid. Okay. So these are some
+
+36
+00:02:55,760 --> 00:03:02,080
+comparison uh between some large
+language model. There are so many large
+
+37
+00:03:00,160 --> 00:03:06,239
+language models are available over the
+internet. So let me show you one
+
+38
+00:03:03,720 --> 00:03:11,360
+website. So if you go to Google and
+search for open
+
+39
+00:03:07,959 --> 00:03:15,120
+LLM okay open LLM GitHub. So there is
+one amazing GitHub actually uh you will
+
+40
+00:03:13,200 --> 00:03:20,000
+get be getting. So this person has
+collected all the large language model.
+
+41
+00:03:17,280 --> 00:03:23,440
+Okay. And he has created one GitHub repo
+named open lm and he has also listed
+
+42
+00:03:22,080 --> 00:03:26,879
+down you can see the model name release
+date checkpoints paper and blocks. If
+
+43
+00:03:25,280 --> 00:03:30,560
+you want to understand this particular
+uh let's say model you can refer the
+
+44
+00:03:28,640 --> 00:03:34,000
+blog and the parameter size context and
+the license. See all kinds of large
+
+45
+00:03:32,239 --> 00:03:37,040
+language models are available. Okay. So
+you can check it out guys. Uh because
+
+46
+00:03:35,599 --> 00:03:40,000
+it's not possible to remember all the
+model name. You just keep this
+
+47
+00:03:38,480 --> 00:03:42,959
+particular GitHub with you. Just try to
+bookmark and whenever you require
+
+48
+00:03:41,599 --> 00:03:46,400
+anything just try to come here and try
+to see the paper and blogs. Okay. And
+
+49
+00:03:44,640 --> 00:03:51,840
+just try to use the model. So yes guys,
+this is all about from this video. I
+
+50
+00:03:48,000 --> 00:03:51,840
+hope you liked it. Thank you so much.
+

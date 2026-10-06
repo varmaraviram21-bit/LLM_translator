@@ -1,0 +1,1290 @@
+1
+00:00:01,520 --> 00:00:07,200
+Hi everyone. So guys, in this video
+we'll be learning about how we can
+
+2
+00:00:05,359 --> 00:00:12,080
+implement rag application with the help
+of vertx AI. So as of now we saw how we
+
+3
+00:00:10,160 --> 00:00:14,880
+can use model guardian. Uh that means
+how we can access different different
+
+4
+00:00:13,440 --> 00:00:18,640
+kinds of model on top of that. How we
+can perform the inference. But let's say
+
+5
+00:00:16,640 --> 00:00:21,199
+if you have some custom data and with
+the help of that custom data you want to
+
+6
+00:00:20,000 --> 00:00:23,920
+create a knowledge base and you want to
+connect your large language model there.
+
+7
+00:00:22,640 --> 00:00:27,359
+Okay. And you want to perform the query
+operation on top of it. So how we can
+
+8
+00:00:26,080 --> 00:00:31,039
+perform it and this is called actually
+rag. I I think I already explained okay
+
+9
+00:00:29,279 --> 00:00:33,840
+in my previous video. So if you're not
+sure about the rack guys first of all
+
+10
+00:00:32,480 --> 00:00:37,280
+check those video then you will be able
+to understand okay what I'm trying to
+
+11
+00:00:35,200 --> 00:00:41,440
+implement here. So that means uh let's
+say here I'll be using my custom data
+
+12
+00:00:39,120 --> 00:00:45,040
+and with that custom data what I will do
+I'll create a knowledge base okay and
+
+13
+00:00:43,760 --> 00:00:48,239
+I'll just try to connect my large
+language model there then I'll be
+
+14
+00:00:46,480 --> 00:00:50,879
+performing the query operation on top of
+my data the data actually I have
+
+15
+00:00:49,520 --> 00:00:54,800
+uploaded this is the thing we'll be
+implementing and here technology wise
+
+16
+00:00:53,120 --> 00:00:58,239
+actually will be using the vertx entire
+vertex platform that means here
+
+17
+00:00:56,320 --> 00:01:02,000
+everything will be using uh Google cloud
+services okay we are not going to use
+
+18
+00:00:59,680 --> 00:01:06,159
+any third party services that means to
+store our data we'll be using Google
+
+19
+00:01:03,600 --> 00:01:10,400
+cloud bucket and to store our embedding
+we'll be using vector store okay vector
+
+20
+00:01:08,479 --> 00:01:13,200
+resto service service from the vertxi
+this is one of the vector database they
+
+21
+00:01:12,240 --> 00:01:17,040
+have created okay this is called
+actually vector store so we'll be using
+
+22
+00:01:15,040 --> 00:01:20,640
+all the google cloud service only not
+any other service okay in this video so
+
+23
+00:01:18,880 --> 00:01:24,080
+for this guys you can see I prepared one
+notebook in the collab enterprise so
+
+24
+00:01:22,560 --> 00:01:27,040
+first of all try to connect the notebook
+after that you can check with the help
+
+25
+00:01:25,520 --> 00:01:29,680
+of okay command and if it is giving the
+okay message that means notebook is
+
+26
+00:01:28,320 --> 00:01:33,200
+running then the first thing what you
+have to do we have to install these are
+
+27
+00:01:31,600 --> 00:01:36,799
+the library as I have told you we'll be
+using some custom data I'm going to use
+
+28
+00:01:35,280 --> 00:01:40,799
+PDF document that's why I'm installing
+this pi PDF2 okay this library then
+
+29
+00:01:38,960 --> 00:01:44,159
+Google cloud AI platform because if I
+want to use the vertx A I need to
+
+30
+00:01:42,400 --> 00:01:47,200
+install this package then I already told
+you we'll be using custom data that
+
+31
+00:01:45,759 --> 00:01:51,520
+means custom document and to store this
+custom document I'll be using uh Google
+
+32
+00:01:49,360 --> 00:01:56,479
+cloud bucket I think you know Google
+cloud also provides bucket service let
+
+33
+00:01:53,280 --> 00:02:00,880
+me show you so if you just open Google
+cloud and search for bucket so this is
+
+34
+00:01:59,119 --> 00:02:03,680
+the bucket so here you can create
+different different bucket and inside a
+
+35
+00:02:02,240 --> 00:02:09,000
+bucket you can store the data see I
+already created one bucket called start
+
+36
+00:02:05,079 --> 00:02:14,239
+content 2024. Inside that I'm having one
+documents. I'll tell you how to uh
+
+37
+00:02:11,680 --> 00:02:17,840
+upload this document here. As of now
+just try to consider uh we'll be using
+
+38
+00:02:16,160 --> 00:02:20,640
+this bucket services to store my
+content. Okay. And no need to create
+
+39
+00:02:19,280 --> 00:02:23,280
+manually. It will automatically create.
+I have already written the code for it.
+
+40
+00:02:22,160 --> 00:02:26,400
+So these are the package you have to
+install for me. I already installed
+
+41
+00:02:24,800 --> 00:02:29,920
+everything. So I'm not going to install
+again. Now see you have to import. These
+
+42
+00:02:28,160 --> 00:02:33,120
+are the library right now. So here I'm
+importing storage from google.cloud
+
+43
+00:02:32,000 --> 00:02:37,120
+because I told you we'll be using
+bucket. And to use the bucket I need
+
+44
+00:02:34,560 --> 00:02:41,599
+this actually function. Then I'm also
+importing text embedding model from the
+
+45
+00:02:38,959 --> 00:02:44,319
+vert.xi language model because here we
+have to perform the embedding
+
+46
+00:02:42,720 --> 00:02:47,760
+generation. And to generate the
+embedding I need some embedding model.
+
+47
+00:02:46,000 --> 00:02:51,840
+And here I'm going to use Google
+embedding model. Okay. From the vertx ai
+
+48
+00:02:50,319 --> 00:02:55,280
+from the model garden that's why I have
+imported this text embedding model
+
+49
+00:02:53,360 --> 00:02:59,440
+function. Then I also imported a
+platform pi pdf and these are the
+
+50
+00:02:57,200 --> 00:03:03,920
+library I also imported here. And here
+I'm using UI ID. Okay. Why I'm using
+
+51
+00:03:01,680 --> 00:03:08,720
+UID? Let me tell you see there is a
+reason actually I'm using UI ID. See if
+
+52
+00:03:06,080 --> 00:03:12,959
+you're using Vert.x AI this rag would be
+slightly different. Okay slightly
+
+53
+00:03:10,879 --> 00:03:15,840
+different. That means let's say whatever
+documents you will be publishing. Let's
+
+54
+00:03:14,400 --> 00:03:19,440
+say I will be publishing one statistics
+PDF I'm having. Let me show you the
+
+55
+00:03:17,599 --> 00:03:23,120
+statistics PDF. So guys as you can see
+this is the statistics PDF actually I'm
+
+56
+00:03:21,440 --> 00:03:26,800
+having. So this particular data actually
+I'll be using as my custom data. Now
+
+57
+00:03:25,280 --> 00:03:30,879
+what will happen? First of all I have to
+extract the documents from the PDF. Yes
+
+58
+00:03:29,040 --> 00:03:35,519
+or no? So after extracting what I will
+get? I will get uh different different
+
+59
+00:03:33,200 --> 00:03:40,640
+documents. I think you know I'll get
+different different documents. That
+
+60
+00:03:36,640 --> 00:03:46,080
+means doc one. Okay. Then doc two, doc
+two and so on. Now what will happen this
+
+61
+00:03:42,959 --> 00:03:49,440
+document I have to convert to embeddings
+as well. That means it would be
+
+62
+00:03:47,360 --> 00:03:54,200
+converted to embeddings. So let's say
+you will get some vector here. Let's say
+
+63
+00:03:51,720 --> 00:03:59,040
+0.29 comma
+0.55 0.88 and so on. Let's say this is
+
+64
+00:03:57,120 --> 00:04:04,239
+the vector representation of this doc
+one and doc two and so on. Let's
+
+65
+00:04:01,720 --> 00:04:06,560
+say I'll I'll just create some dummy
+vector
+
+66
+00:04:06,760 --> 00:04:14,319
+here. Now here what I want to do with
+the help of this UI ID I want to assign
+
+67
+00:04:12,080 --> 00:04:18,160
+some unique ID. Let's say the document
+one it has extracted. I will assign one
+
+68
+00:04:16,320 --> 00:04:22,960
+unique ID. Let's say this is the unique
+ID. Let's say 1 2 1 0. Let's say this is
+
+69
+00:04:21,440 --> 00:04:27,759
+the unique ID. Okay. It has assigned to
+the doc one. Then the doc two it will
+
+70
+00:04:24,800 --> 00:04:31,919
+assign another unique ID. Let's say 1 2
+1. Okay. Now what will happen? This
+
+71
+00:04:30,320 --> 00:04:35,680
+unique ID also would be assigned in the
+vector because this vector is
+
+72
+00:04:33,919 --> 00:04:40,320
+representing this documentation. Yes or
+no? Okay. That's why this ID would be
+
+73
+00:04:37,440 --> 00:04:44,720
+there 1 2 1 0. Then this ID would be
+also there because this vector is
+
+74
+00:04:41,680 --> 00:04:47,360
+representing this document. So 1 2 1 1.
+Now what will happen? Let's say whenever
+
+75
+00:04:46,000 --> 00:04:51,040
+you will perform the similarity s
+operation that time what happens
+
+76
+00:04:49,199 --> 00:04:54,639
+actually it will return the relevant
+answer yes or no. I think you know
+
+77
+00:04:52,639 --> 00:04:57,280
+whenever you implement any kinds of rag
+whenever you perform similarity
+
+78
+00:04:55,919 --> 00:05:02,560
+operation it will give you some relevant
+answer. Okay, relevant uh relevant
+
+79
+00:04:59,759 --> 00:05:05,120
+answer you will get. Okay, and from
+where you will get the relevant answer
+
+80
+00:05:03,840 --> 00:05:09,280
+from the documents only you will get the
+relevant answer the documents you are
+
+81
+00:05:06,479 --> 00:05:12,800
+having. Okay, now let's say it will give
+you this relevant answer. Let's say doc
+
+82
+00:05:10,960 --> 00:05:15,520
+one whenever it will give you doc one
+relevant answer. That means it will
+
+83
+00:05:14,080 --> 00:05:19,440
+return the vector because your model
+will only return the numbers not the
+
+84
+00:05:17,440 --> 00:05:23,600
+text. Okay. And this particular number
+will map where in this document that
+
+85
+00:05:21,919 --> 00:05:26,800
+means this document is representing this
+vector. That means whenever your model
+
+86
+00:05:24,880 --> 00:05:31,680
+is generating this vector that means it
+will map this documents that means the
+
+87
+00:05:29,120 --> 00:05:35,520
+text. Okay, how with the help of this UI
+id okay with the help of this UI ID. So
+
+88
+00:05:33,680 --> 00:05:39,039
+it will look for where this UI ID is
+present that documents actually it will
+
+89
+00:05:36,960 --> 00:05:43,360
+show you as a relevant answer. Okay, now
+I think it is clear why I'm using this
+
+90
+00:05:41,039 --> 00:05:48,720
+UI ID to give uh to assign actually
+unique ID like uh in front of my
+
+91
+00:05:46,320 --> 00:05:52,400
+documents and in front of my vector
+embeddings. Okay, now I think it is
+
+92
+00:05:50,479 --> 00:05:55,120
+clear. Now let me clear my board. Now
+the next thing what you have to do guys
+
+93
+00:05:53,680 --> 00:05:59,520
+you have to initialize some of the
+variable. Now see if you are doing this
+
+94
+00:05:57,680 --> 00:06:02,479
+project from the Google collab first of
+all you have to authenticate with your
+
+95
+00:06:01,039 --> 00:06:05,680
+G-Cloud and how to authenticate I
+already shared you two code I think
+
+96
+00:06:04,080 --> 00:06:09,680
+remember two configuration code I shared
+with you in my like vertx demo session
+
+97
+00:06:08,400 --> 00:06:13,280
+so you can refer the notebook and you
+can first of all authenticate with your
+
+98
+00:06:10,960 --> 00:06:16,639
+Google cloud okay you are not doing the
+authentication it won't be working I'm
+
+99
+00:06:15,039 --> 00:06:19,039
+running from my collab enterprise that's
+why I don't need to do the
+
+100
+00:06:17,520 --> 00:06:23,360
+authentication so if you're running from
+the collab Google collab so you have to
+
+101
+00:06:21,199 --> 00:06:26,479
+activate this line actually project so
+you have to give the project ID here how
+
+102
+00:06:25,120 --> 00:06:29,680
+to collect the project ID. This is the
+project ID. Got it? So here I'm running
+
+103
+00:06:28,319 --> 00:06:33,199
+from the collab enterprise. So I don't
+need this variable. I'll just try to
+
+104
+00:06:31,440 --> 00:06:38,880
+comment it out. So here what I need? I
+need the location and this is my
+
+105
+00:06:35,960 --> 00:06:42,319
+location. Then PDF path. So where you
+have to upload the PDF. So in the files
+
+106
+00:06:40,880 --> 00:06:46,160
+actually you have to upload the PDF. Let
+me show you. So here you can right click
+
+107
+00:06:44,000 --> 00:06:49,120
+and upload and try to select the PDF.
+Whatever PDF you are having just try to
+
+108
+00:06:47,600 --> 00:06:52,000
+open it here. It will automatically
+upload here. See for me I have already
+
+109
+00:06:50,400 --> 00:06:55,919
+uploaded and these two file would be
+generated as of now. See I already
+
+110
+00:06:54,240 --> 00:07:00,080
+executed this project okay that's why
+all the artifacts you can see okay but
+
+111
+00:06:58,080 --> 00:07:03,280
+for you it would be empty initially so
+this two file would be created how it
+
+112
+00:07:01,759 --> 00:07:07,120
+will be created I'll tell you as of now
+just try to consider we have uploaded
+
+113
+00:07:04,880 --> 00:07:10,800
+the statistics of PDF file got it then
+you have to give the bucket name so you
+
+114
+00:07:09,360 --> 00:07:13,599
+can give any kinds of bucket name and
+make sure this bucket name should be
+
+115
+00:07:11,919 --> 00:07:17,039
+unique so this bucket would be created
+automatically in the bucket section see
+
+116
+00:07:15,039 --> 00:07:20,319
+it is already created for me again this
+would be created automatically you don't
+
+117
+00:07:18,319 --> 00:07:24,240
+need to create it manually then here you
+have to give embed file path what is
+
+118
+00:07:22,400 --> 00:07:29,039
+embed file path Because see I already
+told you uh first of all we have to
+
+119
+00:07:26,319 --> 00:07:31,919
+extract the documents from my PDF. Then
+what we have to do we have to generate
+
+120
+00:07:30,319 --> 00:07:35,520
+the embedding as well with respect to
+the documents and these documents and
+
+121
+00:07:33,680 --> 00:07:38,560
+this embedding I I'm going to save in a
+JSON file. Okay that's why I'm just
+
+122
+00:07:37,199 --> 00:07:43,319
+creating some JSON file. You can see
+these two JSON file I'm creating. Okay.
+
+123
+00:07:40,880 --> 00:07:47,759
+Starts embedding dojson and start
+sentence.json. Inside sentence JSON it
+
+124
+00:07:45,759 --> 00:07:52,800
+will store all the documents that is the
+English text and inside embedding it
+
+125
+00:07:49,840 --> 00:07:56,240
+will store all the uh your embedding.
+Okay, embedding of the sentence that
+
+126
+00:07:54,479 --> 00:07:59,440
+means whatever let's say documents you
+are having that means whatever documents
+
+127
+00:07:57,759 --> 00:08:03,199
+you have okay with respect to that it
+will store the embeddings as well okay
+
+128
+00:08:00,960 --> 00:08:06,479
+with the unique ID so that is the thing
+then you have to give the index name
+
+129
+00:08:04,479 --> 00:08:10,560
+index name means let's say here we'll be
+using vector search now and inside
+
+130
+00:08:08,160 --> 00:08:13,520
+vector search we we just create a index
+the way actually we used to create the
+
+131
+00:08:11,759 --> 00:08:17,199
+pine code index I remember we create
+index here so this is the index name it
+
+132
+00:08:15,280 --> 00:08:19,840
+will automatically create that index now
+here I've written a function this
+
+133
+00:08:18,479 --> 00:08:23,039
+function will extract the sentence from
+the PDF so it will take the PDF path and
+
+134
+00:08:21,759 --> 00:08:26,240
+it will give you the sentence That means
+the all the documents it will give you.
+
+135
+00:08:24,720 --> 00:08:29,039
+Then I have written some of the helper
+function guys. You can see generate text
+
+136
+00:08:27,680 --> 00:08:31,840
+embedding. That means this function will
+generate the text embedding. It will
+
+137
+00:08:30,479 --> 00:08:35,519
+take the sentence and it will generate a
+text embedding with the help of text
+
+138
+00:08:33,599 --> 00:08:40,080
+embedding model. You can see I'm using
+text embedding geko model. Uh so this is
+
+139
+00:08:37,680 --> 00:08:45,760
+the model guys text embedding geko 001.
+So this model is available in the model
+
+140
+00:08:42,399 --> 00:08:48,720
+garden uh in vertxi. Got it? Then I have
+written another function generate and
+
+141
+00:08:47,440 --> 00:08:53,519
+save embedding that means that means
+this function will actually add the
+
+142
+00:08:50,320 --> 00:08:57,839
+unique ID in front of your sentence that
+means documents and in front of your uh
+
+143
+00:08:56,320 --> 00:09:01,360
+embeddings that mean vector embeddings
+okay that means it will generate this
+
+144
+00:08:59,519 --> 00:09:05,760
+both file okay and you will it will save
+as a it will save as a JSON file you can
+
+145
+00:09:03,600 --> 00:09:08,959
+see here I'm doing it I'm first of all
+actually creating my embedding okay and
+
+146
+00:09:07,600 --> 00:09:12,640
+I'm adding the unique ID I'm also
+creating the sentence I'm adding the
+
+147
+00:09:10,160 --> 00:09:15,600
+unique ID then I'm saving in a JSON file
+okay this is the thing actually we are
+
+148
+00:09:13,920 --> 00:09:21,600
+doing that means This function is
+responsible for creating these two file
+
+149
+00:09:18,160 --> 00:09:24,720
+and it will store uh your sentences and
+it will store your documents as well as
+
+150
+00:09:23,120 --> 00:09:28,959
+the embedding with the unique ID. Okay,
+that's it. Then there is another
+
+151
+00:09:26,320 --> 00:09:34,000
+function I created called upload file.
+That means after uh let's say generating
+
+152
+00:09:31,040 --> 00:09:38,720
+this file, I have to upload this start
+sentence dojson in the bucket. And how I
+
+153
+00:09:36,959 --> 00:09:42,480
+will push to the bucket, we'll be using
+this function upload file. Now you can
+
+154
+00:09:40,240 --> 00:09:45,680
+see if you go to the bucket section, so
+this file is already present. Okay. So
+
+155
+00:09:44,320 --> 00:09:48,800
+if you want to push any kinds of file
+you can use this function that means we
+
+156
+00:09:47,440 --> 00:09:52,240
+created some helper function. This
+helper function will help me to do
+
+157
+00:09:50,399 --> 00:09:55,440
+certain operation. This is the thing.
+Now here another function I have written
+
+158
+00:09:53,920 --> 00:10:00,000
+called create vector index. So this
+function will create the vector index in
+
+159
+00:09:57,680 --> 00:10:04,880
+the vector s. Okay in the vector s
+vector database and each of the
+
+160
+00:10:02,000 --> 00:10:08,800
+dimension would be 784. I think you
+remember previously we used sentence
+
+161
+00:10:06,320 --> 00:10:13,279
+transformer uh actually embedding model
+and we we used to create I think 384
+
+162
+00:10:11,920 --> 00:10:18,320
+vector representation. I think you
+remember right but if you're using this
+
+163
+00:10:15,440 --> 00:10:24,320
+uh text geko model from the uh model
+guid your vector dimension would be
+
+164
+00:10:20,839 --> 00:10:27,040
+780 so sorry 768 this is the dimension
+and you can see with the help of AI
+
+165
+00:10:25,600 --> 00:10:30,079
+platform actually library we are
+creating the index so this function will
+
+166
+00:10:28,640 --> 00:10:32,800
+automatically create the index for you
+got it then after that I'm calling these
+
+167
+00:10:31,839 --> 00:10:36,160
+are the function you can see first of
+all I'm calling generate and save the
+
+168
+00:10:34,000 --> 00:10:39,839
+vector I'm giving my PDF path sentence
+file path as well as the embedding file
+
+169
+00:10:37,920 --> 00:10:43,200
+path then I'm also uploading this file
+to my bucket that means if I execute
+
+170
+00:10:41,600 --> 00:10:46,480
+this line what will happen. It will
+create this two file. First of all, let
+
+171
+00:10:44,560 --> 00:10:49,680
+me open it. So, this is my sentence.
+That means this is my document and you
+
+172
+00:10:48,160 --> 00:10:53,760
+can see first of all, it will show you
+the unique ID. Then it will show you the
+
+173
+00:10:52,560 --> 00:10:57,279
+sentence. Okay, that means this is the
+document it has extracted from the PDF.
+
+174
+00:10:55,680 --> 00:11:00,800
+With respect to that, it has also saved
+the embeddings as well. Let me show you.
+
+175
+00:10:59,360 --> 00:11:04,240
+So, this is the embedding and here you
+also you'll see the unique ID that means
+
+176
+00:11:02,320 --> 00:11:09,040
+the same ID and now this is the
+embedding representation. Okay, I hope
+
+177
+00:11:06,800 --> 00:11:13,200
+now it is clear now. So once it is
+executed then upload file will execute
+
+178
+00:11:10,640 --> 00:11:16,320
+and it will upload this sentence dojson
+to my bucket. Now if I show you see
+
+179
+00:11:15,040 --> 00:11:20,800
+bucket would be created and inside
+bucket actually you will see this start
+
+180
+00:11:18,720 --> 00:11:24,320
+uh sentence dojson would be present.
+Okay because uh later on whenever I'll
+
+181
+00:11:22,880 --> 00:11:28,240
+perform the let's say similarity search
+operation I need that file. I need to
+
+182
+00:11:26,079 --> 00:11:31,120
+download that file with that I'll do the
+uh search operation. Okay similarity
+
+183
+00:11:29,600 --> 00:11:34,880
+search operation that is the thing. Now
+the next thing what we'll be doing we'll
+
+184
+00:11:33,040 --> 00:11:37,839
+be creating the vector index. that means
+we'll be creating the index and inside
+
+185
+00:11:36,480 --> 00:11:41,360
+index actually we'll be storing all of
+my vector okay so here you can see I'm
+
+186
+00:11:39,920 --> 00:11:44,959
+giving the bucket name that means from
+the bucket name it will load this file
+
+187
+00:11:43,519 --> 00:11:49,120
+okay it will load this file that means
+the sentence file so sentence file it
+
+188
+00:11:47,600 --> 00:11:52,640
+will load then it will also take the
+index name and with the help of actually
+
+189
+00:11:51,040 --> 00:11:56,240
+that embedding model it will generate
+the embeddings of that documents the
+
+190
+00:11:55,040 --> 00:11:59,920
+documents actually we are having and it
+will store to the vector database that
+
+191
+00:11:58,079 --> 00:12:03,440
+means inside my vector search now if I
+execute this line okay if I execute this
+
+192
+00:12:01,760 --> 00:12:06,160
+line it will take some time it will that
+means it will process process all the
+
+193
+00:12:04,560 --> 00:12:10,639
+data it will store to the vector
+embedding after that if you open it up
+
+194
+00:12:07,839 --> 00:12:15,120
+let me show you so if you open it up so
+you'll see that it will create a
+
+195
+00:12:12,839 --> 00:12:18,560
+index the name actually you have given
+start index okay now you can see both
+
+196
+00:12:16,959 --> 00:12:21,600
+places you are getting this green tick
+icon that means everything is executed
+
+197
+00:12:20,240 --> 00:12:24,839
+successfully if you're getting any red
+icon it's not completed okay that means
+
+198
+00:12:23,760 --> 00:12:29,920
+there are some
+issue now if I click on the deployed
+
+199
+00:12:27,519 --> 00:12:33,680
+index you'll see one ID here so we need
+this ID later on so guys you can see
+
+200
+00:12:31,760 --> 00:12:37,519
+this is the ID the last number you You
+can see this is the ID. So we need this
+
+201
+00:12:35,120 --> 00:12:41,440
+ID later on. Okay, see this is the ID.
+This ID actually we need later on. So
+
+202
+00:12:39,440 --> 00:12:45,120
+now let's get back to my collab. Now
+again just import some of the necessary
+
+203
+00:12:43,200 --> 00:12:49,040
+library. Then again set these are the
+actually variable like your location,
+
+204
+00:12:47,200 --> 00:12:52,240
+sentence, file, path and index name.
+That means the same index name. Okay,
+
+205
+00:12:50,480 --> 00:12:56,720
+same index name you have to give start
+index. Okay, that's it. Then just load
+
+206
+00:12:54,480 --> 00:13:00,240
+the model large language model. So here
+I'm using Jinpur Pro. You can also load
+
+207
+00:12:58,160 --> 00:13:03,920
+any other model. Then just try to load
+the index that means index endpoint you
+
+208
+00:13:02,240 --> 00:13:06,959
+have to load and to load the index
+endpoint you just need to give this ID
+
+209
+00:13:05,600 --> 00:13:10,399
+and how you'll get the ID guys I already
+told you. So this is the ID just try to
+
+210
+00:13:08,399 --> 00:13:13,680
+copy this ID and just try to paste it
+here. Now if you execute it will load
+
+211
+00:13:11,839 --> 00:13:16,600
+the index id got it that means this is
+going to be your knowledge base right
+
+212
+00:13:14,800 --> 00:13:20,000
+now and this is going to be your
+model. Now again I have written some of
+
+213
+00:13:18,800 --> 00:13:23,120
+the helper function generate text
+embedding that means whatever user will
+
+214
+00:13:21,760 --> 00:13:26,079
+give the prompt now let's say I have
+given one prompt this prompt should be
+
+215
+00:13:24,720 --> 00:13:28,880
+also converted to the embedding. Okay
+then this function will help me to do
+
+216
+00:13:27,440 --> 00:13:31,839
+that. Then I've written another function
+generate context and load file. That
+
+217
+00:13:30,399 --> 00:13:35,040
+means it will load that documents file
+and it will generate the context. Okay,
+
+218
+00:13:33,600 --> 00:13:38,560
+that means we are performing similarity
+search operation. Uh it will give you
+
+219
+00:13:36,800 --> 00:13:41,600
+some rank results and how it will give
+the rank results with the help of these
+
+220
+00:13:40,160 --> 00:13:46,120
+two fi function. It will give the rank
+results. Now here I've loaded the file
+
+221
+00:13:44,320 --> 00:13:50,480
+then uh you can
+see then this is my query. Let's say
+
+222
+00:13:48,800 --> 00:13:54,320
+what is correlation? First of all I'm
+generating the query embedding with the
+
+223
+00:13:51,839 --> 00:13:57,680
+help of that embedding model. And if you
+want to see the query embedding see this
+
+224
+00:13:55,600 --> 00:14:01,920
+is the vector representation guys. This
+is the entire query embedding. Now let
+
+225
+00:13:59,199 --> 00:14:07,120
+me comment it. Now this query embedding
+I will pass to my vector s. Okay, I can
+
+226
+00:14:04,560 --> 00:14:10,800
+see find neighbor it will give me 10
+ranked results. Okay, 10 ranked results
+
+227
+00:14:08,880 --> 00:14:13,839
+actually it will give me. Then this
+response actually I'm giving to my
+
+228
+00:14:12,079 --> 00:14:17,040
+model. Okay, this is the code snippet.
+My model will try to analyze this
+
+229
+00:14:15,199 --> 00:14:20,639
+response even the query I have given
+based on that it will give me one
+
+230
+00:14:18,320 --> 00:14:24,399
+response. Now if I execute see if I
+execute this last kind of code see here
+
+231
+00:14:23,120 --> 00:14:28,560
+you will get the response. correlation
+is a statical measure that indicates uh
+
+232
+00:14:26,800 --> 00:14:32,880
+see blah blah I'm getting the output and
+here you you can also give the prompt
+
+233
+00:14:30,000 --> 00:14:36,320
+based on the context uh delimited in the
+brackets answer the query okay that's
+
+234
+00:14:34,639 --> 00:14:39,839
+how you can give any kinds of prompt and
+that's actually we can build a readable
+
+235
+00:14:38,240 --> 00:14:43,440
+augmented generation kinds of
+application okay with the help of vertxi
+
+236
+00:14:41,600 --> 00:14:46,320
+platform and all these steps guys I have
+mentioned here so if you're implementing
+
+237
+00:14:45,040 --> 00:14:50,000
+any kinds of rag based actually
+application you can follow the same step
+
+238
+00:14:48,000 --> 00:14:53,199
+okay even you can also perform in your
+local machine that means I told you how
+
+239
+00:14:51,839 --> 00:14:56,880
+we can connect our local machine that
+means how we can kind of VS code. So
+
+240
+00:14:54,880 --> 00:15:00,480
+with the help of VS code also you can
+create this kind of rag application and
+
+241
+00:14:58,560 --> 00:15:03,440
+you can create a user interface. Let's
+say you want to create a flask
+
+242
+00:15:01,839 --> 00:15:06,480
+interface, you want to create a streaml
+interface, you can also create. So this
+
+243
+00:15:04,880 --> 00:15:10,000
+task actually I want to assign you just
+try to create one user interface. So you
+
+244
+00:15:08,399 --> 00:15:13,199
+have to use the same logic only you just
+need to integrate one user interface.
+
+245
+00:15:11,600 --> 00:15:17,040
+That is the idea. Okay, I hope it is
+clear. Now see once it is done now if
+
+246
+00:15:15,680 --> 00:15:22,240
+you want to terminate all the instance
+what you can do? So first of all uh just
+
+247
+00:15:20,079 --> 00:15:25,680
+try to delete this uh so first of all
+just try to delete the bucket. To delete
+
+248
+00:15:23,839 --> 00:15:29,040
+the bucket just try to select the bucket
+and there is a delete button you will
+
+249
+00:15:27,120 --> 00:15:32,320
+see. Just try to click on delete and
+delete confirmation you have to
+
+250
+00:15:32,600 --> 00:15:39,680
+give. So it will delete the bucket. Then
+you also need to delete the index. So to
+
+251
+00:15:37,440 --> 00:15:42,160
+delete the index just go to the index
+vector
+
+252
+00:15:45,240 --> 00:15:50,079
+search. So first of all you have to do
+the AR
+
+253
+00:15:55,079 --> 00:16:03,279
+deploy then you can delete it right now
+I think h now there is a delete button
+
+254
+00:16:00,959 --> 00:16:07,600
+just try to click on delete so it would
+be deleted okay so that's how you can uh
+
+255
+00:16:05,759 --> 00:16:13,199
+remove all the instance you will be
+creating okay so I think guys uh this is
+
+256
+00:16:10,079 --> 00:16:16,560
+helpful uh I showed you the entire uh uh
+like process how we can implement rack
+
+257
+00:16:15,360 --> 00:16:20,079
+uh so in the Next video we'll be
+creating some LLM powered application
+
+258
+00:16:17,920 --> 00:16:22,480
+with the help of uh this Vert.xi
+platform.
+

@@ -1,0 +1,1035 @@
+1
+00:00:00,240 --> 00:00:05,440
+Hi everyone, welcome back with another
+video. So guys, in this video we'll be
+
+2
+00:00:04,240 --> 00:00:09,360
+learning how we can perform the
+finetuning operation on the vertx AI. So
+
+3
+00:00:07,919 --> 00:00:13,440
+as I already told you in the model
+garden you are having so many foundation
+
+4
+00:00:11,599 --> 00:00:16,800
+model and if you want to fine-tune these
+are the model. So what are the step you
+
+5
+00:00:15,280 --> 00:00:20,080
+have to follow in this video I'll tell
+you each and everything. So I think
+
+6
+00:00:18,480 --> 00:00:24,000
+remember previously whenever we used to
+do the finetuning operation first of all
+
+7
+00:00:21,920 --> 00:00:28,640
+we had to download that model in our
+system. Then I was preparing the data.
+
+8
+00:00:26,720 --> 00:00:32,160
+Then I was fine-tuning these are the
+model. But here if you're using these
+
+9
+00:00:30,080 --> 00:00:35,440
+kinds of LLM ops platform, you don't
+need to download these are the model in
+
+10
+00:00:33,840 --> 00:00:38,719
+your system. So here what you have to
+do, you have to use that model endpoint.
+
+11
+00:00:37,440 --> 00:00:42,320
+That means you will be accessing this
+model through the API. Right? That means
+
+12
+00:00:41,040 --> 00:00:44,719
+uh first of all you have to authenticate
+with the vert.xi. I think I already told
+
+13
+00:00:43,760 --> 00:00:49,120
+you how to authenticate with the
+vert.xi. After that just give the model
+
+14
+00:00:47,120 --> 00:00:52,719
+ID which model you want to use. It will
+automatically hit that model. So here
+
+15
+00:00:51,120 --> 00:00:56,399
+the only thing you have to do you have
+to prepare your data. After that all the
+
+16
+00:00:54,960 --> 00:01:00,079
+thing would be happening in their server
+only. Okay. Now let me tell you the step
+
+17
+00:00:58,559 --> 00:01:03,520
+actually you can follow to perform the
+finetuning operation. So for this what I
+
+18
+00:01:02,079 --> 00:01:06,240
+will do guys I will use the collab
+notebook. So I'll open up collab
+
+19
+00:01:05,040 --> 00:01:09,840
+notebook. You can also use collab
+enterprise. You can also do it from your
+
+20
+00:01:07,920 --> 00:01:14,000
+local machine. It's completely fine. But
+as of now we have explored like VS code.
+
+21
+00:01:12,159 --> 00:01:17,920
+We have also explored like collab
+enterprise. Now let's try to see how we
+
+22
+00:01:15,920 --> 00:01:22,159
+can also use the collab. Okay like our
+Google collab. So here let me change my
+
+23
+00:01:20,640 --> 00:01:25,280
+account. So let's say I'm going to use
+this account. Okay, this account
+
+24
+00:01:23,759 --> 00:01:28,000
+actually I'm going to use and make sure
+the account actually you are using for
+
+25
+00:01:26,560 --> 00:01:30,960
+the G-Cloud, the same account you have
+to use in the Google Collab as well.
+
+26
+00:01:29,360 --> 00:01:34,400
+Okay, otherwise you might get some
+authentication issue. Now what I will do
+
+27
+00:01:32,880 --> 00:01:37,920
+guys, I'll just create a new notebook
+here. So let me create a new notebook.
+
+28
+00:01:36,079 --> 00:01:42,640
+Now simply just connect this notebook
+and in between let me show you the
+
+29
+00:01:39,680 --> 00:01:45,600
+finetuning step you have to follow. So
+see you can follow this uh blog
+
+30
+00:01:44,320 --> 00:01:49,360
+actually. So this is from actually
+Google. So Google developer. So they
+
+31
+00:01:47,840 --> 00:01:52,560
+have already given all the step actually
+you have to follow to perform the
+
+32
+00:01:50,640 --> 00:01:56,159
+finetuning operation. So I already
+prepared all these steps you have to
+
+33
+00:01:53,920 --> 00:02:00,159
+follow to perform the finetuning only I
+will show you one thing from this uh
+
+34
+00:01:57,600 --> 00:02:03,680
+blog actually the data format. Okay. So
+here let me show you the preparation and
+
+35
+00:02:01,920 --> 00:02:08,399
+loading the data. See if you are fine-
+tuning on the vert.xi you have to
+
+36
+00:02:05,200 --> 00:02:12,000
+prepare your data in the uh JSON JSON L
+format. Okay. See this is the JSON L
+
+37
+00:02:10,080 --> 00:02:16,080
+format data. You can see. So here they
+have already given one example. Let me
+
+38
+00:02:13,440 --> 00:02:20,879
+open up. So you can see this is the
+train JSON L format data and it is
+
+39
+00:02:18,720 --> 00:02:24,480
+present inside this GitHub. So what you
+can do from this GitHub actually see
+
+40
+00:02:22,400 --> 00:02:26,720
+this is the data you can download this
+data okay in your system you can
+
+41
+00:02:25,680 --> 00:02:30,319
+download this data so I've already
+downloaded let me show you so this is
+
+42
+00:02:28,080 --> 00:02:34,480
+the data I'll open it with the notepad++
+now if you open the data guys you will
+
+43
+00:02:31,680 --> 00:02:37,440
+see it's a JSON okay JSON structure that
+means you will have one key here called
+
+44
+00:02:35,840 --> 00:02:42,080
+input text and this is the input text
+and this is the BBC data guys okay BBC
+
+45
+00:02:39,120 --> 00:02:46,720
+news data so in the input text actually
+they are having the entire news and
+
+46
+00:02:44,400 --> 00:02:50,959
+they're having another actually key here
+let me show you or I can perform the
+
+47
+00:02:48,879 --> 00:02:55,480
+Ctrl F operation ation. Now here I will
+just write
+
+48
+00:02:53,480 --> 00:03:00,720
+output
+text. Now if I find it now see guys this
+
+49
+00:02:58,800 --> 00:03:04,159
+is the output text. Okay. So inside
+output text actually what they are
+
+50
+00:03:02,080 --> 00:03:07,200
+having they having the summary. Okay
+summary of that news. So this is the
+
+51
+00:03:05,840 --> 00:03:10,400
+data actually that's how actually you
+have to also prepare your data. If
+
+52
+00:03:08,800 --> 00:03:13,280
+you're having any custom data what you
+can do you can prepare your data with
+
+53
+00:03:11,760 --> 00:03:17,599
+respect to that. That means what I'm
+trying to say that means in the JSON uh
+
+54
+00:03:16,000 --> 00:03:22,120
+file actually the first key will have
+the
+
+55
+00:03:18,840 --> 00:03:27,360
+input okay input
+text okay inside input text what you
+
+56
+00:03:24,640 --> 00:03:30,360
+will have you will have the entire story
+okay entire story and you will have
+
+57
+00:03:29,440 --> 00:03:37,319
+another
+actually key called
+
+58
+00:03:32,920 --> 00:03:41,760
+output text sorry
+output output text okay so inside output
+
+59
+00:03:40,239 --> 00:03:45,760
+text you will have the summary okay
+summary of the entire story. So this is
+
+60
+00:03:44,159 --> 00:03:49,680
+going to be your data format. Okay,
+that's how actually you can take as many
+
+61
+00:03:47,519 --> 00:03:53,760
+as record you can. Got it. I hope now it
+is clear the format. Uh so whatever data
+
+62
+00:03:52,560 --> 00:03:56,879
+actually you are having try to convert
+in a JSONL format. And how to convert in
+
+63
+00:03:55,599 --> 00:04:00,640
+a JSON format? There are so many
+converter you will see inside Python.
+
+64
+00:03:59,040 --> 00:04:04,159
+Simply you can execute those converter.
+It will automatically convert your data
+
+65
+00:04:01,920 --> 00:04:07,680
+in a JSON format. Got it? That is the
+idea. Now you can ask me sir where I
+
+66
+00:04:06,000 --> 00:04:11,280
+will get this kinds of data. I think I
+already told you now. So you can use
+
+67
+00:04:09,519 --> 00:04:14,400
+hugging phase hub actually. So there
+actually you will have like so many
+
+68
+00:04:12,640 --> 00:04:17,040
+kinds of data set. So you can use any
+kinds of data from the hugging phase you
+
+69
+00:04:15,840 --> 00:04:20,639
+can download it and you can convert to
+the JSON format and if you are using
+
+70
+00:04:18,880 --> 00:04:24,080
+your custom data that time you have to
+convert everything in a just format.
+
+71
+00:04:22,400 --> 00:04:27,360
+Okay, this is the idea. Okay, you can
+see the image also they have already
+
+72
+00:04:25,520 --> 00:04:30,400
+given the data format. So first of all
+you have to take the input text. This is
+
+73
+00:04:28,800 --> 00:04:34,240
+the entire BBC news you can see and this
+is the output text. That means this is
+
+74
+00:04:31,600 --> 00:04:37,199
+the uh summary of that uh story. Okay,
+this should be your data format. Now
+
+75
+00:04:35,759 --> 00:04:40,080
+apart from that they have already given
+all the step you can follow. So I have
+
+76
+00:04:38,800 --> 00:04:45,680
+already prepared one notebook. Let me
+show you what are the thing you have to
+
+77
+00:04:42,280 --> 00:04:50,240
+do. Now let me also add this link in the
+notebook so that you will have the
+
+78
+00:04:47,360 --> 00:04:50,240
+reference later
+
+79
+00:04:51,080 --> 00:04:59,600
+on. So this is the link I have
+added. Now here the first thing you have
+
+80
+00:04:57,360 --> 00:05:03,280
+to install some of the library. So here
+I'm going to uh install Google cloud AI
+
+81
+00:05:01,840 --> 00:05:07,520
+platform because I want to access the
+vertx A then data sets then Google cloud
+
+82
+00:05:06,080 --> 00:05:10,840
+pipeline components. Okay, these are the
+library I have to install one by one.
+
+83
+00:05:08,960 --> 00:05:14,240
+Let me
+install. So after installing these are
+
+84
+00:05:13,039 --> 00:05:18,000
+the library you have to restart the
+candle. And if you want to restart the
+
+85
+00:05:15,840 --> 00:05:21,680
+candle you can use this code snippet
+actually. Uh see you can also do it from
+
+86
+00:05:20,320 --> 00:05:24,800
+the UI. Just click on the runtime.
+Restart the runtime. So there is a
+
+87
+00:05:23,440 --> 00:05:27,600
+restart runtime option. Okay. Restart
+the session. Otherwise you can also
+
+88
+00:05:26,240 --> 00:05:32,160
+execute this line of code. It will also
+restart the your
+
+89
+00:05:29,720 --> 00:05:36,080
+runtime. Okay. Now what you have to do
+you have to authenticate with your
+
+90
+00:05:33,840 --> 00:05:41,120
+G-Cloud account. For this you can
+execute this line of code. So here I'm
+
+91
+00:05:38,800 --> 00:05:43,520
+using actually uh Google authenticator
+with the help of Google authenticator
+
+92
+00:05:42,320 --> 00:05:47,759
+actually I will authenticate with my
+account. Got it. So now let me execute.
+
+93
+00:05:45,759 --> 00:05:51,000
+So it will look for your account. So it
+will give you one pop-up screen. Let's
+
+94
+00:05:49,840 --> 00:05:54,479
+give the
+permission. Select your account. Let's
+
+95
+00:05:53,039 --> 00:05:59,160
+say I want to use this account because
+this is my Google
+
+96
+00:05:56,120 --> 00:06:04,440
+account. Now I'll try to select
+it. Now you have to provide the
+
+97
+00:06:01,440 --> 00:06:04,440
+password.
+
+98
+00:06:12,479 --> 00:06:17,039
+So guys, as you can see my uh
+authentication is completed. There is no
+
+99
+00:06:15,680 --> 00:06:21,600
+error that means you are successfully
+authenticated with your uh this one your
+
+100
+00:06:19,680 --> 00:06:24,720
+G-Cloud account. Fine. All right. Now
+the next thing you have to select the
+
+101
+00:06:23,039 --> 00:06:29,800
+project. So to select the project you
+have to execute this line of code. So
+
+102
+00:06:26,400 --> 00:06:34,080
+let me select the
+project. So I think you know how to
+
+103
+00:06:32,000 --> 00:06:36,479
+select the project. Click here. copy the
+project
+
+104
+00:06:37,880 --> 00:06:45,319
+ID and just try to mention it here and
+with this actually we'll be initializing
+
+105
+00:06:42,720 --> 00:06:50,400
+our vertx. So let me initialize my vertx
+AI. Then let's set uh set some actually
+
+106
+00:06:48,160 --> 00:06:54,400
+variable that means my region and the
+project ID. Again I'll give the same
+
+107
+00:06:52,000 --> 00:06:54,400
+project
+
+108
+00:06:57,560 --> 00:07:04,039
+ID. Now I have to set one configuration
+here. For this you have to execute this
+
+109
+00:07:02,000 --> 00:07:08,800
+line of
+code. Okay, you have to execute this
+
+110
+00:07:06,560 --> 00:07:15,120
+command. G-Cloud config project. This is
+the project ID. Okay, the project ID
+
+111
+00:07:10,400 --> 00:07:15,120
+actually I'm having here. Now let me
+
+112
+00:07:15,560 --> 00:07:21,840
+set. Fine. Now let's import some
+necessary
+
+113
+00:07:19,800 --> 00:07:24,880
+library. So guys, you can see I'm
+importing some necessary library. Now
+
+114
+00:07:23,120 --> 00:07:30,160
+you can ask me from uh where actually I
+got this code. If you go to that uh uh
+
+115
+00:07:28,240 --> 00:07:33,199
+blog actually. So there actually they
+are suggesting install and import. See
+
+116
+00:07:31,919 --> 00:07:36,479
+they're also importing these are the
+library. Okay. So just try to read this
+
+117
+00:07:34,880 --> 00:07:39,039
+blog actually will see all the steps
+actually they have written. I'm
+
+118
+00:07:37,520 --> 00:07:42,479
+following the same thing only. Now let
+me import all of the library. Okay. So I
+
+119
+00:07:40,880 --> 00:07:47,440
+have imported all the library. Now the
+next thing uh I will load my data. So
+
+120
+00:07:45,599 --> 00:07:51,120
+let's upload my data. Either you can
+upload in the G-Cloud bucket. So from
+
+121
+00:07:49,759 --> 00:07:53,599
+the bucket also you can download the
+data. If if you're having let's say used
+
+122
+00:07:52,479 --> 00:07:57,120
+data that time you can keep in the
+bucket. I think I told you. So it is
+
+123
+00:07:55,360 --> 00:08:01,599
+already having one bucket service as
+well. So you can also open up the bucket
+
+124
+00:08:00,080 --> 00:08:05,199
+inside that you can store any kinds of
+data and you can also load it here.
+
+125
+00:08:03,360 --> 00:08:09,440
+Okay. So if I show you the bucket. So
+this is the bucket guys. So here my data
+
+126
+00:08:07,360 --> 00:08:14,280
+size is not used. So what I will do I'll
+directly upload here. So I'll just
+
+127
+00:08:11,120 --> 00:08:19,280
+upload. This is the
+data. Now with the help of pandas
+
+128
+00:08:16,639 --> 00:08:23,319
+actually I'm going to load my data. So
+now we can copy the
+
+129
+00:08:21,000 --> 00:08:27,440
+path
+and you can paste it here. Now let's
+
+130
+00:08:25,840 --> 00:08:29,919
+execute.
+Okay, see this is the data I have
+
+131
+00:08:28,720 --> 00:08:33,039
+loaded. Now you can see this is the
+input test and this is the output test.
+
+132
+00:08:31,599 --> 00:08:36,719
+Now if you want to see the shape of the
+data you can also see this is the shape
+
+133
+00:08:34,800 --> 00:08:39,919
+of the data and now we can start the
+training and it's like very easy. See
+
+134
+00:08:38,560 --> 00:08:43,440
+only you just need to execute this line
+of code your training would be started
+
+135
+00:08:41,440 --> 00:08:48,080
+in their server only. Okay, not in my
+Google collab actually. Uh it will use
+
+136
+00:08:45,360 --> 00:08:51,680
+their instance. Got it? Now see here is
+my finetune model name. So this model
+
+137
+00:08:50,320 --> 00:08:54,560
+name actually I'm giving BBC fine tune
+model. You can give any name. So after
+
+138
+00:08:53,040 --> 00:08:57,519
+fine tuning what would be your model
+name? Okay, that is what you have to
+
+139
+00:08:55,600 --> 00:09:00,160
+give here. Then you can give the
+pre-teen model that means which model
+
+140
+00:08:58,880 --> 00:09:04,000
+you want to fine-tune. Here I want to
+fine-tune text based on 002 model. And
+
+141
+00:09:02,480 --> 00:09:06,640
+if you go to the model garden, you will
+see this particular model. And if you
+
+142
+00:09:05,360 --> 00:09:09,920
+want to use any other model, you can
+also give the model ID here. Got it?
+
+143
+00:09:08,160 --> 00:09:14,000
+That's the thing. Now you have to pass
+the data that is by DF. The DF actually
+
+144
+00:09:11,920 --> 00:09:17,279
+I got and you have to set the number of
+epoch training epoch you want to let's
+
+145
+00:09:15,760 --> 00:09:20,880
+say train. So here I mentioned 100
+epoch. Okay, I want to train as of now
+
+146
+00:09:19,120 --> 00:09:24,000
+and you have to give the tuning job
+location. Okay. So I have given Europe
+
+147
+00:09:22,399 --> 00:09:27,120
+West four. You can keep the default
+size. If you go to the like blog, you
+
+148
+00:09:25,920 --> 00:09:31,120
+will see that they're also using this
+particular location. Now see if I
+
+149
+00:09:28,800 --> 00:09:36,000
+execute the program, it will give me one
+URL and if I click on the URL, I I can
+
+150
+00:09:33,920 --> 00:09:40,240
+see the pipeline that is completely uh
+that means I can see the complete
+
+151
+00:09:37,200 --> 00:09:44,000
+pipeline. My training process is running
+and it will take guys like 1 to 2 hours
+
+152
+00:09:42,480 --> 00:09:47,279
+to complete the training. But I can't
+wait 1 to two hours. What I will do?
+
+153
+00:09:45,360 --> 00:09:51,040
+I'll stop the execution. So guys, I
+stopped the execution because it will
+
+154
+00:09:48,640 --> 00:09:54,800
+take time. See, I'm telling you after
+executing this line of code, what you
+
+155
+00:09:52,800 --> 00:09:58,800
+have to do? So you can see one URL just
+try to open up the URL. So this is the
+
+156
+00:09:56,959 --> 00:10:02,399
+URL guys and try to make make sure you
+have selected your account. Okay, that
+
+157
+00:10:00,399 --> 00:10:05,920
+GCP account. Then you can see this
+pipeline. Okay, this pipeline would be
+
+158
+00:10:04,399 --> 00:10:09,279
+running and this is the jobs. So here
+you will see all the let's say logs. So
+
+159
+00:10:07,600 --> 00:10:11,920
+in the pipeline section you will see all
+the logs that means whether your
+
+160
+00:10:10,399 --> 00:10:15,279
+training is running or not. Okay. And
+how how how much time actually it will
+
+161
+00:10:13,519 --> 00:10:19,680
+take to complete. So everything all the
+log actually you can see here. Got it.
+
+162
+00:10:16,880 --> 00:10:23,279
+So once this execution is completed you
+will see it will automatically stop.
+
+163
+00:10:20,959 --> 00:10:26,160
+After that your model would be ready.
+Okay. And then you can use this this
+
+164
+00:10:24,800 --> 00:10:28,800
+model. And if you want to delete this
+pipeline. So what you have to do guys?
+
+165
+00:10:27,279 --> 00:10:31,760
+So there's a delete button. Just try to
+click on the delete and try to delete
+
+166
+00:10:30,640 --> 00:10:35,680
+the pipeline. Okay. It will
+automatically delete the instance. Okay.
+
+167
+00:10:33,760 --> 00:10:38,640
+And guys one thing after completing the
+training if you open up your bucket you
+
+168
+00:10:37,200 --> 00:10:41,680
+will see two bucket would be
+automatically created. Okay. And inside
+
+169
+00:10:40,240 --> 00:10:45,360
+this bucket actually it will save all
+the model checkpoints. Okay. Let's say
+
+170
+00:10:43,680 --> 00:10:48,560
+whatever training it is doing all the
+artifacts would be saved inside this
+
+171
+00:10:46,800 --> 00:10:52,720
+bucket itself. Okay. You can see but
+once you complete the execution see it
+
+172
+00:10:50,800 --> 00:10:56,800
+is it will already save the tuned model
+okay inside that that you can see the
+
+173
+00:10:54,160 --> 00:11:00,000
+textb model got it so that's actually it
+will save all the artifacts in the
+
+174
+00:10:58,079 --> 00:11:03,360
+bucket and from this bucket itself we
+have to deploy our model as an endpoint
+
+175
+00:11:01,920 --> 00:11:08,079
+okay and this model would be available
+in your model garden so if you click on
+
+176
+00:11:05,920 --> 00:11:12,720
+the model garden so there you will see
+one option so here is the option my view
+
+177
+00:11:11,120 --> 00:11:16,720
+my endpoint and model if you click here
+you'll see that that model would be
+
+178
+00:11:14,000 --> 00:11:20,320
+present here okay I hope it is clear now
+let me show the next step you have to
+
+179
+00:11:18,399 --> 00:11:23,920
+perform. So previously I already did
+this actually uh finetuning. So let me
+
+180
+00:11:22,560 --> 00:11:28,800
+show you what you have to do after that.
+See after that actually what you can do
+
+181
+00:11:27,360 --> 00:11:32,560
+you can use your train model that means
+the model actually you have trained and
+
+182
+00:11:30,560 --> 00:11:38,000
+you can do the inference operation. So
+here I'm giving this actually prompt
+
+183
+00:11:35,040 --> 00:11:42,000
+actually summarize this text to generate
+uh generate a title. So this is the
+
+184
+00:11:40,000 --> 00:11:45,200
+entire actually prompt I'm giving and
+this is the output actually I'm getting.
+
+185
+00:11:43,680 --> 00:11:48,160
+Got it? Now you have to deploy your
+model as an endpoint. For this you have
+
+186
+00:11:46,800 --> 00:11:52,480
+to execute this line of code. Okay. So
+this will uh like deploy your model as
+
+187
+00:11:50,240 --> 00:11:56,480
+an endpoint okay to the GCP server. That
+means this model would be available in
+
+188
+00:11:54,399 --> 00:12:00,320
+your model garden right now. So if I go
+to the model garden. So here you will
+
+189
+00:11:58,240 --> 00:12:03,120
+see one option view my endpoint and
+model. Just click here. In this section
+
+190
+00:12:02,000 --> 00:12:06,720
+actually you will see your model would
+be published. Okay. From here actually
+
+191
+00:12:04,880 --> 00:12:10,000
+it will load the model. But what I did
+actually I deleted the model because
+
+192
+00:12:08,160 --> 00:12:12,720
+again I'm using cloud platform. I don't
+want to keep anything. Okay. Otherwise
+
+193
+00:12:11,200 --> 00:12:15,839
+it will charge me. So that's why I
+already deleted. Okay. Okay, then after
+
+194
+00:12:14,240 --> 00:12:19,440
+that I was loading that model and I was
+again performing the prediction. You can
+
+195
+00:12:17,680 --> 00:12:22,720
+see this is the results actually I'm
+getting from my model. Then I was also
+
+196
+00:12:20,959 --> 00:12:26,320
+loading the base model that means the
+actual model and I given the same
+
+197
+00:12:24,639 --> 00:12:30,880
+actually prompt and I was just checking
+the actually output. Okay, whether this
+
+198
+00:12:28,160 --> 00:12:34,959
+output and this output actually good or
+not that means which model is giving the
+
+199
+00:12:32,959 --> 00:12:39,279
+better output and here you can see both
+model giving the good response. Okay,
+
+200
+00:12:37,200 --> 00:12:43,360
+it's not a bad although I only trained
+100 epoch but you can see this response
+
+201
+00:12:41,440 --> 00:12:46,399
+is pretty good. Got it? So that's
+actually you can perform the finetuning
+
+202
+00:12:44,720 --> 00:12:50,800
+operation. After that you can deploy
+your model as an endpoint to the uh
+
+203
+00:12:48,800 --> 00:12:53,680
+G-Cloud. Okay. Now I I think it is
+clear. Now you can pick up any other
+
+204
+00:12:52,320 --> 00:12:57,279
+model and you can perform the same
+finetuning operation. All right. So
+
+205
+00:12:55,680 --> 00:13:00,240
+these resources would be shared guys in
+your resources section. From there you
+
+206
+00:12:58,639 --> 00:13:03,120
+can uh download this notebook and you
+can perform the finetuning operation.
+
+207
+00:13:01,839 --> 00:13:07,519
+With that guys, thank you so much for
+watching this video and I will see you
+
+208
+00:13:04,800 --> 00:13:07,519
+next time.
+

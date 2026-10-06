@@ -1,0 +1,250 @@
+1
+00:00:00,480 --> 00:00:08,559
+Hi guys, in this video we'll try to
+understand uh user prompt and system
+
+2
+00:00:05,600 --> 00:00:14,160
+prompt inside LM. So for this what I'm
+going to do I'm going to open up a
+
+3
+00:00:10,000 --> 00:00:18,240
+platform called Grock playground. Okay.
+So so Grock is a platform guys. So here
+
+4
+00:00:16,720 --> 00:00:22,880
+you will be also getting large language
+model. So here you can uh create one
+
+5
+00:00:20,560 --> 00:00:26,320
+account and Grock will also give you uh
+so Grock will also give you the API key.
+
+6
+00:00:24,880 --> 00:00:29,599
+With the help of API key you can access
+different different model. Okay. So this
+
+7
+00:00:27,680 --> 00:00:33,440
+is the interface of the Grock. So here
+you can see different different models
+
+8
+00:00:30,960 --> 00:00:36,480
+are available. Okay. So uh you can see
+all kinds of models are available. Okay.
+
+9
+00:00:35,120 --> 00:00:41,600
+You can access these are the model
+through the API request. So uh as of now
+
+10
+00:00:39,040 --> 00:00:45,360
+I'll just try to show you what is the uh
+user prompt and what is the system
+
+11
+00:00:43,120 --> 00:00:49,280
+prompt. Okay. Because nowadays whatever
+large language model you use uh we use
+
+12
+00:00:47,360 --> 00:00:53,120
+something called chat completion model.
+Okay. All the models are chat completion
+
+13
+00:00:51,200 --> 00:00:57,120
+and these are the model takes two kinds
+of prompt. One is the system prompt
+
+14
+00:00:55,120 --> 00:01:00,800
+other is the user prompt. You can see.
+So here I have selected one model called
+
+15
+00:00:58,719 --> 00:01:04,879
+meta llama. Okay, llama for this
+particular uh llama for scout model I
+
+16
+00:01:02,640 --> 00:01:08,479
+have selected. Now you can see whenever
+I selected this model so it is asking me
+
+17
+00:01:07,119 --> 00:01:11,920
+two kinds of prompt. One is the system
+prompt another is the user prompt. So
+
+18
+00:01:10,320 --> 00:01:17,119
+what is the system prompt? So here you
+can pass the system prompt if you want
+
+19
+00:01:14,240 --> 00:01:20,280
+to perform some specific task. Okay. Um
+by using your model. So let's say here I
+
+20
+00:01:19,360 --> 00:01:23,280
+will give
+um
+
+21
+00:01:24,040 --> 00:01:28,640
+ur okay ur or let's say
+
+22
+00:01:28,680 --> 00:01:31,680
+ur
+
+23
+00:01:33,720 --> 00:01:41,759
+translate translate
+expert okay experts now here you can
+
+24
+00:01:40,000 --> 00:01:45,920
+give the user prompt that means whatever
+user will give let's say I will just
+
+25
+00:01:43,200 --> 00:01:45,920
+write uh
+
+26
+00:01:46,680 --> 00:01:50,240
+translate this
+
+27
+00:01:51,880 --> 00:02:00,240
+sentence to
+Hindi. So let's say here I'll give a
+
+28
+00:01:56,720 --> 00:02:00,240
+sentence uh my
+
+29
+00:02:00,439 --> 00:02:08,560
+name my name
+is
+
+30
+00:02:05,479 --> 00:02:13,760
+BYI. Okay. So this is the sentence I
+have given. Now if I uh submit it so
+
+31
+00:02:11,920 --> 00:02:19,760
+you'll see that I will get the
+translated output. So you can see this
+
+32
+00:02:16,480 --> 00:02:23,200
+is the translated output I got. So here
+what we are doing actually we are
+
+33
+00:02:21,360 --> 00:02:30,319
+specifying the task because this kind of
+LLM model actually can work with because
+
+34
+00:02:27,920 --> 00:02:35,120
+this kinds of model has various kinds of
+task. Okay because uh this this model
+
+35
+00:02:33,280 --> 00:02:37,920
+called actually multitasking model you
+can perform language translation you can
+
+36
+00:02:36,640 --> 00:02:41,200
+perform text summarization you can
+perform content generation code
+
+37
+00:02:39,120 --> 00:02:44,400
+generation everything you can perform.
+So it's better whenever you are creating
+
+38
+00:02:42,720 --> 00:02:47,360
+any kinds of specific application that's
+I want to only create the language
+
+39
+00:02:45,680 --> 00:02:51,760
+translation. So that time you will just
+try to provide the system prop. Okay. So
+
+40
+00:02:49,599 --> 00:02:56,319
+that your model will more focus on the
+uh translation part. Okay. uh whatever
+
+41
+00:02:54,400 --> 00:03:01,440
+user is giving that will give you the
+translation and in the user okay we'll
+
+42
+00:02:59,200 --> 00:03:05,360
+try to give the prompt that means our
+input prompt that means system prompt
+
+43
+00:03:03,280 --> 00:03:09,519
+you have to mention one time and user
+prompt okay uh it would be uh let's say
+
+44
+00:03:07,920 --> 00:03:13,440
+changing multiple time that means
+whenever user will give any kinds of
+
+45
+00:03:11,120 --> 00:03:17,920
+input you have to pass to the user and
+to specify the model to a specific task
+
+46
+00:03:16,319 --> 00:03:21,519
+you have to use the system prompt this
+is the idea and you can also play with
+
+47
+00:03:19,680 --> 00:03:25,120
+the temperature and max token parameter
+if you want okay so yes Okay, this is
+
+48
+00:03:23,680 --> 00:03:28,319
+what actually our system prompt and the
+user prompt. I hope you got it because
+
+49
+00:03:26,879 --> 00:03:31,680
+nowadays whatever model you will be
+using all the model has the same things.
+
+50
+00:03:30,000 --> 00:03:35,519
+Okay, system prompt and the user prompt.
+Uh we call it as a chat completion
+
+51
+00:03:33,440 --> 00:03:38,720
+model. Okay, so yes guys, this is all.
+Thanks for watching.
+

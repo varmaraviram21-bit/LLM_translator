@@ -1,0 +1,239 @@
+1
+00:00:00,320 --> 00:00:06,200
+So guys uh in this video we'll try to
+see how we can build our private
+
+2
+00:00:04,319 --> 00:00:11,679
+knowledge base uh with help of vector
+database. So here uh again I'm using
+
+3
+00:00:09,200 --> 00:00:15,519
+lang chain guys uh so first of all I'm
+importing the data loader then open
+
+4
+00:00:13,840 --> 00:00:20,080
+embedding I need to generate the
+embeddings then I need splitter because
+
+5
+00:00:17,840 --> 00:00:24,880
+I have to do the chunking operations and
+I'm using chromad vector database. So in
+
+6
+00:00:22,160 --> 00:00:29,760
+the data folder I have one a file uh I
+have one file you can see called uh
+
+7
+00:00:26,960 --> 00:00:32,800
+state of uh the union. Okay, this file.
+So, we'll try to create the knowledge
+
+8
+00:00:31,039 --> 00:00:36,399
+base on top of that. Okay, so let's try
+to do it. So, uh here first of all, I'm
+
+9
+00:00:34,880 --> 00:00:39,680
+loading the documents. Then I'm doing
+the chunking operation because I told
+
+10
+00:00:37,920 --> 00:00:44,879
+you why chunking is required. Here chunk
+size is 1,000 and chunks overlap I have
+
+11
+00:00:42,160 --> 00:00:50,960
+given zero. Okay. So, here I I've uh
+done the split documents operation. Now,
+
+12
+00:00:47,120 --> 00:00:54,640
+if I see uh see I have 42 chunks. Okay.
+Uh in total, now we'll be creating the
+
+13
+00:00:53,280 --> 00:00:58,079
+knowledge base. For this, we'll be using
+Chromod vector database and it's a local
+
+14
+00:00:56,320 --> 00:01:02,480
+vector database. I think I already
+showed you the chromb example. Okay. Now
+
+15
+00:01:00,559 --> 00:01:05,880
+we are doing the from documents and
+inside that we are passing the chunks
+
+16
+00:01:04,000 --> 00:01:09,680
+and we are passing the embedding model.
+Okay. And this example I already showed
+
+17
+00:01:08,080 --> 00:01:13,040
+you. I already explained in my chromatic
+session why chunking is important. Okay.
+
+18
+00:01:11,600 --> 00:01:16,799
+Everything I already explained there.
+Now uh this has created my vector
+
+19
+00:01:15,119 --> 00:01:21,759
+database. Okay. You can see it's uh it
+has created one object. Okay. In my
+
+20
+00:01:18,880 --> 00:01:25,040
+local instance. Now here you can do two
+kinds of search operation. One is
+
+21
+00:01:23,200 --> 00:01:27,520
+similarity search and is retrie. So
+first of all let's try to see the
+
+22
+00:01:26,080 --> 00:01:30,880
+similarity search operation. So here
+let's say this is my question what the
+
+23
+00:01:29,119 --> 00:01:35,040
+did the president say about the John
+voting rights act because if you see the
+
+24
+00:01:33,360 --> 00:01:37,600
+documents we are having the content
+related that then we are doing the
+
+25
+00:01:36,400 --> 00:01:41,119
+similarity search op separation we are
+passing the question okay now it will
+
+26
+00:01:39,439 --> 00:01:44,880
+return you the similar kinds of response
+similar kinds of answer okay see it is
+
+27
+00:01:43,200 --> 00:01:49,040
+not giving you any kinds of reference
+but if I talking about retr okay so ret
+
+28
+00:01:47,360 --> 00:01:52,720
+what it returns let me show you another
+demo so first of all let's load the
+
+29
+00:01:50,720 --> 00:01:55,920
+documents then again we are loading the
+you can say content we are doing the
+
+30
+00:01:54,000 --> 00:01:59,040
+chunking uh we are performing the
+splitter we are loading in the embedding
+
+31
+00:01:57,360 --> 00:02:03,280
+model and now we are using fires vector
+database for the embeddings okay uh for
+
+32
+00:02:01,439 --> 00:02:09,039
+the knowledge base. Now this is my
+vector database
+
+33
+00:02:05,000 --> 00:02:13,760
+object. Okay. Here I got one error. So I
+have to install fire CPU. So let me do
+
+34
+00:02:23,400 --> 00:02:30,400
+it. So here I already kept the
+requirement txt files. Okay, you can
+
+35
+00:02:27,840 --> 00:02:32,720
+install. So you can also add the fire
+CPU
+
+36
+00:02:36,680 --> 00:02:40,959
+there. Done. Now again
+
+37
+00:02:42,280 --> 00:02:49,360
+re-execute. Okay. Now this is my vector
+uh object. Now we are getting the
+
+38
+00:02:47,120 --> 00:02:52,319
+retire. Okay. And uh search keyword is
+equal to three. That means it will
+
+39
+00:02:50,400 --> 00:02:56,319
+return three relevant response. Okay.
+Now this is the question I'm asking.
+
+40
+00:02:53,680 --> 00:03:00,239
+what did uh did he say about the Ketan
+Gi Brown's action? So see it is
+
+41
+00:02:58,080 --> 00:03:03,599
+returning three relevant answer with the
+source okay with the help of meta source
+
+42
+00:03:01,760 --> 00:03:08,159
+as well. So this is the difference. So
+here uh in the uh uh similarity search
+
+43
+00:03:06,560 --> 00:03:12,000
+you only getting the similarity let's
+say response and you are also getting
+
+44
+00:03:10,080 --> 00:03:16,640
+the meta source okay like which file it
+is suggesting okay and the page content
+
+45
+00:03:14,400 --> 00:03:19,959
+as well okay everything it is returning
+okay you can see total three response
+
+46
+00:03:18,319 --> 00:03:25,200
+you are getting if it is
+four so it will returning four response
+
+47
+00:03:22,480 --> 00:03:28,239
+that time okay see four response that
+time okay so that's how guys we can
+
+48
+00:03:26,720 --> 00:03:30,640
+create our private knowledge base thank
+you so
+

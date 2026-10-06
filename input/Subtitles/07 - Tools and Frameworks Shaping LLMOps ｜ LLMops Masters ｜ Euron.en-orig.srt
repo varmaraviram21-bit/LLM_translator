@@ -1,0 +1,358 @@
+1
+00:00:00,240 --> 00:00:07,359
+Hi everyone, welcome back. So in this
+video I'll be talking about some tools
+
+2
+00:00:04,240 --> 00:00:11,920
+uh that are actually uh shaping our LLM
+ops uh let's say domain. So there are uh
+
+3
+00:00:10,480 --> 00:00:16,400
+various kinds of tool you will be
+getting um in the MLOps okay in the
+
+4
+00:00:14,320 --> 00:00:22,840
+field of MLOps. Let me discuss some of
+them. So see uh orchestration tools wise
+
+5
+00:00:20,880 --> 00:00:28,000
+uh you will be getting something called
+langen langen. So this is another
+
+6
+00:00:26,160 --> 00:00:31,439
+actually so this is one of the amazing
+actually orchestration tool with the
+
+7
+00:00:29,679 --> 00:00:35,960
+help of that you can build the entire
+geni system and langen also has some
+
+8
+00:00:33,920 --> 00:00:40,160
+ecosystem like it has
+lang
+
+9
+00:00:37,480 --> 00:00:46,320
+smith okay this is another llmops tool
+you can consider then it has lang ser
+
+10
+00:00:43,520 --> 00:00:52,879
+this is also another lmops tool then you
+have something called lang graph so lang
+
+11
+00:00:50,079 --> 00:00:56,000
+graph is the aentki uh let's say
+framework with help of that you can
+
+12
+00:00:54,000 --> 00:01:00,480
+create the AI agents. Then second you
+have something called llama index. So
+
+13
+00:00:58,879 --> 00:01:03,120
+this is another orchestration framework.
+With the help of that you can
+
+14
+00:01:01,359 --> 00:01:06,400
+orchestrate the entire application.
+Orchestration means uh you are creating
+
+15
+00:01:05,040 --> 00:01:09,680
+the complete system. That means you are
+loading the data, you are loading the
+
+16
+00:01:07,840 --> 00:01:13,280
+model. Okay. Everything you are loading
+in efficient way. That's why it is super
+
+17
+00:01:11,600 --> 00:01:18,479
+important. Then there is another one
+called highest stack.
+
+18
+00:01:16,119 --> 00:01:26,080
+Okay. This is another orchestration
+tool. Then we have uh vector databases.
+
+19
+00:01:24,240 --> 00:01:29,960
+vector database. So we have various
+kinds of vector database like we have
+
+20
+00:01:28,560 --> 00:01:34,159
+pine
+cone. Okay, we have
+
+21
+00:01:34,200 --> 00:01:43,600
+chromad chrom then we have wave we have
+fs and so on. So these are the vector
+
+22
+00:01:41,200 --> 00:01:47,119
+database and here we can't use any kinds
+of traditional database because
+
+23
+00:01:45,119 --> 00:01:49,920
+traditional database uh can't do the
+similarity search operation can't do the
+
+24
+00:01:48,560 --> 00:01:54,399
+retrieval operation that's why we'll be
+using the vector database and this is
+
+25
+00:01:51,280 --> 00:02:00,640
+also part of LLM uh ops tool okay I
+think you got it then we have something
+
+26
+00:01:57,439 --> 00:02:00,640
+called uh hugging
+
+27
+00:02:01,479 --> 00:02:09,280
+face hugging face so this is another uh
+actually platform and tool you can
+
+28
+00:02:06,560 --> 00:02:13,599
+consider for the lmops so there uh we
+have different different components we
+
+29
+00:02:10,560 --> 00:02:17,360
+can use for the uh LLM ops work. Let's
+say we can use the quantization
+
+30
+00:02:15,520 --> 00:02:22,000
+technique if if you want to do the
+finetuning of your LM. Okay. So then you
+
+31
+00:02:19,920 --> 00:02:26,480
+can also host the model in the hugging
+face let's say platform it is also
+
+32
+00:02:23,840 --> 00:02:29,959
+possible. Okay. Then we have something
+called
+
+33
+00:02:27,560 --> 00:02:36,080
+uh
+MLflow. Okay. So this is another uh LMOS
+
+34
+00:02:34,319 --> 00:02:41,760
+tool. With help of that you can track
+the experiment okay of your LM. Then we
+
+35
+00:02:38,800 --> 00:02:46,879
+can also add some uh actually uh
+technique from the MLOps like
+
+36
+00:02:44,200 --> 00:02:50,879
+CI/CD. So if we want to deploy the
+model, we can use the CI/CD technique.
+
+37
+00:02:48,720 --> 00:02:54,400
+We can use GitHub actions. Okay, we can
+use genkins. We can use CircleCI. Uh
+
+38
+00:02:53,280 --> 00:02:58,640
+with the help of that, we can also
+deploy the model. And uh some of the
+
+39
+00:02:56,560 --> 00:03:03,560
+amazing platform actually you have
+inside LM ops. So let me write down
+
+40
+00:03:00,560 --> 00:03:03,560
+them.
+
+41
+00:03:04,480 --> 00:03:14,200
+So the first platform you
+have AWS
+
+42
+00:03:10,519 --> 00:03:17,760
+bedrock. Okay. Second you have
+GCP Vertex
+
+43
+00:03:17,959 --> 00:03:30,720
+AI and third you have
+Azure Open AI. Okay. So these are the
+
+44
+00:03:27,319 --> 00:03:34,159
+platform platform from cloud provider.
+So everything you will be doing in the
+
+45
+00:03:32,080 --> 00:03:37,920
+cloud and what is the main advantage? So
+here you don't need to download the
+
+46
+00:03:36,159 --> 00:03:41,599
+model. Okay. Let's say if you're working
+with an open source model. Okay. Open
+
+47
+00:03:40,080 --> 00:03:45,040
+source model. Let's say any kinds of
+open-source model. I think you know that
+
+48
+00:03:43,440 --> 00:03:49,760
+there are thousands of opensource models
+are available. Okay. Let's say you are
+
+49
+00:03:46,799 --> 00:03:54,400
+working with llama. Okay. Llama let's
+say three. Recently they have published
+
+50
+00:03:51,200 --> 00:03:58,799
+the four. So open source model wise if
+you're working you have to download this
+
+51
+00:03:57,519 --> 00:04:02,879
+model in your system. Then you will be
+able to use it. And for this what you
+
+52
+00:04:00,799 --> 00:04:07,920
+need? You need a good infrastructure.
+Otherwise you won't be able to uh use
+
+53
+00:04:05,280 --> 00:04:12,080
+that particular model. Okay. But in
+platform what happens they have already
+
+54
+00:04:10,720 --> 00:04:15,840
+hosted these are the model in their
+platform in their cloud and they have
+
+55
+00:04:13,760 --> 00:04:19,280
+given you one API access. So with the
+help of API you can access the model and
+
+56
+00:04:17,680 --> 00:04:23,919
+you can do your work. Let's see you are
+using core i3 processor still you will
+
+57
+00:04:21,519 --> 00:04:27,919
+be able to work with the mod model okay
+very easily okay with a very fast
+
+58
+00:04:25,680 --> 00:04:32,000
+inference time. So that's why these are
+the platform is getting more popularity
+
+59
+00:04:29,360 --> 00:04:35,919
+nowadays because uh deploying your own
+model it's super challenging and it it
+
+60
+00:04:34,160 --> 00:04:40,720
+has actually more cost involvement.
+Okay. So that's why you are not going to
+
+61
+00:04:37,919 --> 00:04:44,960
+host our own model. Okay. Uh for this
+you can use something called DLC deep
+
+62
+00:04:43,040 --> 00:04:48,880
+learning container. So you can use
+something called Amazon
+
+63
+00:04:46,440 --> 00:04:52,479
+SageMaker to deploy your model. But at
+the end if you see the cost of Amazon
+
+64
+00:04:50,320 --> 00:04:55,840
+SageMaker per hour it would be huge. So
+that's why we're not going to follow
+
+65
+00:04:53,680 --> 00:04:59,680
+this approach. Uh so we'll be using some
+platform uh there we'll be using the
+
+66
+00:04:57,919 --> 00:05:02,240
+foundation models uh with the help of
+that uh with the help of some
+
+67
+00:05:00,800 --> 00:05:06,960
+orchestration framework we'll try to
+develop the projects okay and uh we'll
+
+68
+00:05:04,479 --> 00:05:11,919
+be integrating the vector database and
+then uh we can build the entire uh LLM
+
+69
+00:05:09,600 --> 00:05:16,320
+of solution okay I hope it is clear so
+yes guys these are some actually tools
+
+70
+00:05:13,600 --> 00:05:20,000
+that are shaping the LM ops and uh
+definitely you will be uh using these
+
+71
+00:05:18,479 --> 00:05:23,120
+are the tool going forward whenever you
+will be implementing any kind of LM
+
+72
+00:05:21,360 --> 00:05:25,280
+powered application so yes thanks for
+watching
+

@@ -1,0 +1,428 @@
+1
+00:00:00,400 --> 00:00:07,759
+Hello everyone. So guys uh as of now we
+have seen the uh Vert.x AI demo the
+
+2
+00:00:05,600 --> 00:00:10,719
+complete let's say Vert.x AI demo we
+have seen uh we have implemented
+
+3
+00:00:09,360 --> 00:00:14,880
+different different kinds of application
+with the help of Vert.xi. So now it's
+
+4
+00:00:13,120 --> 00:00:20,160
+time to explore another H nameops
+platform called AWS bedrock. So this uh
+
+5
+00:00:18,160 --> 00:00:23,680
+service is available in the AWS cloud.
+So make sure you have the AWS account.
+
+6
+00:00:22,480 --> 00:00:26,960
+So if you don't have the account just
+try to create one account. Initially it
+
+7
+00:00:25,119 --> 00:00:30,720
+will give you $300 free credit but you
+have to add your card there. Got it? So
+
+8
+00:00:28,720 --> 00:00:35,200
+after login with your console so you
+will get this kinds of window okay in
+
+9
+00:00:32,480 --> 00:00:39,040
+the AWS. So this is my console. So now
+here what you have to do you have to
+
+10
+00:00:36,480 --> 00:00:43,360
+search for bedrock. So let me search. So
+see Amazon bedrop and this is the
+
+11
+00:00:41,680 --> 00:00:46,800
+service actually the easiest way to
+build ancale genative application with
+
+12
+00:00:45,280 --> 00:00:49,320
+the foundation model. So let me open up
+the
+
+13
+00:00:47,559 --> 00:00:54,480
+bedrock.
+Mhm. Now I'll just click on get started.
+
+14
+00:00:52,879 --> 00:00:57,920
+See if you're opening for the first time
+this bedrock what you have to do? You
+
+15
+00:00:55,920 --> 00:01:01,039
+have to request for the model access. So
+there is a button you will see request
+
+16
+00:00:59,440 --> 00:01:04,640
+model access just try to click here and
+see for me I already requested the model
+
+17
+00:01:03,280 --> 00:01:07,760
+okay for me I already requested the
+model and I got the access you can see
+
+18
+00:01:06,320 --> 00:01:11,119
+some of the model actually they didn't
+given me the access for this what I have
+
+19
+00:01:09,600 --> 00:01:15,680
+to do I have to again uh let's say
+resubmit the access request then I think
+
+20
+00:01:13,680 --> 00:01:19,119
+I might get but for you what you will do
+you will select all the model and try to
+
+21
+00:01:17,680 --> 00:01:22,960
+send the request okay send the request
+you will see that in 5 to 10 minutes
+
+22
+00:01:21,360 --> 00:01:27,520
+actually they will provide the access
+got it and make sure you check your
+
+23
+00:01:25,759 --> 00:01:30,240
+region actually in which region actually
+you are sending the request okay because
+
+24
+00:01:28,799 --> 00:01:33,759
+that in that region actually your model
+will be available so I'm currently
+
+25
+00:01:31,840 --> 00:01:38,000
+inside AP south one that means Asia
+Pacific Mumbai okay so now if I go to
+
+26
+00:01:36,240 --> 00:01:41,439
+any other region let me show you so if I
+let's say go to North Virginia so there
+
+27
+00:01:40,000 --> 00:01:44,320
+you will able to see I don't have any
+access of any
+
+28
+00:01:44,439 --> 00:01:53,520
+model now see it will show this kind of
+window enable all model okay now if I
+
+29
+00:01:49,680 --> 00:01:59,119
+click here now just select all the model
+and try to click on the next okay Now
+
+30
+00:01:57,360 --> 00:02:03,360
+you have to submit the request. Okay,
+you have to submit the request. So let's
+
+31
+00:02:00,880 --> 00:02:03,360
+submit the
+
+32
+00:02:03,799 --> 00:02:09,360
+request. Sometimes actually they will
+ask for some information. So you also
+
+33
+00:02:07,759 --> 00:02:12,640
+need to uh let's say submit some
+information. Let's say your name, email
+
+34
+00:02:10,720 --> 00:02:16,319
+address. Okay, then you can send the
+request. After sending the request in 5
+
+35
+00:02:15,120 --> 00:02:19,760
+to 10 minutes you will see that they
+will give you the model access. So guys
+
+36
+00:02:18,080 --> 00:02:24,400
+you can see after sending the request
+actually I got the access. You can see
+
+37
+00:02:22,400 --> 00:02:27,760
+granted access and some of the model you
+can see it is still in progress. So I
+
+38
+00:02:26,480 --> 00:02:31,120
+think it will take some time to give me
+the access. Okay. So that's actually you
+
+39
+00:02:29,360 --> 00:02:34,239
+can apply for the access. So once you
+got the access that means congratulation
+
+40
+00:02:32,959 --> 00:02:37,920
+now you can start with the bedrock
+services. That means now you got all the
+
+41
+00:02:36,239 --> 00:02:44,120
+let's say access of the foundation
+model. Now let me get back to my that
+
+42
+00:02:41,360 --> 00:02:50,800
+region actually Mumbai
+region H. Now see this is your bedrock
+
+43
+00:02:49,120 --> 00:02:53,760
+interface. If I click on the overview
+now you are having different different
+
+44
+00:02:52,239 --> 00:02:57,040
+foundation model here. And what is
+foundation model? I already told you
+
+45
+00:02:55,120 --> 00:03:00,800
+these are large language model and
+different different companies also has
+
+46
+00:02:58,720 --> 00:03:04,239
+collaborated with the AWS even they have
+also published their model like you can
+
+47
+00:03:02,239 --> 00:03:10,159
+see Amazon is having their own model
+apart from that cloudy has like updated
+
+48
+00:03:06,560 --> 00:03:14,319
+their model then go llama mistral okay
+so you can see all the provider okay all
+
+49
+00:03:12,480 --> 00:03:19,440
+the provider they have collaborated with
+AWS and they hosted their model on the
+
+50
+00:03:16,560 --> 00:03:22,959
+AWS that mean as bedrop okay now what
+you can do you can access this the model
+
+51
+00:03:20,959 --> 00:03:26,080
+through API got it so you don't need to
+download this other the model in your
+
+52
+00:03:24,080 --> 00:03:29,280
+system. That is the main advantage here.
+Now you can also play with the
+
+53
+00:03:27,680 --> 00:03:33,519
+playground. Let's say if I click on the
+chat. So here is the chat guys. So you
+
+54
+00:03:31,599 --> 00:03:39,560
+can select the model. Let's say I want
+to select this model. Um let's I'll
+
+55
+00:03:35,760 --> 00:03:44,400
+select this llama 3 8 billion instruct
+model. Now if I send any request let's
+
+56
+00:03:42,239 --> 00:03:44,400
+say
+
+57
+00:03:46,280 --> 00:03:52,159
+hello. So this is my prompt as it is
+giving me the answer. So that's how
+
+58
+00:03:51,120 --> 00:03:55,200
+actually it is having different
+different kinds of playground text
+
+59
+00:03:53,440 --> 00:03:59,040
+playground, chat playground, image
+playground because it is also having
+
+60
+00:03:56,879 --> 00:04:02,959
+multimodel as well. So you can see here
+different different model. Let's say I
+
+61
+00:04:00,319 --> 00:04:07,120
+you want to use this uh uh Amazon model.
+So just try to click here. See all kinds
+
+62
+00:04:04,799 --> 00:04:14,640
+of Amazon model. You will be able to see
+it is Titan uh text G1 light, Titan text
+
+63
+00:04:11,519 --> 00:04:19,199
+G1 Express. Okay. Titan image generator.
+Then uh Titan multimodel embeddings. Now
+
+64
+00:04:17,840 --> 00:04:22,240
+if you want to use let's say this model,
+what you can do? you need to just copy
+
+65
+00:04:20,400 --> 00:04:25,680
+the model ID. So this is the model ID
+and with the help of model id you can
+
+66
+00:04:23,680 --> 00:04:29,759
+use it. Similar wise for the meta also
+let's say you want to access llama. Okay
+
+67
+00:04:27,759 --> 00:04:34,240
+llama model you can see. So for this you
+have to use this uh you have to use this
+
+68
+00:04:32,160 --> 00:04:37,040
+model ID. Okay. Even from here also you
+can directly open in the playground and
+
+69
+00:04:35,759 --> 00:04:39,520
+you can also play with these are the
+model. Even if you go to the example
+
+70
+00:04:38,479 --> 00:04:42,320
+section they have given different
+different example. Even you can also
+
+71
+00:04:41,040 --> 00:04:46,000
+copy these are the code and you can
+execute in your system. Now let's click
+
+72
+00:04:44,080 --> 00:04:50,000
+on the base model. You can see different
+different kinds of base model it is also
+
+73
+00:04:47,759 --> 00:04:53,520
+having even uh if you want to train your
+custom model it is also possible just go
+
+74
+00:04:51,680 --> 00:04:56,639
+to the custom model you can also perform
+the finetuning operations so from the UI
+
+75
+00:04:55,440 --> 00:05:01,120
+itself you can do the finetuning
+operation even let's say after
+
+76
+00:04:58,479 --> 00:05:05,360
+finetuning you can also keep your model
+here okay in the custom model section so
+
+77
+00:05:03,199 --> 00:05:09,360
+that you can load this model as an API
+okay every functionality actually this
+
+78
+00:05:07,440 --> 00:05:13,120
+bedrock will give you so you can use
+them so yes this is the overview of our
+
+79
+00:05:11,520 --> 00:05:16,560
+Amazon bedrock that means it's a
+platform it's LMOS platform Here we are
+
+80
+00:05:15,440 --> 00:05:20,080
+having different different kinds of
+foundation model even all the
+
+81
+00:05:18,160 --> 00:05:23,120
+functionality it is also provides with
+the help of these are the functionality
+
+82
+00:05:21,199 --> 00:05:27,360
+you can create any kinds of GNAI based
+application so in the next video what
+
+83
+00:05:24,960 --> 00:05:32,720
+we'll do guys we'll just try to uh do
+the hands-on on this uh AWS bedrop that
+
+84
+00:05:30,320 --> 00:05:36,400
+means we'll be accessing these are the
+foundation model through the python okay
+
+85
+00:05:34,240 --> 00:05:39,759
+python code that is the agenda with that
+guys thank you so much uh for watching
+
+86
+00:05:37,919 --> 00:05:42,320
+this video and I will see you next All
+right.
+

@@ -1,0 +1,287 @@
+1
+00:00:01,040 --> 00:00:10,599
+Hi guys, welcome back. In this video,
+we'll be uh discussing about uh what is
+
+2
+00:00:07,200 --> 00:00:16,560
+hstack. Okay, so let me just write
+down hack. So maybe you have already
+
+3
+00:00:13,599 --> 00:00:22,520
+heard of this name. Okay, hack. So is
+nothing but it's
+
+4
+00:00:18,520 --> 00:00:22,520
+a powerful
+
+5
+00:00:23,439 --> 00:00:25,760
+uh
+
+6
+00:00:25,800 --> 00:00:33,920
+opensource okay
+opensource chain
+
+7
+00:00:30,920 --> 00:00:33,920
+AI
+
+8
+00:00:33,960 --> 00:00:43,440
+framework okay framework by
+uh deep set okay there is a organization
+
+9
+00:00:41,120 --> 00:00:48,120
+I think called deepset so they have
+developed this particular framework work
+
+10
+00:00:46,160 --> 00:00:54,760
+and it was
+uh primary primarily used for the rag
+
+11
+00:00:52,079 --> 00:01:02,680
+application development. So
+primary really
+
+12
+00:00:57,960 --> 00:01:02,680
+used for building
+
+13
+00:01:09,200 --> 00:01:17,479
+uh rag application. Okay. itable
+augmented generations and it supports
+
+14
+00:01:14,560 --> 00:01:22,560
+various kinds of task like you can uh
+perform. So supports Q
+
+15
+00:01:23,640 --> 00:01:30,040
+system
+then
+
+16
+00:01:27,320 --> 00:01:37,560
+semantic
+search then you can perform chat
+
+17
+00:01:34,680 --> 00:01:41,119
+bots. Okay.
+and document
+
+18
+00:01:43,720 --> 00:01:54,880
+source. Document source.
+Okay. So why uh we use high
+
+19
+00:01:51,079 --> 00:01:54,880
+stack? We take a different
+
+20
+00:01:55,960 --> 00:02:03,360
+color. Okay.
+Why? Because uh it has some amazing uh
+
+21
+00:02:01,759 --> 00:02:06,560
+functionality.
+So here you can
+
+22
+00:02:08,119 --> 00:02:11,119
+combine
+
+23
+00:02:13,800 --> 00:02:23,280
+retrievers and
+reader
+
+24
+00:02:19,239 --> 00:02:26,840
+in model pipeline. Okay, modular
+pipelines. So those who have already
+
+25
+00:02:24,480 --> 00:02:31,760
+used I think they already
+know
+
+26
+00:02:28,360 --> 00:02:31,760
+pipelines. Then
+
+27
+00:02:31,879 --> 00:02:39,239
+second
+flag and
+
+28
+00:02:36,680 --> 00:02:44,239
+play
+supports
+
+29
+00:02:40,760 --> 00:02:44,239
+for hugging
+
+30
+00:02:45,319 --> 00:02:55,200
+face bias vector database. Okay. even
+open then elastic
+
+31
+00:03:01,879 --> 00:03:06,000
+search then pine
+
+32
+00:03:06,280 --> 00:03:16,400
+phone
+and mill bus. Okay, these are the things
+
+33
+00:03:13,519 --> 00:03:16,400
+and
+
+34
+00:03:16,599 --> 00:03:21,280
+designed
+for
+
+35
+00:03:23,239 --> 00:03:32,400
+production
+ready
+
+36
+00:03:28,840 --> 00:03:32,400
+scalable GNI
+
+37
+00:03:33,640 --> 00:03:41,280
+apps. Okay. So these are the uh actually
+let's say main things we have inside
+
+38
+00:03:39,040 --> 00:03:46,080
+hashtag that's why it is getting more
+popular ities and some core component
+
+39
+00:03:51,560 --> 00:03:58,760
+wise. The core component wise it has
+document store.
+
+40
+00:04:03,040 --> 00:04:06,239
+Then we have
+
+41
+00:04:07,159 --> 00:04:15,200
+retriever. Then we have
+reader. Okay. And
+
+42
+00:04:16,120 --> 00:04:23,680
+pipelines. Pipelines. Okay. So yes uh
+guys uh again this is a like a
+
+43
+00:04:22,000 --> 00:04:27,120
+orchestration framework you can consider
+with help of that you can also build ji
+
+44
+00:04:26,000 --> 00:04:34,160
+application. Now if I show you the
+documentation of h stack. So hey
+
+45
+00:04:31,160 --> 00:04:34,160
+stack
+
+46
+00:04:36,520 --> 00:04:45,199
+documentation. So this is the website of
+haste. Okay. So here you can see this is
+
+47
+00:04:42,120 --> 00:04:48,240
+the website of haste. And if you want to
+see the documentation of
+
+48
+00:04:54,040 --> 00:05:01,360
+haste. This is the
+documentation. So here they have given
+
+49
+00:04:59,520 --> 00:05:07,280
+the guideline. So how we can install the
+hashtag okay hacki so how we can uh
+
+50
+00:05:05,759 --> 00:05:10,560
+write the code each and everything they
+have given okay let's say you want to
+
+51
+00:05:08,639 --> 00:05:15,120
+create the pipeline so this is the
+example of pipeline even they have their
+
+52
+00:05:12,479 --> 00:05:19,520
+own tutorial you can also follow okay so
+yes guys uh this is another like uh
+
+53
+00:05:17,280 --> 00:05:24,720
+framework you can use for ji application
+development okay so uh most of the time
+
+54
+00:05:22,800 --> 00:05:30,160
+uh we'll try to utilize the langen
+because lang chain uh is having the
+
+55
+00:05:27,520 --> 00:05:34,400
+ecosystem and those ecosystem helps you
+to build most of the geni application
+
+56
+00:05:32,639 --> 00:05:38,400
+with the help of LLM authentication. So
+that's why we are not going to focus on
+
+57
+00:05:36,639 --> 00:05:42,400
+haststack okay or any other let's
+orchestration framework. So most of the
+
+58
+00:05:40,160 --> 00:05:46,560
+time we'll try to use the lang even
+nowadays people are using lchen broadly
+
+59
+00:05:44,720 --> 00:05:52,240
+that's why okay we'll also try to
+utilize the lang. So yes guys I hope you
+
+60
+00:05:49,280 --> 00:05:55,240
+understood what is hicc and thanks for
+watching.
+

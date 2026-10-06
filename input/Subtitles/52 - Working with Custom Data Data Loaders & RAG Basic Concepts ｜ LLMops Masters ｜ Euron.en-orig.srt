@@ -1,0 +1,2746 @@
+1
+00:00:00,160 --> 00:00:04,800
+So first of all I'll be discussing about
+data
+
+2
+00:00:07,080 --> 00:00:13,599
+loader. Okay data loader that means how
+to work
+
+3
+00:00:17,560 --> 00:00:24,960
+with custom
+data. So it can be any kinds of format.
+
+4
+00:00:22,720 --> 00:00:29,119
+It can be PDF format. It can be let's
+say HTML format. It can be let's say
+
+5
+00:00:27,439 --> 00:00:32,880
+JSON format. Excel format. any kinds of
+data we can consider in that case right
+
+6
+00:00:31,039 --> 00:00:41,520
+now the second thing I'll be discussing
+about uh what is rag that means
+
+7
+00:00:38,520 --> 00:00:41,520
+introduction
+
+8
+00:00:41,640 --> 00:00:51,160
+introduction to
+rag and what is the full form of rag
+
+9
+00:00:48,680 --> 00:00:54,160
+retrieval okay
+retrieval
+
+10
+00:00:55,000 --> 00:00:58,399
+augmented generation
+
+11
+00:00:59,280 --> 00:01:07,360
+Okay, retrieval augmented generation.
+Then third, we'll be discussing about uh
+
+12
+00:01:05,439 --> 00:01:13,200
+splitter. That means we'll be breaking
+down this rag. Okay, so let me just
+
+13
+00:01:10,080 --> 00:01:16,720
+write down uh yeah. So we'll be breaking
+down this rag and inside rag actually
+
+14
+00:01:15,520 --> 00:01:20,080
+we'll see different different kinds of
+component. The first component we'll be
+
+15
+00:01:18,159 --> 00:01:23,400
+discussing about which is nothing but uh
+splitter.
+
+16
+00:01:21,880 --> 00:01:30,320
+Display
+splitter. Okay. Then the second
+
+17
+00:01:26,320 --> 00:01:30,320
+component we'll be discussing about
+
+18
+00:01:31,960 --> 00:01:38,720
+embedding.
+Then we'll be discussing about vector
+
+19
+00:01:41,159 --> 00:01:47,520
+store. Then we'll be discussing
+about
+
+20
+00:01:48,119 --> 00:01:57,200
+retriever. Okay. Retrievers.
+Then uh once we uh once we got the
+
+21
+00:01:54,880 --> 00:02:03,280
+understanding of this there is another
+topic we'll be understanding called
+
+22
+00:02:00,040 --> 00:02:08,440
+top k okay top k inside retriever okay
+what is top k inside retriever I'll try
+
+23
+00:02:04,719 --> 00:02:14,000
+to discuss uh next
+session we'll be um we'll be learning
+
+24
+00:02:11,360 --> 00:02:18,599
+one rag demo that means I'll show you
+one rag
+
+25
+00:02:16,680 --> 00:02:22,599
+application okay
+rag
+
+26
+00:02:20,840 --> 00:02:27,760
+with
+langen okay langen expression language
+
+27
+00:02:25,920 --> 00:02:30,879
+that means we'll be building one rag uh
+rag system we'll be using our custom
+
+28
+00:02:29,680 --> 00:02:35,760
+data and we'll be building the rag
+system and we'll be using this uh langen
+
+29
+00:02:33,280 --> 00:02:39,440
+expression language there okay our new
+langen syntax we'll be using to
+
+30
+00:02:37,599 --> 00:02:46,120
+implement the entire let's say uh rag
+system okay so this is the idea okay
+
+31
+00:02:42,000 --> 00:02:52,480
+fine so now see um as of now I think
+remember as of now what we have done we
+
+32
+00:02:48,800 --> 00:02:56,599
+have only done the um generation okay
+with help of large language model let's
+
+33
+00:02:53,920 --> 00:03:03,040
+say here we are having
+LLM so as of now what we have done we
+
+34
+00:02:59,680 --> 00:03:09,360
+have sent we have given a prompt okay we
+have sent a
+
+35
+00:03:04,760 --> 00:03:09,360
+prompt and my model was giving me some
+
+36
+00:03:09,400 --> 00:03:16,879
+response okay
+response and to give the response
+
+37
+00:03:14,959 --> 00:03:23,319
+actually the actually information it is
+using okay so it is using pre
+
+38
+00:03:21,920 --> 00:03:27,760
+uh
+train okay pretend
+
+39
+00:03:27,800 --> 00:03:33,040
+knowledge pre-ten knowledge that means
+during training these kinds of large
+
+40
+00:03:31,760 --> 00:03:39,280
+language model let's say if I'm talking
+about
+
+41
+00:03:34,760 --> 00:03:43,840
+GPT 3.5 okay GPT 3.5 turbo so whenever
+I'm talking about this model this model
+
+42
+00:03:41,200 --> 00:03:49,360
+is already trained with pre pre I mean u
+some data set right over the internet I
+
+43
+00:03:45,760 --> 00:03:53,360
+think in 200 uh till 2023 three I think
+till October they train I mean they
+
+44
+00:03:52,080 --> 00:03:58,879
+collected the data and they train this
+kinds of model okay if I'm not wrong so
+
+45
+00:03:56,400 --> 00:04:01,920
+this model is having actually I mean
+these are the
+
+46
+00:03:59,959 --> 00:04:05,439
+information okay this model is having
+these are the information uh let's say
+
+47
+00:04:03,760 --> 00:04:08,959
+whatever data they used to train the
+model it is already already having these
+
+48
+00:04:07,280 --> 00:04:12,959
+are the knowledge so if I'm asking
+anything related to that it will be able
+
+49
+00:04:11,040 --> 00:04:17,120
+to give me the response but what about
+you are having some specific data let's
+
+50
+00:04:14,799 --> 00:04:22,400
+say uh let's say if I ask let's say let
+me show you one example
+
+51
+00:04:19,320 --> 00:04:24,560
+um what I can show guys. So I'll open up
+my
+
+52
+00:04:27,479 --> 00:04:31,600
+code. So here I'll create a
+
+53
+00:04:31,720 --> 00:04:35,199
+notebook. Just a
+
+54
+00:04:37,080 --> 00:04:40,080
+minute
+
+55
+00:04:40,840 --> 00:04:47,600
+03. Uh I'll name it as let's say uh data
+
+56
+00:04:50,440 --> 00:04:54,840
+loader rag demo
+
+57
+00:04:56,880 --> 00:04:59,199
+ip
+
+58
+00:04:59,320 --> 00:05:07,680
+1b. So here what I can do u I will
+initialize my lm first of all. I think
+
+59
+00:05:05,759 --> 00:05:12,720
+you know how to initialize the lm yes or
+no. If I want to initialize the LM,
+
+60
+00:05:09,680 --> 00:05:16,759
+first of all, I have to load my secret
+uh keys. Okay, I have to load my secret
+
+61
+00:05:14,639 --> 00:05:20,639
+keys from where? From the
+environment. Okay, it is telling plain
+
+62
+00:05:18,720 --> 00:05:25,120
+text because I have to select my kernel
+H. So here I'll be using OpenAI model.
+
+63
+00:05:23,440 --> 00:05:28,479
+That's why I'm loading the OpenAI API
+key. But if you want to use any other
+
+64
+00:05:26,560 --> 00:05:32,479
+model, let's say you want to use GO API,
+you want to let's say load lama model or
+
+65
+00:05:30,560 --> 00:05:35,520
+ML model that means free model, you can
+use GO API in that case. Okay. So I
+
+66
+00:05:34,320 --> 00:05:39,280
+already have the open AI account. That's
+why I'll be loading open a model. You
+
+67
+00:05:37,280 --> 00:05:42,720
+can also load the gro model as free. I
+already showed you how we can let's say
+
+68
+00:05:41,280 --> 00:05:47,120
+load different different kinds of model.
+Now, first of all, let's load the open
+
+69
+00:05:44,320 --> 00:05:52,639
+API key. After loading it, so first of
+all, let me load one uh chat completion
+
+70
+00:05:50,320 --> 00:05:55,440
+model because I already told you mostly
+we'll be using chat completion model.
+
+71
+00:05:54,080 --> 00:05:58,880
+Okay, instead of completion model. So,
+you can see I'm importing one chat
+
+72
+00:05:57,600 --> 00:06:06,199
+completion model which is nothing but
+GPT 3.5 Turbo 0125 model. Okay, so this
+
+73
+00:06:02,560 --> 00:06:10,160
+is the model I have loaded.
+Now how to how to let's say give the
+
+74
+00:06:08,880 --> 00:06:13,600
+prompt to the large language model. I
+think remember let's say if I am using
+
+75
+00:06:11,520 --> 00:06:18,160
+chat model. So that's how I have to give
+the prompt. So this is the way we can
+
+76
+00:06:16,000 --> 00:06:26,080
+send the prompt. So what I can do I'll
+copy this prompt as it is and
+
+77
+00:06:22,600 --> 00:06:30,440
+here I think just let me copy from
+previous example H. So here is one
+
+78
+00:06:29,120 --> 00:06:39,600
+example I'll
+copy and here I'll try to paste it. Now
+
+79
+00:06:33,600 --> 00:06:39,600
+here I can give URL uh let's say um URL
+
+80
+00:06:41,000 --> 00:06:47,199
+helpful okay
+help helpful
+
+81
+00:06:48,039 --> 00:06:55,199
+assistant now here I can give one input
+let's say I'll
+
+82
+00:06:51,960 --> 00:06:55,199
+tell tell
+
+83
+00:06:55,639 --> 00:07:02,840
+me
+about TS with BP let's say I'll give my
+
+84
+00:07:01,680 --> 00:07:08,319
+YouTube channel
+Okay, let let me see whether it is able
+
+85
+00:07:05,199 --> 00:07:12,800
+to give me the answer or not. So I mean
+whenever they train this model uh I'm
+
+86
+00:07:10,560 --> 00:07:19,560
+not sure actually they took my data or
+not. Okay, I mean let's see. So what I
+
+87
+00:07:15,840 --> 00:07:24,000
+can do I can print a response here
+simply. Okay, so now let me
+
+88
+00:07:25,080 --> 00:07:31,080
+execute. See uh if I show you the
+content only.
+
+89
+00:07:31,680 --> 00:07:35,440
+If I show you the content only. If I
+print
+
+90
+00:07:40,199 --> 00:07:48,479
+it, see it is telling I'm sorry but I
+could not find any information on DS
+
+91
+00:07:44,880 --> 00:07:53,360
+with BP. It seems like uh it way uh it
+may be a typo or terms that is not
+
+92
+00:07:51,520 --> 00:07:56,879
+weirdly recognized. could you please
+provide more context or clarify your
+
+93
+00:07:55,280 --> 00:08:02,080
+question so that I can better to assist
+you because whenever they train this
+
+94
+00:07:58,800 --> 00:08:06,319
+model that time uh I I mean uh that time
+they they were not using my data okay
+
+95
+00:08:04,560 --> 00:08:09,759
+that means my YouTube uh I mean
+information was not there inside the
+
+96
+00:08:08,319 --> 00:08:13,440
+let's say data set whatever data set
+they used to use what I'm trying to say
+
+97
+00:08:11,520 --> 00:08:16,960
+let's say whenever I'm performing the
+inference operation with the pre-tend
+
+98
+00:08:15,280 --> 00:08:20,960
+model the train model we are using let's
+say direct model we are using and if I'm
+
+99
+00:08:18,800 --> 00:08:24,879
+asking any kinds of prompt it's always
+not let's say possible able you will be
+
+100
+00:08:23,120 --> 00:08:29,199
+getting the response. Let's say if you
+are asking anything which is not
+
+101
+00:08:26,879 --> 00:08:32,240
+available in the knowledge base okay in
+your model knowledge base that time it
+
+102
+00:08:30,479 --> 00:08:36,399
+won't be giving you the response okay
+and here is the example I already showed
+
+103
+00:08:34,240 --> 00:08:39,919
+you if I'm asking related yes with bi it
+is not able to give me the answer
+
+104
+00:08:38,080 --> 00:08:45,040
+because it hasn't trained with this
+particular data so in that case what I
+
+105
+00:08:42,000 --> 00:08:48,720
+can do in that case what I can do can I
+use my custom data can I use my custom
+
+106
+00:08:47,200 --> 00:08:52,160
+data and can I give the information to
+my model is it possible yes it is
+
+107
+00:08:50,560 --> 00:08:55,920
+possible for this we have to first of
+all learn how to load the data data how
+
+108
+00:08:54,399 --> 00:08:59,279
+to load different kinds of data. Let's
+say here I'm having one data folder. You
+
+109
+00:08:57,839 --> 00:09:02,160
+can see inside data folder I'm having
+different different kinds of txt file
+
+110
+00:09:01,040 --> 00:09:06,959
+sorry different different kinds of file
+let's say I'm having PDF file I'm having
+
+111
+00:09:04,080 --> 00:09:10,720
+HTML file I'm having txt file then I'm
+having CSV file I'm also having database
+
+112
+00:09:09,120 --> 00:09:15,120
+file okay so these are the different
+different kinds of file I'm having now
+
+113
+00:09:12,480 --> 00:09:18,640
+if I want to load these are the data and
+if I want to pass the information to my
+
+114
+00:09:16,640 --> 00:09:22,320
+large language model how it can be done
+with the help of langen because I
+
+115
+00:09:20,320 --> 00:09:26,720
+already told you langun is a universal
+framework it can support everything that
+
+116
+00:09:24,800 --> 00:09:29,600
+means you can connect all kinds of data
+sources
+
+117
+00:09:27,519 --> 00:09:33,600
+You can connect all kinds of technology.
+Okay. You can connect all kinds of
+
+118
+00:09:31,240 --> 00:09:36,080
+platform. Okay. And you can also load
+different different kinds of large
+
+119
+00:09:34,640 --> 00:09:40,000
+language model with help of only one
+framework. Okay. That is what I already
+
+120
+00:09:38,560 --> 00:09:44,320
+given you the intuition in my first
+session. Okay. So now we'll see how we
+
+121
+00:09:42,240 --> 00:09:47,200
+can load these are the data. Okay. So
+this is called actually data loader
+
+122
+00:09:45,600 --> 00:09:50,080
+inside langen. First of all we have to
+learn how we can load different
+
+123
+00:09:48,320 --> 00:09:53,680
+different kinds of data different kinds
+of format of the data. Then we'll be
+
+124
+00:09:52,320 --> 00:09:56,399
+using that particular knowledge to
+create our rag based application. And
+
+125
+00:09:55,200 --> 00:09:59,360
+I'll tell you what is rag. No need to
+worry as of now if you're familiar not
+
+126
+00:09:57,839 --> 00:10:04,399
+familiar with rag. I'll also give you
+the intuition about the rag. Okay. So
+
+127
+00:10:02,640 --> 00:10:08,880
+yeah. So first of all let's try to see
+how we can load let's say PDF data, HTML
+
+128
+00:10:06,880 --> 00:10:13,279
+data, txt data. Okay. So these are the
+data how we can load it. So this is our
+
+129
+00:10:11,040 --> 00:10:19,839
+main objective. So for this here I'm
+going to write a comment. So here I can
+
+130
+00:10:16,079 --> 00:10:24,640
+write data loader. Okay. Data loader.
+Okay. So the first uh data will be uh
+
+131
+00:10:22,240 --> 00:10:28,880
+loading which is nothing but txt data.
+That means if you're having any txt file
+
+132
+00:10:26,320 --> 00:10:35,839
+how we can load it. So here so let me
+just write down here
+
+133
+00:10:32,040 --> 00:10:41,440
+txt data loading. So for this you have
+to import one uh function from the
+
+134
+00:10:38,800 --> 00:10:45,040
+langen community. So all kinds of data
+loader are available inside langen
+
+135
+00:10:43,040 --> 00:10:49,440
+community guys. Okay. So first of all
+write like that
+
+136
+00:10:47,079 --> 00:10:54,240
+langen community. So I already installed
+langen community I think remember. So
+
+137
+00:10:51,760 --> 00:10:58,600
+langen community is not there. Let me
+just find. Yeah. So, langen community is
+
+138
+00:10:56,880 --> 00:11:02,959
+not there. So, I can install the langen
+community. So, here is the langen
+
+139
+00:11:00,720 --> 00:11:06,560
+community. Okay. Langen hyphen
+community. And this is the specific
+
+140
+00:11:04,160 --> 00:11:09,279
+version I'm installing. Okay. And try to
+remember all kinds of data order
+
+141
+00:11:08,000 --> 00:11:12,720
+functionality are available inside
+langen community because I already told
+
+142
+00:11:10,800 --> 00:11:16,720
+you it is using code langen only but
+langen has divided. Okay. These are the
+
+143
+00:11:15,360 --> 00:11:20,480
+framework in a different different let's
+say functionality. Let's say if you want
+
+144
+00:11:17,760 --> 00:11:24,560
+to load the model openi model you have
+to install langen openi. Let's say if
+
+145
+00:11:22,240 --> 00:11:28,160
+you want to use grog gro API you have to
+install langen grog. If you want to
+
+146
+00:11:26,800 --> 00:11:31,519
+let's say load the data you have to
+install langchen community. Okay that's
+
+147
+00:11:30,320 --> 00:11:35,760
+how actually it is having different
+different kinds of sector different
+
+148
+00:11:33,920 --> 00:11:38,399
+different kinds of sub subf framework.
+Okay so this is what you have to
+
+149
+00:11:37,040 --> 00:11:41,440
+remember. So for me I already installed
+in my environment but for you what you
+
+150
+00:11:40,000 --> 00:11:46,640
+have to do guys you have to execute this
+command. So this command p installer
+
+151
+00:11:44,360 --> 00:11:51,279
+requirement.txt. So it will install this
+particular langen community in your uh
+
+152
+00:11:49,040 --> 00:11:55,200
+let's say uh environment. So for me I
+already have it. So what I'll do I'll
+
+153
+00:11:52,560 --> 00:11:55,200
+just try to close
+
+154
+00:11:55,320 --> 00:12:01,839
+it. Then here I'll just try to import.
+So from langen
+
+155
+00:12:02,040 --> 00:12:11,600
+community
+dot documents loader. Okay. Documents
+
+156
+00:12:07,639 --> 00:12:16,079
+loader import. So text loader. Okay. So
+because this is a txt file now. So here
+
+157
+00:12:13,760 --> 00:12:22,000
+you are having one function called text
+loader. That's it. Now you have to
+
+158
+00:12:18,800 --> 00:12:25,600
+specify the location of the text. So
+inside this particular function you have
+
+159
+00:12:23,519 --> 00:12:29,760
+to give the location like which txt file
+you want to load. Let's say I want to
+
+160
+00:12:26,800 --> 00:12:36,240
+load uh this txt file. Let's say uh this
+one big txt file. I'll just try to copy
+
+161
+00:12:32,320 --> 00:12:39,200
+the path and here I can mention it. Now
+see it is copying the entire path. But I
+
+162
+00:12:37,920 --> 00:12:42,480
+don't need the entire path. I only need
+the relevant path because I'm inside my
+
+163
+00:12:40,720 --> 00:12:47,920
+project working directory. So what I can
+do? I can again copy it. So right click
+
+164
+00:12:45,440 --> 00:12:53,200
+and try to copy the relevant path. Okay,
+relative path. So here I can paste it.
+
+165
+00:12:51,680 --> 00:12:56,160
+You can see it is using backward slash.
+In Windows by default it will use
+
+166
+00:12:54,639 --> 00:13:00,720
+backward slash. But what you have to do?
+You have to use the forward slash. Okay,
+
+167
+00:12:57,920 --> 00:13:04,160
+forward slash. That's it. Now after
+loading the data, it will give you the
+
+168
+00:13:02,160 --> 00:13:08,720
+data data loader object. So let me
+create a object here. So I'll store
+
+169
+00:13:06,240 --> 00:13:13,480
+inside a variable. Then after that you
+just need to call the load function. So
+
+170
+00:13:11,519 --> 00:13:20,240
+let me just write
+load loader dot
+
+171
+00:13:17,800 --> 00:13:25,360
+load. Okay. Now it will give you the
+data. So what I can do? I can just store
+
+172
+00:13:22,399 --> 00:13:31,040
+inside a variable called loaded data.
+Okay. Now see if I execute the program
+
+173
+00:13:28,560 --> 00:13:34,800
+you will see that your this txt whatever
+txt you are having inside this file this
+
+174
+00:13:32,800 --> 00:13:39,360
+data has been loaded. Okay. Now let me
+show you. So if I print this data load
+
+175
+00:13:36,639 --> 00:13:44,160
+right loaded data you can see this data
+has been loaded and it has loaded as a
+
+176
+00:13:42,320 --> 00:13:48,320
+document. You can see it has loaded as a
+document. The type is document. Okay
+
+177
+00:13:46,560 --> 00:13:52,320
+always try to remember guys if you're
+using langen if you're using langen lam
+
+178
+00:13:50,720 --> 00:13:56,160
+index whatever whatever orchestration
+framework whenever you are loading the
+
+179
+00:13:54,320 --> 00:14:00,880
+data it will load as a document because
+inside genity we call the data we call
+
+180
+00:13:59,440 --> 00:14:05,000
+all the custom data as a document.
+Always try to
+
+181
+00:14:02,120 --> 00:14:08,800
+remember. Okay, we call it as a
+document. Okay, so this is the document
+
+182
+00:14:07,680 --> 00:14:12,720
+guys. So first of all, it will show you
+the meta sources. That means from which
+
+183
+00:14:11,279 --> 00:14:17,480
+file it has loaded the data. You can see
+it has loaded the data inside data
+
+184
+00:14:14,480 --> 00:14:21,279
+folder. This is the file bg good.txt
+bgoot.txt and this is the page content.
+
+185
+00:14:19,680 --> 00:14:25,279
+That means whatever content you are
+having inside that. So here is the
+
+186
+00:14:23,120 --> 00:14:29,120
+content it has loaded. Okay, it has
+loaded. So this format you have to give
+
+187
+00:14:27,440 --> 00:14:33,600
+to the large language model otherwise it
+won't be working. So make sure your your
+
+188
+00:14:31,120 --> 00:14:36,880
+data is a format of document. Got it? If
+you're loading your any kind of custom
+
+189
+00:14:34,880 --> 00:14:40,800
+data, always you need to remember. Yeah.
+So this is for actually txt data loader.
+
+190
+00:14:39,279 --> 00:14:46,240
+Now what about CSV? Let's say I'm having
+a CSV file. How to load the CSV file. So
+
+191
+00:14:43,120 --> 00:14:52,320
+for this let me show you the syntax. So
+here I can write
+
+192
+00:14:49,160 --> 00:14:57,680
+CSV loader. Okay. Now let me show you
+the different kinds of data your langen
+
+193
+00:14:54,959 --> 00:15:02,160
+supports. So data loader you can see txt
+loader. So this example I have already
+
+194
+00:14:59,279 --> 00:15:06,480
+given you list of the built-in data
+loaders. Yeah. Now you can see your
+
+195
+00:15:03,839 --> 00:15:13,120
+langen supports all kinds of platform.
+You can see you can load the data from
+
+196
+00:15:08,320 --> 00:15:16,240
+uh AC uh AC then uh year bite loader.
+Then you can also see use different
+
+197
+00:15:14,800 --> 00:15:20,240
+different kinds of loader. You can also
+use Astrad archive. I think you know
+
+198
+00:15:18,880 --> 00:15:24,480
+inside archive actually we are having
+all kinds of resource paper nowadays.
+
+199
+00:15:22,079 --> 00:15:29,279
+Then Azio data. Then see different
+different kinds of cassandra. Then you
+
+200
+00:15:26,800 --> 00:15:33,440
+can also load uh discord data. Okay,
+Dropbox data. All kinds of social media
+
+201
+00:15:31,839 --> 00:15:36,880
+platform also you can connect. You can
+also use Figma. See different different
+
+202
+00:15:35,600 --> 00:15:42,560
+kinds of data loader are available
+inside Langel. It's not only about txt
+
+203
+00:15:40,320 --> 00:15:46,240
+data loader, PDF data loader, JSON data
+loader. It's not like that. It's all
+
+204
+00:15:44,320 --> 00:15:49,199
+about all kinds of framework. All kinds
+of third party let's say platform. You
+
+205
+00:15:47,839 --> 00:15:55,519
+can also connect with the lang and it is
+also possible. See guys pi spark, slack,
+
+206
+00:15:52,480 --> 00:15:59,680
+telegram. Okay. Then if you are having
+any custom URL, any website, you can
+
+207
+00:15:57,360 --> 00:16:04,560
+also load the data. XML, YouTube
+transcript, Wikipedia, okay, Twitter,
+
+208
+00:16:02,399 --> 00:16:07,360
+all kinds of data, you can load it. All
+kinds of data you can load it. Now,
+
+209
+00:16:06,160 --> 00:16:10,560
+simply let's say you want to learn how
+to load the CSV data. In that case, what
+
+210
+00:16:09,040 --> 00:16:15,199
+you can do? Just click on the CSV. In
+the documentation, you can see, okay,
+
+211
+00:16:12,639 --> 00:16:17,839
+they have all the tutorial. Okay, it's
+not like that. Although this
+
+212
+00:16:16,399 --> 00:16:20,800
+documentation would be hard for
+understand. Sometimes you will see some
+
+213
+00:16:19,680 --> 00:16:23,920
+of the function it would be easy to
+understand. Let's say if I'm talking
+
+214
+00:16:21,920 --> 00:16:27,279
+about data loader, if you click on the
+CSV, you can see how to load the CSV
+
+215
+00:16:25,680 --> 00:16:31,120
+data loader. First of all, you have to
+import this particular statement CSV
+
+216
+00:16:29,360 --> 00:16:34,079
+data loader from the langen community.
+After that, you have to give the CSV
+
+217
+00:16:32,480 --> 00:16:37,600
+path and it will load the data as it is.
+Okay, so that's how see they have also
+
+218
+00:16:35,440 --> 00:16:40,320
+given the code snippet. So try to open
+it up and try to copy the code and try
+
+219
+00:16:39,040 --> 00:16:43,040
+to paste in your notebook. Okay, you
+will be automatically getting the
+
+220
+00:16:41,360 --> 00:16:46,639
+understanding. So for me, what I will
+do, I'll show you some of the data
+
+221
+00:16:44,160 --> 00:16:50,399
+loader. But for you, you can explore all
+the data loader. Let's say you need to
+
+222
+00:16:48,000 --> 00:16:53,839
+load the slack data or let's say you
+need to load the data from the telegram.
+
+223
+00:16:52,000 --> 00:16:56,560
+So try to go to the documentation try to
+open it up and whatever code they are
+
+224
+00:16:55,120 --> 00:17:00,240
+suggesting try to copy paste and try to
+load the data try to connect with the
+
+225
+00:16:57,920 --> 00:17:04,559
+telegram. Okay. But I will show you most
+actually frequent format. Okay. Most
+
+226
+00:17:02,800 --> 00:17:07,360
+frequent format whatever let's say
+format people are using in their
+
+227
+00:17:05,679 --> 00:17:12,000
+day-to-day life. Okay. So some of the
+example I'll show here. We have seen how
+
+228
+00:17:09,120 --> 00:17:15,760
+to load the txt data. Now let me show
+you the CSV data. How to load the CSV
+
+229
+00:17:14,160 --> 00:17:19,439
+data. So this is the example of the CSV
+data. First of all, you have to load
+
+230
+00:17:17,280 --> 00:17:23,760
+this particular function from the langin
+community document loader. And this is
+
+231
+00:17:21,439 --> 00:17:27,520
+my CSV data guys. You can see straight
+tree list CSV. So this is the comma
+
+232
+00:17:25,600 --> 00:17:32,400
+separated data I'm having. Now if you
+want to load this particular CSV, I have
+
+233
+00:17:30,160 --> 00:17:37,360
+to use CSV loader and again try to call
+load loader.load. Okay. Now if I show
+
+234
+00:17:34,720 --> 00:17:37,360
+you the loaded
+
+235
+00:17:37,799 --> 00:17:46,240
+data. Okay. So this is the entire CSV
+data I'll be getting.
+
+236
+00:17:43,240 --> 00:17:49,120
+See? Okay. This is the entire CSV data
+you'll be getting and all the row it is
+
+237
+00:17:47,600 --> 00:17:52,720
+considering as a document. You can see
+all the row it is considering as a
+
+238
+00:17:50,480 --> 00:17:57,840
+document. Row 0, row 1, row two and so
+on.
+
+239
+00:17:53,799 --> 00:17:57,840
+Okay. Now let me comment it
+
+240
+00:17:58,679 --> 00:18:05,440
+up. Now what about what about HTML?
+Let's say if you're having any HTML
+
+241
+00:18:03,520 --> 00:18:11,520
+data. So here I'm having one HTML. Let
+me try to open it up. So startup HTML.
+
+242
+00:18:09,360 --> 00:18:14,480
+See this is the HTML page I'm having.
+And let's say I want to load these are
+
+243
+00:18:12,960 --> 00:18:17,320
+the data. So how it can be performed?
+Okay, with the help of lion we can
+
+244
+00:18:15,760 --> 00:18:24,440
+easily perform it. Let me show you one
+example. So here is the example
+
+245
+00:18:20,760 --> 00:18:28,640
+guys. Okay, so you have to use this
+unstructured HTML loader this particular
+
+246
+00:18:26,960 --> 00:18:32,640
+function from the langen langen
+community. Inside that you have to give
+
+247
+00:18:30,640 --> 00:18:36,559
+the HTML path. So this is the HTML part
+inside data I'm having this particular
+
+248
+00:18:34,080 --> 00:18:40,960
+HTML and make sure whenever you are
+doing it okay whenever you are doing it
+
+249
+00:18:39,120 --> 00:18:46,960
+uh you have to install one library
+called BS4. So inside requirement.txt I
+
+250
+00:18:44,559 --> 00:18:46,960
+can mention
+
+251
+00:18:47,000 --> 00:18:54,320
+it bs4 as well as the unstructured. So
+these two package you have to install
+
+252
+00:18:52,960 --> 00:18:58,880
+because you will be loading the
+unstructured data inside HTML. You will
+
+253
+00:18:56,559 --> 00:19:03,039
+see unstructured data for this and it is
+beautiful soup as well as the
+
+254
+00:19:00,320 --> 00:19:06,400
+unstructured. Okay these two package. So
+those who have performed web scrapping I
+
+255
+00:19:04,640 --> 00:19:10,400
+think you know what is beautiful soup
+and what is unstructured. Okay. So
+
+256
+00:19:08,400 --> 00:19:13,840
+similar kinds of things lang also apply.
+it will perform the web scrapping and it
+
+257
+00:19:12,000 --> 00:19:18,480
+will extract all the information from
+the website itself from the HTML page
+
+258
+00:19:16,080 --> 00:19:22,160
+itself. So this is the idea. So let me
+save and after uh like adding inside
+
+259
+00:19:20,960 --> 00:19:26,720
+requirement make sure you are running
+this command guys. So requirement txt so
+
+260
+00:19:24,880 --> 00:19:30,080
+it will install all the package in your
+system. So for me I already have
+
+261
+00:19:28,400 --> 00:19:34,880
+installed all the package that's why I'm
+not going to install again. That's it.
+
+262
+00:19:32,400 --> 00:19:40,520
+Now let me load the HTML content. So you
+can simply execute. So it will load the
+
+263
+00:19:37,039 --> 00:19:40,520
+HTML content.
+
+264
+00:19:41,520 --> 00:19:46,240
+So inside this HTML page we are having
+so many content that's why it is taking
+
+265
+00:19:44,720 --> 00:19:50,400
+time because it is extracting all the
+information one by one. Okay. So it will
+
+266
+00:19:48,880 --> 00:19:53,440
+take some time guys. What I'll do I'll
+stop the execution but for you we can
+
+267
+00:19:51,919 --> 00:19:59,559
+execute and you can see whatever content
+it will extract. So as of now let me uh
+
+268
+00:19:56,559 --> 00:20:04,760
+clear the output.
+Okay. Now the next thing I'll show you
+
+269
+00:20:02,080 --> 00:20:09,840
+how we can work with the PDF
+data. So PDF
+
+270
+00:20:07,320 --> 00:20:14,160
+data. So you can see I'm having the PDF
+documents. Okay. So how to load the PDF
+
+271
+00:20:11,760 --> 00:20:18,400
+document? So this is the snippet to load
+the PDF document. You have to use PI PDF
+
+272
+00:20:15,919 --> 00:20:21,280
+loader. See all the import are same only
+you just need to change with respect to
+
+273
+00:20:19,919 --> 00:20:26,080
+your data format. Let's say you need to
+load the uh CSV at the time CSV loader.
+
+274
+00:20:24,559 --> 00:20:29,919
+You need to load the HTML at the time
+HTML loader PDF PDF loader. Okay. That's
+
+275
+00:20:28,320 --> 00:20:34,080
+how you have to only change the function
+inside that you have to specify the PDF.
+
+276
+00:20:31,679 --> 00:20:38,320
+So this is the PDF I want to load and
+you have to load this particular PDF.
+
+277
+00:20:35,840 --> 00:20:42,799
+Okay. So loader.load and speed. Okay,
+you can call this particular function.
+
+278
+00:20:40,159 --> 00:20:47,480
+Now if I show you the loaded content but
+before that you have to install another
+
+279
+00:20:44,679 --> 00:20:51,120
+library called pi
+pdf. So inside requirement I'll try to
+
+280
+00:20:49,919 --> 00:20:54,559
+add pi pdf.f.f.f.f.f.f.f.f.f.f. Okay,
+with the pi PDF it will extract the
+
+281
+00:20:53,120 --> 00:20:58,400
+information from the PDF document
+itself. Okay, this is what you have to
+
+282
+00:20:56,320 --> 00:21:04,159
+remember always. Okay, so now let me
+save and let me execute here.
+
+283
+00:21:01,919 --> 00:21:08,320
+Now you'll see that these are the
+content I had inside my PDF. So it is
+
+284
+00:21:06,400 --> 00:21:13,240
+having actually four pages. If you open
+the
+
+285
+00:21:09,000 --> 00:21:20,080
+PDF so this PDF actually five pages
+PDF. So this is the PDF guys. You can
+
+286
+00:21:15,600 --> 00:21:24,080
+see it is having 1 2 3 4 okay four
+pages. So that's why it is telling four
+
+287
+00:21:22,000 --> 00:21:27,840
+pages PDF. So you can see it is having
+four pages. Okay. Four pages. Four
+
+288
+00:21:25,679 --> 00:21:33,039
+sources and all the content it has
+extracted one by one.
+
+289
+00:21:31,120 --> 00:21:37,120
+Okay. Now if I if I if you want to see
+the page content so simply you can you
+
+290
+00:21:35,679 --> 00:21:41,520
+can see this is a list. Okay. I want to
+take the first item. I'll give the first
+
+291
+00:21:39,600 --> 00:21:46,360
+ID and I only want to see the page
+content of it. Now see it will show you
+
+292
+00:21:44,400 --> 00:21:51,760
+the content whatever content it has
+extracted. That's
+
+293
+00:21:48,200 --> 00:21:54,720
+it. Okay. Now let me show you how we can
+load the data from the
+
+294
+00:21:55,400 --> 00:22:02,320
+Wikipedia. Wikipedia
+data loader.
+
+295
+00:22:00,720 --> 00:22:04,960
+Okay, for this you have to install one
+package called
+
+296
+00:22:09,720 --> 00:22:17,760
+Wikipedia. Okay, Wikipedia package you
+have to
+
+297
+00:22:13,480 --> 00:22:17,760
+install. Then after that this is the
+
+298
+00:22:19,400 --> 00:22:28,080
+syntax. Okay, this is the syntax. See
+now here inside query actually what you
+
+299
+00:22:25,679 --> 00:22:32,080
+can do you can give any kinds of uh you
+can give any kinds of what um any kinds
+
+300
+00:22:30,240 --> 00:22:35,400
+of let's say topic name. So what I what
+I can do let's say here I can mention
+
+301
+00:22:34,240 --> 00:22:40,159
+like
+that let's say query I want to ask about
+
+302
+00:22:38,640 --> 00:22:44,400
+I want to let's say get the information
+about let's say Tesla. So I'll give the
+
+303
+00:22:42,480 --> 00:22:48,559
+Tesla here in the query and what I'm
+telling I need uh load maximum documents
+
+304
+00:22:46,880 --> 00:22:51,679
+one that means it should only return me
+one documents. You can also increase the
+
+305
+00:22:50,240 --> 00:22:54,080
+number. If you need some more
+information, you can increase the
+
+306
+00:22:52,799 --> 00:22:58,000
+number. You can give two, three, okay,
+as per your requirement. Now, if I see
+
+307
+00:22:56,080 --> 00:23:00,960
+execute the program, it will give me the
+content related test
+
+308
+00:23:05,960 --> 00:23:13,360
+lab. Okay. See, so it is giving me the
+content related Tesla. Okay. Now, there
+
+309
+00:23:11,039 --> 00:23:16,960
+is another thing you can perform. So you
+can directly whatever information you
+
+310
+00:23:15,200 --> 00:23:20,000
+are getting you can directly pass to the
+large language model and you can perform
+
+311
+00:23:18,400 --> 00:23:23,600
+the question answer on top of it. Okay
+that mean you can give as a let's say
+
+312
+00:23:21,840 --> 00:23:26,400
+context okay context to your large
+language model. So how it can be
+
+313
+00:23:25,200 --> 00:23:33,760
+performed guys? So let me show you
+another example. So here I'll again
+
+314
+00:23:31,080 --> 00:23:39,280
+create this uh Wikipedia data loader.
+Now see inside query and u this load max
+
+315
+00:23:37,760 --> 00:23:43,159
+you don't need to pass anything just
+write query is equal to name and keep it
+
+316
+00:23:41,520 --> 00:23:48,960
+as default. No need to change
+anything and simply execute this line of
+
+317
+00:23:46,600 --> 00:23:53,919
+code. Okay. See here I'm importing
+prompt template from the prompts. Then
+
+318
+00:23:51,679 --> 00:23:56,559
+chat prompt plate from message. I I
+think I already explained okay what is
+
+319
+00:23:55,440 --> 00:24:00,159
+prompt template? How to create the
+prompt template and all I already
+
+320
+00:23:58,080 --> 00:24:05,280
+clarified. And here is the human prompt
+I'm giving. Answer this question. Here
+
+321
+00:24:02,320 --> 00:24:07,640
+is the extra context. And from where
+I'll get the context? I'll get the
+
+322
+00:24:06,640 --> 00:24:12,480
+context
+from where I'll get the context from the
+
+323
+00:24:10,440 --> 00:24:18,320
+Wikipedia. Okay, I'll get the context
+from Wikipedia. Let's say whatever user
+
+324
+00:24:15,600 --> 00:24:22,000
+will ask. Okay, whatever user will ask.
+So this let's say query first of all
+
+325
+00:24:20,400 --> 00:24:25,440
+will go to the Wikipedia. Wikipedia will
+return me the documents and these
+
+326
+00:24:23,440 --> 00:24:28,960
+documents I will give the context to my
+large language model. Okay, and this
+
+327
+00:24:27,360 --> 00:24:34,000
+will give me the answer. Okay, so it's
+still running. So let me stop the
+
+328
+00:24:30,480 --> 00:24:34,000
+execution and again reexecute
+
+329
+00:24:34,520 --> 00:24:42,480
+again. Okay, so what I can do? I can
+delete this part. It's not required.
+
+330
+00:24:40,720 --> 00:24:48,679
+So let's say whatever Tesla information
+I got now so I can pass as a context
+
+331
+00:24:45,120 --> 00:24:48,679
+that would be fine.
+
+332
+00:24:49,360 --> 00:24:56,600
+So
+here uh I'll
+
+333
+00:24:54,360 --> 00:24:59,600
+give let's
+say
+
+334
+00:25:01,880 --> 00:25:05,679
+Tesla tell me
+
+335
+00:25:07,000 --> 00:25:15,279
+about
+Tesla. Okay, tell me about Tesla. Now
+
+336
+00:25:12,720 --> 00:25:18,960
+see whatever answer I'm getting from my
+Wikipedia, I'm giving as a context. You
+
+337
+00:25:17,120 --> 00:25:23,520
+can see loaded data. the loaded data I'm
+giving I'm giving as a context that
+
+338
+00:25:20,960 --> 00:25:28,360
+means what is happening just try to see
+let's say
+
+339
+00:25:25,360 --> 00:25:34,520
+uh this is my large language
+model llm okay lm so here I'm asking
+
+340
+00:25:32,960 --> 00:25:38,320
+what
+is
+
+341
+00:25:36,120 --> 00:25:42,960
+Tesla this is the prompt I'm giving
+right what is Tesla and here I'm also
+
+342
+00:25:40,640 --> 00:25:48,159
+giving the information about Tesla and
+from where I'm getting from the
+
+343
+00:25:45,559 --> 00:25:52,200
+Wikipedia wiki
+PDF Wikipedia is giving me information
+
+344
+00:25:51,120 --> 00:25:56,720
+related
+Tesla okay this information I'm passing
+
+345
+00:25:54,960 --> 00:26:00,240
+to my large language model as a context
+okay as a context actually I'm passing
+
+346
+00:25:58,480 --> 00:26:04,880
+then whenever you are asking what is
+Tesla so what will happen it will refer
+
+347
+00:26:02,880 --> 00:26:08,080
+this particular context this context it
+will
+
+348
+00:26:05,480 --> 00:26:11,520
+refer okay this context it will refer
+and it will give you the
+
+349
+00:26:09,559 --> 00:26:17,679
+response okay it will give you the
+response so let me show you the
+
+350
+00:26:13,600 --> 00:26:22,320
+execution so if I now execute the
+So now let me do the invoke operation.
+
+351
+00:26:20,720 --> 00:26:26,440
+So chat model invoke I'm giving the
+message.
+
+352
+00:26:23,480 --> 00:26:32,559
+Okay. Now let me show the
+content. See this is the response I got
+
+353
+00:26:30,400 --> 00:26:36,400
+from the large language model. Okay. Now
+see here what you are doing. You are
+
+354
+00:26:33,919 --> 00:26:40,799
+giving the complete complete actually
+data complete data to the large language
+
+355
+00:26:38,960 --> 00:26:48,799
+model as a context. Now just try to
+think if your let's say Wikipedia okay
+
+356
+00:26:45,159 --> 00:26:53,240
+Wikipedia let's say return Wikipedia
+return let's say uh
+
+357
+00:26:51,559 --> 00:26:58,080
+10,000
+10,000
+
+358
+00:26:54,760 --> 00:27:02,640
+tokens 10,000 tokens response that means
+10 10,000 tokens information let's say
+
+359
+00:27:00,559 --> 00:27:07,440
+whenever you given the Tesla in the
+Wikipedia let's say Wikipedia return
+
+360
+00:27:04,720 --> 00:27:16,640
+10,000 tokens 10,000 tokens let's
+information and you are using GPT
+
+361
+00:27:11,120 --> 00:27:21,720
+a GPT 3.5 turbo model. GPT 3.5 turbo
+model. Now if I go to the model
+
+362
+00:27:18,799 --> 00:27:28,480
+documentation, let's say open
+AI model
+
+363
+00:27:24,640 --> 00:27:28,480
+uh sorry not pricing model
+
+364
+00:27:32,440 --> 00:27:39,400
+list model openi platform. Let me open
+it
+
+365
+00:27:36,360 --> 00:27:44,000
+up. Now if I go to
+the GPT series GPT
+
+366
+00:27:44,120 --> 00:27:52,320
+3.5 GPT 3.5 just let me point out yeah
+3.5 turbo if I'm talking about this
+
+367
+00:27:50,159 --> 00:27:57,760
+model now see what is the context window
+guys u maximum output tokens okay they
+
+368
+00:27:56,399 --> 00:28:05,520
+have increased the context window let's
+say I'll increase it here let's say
+
+369
+00:27:59,520 --> 00:28:05,520
+instead of 10,000 I'll just write 30,000
+
+370
+00:28:07,120 --> 00:28:14,320
+Okay, 30,000 that's a 30,000 tokens you
+are having. Now you can see the model
+
+371
+00:28:11,520 --> 00:28:21,240
+GPG 3.55 turbo text context window that
+means input input token it can take
+
+372
+00:28:18,679 --> 00:28:27,919
+16,385 3
+16,385 tokens it can take as an input
+
+373
+00:28:24,000 --> 00:28:30,559
+okay this model can take so let me just
+write here
+
+374
+00:28:31,080 --> 00:28:34,080
+GPT
+
+375
+00:28:36,200 --> 00:28:42,320
+GPT
+GPT 3.5 and five
+
+376
+00:28:43,080 --> 00:28:47,840
+turbo. This model can take
+
+377
+00:28:49,159 --> 00:28:54,480
+16,300 3
+uh
+
+378
+00:28:55,000 --> 00:29:08,080
+85 85
+tokens as an input. Okay. And it can
+
+379
+00:29:01,679 --> 00:29:08,080
+output it can give the output 4,96
+
+380
+00:29:08,200 --> 00:29:15,520
+token
+4, 96 token. It can give you the output.
+
+381
+00:29:13,520 --> 00:29:20,559
+Okay. So this is the limit. This is the
+limit of this large language model. Now
+
+382
+00:29:17,440 --> 00:29:23,799
+let's say the context let's say context
+you got from the Wikipedia. It is let's
+
+383
+00:29:22,320 --> 00:29:29,279
+say
+3,000 sorry 30,000 30,000 token. In that
+
+384
+00:29:27,360 --> 00:29:33,760
+case if I give this data to my large
+language model as a context so will it
+
+385
+00:29:31,520 --> 00:29:36,919
+able to get like take it take it as an
+input because you can see the input
+
+386
+00:29:35,520 --> 00:29:42,799
+token limit is
+16,385 but you are trying to give 30,000
+
+387
+00:29:40,000 --> 00:29:46,720
+token possible no definitely it will
+give you the input error limit right
+
+388
+00:29:44,880 --> 00:29:50,159
+input error actually it will give you
+and whenever you are giving 30,000
+
+389
+00:29:48,399 --> 00:29:55,840
+tokens 30,000 tokens to your large
+language model that means how your model
+
+390
+00:29:52,799 --> 00:30:00,880
+will charge if you go to the model
+pricing so if I show you
+
+391
+00:29:57,960 --> 00:30:05,039
+OpenAI model pricing. It will charge you
+based on the token. Okay, token limit
+
+392
+00:30:02,960 --> 00:30:12,240
+actually. Let's say if I am talking
+about the GPT3.5 turbo
+
+393
+00:30:07,880 --> 00:30:12,240
+model. So what is the turbo model
+
+394
+00:30:12,760 --> 00:30:21,679
+guys? Um here is the turbo model GPT 3.5
+turbo. Okay, turbo model. Let's say I'm
+
+395
+00:30:18,480 --> 00:30:27,480
+talking about this model. Now see uh 1
+million token. Okay. 1 million token
+
+396
+00:30:23,880 --> 00:30:32,480
+input, it will charge you 0 uh
+0.50. Okay. And if it is giving you
+
+397
+00:30:29,840 --> 00:30:35,080
+output is equal to uh output is equal to
+1 million 1 million token, it will
+
+398
+00:30:34,080 --> 00:30:40,720
+charge you
+$1.50. Okay. Now just try to think about
+
+399
+00:30:38,960 --> 00:30:44,880
+just try to think about okay the token
+actually you are giving to the model
+
+400
+00:30:42,640 --> 00:30:49,279
+that means the input you are giving if
+your token size is high that means it is
+
+401
+00:30:46,960 --> 00:30:53,520
+like huge that time your charge will
+also increase yes or no because it will
+
+402
+00:30:51,760 --> 00:30:57,600
+charge you based on the token if you if
+it is taking like big token it is if it
+
+403
+00:30:55,679 --> 00:31:02,799
+is giving let's say big token output
+definitely you will have higher cost
+
+404
+00:31:00,559 --> 00:31:09,480
+that time okay and you can't pass
+actually 30,000 input to the GP 3.5
+
+405
+00:31:06,399 --> 00:31:13,760
+turbo because the input limit is
+16,385. Okay. So this is the idea that's
+
+406
+00:31:12,000 --> 00:31:17,520
+why there is a drawback. This is the
+drawback actually. We can't directly
+
+407
+00:31:15,760 --> 00:31:20,960
+load our custom data. We can pass to the
+large language model. It is not
+
+408
+00:31:18,799 --> 00:31:26,440
+possible. Okay. Because of that issue
+because of the input issue. So what I
+
+409
+00:31:22,640 --> 00:31:34,320
+can tell guys you can see the
+drawbacks. Drawbacks. The first drawback
+
+410
+00:31:29,200 --> 00:31:34,320
+I saw input issue. input limit
+
+411
+00:31:36,919 --> 00:31:45,399
+issue. Okay. Then the second drawback
+you saw which is nothing but uh cost
+
+412
+00:31:42,799 --> 00:31:51,039
+higher cost. Yes or
+no? Okay. So how to overcome this issue?
+
+413
+00:31:48,960 --> 00:31:57,519
+How we can overcome this issue? Is there
+any way we can overcome this
+
+414
+00:31:54,200 --> 00:32:03,279
+issue? I want to use I mean huge
+document. Let's say inside this txt
+
+415
+00:32:00,039 --> 00:32:07,919
+file inside this txt file let's say I'm
+having very huge amount of data huge
+
+416
+00:32:05,360 --> 00:32:12,559
+amount let's say I'm using one books
+okay I'm using one
+
+417
+00:32:10,120 --> 00:32:16,799
+books so inside the books actually
+you'll see there would be 1,000 pages
+
+418
+00:32:14,640 --> 00:32:20,640
+there would be 2,000 pages and if you
+let's say extract all the all the data
+
+419
+00:32:18,960 --> 00:32:24,480
+if you extract all the data and if you
+let's say count the token how to count
+
+420
+00:32:22,960 --> 00:32:28,880
+the token so for this what you can do
+you can simply copy some
+
+421
+00:32:26,120 --> 00:32:34,720
+text and there is token counter website
+is there. So, open
+
+422
+00:32:30,919 --> 00:32:36,960
+AI token
+uh
+
+423
+00:32:39,640 --> 00:32:44,720
+token
+calculator token
+
+424
+00:32:49,880 --> 00:33:00,640
+counter. I think this one just let me
+open it up. See here I
+
+425
+00:32:55,480 --> 00:33:07,880
+can uh paste the text. Now see inside
+this text actually you are having 90 90
+
+426
+00:33:03,279 --> 00:33:12,399
+uh sorry 98 token and 414 character.
+Okay. Now there is also price calculator
+
+427
+00:33:10,399 --> 00:33:17,080
+is also there. So based on the token how
+much it will charge you. So here I think
+
+428
+00:33:15,559 --> 00:33:20,080
+token
+price
+
+429
+00:33:20,440 --> 00:33:23,760
+calculator open
+
+430
+00:33:30,360 --> 00:33:38,159
+AI uh so here you can see set width and
+height so this is for the image okay
+
+431
+00:33:35,919 --> 00:33:42,320
+this is the image model multimodel but
+if I'm talking about text model
+
+432
+00:33:46,039 --> 00:33:52,399
+only for test model also I think they
+have also created the
+
+433
+00:33:49,960 --> 00:33:55,360
+calculator I'm not sure but for image
+model it is available
+
+434
+00:33:56,679 --> 00:34:03,919
+so you can uh set the image height and
+image width based on that you can see
+
+435
+00:34:01,919 --> 00:34:13,000
+the like price okay how much it will
+charge you uh but I'm not sure about the
+
+436
+00:34:06,799 --> 00:34:13,000
+text calculator open API pricing later.
+
+437
+00:34:15,200 --> 00:34:17,919
+Yeah. Input
+
+438
+00:34:18,280 --> 00:34:28,079
+token. Input token. Let's say you are
+having 1,000 token as an input and 1,000
+
+439
+00:34:24,480 --> 00:34:33,119
+token as an output. Number of API call.
+Let's say you have given 100 time. So
+
+440
+00:34:31,440 --> 00:34:37,679
+based on that, see this is the uh
+pricing. So if you're using GBT 4.0
+
+441
+00:34:35,520 --> 00:34:41,359
+model, so this is the price. Okay, this
+is the price. So that's how you can see
+
+442
+00:34:40,159 --> 00:34:46,079
+different different websites are there
+nowadays they will show you the uh
+
+443
+00:34:43,839 --> 00:34:49,119
+calculator let's say I mean how much uh
+it will charge you and all and no need
+
+444
+00:34:47,760 --> 00:34:53,040
+to worry in future I will also show you
+how we can track the let's say cost and
+
+445
+00:34:51,200 --> 00:34:56,159
+all okay this thing we can also develop
+inside our application so that is that
+
+446
+00:34:55,119 --> 00:34:59,599
+is the issue actually that is the
+drawback that means there is the input
+
+447
+00:34:57,839 --> 00:35:05,760
+limit and there is the cost issue okay
+input limit and cost issue so for this
+
+448
+00:35:02,880 --> 00:35:11,480
+um researcher had actually has developed
+one technique called rag
+
+449
+00:35:08,560 --> 00:35:14,800
+Okay. Rag that means
+retriever. Uh
+
+450
+00:35:17,240 --> 00:35:20,320
+retriever. R
+
+451
+00:35:23,320 --> 00:35:31,040
+retented
+generation. Okay. This
+
+452
+00:35:28,920 --> 00:35:35,599
+technique. Okay. Retriever augmented
+generation. Now inside rag what is
+
+453
+00:35:33,839 --> 00:35:38,880
+happening? Okay. What is the idea inside
+rag? So that is what I will try to
+
+454
+00:35:36,960 --> 00:35:44,720
+explain. I already created one notebook.
+Let me take a screenshot of the content
+
+455
+00:35:41,680 --> 00:35:49,040
+and here just let me paste it. Okay. See
+this is what actually your rag. So intro
+
+456
+00:35:46,880 --> 00:35:54,280
+to rag you can see load large data set
+asset and ask the LLM question about it.
+
+457
+00:35:52,320 --> 00:35:59,119
+That means with the help of
+rag okay with the help of rag what we
+
+458
+00:35:56,640 --> 00:36:03,280
+can do we can load large data set. Okay
+large amount of data set. Okay, large
+
+459
+00:36:01,760 --> 00:36:07,040
+amount of data set we can load and we
+can perform the question operation with
+
+460
+00:36:04,800 --> 00:36:10,960
+the help of large language model. Okay,
+now what if the loaded data is too
+
+461
+00:36:08,720 --> 00:36:14,320
+large? If it is too large, okay, if it
+is like hu huge then that time what we
+
+462
+00:36:13,119 --> 00:36:18,240
+can perform? We'll be using something
+called rag technique. See always try to
+
+463
+00:36:16,240 --> 00:36:21,599
+remember if your loaded data that means
+the data you are loading let's say you
+
+464
+00:36:19,440 --> 00:36:27,119
+are having a txt file you are having a
+txt file the data you have
+
+465
+00:36:23,480 --> 00:36:31,480
+loaded okay if if it is less than if it
+is less than your
+
+466
+00:36:28,520 --> 00:36:36,880
+model okay model input
+limit model input limit okay that time
+
+467
+00:36:35,119 --> 00:36:41,680
+you can directly pass this data as a
+context to the large language model
+
+468
+00:36:38,240 --> 00:36:45,440
+there is no issue okay but if it is like
+greater than greater than the model
+
+469
+00:36:43,119 --> 00:36:50,240
+input let's say in this case Actually my
+model input is if I show you that
+
+470
+00:36:51,320 --> 00:37:02,960
+model so here I think I already
+written yeah 6,000 uh 300 sorry uh
+
+471
+00:37:00,520 --> 00:37:08,720
+16,385 let's say after extracting the
+data you saw the token token is like
+
+472
+00:37:06,480 --> 00:37:12,320
+more than this size that time what you
+can do we can't directly give the data
+
+473
+00:37:10,480 --> 00:37:15,440
+to the large language model it is not
+possible for this you have to use the
+
+474
+00:37:13,599 --> 00:37:19,599
+rag technique Now inside drag technique
+you are having some step okay you can
+
+475
+00:37:17,280 --> 00:37:22,800
+see when you load a documents you end up
+with a strings that mean string kinds of
+
+476
+00:37:21,599 --> 00:37:26,960
+data you are having inside that
+particular let's say I mean file
+
+477
+00:37:24,880 --> 00:37:31,599
+sometimes the strings will be too large
+to fit into the context window that
+
+478
+00:37:28,880 --> 00:37:35,520
+means your input size may be too large
+okay to fit into the model that means we
+
+479
+00:37:33,359 --> 00:37:42,000
+saw the I mean context window that means
+the input limit of the model okay in
+
+480
+00:37:37,680 --> 00:37:45,599
+those occasions uh u sorry yeah oations
+we'll be using rag technique Now inside
+
+481
+00:37:44,079 --> 00:37:49,599
+drag technique the first thing you have
+to perform you have to split the
+
+482
+00:37:47,359 --> 00:37:52,480
+documents into smaller chunks. So the
+first thing guys you have to remember
+
+483
+00:37:50,720 --> 00:37:56,160
+inside drag you have to split the
+documents into a smaller chunks. Okay
+
+484
+00:37:54,800 --> 00:37:59,760
+I'll tell you what is chunks as of now
+just try to remember the first step you
+
+485
+00:37:58,480 --> 00:38:03,839
+have to perform you have to split the
+document into smaller chunks. The second
+
+486
+00:38:01,599 --> 00:38:07,680
+step you have to perform transform text
+chunks into the numerical chunks. That
+
+487
+00:38:05,680 --> 00:38:11,520
+means you'll be having the textual
+number text okay text data and we know
+
+488
+00:38:10,000 --> 00:38:15,599
+that we can't directly pass the text
+data to the model any kinds of AI model
+
+489
+00:38:14,160 --> 00:38:19,200
+it's not possible we can directly pass
+the text data so what I have to do we
+
+490
+00:38:17,440 --> 00:38:22,400
+have to convert this text data to the
+numerical representation that means to
+
+491
+00:38:20,640 --> 00:38:24,800
+the vector representation yes or no
+maybe you have already worked with
+
+492
+00:38:23,599 --> 00:38:28,240
+machine learning deep learning I think
+you know if you're using any image if
+
+493
+00:38:26,640 --> 00:38:31,440
+I'm using any text first of all I have
+to do the encoding I have to generate
+
+494
+00:38:29,839 --> 00:38:35,200
+the embeddings that mean the vector that
+particular vector will be passing to the
+
+495
+00:38:32,920 --> 00:38:37,760
+model okay so this is what actually will
+be performing that means we'll be
+
+496
+00:38:36,240 --> 00:38:41,440
+transforming the text data to the
+numerical representation and for this
+
+497
+00:38:39,680 --> 00:38:44,400
+we'll be using embedding model okay
+there are different kinds of embedding
+
+498
+00:38:42,880 --> 00:38:49,520
+model are available we'll be using
+embedding model for this okay now loaded
+
+499
+00:38:47,599 --> 00:38:53,119
+embeddings to a vector database that
+means we have to store this at the
+
+500
+00:38:51,200 --> 00:38:56,320
+embedding to a vector database if I want
+to perform the keyway operation if I
+
+501
+00:38:54,960 --> 00:39:00,000
+want to perform the chart operation on
+top of my custom data the first thing I
+
+502
+00:38:58,560 --> 00:39:03,359
+have to load my data to the vector
+database because vector database is like
+
+503
+00:39:01,599 --> 00:39:07,119
+very powerful database okay very
+powerful and fast like data database you
+
+504
+00:39:05,839 --> 00:39:10,720
+can't use any kinds of traditional
+database here okay traditional datab
+
+505
+00:39:09,200 --> 00:39:14,240
+database doesn't support any kinds of
+vector store operation so you have to
+
+506
+00:39:12,880 --> 00:39:17,280
+always use vector database and there are
+some vector database are available I
+
+507
+00:39:15,520 --> 00:39:24,000
+think you know python is there web is
+there chromad is there f is there okay
+
+508
+00:39:20,560 --> 00:39:27,119
+then pro postgress sql is there now
+we'll be loading the question and retive
+
+509
+00:39:25,680 --> 00:39:30,400
+the most relevant embeddings to the
+respondent that means after storing to
+
+510
+00:39:29,040 --> 00:39:34,640
+the vector database we'll be creating
+the retriever okay and what what is
+
+511
+00:39:32,640 --> 00:39:38,800
+retriever means it will retrieve the sim
+similar kinds of response. Let's say you
+
+512
+00:39:36,560 --> 00:39:42,560
+have asked one question, what is Tesla?
+So the information you have given to the
+
+513
+00:39:40,880 --> 00:39:46,960
+model, it is also related to Tesla
+information. Now it will retrieve the
+
+514
+00:39:45,359 --> 00:39:50,480
+information related Tesla like what is
+Tesla? So what are the similarity let's
+
+515
+00:39:48,960 --> 00:39:53,920
+say results it will get? It will try to
+extract it will try to retrieve. Okay,
+
+516
+00:39:52,240 --> 00:39:58,000
+this is called retriever. Then send the
+embeddings to the LLM to format the
+
+517
+00:39:56,320 --> 00:40:01,599
+response properly. That means we'll be
+sending that question as well as the
+
+518
+00:40:00,160 --> 00:40:04,400
+retrieved output to the large language
+model and large language model will
+
+519
+00:40:02,880 --> 00:40:07,720
+process and it will give me the answer.
+Okay. So these are the step you have to
+
+520
+00:40:06,160 --> 00:40:11,680
+remember if you're performing the rack
+system. Now we'll be breaking down we'll
+
+521
+00:40:10,560 --> 00:40:16,240
+be breaking down each and every
+component. I will try to understand like
+
+522
+00:40:13,200 --> 00:40:20,480
+what is chunks and how to let's say do
+the splitting operation how to uh like
+
+523
+00:40:19,040 --> 00:40:24,400
+generate the embeddings with the help of
+embedding model how to create the vector
+
+524
+00:40:22,480 --> 00:40:28,400
+store how to create the retriever. Okay.
+And at the end I'll also show you how we
+
+525
+00:40:25,839 --> 00:40:32,320
+can create the complete rag application.
+Okay. So these are the part we'll be
+
+526
+00:40:29,760 --> 00:40:35,920
+discussing one by one. I hope guys is it
+clear? So how we can overcome this
+
+527
+00:40:34,400 --> 00:40:39,359
+issue. If you are having huge amount of
+data and if you want to give this data
+
+528
+00:40:37,760 --> 00:40:42,599
+as a context to the large language model
+in that case what we'll be doing we'll
+
+529
+00:40:40,960 --> 00:40:47,839
+be using rag
+technique. So inside rag technique there
+
+530
+00:40:44,880 --> 00:40:51,839
+are five uh step we have to perform. We
+split document into chunks. Transform
+
+531
+00:40:49,920 --> 00:40:55,920
+the text into numerical representation.
+load the embedding uh embeddings to the
+
+532
+00:40:53,520 --> 00:41:00,000
+vector database create the retriever and
+we'll be sending the uh uh retrieved
+
+533
+00:40:58,480 --> 00:41:03,040
+output as well as the query to the large
+language model and RA language model
+
+534
+00:41:01,760 --> 00:41:06,400
+will give me the response. Okay, this is
+the entire idea. So this is what we'll
+
+535
+00:41:04,640 --> 00:41:09,520
+be learning and we can use any kinds of
+custom data. Let's say the first
+
+536
+00:41:07,599 --> 00:41:12,880
+question I have asked you remember. So
+tell me about DS with Buppy and your
+
+537
+00:41:11,280 --> 00:41:18,160
+model was not able to give me the answer
+about DS with BPY right now what we can
+
+538
+00:41:15,359 --> 00:41:23,960
+do I can create another txt file here.
+So let's say I'll give DSP with
+
+539
+00:41:22,440 --> 00:41:28,720
+puppy
+data. Okay,
+
+540
+00:41:26,280 --> 00:41:32,960
+data.txt. Now inside that I can keep
+some of the information about my YouTube
+
+541
+00:41:30,319 --> 00:41:38,960
+channel. So what I can do? I can let's
+say open up my YouTube
+
+542
+00:41:34,839 --> 00:41:38,960
+channel. I will go to the about
+
+543
+00:41:40,200 --> 00:41:46,280
+section
+and I'll copy
+
+544
+00:41:48,319 --> 00:41:54,079
+And this information you can keep inside
+the txt file so that I can pass this
+
+545
+00:41:52,400 --> 00:42:00,079
+information to my large language model.
+Okay, just let me reformat it. Okay, so
+
+546
+00:41:57,359 --> 00:42:03,520
+this is the uh information about my
+channel. So whenever I'll create the rag
+
+547
+00:42:02,240 --> 00:42:08,480
+application that time I'll tell you.
+Okay, now after creating the rag, okay,
+
+548
+00:42:06,400 --> 00:42:11,760
+after creating the rag, your model will
+be able to give me the response related
+
+549
+00:42:10,000 --> 00:42:15,839
+DS with buffy as well. Okay, that means
+I can use any kinds of custom document
+
+550
+00:42:13,599 --> 00:42:19,200
+right now. it is possible but before
+that we'll be learning some step. So
+
+551
+00:42:17,280 --> 00:42:23,160
+these are the step we'll be learning how
+to uh perform the trunking how to uh
+
+552
+00:42:22,240 --> 00:42:27,760
+let's
+say let's say convert our text to the
+
+553
+00:42:25,760 --> 00:42:31,440
+numerical representation how to store to
+the vector database and how we can
+
+554
+00:42:29,839 --> 00:42:35,040
+create the retriever then at the end
+we'll be running the rag technique.
+
+555
+00:42:32,720 --> 00:42:39,520
+Okay. So this part we'll be covering in
+the next session. Next session we'll try
+
+556
+00:42:36,400 --> 00:42:39,520
+to uh wrap up
+

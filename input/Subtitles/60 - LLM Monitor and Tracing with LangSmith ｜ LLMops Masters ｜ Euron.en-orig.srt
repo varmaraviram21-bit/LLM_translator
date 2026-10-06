@@ -1,0 +1,990 @@
+1
+00:00:00,560 --> 00:00:07,839
+So I'll open the
+langen
+
+2
+00:00:05,640 --> 00:00:11,599
+website. So the first thing you have to
+create one account in the langen website
+
+3
+00:00:09,840 --> 00:00:16,480
+guys. Okay. So everyone if you don't
+have the account first of all try to
+
+4
+00:00:13,599 --> 00:00:19,680
+create one account in the langen
+website. So for me I already have the
+
+5
+00:00:18,480 --> 00:00:23,279
+account. Uh if you don't have the
+account guys just try to sign up with
+
+6
+00:00:21,359 --> 00:00:26,160
+your email address and you will be
+getting one account. So for me I already
+
+7
+00:00:24,880 --> 00:00:31,920
+have the account. I'll just try to do
+the sign up here. See for me it will
+
+8
+00:00:28,560 --> 00:00:35,920
+automatically login. See okay so um
+initially you will see this kinds of
+
+9
+00:00:33,360 --> 00:00:39,920
+interface but for me um see I already
+created actually one project here I was
+
+10
+00:00:38,239 --> 00:00:43,360
+uh cracking one project that's why you
+can see this particular project name but
+
+11
+00:00:42,000 --> 00:00:47,520
+if you're opening for the first time
+you'll see that it would be completely
+
+12
+00:00:45,200 --> 00:00:52,559
+empty dashboard okay now the first thing
+what you have to do guys so you can see
+
+13
+00:00:49,600 --> 00:00:55,600
+this is the langid platform now you can
+also open up the documentation I think
+
+14
+00:00:54,320 --> 00:00:58,719
+so they have also given the
+documentation link somewhere so let me
+
+15
+00:00:57,280 --> 00:01:01,840
+open the documentation see this is the
+documentation
+
+16
+00:00:59,760 --> 00:01:05,519
+So this is the Langmith docu
+documentation. So here they have already
+
+17
+00:01:03,680 --> 00:01:08,880
+written with the help of Langmith it's a
+platform for building production grade
+
+18
+00:01:06,960 --> 00:01:13,280
+LLM application. It allows you to
+closely monitor evaluate your
+
+19
+00:01:10,560 --> 00:01:18,880
+application. So you can uh ship quickly
+with the confidence uh use of uh use of
+
+20
+00:01:16,000 --> 00:01:22,880
+langen is not necessary. Lang lang works
+on uh its own that means you don't need
+
+21
+00:01:21,200 --> 00:01:26,159
+to configure so many things here. Only
+you just need to some set some
+
+22
+00:01:24,479 --> 00:01:29,360
+environment variable and all and
+everything will be tracing
+
+23
+00:01:27,280 --> 00:01:32,720
+automatically. Okay. Even they have also
+given some example like how we can
+
+24
+00:01:31,119 --> 00:01:37,360
+install it. Okay. So if you're using
+langen so you don't need to install
+
+25
+00:01:34,400 --> 00:01:41,439
+langismith separately. Okay. It will be
+I mean uh working fine. Now you have to
+
+26
+00:01:39,759 --> 00:01:44,400
+create the API key of the langismith.
+Then after that you have to set it as a
+
+27
+00:01:42,960 --> 00:01:48,720
+environment variable. And if you're
+using any other operating system you can
+
+28
+00:01:46,320 --> 00:01:52,479
+also export it. Okay. And they have also
+given some of the demo. But again I told
+
+29
+00:01:50,479 --> 00:01:57,200
+you lang documentation is little bit
+complex for the beginner. So first of
+
+30
+00:01:54,240 --> 00:02:00,960
+all uh I mean uh see my code example.
+Okay. whatever application I'm showing
+
+31
+00:01:58,960 --> 00:02:04,159
+you first of all try to see then try to
+go through the documentation okay even
+
+32
+00:02:02,799 --> 00:02:07,920
+they have already given the like
+tutorial related evaluation prompt
+
+33
+00:02:05,920 --> 00:02:12,319
+engineering okay even they have also
+integrated langraph uh like cloud if you
+
+34
+00:02:10,879 --> 00:02:16,160
+want to let's say integrate the lang
+server and all uh you can also do it
+
+35
+00:02:14,000 --> 00:02:19,200
+okay but uh as of now it's not required
+we'll be using the lang for the
+
+36
+00:02:17,680 --> 00:02:23,680
+monitoring our application okay this is
+our main objective so for this guys
+
+37
+00:02:21,760 --> 00:02:27,520
+first of all let's create one API key
+and how to create the API key so for
+
+38
+00:02:25,520 --> 00:02:30,160
+this open up your dashboard and left
+hand side you will see there is a
+
+39
+00:02:28,800 --> 00:02:34,560
+setting option. Okay. Now click on the
+setting option. Now here you can create
+
+40
+00:02:32,160 --> 00:02:38,080
+the API key. Okay see there is a option
+create an API key. So if you don't have
+
+41
+00:02:36,400 --> 00:02:41,519
+the API key guys just try to create a
+API key. For me I already created. Okay.
+
+42
+00:02:40,319 --> 00:02:45,519
+See you can see for me I already
+created. So let me what I can do I can
+
+43
+00:02:43,519 --> 00:02:49,840
+delete this API key. The API key
+actually I created I can delete
+
+44
+00:02:47,319 --> 00:02:54,800
+it. Now I'll be creating a new one. So
+create API key. You can give the name.
+
+45
+00:02:51,280 --> 00:02:59,519
+Let's I'll give uh my key and create it
+as a personal access token and create
+
+46
+00:02:57,040 --> 00:03:04,319
+the API key and make sure you copy it
+and paste it inside your env file. Okay.
+
+47
+00:03:01,760 --> 00:03:08,239
+Now see this is my env file and here you
+have to uh write this particular key
+
+48
+00:03:06,239 --> 00:03:12,319
+name langen API key. Okay. Inside that
+you have to paste this particular key.
+
+49
+00:03:09,840 --> 00:03:16,720
+So let me paste my key. Okay. Don't use
+my key guys. I'll try to remove it after
+
+50
+00:03:14,640 --> 00:03:20,080
+this session. Okay. Just try to create
+your own API key and try to mention
+
+51
+00:03:18,239 --> 00:03:24,239
+here. Then you have to give another key
+which is nothing but langen project that
+
+52
+00:03:21,879 --> 00:03:28,400
+means the experiment actually it will be
+tracking right. So it will save as a
+
+53
+00:03:26,400 --> 00:03:31,760
+project. So you have to give the project
+name. So by default whatever name
+
+54
+00:03:30,239 --> 00:03:36,239
+actually you'll be providing here it
+will use that particular name. So here I
+
+55
+00:03:33,519 --> 00:03:40,720
+will give let's say my llm app. Uh so
+the previous already I already created
+
+56
+00:03:38,080 --> 00:03:44,599
+one app called my llm app. Now what I
+can do I can let's say uh change it. So
+
+57
+00:03:43,040 --> 00:03:50,360
+I'll give
+u test.
+
+58
+00:03:48,120 --> 00:03:55,840
+Okay,
+test app. So I've given this name. You
+
+59
+00:03:53,519 --> 00:04:00,400
+can give any name. Okay, it's up to you.
+Now let me save and it's done. Now let's
+
+60
+00:03:58,560 --> 00:04:03,519
+create out um now what you can do. You
+can create a Jupyter notebook. So for
+
+61
+00:04:02,000 --> 00:04:07,439
+me, I already created Jupyter notebook
+guys. You can see and I have already
+
+62
+00:04:05,760 --> 00:04:11,680
+written the code example. Okay, how we
+can use this particular lang. So again
+
+63
+00:04:09,680 --> 00:04:14,879
+these are the code snippet. I think you
+already familiar with I already
+
+64
+00:04:12,879 --> 00:04:19,120
+explained everything inside langen.
+Okay. So here I'm importing operating
+
+65
+00:04:16,639 --> 00:04:23,759
+system library then chat open AI because
+we'll be using the chat completion model
+
+66
+00:04:21,359 --> 00:04:27,360
+then chat prompt template htr output
+parser okay then load env so I think you
+
+67
+00:04:26,160 --> 00:04:31,919
+already familiar with these are the
+package okay now let me import them now
+
+68
+00:04:29,840 --> 00:04:36,000
+the next thing you have to load the um
+like secret credential okay you have to
+
+69
+00:04:33,440 --> 00:04:40,800
+load the open API key you have to load
+the langi key okay and you in case you
+
+70
+00:04:39,120 --> 00:04:45,280
+can also use any other model you can use
+grock model okay any other model you can
+
+71
+00:04:42,639 --> 00:04:50,880
+use so here I'm using the openi model as
+if you're using lang one actually I mean
+
+72
+00:04:49,520 --> 00:04:54,680
+things you have to assign which is
+nothing but lang chain tracing v2 is
+
+73
+00:04:53,040 --> 00:05:00,000
+equal to true so if you go to the
+documentation of langar let me show you
+
+74
+00:04:57,440 --> 00:05:04,479
+so if I go to the documentation so
+they're telling see here so this one
+
+75
+00:05:02,320 --> 00:05:08,400
+langen tracking v2 is equal to true you
+have to provide this particular
+
+76
+00:05:06,000 --> 00:05:13,039
+statement okay if you're not providing
+your execution won't be okay logged
+
+77
+00:05:11,039 --> 00:05:17,919
+inside lang okay that means it won't be
+tracing but If you're giving it as true,
+
+78
+00:05:15,759 --> 00:05:21,120
+it will automatically start tracing your
+experiment. Okay? So this is super
+
+79
+00:05:19,759 --> 00:05:25,440
+important guys and this is what you have
+to remember in lang speed. Okay? Nothing
+
+80
+00:05:23,199 --> 00:05:31,639
+else. Everything will take care by
+langen only. Got it? Now you see here I
+
+81
+00:05:27,440 --> 00:05:36,720
+have mentioned langen trace uh
+tracking v2 is equal to true. And why
+
+82
+00:05:34,960 --> 00:05:40,960
+v2? Because we are using second
+generation of langen. Okay. Second
+
+83
+00:05:38,639 --> 00:05:46,800
+generation of langen. That's why we have
+given the v2 version two. Got it? Now
+
+84
+00:05:43,680 --> 00:05:50,160
+let me load the environment. Now here
+I'm creating the chat prompt template. I
+
+85
+00:05:49,039 --> 00:05:53,520
+think you know what is chat prompt
+template. Uh if I want to give some
+
+86
+00:05:52,000 --> 00:05:56,560
+prompt to my LLM, first of all I have to
+create the prompt template. So here I'm
+
+87
+00:05:55,120 --> 00:05:59,680
+creating my prompt template and here I'm
+using the chat completion model. That's
+
+88
+00:05:58,000 --> 00:06:03,360
+why I have to give the system prompt as
+well as the user prompt. So this is my
+
+89
+00:06:01,759 --> 00:06:08,560
+system prompt. You are a helpful
+assistant. Please respondse to the user
+
+90
+00:06:06,319 --> 00:06:12,960
+request only based on the given context.
+Now this is the user. So user in case
+
+91
+00:06:10,960 --> 00:06:18,319
+actually what uh user will pass user
+will pass the question and u they can
+
+92
+00:06:15,759 --> 00:06:21,919
+also pass the context. Okay. So context
+wise they can also pass. So this is my
+
+93
+00:06:20,319 --> 00:06:26,080
+entire prompt template I have created.
+Now I'm initializing the model. Uh I'm
+
+94
+00:06:24,000 --> 00:06:30,800
+using the GPT3.5 turbo model and as well
+as the output parser. Okay. Now this is
+
+95
+00:06:29,120 --> 00:06:34,240
+a basic simple chain I'm creating with
+the help of LCL that means lang chain
+
+96
+00:06:32,479 --> 00:06:39,280
+expression like base and I already told
+you this kinds of like ecosystem
+
+97
+00:06:36,919 --> 00:06:43,039
+supports latest lang. Okay. the second
+generation of langen. Okay, if you're
+
+98
+00:06:40,960 --> 00:06:45,840
+using the legacy lang in in case
+actually it won't be working. Okay,
+
+99
+00:06:44,319 --> 00:06:50,479
+that's why I already told you you have
+to learn the second gen of langen. Now
+
+100
+00:06:48,080 --> 00:06:54,199
+this is my simple chain prompt model and
+output parser. So first of all prompt
+
+101
+00:06:51,919 --> 00:06:57,600
+will be created then it will pass to the
+model. Model will give me the response
+
+102
+00:06:56,319 --> 00:07:01,440
+and it will pass to the output parser
+and output parser will return the string
+
+103
+00:06:59,840 --> 00:07:05,039
+output. Okay, this is the idea. Now let
+me create the chain. Now here is my
+
+104
+00:07:03,680 --> 00:07:08,479
+question. So here I'm giving one
+question. Can you summarize this story
+
+105
+00:07:06,800 --> 00:07:12,240
+and story wise I have given this
+particular story you can see inside the
+
+106
+00:07:09,919 --> 00:07:16,000
+context. So I have copy pasted this
+story from Google. So you can search
+
+107
+00:07:14,000 --> 00:07:19,520
+like uh English story you'll be getting
+different different story. So here you
+
+108
+00:07:17,840 --> 00:07:22,800
+can paste anything or if you have any
+other documents you can also pass it
+
+109
+00:07:20,960 --> 00:07:26,800
+here. Okay. Now this is my question. Can
+you summarize this story or not? Okay.
+
+110
+00:07:24,479 --> 00:07:30,560
+So this is my question. Now here I'm
+passing it to my uh actually ch. So
+
+111
+00:07:29,039 --> 00:07:33,759
+chain do.invoke question is equal to
+question I'm giving and the context is
+
+112
+00:07:32,400 --> 00:07:38,240
+equal to context I'm giving. Okay. Okay.
+Now see if I execute it. So here I will
+
+113
+00:07:36,160 --> 00:07:42,560
+get the summary. Okay. This is the
+entire summary actually I got. Now if
+
+114
+00:07:40,319 --> 00:07:49,520
+you go to the lang smith okay if you go
+to the lang smmith and uh if I go to the
+
+115
+00:07:46,240 --> 00:07:54,400
+let's say uh tracking project okay in
+this section now you'll see that the
+
+116
+00:07:51,840 --> 00:07:57,520
+latest actually track um would be
+visible. So this is my previous one.
+
+117
+00:07:56,240 --> 00:08:01,840
+Okay this is my previous one. You can
+see the timing. Okay. In this timing at
+
+118
+00:08:00,160 --> 00:08:06,400
+this time actually I was experimenting
+this uh application. Now this is the new
+
+119
+00:08:03,919 --> 00:08:10,720
+one test app. The name actually I have
+given inside my environment variable. It
+
+120
+00:08:08,160 --> 00:08:14,319
+is utilizing the same name. Okay. Now
+you can see the created date and
+
+121
+00:08:12,000 --> 00:08:18,720
+everything it would be visible. Now you
+can also see some of the like message
+
+122
+00:08:16,560 --> 00:08:24,479
+like error rate. So are you getting any
+error or not? Then latency. Okay. Like
+
+123
+00:08:21,240 --> 00:08:27,759
+how how much actually time it took to
+execute the application. Okay. So
+
+124
+00:08:26,319 --> 00:08:32,800
+different different actually log you can
+see. Now total token total cost. See now
+
+125
+00:08:30,639 --> 00:08:37,680
+you can track your you can monitor your
+cost like how much it is charging. So
+
+126
+00:08:34,719 --> 00:08:41,519
+here we are using openi model. So the
+request actually I send okay so based on
+
+127
+00:08:39,680 --> 00:08:47,200
+the request what is the charge. So see
+it is charging 0.00001
+
+128
+00:08:44,080 --> 00:08:51,120
+uh um $81. Okay. And this is the date.
+Now I can also open it up and I can see
+
+129
+00:08:48,959 --> 00:08:56,399
+detail okay what is trying to say. Now
+see entire log you can see here. Okay.
+
+130
+00:08:53,760 --> 00:09:01,839
+Like the run count like only one time I
+executed the total cost. Okay. Then uh
+
+131
+00:08:59,440 --> 00:09:06,399
+token and latency. Okay. Everything you
+can see here. Okay. Everything all the
+
+132
+00:09:04,160 --> 00:09:09,600
+meta data you can visual visualize here.
+Okay. In this Langismith platform. So
+
+133
+00:09:08,160 --> 00:09:12,480
+this is one amazing platform they have
+created. Now if you want to see in
+
+134
+00:09:10,800 --> 00:09:17,680
+detail so what you can do simply you can
+click here. See it is logging as a
+
+135
+00:09:15,360 --> 00:09:21,200
+runnable sequence. Okay. Now I think you
+can I mean answer me why runnable
+
+136
+00:09:19,600 --> 00:09:25,839
+sequence because I already told you
+whenever we create a chance that means
+
+137
+00:09:22,959 --> 00:09:30,080
+we're executing runnable yes or no
+sequence of runnable. Okay, that's why
+
+138
+00:09:27,760 --> 00:09:33,200
+it is logging as a runnable sequence.
+Okay, now inside runnable sequence what
+
+139
+00:09:31,839 --> 00:09:37,600
+we have guys, we have different
+different kinds of runnable. Okay, like
+
+140
+00:09:34,959 --> 00:09:41,200
+we have our model, we have our like
+prompt. Okay, then we have the output
+
+141
+00:09:39,600 --> 00:09:44,560
+parser and you can see this is the
+input. Okay, this is my input and this
+
+142
+00:09:42,720 --> 00:09:48,080
+is the context. Based on that, it has
+given me this particular answer uh I
+
+143
+00:09:46,560 --> 00:09:51,519
+mean output. Okay, if you want to see as
+a JSON, you can also see if you want to
+
+144
+00:09:49,760 --> 00:09:55,360
+see as a EML file, you can also see.
+Okay, now status is success that means
+
+145
+00:09:53,600 --> 00:09:58,800
+there was no error. Now you can see the
+feedback. So if any feedback is required
+
+146
+00:09:57,440 --> 00:10:02,000
+it will automatically give the feedback.
+It will also show you the meta data like
+
+147
+00:10:00,560 --> 00:10:05,680
+what is the version and everything you
+are using. Okay. So everything it will
+
+148
+00:10:04,000 --> 00:10:10,560
+show you everything it will show that
+means each and everything you can
+
+149
+00:10:07,600 --> 00:10:14,079
+monitor here of your application. Okay.
+So this is one of the amazing product
+
+150
+00:10:12,160 --> 00:10:17,920
+actually Langen team has developed even
+personally I prefer a lot. So it will
+
+151
+00:10:16,160 --> 00:10:21,680
+give you the entire clearcut idea about
+your application like the cost
+
+152
+00:10:19,600 --> 00:10:25,120
+everything. Okay. Everything even you
+can also evaluate your application.
+
+153
+00:10:23,279 --> 00:10:30,320
+Okay. So I think future we'll also show
+that how we can evaluate our
+
+154
+00:10:26,959 --> 00:10:35,040
+application. Now see apart from that I
+think some more functionality are there.
+
+155
+00:10:32,000 --> 00:10:38,720
+So let me open it up. So what I can I
+can show you the monitor section. So
+
+156
+00:10:37,279 --> 00:10:42,240
+inside monitor section it will show you
+the graph based on the let's say
+
+157
+00:10:40,240 --> 00:10:45,839
+hourward and day basis. So I just
+executed my project as of now that's why
+
+158
+00:10:44,000 --> 00:10:49,120
+there is nothing but after 1 year or
+after 9 days okay or one day you will
+
+159
+00:10:48,079 --> 00:10:52,800
+see it will show you the different
+different graph like of volume latency
+
+160
+00:10:50,959 --> 00:10:56,079
+tokens cost okay streaming everything it
+will show you now setup wise if you want
+
+161
+00:10:54,560 --> 00:11:00,160
+to set up it so they are also giving the
+tutorial but I don't need it uh I
+
+162
+00:10:58,320 --> 00:11:04,720
+already set up this project now I'll go
+to the run section I'll click on the all
+
+163
+00:11:01,920 --> 00:11:08,880
+runs and inside all runs you'll see
+whatever runnables you had everything it
+
+164
+00:11:06,640 --> 00:11:13,120
+will show you let let's say so I had
+different different runnables guide
+
+165
+00:11:10,160 --> 00:11:18,560
+remember So pro prompt was there, model
+was there, output parser was there.
+
+166
+00:11:15,079 --> 00:11:23,519
+Okay. So you can see output parser our
+model. Okay. Then our prompt. Okay. Now
+
+167
+00:11:21,920 --> 00:11:26,800
+this is the sequence runnable that means
+the entire runnable. Now you can also
+
+168
+00:11:25,360 --> 00:11:30,640
+open them individually. Let's say I want
+to see the output parser only. In case I
+
+169
+00:11:28,560 --> 00:11:34,959
+can open it up and I can see okay what
+output parser is doing. It is giving me
+
+170
+00:11:32,160 --> 00:11:38,480
+the string as an output. Okay. That's
+how you can see the model size uh model
+
+171
+00:11:36,959 --> 00:11:43,120
+as well. So what is the model you are
+using? Okay. the model input, model
+
+172
+00:11:40,720 --> 00:11:46,640
+output, everything it is visible. Okay?
+And the token, the cost, okay?
+
+173
+00:11:44,880 --> 00:11:50,640
+Everything it will show you. So with the
+help of this lang, we can do some more
+
+174
+00:11:48,640 --> 00:11:55,120
+advanced stuff. Maybe in future I will
+also show you. But as of now, that's how
+
+175
+00:11:52,640 --> 00:12:02,320
+you can monitor your entire application.
+Okay. in MLOps if you have used
+
+176
+00:11:58,959 --> 00:12:06,880
+something called uh MLflow uh anyone so
+I think you can relate okay ML flow with
+
+177
+00:12:04,720 --> 00:12:12,800
+this uh langismith because in MLflow
+also we can uh track our experiment okay
+
+178
+00:12:10,160 --> 00:12:16,240
+so inside this uh lang also we can track
+our experiment let's say you are
+
+179
+00:12:14,079 --> 00:12:22,079
+executing for the next time second time
+so what I can do let's I can uh change
+
+180
+00:12:19,040 --> 00:12:27,120
+this question so here I can write uh can
+you summarize this story instead of that
+
+181
+00:12:24,000 --> 00:12:27,120
+I can just
+
+182
+00:12:28,200 --> 00:12:33,440
+Right. What is this
+
+183
+00:12:34,120 --> 00:12:37,360
+story all
+
+184
+00:12:38,600 --> 00:12:44,000
+about? Okay. All about. Now if I again
+
+185
+00:12:45,000 --> 00:12:56,720
+execute. Okay. Now see if I go to the
+lang uh Smith again and if I uh just
+
+186
+00:12:53,200 --> 00:13:02,720
+click here test app. Now see the second
+execution. Okay, the second log just uh
+
+187
+00:12:59,600 --> 00:13:08,040
+1.92 seconds ago. Okay, sorry it's a
+latency but you can see the time as
+
+188
+00:13:04,800 --> 00:13:12,639
+well. So I can show you the
+time I think time. You see you can see
+
+189
+00:13:10,240 --> 00:13:16,320
+the time. Okay, got it. So you can see
+this is the next experiment. Now if I
+
+190
+00:13:14,320 --> 00:13:21,200
+open it up so you can see this is the
+question and this was my uh actually
+
+191
+00:13:19,040 --> 00:13:25,040
+context and this is my uh response.
+Okay. So that's how we can uh track
+
+192
+00:13:23,600 --> 00:13:28,160
+different different experiment. Okay.
+With different different actually let's
+
+193
+00:13:26,320 --> 00:13:32,320
+say runnables different different
+actually input output. Okay. Everything
+
+194
+00:13:29,760 --> 00:13:35,920
+you can press. So this is why important
+uh uh I think whenever you are creating
+
+195
+00:13:34,079 --> 00:13:38,959
+production grade application so you
+should also integrate this kinds of
+
+196
+00:13:37,120 --> 00:13:42,560
+functionality and to integrate it. So
+you only just need to add this
+
+197
+00:13:40,399 --> 00:13:46,880
+particular syntax. Okay that's it. And
+everything would be automated in the
+
+198
+00:13:44,240 --> 00:13:51,920
+platform itself. I hope now you are
+clear with this lang. Okay. How lang
+
+199
+00:13:49,600 --> 00:13:51,920
+barks.
+

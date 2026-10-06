@@ -1,0 +1,1805 @@
+1
+00:00:00,400 --> 00:00:08,240
+Hi guys, so far we have discussed about
+LLM ops and this uh GTBI vertx AI. Now
+
+2
+00:00:06,160 --> 00:00:12,160
+in this video we'll be trying to use
+this vertex as a practical. That means
+
+3
+00:00:10,480 --> 00:00:15,920
+let's say if I want to use any kinds of
+foundation model uh with the help of
+
+4
+00:00:14,000 --> 00:00:19,439
+Python code. So how we can do it? Okay,
+that means we'll be doing the entire
+
+5
+00:00:17,039 --> 00:00:23,519
+hands-on in this video. So try to open
+up your Google cloud guys everyone and
+
+6
+00:00:21,680 --> 00:00:27,199
+just try to open up your Vert.xi. I
+already showed you how we can open open
+
+7
+00:00:25,119 --> 00:00:30,080
+up the vert.x. Right now after opening
+the vert.x the first thing you have to
+
+8
+00:00:28,720 --> 00:00:33,680
+do you have to enable all the
+recommended APIs. So there you will see
+
+9
+00:00:31,840 --> 00:00:37,440
+one option enable all the recommended
+APIs. So make sure you have already
+
+10
+00:00:35,920 --> 00:00:41,520
+enabled all the recommended API. So
+after enabling uh in the notification
+
+11
+00:00:39,280 --> 00:00:45,360
+bar you will see uh see all the API has
+been enabled. So these are the API you
+
+12
+00:00:43,360 --> 00:00:48,480
+should enable otherwise sometimes
+actually will get actually different
+
+13
+00:00:46,960 --> 00:00:54,079
+different error. So that's why make sure
+you enable all the API. Now here you can
+
+14
+00:00:51,680 --> 00:00:57,120
+either open up your Google collab to
+perform all the let's say operation I'll
+
+15
+00:00:55,600 --> 00:01:02,239
+be doing here. Either you can also open
+up this collab enterprise or workbench.
+
+16
+00:00:59,359 --> 00:01:06,240
+Okay. So here I'm using this cloud
+platform that means LM ops platform. So
+
+17
+00:01:04,720 --> 00:01:10,560
+in this video I'll show you how we can
+use their services actually that's if I
+
+18
+00:01:08,159 --> 00:01:14,000
+want to use collab enterprise how we can
+use collab enterprise you can also
+
+19
+00:01:12,320 --> 00:01:16,640
+launch this workbench. So what is the
+difference between workbench and collab
+
+20
+00:01:15,520 --> 00:01:19,759
+enterprise? Let me show you. So in
+workbench actually you can select the
+
+21
+00:01:17,840 --> 00:01:23,680
+machine configuration. So here you can
+create a new workbench. Just try to
+
+22
+00:01:21,200 --> 00:01:27,520
+click on create. Now here you can select
+the machine configuration like uh what
+
+23
+00:01:25,759 --> 00:01:30,320
+should be the machine name, what is the
+reason. Then you can also select the
+
+24
+00:01:28,960 --> 00:01:33,360
+instance type. Okay, that's how actually
+you can uh change the configuration.
+
+25
+00:01:32,000 --> 00:01:36,320
+Okay, all the configurations you can
+change here. Okay, everything you can
+
+26
+00:01:34,880 --> 00:01:39,200
+change here. That means if you want to
+create a custom machine as per your
+
+27
+00:01:37,759 --> 00:01:42,360
+requirement, you can change here. And
+here you can see the pricing summary.
+
+28
+00:01:40,640 --> 00:01:46,320
+That means per hour it will charge you
+$0.18. You can see price is very less.
+
+29
+00:01:44,720 --> 00:01:49,439
+It's not like a very huge amount of
+money they will be charging. It's like
+
+30
+00:01:47,680 --> 00:01:52,399
+very less money. So you can also create
+your custom configuration. But here I'm
+
+31
+00:01:51,520 --> 00:01:56,880
+not going to create the custom
+configuration. What I'll do? I'll use
+
+32
+00:01:54,159 --> 00:02:01,680
+the collab enterprise. Okay, this one.
+So it will give me Google collab kinds
+
+33
+00:01:58,640 --> 00:02:05,280
+of interface and there I can u actually
+do my coding. So after clicking on
+
+34
+00:02:03,680 --> 00:02:10,239
+collab enterprise, so here you will get
+one option create a notebook. Okay. So
+
+35
+00:02:07,600 --> 00:02:10,239
+just create a
+
+36
+00:02:10,760 --> 00:02:16,640
+notebook. You can also select the region
+but I will keep the default region US
+
+37
+00:02:14,720 --> 00:02:22,599
+central one. Okay, that's it. Now you
+can give the name. I can rename this
+
+38
+00:02:18,319 --> 00:02:28,000
+notebook. Let's say I'll rename it as um
+vertex AI demo. Okay, you can give any
+
+39
+00:02:25,680 --> 00:02:30,720
+name. I've given this name. Now if you
+want to increase the size of the
+
+40
+00:02:29,440 --> 00:02:34,239
+notebook, if you want to increase the
+size of the cell, let's say if I write
+
+41
+00:02:32,080 --> 00:02:38,480
+something, so the text is like very
+small
+
+42
+00:02:36,120 --> 00:02:41,840
+here. So I can also increase the size.
+So for this what I can do, I can click
+
+43
+00:02:40,000 --> 00:02:47,200
+on the settings.
+uh just go to the editor and here you'll
+
+44
+00:02:45,360 --> 00:02:52,720
+see this font size just try to make it
+as uh I can take 28 okay 28 I think it
+
+45
+00:02:51,040 --> 00:02:55,480
+is fine now the next thing what you have
+to do guys you have to connect this
+
+46
+00:02:53,840 --> 00:02:59,200
+notebook so let's click on the connect
+button see guys once you will be
+
+47
+00:02:57,840 --> 00:03:02,239
+connecting the notebook it will give you
+this kind of pop-up screen that means
+
+48
+00:03:00,560 --> 00:03:05,840
+you have to select account okay like
+which account you want to use so make
+
+49
+00:03:04,000 --> 00:03:09,440
+sure whatever actually account you are
+using for the Google cloud console that
+
+50
+00:03:07,599 --> 00:03:14,120
+means for the vertx that account you
+have to select here so this is my Google
+
+51
+00:03:11,040 --> 00:03:17,920
+cloud account. I'll just try to
+select now. It is also asking for
+
+52
+00:03:16,319 --> 00:03:21,440
+password. So, let me give my password
+and I'll click on
+
+53
+00:03:19,239 --> 00:03:25,440
+next. So, if you're doing for the first
+time, so it will give you this kinds of
+
+54
+00:03:23,080 --> 00:03:28,400
+authentication. Uh it's just a one time
+authentication. Okay, that's it. So,
+
+55
+00:03:26,959 --> 00:03:31,680
+guys, as you can see, my runtime is
+connected. Now, if I execute the cell,
+
+56
+00:03:30,319 --> 00:03:35,519
+if you want to execute the cell, just
+press shift and enter. The same thing,
+
+57
+00:03:33,840 --> 00:03:39,040
+the way actually you execute any collab
+notebook, you can execute as same. Now,
+
+58
+00:03:37,519 --> 00:03:42,239
+see, I'm getting the okay output. Now,
+you can also download this notebook. So
+
+59
+00:03:40,480 --> 00:03:45,599
+there is a download button. You can also
+download the notebook. So first of all
+
+60
+00:03:43,760 --> 00:03:48,319
+uh let's do the coding. After that you
+can also download uh this notebook. Even
+
+61
+00:03:47,200 --> 00:03:53,040
+I will also share this notebook with you
+in the resources section. Fine. All
+
+62
+00:03:50,480 --> 00:03:56,239
+right. Now see here we'll be using
+actually Vert.x AI. Okay. We'll be using
+
+63
+00:03:54,720 --> 00:03:59,680
+Vert.xi services. That means we'll be
+using model guardian. So from the model
+
+64
+00:03:58,239 --> 00:04:03,360
+guardian itself what we'll do? We'll try
+to access different different kinds of
+
+65
+00:04:01,280 --> 00:04:06,400
+foundation model. Got it? And if I want
+to use model guardian that means the
+
+66
+00:04:04,720 --> 00:04:10,720
+complete Vert.xi I have to install one
+library. So you have to install Vert.x
+
+67
+00:04:08,239 --> 00:04:15,200
+XI SDK for Python because we'll be using
+Python code, right? And if you're using
+
+68
+00:04:12,799 --> 00:04:19,440
+Python code, you have to install this
+library. So here I want to install the
+
+69
+00:04:17,680 --> 00:04:22,560
+upgraded version of the package and this
+is the package name, Google Cloud AI
+
+70
+00:04:21,120 --> 00:04:27,280
+platform. Got it? If you want to use
+Vertx A, you have to install this Python
+
+71
+00:04:24,240 --> 00:04:27,280
+package. Now let me
+
+72
+00:04:38,360 --> 00:04:43,919
+install. Okay. Now after installing it
+will tell you restart the runtime. Just
+
+73
+00:04:42,160 --> 00:04:49,199
+click here. So it will automatically
+restart the runtime. After that you just
+
+74
+00:04:45,840 --> 00:04:54,960
+need to import Vert.x AI. Okay. Just to
+test whether everything is fine or
+
+75
+00:04:51,320 --> 00:04:58,720
+not. Now see if I import
+It should work. See, it's working fine.
+
+76
+00:04:56,880 --> 00:05:02,160
+There is no error. Fine. Now, see those
+who are running this code from the
+
+77
+00:04:59,919 --> 00:05:05,840
+collab notebook, you just need to do uh
+two configuration here. So, let me show
+
+78
+00:05:04,240 --> 00:05:09,680
+you. So, the first configuration you
+have to do this one. That means you have
+
+79
+00:05:08,240 --> 00:05:12,960
+to authenticate with the Google cloud
+first of all. So, here let me write the
+
+80
+00:05:11,680 --> 00:05:17,039
+code. So, first of all, you have to
+authenticate with the Google cloud.
+
+81
+00:05:14,560 --> 00:05:20,960
+Okay. From the um collab notebook and
+for this, you have to execute this line
+
+82
+00:05:18,479 --> 00:05:25,039
+of code.
+So here everything I'm running from the
+
+83
+00:05:23,199 --> 00:05:28,400
+vert.x only that means I'm using collab
+enterprise from the vert.x I don't need
+
+84
+00:05:26,720 --> 00:05:30,479
+to perform the authentication. But if
+you're running from the Google collab
+
+85
+00:05:29,680 --> 00:05:33,440
+that time you have to do the
+authentication guys. Okay. So let me
+
+86
+00:05:32,080 --> 00:05:37,120
+show you one example. Let's say if I
+want to load any model uh from the
+
+87
+00:05:35,680 --> 00:05:40,560
+collab enterprise that means if I'm
+using vertx a services I don't need to
+
+88
+00:05:38,800 --> 00:05:43,199
+authenticate it. I don't need to
+authenticate it. I can easily load it.
+
+89
+00:05:42,000 --> 00:05:47,440
+Let me show you. So for this let's
+import some of the library
+
+90
+00:05:45,160 --> 00:05:50,960
+first. So here I'm importing some of the
+library. You can see gener generation
+
+91
+00:05:48,880 --> 00:05:53,840
+config generative model. Okay, I'll tell
+you why I'm importing them and what is
+
+92
+00:05:52,639 --> 00:05:57,560
+the use of it. First of all, let me
+import all of
+
+93
+00:05:54,919 --> 00:06:04,080
+them. Now let's say I want to load one
+model. Let's say I want to load this
+
+94
+00:06:00,320 --> 00:06:10,400
+Jiny 1.0 Pro model. So you can see there
+is a model Giny 1 uh 0 Pro. Just click
+
+95
+00:06:08,120 --> 00:06:14,400
+here. Uh if I click here, you will see
+the model ID. You just need to copy the
+
+96
+00:06:12,000 --> 00:06:18,639
+model ID from here. Now if you just go
+below they have already given the source
+
+97
+00:06:16,199 --> 00:06:22,800
+code here you can see this is the model
+ID just try to copy copy this ID and try
+
+98
+00:06:21,360 --> 00:06:27,120
+to paste it here. Okay that's it. Now
+see if I execute this code it will
+
+99
+00:06:24,639 --> 00:06:30,960
+automatically load the model. See there
+is no error. But if you executing from
+
+100
+00:06:29,680 --> 00:06:34,800
+the collab notebook you will see you
+will get one error. That means your
+
+101
+00:06:33,199 --> 00:06:38,080
+notebook is not authenticated with the
+Google cloud. Okay. So that's why you
+
+102
+00:06:36,560 --> 00:06:41,120
+have to execute this line of code. It
+will uh what it will do? It will
+
+103
+00:06:39,600 --> 00:06:44,800
+authenticate. First of all it will ask
+for the email address. That means which
+
+104
+00:06:43,120 --> 00:06:47,840
+email address you are using for the
+Google cloud account. That email address
+
+105
+00:06:46,639 --> 00:06:51,600
+you have to select first of all.
+Correct? Then the next uh actually
+
+106
+00:06:49,680 --> 00:06:56,319
+configuration code you have to run this
+one. Let me show
+
+107
+00:06:53,240 --> 00:06:59,039
+you this one. If you are using collab
+enterprise guys, you don't need to
+
+108
+00:06:57,280 --> 00:07:01,840
+execute. But if you're using Google
+collab, you have to execute. Now see
+
+109
+00:07:00,319 --> 00:07:06,000
+this is the code you have to execute. So
+here you have to pass the project ID as
+
+110
+00:07:04,160 --> 00:07:10,240
+well as your location. Okay, that means
+region. Now how you will get the project
+
+111
+00:07:07,919 --> 00:07:15,199
+ID? So here you can see on top you have
+the project ID. Just try to click here.
+
+112
+00:07:12,479 --> 00:07:19,120
+Now see I'm inside my first project. So
+here is the project ID. Just try to copy
+
+113
+00:07:16,720 --> 00:07:22,800
+the project ID and try to mention it
+here. Okay, in the uh in this box
+
+114
+00:07:21,120 --> 00:07:25,360
+actually you just need to paste it here.
+Then you have to give the region name.
+
+115
+00:07:24,160 --> 00:07:29,360
+And what is your region name? You can
+see I'm inside US central one. So try to
+
+116
+00:07:27,440 --> 00:07:33,440
+mention US central one here. Okay. Then
+if you execute it will automatically
+
+117
+00:07:30,880 --> 00:07:37,120
+initialize with the vert.xi. That means
+it will authenticate with the vert.xi
+
+118
+00:07:35,440 --> 00:07:40,080
+with your configuration. Now it will get
+to know okay now you are you are the
+
+119
+00:07:38,720 --> 00:07:43,280
+correct user. So once it is
+authenticated then you will be able to
+
+120
+00:07:41,599 --> 00:07:46,319
+use all the services from the vert.x
+that mean all the foundation model all
+
+121
+00:07:44,720 --> 00:07:50,000
+the services you can use. Got it? So
+this two line actually you have to
+
+122
+00:07:47,680 --> 00:07:53,360
+execute if you're using Google collab
+see collab only. And if you're using
+
+123
+00:07:51,759 --> 00:07:57,520
+collab enterprise no need to execute
+guys. Okay. You can run as it is. I hope
+
+124
+00:07:55,360 --> 00:08:00,639
+it is clear now. Okay. So now I think
+you saw how we can load the model. To
+
+125
+00:07:59,120 --> 00:08:03,280
+load the model you have to use one
+function called generative model. You
+
+126
+00:08:02,160 --> 00:08:07,280
+can see I've already imported this
+generative model from the vert.xi
+
+127
+00:08:05,280 --> 00:08:10,319
+preview dot generative models. Now
+import generative model. Inside that you
+
+128
+00:08:08,800 --> 00:08:13,360
+just need to give the model ID. Now if
+you want to use any other model simply
+
+129
+00:08:12,000 --> 00:08:17,919
+just try to open let's say you want to
+use 1.5 pro model. So just click here.
+
+130
+00:08:16,080 --> 00:08:23,199
+Okay. So you can see Germany 1.5 pro
+model. Now just try to go below and here
+
+131
+00:08:20,400 --> 00:08:27,199
+is the model ID. So try to copy the
+model ID. So this is the model ID. Just
+
+132
+00:08:25,039 --> 00:08:30,479
+try to copy and try to paste it here. So
+that's how if you want to use any model
+
+133
+00:08:28,879 --> 00:08:33,440
+from the model guidance just try to copy
+the model ID and try to paste it inside
+
+134
+00:08:32,159 --> 00:08:37,440
+this function. It will automatically
+load that model for you. So now let's uh
+
+135
+00:08:35,839 --> 00:08:42,360
+test this model. So here I'm going to
+pass one prompt. So here I have already
+
+136
+00:08:40,080 --> 00:08:48,000
+prepared one prompt. Let me show
+you. This is the prompt guys I have
+
+137
+00:08:45,480 --> 00:08:51,600
+prepared. Okay. See. So here I'm using
+the model object and I'm calling one
+
+138
+00:08:49,519 --> 00:08:57,360
+function called generate content. Inside
+that I'm passing the prompt. Why is sky?
+
+139
+00:08:54,959 --> 00:09:00,640
+So here is the prompt. Why is the sky
+blue and stream is equal to true? Why
+
+140
+00:08:59,360 --> 00:09:06,399
+I've given stream is equal to true?
+Because if I show you if I let's say
+
+141
+00:09:03,120 --> 00:09:10,560
+open the Germany Germany or chart GPT if
+you can open anything let's say if I
+
+142
+00:09:08,160 --> 00:09:14,800
+give this same prompt here now so if I
+let's say pass the same prompt why is
+
+143
+00:09:12,399 --> 00:09:18,399
+the sky balloon any kinds of prompt you
+give it will give you stream kinds of
+
+144
+00:09:16,080 --> 00:09:21,600
+output see it's not uh it's not actually
+oneshot output it will give you stream
+
+145
+00:09:19,839 --> 00:09:25,279
+output so I think here you saw it will
+give you stream output that means after
+
+146
+00:09:23,760 --> 00:09:28,480
+one word it is coming another word
+another word okay that's why it is
+
+147
+00:09:26,320 --> 00:09:32,000
+giving stream output not in one shot so
+that's how we also want to get the
+
+148
+00:09:29,839 --> 00:09:34,720
+output from my uh response. Okay, that's
+why ive given this parameter stream is
+
+149
+00:09:33,600 --> 00:09:40,240
+equal to true. That means it will give
+you stream output. Got it? Now see if I
+
+150
+00:09:38,120 --> 00:09:45,120
+execute. So here you will get one
+response object. See this is the object.
+
+151
+00:09:42,560 --> 00:09:48,399
+Okay. So it would be a object. See this
+is a generator object. Now here I can
+
+152
+00:09:46,959 --> 00:09:53,040
+apply any kinds of iterator that means
+looping and I can get the response. Now
+
+153
+00:09:50,160 --> 00:09:57,920
+let me show you. So here you can apply
+looping. So here I'm applying looping
+
+154
+00:09:55,200 --> 00:10:01,519
+for response in responses and I just
+wanted to print the text. Okay. Whatever
+
+155
+00:10:00,240 --> 00:10:06,000
+text actually I'm having from the
+response I want to print it. Now see if
+
+156
+00:10:03,279 --> 00:10:10,240
+I execute the for loop right now you
+will see the response. See this is the
+
+157
+00:10:08,720 --> 00:10:14,079
+response actually I got and this
+response is uh actually short response
+
+158
+00:10:12,560 --> 00:10:17,760
+that's why you didn't saw the streaming
+output but if it is generating bigger
+
+159
+00:10:15,680 --> 00:10:20,959
+output you will see the streaming output
+would be visible. Got it? Now you can
+
+160
+00:10:19,440 --> 00:10:24,399
+try with different prompt. Let's try
+with another prompt. So I'll give
+
+161
+00:10:22,160 --> 00:10:29,600
+another prompt here. Let's say I'll give
+uh what are the latest developments in
+
+162
+00:10:26,480 --> 00:10:34,320
+the auto uh automotive industry. Okay.
+Now if I execute so it should give me
+
+163
+00:10:32,240 --> 00:10:37,040
+the response. Okay. See this is the
+streaming response I'm getting guys. I
+
+164
+00:10:35,839 --> 00:10:41,519
+think you saw. Okay that this is called
+actually streaming response. See the
+
+165
+00:10:39,279 --> 00:10:45,360
+complete response I got. Great. Now see
+here I pass the prompt directly. Okay.
+
+166
+00:10:43,279 --> 00:10:49,440
+In the generative uh generate content
+function. But if you want to pass as a
+
+167
+00:10:47,440 --> 00:10:53,079
+parameter you can also do it. For this I
+created another example. So this is the
+
+168
+00:10:52,160 --> 00:10:57,680
+example
+guys. Just a minute. Huh? Just see that.
+
+169
+00:10:56,240 --> 00:11:00,320
+So here I created a variable called
+prompt and inside that I've written the
+
+170
+00:10:59,120 --> 00:11:05,040
+prompt. Let's say this is my complete
+prompt. Create a numbered list of the 10
+
+171
+00:11:02,480 --> 00:11:09,519
+items. Each item in the list should be a
+trend in the tech industry. Each trend
+
+172
+00:11:07,600 --> 00:11:13,120
+should be a less than five words. Okay.
+Try uh now you can give any kinds of
+
+173
+00:11:11,120 --> 00:11:15,360
+prompt. Now here what I'm doing I'm
+calling the model object generate
+
+174
+00:11:14,240 --> 00:11:18,399
+contain inside that I'm giving the
+prompt. Okay. Whatever prompt actually I
+
+175
+00:11:16,959 --> 00:11:21,600
+have defined stream is equal to two then
+again I'm performing the looping
+
+176
+00:11:19,600 --> 00:11:26,320
+operation. Now see if I execute it
+should give me the
+
+177
+00:11:23,480 --> 00:11:31,440
+output. Okay. Now I can also customize
+the problem. Let's say here I can give
+
+178
+00:11:28,440 --> 00:11:31,440
+uh
+
+179
+00:11:32,600 --> 00:11:37,040
+translate in
+
+180
+00:11:38,120 --> 00:11:44,000
+Hindi. See I'm also getting the Hindi
+translation as well. Got it? So that's
+
+181
+00:11:42,480 --> 00:11:48,560
+how you can also customize your prompt.
+It's up to you. Now I think you remember
+
+182
+00:11:45,839 --> 00:11:53,920
+whenever I was uh like going through the
+model guardian. So I can also open this
+
+183
+00:11:51,279 --> 00:11:57,519
+model in a vert.xi studio. I think I
+showed you. So let's open this model in
+
+184
+00:11:55,279 --> 00:12:01,279
+the vert.x studio. See if you open the
+vert.x studio right hand side you can
+
+185
+00:11:59,680 --> 00:12:04,800
+see you can also set some of the model
+parameter like temperature output token.
+
+186
+00:12:03,440 --> 00:12:08,399
+Okay. So these are the thing you can
+also change. So how we can change with
+
+187
+00:12:06,959 --> 00:12:11,120
+the help of Python code because as a
+developer we have to use with the help
+
+188
+00:12:09,760 --> 00:12:14,880
+of Python code not from the UI
+interface. Got it from the UI interface
+
+189
+00:12:13,200 --> 00:12:18,399
+also you can use the model but as a
+developer we have to use from the Python
+
+190
+00:12:16,160 --> 00:12:22,800
+SDK. So here we can also set the model
+configuration. So let me show you. So
+
+191
+00:12:20,320 --> 00:12:27,279
+for this you have to use this function
+actually. So I think I remembered the
+
+192
+00:12:25,040 --> 00:12:30,720
+generation config. Okay. So let me show
+you. So I already prepared. So in the
+
+193
+00:12:29,120 --> 00:12:34,880
+generation config I'm passing all the
+parameter. Okay. Let me the temperature
+
+194
+00:12:32,880 --> 00:12:37,760
+top P, top K, candidate. Okay. Max
+output and so on. And I think you
+
+195
+00:12:36,560 --> 00:12:40,560
+already know these are the parameter. I
+already explained previously. What is
+
+196
+00:12:38,880 --> 00:12:44,079
+temperature? What is top B, top K. Got
+it. Here temperature means here you are
+
+197
+00:12:42,320 --> 00:12:47,279
+assigning the model creativity like how
+much creativity you want from the model.
+
+198
+00:12:45,519 --> 00:12:50,480
+If it is close to one that means it will
+take risk. It will be more creative. If
+
+199
+00:12:48,800 --> 00:12:53,440
+it is close to zero, it won't be taking
+any kinds of risk. Okay, that's the
+
+200
+00:12:51,760 --> 00:12:56,560
+idea. Now this generation config you
+have to pass as a parameter of
+
+201
+00:12:54,800 --> 00:12:59,680
+generation config. Here you can see
+generation config is equal to generation
+
+202
+00:12:57,920 --> 00:13:02,480
+config and the same prompt I have given
+stream is equal to true. Again I'm
+
+203
+00:13:00,959 --> 00:13:06,560
+looping through the response. Now if I
+show you now see that your uh output
+
+204
+00:13:04,959 --> 00:13:10,240
+would be more creative. Okay. So
+previously I think you remember we we
+
+205
+00:13:08,240 --> 00:13:14,000
+got actually very short output. Now see
+this output is more creative right now
+
+206
+00:13:11,680 --> 00:13:17,839
+because we given the uh configuration
+model parameter right now. Okay. I hope
+
+207
+00:13:15,680 --> 00:13:22,240
+it is clear. Now let me show you another
+thing you can do. This is called
+
+208
+00:13:19,839 --> 00:13:25,200
+actually test chat prompt. Now what is
+test chat prompts? Let me show you one
+
+209
+00:13:23,760 --> 00:13:29,920
+example. Let's say here I ask one
+question. Why is the sky blue? Okay. Now
+
+210
+00:13:28,079 --> 00:13:34,120
+this prompt actually have given and my
+Jiny will try to remember this prompt.
+
+211
+00:13:31,600 --> 00:13:41,079
+Now if I ask give
+me the answer
+
+212
+00:13:37,880 --> 00:13:46,639
+in bullet
+point. Okay. Now see here I haven't
+
+213
+00:13:43,760 --> 00:13:49,680
+mentioned I want the this answer. I just
+given give me the answer in bullet
+
+214
+00:13:48,160 --> 00:13:53,440
+point. It will automatically remember my
+previous let's say context. Okay, that
+
+215
+00:13:51,600 --> 00:13:56,880
+means I want to ask this particular
+response. Now see it has given me the
+
+216
+00:13:54,880 --> 00:14:00,560
+bullet point. Okay, so this is called
+actually memory. That means it is trying
+
+217
+00:13:58,560 --> 00:14:05,120
+to remember the chart history. So that
+thing you can also perform here. So let
+
+218
+00:14:02,000 --> 00:14:10,240
+me show you. So for this you have to use
+one more line here. This is the line
+
+219
+00:14:07,360 --> 00:14:13,519
+guys. Model dot start chart. So this
+start chat will automatically remember
+
+220
+00:14:11,839 --> 00:14:16,639
+all the conversation you are doing with
+your large language model. Now this is
+
+221
+00:14:15,519 --> 00:14:20,800
+the prompt actually I have given. My
+name is BP. You are my personal
+
+222
+00:14:18,560 --> 00:14:25,760
+assistant. My favorite movies are The
+Lord of Rings and Hobbit. Suggest
+
+223
+00:14:23,519 --> 00:14:28,639
+another movie I might like. So this is
+the prompt I'm giving and this is the
+
+224
+00:14:27,120 --> 00:14:34,079
+stream is equal to true I'm giving. And
+now see if you're using chat that time
+
+225
+00:14:30,560 --> 00:14:37,040
+you have to use chat dot send message.
+Okay chat dot send message because here
+
+226
+00:14:35,760 --> 00:14:40,800
+you have initialized the model. I think
+you remember. Now see if I execute the
+
+227
+00:14:38,880 --> 00:14:45,279
+program. So guys as you can see I got
+the output. Okay. Now what I will do?
+
+228
+00:14:43,040 --> 00:14:49,839
+Now what I will do based on this answer
+I will ask another question. So because
+
+229
+00:14:48,000 --> 00:14:54,800
+it has remembered my previous context.
+So here now asking are my favorite
+
+230
+00:14:52,079 --> 00:14:58,399
+movies based on a book series. This is
+the this is what actually I'm asking.
+
+231
+00:14:55,920 --> 00:15:03,360
+Now see if I ask this question. So it
+will refer my previous actually context.
+
+232
+00:15:00,959 --> 00:15:08,720
+Yeah you can see both uh the Lord of
+Rings and the Hobbit trilogies are the
+
+233
+00:15:05,360 --> 00:15:14,000
+based on the book series. Okay. By JRR
+to T toolken. Okay. Now I can show you
+
+234
+00:15:11,839 --> 00:15:17,000
+the story. So if you want to see the
+story just write chart. story. So it
+
+235
+00:15:15,600 --> 00:15:22,320
+will show you the entire
+story. See, so first of all you ask uh
+
+236
+00:15:20,560 --> 00:15:25,519
+this prompt your model has given this
+answer. Then again you ask this question
+
+237
+00:15:23,920 --> 00:15:29,360
+your model has given this answer. Got
+it? I hope it is clear. Fine. So that's
+
+238
+00:15:27,680 --> 00:15:32,959
+actually we can use any kinds of
+language model. Now let's try to see uh
+
+239
+00:15:31,440 --> 00:15:36,880
+any multimodel that means we'll be also
+using some visual model. So I think you
+
+240
+00:15:34,720 --> 00:15:39,839
+know here actually we are also having
+some visual model as well. So this is my
+
+241
+00:15:38,560 --> 00:15:42,000
+model garden. Now just click on the
+visual model. You'll see there are
+
+242
+00:15:40,959 --> 00:15:46,399
+different different kinds of visual
+model are available. So from here I'm
+
+243
+00:15:44,079 --> 00:15:51,199
+going to use one vision model. So
+Germany 1 provision model. So you can
+
+244
+00:15:49,199 --> 00:15:55,360
+search this model here. Now if you want
+to load this model you can load like
+
+245
+00:15:53,839 --> 00:15:59,360
+that. This is the model ID. So let me
+show you this model. I'll copy the name
+
+246
+00:15:56,959 --> 00:16:03,920
+and in the model garden. So here you can
+search this model. You will see Jini 1.0
+
+247
+00:16:02,320 --> 00:16:07,040
+pro vision model. Okay. Now see this is
+the vision model. So in this model
+
+248
+00:16:05,440 --> 00:16:12,000
+actually you can also work with the
+images and videos. Okay. Now this is the
+
+249
+00:16:09,360 --> 00:16:16,160
+model ID you have to give. Now I have
+given the model ID. Now let's load the
+
+250
+00:16:13,639 --> 00:16:20,160
+model. Fine. Now here I'll be working
+with images and videos. And to work with
+
+251
+00:16:18,639 --> 00:16:23,199
+images, videos, I need some helper
+function. This that means this helper
+
+252
+00:16:21,600 --> 00:16:26,639
+function will help me to load the image,
+visualize the image. Okay. So here I
+
+253
+00:16:25,199 --> 00:16:30,000
+have created some helper function. Let
+me show you. So these are the helper
+
+254
+00:16:27,839 --> 00:16:33,600
+function I created. You can see
+different different helper function I
+
+255
+00:16:31,199 --> 00:16:37,519
+created. Uh display image. So it will
+display the image. If you want to get
+
+256
+00:16:35,600 --> 00:16:40,720
+any image as a bytes from the URL, you
+can get uh with the help of this
+
+257
+00:16:38,880 --> 00:16:45,600
+function. load image from the URL you
+can use this function get URL from the
+
+258
+00:16:42,959 --> 00:16:48,560
+GCS you can use this function print
+multimodel prompt that means if you want
+
+259
+00:16:47,120 --> 00:16:51,440
+to print any multimodel prompt you can
+use this function okay so that's how we
+
+260
+00:16:50,000 --> 00:16:54,560
+can create some utility related function
+and this function you will get over the
+
+261
+00:16:53,040 --> 00:16:58,399
+internet if you just simply search how
+to display image give me a function you
+
+262
+00:16:56,079 --> 00:17:02,320
+will get this kinds of code okay so I
+have initialized these are the utility
+
+263
+00:17:00,160 --> 00:17:06,319
+related function as of now okay so here
+the first thing I'm going to show you uh
+
+264
+00:17:04,400 --> 00:17:11,079
+how to generate actually caption from
+any image okay so for this uh Let's see
+
+265
+00:17:09,839 --> 00:17:15,679
+one
+example. This is the example guys. So
+
+266
+00:17:13,760 --> 00:17:21,120
+here I'm downloading my image. You can
+see this is the image uh
+
+267
+00:17:18,280 --> 00:17:26,240
+URL. So So guys you can see this is the
+image. Okay. This image actually will be
+
+268
+00:17:23,400 --> 00:17:30,960
+downloading. So here let me show you and
+how we are downloading the image. We're
+
+269
+00:17:27,679 --> 00:17:34,160
+using u gs util command. Okay. So if you
+execute this command, it will download
+
+270
+00:17:32,160 --> 00:17:37,280
+the image from the URL. Then I'm loading
+the image. Then I'm giving a prompt
+
+271
+00:17:35,760 --> 00:17:40,720
+describe this image. Okay. I'm passing
+the image as well as the prompt. Then
+
+272
+00:17:38,960 --> 00:17:46,640
+I'm using the multimodel that is the
+model we have loaded. I think remember
+
+273
+00:17:42,960 --> 00:17:50,559
+this uh Germany 1 0 pro vision model.
+Okay. You can also use any other vision
+
+274
+00:17:48,400 --> 00:17:54,480
+model. So simply go to the model garden
+and try to choose any other vision
+
+275
+00:17:51,919 --> 00:17:59,600
+model. You can use as it is. Okay. Now
+let's get back. Now whatever actually
+
+276
+00:17:57,360 --> 00:18:03,280
+let's say output I'm getting I'm just
+rendering. Okay. That's it. Now let me
+
+277
+00:18:01,120 --> 00:18:03,280
+show
+
+278
+00:18:07,400 --> 00:18:14,000
+you. So guys, as you can see this is my
+results I got. So here I have given a
+
+279
+00:18:11,600 --> 00:18:19,840
+prompt and this is the image. Now it has
+given me the caption. So the image shown
+
+280
+00:18:15,919 --> 00:18:25,039
+a gray cat with black strips walking uh
+in the snow. The cat has yellow eyes and
+
+281
+00:18:23,120 --> 00:18:29,600
+long tail. You can see yellow eyes and
+long tail. Cat is walking towards the
+
+282
+00:18:27,200 --> 00:18:34,400
+camera. Okay, that means this is a great
+caption. my model has given me. Now let
+
+283
+00:18:31,679 --> 00:18:38,559
+me show you another example. So I
+prepared another
+
+284
+00:18:35,640 --> 00:18:46,160
+example. H So guys you can see I'm using
+another image. Now if I show you this
+
+285
+00:18:42,919 --> 00:18:49,440
+example see this is my uh prompt I have
+given describe the image that means
+
+286
+00:18:47,600 --> 00:18:54,640
+describe the scene. Now see this is the
+response I got. Now this is the
+
+287
+00:18:50,720 --> 00:19:00,559
+response. Two ponton boards are answered
+in the Charles River in Boston.
+
+288
+00:18:58,080 --> 00:19:05,120
+in the background are two breeze and
+Boston uh skyline. So guys, as you can
+
+289
+00:19:03,039 --> 00:19:08,640
+see, this is a correct caption my model
+has given me. Okay. Now, if you want to
+
+290
+00:19:06,799 --> 00:19:12,640
+use load image function, that means the
+function we created in the utility
+
+291
+00:19:10,080 --> 00:19:16,000
+function uh to load this image URL. You
+can use this load load image URL
+
+292
+00:19:14,799 --> 00:19:18,559
+function as well. Now with the help of
+that, we can also do the same thing.
+
+293
+00:19:17,600 --> 00:19:21,520
+Okay, there are different different
+technique you can load the image. You
+
+294
+00:19:20,000 --> 00:19:25,600
+can also use OpenCV to load the image.
+Okay, it's completely fine. Now see, I'm
+
+295
+00:19:23,039 --> 00:19:30,160
+getting the same output. Now here we'll
+be learning another thing. Here we'll be
+
+296
+00:19:27,840 --> 00:19:33,840
+combining multiple
+u multiple image and text prompt for the
+
+297
+00:19:32,240 --> 00:19:38,559
+fshot prompting that means here I'll be
+passing the fshot to my model and my
+
+298
+00:19:36,000 --> 00:19:42,160
+model will try to give me the response.
+So let me show you one example I
+
+299
+00:19:39,880 --> 00:19:46,080
+prepared. So this is the example guys.
+So here I'm using three image. So let me
+
+300
+00:19:43,840 --> 00:19:49,039
+open all the image. So this is stored in
+the Google cloud storage. Okay you can
+
+301
+00:19:47,600 --> 00:19:52,160
+see this is another image. So you can
+see this is one of the image. This is
+
+302
+00:19:50,240 --> 00:19:55,840
+another image and this is another image.
+So this three image actually I'm using
+
+303
+00:19:53,679 --> 00:20:00,480
+here and with the help of load image
+from URL I'm loading both three images.
+
+304
+00:19:58,640 --> 00:20:04,880
+Then first of all I'm giving the prompt
+for two images. You can see these two
+
+305
+00:20:02,400 --> 00:20:08,240
+images I'm giving the prompt this one
+and this one. This one I'm not giving
+
+306
+00:20:06,799 --> 00:20:11,120
+any kinds of prompt. Okay. You can see I
+have given city is equal to London
+
+307
+00:20:09,679 --> 00:20:15,360
+because you can see this is a London
+city and the landmark is a big ban.
+
+308
+00:20:13,760 --> 00:20:19,280
+Okay. It's a big Ben. So you can search
+on Google Big Ben I think. Yeah. See
+
+309
+00:20:17,360 --> 00:20:22,720
+this is the big Ben. Okay. So that's why
+I'm giving some prompting that means I'm
+
+310
+00:20:20,880 --> 00:20:27,200
+giving the the label. Okay. Now prompt
+two. The second image I'm giving this is
+
+311
+00:20:24,799 --> 00:20:30,400
+the Paris city. City city is equal to
+Paris and landmark. You can see it's
+
+312
+00:20:28,960 --> 00:20:33,440
+Eiffel Tower. Okay. You can see it's
+Eiffel Tower. And the third image I'm
+
+313
+00:20:32,159 --> 00:20:38,480
+not giving any kinds of prompt. Now
+let's try to see my model is able to
+
+314
+00:20:34,880 --> 00:20:41,360
+generate the actual uh let's say prompt
+for that particular image or not. So
+
+315
+00:20:40,080 --> 00:20:44,400
+here you can see I'm passing my image
+one, prompt one, image two, prompt two
+
+316
+00:20:43,120 --> 00:20:47,600
+and I'm only giving the image three
+here, not the prompt. Now I'm using the
+
+317
+00:20:46,080 --> 00:20:53,440
+multimodel and generate content. Now
+let's try to see whether it is able to
+
+318
+00:20:49,840 --> 00:20:57,520
+uh identify that image or not. See uh
+these two actually I have given it's
+
+319
+00:20:54,799 --> 00:21:05,760
+fine. Now see third one city dome land
+map u colos. Okay. So let me copy and
+
+320
+00:21:01,919 --> 00:21:11,039
+let me try to verify uh see correct it's
+the correct one. Okay so beautifully my
+
+321
+00:21:08,480 --> 00:21:14,400
+model is able to generate the response.
+So this is called actually fshot
+
+322
+00:21:12,480 --> 00:21:19,520
+prompting. Now also let's try to see
+some video example. So what I will do
+
+323
+00:21:16,559 --> 00:21:22,880
+I'll download one video. So this is the
+URL of the video. I'll download this
+
+324
+00:21:21,200 --> 00:21:27,760
+video. Let me download and let me show
+you here. So I think you remember Google
+
+325
+00:21:25,679 --> 00:21:32,320
+has launched one phone actually called
+pixel. Okay. You can see this is the
+
+326
+00:21:29,200 --> 00:21:35,919
+pixel. This is the pixel advice
+advertisement. You can see this is the
+
+327
+00:21:33,679 --> 00:21:38,799
+pixel advertisement. Okay. So this video
+actually I have downloaded from the URL.
+
+328
+00:21:37,520 --> 00:21:42,320
+Now I will give this video to my
+multimodel and I will give some prompt.
+
+329
+00:21:40,720 --> 00:21:46,240
+Let me show you. So I already prepared
+one prompt. This is the prompt. Answer
+
+330
+00:21:44,400 --> 00:21:50,720
+the following questions using the video
+only. What is the profession of the main
+
+331
+00:21:48,720 --> 00:21:55,840
+person? What are the main features of
+the phone highlighted? Which uh city was
+
+332
+00:21:53,520 --> 00:22:00,200
+this recorded in? Provide the answer in
+a JSON format. Now see if I give this
+
+333
+00:21:57,600 --> 00:22:04,159
+view uh video and if I pass it to my
+multimodel, it should give me the
+
+334
+00:22:07,320 --> 00:22:15,760
+response. See guys, I got the response.
+Now you can see the person name is Shika
+
+335
+00:22:12,480 --> 00:22:20,520
+Shim Shimada. Propion is a photographer.
+Brand is Google. Phone brand is Google.
+
+336
+00:22:17,760 --> 00:22:26,960
+Model is Pixel 8 and
+uh and you can see the features video
+
+337
+00:22:23,039 --> 00:22:30,799
+boost night city Tokyo country Japan.
+Amazing. Okay. Amazing actually response
+
+338
+00:22:29,280 --> 00:22:34,480
+I got. Now you can use any kinds of
+video. You can do the caption
+
+339
+00:22:32,640 --> 00:22:39,120
+generation. Got it? So that's how guys
+you can export different different kinds
+
+340
+00:22:36,159 --> 00:22:43,520
+of model in the um model garden. It's
+not like only Google model. You can also
+
+341
+00:22:41,520 --> 00:22:46,480
+let's say use meta model as well. Let's
+say you want to use llama model. Just
+
+342
+00:22:44,799 --> 00:22:49,600
+simply click on the llama and try to
+open this notebook. So they have already
+
+343
+00:22:48,080 --> 00:22:52,960
+given the all the code example and
+everything. Okay. Only just you need to
+
+344
+00:22:51,120 --> 00:22:57,200
+execute and you have to see how we can
+access the llama model and all. Got it?
+
+345
+00:22:54,880 --> 00:23:01,679
+So just try to explore guys. Uh this is
+uh up to you because because all the
+
+346
+00:22:59,520 --> 00:23:04,960
+model I can't show you. So I have just
+given the demo like how we can access
+
+347
+00:23:03,679 --> 00:23:08,480
+different different kinds of foundation
+model. Now uh you'll be exporting
+
+348
+00:23:07,120 --> 00:23:12,960
+whatever model actually you need later
+on. Got it? Okay. And one thing guys
+
+349
+00:23:10,640 --> 00:23:16,960
+after implementing uh all the code what
+you can do you can download uh this
+
+350
+00:23:14,720 --> 00:23:20,799
+notebook and after that you can delete
+this instance. Okay. No need to keep on
+
+351
+00:23:18,640 --> 00:23:23,840
+running just try to delete the instance.
+Other way you can you can also stop the
+
+352
+00:23:22,559 --> 00:23:26,799
+instance but I will try to delete it.
+Okay. I'll just try to do the
+
+353
+00:23:25,000 --> 00:23:29,440
+confirmation. So after some times
+actually you'll see that this notebook
+
+354
+00:23:27,919 --> 00:23:34,799
+would be deleted. Okay. Now see this
+deleted. So yes uh this is the actually
+
+355
+00:23:32,320 --> 00:23:38,720
+hands-on part of this Vert.x AI. So in
+the next video we'll try to see how we
+
+356
+00:23:36,559 --> 00:23:43,200
+can uh do the setup everything on our
+let's say local machine that means uh
+
+357
+00:23:41,120 --> 00:23:46,480
+how we can connect this uh vertex a with
+the help of local machine that means
+
+358
+00:23:44,880 --> 00:23:50,880
+we'll be coding everything in our VS
+code from the VS code itself we'll try
+
+359
+00:23:48,240 --> 00:23:55,840
+to access the uh like vertx model that
+means foundation model okay so we'll try
+
+360
+00:23:53,520 --> 00:23:59,520
+to access the model guidance from the VS
+code so for this whatever setup actually
+
+361
+00:23:58,159 --> 00:24:02,320
+required I'll tell you each and
+everything with that guys thank you so
+
+362
+00:24:00,640 --> 00:24:05,840
+much for watching this video and I will
+see you next Bye.
+

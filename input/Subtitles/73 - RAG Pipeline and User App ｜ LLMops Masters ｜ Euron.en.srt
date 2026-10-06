@@ -1,0 +1,662 @@
+1
+00:00:00,640 --> 00:00:08,400
+Okay, now everything is working fine so
+far. Now we'll uh write the model.py
+
+2
+00:00:06,319 --> 00:00:12,800
+file right now. Now what we'll do? Okay,
+so now let's write this model.py. So in
+
+3
+00:00:10,639 --> 00:00:18,520
+the model.py, what we'll do? We'll try
+to uh initialize the model lm. Uh that
+
+4
+00:00:16,880 --> 00:00:23,039
+means this particular LM will try to
+initialize and the knowledge base we
+
+5
+00:00:21,359 --> 00:00:27,039
+have created this vector DB object will
+try to load as a retriever object. Okay,
+
+6
+00:00:25,199 --> 00:00:30,400
+because whatever user will ask the
+question, it will go to the retriever.
+
+7
+00:00:28,400 --> 00:00:33,920
+retail will try to return the uh
+response to the lm as well as the
+
+8
+00:00:32,399 --> 00:00:36,040
+questions and llm will try to give you
+the response. Okay, this particular
+
+9
+00:00:34,880 --> 00:00:40,559
+function it will try to write in the
+model.py. So for this again we have to
+
+10
+00:00:38,480 --> 00:00:44,320
+import some necessary library. So let me
+import all of the library one by one. So
+
+11
+00:00:42,879 --> 00:00:48,320
+these are the necessary library guys I
+need. You can see I'm importing chroma
+
+12
+00:00:46,000 --> 00:00:51,840
+then open embedding chat open. So we
+using the open aa model that's why we
+
+13
+00:00:49,680 --> 00:00:59,039
+are importing chat open a then retalqa
+load qn and g down again we have to add
+
+14
+00:00:56,160 --> 00:01:03,039
+this code because uh what will happen uh
+if you are writing this code in the
+
+15
+00:01:00,879 --> 00:01:06,960
+app.py we'll be importing that uh
+functionality in the app.py Pi and
+
+16
+00:01:05,040 --> 00:01:12,159
+sometimes there is a possibility uh this
+will execute okay and uh if you if you
+
+17
+00:01:09,920 --> 00:01:15,600
+don't have thev file it will throw you
+error so the in the both places will try
+
+18
+00:01:13,760 --> 00:01:18,880
+to add this particular code because uh
+whatever file you are executing first of
+
+19
+00:01:17,040 --> 00:01:23,200
+all it will try to download the env file
+and it will use your API key because
+
+20
+00:01:20,799 --> 00:01:28,240
+here also I'm uh going to mention the
+same code this particular
+
+21
+00:01:25,400 --> 00:01:31,360
+code okay this particular code and to
+get this particular code you need the
+
+22
+00:01:30,000 --> 00:01:36,119
+env file that's why we first of all
+downloading it okay now we'll try to
+
+23
+00:01:34,640 --> 00:01:40,079
+load all
+the object one by one. First of all, we
+
+24
+00:01:38,400 --> 00:01:44,799
+are loading the embedding model. Then
+we're loading the vector DB. So, chromb
+
+25
+00:01:42,799 --> 00:01:48,240
+and uh this particular directory you are
+giving the DB directory we are giving it
+
+26
+00:01:46,640 --> 00:01:51,600
+will load that particular database
+object because inside that I have all
+
+27
+00:01:50,159 --> 00:01:55,960
+all of my vector. Then embedding
+function is equal to embedding. Then
+
+28
+00:01:53,200 --> 00:02:00,880
+this is my retro DB as
+retreating. Now we'll try to initialize
+
+29
+00:01:58,000 --> 00:02:06,520
+the LLM. So here we'll be using GPT4
+model. Okay, you can see now we'll try
+
+30
+00:02:03,680 --> 00:02:11,599
+to create the
+qn. Okay, qhn it will take the lm as
+
+31
+00:02:10,160 --> 00:02:15,200
+well as the chain type is equal to
+start. Then I'm going to create a
+
+32
+00:02:13,120 --> 00:02:19,040
+function called get response. So in the
+get response I'll call the ret and this
+
+33
+00:02:17,599 --> 00:02:22,560
+will give you the retive output whatever
+question user is asking and this
+
+34
+00:02:20,720 --> 00:02:25,840
+particular output will pass to the uh
+keyway object that means the lm lm will
+
+35
+00:02:24,480 --> 00:02:30,319
+try to return you the actual response.
+Okay, so this is the code. Now we'll try
+
+36
+00:02:27,920 --> 00:02:33,760
+to add this both functionality to the uh
+endpoint. Okay, that means in my app.py.
+
+37
+00:02:32,080 --> 00:02:37,760
+Now, let's open the app.py. But before
+that, we have to complete the static as
+
+38
+00:02:35,519 --> 00:02:44,160
+well as the template. Okay, because u to
+launch the u uh this one uh flask app
+
+39
+00:02:41,920 --> 00:02:47,040
+you need this uh HTML code as well as
+the CSS. Okay, these are the things you
+
+40
+00:02:45,440 --> 00:02:51,760
+have to mention. So, first of all, let's
+write the HTML code. And this code I
+
+41
+00:02:49,360 --> 00:02:55,360
+have written with the help of u this uh
+chart GPT. With the help of chart GPT, I
+
+42
+00:02:53,680 --> 00:02:59,920
+have generated this HTML code. It's just
+a basics you can say a template. Okay,
+
+43
+00:02:58,160 --> 00:03:03,440
+basics user template. You can also
+create any kinds of template with the
+
+44
+00:03:01,040 --> 00:03:08,239
+help of charg also available over the
+internet. You can also download. Then I
+
+45
+00:03:05,920 --> 00:03:12,959
+need this style. So this is just a
+basics color and style I have added in
+
+46
+00:03:10,239 --> 00:03:17,200
+the CSS file. And to operate this I need
+a JS
+
+47
+00:03:14,920 --> 00:03:20,080
+file. Again you don't need to worry
+about the front end part. There would be
+
+48
+00:03:18,480 --> 00:03:23,800
+separate team for the front end. This is
+the basics app I have just created. Okay
+
+49
+00:03:22,319 --> 00:03:29,120
+great. Now let
+me now if you want to change the header
+
+50
+00:03:26,800 --> 00:03:33,040
+title you can also change it here. Okay.
+Now let's create the app.py. Now in the
+
+51
+00:03:30,799 --> 00:03:36,440
+app.py
+uh we'll first of all import some
+
+52
+00:03:35,040 --> 00:03:41,200
+necessary
+library. So here I'm importing operating
+
+53
+00:03:38,799 --> 00:03:46,640
+system. Then I'm importing the flask
+then plus course and okay. So here we
+
+54
+00:03:44,159 --> 00:03:52,159
+have imported. Now see here from the
+back end uh you can see I have uh a file
+
+55
+00:03:49,680 --> 00:03:55,760
+called model.py and here I created a
+function called get response. So this
+
+56
+00:03:54,159 --> 00:03:59,439
+get response I'm importing it here
+because user will uh give the query and
+
+57
+00:03:58,000 --> 00:04:03,439
+this query I have to pass where I have
+to pass to the get response and this
+
+58
+00:04:01,519 --> 00:04:07,680
+query will go to the ret will return the
+ret output and this thing will try to uh
+
+59
+00:04:05,599 --> 00:04:14,000
+send to the QH and Q will try to take
+care with the help of LLM. So yes uh now
+
+60
+00:04:10,640 --> 00:04:16,640
+we'll try to load the uh env as well. So
+let's load the
+
+61
+00:04:17,239 --> 00:04:23,919
+env uh one thing I want to do because
+see whenever user will initialize the
+
+62
+00:04:21,600 --> 00:04:27,600
+app this DB object will be created and
+how this DB object will be created
+
+63
+00:04:25,600 --> 00:04:30,880
+whenever user is executing this in
+data.py but here I'm not going to
+
+64
+00:04:29,360 --> 00:04:36,000
+execute it manually it should be
+automated for this we'll be executing
+
+65
+00:04:33,199 --> 00:04:43,040
+this command west.system python
+backend/app uh sorry it should not be
+
+66
+00:04:38,840 --> 00:04:43,040
+app.py it should be inest data.py
+
+67
+00:04:44,520 --> 00:04:54,240
+file in just data.py file sorry
+okay so this uh file should be executed
+
+68
+00:04:51,840 --> 00:04:58,240
+so once this file is executed that means
+this DB object would be created and you
+
+69
+00:04:55,840 --> 00:05:04,000
+will have the knowledge base okay then
+we'll try to initialize the
+
+70
+00:05:01,240 --> 00:05:08,160
+flask so this is my flask then we'll
+create a default route so whenever
+
+71
+00:05:06,560 --> 00:05:12,240
+you'll execute the app you will get a
+default route and this default route
+
+72
+00:05:09,360 --> 00:05:15,520
+will execute index html page now here
+I'm going to create another route called
+
+73
+00:05:13,520 --> 00:05:20,880
+query so whenever you will send the
+query So this query route will execute
+
+74
+00:05:18,000 --> 00:05:24,560
+okay and uh it will get the data from
+the user that means whatever uh question
+
+75
+00:05:22,880 --> 00:05:29,680
+user will write in the input box it will
+get the data and we'll try to send the
+
+76
+00:05:26,639 --> 00:05:32,400
+data v to the uh get response function.
+Okay you can see first of all I'm
+
+77
+00:05:30,639 --> 00:05:35,759
+checking if not query it will raise the
+exception otherwise it will send the
+
+78
+00:05:34,080 --> 00:05:39,520
+data to the get response function and
+this will give you the response this
+
+79
+00:05:36,880 --> 00:05:45,520
+response I will show to the uh um UI
+console. Okay now let's initialize the
+
+80
+00:05:42,199 --> 00:05:48,880
+app. So I'm running the app local host
+port number 000 debug is equal to true.
+
+81
+00:05:47,520 --> 00:05:53,440
+Now let me show you the app how it will
+look like. First of all let's delete the
+
+82
+00:05:50,479 --> 00:05:58,120
+DB object. We'll try to create as a new.
+Now what we'll do um we'll try to open
+
+83
+00:05:55,919 --> 00:06:03,919
+up the
+terminal. Now let's execute the
+
+84
+00:06:01,479 --> 00:06:08,319
+app.py. Now see first of all it will
+download that file. Then it will create
+
+85
+00:06:05,680 --> 00:06:13,720
+the DB object automatically. Now see
+application is running. Now if I go back
+
+86
+00:06:11,120 --> 00:06:18,000
+and search for local port number
+8000. So guys you can see this is the
+
+87
+00:06:16,240 --> 00:06:25,000
+user interface we are getting. But uh
+the issue is like if I go to the code it
+
+88
+00:06:20,479 --> 00:06:31,919
+should be styles dot CSS. Okay not style
+styles dot CSS. Now let me save. Now if
+
+89
+00:06:28,560 --> 00:06:38,400
+I refresh now see this is your app. Now
+here you can give any kinds of question.
+
+90
+00:06:33,280 --> 00:06:43,440
+Let's say I give hi and submit.
+Now see it's thinking and hello how I
+
+91
+00:06:40,960 --> 00:06:48,960
+can assist you today. Now you can ask uh
+the query. Let's say if I show you my
+
+92
+00:06:46,880 --> 00:06:54,120
+data. So this is my data all about. So
+here I will
+
+93
+00:06:51,400 --> 00:06:57,120
+ask what
+is
+
+94
+00:06:57,720 --> 00:07:01,720
+the reminder?
+
+95
+00:07:11,039 --> 00:07:16,560
+Now see it is telling the reminder is to
+submit the report by Friday. Now if I
+
+96
+00:07:14,639 --> 00:07:19,840
+show you the data now the same thing I
+have written in the data. Okay. Now you
+
+97
+00:07:18,000 --> 00:07:23,919
+can ask anything regarding your personal
+productivity u whatever data you are
+
+98
+00:07:22,080 --> 00:07:27,280
+using. So this is going to be amazing
+app guys because uh I know that there
+
+99
+00:07:25,599 --> 00:07:31,360
+are so many people they need this kinds
+of assistant. Uh now you can use any
+
+100
+00:07:29,599 --> 00:07:35,039
+kind of meeting transcript and you can
+implement the entire system. Okay, you
+
+101
+00:07:33,280 --> 00:07:38,479
+can replace the data here. So this is
+the app guys. Now it is running on my
+
+102
+00:07:36,560 --> 00:07:41,759
+local host and you can see uh it has
+created all the DB object and
+
+103
+00:07:39,919 --> 00:07:45,599
+everything. It is working fine. Now I'll
+show you how we can deploy this kinds of
+
+104
+00:07:43,520 --> 00:07:49,599
+app over the uh cloud platform. That
+means we'll be deploying over the AWS
+
+105
+00:07:47,599 --> 00:07:55,120
+cloud with the help of CI/CD pipeline.
+So I already recorded one deployment
+
+106
+00:07:52,199 --> 00:07:58,720
+video of my previous project. So there I
+created a medical chatbot with the same
+
+107
+00:07:57,039 --> 00:08:03,919
+structure. Okay, same uh let's say
+technology. I was also using the flask
+
+108
+00:08:00,960 --> 00:08:07,360
+there. So uh the deployment strategy I
+showed you there the same thing you have
+
+109
+00:08:05,440 --> 00:08:11,039
+to also follow only the thing you you
+have to do you have to upload your
+
+110
+00:08:08,879 --> 00:08:14,479
+project in your GitHub account. Okay
+that's it and you have to follow the
+
+111
+00:08:12,800 --> 00:08:18,080
+same technique as it is. Okay. So
+instead of recording uh the deployment
+
+112
+00:08:16,240 --> 00:08:21,120
+video again I'll add that particular
+deployment video here. You can follow
+
+113
+00:08:19,759 --> 00:08:25,120
+the same technique and you can deploy
+this particular project as a CI/CD. Now
+
+114
+00:08:23,120 --> 00:08:31,520
+first of all let's uh commit the code in
+my GitHub. So I'll click here. Uh now
+
+115
+00:08:28,800 --> 00:08:36,519
+what I can do I can u ignore this DB
+object because DB object I don't need.
+
+116
+00:08:33,279 --> 00:08:41,839
+So here I'll in the get
+ignore I'll mention I don't want to push
+
+117
+00:08:39,039 --> 00:08:41,839
+the DB. So
+
+118
+00:08:41,959 --> 00:08:50,240
+DB / start that means just try to ignore
+everything inside DB. Now see DB object
+
+119
+00:08:47,920 --> 00:08:54,399
+is not there. Now let's try to commit.
+So I'll just write
+
+120
+00:08:51,800 --> 00:08:57,399
+updated. Now commit and save the
+changes.
+
+121
+00:08:58,399 --> 00:09:05,959
+Now see pushing is done. If I get back
+and if I refresh my
+
+122
+00:09:02,600 --> 00:09:10,720
+GitHub now see everything is up to date.
+Okay. Now uh okay one thing I forget to
+
+123
+00:09:09,040 --> 00:09:17,279
+tell you this docker file. So in the
+docker file you can mention this
+
+124
+00:09:13,720 --> 00:09:20,399
+particular code. Okay. So this uh let's
+say command will uh help you to create a
+
+125
+00:09:19,200 --> 00:09:24,080
+docker image. First of all it will
+create a uh it will take a python 3.12
+
+126
+00:09:22,240 --> 00:09:29,120
+image. It will install some required
+tools in the like docker server. Then it
+
+127
+00:09:27,440 --> 00:09:31,839
+will create a working directory called /
+app. Inside that it will copy all of the
+
+128
+00:09:30,720 --> 00:09:34,800
+source code. Then it will install
+requirements. Then it will launch the
+
+129
+00:09:33,200 --> 00:09:40,880
+app.py. Okay. So this is the docker
+command you have to use guys. Now uh
+
+130
+00:09:36,959 --> 00:09:44,560
+we'll also see like this github folder.
+Inside that you have to create a file
+
+131
+00:09:42,160 --> 00:09:47,040
+called cic.ml. And inside that you have
+to mention some of the command. So in
+
+132
+00:09:45,839 --> 00:09:49,839
+the deployment video I have mentioned
+each and everything. I have clarified
+
+133
+00:09:48,480 --> 00:09:53,040
+each and everything. Just try to follow
+and try to reply this particular
+

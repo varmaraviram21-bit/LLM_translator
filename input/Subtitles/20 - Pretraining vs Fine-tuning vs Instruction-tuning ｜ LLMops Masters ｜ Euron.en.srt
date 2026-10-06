@@ -1,0 +1,175 @@
+1
+00:00:00,480 --> 00:00:07,680
+Hello everyone. Uh we'll try to see what
+is uh pre-training, fine-tuning and
+
+2
+00:00:04,960 --> 00:00:11,440
+instruction training. So you can see in
+the pre-training uh here the main
+
+3
+00:00:09,519 --> 00:00:15,280
+objective is to learn the general
+knowledge. That means uh you just try to
+
+4
+00:00:13,679 --> 00:00:18,960
+train the model with massive amount of
+unstructured data and it learns the
+
+5
+00:00:17,039 --> 00:00:23,680
+pattern. It's learn the grammatical
+let's say concept and all. Then in the
+
+6
+00:00:21,680 --> 00:00:27,359
+finetuning you just try to train the
+model to a specific use case. Let's say
+
+7
+00:00:25,680 --> 00:00:30,800
+you want to do only language translation
+or let's say text summarization you'll
+
+8
+00:00:29,279 --> 00:00:34,399
+be working on that and in the
+instruction training you just try to
+
+9
+00:00:32,480 --> 00:00:37,440
+follow the human uh instruction
+technique like you you give some
+
+10
+00:00:36,239 --> 00:00:42,000
+instruction let's say I want to do
+language translation first of all I'll
+
+11
+00:00:39,200 --> 00:00:46,239
+just write translate this text okay to a
+specific language then I will uh give
+
+12
+00:00:44,000 --> 00:00:50,239
+let's say the specific language English
+then I want to translate to friends okay
+
+13
+00:00:48,640 --> 00:00:53,199
+so I'll also give the same example that
+means here I'm giving the complete
+
+14
+00:00:51,440 --> 00:00:57,440
+instruction and my model will get
+trained okay on top of that then You can
+
+15
+00:00:55,280 --> 00:01:01,840
+see data wise here we'll use unlabelled
+massive data and here we use domain
+
+16
+00:00:59,840 --> 00:01:07,280
+specific data and here we use
+instruction uh response pair data. Okay.
+
+17
+00:01:04,879 --> 00:01:11,280
+So here supervision wise actually you
+can see it self supervised technique we
+
+18
+00:01:09,520 --> 00:01:14,560
+use and here we use supervised and
+unsupervised technique both and in the
+
+19
+00:01:13,360 --> 00:01:18,159
+instruction technique we use the
+supervised technique because here we are
+
+20
+00:01:16,080 --> 00:01:21,520
+also giving the level data we are also
+giving the instruction to the model.
+
+21
+00:01:19,360 --> 00:01:25,600
+Okay, that's why then customizable wise
+not specific uh task domain specific
+
+22
+00:01:23,920 --> 00:01:28,560
+customization you can do and here you
+can consider dialogue following
+
+23
+00:01:27,200 --> 00:01:32,079
+instruction that mean if you want to
+customize you can give the dialogue on
+
+24
+00:01:30,159 --> 00:01:36,640
+the or any kinds of alerts instruction
+okay to the model then output behavior
+
+25
+00:01:34,479 --> 00:01:42,320
+wise actually it's a generic knowledge
+reach narrow specified okay and this one
+
+26
+00:01:40,400 --> 00:01:48,320
+narrow specialized okay and this is one
+the conversational task a actually
+
+27
+00:01:46,119 --> 00:01:52,079
+technique and this one follows actually
+conversational task ask about uh
+
+28
+00:01:50,240 --> 00:01:54,960
+technique. Okay. So yes, these are the
+like difference between your
+
+29
+00:01:53,280 --> 00:02:00,399
+pre-training, finetuning and instruction
+training okay process. So uh most of the
+
+30
+00:01:57,840 --> 00:02:04,640
+time people usually do the finetuning
+process if if they want to train with
+
+31
+00:02:02,560 --> 00:02:09,679
+any custom data specific data and
+nowadays we have some better option like
+
+32
+00:02:06,799 --> 00:02:13,280
+rag is there with the help of rag is rag
+we can what we can do we can connect
+
+33
+00:02:10,959 --> 00:02:18,239
+with our custom data. Okay, I will also
+show you this part what is rag exactly
+
+34
+00:02:15,200 --> 00:02:21,680
+and how it works and uh how we can build
+a rag application. Okay, we'll also try
+
+35
+00:02:19,920 --> 00:02:25,040
+to cover that. So yes guys, this is all
+about it. Thanks for watching.
+

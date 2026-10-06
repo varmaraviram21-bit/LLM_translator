@@ -1,0 +1,1464 @@
+1
+00:00:00,160 --> 00:00:04,960
+So guys, I think so far you have learned
+about
+
+2
+00:00:05,799 --> 00:00:11,840
+langen okay langen then you learn learn
+about llama
+
+3
+00:00:12,280 --> 00:00:18,560
+index okay then you also learn about
+open source large language
+
+4
+00:00:19,160 --> 00:00:28,560
+model okay open source LLM even I also
+taught you the open
+
+5
+00:00:24,920 --> 00:00:31,599
+AI okay open AI and open AI provides
+actually commercial model because all
+
+6
+00:00:29,920 --> 00:00:34,480
+the models are paid here. If you want to
+use them, you have to pay for that,
+
+7
+00:00:32,960 --> 00:00:39,600
+right? And how it will charge you based
+on the token token limit and this will
+
+8
+00:00:36,960 --> 00:00:43,600
+give you the API key. Okay, API key with
+the help of API key, you can access this
+
+9
+00:00:41,120 --> 00:00:47,520
+this model. But apart from that, there
+are so many actually foundation model. I
+
+10
+00:00:45,760 --> 00:00:53,559
+think I already discussed inside hugging
+face. Okay, hugging face platform like
+
+11
+00:00:49,120 --> 00:00:59,960
+llama was there. Okay, then Mistral was
+there. Then Falcon was there. Okay. Then
+
+12
+00:00:57,840 --> 00:01:06,080
+then
+Jiminy
+
+13
+00:01:02,680 --> 00:01:08,880
+Jimma okay and so on there are so many
+model so many model if you open the
+
+14
+00:01:07,520 --> 00:01:12,479
+hugging face platform you'll see that
+there are so many models are available
+
+15
+00:01:10,479 --> 00:01:15,600
+and these are the foundation model and
+this model is pretty good guys if you
+
+16
+00:01:13,920 --> 00:01:20,320
+see this model this model is like very
+powerful model it's very powerful model
+
+17
+00:01:18,320 --> 00:01:23,119
+even I already showed you some of the
+demo now we created some of the
+
+18
+00:01:21,759 --> 00:01:27,119
+application with the help of open source
+language model there I think you saw the
+
+19
+00:01:24,960 --> 00:01:31,439
+power of the model yes or no
+But I think one issue you saw whenever I
+
+20
+00:01:29,759 --> 00:01:36,000
+was using this opensource large language
+model the issue was this model size is
+
+21
+00:01:34,320 --> 00:01:42,720
+very big. Let's say if I'm considering
+llama 2 just try to consider about llama
+
+22
+00:01:38,920 --> 00:01:47,360
+2. So now tell me llama 2 having
+actually how many variant and you know
+
+23
+00:01:44,720 --> 00:01:51,439
+llama 2 is having three variant like 7
+billion parameter model. Then it is also
+
+24
+00:01:49,439 --> 00:01:57,920
+having 13 billion parameter variant
+model. It is also having 70 billion uh
+
+25
+00:01:54,560 --> 00:02:02,640
+parameter model. Even uh even recently
+there is another model you will see
+
+26
+00:01:59,200 --> 00:02:07,119
+called llama 3. Okay, llama 3 and llama
+3 is very used than your llama 2. So you
+
+27
+00:02:05,520 --> 00:02:10,319
+can open up the hugging face hub and
+there you can search for llama 3. You
+
+28
+00:02:08,560 --> 00:02:13,879
+will see the model. So here I already
+told you if I want to use this model
+
+29
+00:02:12,080 --> 00:02:18,480
+actually I have to use
+GPU based
+
+30
+00:02:15,959 --> 00:02:22,480
+machine. GPU based machine GPU based
+system yes or no. And if I'm not using
+
+31
+00:02:20,720 --> 00:02:25,599
+GPU based machine so what will happen? I
+won't be able execute this at the model.
+
+32
+00:02:24,239 --> 00:02:29,680
+But if you see there are so many
+developer there there would be so many
+
+33
+00:02:27,280 --> 00:02:34,560
+enthusiast uh they will prefer to use
+this at the opensource large language
+
+34
+00:02:31,760 --> 00:02:38,720
+model but most of them will not have the
+GPU based machine okay because it's
+
+35
+00:02:36,959 --> 00:02:44,160
+obvious now because if you see nowadays
+actually whatever laptop whatever let's
+
+36
+00:02:41,200 --> 00:02:52,200
+say uh system we usually buy uh people
+usually take this um actually GPU let's
+
+37
+00:02:46,640 --> 00:02:58,000
+say 30 6 okay TI so I can consider
+RTX RTX Okay, RT RTX 3060Ti. If you if
+
+38
+00:02:56,720 --> 00:03:02,239
+you don't if you have actually less
+budget, then you can buy this uh GPU. If
+
+39
+00:03:00,720 --> 00:03:05,680
+you have more budget, you can also buy
+higher configuration GPU. But there are
+
+40
+00:03:04,400 --> 00:03:09,760
+very less people, they will buy the
+higher configuration GPU. Let's say who
+
+41
+00:03:07,760 --> 00:03:14,239
+have the huge amount of earning, they
+will buy buy it. Okay. But if you but if
+
+42
+00:03:12,560 --> 00:03:17,360
+you have actually less budget because
+see majority of the person will have the
+
+43
+00:03:15,840 --> 00:03:22,879
+less budget whenever they buy any kinds
+of system. So they will have let's say
+
+44
+00:03:19,200 --> 00:03:32,920
+this GPU 3060 TI TI. Okay. So this GPU
+having actually I think around 4 GB 4 to
+
+45
+00:03:27,519 --> 00:03:38,400
+8 GB I think uh V RAM okay VRAM it is
+having okay now just try to consider
+
+46
+00:03:36,080 --> 00:03:43,040
+let's say I'm loading this llama 2 7
+billion parameter okay this model in
+
+47
+00:03:40,480 --> 00:03:48,640
+this GPU so what would be the inference
+time as of now let's try to consider
+
+48
+00:03:45,280 --> 00:03:53,280
+let's say it will take 5 minutes okay 5
+minutes to give you the response now
+
+49
+00:03:51,360 --> 00:03:57,519
+just try to consider if your application
+is taking 5 minutes to execute only one
+
+50
+00:03:55,760 --> 00:04:01,360
+prompt will people will use your
+application tell me if let's say I'm
+
+51
+00:03:59,200 --> 00:04:04,799
+using charge GPT and if I'm giving any
+prompt to the charg and charge GPT is
+
+52
+00:04:03,200 --> 00:04:10,560
+taking let's say 5 minutes to give me
+that response so will I use the charg
+
+53
+00:04:07,840 --> 00:04:15,519
+again no definitely I will not use
+because nowadays you will see that
+
+54
+00:04:13,200 --> 00:04:19,120
+people will have very less time they
+they want actually quick response from
+
+55
+00:04:17,120 --> 00:04:22,960
+any kinds of application so what you
+have to do the system you are developing
+
+56
+00:04:21,359 --> 00:04:26,160
+This should be very fast. Okay, the
+inference time would be very fast here.
+
+57
+00:04:24,720 --> 00:04:30,759
+Otherwise, people only be using your
+application, right? Then let's say you
+
+58
+00:04:28,479 --> 00:04:36,880
+are loading this 13 billion parameter
+model. Okay, in the RTX 3060Ti GPU.
+
+59
+00:04:34,960 --> 00:04:40,880
+Let's say now it is taking 10 minutes to
+execute. Okay, 10 minutes to execute.
+
+60
+00:04:39,440 --> 00:04:45,759
+And after that, let's say you are taking
+70 billion parameter model in the RTX
+
+61
+00:04:42,880 --> 00:04:50,680
+3060 TI. And you'll see that sometimes
+it will give you memory.
+
+62
+00:04:49,040 --> 00:04:56,440
+Okay,
+memory out
+
+63
+00:04:52,440 --> 00:05:02,160
+of space. Okay, out of space
+error. Okay, because this uh GPU doesn't
+
+64
+00:05:00,160 --> 00:05:07,759
+have the capacity to load this 7 billion
+parameter model because I told you it is
+
+65
+00:05:04,000 --> 00:05:11,520
+having four 4GB and 8 GB VRAM. Okay, so
+that time actually we are not able to
+
+66
+00:05:09,520 --> 00:05:15,120
+use this kinds of foundation model. But
+let's say some somehow we are using this
+
+67
+00:05:13,680 --> 00:05:18,720
+foundation model. Let's say we are using
+small variant of the model. Let's say 70
+
+68
+00:05:17,039 --> 00:05:23,120
+billion or 13 billion. But what is
+happening? Inference time is very high
+
+69
+00:05:20,400 --> 00:05:27,199
+here. Okay, it is like very slow here.
+So again people won't be using my
+
+70
+00:05:24,720 --> 00:05:30,960
+application. So this is another issue.
+Got it? Now let's say somehow you
+
+71
+00:05:29,039 --> 00:05:35,600
+created one application. Let's say it is
+taking 5 minutes to execute. Now what
+
+72
+00:05:33,120 --> 00:05:38,560
+you have to do? Uh if you want to
+publish this application to the
+
+73
+00:05:37,440 --> 00:05:44,039
+audience, you have to deploy this
+project. Yes or no? Let's say you want
+
+74
+00:05:40,400 --> 00:05:48,720
+to do the deployment. You have to do the
+deployment. Okay. Deployment.
+
+75
+00:05:46,960 --> 00:05:53,520
+Now I think previously I showed you one
+deployment right uh like uh we uh
+
+76
+00:05:51,759 --> 00:05:59,120
+deployed one end toend medical chatbot
+project there I was using actually AWS
+
+77
+00:05:56,240 --> 00:06:06,319
+okay AWS so I was using let's say EC2
+service from there EC2 then I was using
+
+78
+00:06:03,479 --> 00:06:11,440
+ECR okay elastic container registry then
+I was also using something called
+
+79
+00:06:08,919 --> 00:06:16,800
+docker okay so these are the services
+actually I was using there one by one
+
+80
+00:06:13,919 --> 00:06:20,319
+now see there I was actually deploying
+the open AAI based application that
+
+81
+00:06:18,639 --> 00:06:23,520
+means I was using openAI model that's
+why I was able to deploy this project in
+
+82
+00:06:21,919 --> 00:06:27,440
+the cloud platform with help of these
+are the simple service only but whenever
+
+83
+00:06:25,840 --> 00:06:31,280
+you are using open source R language
+model so that means this model you have
+
+84
+00:06:29,440 --> 00:06:34,560
+downloaded in your local machine and now
+what you have to do you have to move
+
+85
+00:06:32,400 --> 00:06:38,080
+this model to the production server that
+means your cloud machine and there just
+
+86
+00:06:36,639 --> 00:06:42,560
+try to consider if you are using this
+kinds of 8 GB let's say instance like T2
+
+87
+00:06:40,479 --> 00:06:47,759
+large instance will it work so I think
+remember we use something called
+
+88
+00:06:44,759 --> 00:06:53,280
+T2 dot large instance there and it was
+having 8 GB memory only okay 8 GB memory
+
+89
+00:06:50,160 --> 00:06:57,520
+with CPU CPU code so it won't be working
+right if I'm loading this llama 3 or
+
+90
+00:06:55,440 --> 00:07:01,280
+llama 2 in this machine it won't be
+working so for this what I have to do I
+
+91
+00:06:59,120 --> 00:07:05,120
+have to purchase I have to purchase
+actually a GPU based machine there so if
+
+92
+00:07:03,680 --> 00:07:08,160
+you see the EC2 instance you will see
+that there actually will also have GPU
+
+93
+00:07:06,720 --> 00:07:13,120
+based machine so there actually you can
+also purchase GPU based machine apart
+
+94
+00:07:10,319 --> 00:07:19,479
+from that AWS provides another service
+called AWS sales
+
+95
+00:07:17,000 --> 00:07:24,160
+maker. Those who are from
+actually MLOps background they already
+
+96
+00:07:21,840 --> 00:07:29,240
+know what is AWS Sesmaker. So Sysmaker
+is a complete actually platform. So here
+
+97
+00:07:26,479 --> 00:07:35,199
+you can actually
+ingest okay
+
+98
+00:07:32,199 --> 00:07:35,199
+train
+
+99
+00:07:36,280 --> 00:07:44,080
+evaluate okay evaluate and
+deploy any kinds of machine learning or
+
+100
+00:07:42,000 --> 00:07:48,240
+deep learning project. Okay. And it also
+provides different different virtual
+
+101
+00:07:46,479 --> 00:07:52,319
+instance that means virtual computer.
+Okay. Virtual let's say computer it will
+
+102
+00:07:50,720 --> 00:07:55,759
+also give you. So there actually you can
+take any kind of instance and you can
+
+103
+00:07:54,080 --> 00:07:59,840
+let's say host your model. It is also
+possible. So sysmaker provides actually
+
+104
+00:07:57,599 --> 00:08:02,960
+lots of service. You can search over the
+Google you'll see that it provide
+
+105
+00:08:01,280 --> 00:08:07,199
+different different services. Okay. Now
+few month back actually I was uh going
+
+106
+00:08:05,039 --> 00:08:11,599
+through one actually research article.
+So there I found if I want to let's say
+
+107
+00:08:09,759 --> 00:08:16,080
+deploy any kinds of opensource language
+model uh as as let's say my custom
+
+108
+00:08:14,240 --> 00:08:20,479
+created let's say server let's say I
+want to launch my own server and there I
+
+109
+00:08:18,960 --> 00:08:24,240
+want to host my model for this what I
+can use I can use something called
+
+110
+00:08:21,680 --> 00:08:27,520
+sesmaker okay as sesmaker I can use
+because sesmaker will give you different
+
+111
+00:08:26,000 --> 00:08:31,039
+different kinds of instance okay so
+there actually you can host your model
+
+112
+00:08:29,120 --> 00:08:35,360
+and if I want to use maker and if I want
+to let's say deploy this kinds of
+
+113
+00:08:33,919 --> 00:08:38,000
+opensource large language model because
+see if I want to use this kind of
+
+114
+00:08:36,479 --> 00:08:41,680
+opensource FL language model I have to
+use different different library like I I
+
+115
+00:08:39,919 --> 00:08:45,360
+told you we have to use hugging face
+okay we have to use lang chain so
+
+116
+00:08:43,519 --> 00:08:49,600
+different different things we have to uh
+install even if I want to use hugging
+
+117
+00:08:47,360 --> 00:08:54,080
+face I also need to install accelerate
+bits and byes because this model access
+
+118
+00:08:52,080 --> 00:08:57,600
+the GPU right and to access the GPU I
+also need these are the package okay I
+
+119
+00:08:55,760 --> 00:09:00,880
+already explained uh in my hugging face
+session so if I want to install these
+
+120
+00:08:59,440 --> 00:09:04,320
+are the package whenever let's say I'm
+taking any EC2 machine there you will
+
+121
+00:09:02,640 --> 00:09:07,600
+see installation issue so most of the
+time you will see lots of installation
+
+122
+00:09:05,600 --> 00:09:12,959
+issue actually you will But what they
+did actually they created one service
+
+123
+00:09:09,880 --> 00:09:16,560
+called DLC. Okay, DLC that means deep
+learning container. So this service is
+
+124
+00:09:14,720 --> 00:09:20,000
+already available in the AWS. Okay, you
+can use with the help of salesmaker.
+
+125
+00:09:18,160 --> 00:09:23,839
+Sesmaker you can use this DLC that means
+deep learning container. So inside deep
+
+126
+00:09:22,240 --> 00:09:27,360
+learning container you can install any
+kinds of deep learning package. Let's
+
+127
+00:09:25,440 --> 00:09:31,360
+say you can install hugging face you can
+install let's say pytor tensorflow. So
+
+128
+00:09:29,920 --> 00:09:34,720
+all the let's say library would be
+already pre-installed there. So you
+
+129
+00:09:33,040 --> 00:09:38,160
+don't need to let's say manually put the
+effort to install these are the library
+
+130
+00:09:36,800 --> 00:09:41,760
+okay with the GPU configuration
+everything would be already there okay
+
+131
+00:09:39,760 --> 00:09:45,440
+only just need to take the DLC uh let's
+say instance and you have to connect
+
+132
+00:09:43,920 --> 00:09:50,160
+with the sales maker that's the idea
+okay so with the help of sales maker
+
+133
+00:09:47,120 --> 00:09:53,120
+with the help of DLC you can host this
+model let's say you are having one open
+
+134
+00:09:51,680 --> 00:09:58,080
+source model now you can host this model
+in the DLC platform got it and to get
+
+135
+00:09:56,480 --> 00:10:02,399
+the let's say endpoint from the model
+what you have to do you have to use
+
+136
+00:09:59,120 --> 00:10:05,839
+something called API gateway okay API
+gateway. So this is another service from
+
+137
+00:10:03,680 --> 00:10:11,440
+the AWS with the help of API gateway.
+What you can do? You can create an API.
+
+138
+00:10:08,720 --> 00:10:15,440
+Okay, API like we saw like open API. Now
+we used to use one API. So here also you
+
+139
+00:10:13,440 --> 00:10:19,519
+can create a API with the help of API.
+Other people can access your model.
+
+140
+00:10:16,959 --> 00:10:24,399
+Let's say this is user. So user can
+access your model with the help of API
+
+141
+00:10:21,600 --> 00:10:27,760
+request. So this API will request this
+uh let's say model that means let's say
+
+142
+00:10:25,680 --> 00:10:30,640
+you are using llama model. Okay. And
+llama model is present inside DC that
+
+143
+00:10:29,360 --> 00:10:34,160
+means deep learning container. It is
+running on the Sesmaker actually
+
+144
+00:10:32,160 --> 00:10:38,800
+instance. Okay. From uh from there
+actually you can get the response. Now
+
+145
+00:10:36,560 --> 00:10:42,079
+let's say somehow you deployed this uh
+model like that. Okay. The way actually
+
+146
+00:10:40,640 --> 00:10:45,120
+I showed you with the help of Sesmaker,
+DLC, API gateway. Okay. All the
+
+147
+00:10:43,920 --> 00:10:50,399
+services. Let's say you deployed this
+model and now let's say it is working
+
+148
+00:10:46,720 --> 00:10:56,000
+fine. Now there one issue we'll get the
+issue is cost. Okay. So it will actually
+
+149
+00:10:54,079 --> 00:11:01,040
+charge you huge amount of money. Let me
+show you.
+
+150
+00:10:57,920 --> 00:11:05,560
+So uh in that research article I got one
+image actually let me show you the
+
+151
+00:11:03,000 --> 00:11:11,680
+image. So I have already taken the
+screenshot. So this is the image guys. I
+
+152
+00:11:08,880 --> 00:11:14,000
+think this image is visible. H see what
+they did actually they have taken
+
+153
+00:11:12,800 --> 00:11:18,160
+different different llama model. You can
+see they have taken different different
+
+154
+00:11:15,040 --> 00:11:23,040
+lama model. Let's say llama 2 7b 7B ch
+13b 7B. Okay. And this is the model ID
+
+155
+00:11:21,040 --> 00:11:27,200
+and this is the max tokens like what
+would be the input length okay of this
+
+156
+00:11:24,560 --> 00:11:32,480
+model. I think you know llama 2 takes
+actually 4,96 token. Okay. And this this
+
+157
+00:11:30,720 --> 00:11:36,160
+is the default instance type actually
+they're suggesting. Let's say if I want
+
+158
+00:11:33,760 --> 00:11:40,640
+to use llama 2 7b model. So I have to
+take
+
+159
+00:11:38,040 --> 00:11:43,920
+ml.g5.2x large machine. Okay. And this
+machine is available in the salesmaker
+
+160
+00:11:42,320 --> 00:11:48,920
+platform. Now let me show you the sales
+maker. So if you just search for sales
+
+161
+00:11:46,760 --> 00:11:54,200
+maker okay
+salesmaker pricing.
+
+162
+00:11:51,760 --> 00:11:57,600
+Just search for salesmaker pricing in
+Google. So you will get one website
+
+163
+00:11:56,399 --> 00:12:02,240
+machine learning service Amazon
+salesmaker pricing AWS. Just try to open
+
+164
+00:11:59,360 --> 00:12:06,959
+it up. Now here if you just go below you
+will see uh salesmaker will give you all
+
+165
+00:12:04,959 --> 00:12:12,320
+kinds of price list with respect to all
+kinds of uh let's say machine type.
+
+166
+00:12:09,440 --> 00:12:16,959
+Let's say you want to use MLT3 medium.
+It is having actually 4 GB RAM. And here
+
+167
+00:12:14,320 --> 00:12:20,320
+you will get two vCPU and this is the
+price per hour like that. Actually it is
+
+168
+00:12:19,360 --> 00:12:23,279
+having actually different different
+instance actually. You can see it is
+
+169
+00:12:21,440 --> 00:12:27,920
+also having large instance. So you can
+see it is also having large instance X
+
+170
+00:12:25,120 --> 00:12:32,720
+large instance. Okay. Then 24x large
+also instance it is also having. Now see
+
+171
+00:12:30,240 --> 00:12:36,320
+the more good configuration instance you
+will be taking that means your v CPU is
+
+172
+00:12:35,120 --> 00:12:40,079
+increasing as well as the let's say
+memory is also increasing. You'll see
+
+173
+00:12:38,320 --> 00:12:44,079
+that price is also increasing. So this
+is the per hour price. Let's say per
+
+174
+00:12:41,839 --> 00:12:49,600
+hour price it will charge you $6 if
+you're taking ML
+
+175
+00:12:46,279 --> 00:12:53,600
+M5D 24x. Now see if I show you the chart
+now. So this chart also they have also
+
+176
+00:12:51,440 --> 00:12:58,000
+suggested let's say you are implementing
+one project with the help of llama uh
+
+177
+00:12:56,000 --> 00:13:01,600
+let's say llama 70 okay llama 270
+billion parameter and now see this is
+
+178
+00:13:00,000 --> 00:13:07,120
+the configuration you have to take this
+is the configuration you have to take
+
+179
+00:13:04,120 --> 00:13:10,720
+mlg5 48x large okay configuration
+machine uh but let's try to consider
+
+180
+00:13:08,959 --> 00:13:13,440
+llama to 13 billion okay let's see what
+you want to use this this actually
+
+181
+00:13:11,920 --> 00:13:18,560
+configuration model now let's find this
+configuration MLG find 12x large so here
+
+182
+00:13:16,639 --> 00:13:22,160
+you can find out that configuration you
+can see uh there are Different different
+
+183
+00:13:19,839 --> 00:13:26,480
+series are available. This is the M5,
+C5. You can also find out the G5. So as
+
+184
+00:13:24,880 --> 00:13:29,160
+of now, let's try to consider this
+machine. Let's say
+
+185
+00:13:27,560 --> 00:13:34,560
+ML
+M5D 24X large. Okay. Let's say I want to
+
+186
+00:13:31,839 --> 00:13:39,680
+use uh this. Okay, this machine I want
+to use this machine. This machine is
+
+187
+00:13:36,680 --> 00:13:46,480
+having uh 96 actually CPU and it is also
+having 384 GB uh memory. Now what is the
+
+188
+00:13:44,240 --> 00:13:52,800
+per hour cost? Power cost is you can see
+uh $6. Okay. uh almost $6.5. You can
+
+189
+00:13:50,720 --> 00:13:57,800
+consider $6 as of now. Now let's
+calculate the pricing. So what I'll do,
+
+190
+00:13:54,320 --> 00:14:01,680
+I will open up my
+calculator. Uh I'm going to actually
+
+191
+00:14:00,000 --> 00:14:05,519
+calculate the price per day. Actually
+per day how much actually it will charge
+
+192
+00:14:03,199 --> 00:14:11,440
+me. Let's say the price you can see it's
+$6. Okay, $6 times I want to run 24
+
+193
+00:14:09,279 --> 00:14:15,440
+hours this model. Okay, this model I
+want to run let's say 24 hours in my uh
+
+194
+00:14:13,920 --> 00:14:19,199
+actually salesmaker okay platform
+because see 24 hours your application
+
+195
+00:14:17,279 --> 00:14:22,000
+should be keep on running it's not like
+that you are running for 2 hours again
+
+196
+00:14:20,720 --> 00:14:28,079
+you are stopping no people won't be
+using your application chat z is running
+
+197
+00:14:24,720 --> 00:14:32,320
+uh 24 hours okay uh 7 days it is all uh
+I mean running every every time so you
+
+198
+00:14:30,639 --> 00:14:34,959
+will see there is no downtime so
+whenever you are creating your
+
+199
+00:14:33,680 --> 00:14:39,760
+application it should be always running
+in 24 hours okay so let's say I want to
+
+200
+00:14:37,720 --> 00:14:45,160
+consider per day how much actually it
+will charge me So 24 six go 6 time 24 so
+
+201
+00:14:43,040 --> 00:14:50,959
+it will uh charge me actually
+$144 only just one day it will charge me
+
+202
+00:14:48,760 --> 00:14:53,839
+$144. Now if you're from India, if
+you're from Bangladesh, if you're from
+
+203
+00:14:52,079 --> 00:14:57,040
+any other country, just try to convert
+the currency. Okay, in your let's say
+
+204
+00:14:55,440 --> 00:15:01,279
+money and try to see how much money
+actually it is taking per day from him.
+
+205
+00:14:59,279 --> 00:15:04,959
+Got it? Now let's say I want to run uh
+this model uh let's say I want to run
+
+206
+00:15:03,680 --> 00:15:09,920
+this model. Let's say 7 days. So what
+I'll do? I'll just multiply with seven.
+
+207
+00:15:07,279 --> 00:15:16,240
+Multiply with seven. Now see this is the
+7day cost I got $1,8 so it is more than
+
+208
+00:15:13,839 --> 00:15:20,800
+one lakh rupees okay more than one lakh
+rupees actually it will take if you're
+
+209
+00:15:17,600 --> 00:15:26,160
+running this model uh 7 days let's say I
+want to run this model 4
+
+210
+00:15:23,079 --> 00:15:31,760
+weeks so this is the charge actually it
+will take now let's say I want to run
+
+211
+00:15:28,639 --> 00:15:36,040
+this model 1 year so I can multiply with
+12 see this is the oneear cost actually
+
+212
+00:15:34,160 --> 00:15:41,920
+you are getting
+$48,000 okay 3 $38
+
+213
+00:15:39,160 --> 00:15:46,560
+84. So now let's see if you're running a
+small startup, if you're running a a
+
+214
+00:15:43,519 --> 00:15:49,920
+small company, so will you afford that
+much amount of money, will you be able
+
+215
+00:15:48,320 --> 00:15:53,680
+to pay this this much amount of money?
+No, definitely you are not. So at the
+
+216
+00:15:51,920 --> 00:15:57,519
+end your cost is increasing. If you're
+using this kinds of opensource large
+
+217
+00:15:55,199 --> 00:16:02,240
+language model, if you're deploying uh
+on this kinds of let's say platform on
+
+218
+00:15:59,680 --> 00:16:06,560
+the custom let's say hosted uh server,
+so you will have lots of cost at the
+
+219
+00:16:04,399 --> 00:16:10,639
+end. So better to use the openi model
+that time yes or no because openi model
+
+220
+00:16:08,320 --> 00:16:16,079
+will charge you less very less than okay
+very less than than this amount of money
+
+221
+00:16:12,880 --> 00:16:20,480
+got it so that's why so that's why
+actually llm ops comes into picture so
+
+222
+00:16:18,240 --> 00:16:24,959
+what big tech company actually did they
+came up with actually different
+
+223
+00:16:21,440 --> 00:16:29,920
+different kinds of llm ops platform so I
+think you saw um not recently actually
+
+224
+00:16:27,759 --> 00:16:38,560
+this llm ops platform came actually long
+back so google actually came up with one
+
+225
+00:16:34,079 --> 00:16:43,519
+lm ops platform called Vert.x AI. Okay,
+Vert.Ex AI. So, previously when you used
+
+226
+00:16:41,360 --> 00:16:47,759
+to use MLOps now also we used to use
+something called Vert.x AI for the MLOps
+
+227
+00:16:45,759 --> 00:16:51,279
+also because this Vertex AI provides all
+kinds of functionality, all kinds of
+
+228
+00:16:49,199 --> 00:16:54,959
+let's say pipeline for the machine
+learning operation as well. Okay.
+
+229
+00:16:52,800 --> 00:17:00,800
+Nowadays they also integrated geni okay
+in the vert.xi XAI even AWS that means
+
+230
+00:16:58,399 --> 00:17:07,360
+Amazon web service they also came up
+with another LMOS platform called
+
+231
+00:17:04,039 --> 00:17:12,480
+Bedrock okay bedrock okay bedrock so
+bedrock is also one LLM ops
+
+232
+00:17:10,280 --> 00:17:16,400
+platform and this is the new service
+actually they have launched in the AWS
+
+233
+00:17:15,039 --> 00:17:19,520
+actually let's say website you will see
+that there there will be one section
+
+234
+00:17:17,520 --> 00:17:22,400
+called bedrock okay so bedrock also
+provides all kinds of LLM of services
+
+235
+00:17:21,199 --> 00:17:26,079
+let's say you want to use any kinds of
+foundation model you want to use llama
+
+236
+00:17:24,400 --> 00:17:30,320
+mistral model. Okay, any kinds of
+foundation model. So this model is
+
+237
+00:17:28,160 --> 00:17:34,880
+already hosted. See this model they have
+already hosted in their server. Let's
+
+238
+00:17:33,120 --> 00:17:38,720
+say whatever llama model, whatever MR
+model, whatever model you see these are
+
+239
+00:17:36,640 --> 00:17:42,559
+the model is already hosted in this LLM
+of platform like that. Google has also
+
+240
+00:17:40,640 --> 00:17:46,160
+hosted lots of foundation model in their
+server. It's not like that they're only
+
+241
+00:17:44,240 --> 00:17:49,360
+hosting their model. Let's say Google is
+having their own model. They are having
+
+242
+00:17:47,520 --> 00:17:53,440
+giny model. They're having Jimma model.
+Yes or no? Apart from these are the
+
+243
+00:17:51,039 --> 00:17:57,919
+model they also hosted some of the
+foundation model from any other
+
+244
+00:17:54,880 --> 00:18:02,240
+organization let's say from meta from
+let's say mistral so they so what they
+
+245
+00:18:00,720 --> 00:18:05,600
+did actually they collaborated with
+these other organization even they
+
+246
+00:18:03,919 --> 00:18:09,600
+hosted their model in their platform as
+well and they created one endpoint they
+
+247
+00:18:07,360 --> 00:18:15,520
+created one API okay they created one
+API now as an user as a user what I can
+
+248
+00:18:12,559 --> 00:18:19,760
+do I can use this API to interact with
+this model that means like our open AI
+
+249
+00:18:17,679 --> 00:18:23,760
+will send the request okay to uh will
+send a request to this kinds of llm of
+
+250
+00:18:21,440 --> 00:18:26,640
+platform with the help of API and here I
+will mention what kinds of model I want
+
+251
+00:18:25,280 --> 00:18:29,360
+to use and this will give me the
+response that means I don't need to
+
+252
+00:18:28,080 --> 00:18:33,600
+download these are the model in my
+system okay so this is the main benefit
+
+253
+00:18:31,600 --> 00:18:37,360
+to use this kinds of llm of platform
+okay and it is having all kinds of
+
+254
+00:18:35,280 --> 00:18:40,880
+flexibility let's say you want to
+connect the data you can easily connect
+
+255
+00:18:39,520 --> 00:18:44,640
+let's say you want to connect the vector
+database you can easily connect okay
+
+256
+00:18:42,960 --> 00:18:48,880
+that means all kinds of storage all
+kinds of flexibility this lm ops
+
+257
+00:18:47,200 --> 00:18:53,200
+platform will provide you it's not like
+that manually you have to take from any
+
+258
+00:18:51,360 --> 00:18:57,280
+third party let's say tool it's not it's
+not like that complete like let's say
+
+259
+00:18:55,200 --> 00:19:00,919
+pipeline it is already having even let's
+say you are thinking to finetune this
+
+260
+00:18:58,799 --> 00:19:04,960
+kinds of foundation model you can
+also perform the finetune operation so
+
+261
+00:19:03,520 --> 00:19:09,679
+finetuning will happening in their
+server only not your not your system
+
+262
+00:19:07,840 --> 00:19:13,840
+only you just need to set the
+configuration of the model then you have
+
+263
+00:19:11,440 --> 00:19:19,520
+to pass your data automatically it will
+perform the finetuning in their server
+
+264
+00:19:16,559 --> 00:19:23,440
+yeah it is see they will charge you but
+you will see this price would be very
+
+265
+00:19:21,120 --> 00:19:26,679
+less very less than your this cost
+actually whatever cost actually I I
+
+266
+00:19:24,880 --> 00:19:31,039
+showed you here now if you're let's say
+manually creating your server if you're
+
+267
+00:19:29,360 --> 00:19:34,080
+using manually different different kinds
+of services that time price would be
+
+268
+00:19:32,640 --> 00:19:38,320
+high but if you're using these kinds of
+lmos platform your price would be very
+
+269
+00:19:36,000 --> 00:19:41,600
+low guys trust me it would be very low
+if you see the pricing now if you see
+
+270
+00:19:39,600 --> 00:19:44,559
+the pricing I'll tell you whenever we'll
+be exploring these are the lenos
+
+271
+00:19:43,360 --> 00:19:48,640
+platform there I'll also show you the
+pricing you'll see the pricing it should
+
+272
+00:19:46,080 --> 00:19:53,360
+be very low so that's why Actually LLM
+ops is required. We need the LM ops if I
+
+273
+00:19:51,919 --> 00:19:57,200
+want to use this kinds of foundational
+model. It's not like that we only need
+
+274
+00:19:55,280 --> 00:20:01,039
+to rely on the OpenAI model because we
+we saw that there are so many model
+
+275
+00:19:59,280 --> 00:20:05,039
+which is more powerful than my OpenAI
+model. Even there is another cloud
+
+276
+00:20:02,720 --> 00:20:10,400
+provider I think you know Azure. So
+Azure also having one LMOS platform
+
+277
+00:20:06,880 --> 00:20:13,919
+called Azure OpenAI. Okay. Azure OpenAI.
+So they have what they did actually they
+
+278
+00:20:12,160 --> 00:20:17,600
+collaborated with OpenAI and they bring
+the OpenAI platform in the Azure
+
+279
+00:20:15,919 --> 00:20:21,200
+platform only. Okay. on top of that they
+created some more services and it is
+
+280
+00:20:19,679 --> 00:20:25,039
+running on the Azure right now. So if
+you know about open AI now open AI so
+
+281
+00:20:23,120 --> 00:20:29,120
+you'll be also work with the Azure okay
+azure let's say open AI so open AI wise
+
+282
+00:20:27,360 --> 00:20:32,320
+we already saw how we can use open AI
+with the help of open how we can access
+
+283
+00:20:30,880 --> 00:20:37,280
+different different kinds of foundation
+model okay so yes guys this is the
+
+284
+00:20:34,559 --> 00:20:41,039
+complete idea of our LLM ops and why LLM
+ops is required okay so in the next
+
+285
+00:20:39,120 --> 00:20:44,720
+video we'll be learning about one
+amazing actually LLM ops platform called
+
+286
+00:20:42,640 --> 00:20:48,000
+Vertxi from the Google site so we'll see
+the entire platform what kinds of
+
+287
+00:20:46,000 --> 00:20:51,280
+service it provides even we'll also do
+lots of practical we'll also do the
+
+288
+00:20:49,840 --> 00:20:54,400
+hands-on we'll be creating different
+different let's say LM powered
+
+289
+00:20:52,640 --> 00:20:57,919
+application with help of vert.x XA even
+I will also show you the AS bedrock how
+
+290
+00:20:56,240 --> 00:21:00,960
+we can use the bedrock okay to implement
+any kinds of end to end LM powered
+
+291
+00:20:59,600 --> 00:21:04,159
+application even we'll also learning how
+we can deploy this at the project as
+
+292
+00:21:02,240 --> 00:21:07,520
+well fine so yes guys this is all about
+I hope you liked it so thanks for
+
+293
+00:21:05,760 --> 00:21:10,080
+watching and I will see you in the next
+India.
+
